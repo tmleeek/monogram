@@ -1,0 +1,389 @@
+/*
+#desktop-header{
+  position: fixed;
+  z-index: 100000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+
+  background: transparent url('../images/bg/header.png') center center repeat-x;
+
+}
+
+
+.desktop-header-spacer{
+  height: 90px;
+}
+@media only screen and (max-height: 668px) {
+  .desktop-header-spacer{
+    height: 90px !important;
+  }
+}
+
+
+
+#desktop-header-account{
+
+}
+#desktop-header-menu{
+  text-align: center;
+  nav{
+    > ul {
+      font-size: 0px;
+
+      > li {
+        .display-inline-block;
+
+        > a{
+          display: block;
+          width: 200px;
+          text-align: center;
+
+          .header-font;
+          font-size: 12px;
+          line-height: 20px;
+          color: @off-white;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+
+          padding-top: 36px;
+          padding-bottom: 20px;
+
+          .opacity(0.9);
+          &:focus,
+          &:hover{
+            .opacity(0.6);
+          }
+
+        }
+      }
+    }
+  }
+}
+
+#desktop-header-logo-container{
+  padding-top: 11px;
+  display: block;
+  width: 200px;
+
+  #desktop-header-logo{
+    margin: 0 auto;
+    .header-desktop-logo;
+  }
+}
+
+
+@media only screen and (max-width: 1300px) {
+  #desktop-header-menu nav > ul > li > a,
+  #desktop-header-logo-container{
+    width: 180px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #desktop-header-menu nav > ul > li > a,
+  #desktop-header-logo-container{
+    width: 160px;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  #desktop-header-menu nav > ul > li > a,
+  #desktop-header-logo-container{
+    width: 140px;
+  }
+}
+
+
+#graph-social-icons{
+  position: fixed;
+  bottom: 25px;
+  left: 30px;
+
+  ul{
+    font-size: 0;
+
+    li{
+      .display-inline-block;
+      margin-right: 15px;
+
+      .fa{
+        font-size: 15px;
+
+
+        color: @off-white;
+        .opacity(0.9);
+
+        &:focus,
+        &:hover{
+          .opacity(0.6);
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+//       _    ____ ____ ___  _   _ _   _ _____
+//      / \  / ___/ ___/ _ \| | | | \ | |_   _|
+//     / _ \| |  | |  | | | | | | |  \| | | |
+//    / ___ \ |__| |__| |_| | |_| | |\  | | |
+//   /_/   \_\____\____\___/ \___/|_| \_| |_|
+//
+
+#desktop-header-account{
+  padding-top: 37px;
+  padding-left: 20px;
+
+  a{
+    display: block;
+    .subheader-font;
+    font-size: 10px;
+    line-height: 20px;
+    color: @off-white;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    width: 100px;
+
+    .opacity(0.9);
+    &:focus,
+    &:hover{
+      .opacity(0.6);
+    }
+    
+  }
+}
+
+
+//     ____    _    ____ _____
+//    / ___|  / \  |  _ \_   _|
+//   | |     / _ \ | |_) || |
+//   | |___ / ___ \|  _ < | |
+//    \____/_/   \_\_| \_\|_|
+//
+
+
+#desktop-header-cart{
+  padding-top: 37px;
+  text-align: right;
+  padding-right: 22px;
+
+  .fa{
+    font-size: 17px;
+    color: @off-white;
+    .opacity(0.9);
+
+    &:focus,
+    &:hover{
+      .opacity(0.6);
+    }
+  }
+}
+*/
+
+
+
+
+
+
+#desktop-header{
+  position: fixed;
+  z-index: 100000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: transparent;
+}
+
+.desktop-header-spacer{
+  height: 90px;
+  // height: 0px;
+}
+@media only screen and (max-height: 668px) {
+  .desktop-header-spacer{
+    height: 90px !important;
+  }
+}
+
+
+#desktop-header-logo-container{
+  display: block;
+  text-align: left;
+  
+  padding-top: 10px;
+  padding-left: 10px;
+
+  #desktop-header-logo{
+    // margin: 0 auto;
+    .header-desktop-logo-small;
+    display: inline-block;    
+    vertical-align: middle;
+  }
+
+  #monogram-name {
+    .header-desktop-logo-name;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+#desktop-header-menu-conainer {
+  padding-top: 20px;
+  ul {
+    li {
+      display: inline-block;
+      padding-right: 40px;      
+      a {
+        .subheader-font-2;
+        font-size: 11px;
+        line-height: 32px;
+        letter-spacing: 0.08em;
+        color: @white;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+#graph-social-icons{
+  position: fixed;
+  bottom: 25px;
+  left: 30px;
+
+  ul{
+    font-size: 0;
+
+    li{
+      .display-inline-block;
+      margin-right: 15px;
+
+      .fa{
+        font-size: 15px;
+
+
+        color: @off-white;
+        .opacity(0.9);
+
+        &:focus,
+        &:hover{
+          .opacity(0.6);
+        }
+      }
+    }
+  }
+}
+
+#desktop-header-cart{
+  padding-top: 25px;
+  text-align: right;
+  padding-right: 11px;
+
+  font-size: 0;
+  margin-left: -100px;
+
+  ul {
+    li {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 25px;
+      &:last-child {
+        margin-right: 0px;
+      }
+      a.text {
+        .subheader-font-2;
+        font-size: 11px;
+        line-height: 11px;
+        letter-spacing: 0.08em;
+        color: @white;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .fa{
+    font-size: 19px;
+    color: @off-white;
+    .opacity(0.9);
+
+    .display-inline-block;
+    vertical-align: middle;
+
+    margin-left: 23px;
+
+    &:focus,
+    &:hover{
+      .opacity(0.6);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+//    __  __  ___  ____ ___ _     _____
+//   |  \/  |/ _ \| __ )_ _| |   | ____|
+//   | |\/| | | | |  _ \| || |   |  _|
+//   | |  | | |_| | |_) | || |___| |___
+//   |_|  |_|\___/|____/___|_____|_____|
+//
+
+
+
+#mobile-header-spacer{
+  height: 50px;
+}
+
+#mobile-header{
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+
+  background: @dark-brown;
+}
+
+
+#mobile-header-menu-btn-container{
+  text-align: left;
+  padding-top: 5px;
+}
+
+#mobile-header-cart-btn-container{
+  text-align: right;
+  padding-top: 5px;
+}
+
+#mobile-header-menu-btn,
+#mobile-header-cart-btn{
+  .fa;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+
+  .display-inline-block;
+  width: 40px;
+  height: 40px;
+
+  color: @off-white;
+  .opacity(0.9);
+
+  &:focus,
+  &:hover{
+    .opacity(0.6);
+  }
+}

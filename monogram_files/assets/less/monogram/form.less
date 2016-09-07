@@ -1,0 +1,1016 @@
+
+
+
+.default-form{
+
+  .add-clearfix();
+
+  .square-cta{
+    width: 100%;
+  }
+
+  .form-group{
+    position: relative;
+    // margin-bottom: 3px;
+    margin-bottom: 5px;
+    width: 100%;
+    
+    label{
+      .lato-regular;
+      font-size: 11px;
+      line-height: 14px;
+      letter-spacing: 0.075em;
+      text-transform: uppercase;
+      color: @dark-grey;
+
+      padding-bottom: 5px;
+
+      &.long-version{
+        margin-right: -400px;
+        max-width: none;
+      }
+      &.absolute-version{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 300px;
+        white-space: nowrap;
+      }
+    }
+
+
+    input[type=text],
+    input[type=email],
+    select{
+      // placeholders
+      &::-webkit-input-placeholder{
+        .opacity(1);
+        color: #898989;
+      }
+      &:-moz-placeholder{
+        .opacity(1);
+        color: #898989;
+      }
+      &::-moz-placeholder{
+        .opacity(1);
+        color: #898989;
+      }
+      &:-ms-input-placeholder{
+        .opacity(1);
+        color: #898989;
+      }
+    }
+
+    //   __     ___    _     ___ ____    _  _____ ___ ___  _   _ 
+    //   \ \   / / \  | |   |_ _|  _ \  / \|_   _|_ _/ _ \| \ | |
+    //    \ \ / / _ \ | |    | || | | |/ _ \ | |  | | | | |  \| |
+    //     \ V / ___ \| |___ | || |_| / ___ \| |  | | |_| | |\  |
+    //      \_/_/   \_\_____|___|____/_/   \_\_| |___\___/|_| \_|
+    //                                                           
+    &.has-error{
+
+      // margin-bottom: 25px * @multiplier * 2;
+
+      
+      &:before{
+        .lato-bold;
+        // font-size: 11px;
+        font-size: 9px;
+        line-height: 14px;
+        letter-spacing: 0.075em;
+        text-transform: uppercase;
+        color: @red;
+
+
+        text-align: right;
+        // color: @black;
+
+        position: absolute;
+        width: 100%;
+        height: 20px;
+        //bottom: -23px;
+        top: 0px;
+            top: 9px;
+        right: -20px;
+        padding-right: 20px;    // cause the last character doesn't render correctly
+
+        content: attr(data-error);
+      }
+      
+      .form-control{
+        color: @red !important;
+
+        
+      }
+
+      .goog-menu-button-caption{
+        color: @red;
+      }
+
+    } // .has-error
+
+
+  } // .form-group
+
+  //      _____ ___  ____  __  __    ____ ___  _   _ _____ ____   ___  _     
+  //     |  ___/ _ \|  _ \|  \/  |  / ___/ _ \| \ | |_   _|  _ \ / _ \| |    
+  //     | |_ | | | | |_) | |\/| | | |  | | | |  \| | | | | |_) | | | | |    
+  //     |  _|| |_| |  _ <| |  | | | |__| |_| | |\  | | | |  _ <| |_| | |___ 
+  //     |_|   \___/|_| \_\_|  |_|  \____\___/|_| \_| |_| |_| \_\\___/|_____|
+  //                                                                         
+
+  .form-control{
+    .lato-regular;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.025em;
+    color: #898989;
+
+    line-height: 1.42857143;
+    height: 28px;
+
+    padding-left: 8px;
+    padding-right: 8px;
+
+    background: transparent;
+    border: 1px solid transparent;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    .round(0px);
+
+    // http://stackoverflow.com/questions/14007655/remove-ie10s-clear-field-x-button-on-certain-inputs
+    &::-ms-clear {
+      display: none;
+    }
+
+    &:focus{
+      border: 1px solid transparent;
+      outline: 0;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+    &.has-placeholder{
+
+    }
+    &.center-version{
+      text-align: center;
+    }
+
+  }
+  textarea.form-control{
+    height: 111px;
+    resize: none;
+  }
+
+  
+
+    
+
+  
+
+  &.white-version{
+    .form-group{
+      label{
+        color: @white;
+      }
+    }
+    .form-control{
+      color: @white;
+      border: 1px solid @white;
+
+      &:focus{
+        border: 1px solid @white;
+      }
+
+    }
+
+    .goog-menu-button-caption{
+      color: @white;
+    }
+    .goog-menu-button-dropdown{
+      color: @white;
+    }
+    .manic-dropdown{
+      border: 1px solid @white;
+    }
+    .manic-combobox{
+      border: 1px solid @white;
+    }
+
+  }
+
+} // .default-form
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    __  __  ___  ____ ___ _     _____ 
+//   |  \/  |/ _ \| __ )_ _| |   | ____|
+//   | |\/| | | | |  _ \| || |   |  _|  
+//   | |  | | |_| | |_) | || |___| |___ 
+//   |_|  |_|\___/|____/___|_____|_____|
+//                                      
+
+
+@media only screen and (max-width: 991px) {
+// .actual-mobile{
+
+  .default-form{
+
+    .form-group{
+
+
+
+      //    __  __  ___  ____ ___ _     _____    ____    _    _     _____ _   _ ____    _    ____  
+      //   |  \/  |/ _ \| __ )_ _| |   | ____|  / ___|  / \  | |   | ____| \ | |  _ \  / \  |  _ \ 
+      //   | |\/| | | | |  _ \| || |   |  _|   | |     / _ \ | |   |  _| |  \| | | | |/ _ \ | |_) |
+      //   | |  | | |_| | |_) | || |___| |___  | |___ / ___ \| |___| |___| |\  | |_| / ___ \|  _ < 
+      //   |_|  |_|\___/|____/___|_____|_____|  \____/_/   \_\_____|_____|_| \_|____/_/   \_\_| \_\
+      //                                                                                           
+
+
+
+
+
+    } // .form-group
+
+  } // .default-form
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//     ____  ___   ___   ____   ____  _____ _     _____ ____ _____ 
+//    / ___|/ _ \ / _ \ / ___| / ___|| ____| |   | ____/ ___|_   _|
+//   | |  _| | | | | | | |  _  \___ \|  _| | |   |  _|| |     | |  
+//   | |_| | |_| | |_| | |_| |  ___) | |___| |___| |__| |___  | |  
+//    \____|\___/ \___/ \____| |____/|_____|_____|_____\____| |_|  
+//                                                                 
+
+.goog-menu-button{
+
+  &:focus{
+    outline: none;
+  }
+}
+
+
+.goog-menu-button-caption{
+
+  .lato-regular;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.025em;
+  color: #898989;
+
+  // height: 28px;
+  height: 26px;
+  line-height: 28px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.goog-menu-button-dropdown{
+  //display: none;
+  position: absolute;
+  // top: 5px;
+  top: 4px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+
+
+
+  &:after{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .fa;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    content: "\f107";
+
+    .transition-in(0.3s);
+  }
+
+}
+
+
+.goog-combobox{
+  input[type=text]{
+
+    border: none;
+    outline: none;
+    background: transparent;
+
+    .lato-regular;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.025em;
+    color: #898989;
+
+    //color: @white;
+    width: 100%;
+    //height: 28px;
+    padding: 6px 12px;
+    // line-height: 28px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: block;
+    position: absolute;
+
+    // http://stackoverflow.com/questions/14007655/remove-ie10s-clear-field-x-button-on-certain-inputs
+    &::-ms-clear {
+      display: none;
+    }
+  }
+}
+.goog-combobox-button{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  text-indent: -999px;
+
+
+  &:after{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    text-indent: 0px;
+
+    .fa;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    content: "\f107";
+
+    .transition-in(0.3s);
+  }
+}
+
+
+.goog-menu-button-open{
+  .goog-menu-button-dropdown{
+    &:after{
+      .rotation(180deg);
+    }
+  }
+}
+
+.goog-menu {
+  cursor: default;
+  outline: none;
+  position: absolute;
+  // z-index: 30000; /* Arbitrary, but some apps depend on it... */
+  z-index: 300000; /* Arbitrary, but some apps depend on it... */
+
+
+  margin-top: -1px;
+  margin-left: -1px;
+
+
+  &:after{
+    content: "";
+    display: block;
+
+    position: absolute;
+    //left: -1px;
+    //right: 1px;
+
+    left: 0px;
+    right: 0px;
+
+    bottom: 0px;
+    height: 0px;
+    border-bottom: 1px solid transparent;
+  }
+  &:before{
+
+    content: "";
+    display: block;
+
+    position: absolute;
+    
+    left: 0px;
+    right: 0px;
+
+    top: -2px;
+    height: 0px;
+    border-bottom: 1px solid transparent;
+  }
+
+  &.scroll-version{
+    overflow-y: scroll;      // add only on long things
+    height: 250px;
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+
+    // margin-top: -1px;
+    &:before{
+      display: none;
+    }
+    &:after{
+      display: none;
+    }
+  }
+  &.combo-scroll-version{
+    width: 100%;
+    height: 250px;
+    background: @white;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    width: auto;
+    left: -1px !important;
+    right: -1px !important;
+    //display: block !important;
+
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+
+    margin-top: -2px;
+
+    &:after{
+      display: none;
+    }
+
+    .goog-menuitem{
+      border-left: none;
+      border-right: none;
+    }
+
+  }
+
+  &.no-border-version{
+    //margin-top: 16px;     // this is specifically for desktop menu searchbar
+    margin-top: 22px !important;     // this is specifically for desktop menu searchbar
+    &:after{
+      display: none;
+    }
+    .box-shadow(0px, 0px, 5px, fade(@dark-grey, 20%));
+
+    .goog-menuitem{
+      border-left: none;
+      border-right: none;
+    }
+  }
+  
+}
+
+
+
+
+.goog-menuitem {
+  list-style: none;
+  margin: 0;
+  // white-space: nowrap;    // removed by jairus
+  // background: @white;
+  background: @border-grey;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+
+  position: relative;
+  
+  .goog-menuitem-content{
+    .lato-regular;
+    font-size: 11px;
+    line-height: 14px;
+    letter-spacing: 0.075em;
+    text-transform: uppercase;
+    // color: @dark-grey;
+    color: @dark-grey;
+
+    //line-height: 28px;
+    line-height: 18px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+    margin-top: -1px;
+  }  
+ 
+  &.goog-menuitem-highlight,
+  &:hover{
+    color: @white;
+    // background: #af947d;
+    background: @violet;
+
+    .goog-menuitem-content{
+      color: @white;
+    }
+  }
+
+}
+
+
+
+
+
+/* BiDi override for the resting state. */
+/* @noflip */
+.goog-menuitem.goog-menuitem-rtl {
+  /* Flip left/right padding for BiDi. */
+  padding-left: 7em;
+  padding-right: 28px;
+}
+
+/* If a menu doesn't have checkable items or items with icons, remove padding. */
+.goog-menu-nocheckbox .goog-menuitem,
+.goog-menu-noicon .goog-menuitem {
+  padding-left: 12px;
+}
+
+/*
+ * If a menu doesn't have items with shortcuts, leave just enough room for
+ * submenu arrows, if they are rendered.
+ */
+.goog-menu-noaccel .goog-menuitem {
+  padding-right: 20px;
+}
+
+/*
+.goog-menuitem-content {
+  color: #000;
+  font: normal 13px Arial, sans-serif;
+}
+*/
+
+/* State: disabled. */
+.goog-menuitem-disabled .goog-menuitem-accel,
+.goog-menuitem-disabled .goog-menuitem-content {
+  //color: #ccc !important;
+}
+.goog-menuitem-disabled .goog-menuitem-icon {
+  opacity: 0.3;
+  -moz-opacity: 0.3;
+  filter: alpha(opacity=30);
+}
+
+/* State: hover. */
+.goog-menuitem-highlight,
+.goog-menuitem-hover {
+  /*
+  background-color: #d6e9f8;
+  border-color: #d6e9f8;
+  border-style: dotted;
+  border-width: 1px 0;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  */
+}
+
+/* State: selected/checked. */
+.goog-menuitem-checkbox,
+.goog-menuitem-icon {
+  background-repeat: no-repeat;
+  height: 16px;
+  left: 6px;
+  position: absolute;
+  right: auto;
+  vertical-align: middle;
+  width: 16px;
+}
+
+/* BiDi override for the selected/checked state. */
+/* @noflip */
+.goog-menuitem-rtl .goog-menuitem-checkbox,
+.goog-menuitem-rtl .goog-menuitem-icon {
+  /* Flip left/right positioning. */
+  left: auto;
+  right: 6px;
+}
+
+.goog-option-selected .goog-menuitem-checkbox,
+.goog-option-selected .goog-menuitem-icon {
+  /* Client apps may override the URL at which they serve the sprite. */
+  background: url(//ssl.gstatic.com/editor/editortoolbar.png) no-repeat -512px 0;
+}
+
+/* Keyboard shortcut ("accelerator") style. */
+.goog-menuitem-accel {
+  color: #999;
+  /* Keyboard shortcuts are untranslated; always left-to-right. */
+  /* @noflip */ direction: ltr;
+  left: auto;
+  padding: 0 6px;
+  position: absolute;
+  right: 0;
+  text-align: right;
+}
+
+/* BiDi override for shortcut style. */
+/* @noflip */
+.goog-menuitem-rtl .goog-menuitem-accel {
+  /* Flip left/right positioning and text alignment. */
+  left: 0;
+  right: auto;
+  text-align: left;
+}
+
+/* Mnemonic styles. */
+.goog-menuitem-mnemonic-hint {
+  text-decoration: underline;
+}
+
+.goog-menuitem-mnemonic-separator {
+  color: #999;
+  font-size: 12px;
+  padding-left: 4px;
+}
+
+
+
+//    ____  ____   ___  ____  ____   _____        ___   _ 
+//   |  _ \|  _ \ / _ \|  _ \|  _ \ / _ \ \      / / \ | |
+//   | | | | |_) | | | | |_) | | | | | | \ \ /\ / /|  \| |
+//   | |_| |  _ <| |_| |  __/| |_| | |_| |\ V  V / | |\  |
+//   |____/|_| \_\\___/|_|   |____/ \___/  \_/\_/  |_| \_|
+//                                                        
+
+.manic-dropdown,
+.manic-combobox{
+  select{
+    display: none;
+  }
+
+  width: 100%;
+  height: 28px;
+  position: relative;
+
+  border: 1px solid transparent;
+  cursor: default;
+
+  .goog-menu-button{
+    margin-left: -1px;
+    margin-right: -1px;
+  }
+  .goog-combobox{
+    margin-left: -1px;
+    margin-right: -1px;
+  }
+}
+
+
+
+
+
+//    ____  ____   ___  ____  ____   _____        ___   _   ____  _____ ____  ____   ___  _   _ ____ _____     _______ 
+//   |  _ \|  _ \ / _ \|  _ \|  _ \ / _ \ \      / / \ | | |  _ \| ____/ ___||  _ \ / _ \| \ | / ___|_ _\ \   / / ____|
+//   | | | | |_) | | | | |_) | | | | | | \ \ /\ / /|  \| | | |_) |  _| \___ \| |_) | | | |  \| \___ \| | \ \ / /|  _|  
+//   | |_| |  _ <| |_| |  __/| |_| | |_| |\ V  V / | |\  | |  _ <| |___ ___) |  __/| |_| | |\  |___) | |  \ V / | |___ 
+//   |____/|_| \_\\___/|_|   |____/ \___/  \_/\_/  |_| \_| |_| \_\_____|____/|_|    \___/|_| \_|____/___|  \_/  |_____|
+//                                                                                                                     
+
+
+.manic-dropdown{
+  .lato-regular;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.025em;
+  color: #898989;
+
+  height: 28px;
+}
+.manic-combobox{
+  .lato-regular;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.025em;
+  color: #898989;
+
+  height: 28px;
+
+  .goog-combobox{
+    input[type=text]{
+      .lato-regular;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.025em;
+      color: #898989;
+
+      line-height: 1.42857143;
+    }
+    //.display-inline-block;
+    //height: 29px;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+  }
+}
+.goog-menu-button-caption{
+  .lato-regular;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.025em;
+  color: #898989;
+
+  height: 28px;
+  line-height: 28px;
+}
+.goog-menu-button-dropdown{
+  .lato-regular;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.025em;
+  color: #898989;
+
+  top: 5px;
+  right: 5px;
+}
+
+
+
+@media only screen and (max-width: 991px) {
+//.actual-mobile{
+
+  .manic-dropdown{
+    .goog-menu-button{
+      display: none;
+    }
+    select{
+      display: block;
+      position: absolute;
+      z-index: 20;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      .opacity(0);
+
+      /*
+      // copied from .form-control
+      .gotham-book;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.025em;
+      color: #898989;
+
+      line-height: 1.42857143;
+      height: 28px;
+
+      padding-left: 8px;
+      padding-right: 8px;
+      */
+
+    }
+    &:after{
+      content: attr(data-label);
+
+      .lato-regular;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.025em;
+      color: #898989;
+
+      line-height: 1.42857143;
+      height: 28px * 1;
+      padding: 6px 12px;
+      
+
+      background: transparent;
+      outline: 0;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      .round(0px);
+
+      position: absolute;
+      z-index: 15;
+      //top: 0;
+      top: -1px;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+
+    }
+    &:before{
+      content: "";
+      display: block;
+
+      position: absolute;
+      z-index: 10;
+      // top: 5px;
+      top: 4px;
+      right: 5px;
+      width: 20px;
+      height: 20px;
+
+      position: absolute;
+      
+      .fa;
+      font-size: 18px;
+      line-height: 20px;
+      text-align: center;
+      content: "\f107";
+
+      .transition-in(0.3s);
+
+    }
+  }
+  
+}
+
+
+
+
+
+
+//    ____    _  _____ _____   ____ ___ ____ _  _______ ____  
+//   |  _ \  / \|_   _| ____| |  _ \_ _/ ___| |/ / ____|  _ \ 
+//   | | | |/ _ \ | | |  _|   | |_) | | |   | ' /|  _| | |_) |
+//   | |_| / ___ \| | | |___  |  __/| | |___| . \| |___|  _ < 
+//   |____/_/   \_\_| |_____| |_|  |___\____|_|\_\_____|_| \_\
+//                                                            
+
+// #ui-datepicker-div.ui-datepicker{
+
+.page-default-calendar-datepicker{
+  .opacity(0);
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+
+  &.expand-version{
+    .opacity(1);
+    visibility: visible;
+    height: auto;
+    overflow: visible;
+    
+  }
+
+  .ui-datepicker{
+    background: @white;
+    border: 2px solid @violet;
+    .round(0);
+
+
+    padding-top: 23px;
+    padding-left: 17px + 19px;
+    padding-right: 17px + 19px;
+    padding-bottom: 13px;
+
+
+
+    margin-top: 22px;
+    // margin-bottom: 22px;
+
+    .ui-state-default, 
+    .ui-widget-content .ui-state-default, 
+    .ui-widget-header .ui-state-default{
+      color: #898989;
+    }
+    
+
+    /*
+    .ui-datepicker-header{
+      padding: 0;
+      padding-bottom: 4px;
+      
+    }
+    .ui-datepicker-title{
+      
+    }
+    */
+
+  }
+
+
+
+  .ui-state-active,
+  .ui-widget-content .ui-state-active,
+  .ui-widget-header .ui-state-active {
+    // border: 1px solid #aaaaaa;
+    // background: #ffffff url("images/ui-bg_glass_65_ffffff_1x400.png") 50% 50% repeat-x;
+    // font-weight: normal;
+    // color: #212121;
+    background: @violet;
+    .round(20px);
+
+    
+    color: @white;
+
+  }
+  .ui-state-active a,
+  .ui-state-active a:link,
+  .ui-state-active a:visited {
+    // color: #212121;
+    // text-decoration: none;
+  }
+
+}
+
+// mobile
+@media only screen and (max-width: 991px) {
+// .actual-mobile{
+
+  .page-default-calendar-datepicker{
+    .ui-datepicker{
+      border: none;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 2px;
+      margin-bottom: 8px;
+
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+
+
+    // prev
+    .ui-icon-circle-triangle-w,
+    .ui-icon-circle-triangle-e{
+      text-indent: 0px !important;
+      text-align: center;
+
+      &:before{
+        .fa;
+        font-size: 20px;
+        top: -6px;
+        line-height: 21px;
+      }
+
+    }
+
+
+    .ui-datepicker .ui-datepicker-title{
+      font-size: 19px;
+      line-height: 21px;
+
+      padding-bottom: 5px + 1px;
+      
+    } // .ui-datepicker
+    .ui-datepicker th {
+      font-size: 14px;
+      line-height: 26px + 8px;
+      
+      span{
+        position: relative;
+        top: 0px;
+      }
+
+    }
+    .ui-datepicker td span,
+    .ui-datepicker td a {
+      font-size: 14px;
+      line-height: 26px + 8px;
+    }
+
+
+
+
+  }
+}
+
+
+

@@ -1,0 +1,34 @@
+
+html, body{
+  .body-font;
+  font-size: 13px;
+  line-height: 20px;
+  
+}
+
+// used by mobile sometimes
+html.overflow-version{
+  overflow: scroll;
+}
+
+.is-mac{
+  *{
+    -webkit-font-smoothing : antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+a{
+  text-decoration: none !important;
+  .transition-out(0.3s);
+  cursor: pointer;
+  
+  color: @dark-grey;
+
+  &:hover,
+  &:focus{
+    .transition-in(0.3s);
+    color: @dark-grey;
+  }
+}
+

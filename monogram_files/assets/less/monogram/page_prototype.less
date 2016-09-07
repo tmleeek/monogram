@@ -1,0 +1,713 @@
+
+
+
+
+html{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  body{
+    width: 100%;
+    height: 100%;
+  }
+
+
+  *{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently */
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#graph-section{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: #7b706b;
+  color: @off-white;
+  // color: fade(@off-white, 90%);
+}
+
+#combination-graph-data-item-container{
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#graph-column-01-container,
+#graph-column-02-container{
+  display: table;
+  width: 100%;
+}
+
+#graph-column-01,
+#graph-column-02{
+  
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#graph-column-01{
+  padding-left: 40px;
+  // text-align: left;
+}
+#graph-column-02{
+  padding-right: 40px;
+  // text-align: right;
+}
+
+
+/*
+#graph-center-column-container{
+  display: table;
+  width: 100%;
+}
+#graph-center-column{
+  display: table-cell;
+  vertical-align: middle;
+}
+#graph-center-column-content{
+  height: 660px;
+}
+*/
+
+
+#graph-center-column-container{
+  padding-top: 0px;
+}
+
+
+
+
+
+
+.graph-selection{
+  height: 550px;
+  width: 280px;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+//    _____ _____    _       ____ ___  _   _ _____  _    ___ _   _ _____ ____
+//   |_   _| ____|  / \     / ___/ _ \| \ | |_   _|/ \  |_ _| \ | | ____|  _ \
+//     | | |  _|   / _ \   | |  | | | |  \| | | | / _ \  | ||  \| |  _| | |_) |
+//     | | | |___ / ___ \  | |__| |_| | |\  | | |/ ___ \ | || |\  | |___|  _ <
+//     |_| |_____/_/   \_\  \____\___/|_| \_| |_/_/   \_\___|_| \_|_____|_| \_\
+//
+
+.graph-selection{
+  
+
+  .graph-selection-title{
+    text-align: center;
+    min-height: 60px;
+    
+    .opacity(0.9);
+
+    visibility: hidden;
+
+    h4{
+      .subheader-font;
+      font-size: 10px;
+      line-height: 18px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+  }
+  .graph-selection-content{
+
+    position: relative;
+    height: 385px;
+    width: 280px;
+    // background: fade(#fff, 50%);
+
+    background: #94999b;
+
+    &:before{
+      content: "";
+      display: block;
+
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+
+      background: #716762;
+    }
+
+    .graph-selection-tea{
+      position: relative;
+    }
+
+  }
+  .graph-selection-instructions{
+    text-align: center;
+    padding-top: 30px;
+
+    .fa{
+      font-size: 16px;
+      line-height: 20px;
+      .opacity(0.6);
+
+      position: relative;
+      top: 1px;
+    }
+    h4{
+      .subheader-font;
+      font-size: 10px;
+      line-height: 18px;
+      //letter-spacing: 0.08em;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+
+      padding-top: 6px;
+      .opacity(0.6);
+    }
+  }
+}
+
+
+
+
+
+//    _____ _____    _
+//   |_   _| ____|  / \
+//     | | |  _|   / _ \
+//     | | | |___ / ___ \
+//     |_| |_____/_/   \_\
+//
+
+
+
+.graph-selection-tea-slider{
+  position: relative;
+  height: 385px;
+  width: 280px;
+  overflow: hidden;
+
+}
+
+.graph-selection-tea{
+  position: relative;
+  height: 385px;
+  width: 280px;
+  // min-height: 385px;
+  
+  .display-inline-block;
+
+
+  padding-left: 33px;
+  padding-right: 33px;
+  padding-top: 49px;
+  padding-bottom: 49px;
+
+
+  /*
+  .graph-selection-tea-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: #94999b;
+
+    &:after{
+      content: "";
+      display: block;
+
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+
+      background: #716762;
+    }
+  }
+  */
+
+
+  h2, p, .price, .tea-detail{
+    position: relative;
+  }
+
+
+  h2{
+    // .header-font;
+    .header-font-02;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+
+    margin-bottom: 11px;
+    
+  }
+  .price{
+    .subheader-font;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 0.08em;
+
+    margin-bottom: 11px;
+  }
+
+  .tea-copy-content{
+    .body-font;
+    // font-size: 12px;
+    font-size: 11px;
+    font-size: 11.5px;
+    //line-height: 19px;
+    line-height: 18px;
+    letter-spacing: 0.03em;
+
+    p{
+      .body-font;
+      // font-size: 12px;
+      font-size: 11px;
+      font-size: 11.5px;
+      //line-height: 19px;
+      line-height: 18px;
+      letter-spacing: 0.03em;
+    }
+  }
+
+  .tea-copy-content{
+    margin-bottom: 13px;
+  }
+  .tea-detail{
+    margin-bottom: 14px;
+  }
+
+  .square-cta{
+    // margin-top: 13px;
+    margin-top: 5px;
+  }
+  .arrow-cta{
+    margin-top: 5px;
+  }
+
+
+
+}
+
+
+@media only screen and (max-height: 768px) {
+  .graph-selection-tea,
+  .graph-selection .graph-selection-content{
+    height: 385px - 20px;
+  }
+  .graph-selection-tea{
+    padding-top: 49px - 20px;
+    // padding-top: 41px - 10px;
+  }
+}
+@media only screen and (max-height: 668px) {
+  .graph-selection-tea,
+  .graph-selection .graph-selection-content{
+    height: 385px - 40px;
+  }
+  .graph-selection-tea{
+    padding-top: 49px - 30px;
+    //padding-top: 33px - 10px;
+  }
+}
+
+
+
+
+//    _____ _____    _         _    _   _ ___ __  __    _  _____ ___ ___  _   _
+//   |_   _| ____|  / \       / \  | \ | |_ _|  \/  |  / \|_   _|_ _/ _ \| \ | |
+//     | | |  _|   / _ \     / _ \ |  \| || || |\/| | / _ \ | |  | | | | |  \| |
+//     | | | |___ / ___ \   / ___ \| |\  || || |  | |/ ___ \| |  | | |_| | |\  |
+//     |_| |_____/_/   \_\ /_/   \_\_| \_|___|_|  |_/_/   \_\_| |___\___/|_| \_|
+//
+
+
+
+// animate out
+.graph-selection-tea{
+
+  h2{
+    .text-fade-out;
+    .ddd8;
+    .opacity(0);
+  }
+  .price{
+    .text-fade-out;
+    .ddd6;
+    .opacity(0);
+  }
+  .tea-copy-content{
+    .text-fade-out;
+    .ddd5;
+    .opacity(0);
+  }
+  .tea-detail-01{
+    .text-fade-out;
+    .ddd3;
+    .opacity(0);
+  }
+  .tea-detail-02{
+    .text-fade-out;
+    .ddd1;
+    .opacity(0);
+  }
+  .square-cta{
+    .text-fade-out;
+    .ddd0;
+    .opacity(0);
+  }
+  .arrow-cta{
+    .text-fade-out;
+    .ddd0;
+    .opacity(0);
+  }
+}
+
+
+// animate in
+.graph-selection-tea.animate-in{
+  h2{
+    .text-fade-in;
+    .dd1;
+  }
+  .price{
+    .text-fade-in;
+    .dd3;
+  }
+  .tea-copy-content{
+    .text-fade-in;
+    .dd4;
+  }
+  .tea-detail-01{
+    .text-fade-in;
+    .dd6;
+  }
+  .tea-detail-02{
+    .text-fade-in;
+    .dd8;
+  }
+  .square-cta{
+    .text-fade-in;
+    .dd9;
+  }
+  .arrow-cta{
+    .text-fade-in;
+    .dd9;
+  }
+}
+
+/*
+// animate in
+.graph-selection-tea.re-animate-in{
+  h2{
+    .text-no-fade;
+    .dd1;
+  }
+  .price{
+    .text-no-fade;
+    .dd3;
+  }
+  .tea-copy-content{
+    .text-no-fade;
+    .dd4;
+  }
+  .tea-detail-01{
+    .text-no-fade;
+    .dd6;
+  }
+  .tea-detail-02{
+    .text-no-fade;
+    .dd8;
+  }
+  .square-cta{
+    .text-no-fade;
+    .dd9;
+  }
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+//     ____ _____ _   _ _____ _____ ____
+//    / ___| ____| \ | |_   _| ____|  _ \
+//   | |   |  _| |  \| | | | |  _| | |_) |
+//   | |___| |___| |\  | | | | |___|  _ <
+//    \____|_____|_| \_| |_| |_____|_| \_\
+//
+
+
+
+#combination-graph-01,
+#combination-graph-02,
+#combination-graph-03,
+#combination-graph-04{
+  position: relative;
+}
+
+#combination-graph-svg-container{
+  width: 100%;
+  height: 600px;
+
+  position: relative;
+}
+
+#combination-graph-svg{
+  width: 600px;
+  height: 600px;
+
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  margin-left: -300px;
+}
+
+
+
+#combination-graph-label{
+  //.graph-label;
+
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  margin-left: -300px;
+
+  .opacity(0);
+
+  .graph-label-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+  }
+}
+
+
+
+
+
+
+
+
+#graph-section-center-copy{
+  width: 450px;
+  margin: 0 auto;
+
+  text-align: center;
+
+
+  // margin-top: -27px;
+  margin-top: -10px;
+
+
+  h2{
+    .header-font-02;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+
+    margin-bottom: 8px;
+  }
+
+  p{
+    .body-font;
+    // font-size: 13px;
+    // font-size: 12px;
+    font-size: 11px;
+    font-size: 11.5px;
+    // line-height: 20px;
+    line-height: 18px;
+    letter-spacing: 0.04em;
+  }
+  .cta-container{
+    font-size: 0px;
+    padding-top: 24px;
+
+    .square-cta{
+      margin-left: 10px;
+      margin-right: 10px;
+
+    }
+  }
+}
+
+
+
+
+
+
+#graph-section-center-copy{
+  h2{
+    .opacity(0);
+    .text-fade-out;
+    .dd7;
+  }
+  p{
+    .opacity(0);
+    .text-fade-out;
+    .dd5;
+  }
+  .square-cta-01{
+    .opacity(0);
+    .left-fade-out;
+    .dd1;
+  }
+  .square-cta-02{
+    .opacity(0);
+    .right-fade-out;
+    .dd1;
+  }
+}
+
+#graph-section-center-copy.animate-in{
+  h2{
+    .text-fade-in;
+    .dd1;
+  }
+  p{
+    .text-fade-in;
+    .dd3;
+  }
+  .square-cta-01{
+    .left-fade-in;
+    .dd6;
+  }
+  .square-cta-02{
+    .right-fade-in;
+    .dd6;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//     ____ _____ _   _ _____ ____      _    _
+//    / ___| ____| \ | | ____|  _ \    / \  | |
+//   | |  _|  _| |  \| |  _| | |_) |  / _ \ | |
+//   | |_| | |___| |\  | |___|  _ <  / ___ \| |___
+//    \____|_____|_| \_|_____|_| \_\/_/   \_\_____|
+//
+
+
+
+
+.tea-detail{
+  h4{
+    .subheader-font;
+    font-size: 10px;
+    line-height: 19px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  p{
+    .body-font;
+    // font-size: 12px;
+    font-size: 11px;
+    font-size: 11.5px;
+    //line-height: 19px;
+    line-height: 18px;
+    color: fade(@off-white, 90%);
+
+    .custom-icon{
+      .display-inline-block;
+      position: relative;
+      width: 24px;
+
+      &:after{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      &.steep-icon{
+        &:after{
+          .thermometer-icon;
+          left: 5px - 3px;
+        }
+      }
+      &.time-icon{
+        &:after{
+          .clock-icon;
+          left: -3px;
+        }
+      }
+
+    }
+  }
+
+}

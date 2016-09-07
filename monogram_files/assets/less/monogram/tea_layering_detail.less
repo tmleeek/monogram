@@ -1,0 +1,481 @@
+// thse are temporary...
+
+
+/*
+html#tea-layering-detail-mobile-page{
+  //overflow-x: hidden;
+  //overflow-y: scroll;
+  //
+  overflow: scroll;         // added via js
+}
+*/
+
+body.tea-layering-detail-page{
+  background: @dark-brown;
+}
+
+
+
+
+
+
+
+
+
+//     ____ ____      _    ____  _   _
+//    / ___|  _ \    / \  |  _ \| | | |
+//   | |  _| |_) |  / _ \ | |_) | |_| |
+//   | |_| |  _ <  / ___ \|  __/|  _  |
+//    \____|_| \_\/_/   \_\_|   |_| |_|
+//
+
+
+#tea-layering-detail-graph-section{
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+
+  margin-top: -36px;
+  margin-bottom: -27px;
+}
+#tea-layering-graph-mobile{
+  position: relative;
+
+  #combination-graph-svg-container{
+  }
+
+  #combination-graph-svg{
+    width: 600px * 0.6333;
+    height: 600px * 0.6333;
+    margin-left: -300px * 0.6333;
+  }
+
+
+
+  #combination-graph-label{
+
+    margin-left: -300px * 0.6333;
+
+
+    .graph-label-wood{
+      .icon-image-scale("../images/icons/graph-label-wood.svg", 600 * 0.633, 600 * 0.633);
+    }
+
+    .graph-label-savoury{
+      .icon-image-scale("../images/icons/graph-label-savoury.svg", 600 * 0.633, 600 * 0.633);
+    }
+
+    .graph-label-herbaceous{
+      .icon-image-scale("../images/icons/graph-label-herbaceous.svg", 600 * 0.633, 600 * 0.633);
+    }
+
+    .graph-label-floral{
+      .icon-image-scale("../images/icons/graph-label-floral.svg", 600 * 0.633, 600 * 0.633);
+    }
+
+    .graph-label-nutty{
+      .icon-image-scale("../images/icons/graph-label-nutty.svg", 600 * 0.633, 600 * 0.633);
+    }
+
+    .graph-label-dairy{
+      .icon-image-scale("../images/icons/graph-label-dairy.svg", 600 * 0.633, 600 * 0.633);
+    }
+
+    .graph-label-minerality{
+      .icon-image-scale("../images/icons/graph-label-minerality.svg", 600 * 0.633, 600 * 0.633);
+    }
+
+    .graph-label-citrus{
+      .icon-image-scale("../images/icons/graph-label-citrus.svg", 600 * 0.633, 600 * 0.633);
+    }
+
+    .graph-label-stone-fruit{
+      .icon-image-scale("../images/icons/graph-label-stone-fruit.svg", 600 * 0.633, 600 * 0.633);
+    }
+
+    .graph-label-red-fruit{
+      .icon-image-scale("../images/icons/graph-label-red-fruit.svg", 600 * 0.633, 600 * 0.633);
+    }
+
+    .graph-label-sweet{
+      .icon-image-scale("../images/icons/graph-label-sweet.svg", 600 * 0.633, 600 * 0.633);
+    }
+
+    
+
+  }
+
+
+}
+
+
+
+
+
+//     ____ ___  ______   __
+//    / ___/ _ \|  _ \ \ / /
+//   | |  | | | | |_) \ V /
+//   | |__| |_| |  __/ | |
+//    \____\___/|_|    |_|
+//
+
+#tea-layering-detail-copy-section{
+  padding-top: 20px;
+  // padding-bottom: 39px;
+  padding-bottom: 9px;
+  position: relative;
+
+  #page-tea-layering-detail-next-arrow,
+  #page-tea-layering-detail-prev-arrow{
+    position: absolute;
+    .fa;
+    font-size: 19px;
+    line-height: 30px;
+    text-align: center;
+
+    width: 30px;
+    height: 30px;
+
+  }
+
+
+  #page-tea-layering-detail-next-arrow{
+    &:before{
+      content: "\f105";
+    }
+
+    top: 63px;
+    right: 3px;
+  }
+  #page-tea-layering-detail-prev-arrow{
+    &:before{
+      content: "\f104";
+    }
+
+    top: 63px;
+    left: 3px;
+  }
+
+
+  .button-container-01,
+  .button-container-02{
+    text-align: center;
+    font-size: 0;
+    .square-cta{
+      margin: 0 5px;
+    }
+  }
+
+  .button-container-01{
+    margin-bottom: 20px;
+  }
+    
+}
+
+
+
+
+
+
+
+.graph-selection-tea-mobile{
+
+  text-align: center;
+  color: @off-white;
+    
+  padding-bottom: 34px;
+  // padding-bottom: 4px;
+
+  .graph-selection-title{
+    text-align: center;
+
+    margin-bottom: 4px;
+    .opacity(0.9);
+
+    
+    h4{
+      .subheader-font;
+      font-size: 10px;
+      line-height: 18px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+  }
+
+  .graph-selection-name{
+    margin-bottom: 13px;
+
+    h2{
+      .header-font-02;
+      font-size: 16px;
+      line-height: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+
+      .display-inline-block;
+    }
+    .plus-sign{
+      .header-font-02;
+      font-size: 15px;
+      line-height: 20px;
+
+      .display-inline-block;
+
+      margin-right: 5px;
+    }
+    #graph-selection-name-01{
+      margin-bottom: 3px;
+    }
+  }
+
+  .tea-copy-content{
+    .body-font;
+    // font-size: 12px;
+    font-size: 11px;
+    font-size: 11.5px;
+    //line-height: 19px;
+    line-height: 18px;
+    letter-spacing: 0.03em;
+
+
+    padding-left: 40px;
+    padding-right: 40px;
+
+    p{
+      .body-font;
+      // font-size: 12px;
+      font-size: 11px;
+      font-size: 11.5px;
+      //line-height: 19px;
+      line-height: 18px;
+      letter-spacing: 0.03em;
+    }
+  }
+
+  
+
+} // .graph-selection-tea-mobile
+
+
+
+
+
+
+
+
+//       _    _   _ ___ __  __    _  _____ ___ ___  _   _
+//      / \  | \ | |_ _|  \/  |  / \|_   _|_ _/ _ \| \ | |
+//     / _ \ |  \| || || |\/| | / _ \ | |  | | | | |  \| |
+//    / ___ \| |\  || || |  | |/ ___ \| |  | | |_| | |\  |
+//   /_/   \_\_| \_|___|_|  |_/_/   \_\_| |___\___/|_| \_|
+//
+
+
+
+
+#tea-layering-detail-copy-section{
+
+  .graph-selection-tea-mobile{
+    
+    .graph-selection-name{
+      #graph-selection-name-01{
+        .opacity(0);
+        .text-fade-out;
+        .dd7;
+      }
+      #graph-selection-name-02{
+        .opacity(0);
+        .text-fade-out;
+        .dd6;
+      }
+    }
+    .tea-copy-content{
+      p{
+        .opacity(0);
+        .text-fade-out;
+        .dd4;
+      }
+    }
+    
+  }
+  
+  .button-container{
+     .square-cta-01{
+        .opacity(0);
+        .left-fade-out;
+        .dd2;
+     }
+     .square-cta-02{
+        .opacity(0);
+        .right-fade-out;
+        .dd2;
+     }
+     .square-cta-03{
+        .opacity(0);
+        .left-fade-out;
+        .dd1;
+     }
+     .square-cta-04{
+        .opacity(0);
+        .right-fade-out;
+        .dd1;
+     }
+  }
+}
+
+
+#tea-layering-detail-copy-section.animate-in{
+
+  .graph-selection-tea-mobile{
+    
+    .graph-selection-name{
+      #graph-selection-name-01{
+        .text-fade-in;
+        .dd1;
+      }
+      #graph-selection-name-02{
+        .text-fade-in;
+        .dd2;
+      }
+    }
+    .tea-copy-content{
+      p{
+        .text-fade-in;
+        .dd3;
+      }
+    }
+    
+  }
+
+  .button-container{
+     .square-cta-01{
+        .left-fade-in;
+        .dd6;
+     }
+     .square-cta-02{
+        .right-fade-in;
+        .dd6;
+     }
+     .square-cta-03{
+        .left-fade-in;
+        .dd7;
+     }
+     .square-cta-04{
+        .right-fade-in;
+        .dd7;
+     }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+//    _____ ___   ___ _____ _____ ____
+//   |  ___/ _ \ / _ \_   _| ____|  _ \
+//   | |_ | | | | | | || | |  _| | |_) |
+//   |  _|| |_| | |_| || | | |___|  _ <
+//   |_|   \___/ \___/ |_| |_____|_| \_\
+//
+
+
+
+#tea-layering-detail-footer-mobile-fixed{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+}
+
+
+#tea-layering-detail-footer-mobile-spacer{
+  position: relative;
+  height: 30px;
+  // background: @dark-brown;
+  
+
+  .step-01,
+  .step-02,
+  .step-03,
+  .step-04,
+  .step-05,
+  .step-06{
+    height: 5px;
+    background: @dark-brown;
+  }
+
+  .step-01{ .opacity(0.1); }
+  .step-02{ .opacity(0.2); }
+  .step-03{ .opacity(0.3); }
+  .step-04{ .opacity(0.5); }
+  .step-05{ .opacity(0.7); }
+  .step-06{ .opacity(0.9); }
+
+
+}
+#tea-layering-detail-footer-mobile{
+  position: relative;
+}
+
+#tea-layering-detail-footer-mobile-fixed,
+#tea-layering-detail-footer-mobile{
+  /*
+  
+  height: 20
+  */
+ 
+  background: #736863;
+
+  height: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+ 
+  .page-tea-layering-detail-next-suggestion-container{
+    text-align: center;
+  }
+  .page-tea-layering-detail-other-container{
+    text-align: center;
+  }
+
+  .page-tea-layering-detail-next-suggestion-btn,
+  .page-tea-layering-detail-other-btn{
+    display: block;
+    .fa{
+      font-size: 16px;
+      line-height: 30px;
+      color: @off-white;
+
+      .display-inline-block;
+    }
+    h4{
+      .subheader-font-2;
+      font-size: 10px;
+      line-height: 30px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: @off-white;
+
+      .display-inline-block;
+    }
+  }
+
+  .page-tea-layering-detail-next-suggestion-btn{
+    .fa{
+      margin-right: 7px;
+    }
+  }
+  .page-tea-layering-detail-other-btn{
+    .fa{
+      font-size: 14px;
+      margin-right: 8px;
+    }
+  }
+
+} // #tea-layering-detail-footer-mobile
