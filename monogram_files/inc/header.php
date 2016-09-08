@@ -10,15 +10,14 @@
 <header id="desktop-header" class="hidden-sm hidden-xs">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-2">
-        <div id="desktop-header-logo-container">
-          <a href="#">
-            <span id="desktop-header-logo"></span>
-            <span id="monogram-name"></span>
-          </a>
-        </div>
-      </div><!--
-      --><div class="col-md-7">
+      <div class="col-md-9">
+        <div id="desktop-header-right-container">
+          <div id="desktop-header-logo-container">
+            <a href="#">
+              <span id="desktop-header-logo"></span>
+              <span id="monogram-name"></span>
+            </a>
+          </div>
           <div id="desktop-header-menu-conainer">
             <ul>
               <li><a href="#">About</a></li>
@@ -27,6 +26,7 @@
               <li><a href="#">Contact</a></li>
             </ul>
           </div>
+        </div>
       </div>
       <div class="col-md-3">
         
