@@ -4805,6 +4805,43 @@ a:focus {
   transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   color: #464646;
 }
+h1 {
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 25px;
+  letter-spacing: 0.1em;
+}
+h2 {
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+h3 {
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.08em;
+}
+h5 {
+  font-family: 'Brandon Grotesque Regular', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+}
+p {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+}
 .thermometer-icon {
   display: block;
   width: 10px;
@@ -7624,23 +7661,12 @@ body.tea-layering-detail-page {
   width: 61%;
 }
 #home-section-1 .content-container .center-content h1 {
-  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 34px;
-  line-height: 34px;
-  letter-spacing: 0.01em;
   color: #ffffff;
+  margin-top: 93px;
   text-transform: uppercase;
   text-align: center;
-  margin-top: 93px;
 }
 #home-section-1 .content-container .center-content p {
-  font-family: 'Domine', "Times New Roman", Times, serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
-  line-height: 25px;
   color: #ffffff;
   text-align: center;
   margin-top: 22px;
@@ -7792,28 +7818,55 @@ body.tea-layering-detail-page {
   color: #bcc4b9;
 }
 #home-section-2 .container-fluid .box h2 {
-  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 7px;
 }
 #home-section-2 .container-fluid .box h5 {
+  text-transform: uppercase;
+}
+.tea-layering-page {
+  background: #7b706b;
+}
+#tea-layering-section-1 #heading-text h1 {
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+#tea-layering-section-1 #heading-text p {
+  text-align: center;
+  color: #ffffff;
+  width: 65%;
+  margin: 0 auto;
+}
+#tea-layering-section-1 #tea-layering-table {
+  margin-top: 60px;
+}
+#tea-layering-section-1 #tea-layering-table #table-header .table-header-content {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+#tea-layering-section-1 #tea-layering-table #table-header .table-header-content span {
+  color: #ffffff;
+  text-transform: uppercase;
   font-family: 'Brandon Grotesque Regular', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 8px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-#home-section-2 .container-fluid .box p {
-  font-family: 'Domine', "Times New Roman", Times, serif;
-  font-style: normal;
-  font-weight: normal;
   font-size: 10px;
-  line-height: 20px;
+  line-height: 10px;
+  letter-spacing: 0.05em;
+}
+#tea-layering-section-1 #tea-layering-table #table-header hr.top {
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+#tea-layering-section-1 #tea-layering-table #table-header hr.bottom {
+  margin-top: 13px;
+  margin-bottom: 0px;
+}
+#tea-layering-section-1 #tea-layering-table .table-contents .table-content {
+  padding-left: 40px;
+  padding-right: 40px;
 }
 /*
 @import "monogram/page_experience.less";

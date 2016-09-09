@@ -54,11 +54,7 @@
 
   <script>
   $(document).ready(function(){
-    $("#home-section-2").hide();
-    $('#scroll-down').on("click", function(e){
-      $("#home-section-1").slideUp();
-      $("#home-section-2").slideDown();
-    });  
+    
   });
   </script>
 
