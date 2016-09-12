@@ -43,29 +43,19 @@
   <script type="text/javascript" src="assets/libs/hammer/hammer.min.js"></script>
   
   <!-- Google Closure -->
-  <!-- <script type="text/javascript" src="assets/libs/google-closure/closure-library/closure/goog/base.js"></script>
+  <script type="text/javascript" src="assets/libs/google-closure/closure-library/closure/goog/base.js"></script>
   <script type="text/javascript" src="assets/js/google-closure-dependency-list.js"></script>
   <script type="text/javascript">
     goog.require('monogram.page.Home');
   </script>
   <script type="text/javascript">
     window.monogram_page = new monogram.page.Home({});
-  </script> -->
-
-  <script>
-  $(document).ready(function(){
-    $("#home-section-2").hide();
-    $('#scroll-down').on("click", function(e){
-      $("#home-section-1").slideUp();
-      $("#home-section-2").slideDown();
-    });  
-  });
-  </script>
-
+  </script> 
+  
 <?php else: ?>
 
   <!-- Optimized Version -->
-  <!-- <script type="text/javascript" src="assets/js_minified/head.load.min.js"></script>
+  <script type="text/javascript" src="assets/js_minified/head.load.min.js"></script>
   <script type="text/javascript">
     var PAGE_LIBRARY        = "assets/js_minified/page-libraries.min.js";
     var PAGE_JS             = "assets/js_minified/page-default.min.js";
@@ -83,6 +73,6 @@
     });
 
     // start preload
-  </script> -->
+  </script>
 
 <?php endif; ?>

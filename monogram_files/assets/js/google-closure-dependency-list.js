@@ -42,5 +42,7 @@ goog.addDependency('../../../../../js/monogram/component/CombinationGraphItem04.
 goog.addDependency('../../../../../js/monogram/component/CombinationGraphItem04Mobile.js', ['monogram.component.CombinationGraphItem04Mobile'], ['goog.events.Event', 'goog.events.EventTarget']);
 goog.addDependency('../../../../../js/monogram/component/GraphSection.js', ['monogram.component.GraphSection'], ['goog.events.Event', 'goog.events.EventTarget', 'manic.ui.Mouse', 'monogram.component.CombinationGraph04', 'monogram.component.CombinationGraphDataItem']);
 goog.addDependency('../../../../../js/monogram/component/MobileGraphSection.js', ['monogram.component.MobileGraphSection'], ['goog.events.Event', 'goog.events.EventTarget', 'monogram.component.CombinationGraph04', 'monogram.component.CombinationGraphDataItem']);
+goog.addDependency('../../../../../js/monogram/graph/GraphDataItem.js', ['monogram.graph.GraphDataItem'], ['goog.events.Event', 'goog.events.EventTarget']);
 goog.addDependency('../../../../../js/monogram/page/Default.js', ['monogram.page.Default'], ['goog.events.Event', 'goog.events.EventTarget', 'manic.page.Page']);
+goog.addDependency('../../../../../js/monogram/page/Home.js', ['monogram.page.Home'], ['monogram.page.Default']);
 goog.addDependency('../../../../../js/monogram/page/TeaLayeringDetail.js', ['monogram.page.TeaLayeringDetail'], ['monogram.component.GraphSection', 'monogram.component.MobileGraphSection', 'monogram.page.Default']);

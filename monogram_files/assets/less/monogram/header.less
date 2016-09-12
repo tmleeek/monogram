@@ -201,7 +201,13 @@
   width: 100%;
   height: 90px;
   background: transparent;
+
+  .container-fluid{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
+
 
 .desktop-header-spacer{
   height: 90px;
@@ -214,12 +220,27 @@
 }
 
 
+
+
+
+#desktop-header-right-container{
+  font-size: 0;
+  margin-left: -4px;
+}
+
+
 #desktop-header-logo-container{
-  display: block;
+  .display-inline-block;
+  //display: block;
   text-align: left;
   
-  padding-top: 10px;
-  padding-left: 10px;
+  // padding-top: 10px;
+  padding-top: 11px;
+  // padding-left: 10px;
+
+  margin-right: 38px;
+
+  font-size: 0;
 
   #desktop-header-logo{
     // margin: 0 auto;
@@ -229,6 +250,7 @@
   }
 
   #monogram-name {
+    margin-left: 16px;
     .header-desktop-logo-name;
     display: inline-block;
     vertical-align: middle;
@@ -237,10 +259,16 @@
 
 #desktop-header-menu-conainer {
   padding-top: 20px;
+  .display-inline-block;
+
   ul {
+    font-size: 0;
+
     li {
       display: inline-block;
-      padding-right: 40px;      
+      //padding-right: 40px;
+      margin-right: 38px;
+
       a {
         .subheader-font-2;
         font-size: 11px;
@@ -284,16 +312,20 @@
 #desktop-header-cart{
   padding-top: 25px;
   text-align: right;
-  padding-right: 11px;
+  //padding-right: 11px;
+  padding-right: 4px;
 
   font-size: 0;
   margin-left: -100px;
 
   ul {
+    font-size: 0;
+
     li {
       display: inline-block;
       vertical-align: middle;
       margin-right: 25px;
+
       &:last-child {
         margin-right: 0px;
       }
@@ -304,19 +336,22 @@
         letter-spacing: 0.08em;
         color: @white;
         text-transform: uppercase;
+
+        position: relative;
+        top: 2px;
       }
     }
   }
 
   .fa{
-    font-size: 19px;
+    font-size: 21px;
     color: @off-white;
     .opacity(0.9);
 
     .display-inline-block;
     vertical-align: middle;
 
-    margin-left: 23px;
+    // margin-left: 23px;
 
     &:focus,
     &:hover{

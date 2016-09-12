@@ -9,7 +9,9 @@ goog.require('monogram.page.Default');
  */
 monogram.page.Home = function(options, element) {
   monogram.page.Default.call(this, options, element);
-  this.options = $.extend(this.options, monogram.page.Home.DEFAULT, options);  
+  this.options = $.extend(this.options, monogram.page.Home.DEFAULT, options);
+
+  console.log('this is the home page');
 
 };
 goog.inherits(monogram.page.Home, monogram.page.Default);
@@ -38,6 +40,18 @@ monogram.page.Home.prototype.init = function() {
 
 
 
+  $("#home-intro-section").hide();
+
+  /*
+  $("#home-tea-selection-section").hide();
+  $('#scroll-down').on("click", function(e){
+    $("#home-intro-section").slideUp();
+    $("#home-tea-selection-section").slideDown();
+  });
+  */
+
+  this.create_desktop_home_tea_item();
+
   this.update_page_layout();    // this is called after the initial create to update the layout
 
 };
@@ -55,6 +69,18 @@ monogram.page.Home.prototype.init = function() {
 //
 
 
+
+monogram.page.Home.prototype.create_desktop_home_tea_item = function(){
+
+  $('.home-tea-item').mouseover(function(event){
+    var target = $(event.currentTarget);
+
+    $('.home-tea-item').addClass('dark-version');
+
+    target.removeClass('dark-version');
+
+  }.bind(this));
+};
 
 
 //    __  __  ___  ____ ___ _     _____

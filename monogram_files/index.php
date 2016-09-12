@@ -17,8 +17,7 @@
   	</head>
   	<body class="<?php echo $body_class; ?>">
 	
-		<!-- <div id="page-preloader">
-    	</div> -->
+		  <div id="page-preloader"></div>
 
     	<div id="page-wrapper">
       		<div id="page-wrapper-content">
