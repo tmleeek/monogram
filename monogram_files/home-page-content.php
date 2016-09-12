@@ -12,12 +12,12 @@
 		</div>
 	</div>
 	<div class="down-arrow-container">
-		<a href="#" id="scroll-down">
+		<a href="#selection" id="scroll-down">
 			<i class="fa fa-long-arrow-down"></i>
 			<span>Scroll down</span>
 		</a>
 	</div>
-</article>
+</article> <!-- #home-intro-section -->
 
 <article id="home-tea-selection-section">
 	<div class="desktop-header-spacer"></div>
@@ -31,6 +31,11 @@
 				</h2>
 				<h5>Green Tea</h5>
 				<p>Lively and Floral</p>
+
+				<div class="cta-container">
+					<a href="#graph/cherry-japonais" class="arrow-cta">add to cart</a>
+					<a href="#graph/cherry-japonais" class="arrow-cta">see tea layering</a>
+				</div>
 			</div>
 		</div>
 		<div class="home-tea-item" data-id="uji-sencha" style="background-color: #acc6c9;">
@@ -144,5 +149,26 @@
 
 	</div> <!-- #home-tea-item-container -->
 
+	
+</article> <!-- #home-tea-selection-section -->
+
+
+
+<article id="home-graph-section">
+	<div class="space100"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+					<a href="#selection"></a>
+			</div>
+		</div>
+	</div>
 	
 </article>

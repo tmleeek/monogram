@@ -5038,20 +5038,21 @@ p {
   -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-}
-.arrow-cta:before {
-  position: absolute;
-  display: block;
-  content: '';
-  border-bottom: 1px solid #f1efee;
-  border-bottom: 1px solid rgba(241, 239, 238, 0.3);
-  bottom: 7px;
-  left: 0px;
-  width: 100%;
-  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-  -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-  -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  /*
+  &:before{
+    position: absolute;
+    display: block;
+    content: '';
+    border-bottom: 1px solid @off-white;
+    border-bottom: 1px solid fade(@off-white, 30%);
+
+    bottom: 7px;
+    left: 0px;
+    width: 100%;
+
+    .transition-in(0.3s);
+  }
+  */
 }
 .arrow-cta:after {
   font-size: 8px;
@@ -5063,10 +5064,11 @@ p {
 .arrow-cta:focus,
 .arrow-cta:hover {
   color: rgba(241, 239, 238, 0.5);
-}
-.arrow-cta:focus:before,
-.arrow-cta:hover:before {
-  border-bottom: 1px solid rgba(241, 239, 238, 0.1);
+  /*
+    &:before{
+      border-bottom: 1px solid fade(@off-white, 10%);
+    }
+    */
 }
 /*
 #desktop-header{
@@ -7950,6 +7952,14 @@ body.tea-layering-detail-page {
   font-weight: normal;
   font-size: 10px;
   line-height: 20px;
+}
+#home-graph-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #7b706b;
 }
 .tea-layering-page {
   overflow: visible;

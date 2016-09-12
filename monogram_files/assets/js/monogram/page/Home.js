@@ -41,6 +41,7 @@ monogram.page.Home.prototype.init = function() {
 
 
   $("#home-intro-section").hide();
+  $("#home-graph-section").hide();
 
   /*
   $("#home-tea-selection-section").hide();
@@ -57,7 +58,22 @@ monogram.page.Home.prototype.init = function() {
 };
 
 
+//    ____ ___ ____  ____  _        _ __   __
+//   |  _ \_ _/ ___||  _ \| |      / \\ \ / /
+//   | | | | |\___ \| |_) | |     / _ \\ V /
+//   | |_| | | ___) |  __/| |___ / ___ \| |
+//   |____/___|____/|_|   |_____/_/   \_\_|
+//
 
+monogram.page.Home.prototype.display_intro_section = function(){
+  console.log('display_intro_section');
+};
+monogram.page.Home.prototype.display_selection_section = function(){
+  console.log('display_selection_section');
+};
+monogram.page.Home.prototype.display_graph_section = function(){
+  console.log('display_graph_section');
+};
 
 
 
@@ -120,6 +136,16 @@ monogram.page.Home.prototype.update_page_layout = function() {
 monogram.page.Home.prototype.scroll_to_target = function(str_param, str_param_2, str_param_3) {
   monogram.page.Home.superClass_.scroll_to_target.call(this, str_param);
 
+
+  if (str_param == 'intro') {
+    this.display_intro_section();
+  } else if (str_param == 'selection') {
+    this.display_selection_section();
+  } else if (str_param == 'graph') {
+    this.display_graph_section();
+  }
+
+
   /*
   // Mice venue landing - on hash change
   if(manic.IS_MOBILE == true && this.is_mice_venue_landing == true){
@@ -144,6 +170,8 @@ monogram.page.Home.prototype.scroll_to_target = function(str_param, str_param_2,
  * @inheritDoc
  */
 monogram.page.Home.prototype.on_scroll_to_no_target = function(){
+
+  this.display_intro_section();
 
   // Mice venue landing
   /*
