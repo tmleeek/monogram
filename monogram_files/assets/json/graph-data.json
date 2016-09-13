@@ -1,0 +1,424 @@
+[
+  {
+    "id": "uji-sencha",
+    "Name": "Uji Sencha",
+    "type": "Green Tea",
+
+    "color": "#AAC6C9",
+    "color-02": "#AAC6C9",
+    "flavor-array":
+    [
+      "floral--orchid": 2,
+      "creamy--white-chocolate": 3,
+      "marine--seaweed": 7,
+      "mineral--mushroom": 2,
+      "citrus--grapefruit": 2,
+      "sweet--vanilla": 3,
+      "herbaceous--cut-grass": 7
+    ],
+    "flavor-complexity": 13,
+    "point-array":
+    [
+
+    ],
+    "pair-array":
+    [
+      "shiso-mint",
+      "saffronais",
+      "provencal-herbs"
+    ],
+
+    "description": "Single origin tea from Uji Prefecture, one of Japan's oldest tea growing regions. Expressive forward notes reminiscent of marine and cut grass trailing with a umami finish.",
+    "steeping-time": 3,
+    "steeping-temperature": "80cel"
+  },
+
+
+
+
+  {
+    "id": "cherry-japonais",
+    "Name": "Cherry Japonais",
+    "type": "Green Tea",
+
+    "color": "#ECBEC9",
+    "color-02": "#ECBEC9",
+    "flavor-array":
+    [
+      "floral--cherry-blossom": 8,
+      "creamy--vanilla": 1,
+      "marine--seaweed": 4,
+      "mineral--mushroom": 2,
+      "citrus--grapefruit": 2,
+      "fruity--cherry": 6,
+      "sweet--rosehip": 4,
+      "herbaceous--cut-grass": 1
+    ],
+    "flavor-complexity": 15,
+    "point-array":
+    [
+
+    ],
+    "pair-array":
+    [
+      "rose-of-ariana",
+      "saffronais",
+      "provencal-herbs"
+    ],
+    "description": "Japanese Yabukita jade-green tea with pickled Cherry Blossoms. A lively floral emsemble of sweet hay, cherry blossoms with fruity accord.",
+    "steeping-time": 3,
+    "steeping-temperature": "80cel"
+
+  },
+
+
+
+
+  {
+    "id": "jasmine-silk-pearls",
+    "Name": "Jasmine Silk Pearls",
+    "type": "Green Tea",
+
+    "color": "#97AAC0",
+    "color-02": "#97AAC0",
+    "flavor-array":
+    [
+      "floral--jasmine": 8,
+      "creamy--vanilla": 2,
+      "marine--dried-kelp": 3,
+      "sweet--chestnut": 4
+    ],
+    "flavor-complexity": 8,
+    "point-array":
+    [
+
+    ],
+    "pair-array":
+    [
+      "rose-of-ariana",
+      "saffronais"
+    ],
+    "description": "Downy silvery-green tea from Fujian province of China, hand crafted by artisans and infused with graceful notes of midnight jasmine.",
+    "steeping-time": 4,
+    "steeping-temperature": "90cel"
+
+  },
+
+
+
+
+  {
+    "id": "milky-oolong",
+    "Name": "Milky Oolong",
+    "type": "Oolong Tea",
+
+    "color": "#",
+    "color-02": "#",
+    "flavor-array":
+    [
+      "floral--hyacinth": 8,
+      "creamy--vanilla": 7,
+      "marine--mineral": 2,
+      "sweet--butterscotch": 4,
+    ],
+    "flavor-complexity": 9,
+    "point-array":
+    [
+
+    ],
+    "pair-array":
+    [
+      "saffronais",
+      "provencal-herbs"
+    ],
+    "description": "Full-bodied lightly oxidised Oolong with notes of flowery hyacinth wrapped in a voluptous aura of roasted almond and velvety vanilla.",
+    "steeping-time": 4,
+    "steeping-temperature": "90cel"
+
+  },
+
+
+
+
+  {
+    "id": "lapsang-florale",
+    "Name": "Lapsang Florale",
+    "type": "Black Tea",
+
+    "color": "#",
+    "color-02": "#",
+    "flavor-array":
+    [
+      "floral--rose": 7,
+      "mineral--mushroom": 2,
+      "citrus--orange": 7,
+      "fruity--promegranate": 3,
+      "sweet--molasses": 5,
+      "wood--smoke": 7
+    ],
+    "flavor-complexity": 15,
+    "point-array":
+    [
+
+    ],
+    "pair-array":
+    [
+      "rose-of-ariana",
+      "saffronais"
+    ],
+    "description": "Prelude of light smoked pine black tea with accords of citrus and floral profusion, all wrapped up in comforting and warm experience.",
+    "steeping-time": 4,
+    "steeping-temperature": "lesstb"
+
+  },
+
+
+
+
+  {
+    "id": "kashmere",
+    "Name": "Kashmere",
+    "type": "Black Tea",
+
+    "color": "#",
+    "color-02": "#",
+    "flavor-array":
+    [
+      "floral--jasmine": 9,
+      "floral--lily": 8,
+      "floral--rose": 7,
+      "mineral--earth": 4,
+      "fruity--lychee": 6,
+      "sweet--vanilla": 4,
+      "wood--oak": 2
+    ],
+    "flavor-complexity": 12,
+    "point-array":
+    [
+
+    ],
+    "pair-array":
+    [
+      "rose-of-ariana",
+      "shiso-mint",
+      "saffronais"
+    ],
+    "description": "Complex, full-bodied black tea from Qi Men village, Anhui province of China. Sweet lychee with blossoming notes of Arabian Jasmine, Madonna Lily and Persian Rose.",
+    "steeping-time": 4,
+    "steeping-temperature": "lesstb"
+
+  },
+
+
+
+
+  {
+    "id": "earl-grey-neroli",
+    "Name": "Earl Grey Neroli",
+    "type": "Black Tea",
+
+    "color": "#",
+    "color-02": "#",
+    "flavor-array":
+    [
+      "floral--orange-blossom": 7,
+      "citrus--bergamot": 8,
+      "fruity--orange": 4,
+      "sweet--biscuit": 2,
+      "wood--pine": 2
+    ],
+    "flavor-complexity": 10,
+    "point-array":
+    [
+
+    ],
+    "pair-array":
+    [
+      "rose-of-ariana",
+      "shiso-mint",
+      "provencal-herbs"
+    ],
+    "description": "High grown Darjeeling expressed in crisp notes of Italian Bergamot and powdery Orange Flowers. Spirited and elegant, the brew whispers of finesse and sophistication.",
+    "steeping-time": 4,
+    "steeping-temperature": "lesstb"
+
+  },
+
+
+
+
+  {
+    "id": "morning-english",
+    "Name": "Morning English",
+    "type": "Black Tea",
+
+    "color": "#",
+    "color-02": "#",
+    "flavor-array":
+    [
+      "floral--dried-flowers": 2,
+      "mineral--earth": 3,
+      "sweet--bread": 7,
+      "wood--new-wood-cedar": 6
+    ],
+    "flavor-complexity": 8,
+    "point-array":
+    [
+
+    ],
+    "pair-array":
+    [
+      "rose-of-ariana",
+      "shiso-mint"
+    ],
+    "description": "Soulful, brisk black tea blend from Assam, Ceylon and Africa with rich tannins. Gentle notes of tobacco and stone fruits enliven the brew.",
+    "steeping-time": 4,
+    "steeping-temperature": "lesstb"
+
+  },
+
+
+
+
+  {
+    "id": "rose-of-ariana",
+    "Name": "Rose of Ariana",
+    "type": "Herbal Tisane",
+
+    "color": "#",
+    "color-02": "#",
+    "flavor-array":
+    [
+      "floral--rose": 10,
+      "sweet--rosehip": 2,
+      "herbaceous--green-stem": 7
+    ],
+    "flavor-complexity": 9,
+    "point-array":
+    [
+
+    ],
+    "pair-array":
+    [
+      "lapsang-florale",
+      "morning-english",
+      "earl-grey-neroli",
+      "kashmere",
+      "cherry-japonais",
+      "jasmine-silk-pearls"
+    ],
+    "description": "Sublime powdery aroma of Ispahan Rose reminiscent of fresh cut flowers. Each nubian bud is carefully hand-picked and air-dried to preserve its delicate aroma and colour.",
+    "steeping-time": 5,
+    "steeping-temperature": "lesstb"
+
+  },
+
+
+
+
+  {
+    "id": "shiso-mint",
+    "Name": "Shiso Mint",
+    "type": "Herbal Tisane",
+
+    "color": "#",
+    "color-02": "#",
+    "flavor-array":
+    [
+      "mineral--earth": 5,
+      "wood--pine": 4,
+      "herbaceous--peppermint": 9,
+      "herbaceous--shiso": 8
+    ],
+    "flavor-complexity": 9,
+    "point-array":
+    [
+
+    ],
+    "pair-array":
+    [
+      "morning-english",
+      "earl-grey-neroli",
+      "kashmere",
+      "uji-sencha"
+    ],
+    "description": "Aromatic and complex Arabian Mint with Japanese Shiso. Rich, minty and earthy, the brew exudes a fresh and balsamic character that is assuring and confident.",
+    "steeping-time": 5,
+    "steeping-temperature": "lesstb"
+
+  },
+
+
+
+
+  {
+    "id": "saffronais",
+    "Name": "Saffronais",
+    "type": "Herbal Tisane",
+
+    "color": "#",
+    "color-02": "#",
+    "flavor-array":
+    [
+      "floral--saffron": 6,
+      "marine--iodine": 2,
+      "mineral--earth": 2,
+      "sweet--honey": 4,
+      "herbaceous--bamboo": 5
+    ],
+    "flavor-complexity": 9,
+    "point-array":
+    [
+
+    ],
+    "pair-array":
+    [
+      "lapsang-florale",
+      "kashmere",
+      "uji-sencha",
+      "cherry-japonais",
+      "jasmine-silk-pearls",
+      "milky-oolong"
+    ],
+    "description": "Refined notes of Spanish Saffron, Tibetan Safflower and Bamboo Leaves. Comforting and intimate, the brew displays notes of bittersweet honey with undertones of forest.",
+    "steeping-time": 5,
+    "steeping-temperature": "lesstb"
+
+  },
+
+
+
+
+  {
+    "id": "provencal-herbs",
+    "Name": "Provencal Herbs",
+    "type": "Herbal Tisane",
+
+    "color": "#",
+    "color-02": "#",
+    "flavor-array":
+    [
+      "floral--lavender": 5,
+      "citrus--lemon": 10,
+      "herbaceous--eucalyptus": 6,
+      "herbaceous--peppery": 3
+    ],
+    "flavor-complexity": 9,
+    "point-array":
+    [
+
+    ],
+    "pair-array":
+    [
+      "earl-grey-neroli",
+      "uji-sencha",
+      "cherry-japonais",
+      "milky-oolong"
+    ],
+    "description": "Brimming with sparkling notes of Lemon Verbena, Lemon Myrtle, Eucalyptus, Lavender and Rosemary. Soothing and relaxing, the brew displays fresh notes of citrus and dry hay.",
+    "steeping-time": 5,
+    "steeping-temperature": "lesstb"
+
+  }
+
+]

@@ -67,12 +67,77 @@ monogram.graph.GraphDataItem.DEFAULT = {
  */
 monogram.graph.GraphDataItem.EVENT_01 = '';
 
+
+
 /**
  * CLASSNAME Event Constant
  * @const
- * @type {string}
+ * @type {Array}
  */
-monogram.graph.GraphDataItem.EVENT_02 = '';
+monogram.graph.GraphDataItem.FLAVOR_NAME_ARRAY = [
+  'floral': 'Floral',
+  'creamy': 'Creamy',
+  'marine': 'Marine',
+  'mineral': 'Mineral',
+  'citrus': 'Citrus',
+  'fruity': 'Fruity',
+  'sweet': 'Sweet',
+  'wood': 'Wood',
+  'herbaceous': 'Herbaceous'
+];
+
+/**
+ * CLASSNAME Event Constant
+ * @const
+ * @type {Array}
+ */
+monogram.graph.GraphDataItem.SUBFLAVOR_NAME_ARRAY = [
+  'floral--cherry-blossom':'Cherry Blossom',
+  'floral--dried-flowers':'Dried Flowers',
+  'floral--hyacinth':'Hyacinth',
+  'floral--jasmine':'Jasmine',
+  'floral--lavender':'Lavender',
+  'floral--lily':'Lily',
+  'floral--orange-blossom':'Orange Blossom',
+  'floral--orchid':'Orchid',
+  'floral--rose':'Rose',
+  'floral--saffron':'Saffron',
+  'creamy--vanilla':'Vanilla',
+  'creamy--white-chocolate':'White Chocolate',
+  'marine--dried-kelp':'Dried Kelp',
+  'marine--iodine':'Iodine',
+  'marine--mineral':'Mineral',
+  'marine--seaweed':'Seaweed',
+  'mineral--earth':'Earth',
+  'mineral--mushroom':'Mushroom',
+  'citrus--bergamot':'Bergamot',
+  'citrus--grapefruit':'Grapefruit',
+  'citrus--lemon':'Lemon',
+  'citrus--orange':'Orange',
+  'fruity--cherry':'Cherry',
+  'fruity--lychee':'Lychee',
+  'fruity--orange':'Orange',
+  'fruity--promegranate':'Promegranate',
+  'sweet--biscuit':'Biscuit',
+  'sweet--bread':'Bread',
+  'sweet--butterscotch':'Butterscotch',
+  'sweet--chestnut':'Chestnut',
+  'sweet--honey':'Honey',
+  'sweet--molasses':'Molasses',
+  'sweet--rosehip':'Rosehip',
+  'sweet--vanilla':'Vanilla',
+  'wood--new-wood-cedar':'New Wood Cedar',
+  'wood--oak':'Oak',
+  'wood--pine':'Pine',
+  'wood--smoke':'Smoke',
+  'herbaceous--bamboo':'Bamboo',
+  'herbaceous--cut-grass':'Cut Grass',
+  'herbaceous--eucalyptus':'Eucalyptus',
+  'herbaceous--green-stem':'Green Stem',
+  'herbaceous--peppermint':'Peppermint',
+  'herbaceous--shiso':'Shiso',
+  'herbaceous--peppery':'Peppery'
+];
 
 
 //    ____  ____  _____     ___  _____ _____
