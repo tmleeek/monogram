@@ -18,6 +18,7 @@ goog.require('manic.ui.VideoContainer');
 goog.require('manic.ui.ExpandContainer');
 goog.require('manic.ui.ImageContainerPadding');
 goog.require('manic.ui.TextPadding');
+goog.require('manic.ui.SpanSplit');
 
 
 /**
@@ -52,6 +53,11 @@ manic.page.Page = function(options) {
 
   this.device_width = 100;
   this.device_height = 100;
+
+
+  this.page_hash_01 = null;
+  this.page_hash_02 = null;
+  this.page_hash_03 = null;
 
 
   /**
@@ -194,6 +200,7 @@ manic.page.Page.prototype.init = function(){
   this.create_dropdown();
   this.create_form_check();
 
+  this.create_span_split();
 
   this.create_scrolltarget();
   this.create_scroll_down_cta();
@@ -288,11 +295,14 @@ manic.page.Page.prototype.initial_scroll_to_target = function() {
 
     console.log('str_array2: ');
     console.log(str_array);
+    console.log(str_array.length)
 
     if(str_array.length == 1){
       this.scroll_to_target(str_array[0]);
 
     } else if(str_array.length == 2){
+      console.log('here...');
+      console.log(str_array[1])
       this.scroll_to_target(str_array[0], str_array[1]);
 
     } else if(str_array.length == 3){
@@ -302,6 +312,8 @@ manic.page.Page.prototype.initial_scroll_to_target = function() {
       console.log('manic.page.Page: there is too many slashes in the hash url...');
       this.scroll_to_target(str_array[0], str_array[1], str_array[2]);
     }
+  } else {
+    this.on_scroll_to_no_target();
   }
 
 };
@@ -314,6 +326,12 @@ manic.page.Page.prototype.initial_scroll_to_target = function() {
  * @param  {String=} str_param_3
  */
 manic.page.Page.prototype.scroll_to_target = function(str_param, str_param_2, str_param_3) {
+
+
+  this.page_hash_01 = str_param;
+  this.page_hash_02 = str_param_2;
+  this.page_hash_03 = str_param_3;
+
 
 
   /*
@@ -516,7 +534,18 @@ manic.page.Page.prototype.create_scroll_down_cta = function(){
 };
 
 
+manic.page.Page.prototype.create_span_split = function(){
+  var arr = $('.manic-span-split');
+  var item = null;
+  var span_split = null;
 
+  for (var i = 0, l=arr.length; i < l; i++) {
+    item = $(arr[i]);
+
+    span_split = new manic.ui.SpanSplit({}, item);
+  }
+  
+};
 
 
 

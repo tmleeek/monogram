@@ -36,6 +36,7 @@ monogram.component.GraphSection = function(options, element) {
   this.custom_mouse = null;
 
 
+  this.is_enabled = false;
   
 
   /**
@@ -170,7 +171,7 @@ monogram.component.GraphSection = function(options, element) {
 
   // this.display_combination('earl-grey-neroli','shiso-mint');
   // TweenMax.delayedCall(2, this.display_combination, ['earl-grey-neroli','shiso-mint'], this);
-  TweenMax.delayedCall(2, this.display_combination, ['earl-grey-neroli','shiso-mint'], this);
+  // TweenMax.delayedCall(2, this.display_combination, ['earl-grey-neroli','shiso-mint'], this);    // THIS IS THE ANIMATE IN
   
 
 
@@ -538,12 +539,29 @@ monogram.component.GraphSection.prototype.sample_method_calls = function() {
 //
 
 
+
+monogram.component.GraphSection.prototype.enable_graph = function(){
+  this.is_enabled = true;
+};
+
+monogram.component.GraphSection.prototype.disable_graph = function(){
+  this.is_enabled = false;
+};
+
+
 monogram.component.GraphSection.prototype.display_combination = function(main_str, child_str) {
 
   if(this.is_child_of_main(main_str, child_str)){
 
     var target_main_index = this.get_index_of_main_str(main_str);
     var target_sub_index = this.get_index_of_child_str(child_str, target_main_index);
+
+    if(target_main_index == -1){
+      target_main_index = 0;
+      target_sub_index = 0;
+    } else if(target_sub_index == -1){
+      target_sub_index = 0;
+    }
 
     // console.log('target_main_index: ' + target_main_index);
     // console.log('target_sub_index: ' + target_sub_index);
@@ -563,7 +581,8 @@ monogram.component.GraphSection.prototype.display_combination_index = function(m
 
   // console.log('display_combination_index');
 
-  if (goog.isDefAndNotNull(this.main_array[main_index_param]) &&
+  if (this.is_enabled == true &&
+      goog.isDefAndNotNull(this.main_array[main_index_param]) &&
       goog.isDefAndNotNull(this.sub_array[main_index_param]) &&
       goog.isDefAndNotNull(this.sub_array[main_index_param][child_index_param])){
 

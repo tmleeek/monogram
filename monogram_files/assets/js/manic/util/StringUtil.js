@@ -59,3 +59,20 @@ manic.util.StringUtil.is_email = function(email_param) {
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email_param);
 };
+
+
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+
+/**
+ * static class function
+ *
+ * check if email or not
+ *
+ * @type {function}
+ * @param {string} str_param string to check
+ * @return {string}
+ */
+manic.util.StringUtil.trim = function(str_param){
+  return str_param.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+}

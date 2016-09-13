@@ -1,0 +1,197 @@
+
+@-webkit-keyframes slideDown100 {
+  0% { .transform( translate3d(0,-100%,0) ); }
+  100% { .transform( translate3d(0,0,0) ); }
+}
+@keyframes slideDown100 {
+  0% { .transform( translate3d(0,-100%,0) ); }
+  100% { .transform( translate3d(0,0,0) ); }
+}
+
+@-webkit-keyframes slideUp100 {
+  0% { .transform( translate3d(0,0,0) ); }
+  100% { .transform( translate3d(0,-100%,0) ); }
+}
+@keyframes slideUp100 {
+  0% { .transform( translate3d(0,0,0) ); }
+  100% { .transform( translate3d(0,-100%,0) ); }
+}
+
+
+
+
+@-webkit-keyframes slideDown100Negative {
+  0% { .transform( translate3d(0,100%,0) ); }
+  100% { .transform( translate3d(0,0,0) ); }
+}
+@keyframes slideDown100Negative {
+  0% { .transform( translate3d(0,100%,0) ); }
+  100% { .transform( translate3d(0,0,0) ); }
+}
+
+@-webkit-keyframes slideUp100Negative {
+  0% { .transform( translate3d(0,0,0) ); }
+  100% { .transform( translate3d(0,100%,0) ); }
+}
+@keyframes slideUp100Negative {
+  0% { .transform( translate3d(0,0,0) ); }
+  100% { .transform( translate3d(0,100%,0) ); }
+}
+
+
+@slide_animation_time: 1s;
+@slide_animation_delay: 0.5s;
+
+
+
+
+//    ___ _   _ _____ ____   ___       _    _   _ ___ __  __    _  _____ _____   ___ _   _
+//   |_ _| \ | |_   _|  _ \ / _ \     / \  | \ | |_ _|  \/  |  / \|_   _| ____| |_ _| \ | |
+//    | ||  \| | | | | |_) | | | |   / _ \ |  \| || || |\/| | / _ \ | | |  _|    | ||  \| |
+//    | || |\  | | | |  _ <| |_| |  / ___ \| |\  || || |  | |/ ___ \| | | |___   | || |\  |
+//   |___|_| \_| |_| |_| \_\\___/  /_/   \_\_| \_|___|_|  |_/_/   \_\_| |_____| |___|_| \_|
+//
+
+
+#home-intro-section.animate-in{
+  
+  
+
+  #home-intro-logo{
+    // .text-fade-in;
+    // .dd1;
+  }
+  .content-container {
+    h1{
+      // .text-fade-in;
+      // .dd3;
+
+      span{
+        .alpha-in-fast;
+      }
+    }
+    p{
+      // .text-fade-in;
+      // .dd4;
+
+      span{
+        .alpha-in-fast;
+      }
+    }
+  }
+  .down-arrow-container {
+    .alpha-in;
+    .dd12;
+  }
+}
+
+
+
+
+#home-intro-section.slide-animate-in{
+  /*
+  -webkit-animation: slideDown100 @slide_animation_time both cubic-bezier(0.7,0,0.3,1);
+  animation: slideDown100 @slide_animation_time both cubic-bezier(0.7,0,0.3,1);
+  .animationDelay(@slide_animation_delay);
+  */
+  -webkit-animation: plainAlphaIn @slide_animation_time both cubic-bezier(0.7,0,0.3,1);
+  animation: plainAlphaIn @slide_animation_time both cubic-bezier(0.7,0,0.3,1);
+  .animationDelay(@slide_animation_delay);
+}
+
+
+
+
+
+//    ___ _   _ _____ ____   ___       _    _   _ ___ __  __    _  _____ _____    ___  _   _ _____
+//   |_ _| \ | |_   _|  _ \ / _ \     / \  | \ | |_ _|  \/  |  / \|_   _| ____|  / _ \| | | |_   _|
+//    | ||  \| | | | | |_) | | | |   / _ \ |  \| || || |\/| | / _ \ | | |  _|   | | | | | | | | |
+//    | || |\  | | | |  _ <| |_| |  / ___ \| |\  || || |  | |/ ___ \| | | |___  | |_| | |_| | | |
+//   |___|_| \_| |_| |_| \_\\___/  /_/   \_\_| \_|___|_|  |_/_/   \_\_| |_____|  \___/ \___/  |_|
+//
+
+#home-intro-section{
+  
+
+
+  #home-intro-logo{
+    //.text-fade-out;
+    //.ddd1;
+    //.opacity(0);
+  }
+  .content-container {
+    h1{
+      //.text-fade-out;
+      //.ddd5;
+      //.opacity(0);
+
+      span{
+        .alpha-out-fast;
+        .opacity(0);
+      }
+    }
+    p{
+      //.text-fade-out;
+      //.ddd3;
+      //.opacity(0);
+
+      span{
+        .alpha-out-fast;
+        .opacity(0);
+      }
+    }
+  }
+  .down-arrow-container {
+    .alpha-out;
+  }
+}
+
+#home-intro-section{
+  -webkit-animation: slideUp100 @slide_animation_time both cubic-bezier(0.7,0,0.3,1);
+  animation: slideUp100 @slide_animation_time both cubic-bezier(0.7,0,0.3,1);
+  .animationDelay(@slide_animation_delay);
+  
+}
+
+
+//    ____  _____ _     _____ ____ _____ ___ ___  _   _      _    _   _ ___ __  __    _  _____ _____   ___ _   _
+//   / ___|| ____| |   | ____/ ___|_   _|_ _/ _ \| \ | |    / \  | \ | |_ _|  \/  |  / \|_   _| ____| |_ _| \ | |
+//   \___ \|  _| | |   |  _|| |     | |  | | | | |  \| |   / _ \ |  \| || || |\/| | / _ \ | | |  _|    | ||  \| |
+//    ___) | |___| |___| |__| |___  | |  | | |_| | |\  |  / ___ \| |\  || || |  | |/ ___ \| | | |___   | || |\  |
+//   |____/|_____|_____|_____\____| |_| |___\___/|_| \_| /_/   \_\_| \_|___|_|  |_/_/   \_\_| |_____| |___|_| \_|
+//
+
+
+#home-tea-selection-section.slide-animate-in{
+  -webkit-animation: slideDown100Negative @slide_animation_time both cubic-bezier(0.7,0,0.3,1);
+  animation: slideDown100Negative @slide_animation_time both cubic-bezier(0.7,0,0.3,1);
+  .animationDelay(@slide_animation_delay);
+}
+
+//    ____  _____ _     _____ ____ _____ ___ ___  _   _      _    _   _ ___ __  __    _  _____ _____    ___  _   _ _____
+//   / ___|| ____| |   | ____/ ___|_   _|_ _/ _ \| \ | |    / \  | \ | |_ _|  \/  |  / \|_   _| ____|  / _ \| | | |_   _|
+//   \___ \|  _| | |   |  _|| |     | |  | | | | |  \| |   / _ \ |  \| || || |\/| | / _ \ | | |  _|   | | | | | | | | |
+//    ___) | |___| |___| |__| |___  | |  | | |_| | |\  |  / ___ \| |\  || || |  | |/ ___ \| | | |___  | |_| | |_| | | |
+//   |____/|_____|_____|_____\____| |_| |___\___/|_| \_| /_/   \_\_| \_|___|_|  |_/_/   \_\_| |_____|  \___/ \___/  |_|
+//
+
+#home-tea-selection-section{
+  -webkit-animation: slideUp100Negative @slide_animation_time both cubic-bezier(0.7,0,0.3,1);
+  animation: slideUp100Negative @slide_animation_time both cubic-bezier(0.7,0,0.3,1);
+  .animationDelay(@slide_animation_delay);
+}
+
+
+//     ____ ____      _    ____  _   _      _    _   _ ___ __  __    _  _____ _____   ___ _   _
+//    / ___|  _ \    / \  |  _ \| | | |    / \  | \ | |_ _|  \/  |  / \|_   _| ____| |_ _| \ | |
+//   | |  _| |_) |  / _ \ | |_) | |_| |   / _ \ |  \| || || |\/| | / _ \ | | |  _|    | ||  \| |
+//   | |_| |  _ <  / ___ \|  __/|  _  |  / ___ \| |\  || || |  | |/ ___ \| | | |___   | || |\  |
+//    \____|_| \_\/_/   \_\_|   |_| |_| /_/   \_\_| \_|___|_|  |_/_/   \_\_| |_____| |___|_| \_|
+//
+
+//     ____ ____      _    ____  _   _      _    _   _ ___ __  __    _  _____ _____    ___  _   _ _____
+//    / ___|  _ \    / \  |  _ \| | | |    / \  | \ | |_ _|  \/  |  / \|_   _| ____|  / _ \| | | |_   _|
+//   | |  _| |_) |  / _ \ | |_) | |_| |   / _ \ |  \| || || |\/| | / _ \ | | |  _|   | | | | | | | | |
+//   | |_| |  _ <  / ___ \|  __/|  _  |  / ___ \| |\  || || |  | |/ ___ \| | | |___  | |_| | |_| | | |
+//    \____|_| \_\/_/   \_\_|   |_| |_| /_/   \_\_| \_|___|_|  |_/_/   \_\_| |_____|  \___/ \___/  |_|
+//

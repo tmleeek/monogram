@@ -1,6 +1,10 @@
 goog.provide('monogram.page.Home');
 goog.require('monogram.page.Default');
 
+goog.require('monogram.component.GraphSection');
+goog.require('monogram.component.MobileGraphSection');
+
+
 /**
  * The MICE constructor
  * @inheritDoc
@@ -12,6 +16,17 @@ monogram.page.Home = function(options, element) {
   this.options = $.extend(this.options, monogram.page.Home.DEFAULT, options);
 
   console.log('this is the home page');
+
+
+  this.intro_section =          $("#home-intro-section");
+  this.tea_selection_section =  $("#home-tea-selection-section");
+  this.graph_section_element =          $("#home-graph-section");
+
+
+
+
+  this.graph_section = null;
+  this.mobile_graph_section = null;
 
 };
 goog.inherits(monogram.page.Home, monogram.page.Default);
@@ -36,12 +51,24 @@ monogram.page.Home.DEFAULT = {
  */
 monogram.page.Home.prototype.init = function() {
 
-  monogram.page.Home.superClass_.init.call(this);  
+  monogram.page.Home.superClass_.init.call(this);
+
+
+  this.create_intro();
+  this.create_tea_selection();
+  this.create_graph();
+
+  
 
 
 
-  $("#home-intro-section").hide();
-  $("#home-graph-section").hide();
+
+
+
+  // this.display_intro_section();
+
+  // $("#home-intro-section").hide();
+  // $("#home-graph-section").hide();
 
   /*
   $("#home-tea-selection-section").hide();
@@ -50,12 +77,16 @@ monogram.page.Home.prototype.init = function() {
     $("#home-tea-selection-section").slideDown();
   });
   */
+ 
 
-  this.create_desktop_home_tea_item();
 
   this.update_page_layout();    // this is called after the initial create to update the layout
 
 };
+
+
+
+
 
 
 //    ____ ___ ____  ____  _        _ __   __
@@ -67,12 +98,131 @@ monogram.page.Home.prototype.init = function() {
 
 monogram.page.Home.prototype.display_intro_section = function(){
   console.log('display_intro_section');
+
+  this.intro_section.addClass('slide-animate-in');
+  this.tea_selection_section.removeClass('slide-animate-in');
+  this.graph_section_element.removeClass('slide-animate-in');
+
+  //this.intro_section.removeClass('animate-in');
+  this.tea_selection_section.removeClass('animate-in');
+  this.graph_section_element.removeClass('animate-in');
+
+  // 0.5 waiting time & 0.5 half of slide transition
+  TweenMax.delayedCall(1, this.display_intro_section_delayed, [], this);
+  TweenMax.killDelayedCallsTo(this.display_selection_section_delayed);
+  TweenMax.killDelayedCallsTo(this.display_graph_section_delayed);
+
+  TweenMax.to(this.intro_section,0.5,           {autoAlpha:1});
+  TweenMax.to(this.tea_selection_section,0.5,   {autoAlpha:0});
+  TweenMax.to(this.graph_section_element,0.5,           {autoAlpha:0});
+
+  if(this.graph_section != null){
+    this.graph_section.disable_graph();
+  }
 };
+
+monogram.page.Home.prototype.display_intro_section_delayed = function(){
+  this.intro_section.addClass('animate-in');
+};
+
+
+
 monogram.page.Home.prototype.display_selection_section = function(){
   console.log('display_selection_section');
+
+  this.intro_section.removeClass('slide-animate-in');
+  this.tea_selection_section.addClass('slide-animate-in');
+  this.graph_section_element.removeClass('slide-animate-in');
+
+  this.intro_section.removeClass('animate-in');
+  //this.tea_selection_section.removeClass('animate-in');
+  this.graph_section_element.removeClass('animate-in');  
+
+
+  // 0.5 waiting time & 0.5 half of slide transition
+  TweenMax.delayedCall(1, this.display_selection_section_delayed, [], this);
+  TweenMax.killDelayedCallsTo(this.display_intro_section_delayed);
+  TweenMax.killDelayedCallsTo(this.display_graph_section_delayed);
+
+  TweenMax.to(this.intro_section,0.5,           {autoAlpha:0});
+  TweenMax.to(this.tea_selection_section,0.5,   {autoAlpha:1});
+  TweenMax.to(this.graph_section_element,0.5,           {autoAlpha:0});
+
+  if(this.graph_section != null){
+    this.graph_section.disable_graph();
+  }
 };
+monogram.page.Home.prototype.display_selection_section_delayed = function(){
+  this.tea_selection_section.addClass('animate-in');
+};
+
+
+
 monogram.page.Home.prototype.display_graph_section = function(){
   console.log('display_graph_section');
+
+  this.intro_section.removeClass('slide-animate-in');
+  this.tea_selection_section.removeClass('slide-animate-in');
+  this.graph_section_element.addClass('slide-animate-in');
+
+  this.intro_section.removeClass('animate-in');
+  this.tea_selection_section.removeClass('animate-in');
+  //this.graph_section_element.removeClass('animate-in');  
+  
+  // 0.5 waiting time & 0.5 half of slide transition
+  TweenMax.delayedCall(1, this.display_graph_section_delayed, [], this);
+  TweenMax.killDelayedCallsTo(this.display_selection_section_delayed);
+  TweenMax.killDelayedCallsTo(this.display_intro_section_delayed);
+
+
+  TweenMax.to(this.intro_section,0.5,           {autoAlpha:0});
+  TweenMax.to(this.tea_selection_section,0.5,   {autoAlpha:0});
+  TweenMax.to(this.graph_section_element,0.5,           {autoAlpha:1});
+
+
+  if(this.graph_section != null){
+    this.graph_section.enable_graph();
+
+    
+    if (goog.isDefAndNotNull(this.page_hash_02) == false) {
+      
+      this.graph_section.display_combination_index(0,0);
+
+    } else if ( goog.isDefAndNotNull(this.page_hash_02) == true && 
+                goog.isDefAndNotNull(this.page_hash_03) == false) {
+
+      var target_main_index = this.graph_section.get_index_of_main_str(this.page_hash_02)
+
+      if(target_main_index != -1){
+        this.graph_section.display_combination_index(target_main_index,0);
+      } else {
+        this.graph_section.display_combination_index(0,0);
+      }
+
+    } else if ( goog.isDefAndNotNull(this.page_hash_02) == true && 
+                goog.isDefAndNotNull(this.page_hash_03) == true) {
+
+      this.graph_section.display_combination(this.page_hash_02, this.page_hash_03);
+
+    }
+    
+
+  }
+
+};
+monogram.page.Home.prototype.display_graph_section_delayed = function(){
+  this.graph_section_element.addClass('animate-in');
+
+  
+  console.log('this.page_hash_01: ' + this.page_hash_01);
+  console.log('this.page_hash_02: ' + this.page_hash_02);
+  console.log('this.page_hash_03: ' + this.page_hash_03);
+  
+
+  if(this.graph_section != null){
+    
+  }
+
 };
 
 
@@ -86,17 +236,83 @@ monogram.page.Home.prototype.display_graph_section = function(){
 
 
 
-monogram.page.Home.prototype.create_desktop_home_tea_item = function(){
 
-  $('.home-tea-item').mouseover(function(event){
-    var target = $(event.currentTarget);
 
-    $('.home-tea-item').addClass('dark-version');
 
-    target.removeClass('dark-version');
+monogram.page.Home.prototype.create_intro = function() {
+  /**
+   * @type {manic.ui.SpanSplit}
+   */
+  var h1_split = $("#home-intro-section .center-content h1").data('manic.ui.SpanSplit');
+  h1_split.add_numbered_classes('in-dd');
+  h1_split.add_numbered_classes_reverse('out-dd');
+
+
+  var arr = $("#home-intro-section .center-content p");
+  var item = null;
+
+  for (var i = 0, l=arr.length; i < l; i++) {
+    item = $(arr[i]);
+    /**
+     * @type {manic.ui.SpanSplit}
+     */
+    var p_split = item.data('manic.ui.SpanSplit');
+    p_split.add_numbered_classes('in-ddd', 7 + (i*3));
+    p_split.add_numbered_classes_reverse('out-ddd');
+    
+  }
+};
+
+
+monogram.page.Home.prototype.create_tea_selection = function() {
+
+
+
+  $('#home-tea-item-container').mouseleave(function(event){
+
+    $('#home-tea-item-container .home-tea-item')
+      .removeClass('selected')
+      .removeClass('not-selected')
 
   }.bind(this));
+
+
+  var arr = $('#home-tea-item-container .home-tea-item');
+  var item = null;
+
+  for (var i = 0, l=arr.length; i < l; i++) {
+    item = $(arr[i]);
+    item.mouseover(function(event){
+
+      var target = $(event.currentTarget);
+
+      $('#home-tea-item-container .home-tea-item').removeClass('selected');
+      $('#home-tea-item-container .home-tea-item').addClass('not-selected');
+
+      target.addClass('selected');
+      target.removeClass('not-selected');
+
+    }.bind(this));
+  }
+
 };
+
+
+monogram.page.Home.prototype.create_graph = function() {
+
+  if ($('#graph-section').length != 0) {
+    this.graph_section = new monogram.component.GraphSection({}, $('#graph-section'));
+  }
+
+
+  if ($('#tea-layering-detail-graph-section').length != 0) {
+    this.mobile_graph_section = new monogram.component.MobileGraphSection({}, $('#tea-layering-detail-graph-section'));
+  }
+
+};
+
+
+
 
 
 //    __  __  ___  ____ ___ _     _____
@@ -126,6 +342,65 @@ monogram.page.Home.prototype.update_page_layout = function() {
 
   monogram.page.Home.superClass_.update_page_layout.call(this);  
 
+
+
+
+  // TEMP GRAPH UPDATE START
+  
+  var target_height = $(window).height() - 90;
+  console.log('target_height: ' + target_height);
+
+  $('#graph-column-01-container').css({
+    'height': target_height + 'px'
+  });
+  $('#graph-column-02-container').css({
+    'height': target_height + 'px'
+  });
+
+  $('#graph-center-column-container').css({
+    'height': target_height + 'px'
+  });
+
+
+
+  var space_extra = 600 - 768;
+  var target_height = $(window).height() - space_extra - 351 - 31;
+
+  
+
+  // var target_zoom = target_height / 600;
+  var target_zoom = target_height / 600;
+
+  $('#combination-graph-04').css({
+    'zoom': target_zoom
+  });
+
+
+  var mobile_target_zoom = 0.6333;
+  var mobile_target_height = (mobile_target_zoom * 600);
+  $('#tea-layering-detail-graph-section').css({
+   'height': mobile_target_height + 'px'
+  });
+
+   
+  
+  if( manic.IS_MOBILE == true || manic.IS_TABLET_PORTRAIT == true){
+    this.html.addClass('overflow-version');
+  } else {
+    this.html.removeClass('overflow-version');
+  }
+  
+
+
+  // TEMP GRAPH UPDATE END
+  
+
+
+
+
+
+
+
 };
 
 
@@ -134,8 +409,7 @@ monogram.page.Home.prototype.update_page_layout = function() {
  * @inheritDoc
  */
 monogram.page.Home.prototype.scroll_to_target = function(str_param, str_param_2, str_param_3) {
-  monogram.page.Home.superClass_.scroll_to_target.call(this, str_param);
-
+  monogram.page.Home.superClass_.scroll_to_target.call(this, str_param, str_param_2, str_param_3);
 
   if (str_param == 'intro') {
     this.display_intro_section();
@@ -171,6 +445,8 @@ monogram.page.Home.prototype.scroll_to_target = function(str_param, str_param_2,
  */
 monogram.page.Home.prototype.on_scroll_to_no_target = function(){
 
+  monogram.page.Home.superClass_.on_scroll_to_no_target.call(this);
+
   this.display_intro_section();
 
   // Mice venue landing
@@ -202,3 +478,6 @@ monogram.page.Home.prototype.on_scroll_to_no_target = function(){
 
 
 goog.exportSymbol('monogram.page.Home', monogram.page.Home);
+
+
+
