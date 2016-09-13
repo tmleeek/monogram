@@ -11,7 +11,7 @@ goog.addDependency('../../../../../js/manic/fullpage/Fullpage.js', ['manic.fullp
 goog.addDependency('../../../../../js/manic/fullpage/Indicator.js', ['manic.fullpage.Indicator'], ['goog.events.Event', 'goog.events.EventTarget']);
 goog.addDependency('../../../../../js/manic/fullpage/Section.js', ['manic.fullpage.Section'], ['goog.events.Event', 'goog.events.EventTarget']);
 goog.addDependency('../../../../../js/manic/google/Map.js', ['manic.google.Map'], ['goog.events.Event', 'goog.events.EventTarget']);
-goog.addDependency('../../../../../js/manic/page/Page.js', ['manic.page.Page'], ['goog.events.Event', 'goog.events.EventTarget', 'goog.userAgent', 'goog.userAgent.product', 'manic', 'manic.ui.Dropdown', 'manic.ui.ExpandContainer', 'manic.ui.FormCheck', 'manic.ui.ImageContainer', 'manic.ui.ImageContainerPadding', 'manic.ui.TextPadding', 'manic.ui.VideoContainer']);
+goog.addDependency('../../../../../js/manic/page/Page.js', ['manic.page.Page'], ['goog.events.Event', 'goog.events.EventTarget', 'goog.userAgent', 'goog.userAgent.product', 'manic', 'manic.ui.Dropdown', 'manic.ui.ExpandContainer', 'manic.ui.FormCheck', 'manic.ui.ImageContainer', 'manic.ui.ImageContainerPadding', 'manic.ui.SpanSplit', 'manic.ui.TextPadding', 'manic.ui.VideoContainer']);
 goog.addDependency('../../../../../js/manic/ui/ComboBox.js', ['manic.ui.ComboBox'], ['goog.events.Event', 'goog.events.EventTarget', 'goog.math.Box', 'goog.ui.ComboBox', 'goog.ui.ComboBoxItem', 'goog.ui.MenuItem']);
 goog.addDependency('../../../../../js/manic/ui/DingMasonry.js', ['manic.ui.DingMasonry', 'manic.ui.DingMasonryItem'], ['goog.events.Event', 'goog.events.EventTarget']);
 goog.addDependency('../../../../../js/manic/ui/Dropdown.js', ['manic.ui.Dropdown'], ['goog.events.Event', 'goog.events.EventTarget', 'goog.math.Box', 'goog.ui.MenuItem', 'goog.ui.Select']);
@@ -24,6 +24,7 @@ goog.addDependency('../../../../../js/manic/ui/LeeMasonry.js', ['manic.ui.LeeMas
 goog.addDependency('../../../../../js/manic/ui/Masonry.js', ['manic.ui.Masonry'], ['goog.events.Event', 'goog.events.EventTarget']);
 goog.addDependency('../../../../../js/manic/ui/Mouse.js', ['manic.ui.Mouse'], ['goog.events.Event', 'goog.events.EventTarget']);
 goog.addDependency('../../../../../js/manic/ui/PanelContainer.js', ['manic.ui.PanelContainer'], ['goog.events.Event', 'goog.events.EventTarget']);
+goog.addDependency('../../../../../js/manic/ui/SpanSplit.js', ['manic.ui.SpanSplit'], ['goog.events.Event', 'goog.events.EventTarget', 'manic.util.StringUtil']);
 goog.addDependency('../../../../../js/manic/ui/TextContainer.js', ['manic.ui.TextContainer'], ['goog.events.Event', 'goog.events.EventTarget']);
 goog.addDependency('../../../../../js/manic/ui/TextPadding.js', ['manic.ui.TextPadding'], ['goog.events.Event', 'goog.events.EventTarget']);
 goog.addDependency('../../../../../js/manic/ui/VideoContainer.js', ['manic.ui.VideoContainer'], ['goog.events.Event', 'goog.events.EventTarget']);

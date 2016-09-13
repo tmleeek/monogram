@@ -1,4 +1,4 @@
-<article id="home-intro-section">
+<article id="home-intro-section" class="animated-section animate-in">
 	<div class="content-container">	
 		<div class="center-content">
 
@@ -6,9 +6,19 @@
 				<div class="home-intro-logo-logo"></div>
 				<div class="home-intro-logo-name"></div>
 			</a>
+			<span></span>
+			<h1 class="manic-span-split">The art of tea layering</h1>
 
-			<h1>The art of tea layering</h1>
-			<p>Excite the palate and discover a world of simplexity tea flavours with Monogram. Exuding class and sophistication, yet playful and dynamic, explore the art of tea layering with every cup. With no two brews tasting the same, curate a personal unique identity with the world’s finest handpicked tea leaves and herbs. Get hands on and experimental with Monogram, layering the silken sachets to harmonious perfection. With each sachet carefully selected to complement each other, half the fun is to discover your very own brew. More importantly, the special bond that comes with each tea layering experience.</p>
+			<div class="intro-copy">
+				<p class="manic-span-split">Excite the palate and discover a world of simplexity tea flavours with Monogram. Exuding class and</p>
+				<p class="manic-span-split">sophistication, yet playful and dynamic, explore the art of tea layering with every cup. With no two brews</p>
+				<p class="manic-span-split">tasting the same, curate a personal unique identity with the world’s finest handpicked tea leaves and herbs.</p>
+				<p class="manic-span-split">Get hands on and experimental with Monogram, layering the silken sachets to harmonious perfection.</p>
+				<p class="manic-span-split">With each sachet carefully selected to complement each other, half the fun is to discover your very own</p>
+				<p class="manic-span-split">brew. More importantly, the special bond that comes with each tea layering experience.</p>
+			</div>
+
+
 		</div>
 	</div>
 	<div class="down-arrow-container">
@@ -19,11 +29,15 @@
 	</div>
 </article> <!-- #home-intro-section -->
 
-<article id="home-tea-selection-section">
+<article id="home-tea-selection-section" class="animated-section">
 	<div class="desktop-header-spacer"></div>
 
 	<div id="home-tea-item-container">
-		<div class="home-tea-item" data-id="cherry-japonais" style="background-color: #edbec9;">
+
+
+
+		<div class="home-tea-item" data-id="milky-oolong">
+			<div class="home-tea-item-bg" style="background-color: #eebec7;"></div>
 			<div class="home-tea-item-text">
 				<h2>
 					<span style="color: #edbec9;">cherry</span>
@@ -31,14 +45,16 @@
 				</h2>
 				<h5>Green Tea</h5>
 				<p>Lively and Floral</p>
-
 				<div class="cta-container">
-					<a href="#graph/cherry-japonais" class="arrow-cta">add to cart</a>
-					<a href="#graph/cherry-japonais" class="arrow-cta">see tea layering</a>
+					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+					<a href="#graph/milky-oolong" class="arrow-cta">see tea layering</a>
 				</div>
 			</div>
+			<div class="home-tea-item-cover"></div>
 		</div>
-		<div class="home-tea-item" data-id="uji-sencha" style="background-color: #acc6c9;">
+
+		<div class="home-tea-item" data-id="milky-oolong">
+			<div class="home-tea-item-bg" style="background-color: #abc6ca;"></div>
 			<div class="home-tea-item-text">
 				<h2>
 					<span style="color: #acc6c9;">uji</span>
@@ -46,9 +62,16 @@
 				</h2>
 				<h5>Green Tea</h5>
 				<p>Expressive and Umami</p>
+				<div class="cta-container">
+					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+					<a href="#graph/milky-oolong" class="arrow-cta">see tea layering</a>
+				</div>
 			</div>
+			<div class="home-tea-item-cover"></div>
 		</div>
-		<div class="home-tea-item" data-id="jasmine-silk-pearls" style="background-color: #bbdce5;">
+
+		<div class="home-tea-item" data-id="milky-oolong">
+			<div class="home-tea-item-bg" style="background-color: #a1b2ca;"></div>
 			<div class="home-tea-item-text">
 				<h2>
 					<span style="color: #bbdce5;">jasmine</span>
@@ -56,9 +79,16 @@
 				</h2>
 				<h5>Green Tea</h5>
 				<p>Graceful and Floral</p>
+				<div class="cta-container">
+					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+					<a href="#graph/milky-oolong" class="arrow-cta">see tea layering</a>
+				</div>
 			</div>
+			<div class="home-tea-item-cover"></div>
 		</div>
-		<div class="home-tea-item" data-id="milky-oolong" style="background-color: #e3c19e;">
+
+		<div class="home-tea-item" data-id="milky-oolong">
+			<div class="home-tea-item-bg" style="background-color: #d9d1c3;"></div>
 			<div class="home-tea-item-text">
 				<h2>
 					<span style="color: #e3c19e;">milky</span>
@@ -66,9 +96,16 @@
 				</h2>
 				<h5>Oolong Tea</h5>
 				<p>Voluptuous and Velvety</p>
+				<div class="cta-container">
+					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+					<a href="#graph/milky-oolong" class="arrow-cta">see tea layering</a>
+				</div>
 			</div>
+			<div class="home-tea-item-cover"></div>
 		</div>
-		<div class="home-tea-item" data-id="lapsang-florale" style="background-color: #b8b8dd;">
+
+		<div class="home-tea-item" data-id="earl-grey-neroli">
+			<div class="home-tea-item-bg" style="background-color: #c7b4e3;"></div>
 			<div class="home-tea-item-text">
 				<h2>
 					<span style="color: #b8b8dd;">lapsang</span>
@@ -76,18 +113,32 @@
 				</h2>
 				<h5>Black Tea</h5>
 				<p>Confident and Citrus</p>
+				<div class="cta-container">
+					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+					<a href="#graph/earl-grey-neroli" class="arrow-cta">see tea layering</a>
+				</div>
 			</div>
+			<div class="home-tea-item-cover"></div>
 		</div>
-		<div class="home-tea-item" data-id="kashmere" style="background-color: #f1a693;">
+
+		<div class="home-tea-item" data-id="earl-grey-neroli">
+			<div class="home-tea-item-bg" style="background-color: #f0a693;"></div>
 			<div class="home-tea-item-text">
 				<h2>
 					<span style="color: #f1a693;">kashmere<sup>tm</sup></span>
 				</h2>
 				<h5>Black Tea</h5>
 				<p>Blossoming and Sweet</p>
+				<div class="cta-container">
+					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+					<a href="#graph/earl-grey-neroli" class="arrow-cta">see tea layering</a>
+				</div>
 			</div>
-			</div>
-		<div class="home-tea-item" data-id="earl-grey-neroli" style="background-color: #c0cdd5;">
+			<div class="home-tea-item-cover"></div>
+		</div>
+
+		<div class="home-tea-item" data-id="earl-grey-neroli">
+			<div class="home-tea-item-bg" style="background-color: #beced6;"></div>
 			<div class="home-tea-item-text">
 				<h2>
 					<span style="color: #c0cdd5;">earl grey</span>
@@ -95,9 +146,16 @@
 				</h2>
 				<h5>Black Tea</h5>
 				<p>Spirited and Fresh</p>
+				<div class="cta-container">
+					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+					<a href="#graph/earl-grey-neroli" class="arrow-cta">see tea layering</a>
+				</div>
 			</div>
+			<div class="home-tea-item-cover"></div>
 		</div>
-		<div class="home-tea-item" data-id="morning-english" style="background-color: #f6c65b;">
+
+		<div class="home-tea-item" data-id="earl-grey-neroli">
+			<div class="home-tea-item-bg" style="background-color: #fed198;"></div>
 			<div class="home-tea-item-text">
 				<h2>
 					<span style="color: #f6c65b;">morning</span>
@@ -105,28 +163,49 @@
 				</h2>
 				<h5>Black Tea</h5>
 				<p>Soulful and Bold</p>
+				<div class="cta-container">
+					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+					<a href="#graph/earl-grey-neroli" class="arrow-cta">see tea layering</a>
+				</div>
 			</div>
+			<div class="home-tea-item-cover"></div>
 		</div>
-		<div class="home-tea-item" data-id="provencal-herbs" style="background-color: #c2cb7f;">
+
+		<div class="home-tea-item" data-id="provencial-herbs">
+			<div class="home-tea-item-bg" style="background-color: #c2cb7e;"></div>
 			<div class="home-tea-item-text">
 				<h2>
-					<span style="color: #c2cb7f;">provencal</span>
+					<span style="color: #c2cb7f;">provencial</span>
 					<span style="color: #d5d755;">herbs</span>
 				</h2>
 				<h5>Herbs</h5>
 				<p>Soothing and Relaxing</p>
+				<div class="cta-container">
+					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+					<a href="#graph/provencial-herbs" class="arrow-cta">see tea layering</a>
+				</div>
 			</div>
+			<div class="home-tea-item-cover"></div>
 		</div>
-		<div class="home-tea-item" data-id="saffronais" style="background-color: #ffaa61;">
+
+		<div class="home-tea-item" data-id="provencial-herbs">
+			<div class="home-tea-item-bg" style="background-color: #f9a960;"></div>
 			<div class="home-tea-item-text">
 				<h2>
 					<span style="color: #ffaa61;">saffronais<sup>tm</sup></span>
 				</h2>
 				<h5>Herbs</h5>
 				<p>Refine and Intimate</p>
+				<div class="cta-container">
+					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+					<a href="#graph/provencial-herbs" class="arrow-cta">see tea layering</a>
+				</div>
 			</div>
-			</div>
-		<div class="home-tea-item" data-id="rose-of-ariana" style="background-color: #ff8189;">
+			<div class="home-tea-item-cover"></div>
+		</div>
+
+		<div class="home-tea-item" data-id="provencial-herbs">
+			<div class="home-tea-item-bg" style="background-color: #fa91a2;"></div>
 			<div class="home-tea-item-text">
 				<h2>
 					<span style="color: #ff8189;">rose</span>
@@ -134,9 +213,16 @@
 				</h2>
 				<h5>Herbs</h5>
 				<p>Sublime and Delicate</p>
+				<div class="cta-container">
+					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+					<a href="#graph/provencial-herbs" class="arrow-cta">see tea layering</a>
+				</div>
 			</div>
+			<div class="home-tea-item-cover"></div>
 		</div>
-		<div class="home-tea-item" data-id="shiso-mint" style="background-color: #c7c89b;">
+
+		<div class="home-tea-item" data-id="provencial-herbs">
+			<div class="home-tea-item-bg" style="background-color: #bac4b8;"></div>
 			<div class="home-tea-item-text">
 				<h2>
 					<span style="color: #c7c89b;">shiso</span>
@@ -144,7 +230,12 @@
 				</h2>
 				<h5>Herbs</h5>
 				<p>Earthy and Balsamic</p>
+				<div class="cta-container">
+					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+					<a href="#graph/provencial-herbs" class="arrow-cta">see tea layering</a>
+				</div>
 			</div>
+			<div class="home-tea-item-cover"></div>
 		</div>
 
 	</div> <!-- #home-tea-item-container -->
@@ -154,21 +245,10 @@
 
 
 
-<article id="home-graph-section">
-	<div class="space100"></div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<article id="home-graph-section" class="animated-section">
 
-					<a href="#selection"></a>
-			</div>
-		</div>
-	</div>
+
+	<?php include('home-page-graph.php'); ?>
+
 	
 </article>

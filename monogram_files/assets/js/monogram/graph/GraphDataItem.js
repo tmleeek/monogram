@@ -11,14 +11,29 @@ goog.require('goog.events.EventTarget');
  * @extends {goog.events.EventTarget}
  */
 monogram.graph.GraphDataItem = function(options, element) {
-  // if has parent
-  //goog.events.EventTarget.call(this, options, element);
-  //this.options = $.extend(this.options, monogram.graph.GraphDataItem.DEFAULT, options);
-
-  // else
+  
   goog.events.EventTarget.call(this);
   this.options = $.extend({}, monogram.graph.GraphDataItem.DEFAULT, options);
   this.element = element;
+
+  this.data_id          = this.element.attr('data-id');
+  this.data_color       = '#' + this.element.attr('data-color');
+  this.data_type        = this.element.attr('data-type');                             // main or sub
+  this.data_main        = this.element.attr('data-main');                             // id of main
+
+
+
+  this.score_array = [
+  ];
+
+
+  // main difference is that the score array will contain just the scores of the notes of the t
+  // the graph is drawn differently anyway
+  this.graph_point_array = [];
+  
+
+  // this.data_html = $.trim(this.element.html());
+  
 
   //    ___ _   _ ___ _____
   //   |_ _| \ | |_ _|_   _|

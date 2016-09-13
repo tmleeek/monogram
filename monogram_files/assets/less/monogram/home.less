@@ -1,9 +1,16 @@
+
+
 #home-intro-section {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+
+
+  // visibility: hidden;
+  // .opacity(0);
+
 
   background: #7b706b;
   color: @off-white;
@@ -61,6 +68,10 @@
         text-align: center;
         
         margin-bottom: 24px;
+      }
+
+      .intro-copy{
+
       }
       p {
         .body-font;
@@ -121,6 +132,9 @@
   width: 100%;
   height: 100%;
 
+  visibility: hidden;
+  .opacity(0);
+
   background: #7b706b;
 }
 
@@ -150,6 +164,18 @@
 	position: relative;
 
 	cursor: pointer;
+
+
+  .home-tea-item-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    .opacity(0.8);
+
+    .transition-in(0.5s);
+  }
 
 	.home-tea-item-text{
 		position: absolute;
@@ -205,6 +231,67 @@
     letter-spacing: 0.05em;
   }
 
+
+  .cta-container{
+    position: absolute;
+    bottom: 34px;
+    right: 20px;
+
+    .opacity(0);
+
+    .transition-in(0.3s);
+
+    .arrow-cta{
+      margin-left: 19px;
+    }
+  }
+
+
+  .home-tea-item-cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: @black;
+
+    .opacity(0);
+    pointer-events: none;
+
+    .transition-in(0.5s);
+  }
+
+
+
+  &.selected{
+
+    .home-tea-item-bg{
+      .opacity(0.8);
+      .transition-in(0.3s);
+    }
+    .cta-container{
+      .opacity(1);
+      .transition-in(0.3s, cubic-bezier(0.645, 0.045, 0.355, 1), 0.3s); // adds delay
+    }
+    .home-tea-item-cover{
+      .opacity(0);
+      .transition-in(0.3s);
+    }
+  }
+  &.not-selected{
+    .home-tea-item-bg{
+      .opacity(0.6);
+      .transition-out(0.7s);
+    }
+    .cta-container{
+      .opacity(0);
+    }
+    .home-tea-item-cover{
+      .opacity(0.25);
+      .transition-out(0.7s);
+    }
+  }
+
 } // .home-tea-item
 
 
@@ -222,6 +309,9 @@
   left: 0;
   width: 100%;
   height: 100%;
+
+  visibility: hidden;
+  .opacity(0);
 
   background: #7b706b;
   color: @off-white;
@@ -382,4 +472,7 @@
   height: 100%;
 
   background: #7b706b;
+
+  visibility: hidden;
+  .opacity(0);
 }
