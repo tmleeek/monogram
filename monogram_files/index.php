@@ -24,9 +24,9 @@
       			
       			<?php include('inc/header.php'); ?>
 
-  			 	<?php include('home-page-content.php'); ?>
+  			 	  <?php include('home-page-content.php'); ?>
 					
-				<?php include('inc/js_home_page.php'); ?>
+				    <?php include('inc/js_home_page.php'); ?>
 		        <?php include('inc/footer.php'); ?>
 		        <?php include('inc/fonts.php'); ?>
 
