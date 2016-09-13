@@ -34,12 +34,12 @@
 
       <div class="row tea-layering-table-contents">
         <div class="col-md-3 col-md-offset-1 tea-layering-table-text">
-          <h3 style="color: #edbec9;">cherry <span style="color: #eccdce;">japonais</span></h3>
+          <h3><span style="color: #edbec9;">cherry</span> <span style="color: #eccdce;">japonais</span></h3>
         </div>
         <div class="col-md-7">
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #ffaa61;">saffronaistm<sup>TM</sup></h3>
+              <h3><span style="color: #ffaa61;">saffronaistm<sup>TM</sup></span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -50,7 +50,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #ff8189;">rose <span style="color: #fd92a3">of arianatm<sup>TM</sup></span></h3>
+              <h3><span style="color: #ff8189;">rose</span> <span style="color: #fd92a3">of arianatm<sup>TM</sup></span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -61,7 +61,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #c2cb7f;">provencal <span style="color: #d5d755">herbs<sup>TM</sup></span></h3>
+              <h3><span style="color: #c2cb7f;">provencal</span> <span style="color: #d5d755">herbs<sup>TM</sup></span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -76,12 +76,12 @@
 
       <div class="row tea-layering-table-contents">
         <div class="col-md-3 col-md-offset-1 tea-layering-table-text">
-          <h3 style="color: #acc6c9;">uji <span style="color: #bdc8c4;">sencha</span></h3>
+          <h3><span style="color: #acc6c9;">uji</span> <span style="color: #bdc8c4;">sencha</span></h3>
         </div>
         <div class="col-md-7">
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #c7c89b;">shiso <span style="color: #bcc4b9;">mint</span></h3>
+              <h3><span style="color: #c7c89b;">shiso</span> <span style="color: #bcc4b9;">mint</span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -92,7 +92,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #c2cb7f;">provencal <span style="color: #d5d755">herbs<sup>TM</sup></span></h3>
+              <h3><span style="color: #c2cb7f;">provencal</span> <span style="color: #d5d755">herbs<sup>TM</sup></span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -107,12 +107,12 @@
         
       <div class="row tea-layering-table-contents">
         <div class="col-md-3 col-md-offset-1 tea-layering-table-text">
-          <h3 style="color: #bbdce5;">jasmine <span style="color: #a3b1c8;">silk pearls</span></h3>
+          <h3><span style="color: #bbdce5;">jasmine</span> <span style="color: #a3b1c8;">silk pearls</span></h3>
         </div>
         <div class="col-md-7">
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #ffaa61;">saffronaistm<sup>TM</sup></h3>
+              <h3><span style="color: #ffaa61;">saffronaistm<sup>TM</sup></span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -123,7 +123,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #ff8189;">rose <span style="color: #fd92a3">of arianatm<sup>TM</sup></span></h3>
+              <h3><span style="color: #ff8189;">rose</span> <span style="color: #fd92a3">of arianatm<sup>TM</sup></span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -138,12 +138,12 @@
 
       <div class="row tea-layering-table-contents">
         <div class="col-md-3 col-md-offset-1 tea-layering-table-text">
-          <h3 style="color: #e3c19e;">milky <span style="color: #d8d2c4;">oolong</span></h3>
+          <h3><span style="color: #e3c19e;">milky</span> <span style="color: #d8d2c4;">oolong</span></h3>
         </div>
         <div class="col-md-7">
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #ffaa61;">saffronaistm<sup>TM</sup></h3>
+              <h3><span style="color: #ffaa61;">saffronaistm<sup>TM</sup></span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -154,7 +154,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #c2cb7f;">provencal <span style="color: #d5d755">herbs<sup>TM</sup></span></h3>
+              <h3><span style="color: #c2cb7f;">provencal</span> <span style="color: #d5d755">herbs<sup>TM</sup></span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -169,12 +169,12 @@
 
       <div class="row tea-layering-table-contents">
         <div class="col-md-3 col-md-offset-1 tea-layering-table-text">
-          <h3 style="color: #b8b8dd;">lapsang <span style="color: #c7b4e2;">florale<sup>TM</sup></span></h3>
+          <h3><span style="color: #b8b8dd;">lapsang</span> <span style="color: #c7b4e2;">florale<sup>TM</sup></span></h3>
         </div>
         <div class="col-md-7">
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #ffaa61;">saffronaistm<sup>TM</sup></h3>
+              <h3><span style="color: #ffaa61;">saffronaistm<sup>TM</sup></span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -185,7 +185,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #ff8189;">rose <span style="color: #fd92a3">of arianatm<sup>TM</sup></span></h3>
+              <h3><span style="color: #ff8189;">rose</span> <span style="color: #fd92a3">of arianatm<sup>TM</sup></span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -200,12 +200,12 @@
 
       <div class="row tea-layering-table-contents">
         <div class="col-md-3 col-md-offset-1 tea-layering-table-text">
-          <h3 style="color: #f1a693;">kashmere<sup>tm</sup></h3>
+          <h3><span style="color: #f1a693;">kashmere<sup>tm</sup></span></h3>
         </div>
         <div class="col-md-7">
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #c7c89b;">shiso <span style="color: #bcc4b9;">mint</span></h3>
+              <h3><span style="color: #c7c89b;">shiso</span> <span style="color: #bcc4b9;">mint</span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -216,7 +216,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #ffaa61;">saffronaistm<sup>TM</sup></h3>
+              <h3><span style="color: #ffaa61;">saffronaistm<sup>TM</sup></span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -231,12 +231,12 @@
 
       <div class="row tea-layering-table-contents">
         <div class="col-md-3 col-md-offset-1 tea-layering-table-text">
-          <h3 style="color: #b3c5cd;">earl grey <span style="color: #cec8c1;">neroli</span></h3>
+          <h3><span style="color: #b3c5cd;">earl grey</span> <span style="color: #cec8c1;">neroli</span></h3>
         </div>
         <div class="col-md-7">
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #c7c89b;">shiso <span style="color: #bcc4b9;">mint</span></h3>
+              <h3><span style="color: #c7c89b;">shiso</span> <span style="color: #bcc4b9;">mint</span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -247,7 +247,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #ff8189;">rose <span style="color: #fd92a3">of arianatm<sup>TM</sup></span></h3>
+              <h3><span style="color: #ff8189;">rose</span> <span style="color: #fd92a3">of arianatm<sup>TM</sup></span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -258,7 +258,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #c2cb7f;">provencal <span style="color: #d5d755">herbs</span></h3>
+              <h3><span style="color: #c2cb7f;">provencal</span> <span style="color: #d5d755">herbs</span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -273,12 +273,12 @@
 
       <div class="row tea-layering-table-contents">
         <div class="col-md-3 col-md-offset-1 tea-layering-table-text">
-          <h3 style="color: #f6c65b;">morning <span style="color: #fed298;">english<sup>TM</sup></span></h3>
+          <h3><span style="color: #f6c65b;">morning</span> <span style="color: #fed298;">english<sup>TM</sup></span></h3>
         </div>
         <div class="col-md-7">
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #c7c89b;">shiso <span style="color: #bcc4b9;">mint</span></h3>
+              <h3><span style="color: #c7c89b;">shiso</span> <span style="color: #bcc4b9;">mint</span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -289,7 +289,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #ff8189;">rose <span style="color: #fd92a3">of arianatm<sup>TM</sup></span></h3>
+              <h3><span style="color: #ff8189;">rose</span> <span style="color: #fd92a3">of arianatm<sup>TM</sup></span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -304,12 +304,12 @@
 
       <div class="row tea-layering-table-contents">
         <div class="col-md-3 col-md-offset-1 tea-layering-table-text">
-          <h3 style="color: #c2cb7f;">provencal <span style="color: #d5d755;">herbs</span></h3>
+          <h3><span style="color: #c2cb7f;">provencal</span> <span style="color: #d5d755;">herbs</span></h3>
         </div>
         <div class="col-md-7">
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #acc6c9;">uji <span style="color: #bdc8c4;">sencha</span></h3>
+              <h3><span style="color: #acc6c9;">uji</span> <span style="color: #bdc8c4;">sencha</span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -320,7 +320,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #edbec9;">cherry <span style="color: #eccdce">japonais</span></h3>
+              <h3><span style="color: #edbec9;">cherry</span> <span style="color: #eccdce">japonais</span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -331,7 +331,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #e3c19e;">milky <span style="color: #d8d2c4">oolong</span></h3>
+              <h3><span style="color: #e3c19e;">milky</span> <span style="color: #d8d2c4">oolong</span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -342,7 +342,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #b3c5cd;">earl grey <span style="color: #cec8c1">neroli</span></h3>
+              <h3><span style="color: #b3c5cd;">earl grey</span> <span style="color: #cec8c1">neroli</span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -357,12 +357,12 @@
 
       <div class="row tea-layering-table-contents">
         <div class="col-md-3 col-md-offset-1 tea-layering-table-text">
-          <h3 style="color: #ffaa61;">saffronais<sup>tm</sup></h3>
+          <h3><span style="color: #ffaa61;">saffronais<sup>tm</sup></span></h3>
         </div>
         <div class="col-md-7">
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #acc6c9;">uji <span style="color: #bdc8c4;">sencha</span></h3>
+              <h3><span style="color: #acc6c9;">uji</span> <span style="color: #bdc8c4;">sencha</span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -373,7 +373,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #edbec9;">cherry <span style="color: #eccdce">japonais</span></h3>
+              <h3><span style="color: #edbec9;">cherry</span> <span style="color: #eccdce">japonais</span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -384,7 +384,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #bbdce5;">jasmine <span style="color: #a3b1c8">silk pearls</span></h3>
+              <h3><span style="color: #bbdce5;">jasmine</span> <span style="color: #a3b1c8">silk pearls</span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -395,7 +395,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #e3c19e;">milky <span style="color: #d8d2c4">oolong</span></h3>
+              <h3><span style="color: #e3c19e;">milky</span> <span style="color: #d8d2c4">oolong</span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -406,7 +406,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #b8b8dd;">lapsang <span style="color: #c7b4e2">florale<sup>tm</sup></span></h3>
+              <h3><span style="color: #b8b8dd;">lapsang</span> <span style="color: #c7b4e2">florale<sup>tm</sup></span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -417,7 +417,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #f1a693;">kashmere<sup>tm</sup></h3>
+              <h3><span style="color: #f1a693;">kashmere<sup>tm</sup></span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -432,12 +432,12 @@
 
       <div class="row tea-layering-table-contents">
         <div class="col-md-3 col-md-offset-1 tea-layering-table-text">
-          <h3 style="color: #ff8189;">rose <span style="color: #fd92a3;">of ariana<sup>tm</sup></span></h3>
+          <h3><span style="color: #ff8189;">rose</span> <span style="color: #fd92a3;">of ariana<sup>tm</sup></span></h3>
         </div>
         <div class="col-md-7">
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #edbec9;">cherry <span style="color: #eccdce">japonais</span></h3>
+              <h3><span style="color: #edbec9;">cherry</span> <span style="color: #eccdce">japonais</span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -448,7 +448,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #bbdce5;">jasmine <span style="color: #a3b1c8">silk pearls</span></h3>
+              <h3><span style="color: #bbdce5;">jasmine</span> <span style="color: #a3b1c8">silk pearls</span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -459,7 +459,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #b8b8dd;">lapsang <span style="color: #c7b4e2">florale<sup>tm</sup></span></h3>
+              <h3><span style="color: #b8b8dd;">lapsang</span> <span style="color: #c7b4e2">florale<sup>tm</sup></span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -470,7 +470,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #f1a693;">kashmere<sup>tm</sup></h3>
+              <h3><span style="color: #f1a693;">kashmere<sup>tm</sup></span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -481,7 +481,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #b3c5cd;">earl grey <span style="color: #cec8c1">neroli</span></h3>
+              <h3><span style="color: #b3c5cd;">earl grey</span> <span style="color: #cec8c1">neroli</span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -492,7 +492,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #f6c65b;">morning <span style="color: #fed298">english<sup>tm</sup></span></h3>
+              <h3><span style="color: #f6c65b;">morning</span> <span style="color: #fed298">english<sup>tm</sup></span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -507,12 +507,12 @@
 
       <div class="row tea-layering-table-contents">
         <div class="col-md-3 col-md-offset-1 tea-layering-table-text">
-          <h3 style="color: #c7c89b;">shiso <span style="color: #bcc4b9;">mint</span></h3>
+          <h3><span style="color: #c7c89b;">shiso</span> <span style="color: #bcc4b9;">mint</span></h3>
         </div>
         <div class="col-md-7">
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #acc6c9;">uji <span style="color: #bdc8c4;">sencha</span></h3>
+              <h3><span style="color: #acc6c9;">uji</span> <span style="color: #bdc8c4;">sencha</span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -523,7 +523,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #f1a693;">kashmere<sup>tm</sup></h3>
+              <h3><span style="color: #f1a693;">kashmere<sup>tm</sup></span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -534,7 +534,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #b3c5cd;">earl grey <span style="color: #cec8c1">neroli</span></h3>
+              <h3><span style="color: #b3c5cd;">earl grey</span> <span style="color: #cec8c1">neroli</span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
@@ -545,7 +545,7 @@
           </div>
           <div class="row">
             <div class="col-md-5 tea-layering-table-text">
-              <h3 style="color: #f6c65b;">morning <span style="color: #fed298">english<sup>tm</sup></span></h3>
+              <h3><span style="color: #f6c65b;">morning</span> <span style="color: #fed298">english<sup>tm</sup></span></h3>
             </div>
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">

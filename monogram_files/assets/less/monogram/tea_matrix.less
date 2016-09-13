@@ -1,0 +1,108 @@
+.tea-matrix-page {
+  background: #827773;
+}
+
+#tea-matrix-section-1 {
+  #page-indicator {
+    position: absolute;
+    top: 105px; 
+    z-index: 2;   
+    li {
+      margin-bottom: 20px;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+      a {
+        text-transform: uppercase;
+        .brandon-grotesque-regular;
+        font-size: 10px;
+        line-height: 10px;
+        letter-spacing: 0.05em;  
+        color: @off-white;
+        .opacity(.3);
+        sup {
+          font-size: 7px;
+        }       
+      }
+      &.active {
+        a {          
+          .opacity(1);
+        }        
+      }
+    }    
+  }
+
+  #tea-matrix-content {
+    .section {
+      h3 {
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        sup {
+          font-size: 9px;
+        }
+      }  
+      p {
+        color: @off-white;            
+        font-size: 10px;
+        line-height: 16px; 
+      } 
+      ul {
+        border-top: 1px solid rgba(241, 239, 238, 0.5);
+        border-bottom: 1px solid rgba(241, 239, 238, 0.5);
+        padding: 15px 0 10px 10px;
+        margin: 15px 0;
+
+        li {
+          padding-bottom: 7px;
+          span {
+            display: inline-block;
+            color: @off-white;
+
+            &:nth-of-type(1){
+              width: 130px;
+              text-transform: uppercase;
+              .header-font;
+              font-size: 10px;
+              letter-spacing: 0.08em;
+            }
+            &:nth-of-type(2){
+              .body-font;
+              font-size: 10px;              
+            }
+          }
+        }
+      }      
+      
+      .suggestions {
+        margin-bottom: 38px;
+
+        h6 {        
+          display: block;
+          color: @off-white;
+          text-transform: uppercase;
+        }
+        div.suggestion {
+          display: inline-block;
+          span {
+            .header-font;
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            sup {
+              font-size: 6px;
+            }
+          }
+        }
+      }
+
+      .tea-matrix-content-text-cta {
+        padding-right: 90px;
+        display: none;
+        a.square-cta {
+          margin-right: 15px;
+        }
+      }
+
+    }
+  }  
+}
