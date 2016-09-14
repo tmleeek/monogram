@@ -43,7 +43,14 @@ goog.addDependency('../../../../../js/monogram/component/CombinationGraphItem04.
 goog.addDependency('../../../../../js/monogram/component/CombinationGraphItem04Mobile.js', ['monogram.component.CombinationGraphItem04Mobile'], ['goog.events.Event', 'goog.events.EventTarget']);
 goog.addDependency('../../../../../js/monogram/component/GraphSection.js', ['monogram.component.GraphSection'], ['goog.events.Event', 'goog.events.EventTarget', 'manic.ui.Mouse', 'monogram.component.CombinationGraph04', 'monogram.component.CombinationGraphDataItem']);
 goog.addDependency('../../../../../js/monogram/component/MobileGraphSection.js', ['monogram.component.MobileGraphSection'], ['goog.events.Event', 'goog.events.EventTarget', 'monogram.component.CombinationGraph04', 'monogram.component.CombinationGraphDataItem']);
-goog.addDependency('../../../../../js/monogram/graph/GraphDataItem.js', ['monogram.graph.GraphDataItem'], ['goog.events.Event', 'goog.events.EventTarget']);
+goog.addDependency('../../../../../js/monogram/graph/CombinationDataLoader.js', ['monograph.graph.CombinationDataLoader'], ['goog.events.Event', 'goog.events.EventTarget', 'monograph.graph.DataLoader']);
+goog.addDependency('../../../../../js/monogram/graph/CombinationGraph.js', ['monogram.graph.CombinationGraph'], ['goog.events.Event', 'goog.events.EventTarget', 'monogram.graph.Data', 'monogram.graph.RaphaelGraphBG', 'monogram.graph.RaphaelGraphItem']);
+goog.addDependency('../../../../../js/monogram/graph/Data.js', ['monogram.graph.Data'], ['goog.events.Event', 'goog.events.EventTarget']);
+goog.addDependency('../../../../../js/monogram/graph/DataLoader.js', ['monograph.graph.DataLoader'], ['goog.events.Event', 'goog.events.EventTarget', 'manic.util.JsonParser', 'monogram.graph.Data']);
+goog.addDependency('../../../../../js/monogram/graph/RaphaelGraphBG.js', ['monogram.graph.RaphaelGraphBG'], ['goog.events.Event', 'goog.events.EventTarget']);
+goog.addDependency('../../../../../js/monogram/graph/RaphaelGraphItem.js', ['monogram.graph.RaphaelGraphItem'], ['goog.events.Event', 'goog.events.EventTarget', 'monogram.graph.Data']);
+goog.addDependency('../../../../../js/monogram/graph/SingleGraph.js', ['monograph.graph.SingleGraph'], ['goog.events.Event', 'goog.events.EventTarget', 'monogram.graph.Data', 'monogram.graph.RaphaelGraphBG', 'monogram.graph.RaphaelGraphItem']);
 goog.addDependency('../../../../../js/monogram/page/Default.js', ['monogram.page.Default'], ['goog.events.Event', 'goog.events.EventTarget', 'manic.page.Page']);
-goog.addDependency('../../../../../js/monogram/page/Home.js', ['monogram.page.Home'], ['monogram.page.Default']);
+goog.addDependency('../../../../../js/monogram/page/Home.js', ['monogram.page.Home'], ['monogram.component.GraphSection', 'monogram.component.MobileGraphSection', 'monogram.page.Default']);
 goog.addDependency('../../../../../js/monogram/page/TeaLayeringDetail.js', ['monogram.page.TeaLayeringDetail'], ['monogram.component.GraphSection', 'monogram.component.MobileGraphSection', 'monogram.page.Default']);
+goog.addDependency('../../../../../js/monogram/page/Test.js', ['monogram.page.Test'], ['monogram.graph.CombinationGraph', 'monogram.graph.Data', 'monogram.page.Default', 'monograph.graph.CombinationDataLoader', 'monograph.graph.DataLoader', 'monograph.graph.SingleGraph']);
