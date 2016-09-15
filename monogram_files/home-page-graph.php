@@ -1,499 +1,3 @@
-<!--
-    ____ ____      _    ____  _   _   ____    _  _____  _
-   / ___|  _ \    / \  |  _ \| | | | |  _ \  / \|_   _|/ \
-  | |  _| |_) |  / _ \ | |_) | |_| | | | | |/ _ \ | | / _ \
-  | |_| |  _ <  / ___ \|  __/|  _  | | |_| / ___ \| |/ ___ \
-   \____|_| \_\/_/   \_\_|   |_| |_| |____/_/   \_\_/_/   \_\
-
--->
-
-<div id="combination-graph-data-item-container">
-
-  <!--
-      ___  _
-     / _ \/ |
-    | | | | |
-    | |_| | |
-     \___/|_|
-
-  -->
-
-
-  <div class="combination-graph-data-item"
-    data-id="earl-grey-neroli"
-    data-color="b3c5cd"
-    data-type="main"
-
-    data-wood="8.5"
-    data-savoury="0"
-    data-herbaceous="0"
-    data-floral="0"
-    data-nutty="8.0"
-    data-dairy="0"
-    data-minerality="0"
-    data-citrus="7.5"
-    data-stone-fruit="0"
-    data-red-fruit="9.0" 
-    data-sweet="0">
-
-    <div class="graph-selection-tea">
-      <div class="graph-selection-tea-bg"></div>
-      <h2><span style="color:#c0cdd5">Earl Grey</span> <span style="color:#d8d1ca">Neroli</span></h2>
-      
-      <!--<div class="price">S$23.90</div>-->
-      <div class="tea-copy-content">
-        <p>High grown Darjeeling expressed in crisp notes of Italian Bergamot and powdery Orange Flowers. Spirited and elegant, the brew whispers of finesse and sophistication.</p>
-      </div>
-      
-
-      <div class="tea-detail tea-detail-01">
-        <h4>Tea Type</h4>
-        <p>Green Tea</p>
-      </div>
-
-      <div class="tea-detail tea-detail-02">
-        <h4>Steeping Suggestion</h4>
-        <p><span class="custom-icon steep-icon"></span>Less than boiling</p>
-        <p><span class="custom-icon time-icon"></span>4 minutes</p>
-      </div>
-      <!-- <a href="" class="square-cta">Buy Now</a> -->
-      <a href="" class="arrow-cta">Learn More</a>
-      
-    </div>
-  </div>
-
-
-
-  <div class="combination-graph-data-item"
-    data-id="shiso-mint"
-    data-color="bcc197"
-    data-type="sub"
-    data-main="earl-grey-neroli"
-
-    data-wood="0"
-    data-savoury="0"
-    data-herbaceous="9.5"
-    data-floral="0"
-    data-nutty="0"
-    data-dairy="8.0"
-    data-minerality="0"
-    data-citrus="3.0"
-    data-stone-fruit="0"
-    data-red-fruit="0" 
-    data-sweet="7.5">
-
-    <div class="graph-selection-tea">
-      <div class="graph-selection-tea-bg"></div>
-      <h2><span style="color:#c7c89b">Shiso</span> <span style="color:#bcc4b9">Mint</span></h2>
-
-      <!--<div class="price">S$23.90</div>-->
-      <div class="tea-copy-content">
-        <p>Aromatic and complex Arabian Mint with Japanese Shiso. Rich, minty and earthy, the brew exudes a fresh and balsamic character that is assuring and confident.</p>
-      </div>
-
-      <div class="tea-detail tea-detail-01">
-        <h4>Tea Type</h4>
-        <p>Green Tea</p>
-      </div>
-
-      <div class="tea-detail tea-detail-02">
-        <h4>Steeping Suggestion</h4>
-        <p><span class="custom-icon steep-icon"></span>&lt; 80&deg; Celsius</p>
-        <p><span class="custom-icon time-icon"></span>3 minutes</p>
-      </div>
-      <a href="" class="arrow-cta">Learn More</a>
-    </div>
-  </div>
-
-  <div class="combination-graph-data-item"
-    data-id="saffronais"
-    data-color="c7874d"
-    data-type="sub"
-    data-main="earl-grey-neroli"
-
-    data-wood="5.0"
-    data-savoury="0"
-    data-herbaceous="0"
-    data-floral="6.0"
-    data-nutty="0"
-    data-dairy="0"
-    data-minerality="7.0"
-    data-citrus="0"
-    data-stone-fruit="0"
-    data-red-fruit="9.0" 
-    data-sweet="0">
-
-    <div class="graph-selection-tea">
-      <div class="graph-selection-tea-bg"></div>
-      <h2><span style="color:#ffaa61">Saffronais&trade;</span></h2>
-      
-      
-      <!--<div class="price">S$27.90</div>-->
-      <div class="tea-copy-content">
-        <p>Refined notes of Spanish Saffron, Tibetan Safflower and Bamboo Leaves. Comforting and intimate, the brew displays notes of bittersweet honey with undertones of forest.</p>
-      </div>
-
-      <div class="tea-detail tea-detail-01">
-        <h4>Tea Type</h4>
-        <p>Green Tea</p>
-      </div>
-
-      <div class="tea-detail tea-detail-02">
-        <h4>Steeping Suggestion</h4>
-        <p><span class="custom-icon steep-icon"></span>&lt; 80&deg; Celsius</p>
-        <p><span class="custom-icon time-icon"></span>1 minutes</p>
-      </div>
-      <a href="" class="arrow-cta">Learn More</a>
-    </div>
-  </div>
-
-
-
-  <div class="combination-graph-data-item"
-    data-id="kashmere"
-    data-color="c08576"
-    data-type="sub"
-    data-main="earl-grey-neroli"
-
-    data-wood="5.0"
-    data-savoury="0"
-    data-herbaceous="0"
-    data-floral="6.0"
-    data-nutty="0"
-    data-dairy="0"
-    data-minerality="7.0"
-    data-citrus="0.0"
-    data-stone-fruit="0"
-    data-red-fruit="7.5" 
-    data-sweet="0">
-
-    <div class="graph-selection-tea">
-      <div class="graph-selection-tea-bg"></div>
-      <h2><span style="color:#f1a693">Kashmere&trade;</span></h2>
-      
-      <!--<div class="price">S$25.90</div>-->
-      <div class="tea-copy-content">
-        <p>Complex, full-bodied black tea from Qi Men village, Anhui province of China. Sweet lychee with blossoming notes of Arabian Jasmine, Madonna Lily and Persian Rose.</p>
-      </div>
-
-      <div class="tea-detail tea-detail-01">
-        <h4>Tea Type</h4>
-        <p>Green Tea</p>
-      </div>
-
-      <div class="tea-detail tea-detail-02">
-        <h4>Steeping Suggestion</h4>
-        <p><span class="custom-icon steep-icon"></span>&lt; 80&deg; Celsius</p>
-        <p><span class="custom-icon time-icon"></span>2 minutes</p>
-      </div>
-      <a href="" class="arrow-cta">Learn More</a>
-    </div>
-  </div>
-
-
-
-  
-
-
-
-
-
-
-
-
-  <!--
-      ___ ____
-     / _ \___ \
-    | | | |__) |
-    | |_| / __/
-     \___/_____|
-
-  -->
-
-  <div class="combination-graph-data-item"
-    data-id="milky-oolong"
-    data-color="aea79c"
-    data-type="main"
-
-    data-wood="8"
-    data-savoury="0"
-    data-herbaceous="0"
-    data-floral="7.5"
-    data-nutty="0"
-    data-dairy="0"
-    data-minerality="7"
-    data-citrus="0"
-    data-stone-fruit="0"
-    data-red-fruit="6" 
-    data-sweet="0">
-    
-    <div class="graph-selection-tea">
-      <div class="graph-selection-tea-bg"></div>
-      <h2><span style="color:#e3c19e">Milky</span> <span style="color:#d8d2c4">Oolong</span></h2>
-      
-      
-      
-      
-      <!--<div class="price">S$24.90</div>-->
-      <div class="tea-copy-content">
-        <p>Full-bodied lightly oxidised Oolong with notes of flowery hyacinth wrapped in a voluptuous aura of roasted almond and velvety vanilla.</p>
-      </div>
-      
-      <div class="tea-detail tea-detail-01">
-        <h4>Tea Type</h4>
-        <p>Green Tea</p>
-      </div>
-
-      <div class="tea-detail tea-detail-02">
-        <h4>Steeping Suggestion</h4>
-        <p><span class="custom-icon steep-icon"></span>Less than boiling</p>
-        <p><span class="custom-icon time-icon"></span>2 minutes</p>
-      </div>
-      <a href="" class="arrow-cta">Learn More</a>
-    </div>
-  </div>
-
-
-  <div class="combination-graph-data-item"
-    data-id="kashmere-02"
-    data-color="c08576"
-    data-type="sub"
-    data-main="milky-oolong"
-
-    data-wood="5.0"
-    data-savoury="0"
-    data-herbaceous="0"
-    data-floral="6.0"
-    data-nutty="0"
-    data-dairy="0"
-    data-minerality="7.0"
-    data-citrus="0.0"
-    data-stone-fruit="0"
-    data-red-fruit="7.5" 
-    data-sweet="0">
-
-    <div class="graph-selection-tea">
-      <div class="graph-selection-tea-bg"></div>
-      <h2><span style="color:#f1a693">Kashmere&trade;</span></h2>
-      <!--<div class="price">S$25.90</div>-->
-      <div class="tea-copy-content">
-        <p>Complex, full-bodied black tea from Qi Men village, Anhui province of China. Sweet lychee with blossoming notes of Arabian Jasmine, Madonna Lily and Persian Rose.</p>
-      </div>
-
-      <div class="tea-detail tea-detail-01">
-        <h4>Tea Type</h4>
-        <p>Green Tea</p>
-      </div>
-
-      <div class="tea-detail tea-detail-02">
-        <h4>Steeping Suggestion</h4>
-        <p><span class="custom-icon steep-icon"></span>&lt; 80&deg; Celsius</p>
-        <p><span class="custom-icon time-icon"></span>2 minutes</p>
-      </div>
-      <a href="" class="arrow-cta">Learn More</a>
-    </div>
-  </div>
-
-
-
-  <div class="combination-graph-data-item"
-    data-id="saffronais-02"
-    data-color="c7874d"
-    data-type="sub"
-    data-main="milky-oolong"
-
-    data-wood="5.0"
-    data-savoury="0"
-    data-herbaceous="0"
-    data-floral="6.0"
-    data-nutty="0"
-    data-dairy="0"
-    data-minerality="7.0"
-    data-citrus="0"
-    data-stone-fruit="0"
-    data-red-fruit="9.0" 
-    data-sweet="0">
-
-    <div class="graph-selection-tea">
-      <div class="graph-selection-tea-bg"></div>
-      <h2><span style="color:#ffaa61">Saffronais&trade;</span></h2>
-
-      <!--<div class="price">S$27.90</div>-->
-      <div class="tea-copy-content">
-        <p>Refined notes of Spanish Saffron, Tibetan Safflower and Bamboo Leaves. Comforting and intimate, the brew displays notes of bittersweet honey with undertones of forest.</p>
-      </div>
-
-      <div class="tea-detail tea-detail-01">
-        <h4>Tea Type</h4>
-        <p>Green Tea</p>
-      </div>
-
-      <div class="tea-detail tea-detail-02">
-        <h4>Steeping Suggestion</h4>
-        <p><span class="custom-icon steep-icon"></span>&lt; 80&deg; Celsius</p>
-        <p><span class="custom-icon time-icon"></span>1 minutes</p>
-      </div>
-      <a href="" class="arrow-cta">Learn More</a>
-    </div>
-  </div>
-
-
-
-  <!--
-      ___ _____
-     / _ \___ /
-    | | | ||_ \
-    | |_| |__) |
-     \___/____/
-
-  -->
-
-  <div class="combination-graph-data-item"
-    data-id="provencial-herbs"
-    data-color="9ba265"
-    data-type="main"
-
-    data-wood="0"
-    data-savoury="0"
-    data-herbaceous="5"
-    data-floral="0"
-    data-nutty="0"
-    data-dairy="7.5"
-    data-minerality="0"
-    data-citrus="0"
-    data-stone-fruit="6"
-    data-red-fruit="0" 
-    data-sweet="9.5">
-    
-    <div class="graph-selection-tea">
-      <div class="graph-selection-tea-bg"></div>
-      <h2><span style="color:#c2cb7f">Provencial</span> <span style="color:#d5d755">Herbs</span></h2>
-      
-      <!--<div class="price">S$22.90</div>-->
-      <div class="tea-copy-content">
-        <p>Brimming with sparkling notes of Lemon Verbena, Lemon Myrtle, Eucalyptus, Lavender and Rosemary. Soothing and relaxing, the brew displays fresh notes of citrus and dry hay.</p>
-      </div>
-      
-
-      <div class="tea-detail tea-detail-01">
-        <h4>Tea Type</h4>
-        <p>Green Tea</p>
-      </div>
-
-      <div class="tea-detail tea-detail-02">
-        <h4>Steeping Suggestion</h4>
-        <p><span class="custom-icon steep-icon"></span>Less than boiling</p>
-        <p><span class="custom-icon time-icon"></span>1 minutes</p>
-      </div>
-      <a href="" class="arrow-cta">Learn More</a>
-    </div>
-  </div>
-
-  <div class="combination-graph-data-item"
-    data-id="kashmere-03"
-    data-color="c08576"
-    data-type="sub"
-    data-main="provencial-herbs"
-
-    data-wood="5.0"
-    data-savoury="0"
-    data-herbaceous="0"
-    data-floral="6.0"
-    data-nutty="0"
-    data-dairy="0"
-    data-minerality="7.0"
-    data-citrus="0.0"
-    data-stone-fruit="0"
-    data-red-fruit="7.5" 
-    data-sweet="0">
-
-    <div class="graph-selection-tea">
-      <div class="graph-selection-tea-bg"></div>
-      <h2><span style="color:#f1a693">Kashmere&trade;</span></h2>
-      <!--<div class="price">S$25.90</div>-->
-      <div class="tea-copy-content">
-        <p>Complex, full-bodied black tea from Qi Men village, Anhui province of China. Sweet lychee with blossoming notes of Arabian Jasmine, Madonna Lily and Persian Rose.</p>
-      </div>
-
-      <div class="tea-detail tea-detail-01">
-        <h4>Tea Type</h4>
-        <p>Green Tea</p>
-      </div>
-
-      <div class="tea-detail tea-detail-02">
-        <h4>Steeping Suggestion</h4>
-        <p><span class="custom-icon steep-icon"></span>&lt; 80&deg; Celsius</p>
-        <p><span class="custom-icon time-icon"></span>2 minutes</p>
-      </div>
-      <a href="" class="arrow-cta">Learn More</a>
-    </div>
-  </div>
-
-
-  <div class="combination-graph-data-item"
-    data-id="shiso-mint-03"
-    data-color="bcc197"
-    data-type="sub"
-    data-main="provencial-herbs"
-
-    data-wood="0"
-    data-savoury="0"
-    data-herbaceous="9.5"
-    data-floral="0"
-    data-nutty="0"
-    data-dairy="8.0"
-    data-minerality="0"
-    data-citrus="3.0"
-    data-stone-fruit="0"
-    data-red-fruit="0" 
-    data-sweet="7.5">
-
-    <div class="graph-selection-tea">
-      <div class="graph-selection-tea-bg"></div>
-      <h2><span style="color:#c7c89b">Shiso</span> <span style="color:#bcc4b9">Mint</span></h2>
-      <!--<div class="price">S$23.90</div>-->
-      <div class="tea-copy-content">
-        <p>Aromatic and complex Arabian Mint with Japanese Shiso. Rich, minty and earthy, the brew exudes a fresh and balsamic character that is assuring and confident.</p>
-      </div>
-
-      <div class="tea-detail tea-detail-01">
-        <h4>Tea Type</h4>
-        <p>Green Tea</p>
-      </div>
-
-      <div class="tea-detail tea-detail-02">
-        <h4>Steeping Suggestion</h4>
-        <p><span class="custom-icon steep-icon"></span>&lt; 80&deg; Celsius</p>
-        <p><span class="custom-icon time-icon"></span>3 minutes</p>
-      </div>
-      <a href="" class="arrow-cta">Learn More</a>
-    </div>
-  </div>
-
-
-
-  
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -510,7 +14,14 @@
 
 <article id="graph-section" class="visible-md visible-lg">
 
-  <div class="desktop-header-spacer" style="height: 50px;"></div>
+  <div id="monograph-combined-graph-data"
+    data-graph-data-url="assets/json/graph-data.json"
+    data-combined-graph-data-url="assets/json/combined-graph-data.json">
+  </div>
+
+
+
+  <div class="desktop-header-spacer"></div>
 
   <div class="container-fluid">
     <div class="col-md-3">
@@ -539,8 +50,10 @@
             </div>
 
             <div class="graph-selection-instructions">
-              <div class="fa fa-arrows-h"></div>
-              <h4>Next Tea</h4>
+              <div class="graph-selection-instructions-btn" id="graph-selection-next-tea-btn">
+                <div class="fa fa-arrows-h"></div>
+                <h4>Next Tea</h4>
+              </div>
             </div>
 
           </div>
@@ -562,28 +75,28 @@
                \____|_| \_\/_/   \_\_|   |_| |_|
 
             -->
+            
 
-            <div id="combination-graph-04">
-              <div id="combination-graph-text-container">
-              </div>
-              <div id="combination-graph-svg-container">
-                <div id="combination-graph-svg"></div>
-              </div>
-
-              <div id="combination-graph-label">
-                <div class="graph-label-image graph-label-wood"></div>
-                <div class="graph-label-image graph-label-savoury"></div>
-                <div class="graph-label-image graph-label-herbaceous"></div>
-                <div class="graph-label-image graph-label-floral"></div>
-                <div class="graph-label-image graph-label-nutty"></div>
-                <div class="graph-label-image graph-label-dairy"></div>
-                <div class="graph-label-image graph-label-minerality"></div>
-                <div class="graph-label-image graph-label-citrus"></div>
-                <div class="graph-label-image graph-label-stone-fruit"></div>
-                <div class="graph-label-image graph-label-red-fruit"></div>
-                <div class="graph-label-image graph-label-sweet"></div>
+            <div id="graph-section-combination-graph-container">
+              <div id="graph-section-combination-graph" class="monogram-combination-graph">
+                <div class="graph-svg"></div>
+                <div class="graph-overlay"></div>
+                <div class="graph-name-overlay">
+                  <div class="graph-name-item floral-version"></div>
+                  <div class="graph-name-item creamy-version"></div>
+                  <div class="graph-name-item marine-version"></div>
+                  <div class="graph-name-item mineral-version"></div>
+                  <div class="graph-name-item citrus-version"></div>
+                  <div class="graph-name-item fruity-version"></div>
+                  <div class="graph-name-item sweet-version"></div>
+                  <div class="graph-name-item wood-version"></div>
+                  <div class="graph-name-item herbaceous-version"></div>
+                </div>
               </div>
             </div>
+
+
+
 
             <div id="graph-section-center-copy">
 
@@ -592,7 +105,8 @@
 
               <div class="cta-container">
                 <a href="javascript:void(0);" class="square-cta square-cta-01">Save tea layering</a>
-                <a href="#selection" class="square-cta square-cta-02">choose another layering</a>
+                <a href="javascript:void(0);" class="square-cta square-cta-02">add both to cart</a>
+                <a href="#selection" class="square-cta square-cta-03">choose another layering</a>
               </div>
             </div>
 
@@ -629,8 +143,10 @@
             </div>
 
             <div class="graph-selection-instructions">
-              <div class="fa fa-arrows-v"></div>
-              <h4>Next Suggestion</h4>
+              <div class="graph-selection-instructions-btn" id="graph-selection-next-layering-btn">
+                <div class="fa fa-arrows-v"></div>
+                <h4>Next Suggestion</h4>
+              </div>
             </div>
 
           </div>

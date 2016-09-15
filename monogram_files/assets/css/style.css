@@ -4990,6 +4990,60 @@ p {
   background-size: 123px 17px;
   -webkit-background-size: 123px 17px;
 }
+.graph-label-floral {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: transparent url("../images/icons/new_graph_label/floral.svg") center center no-repeat;
+}
+.graph-label-creamy {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: transparent url("../images/icons/new_graph_label/creamy.svg") center center no-repeat;
+}
+.graph-label-marine {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: transparent url("../images/icons/new_graph_label/marine.svg") center center no-repeat;
+}
+.graph-label-mineral {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: transparent url("../images/icons/new_graph_label/mineral.svg") center center no-repeat;
+}
+.graph-label-citrus {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: transparent url("../images/icons/new_graph_label/citrus.svg") center center no-repeat;
+}
+.graph-label-fruity {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: transparent url("../images/icons/new_graph_label/fruity.svg") center center no-repeat;
+}
+.graph-label-sweet {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: transparent url("../images/icons/new_graph_label/sweet.svg") center center no-repeat;
+}
+.graph-label-wood {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: transparent url("../images/icons/new_graph_label/wood.svg") center center no-repeat;
+}
+.graph-label-herbaceous {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: transparent url("../images/icons/new_graph_label/herbaceous.svg") center center no-repeat;
+}
 .aaaaaaa {
   display: block;
   width: 20px;
@@ -5292,7 +5346,7 @@ p {
   padding-right: 20px;
 }
 .desktop-header-spacer {
-  height: 90px;
+  height: 70px;
 }
 @media only screen and (max-height: 668px) {
   .desktop-header-spacer {
@@ -7542,6 +7596,196 @@ p {
   width: 318px;
   height: 262px;
 }
+.monogram-single-graph,
+.monogram-combination-graph {
+  width: 600px;
+  height: 600px;
+  position: relative;
+}
+.monogram-single-graph .graph-svg,
+.monogram-combination-graph .graph-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 600px;
+}
+.monogram-single-graph .graph-overlay,
+.monogram-combination-graph .graph-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 600px;
+}
+.monogram-single-graph .graph-name-overlay,
+.monogram-combination-graph .graph-name-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 600px;
+}
+.graph-name-overlay .graph-name-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+}
+.graph-name-overlay .graph-name-item.floral-version {
+  width: 600px;
+  height: 600px;
+  background: transparent url("../images/icons/graph-label-floral.svg") center center no-repeat;
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: transparent url("../images/icons/new_graph_label/floral.svg") center center no-repeat;
+  top: 237.5px;
+  left: 445.2px;
+}
+.graph-name-overlay .graph-name-item.creamy-version {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: transparent url("../images/icons/new_graph_label/creamy.svg") center center no-repeat;
+  top: 385px;
+  left: 393.65px;
+}
+.graph-name-overlay .graph-name-item.marine-version {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: transparent url("../images/icons/new_graph_label/marine.svg") center center no-repeat;
+  top: 429.5px;
+  left: 327.15px;
+}
+.graph-name-overlay .graph-name-item.mineral-version {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: transparent url("../images/icons/new_graph_label/mineral.svg") center center no-repeat;
+  top: 445px;
+  left: 244.7px;
+}
+.graph-name-overlay .graph-name-item.citrus-version {
+  width: 600px;
+  height: 600px;
+  background: transparent url("../images/icons/graph-label-citrus.svg") center center no-repeat;
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: transparent url("../images/icons/new_graph_label/citrus.svg") center center no-repeat;
+  top: 426.5px;
+  left: 168.2px;
+}
+.graph-name-overlay .graph-name-item.fruity-version {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: transparent url("../images/icons/new_graph_label/fruity.svg") center center no-repeat;
+  top: 357.5px;
+  left: 88.2px;
+}
+.graph-name-overlay .graph-name-item.sweet-version {
+  width: 600px;
+  height: 600px;
+  background: transparent url("../images/icons/graph-label-sweet.svg") center center no-repeat;
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: transparent url("../images/icons/new_graph_label/sweet.svg") center center no-repeat;
+  top: 200px;
+  left: 65.7px;
+}
+.graph-name-overlay .graph-name-item.wood-version {
+  width: 600px;
+  height: 600px;
+  background: transparent url("../images/icons/graph-label-wood.svg") center center no-repeat;
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: transparent url("../images/icons/new_graph_label/wood.svg") center center no-repeat;
+  top: 77px;
+  left: 167px;
+}
+.graph-name-overlay .graph-name-item.herbaceous-version {
+  width: 600px;
+  height: 600px;
+  background: transparent url("../images/icons/graph-label-herbaceous.svg") center center no-repeat;
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: transparent url("../images/icons/new_graph_label/herbaceous.svg") center center no-repeat;
+  top: 66px;
+  left: 308px;
+}
+.graph-svg-circle {
+  cursor: pointer;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  margin-top: -7px;
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  filter: alpha(opacity=0);
+  visibility: hidden;
+}
+.graph-svg-circle .graph-svg-circle-icon {
+  display: block;
+  width: 6px;
+  height: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  margin-left: 4px;
+  margin-top: 4px;
+  background: #ffffff;
+  background: attr(data-dark-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.graph-svg-circle .graph-svg-circle-text {
+  content: attr(data-flavor-name);
+  display: block;
+  font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 24px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  white-space: nowrap;
+  background: #000000;
+  background: attr(data-color);
+  visibility: hidden;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 24px;
+  padding: 0 15px;
+}
+.graph-svg-circle:focus .graph-svg-circle-text,
+.graph-svg-circle:hover .graph-svg-circle-text {
+  visibility: visible;
+}
 html {
   width: 100%;
   height: 100%;
@@ -7573,6 +7817,9 @@ html * {
   height: 100%;
   background: #7b706b;
   color: #f1efee;
+}
+#graph-section #graph-section-combination-graph {
+  margin: 0 auto;
 }
 #combination-graph-data-item-container {
   display: none;
@@ -7655,7 +7902,7 @@ html * {
 }
 .graph-selection .graph-selection-instructions {
   text-align: center;
-  padding-top: 30px;
+  margin-top: 30px;
 }
 .graph-selection .graph-selection-instructions .fa {
   font-size: 16px;
@@ -7668,6 +7915,10 @@ html * {
   filter: alpha(opacity=60);
   position: relative;
   top: 1px;
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 }
 .graph-selection .graph-selection-instructions h4 {
   font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
@@ -7684,6 +7935,35 @@ html * {
   opacity: 0.6;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
   filter: alpha(opacity=60);
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+.graph-selection .graph-selection-instructions .graph-selection-instructions-btn {
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+  cursor: pointer;
+}
+.graph-selection .graph-selection-instructions .graph-selection-instructions-btn:focus .fa,
+.graph-selection .graph-selection-instructions .graph-selection-instructions-btn:hover .fa {
+  -moz-opacity: 0.3;
+  -khtml-opacity: 0.3;
+  -webkit-opacity: 0.3;
+  opacity: 0.3;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=30);
+  filter: alpha(opacity=30);
+}
+.graph-selection .graph-selection-instructions .graph-selection-instructions-btn:focus h4,
+.graph-selection .graph-selection-instructions .graph-selection-instructions-btn:hover h4 {
+  -moz-opacity: 0.3;
+  -khtml-opacity: 0.3;
+  -webkit-opacity: 0.3;
+  opacity: 0.3;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=30);
+  filter: alpha(opacity=30);
 }
 .graph-selection-tea-slider {
   position: relative;
@@ -7744,6 +8024,16 @@ html * {
   letter-spacing: 0.12em;
   margin-bottom: 11px;
 }
+.graph-selection-tea h2 sup {
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 10px;
+  letter-spacing: 0.1em;
+  position: relative;
+  top: -7px;
+}
 .graph-selection-tea .price {
   font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
   font-style: normal;
@@ -7781,7 +8071,9 @@ html * {
   margin-top: 5px;
 }
 .graph-selection-tea .arrow-cta {
-  margin-top: 5px;
+  position: absolute;
+  bottom: 34px;
+  right: 32px;
 }
 @media only screen and (max-height: 768px) {
   .graph-selection-tea,
@@ -8035,7 +8327,6 @@ html * {
   left: 0;
 }
 #graph-section-center-copy {
-  width: 450px;
   margin: 0 auto;
   text-align: center;
   margin-top: -10px;
@@ -8050,6 +8341,16 @@ html * {
   letter-spacing: 0.12em;
   margin-bottom: 8px;
 }
+#graph-section-center-copy h2 sup {
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 10px;
+  letter-spacing: 0.1em;
+  position: relative;
+  top: -7px;
+}
 #graph-section-center-copy p {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
@@ -8058,6 +8359,9 @@ html * {
   font-size: 11.5px;
   line-height: 18px;
   letter-spacing: 0.04em;
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
 }
 #graph-section-center-copy .cta-container {
   font-size: 0px;
@@ -8119,6 +8423,21 @@ html * {
   opacity: 0;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
   filter: alpha(opacity=0);
+  -webkit-animation: plainAlphaOut 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+  animation: plainAlphaOut 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+  -webkit-animation-delay: 0.005s !important;
+  -moz-animation-delay: 0.005s !important;
+  -ms-animation-delay: 0.005s !important;
+  -o-animation-delay: 0.005s !important;
+  animation-delay: 0.005s !important;
+}
+#graph-section-center-copy .square-cta-03 {
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  filter: alpha(opacity=0);
   -webkit-animation: rightFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
   animation: rightFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
   -webkit-animation-delay: 0.005s !important;
@@ -8155,6 +8474,15 @@ html * {
   animation-delay: 0.305s !important;
 }
 #graph-section-center-copy.animate-in .square-cta-02 {
+  -webkit-animation: plainAlphaIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+  animation: plainAlphaIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+  -webkit-animation-delay: 0.305s !important;
+  -moz-animation-delay: 0.305s !important;
+  -ms-animation-delay: 0.305s !important;
+  -o-animation-delay: 0.305s !important;
+  animation-delay: 0.305s !important;
+}
+#graph-section-center-copy.animate-in .square-cta-03 {
   -webkit-animation: rightFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
   animation: rightFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
   -webkit-animation-delay: 0.305s !important;
@@ -8848,7 +9176,7 @@ body.tea-layering-detail-page {
 }
 #home-tea-item-container {
   position: absolute;
-  top: 90px;
+  top: 70px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -8862,7 +9190,6 @@ body.tea-layering-detail-page {
   width: 25%;
   height: 33.33%;
   position: relative;
-  cursor: pointer;
 }
 .home-tea-item .home-tea-item-bg {
   position: absolute;
@@ -8883,16 +9210,16 @@ body.tea-layering-detail-page {
 }
 .home-tea-item .home-tea-item-text {
   position: absolute;
-  top: 15px;
-  bottom: 8px;
-  left: 15px;
-  right: 15px;
+  top: 12px;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
   background: #7b706b;
   text-align: left;
-  padding-top: 16px;
+  padding-top: 39px;
   padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 .home-tea-item h2 {
   font-family: 'Brandon Grotesque Black', "Arial Black", Gadget, sans-serif;
@@ -8934,8 +9261,8 @@ body.tea-layering-detail-page {
 }
 .home-tea-item .cta-container {
   position: absolute;
-  bottom: 34px;
-  right: 20px;
+  bottom: 24px;
+  right: 22px;
   -moz-opacity: 0;
   -khtml-opacity: 0;
   -webkit-opacity: 0;

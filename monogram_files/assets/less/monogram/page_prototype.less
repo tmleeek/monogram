@@ -46,6 +46,12 @@ html{
   background: #7b706b;
   color: @off-white;
   // color: fade(@off-white, 90%);
+  
+
+  #graph-section-combination-graph{
+    margin: 0 auto;
+  }
+  
 }
 
 #combination-graph-data-item-container{
@@ -184,7 +190,9 @@ html{
   }
   .graph-selection-instructions{
     text-align: center;
-    padding-top: 30px;
+    //padding-top: 30px;
+    margin-top: 30px;
+
 
     .fa{
       font-size: 16px;
@@ -193,6 +201,8 @@ html{
 
       position: relative;
       top: 1px;
+
+      .transition-in(0.3s);
     }
     h4{
       .subheader-font;
@@ -204,7 +214,26 @@ html{
 
       padding-top: 6px;
       .opacity(0.6);
+
+      .transition-in(0.3s);
     }
+
+    .graph-selection-instructions-btn{
+      .display-inline-block;
+      cursor: pointer;
+
+      &:focus,
+      &:hover{
+
+        .fa{
+          .opacity(0.3);
+        }
+        h4{
+          .opacity(0.3);
+        }
+      }
+    }
+
   }
 }
 
@@ -284,6 +313,16 @@ html{
     letter-spacing: 0.12em;
 
     margin-bottom: 11px;
+
+    sup{
+      .header-font;
+      font-size: 10px;
+      line-height: 10px;
+      letter-spacing: 0.1em;
+
+      position: relative;
+      top: -7px;
+    }
     
   }
   .price{
@@ -326,8 +365,13 @@ html{
     // margin-top: 13px;
     margin-top: 5px;
   }
+
   .arrow-cta{
-    margin-top: 5px;
+    // margin-top: 5px;
+
+    position: absolute;
+    bottom: 34px;
+    right: 32px;
   }
 
 
@@ -544,7 +588,8 @@ html{
 
 
 #graph-section-center-copy{
-  width: 450px;
+  // width: 450px;
+  
   margin: 0 auto;
 
   text-align: center;
@@ -562,6 +607,16 @@ html{
     letter-spacing: 0.12em;
 
     margin-bottom: 8px;
+
+    sup{
+      .header-font;
+      font-size: 10px;
+      line-height: 10px;
+      letter-spacing: 0.1em;
+
+      position: relative;
+      top: -7px;
+    }
   }
 
   p{
@@ -573,6 +628,12 @@ html{
     // line-height: 20px;
     line-height: 18px;
     letter-spacing: 0.04em;
+
+    width: 450px;
+
+    margin-left: auto;
+    margin-right: auto;
+
   }
   .cta-container{
     font-size: 0px;
@@ -609,6 +670,13 @@ html{
   }
   .square-cta-02{
     .opacity(0);
+    //.text-fade-out;
+    //.left-fade-out;
+    .alpha-out;
+    .dd1;
+  }
+  .square-cta-03{
+    .opacity(0);
     .right-fade-out;
     .dd1;
   }
@@ -628,6 +696,12 @@ html{
     .dd6;
   }
   .square-cta-02{
+    //.text-fade-in;
+    //.left-fade-in;
+    .alpha-in;
+    .dd6;
+  }
+  .square-cta-03{
     .right-fade-in;
     .dd6;
   }

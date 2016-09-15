@@ -107,10 +107,11 @@ manic.util.JsonParser.prototype.on_json_load_complete = function(event) {
   //console.log(event);
   //console.log(event['responseText']);
   //console.log(JSON.parse(event['responseText']));
-  try{
+  
+  //try{
     this.process_json(JSON.parse(event['responseText']));
-  } catch (e) {
-    console.log('on_json_load_complete: ' + this.options['json']);
-    console.log(e);
-  }
+  //} catch (e) {
+    // console.log('on_json_load_complete: ' + this.options['json']);
+    // console.log(e);
+  //}
 };
