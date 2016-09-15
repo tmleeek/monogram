@@ -5,12 +5,16 @@ goog.require('monogram.page.Default');
 
 goog.require('monogram.graph.Data');
 
-goog.require('monograph.graph.DataLoader');
-goog.require('monograph.graph.SingleGraph');
+goog.require('monogram.graph.DataLoader');
+goog.require('monogram.graph.SingleGraph');
 
-goog.require('monograph.graph.CombinationDataLoader');
+goog.require('monogram.graph.CombinationDataLoader');
 goog.require('monogram.graph.CombinationGraph')
 
+
+
+
+goog.require('monogram.component.GraphSection');
 
 
 
@@ -63,10 +67,17 @@ monogram.page.Test.prototype.init = function() {
     this.create_single_graph();
   }
 
-    
+  
+  /*
   if ($('#sample-combination-graph').length != 0) {
     this.create_combination_graph();
   }
+  */
+
+  if ($('#graph-section').length != 0) {
+    this.create_graph_section();
+  }
+
   
 
 
@@ -94,9 +105,9 @@ monogram.page.Test.prototype.create_single_graph = function(){
 
 
   /**
-   * @type {monograph.graph.SingleGraph}
+   * @type {monogram.graph.SingleGraph}
    */
-  this.single_graph = new monograph.graph.SingleGraph({}, $('#sample-single-graph'));
+  this.single_graph = new monogram.graph.SingleGraph({}, $('#sample-single-graph'));
 
 
   this.data_loader = new monograph.graph.DataLoader({}, $('#monograph-graph-data'));
@@ -156,9 +167,66 @@ monogram.page.Test.prototype.create_combination_graph = function() {
     this.combination_graph.set_data_02(graph_data_02);
 
 
+    TweenMax.delayedCall(5, function(){
+
+      /*
+      var graph_data_01 = this.combination_data_loader.get_data_by_id('uji-sencha');
+      var graph_data_02 = this.combination_data_loader.get_data_by_id('cherry-japonais');
+
+      this.combination_graph.set_data_01(graph_data_01);
+      this.combination_graph.set_data_02(graph_data_02);
+      */
+     
+      this.combination_graph.graph_item_01.animate_out();
+      this.combination_graph.graph_item_02.animate_out();
+
+    }, [], this);
+    TweenMax.delayedCall(10, function(){
+
+      var graph_data_01 = this.combination_data_loader.get_data_by_id('uji-sencha');
+      var graph_data_02 = this.combination_data_loader.get_data_by_id('cherry-japonais');
+      
+      this.combination_graph.set_data_01(graph_data_01);
+      this.combination_graph.set_data_02(graph_data_02);
+
+    }, [], this);
+    TweenMax.delayedCall(15, function(){
+      
+    }, [], this);
+    TweenMax.delayedCall(20, function(){
+      
+    }, [], this);
+
+
   }.bind(this));  
   
 }
+
+
+
+monogram.page.Test.prototype.create_graph_section = function(){
+
+  /**
+   * @type {monogram.component.GraphSection}
+   */
+  this.graph_section = null;
+
+
+
+
+  this.graph_section = new monogram.component.GraphSection({}, $('#graph-section'));
+
+  goog.events.listen(this.graph_section, monogram.component.GraphSection.ON_GRAPH_SECTION_READY, function(event){
+
+    this.graph_section.display_combination('earl-grey-neroli', 'shiso-mint');
+
+  }.bind(this));
+  
+  
+  
+  
+};
+
 
 
 //    __  __  ___  ____ ___ _     _____

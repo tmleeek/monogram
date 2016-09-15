@@ -2,6 +2,7 @@
   {
     "id": "uji-sencha",
     "name": "Uji Sencha",
+    "html-name": "<span style='color: #acc6c9;'>uji</span> <span style='color: #bdc8c4;'>sencha</span>",
     "type": "Green Tea",
 
     "color": "#AAC6C9",
@@ -85,6 +86,7 @@
   {
     "id": "cherry-japonais",
     "name": "Cherry Japonais",
+    "html-name": "<span style='color: #edbec9;'>cherry</span> <span style='color: #eccdce;'>japonais</span>",
     "type": "Green Tea",
 
     "color": "#ECBEC9",
@@ -179,6 +181,7 @@
   {
     "id": "jasmine-silk-pearls",
     "name": "Jasmine Silk Pearls",
+    "html-name": "<span style='color: #bbdce5;'>jasmine</span> <span style='color: #a3b1c8;'>silk pearls</span>",
     "type": "Green Tea",
 
     "color": "#97AAC0",
@@ -246,6 +249,7 @@
   {
     "id": "milky-oolong",
     "name": "Milky Oolong",
+    "html-name": "<span style='color: #e3c19e;'>milky</span> <span style='color: #d8d2c4;'>oolong</span>",
     "type": "Oolong Tea",
 
     "color": "#CEC9BB",
@@ -311,6 +315,7 @@
   {
     "id": "lapsang-florale",
     "name": "Lapsang Florale",
+    "html-name": "<span style='color: #b8b8dd;'>lapsang</span> <span style='color: #c7b4e2;'>florale <sup>tm</sup></span>",
     "type": "Black Tea",
 
     "color": "#BAA9D2",
@@ -406,6 +411,7 @@
   {
     "id": "kashmere",
     "name": "Kashmere",
+    "html-name": "<span style='color: #f1a693;'>kashmere <sup>tm</sup></span>",
     "type": "Black Tea",
 
     "color": "#F1A18E",
@@ -513,6 +519,7 @@
   {
     "id": "earl-grey-neroli",
     "name": "Earl Grey Neroli",
+    "html-name": "<span style='color: #c0cdd5;'>earl grey</span> <span style='color: #d8d1ca;'>neroli</span>",
     "type": "Black Tea",
 
     "color": "#B3C5CD",
@@ -608,6 +615,7 @@
   {
     "id": "morning-english",
     "name": "Morning English",
+    "html-name": "<span style='color: #f6c65b;'>morning</span> <span style='color: #fed298;'>english <sup>tm</sup></span>",
     "type": "Black Tea",
 
     "color": "#FECD94",
@@ -695,6 +703,7 @@
   {
     "id": "rose-of-ariana",
     "name": "Rose of Ariana",
+    "html-name": "<span style='color: #ff8189;'>rose</span> <span style='color: #fd92a3;'>of ariana <sup>tm</sup></span>",
     "type": "Herbal Tisane",
 
     "color": "#F48D9F",
@@ -775,6 +784,7 @@
   {
     "id": "shiso-mint",
     "name": "Shiso Mint",
+    "html-name": "<span style='color: #c7c89b;'>shiso</span> <span style='color: #bcc4b9;'>mint</span>",
     "type": "Herbal Tisane",
 
     "color": "#B0BCB2",
@@ -848,6 +858,7 @@
   {
     "id": "saffronais",
     "name": "Saffronais",
+    "html-name": "<span style='color: #ffaa61;'>saffronais <sup>tm</sup></span>",
     "type": "Herbal Tisane",
 
     "color": "#F9A467",
@@ -944,6 +955,7 @@
   {
     "id": "provencal-herbs",
     "name": "Provencal Herbs",
+    "html-name": "<span style='color: #c2cb7f;'>provencial</span> <span style='color: #d5d755;'>herbs</span>",
     "type": "Herbal Tisane",
 
     "color": "#B8C783",

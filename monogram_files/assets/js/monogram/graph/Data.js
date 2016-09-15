@@ -19,6 +19,7 @@ monogram.graph.Data = function(data_obj_param) {
 
   this.data_id                = this.data_object["id"];
   this.data_name              = this.data_object["name"];
+  this.data_html_name         = this.data_object["html-name"];
   this.data_type              = this.data_object["type"];
   this.data_color             = this.data_object["color"];
   this.data_color_02          = this.data_object["color-02"];
@@ -38,7 +39,6 @@ monogram.graph.Data = function(data_obj_param) {
   this.data_steeping_time             = this.data_object["steeping-time"] + monogram.graph.Data.STEEPING_TIME_STRING;
 
   this.data_steeping_temperature      = monogram.graph.Data.STEEPING_TEMPERATURE_NAME_ARRAY['lesstb'];    // default
-
   
   if (goog.isDefAndNotNull(monogram.graph.Data.STEEPING_TEMPERATURE_NAME_ARRAY[this.data_object["steeping-temperature"]])) {
 
@@ -59,7 +59,15 @@ monogram.graph.Data = function(data_obj_param) {
 
 
 
-  //TODO
+  this.graph_section_data_obj = {
+    'htmlname': this.data_html_name,
+    'description': this.data_description,
+    'teatype': this.data_type, 
+    'temperature': this.data_steeping_temperature,
+    'time': this.data_steeping_time
+  };
+
+  
   
 
   

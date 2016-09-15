@@ -1,4 +1,4 @@
-goog.provide('monograph.graph.DataLoader');
+goog.provide('monogram.graph.DataLoader');
 
 goog.require('goog.events.Event');
 goog.require('goog.events.EventTarget');
@@ -16,9 +16,9 @@ goog.require('monogram.graph.Data');
  * @constructor
  * @extends {goog.events.EventTarget}
  */
-monograph.graph.DataLoader = function(options, element) {
+monogram.graph.DataLoader = function(options, element) {
   goog.events.EventTarget.call(this);
-  this.options = $.extend({}, monograph.graph.DataLoader.DEFAULT, options);
+  this.options = $.extend({}, monogram.graph.DataLoader.DEFAULT, options);
   this.element = element;
 
   this.json_url = '';
@@ -53,7 +53,7 @@ monograph.graph.DataLoader = function(options, element) {
     
 
   } else {
-    console.log('Error: monograph.graph.DataLoader: Missing attr')
+    console.log('Error: monogram.graph.DataLoader: Missing attr')
   }
 
   
@@ -65,7 +65,7 @@ monograph.graph.DataLoader = function(options, element) {
   
   
 };
-goog.inherits(monograph.graph.DataLoader, goog.events.EventTarget);
+goog.inherits(monogram.graph.DataLoader, goog.events.EventTarget);
 
 
 
@@ -76,7 +76,7 @@ goog.inherits(monograph.graph.DataLoader, goog.events.EventTarget);
  * default options for CLASSNAME
  * @const {object}
  */
-monograph.graph.DataLoader.DEFAULT = {
+monogram.graph.DataLoader.DEFAULT = {
   'option_01': '',
   'option_02': ''
 };
@@ -86,14 +86,14 @@ monograph.graph.DataLoader.DEFAULT = {
  * @const
  * @type {string}
  */
-monograph.graph.DataLoader.ON_GRAPH_DATA_LOAD_COMPLETE = 'on_graph_data_load_complete';
+monogram.graph.DataLoader.ON_GRAPH_DATA_LOAD_COMPLETE = 'on_graph_data_load_complete';
 
 /**
  * CLASSNAME Event Constant
  * @const
  * @type {string}
  */
-monograph.graph.DataLoader.EVENT_02 = '';
+monogram.graph.DataLoader.EVENT_02 = '';
 
 
 //    ____  ____  _____     ___  _____ _____
@@ -104,7 +104,7 @@ monograph.graph.DataLoader.EVENT_02 = '';
 //
 
 
-monograph.graph.DataLoader.prototype.parse_data = function() {
+monogram.graph.DataLoader.prototype.parse_data = function() {
   this.original_data_array = this.json_parser.data_array;
 
 
@@ -129,22 +129,22 @@ monograph.graph.DataLoader.prototype.parse_data = function() {
   console.log(this.graph_data_array);
 
 
-  this.dispatchEvent(new goog.events.Event(monograph.graph.DataLoader.ON_GRAPH_DATA_LOAD_COMPLETE));
+  this.dispatchEvent(new goog.events.Event(monogram.graph.DataLoader.ON_GRAPH_DATA_LOAD_COMPLETE));
   
 };
-monograph.graph.DataLoader.prototype.private_method_02 = function() {};
-monograph.graph.DataLoader.prototype.private_method_03 = function() {};
-monograph.graph.DataLoader.prototype.private_method_04 = function() {};
-monograph.graph.DataLoader.prototype.private_method_05 = function() {};
-monograph.graph.DataLoader.prototype.private_method_06 = function() {};
+monogram.graph.DataLoader.prototype.private_method_02 = function() {};
+monogram.graph.DataLoader.prototype.private_method_03 = function() {};
+monogram.graph.DataLoader.prototype.private_method_04 = function() {};
+monogram.graph.DataLoader.prototype.private_method_05 = function() {};
+monogram.graph.DataLoader.prototype.private_method_06 = function() {};
 
 
 /**
  * sample_method_calls
  */
-monograph.graph.DataLoader.prototype.sample_method_calls = function() {
-  monograph.graph.DataLoader.superClass_.method_02.call(this);                                    // call is important
-  this.dispatchEvent(new goog.events.Event(monograph.graph.DataLoader.EVENT_01));
+monogram.graph.DataLoader.prototype.sample_method_calls = function() {
+  monogram.graph.DataLoader.superClass_.method_02.call(this);                                    // call is important
+  this.dispatchEvent(new goog.events.Event(monogram.graph.DataLoader.EVENT_01));
 };
 
 //    ____  _   _ ____  _     ___ ____
@@ -159,7 +159,7 @@ monograph.graph.DataLoader.prototype.sample_method_calls = function() {
  * @param  {[type]} str_param [description]
  * @return {[type]}           [description]
  */
-monograph.graph.DataLoader.prototype.get_data_by_id = function(str_param) {
+monogram.graph.DataLoader.prototype.get_data_by_id = function(str_param) {
 
   /**
    * @type {monogram.graph.Data}
@@ -177,11 +177,11 @@ monograph.graph.DataLoader.prototype.get_data_by_id = function(str_param) {
 
   return null;
 };
-monograph.graph.DataLoader.prototype.public_method_02 = function() {};
-monograph.graph.DataLoader.prototype.public_method_03 = function() {};
-monograph.graph.DataLoader.prototype.public_method_04 = function() {};
-monograph.graph.DataLoader.prototype.public_method_05 = function() {};
-monograph.graph.DataLoader.prototype.public_method_06 = function() {};
+monogram.graph.DataLoader.prototype.public_method_02 = function() {};
+monogram.graph.DataLoader.prototype.public_method_03 = function() {};
+monogram.graph.DataLoader.prototype.public_method_04 = function() {};
+monogram.graph.DataLoader.prototype.public_method_05 = function() {};
+monogram.graph.DataLoader.prototype.public_method_06 = function() {};
 
 
 //    _______     _______ _   _ _____ ____
@@ -195,7 +195,7 @@ monograph.graph.DataLoader.prototype.public_method_06 = function() {};
  * event handler
  * @param  {object} event
  */
-monograph.graph.DataLoader.prototype.on_json_load_complete = function(event) {
+monogram.graph.DataLoader.prototype.on_json_load_complete = function(event) {
   this.parse_data();
 };
 
@@ -203,20 +203,20 @@ monograph.graph.DataLoader.prototype.on_json_load_complete = function(event) {
  * event handler
  * @param  {object} event
  */
-monograph.graph.DataLoader.prototype.on_event_handler_02 = function(event) {
+monogram.graph.DataLoader.prototype.on_event_handler_02 = function(event) {
 };
 
 /**
  * event handler
  * @param  {object} event
  */
-monograph.graph.DataLoader.prototype.on_event_handler_03 = function(event) {
+monogram.graph.DataLoader.prototype.on_event_handler_03 = function(event) {
 };
 
 /**
  * event handler
  * @param  {object} event
  */
-monograph.graph.DataLoader.prototype.on_event_handler_04 = function(event) {
+monogram.graph.DataLoader.prototype.on_event_handler_04 = function(event) {
 };
 

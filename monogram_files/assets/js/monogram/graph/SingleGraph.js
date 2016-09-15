@@ -1,4 +1,4 @@
-goog.provide('monograph.graph.SingleGraph');
+goog.provide('monogram.graph.SingleGraph');
 
 goog.require('goog.events.Event');
 goog.require('goog.events.EventTarget');
@@ -15,9 +15,9 @@ goog.require('monogram.graph.RaphaelGraphItem');
  * @constructor
  * @extends {goog.events.EventTarget}
  */
-monograph.graph.SingleGraph = function(options, element) {
+monogram.graph.SingleGraph = function(options, element) {
   goog.events.EventTarget.call(this);
-  this.options = $.extend({}, monograph.graph.SingleGraph.DEFAULT, options);
+  this.options = $.extend({}, monogram.graph.SingleGraph.DEFAULT, options);
   this.element = element;
 
 
@@ -71,7 +71,7 @@ monograph.graph.SingleGraph = function(options, element) {
   if (goog.isDefAndNotNull(this.element.attr('data-id'))) {
     this.data_id = this.element.attr('data-id');
   } else {
-    console.log('Error: monograph.graph.SingleGraph: missing attr');
+    console.log('Error: monogram.graph.SingleGraph: missing attr');
   }
 
   
@@ -93,7 +93,7 @@ monograph.graph.SingleGraph = function(options, element) {
 
   console.log('init');
 };
-goog.inherits(monograph.graph.SingleGraph, goog.events.EventTarget);
+goog.inherits(monogram.graph.SingleGraph, goog.events.EventTarget);
 
 
 
@@ -104,7 +104,7 @@ goog.inherits(monograph.graph.SingleGraph, goog.events.EventTarget);
  * default options for SingleGraph
  * @const {object}
  */
-monograph.graph.SingleGraph.DEFAULT = {
+monogram.graph.SingleGraph.DEFAULT = {
   'scale_factor': 1
 };
 
@@ -113,14 +113,14 @@ monograph.graph.SingleGraph.DEFAULT = {
  * @const
  * @type {string}
  */
-monograph.graph.SingleGraph.EVENT_01 = '';
+monogram.graph.SingleGraph.EVENT_01 = '';
 
 /**
  * SingleGraph Event Constant
  * @const
  * @type {string}
  */
-monograph.graph.SingleGraph.EVENT_02 = '';
+monogram.graph.SingleGraph.EVENT_02 = '';
 
 
 //    ____  ____  _____     ___  _____ _____
@@ -131,20 +131,20 @@ monograph.graph.SingleGraph.EVENT_02 = '';
 //
 
 
-monograph.graph.SingleGraph.prototype.private_method_01 = function() {};
-monograph.graph.SingleGraph.prototype.private_method_02 = function() {};
-monograph.graph.SingleGraph.prototype.private_method_03 = function() {};
-monograph.graph.SingleGraph.prototype.private_method_04 = function() {};
-monograph.graph.SingleGraph.prototype.private_method_05 = function() {};
-monograph.graph.SingleGraph.prototype.private_method_06 = function() {};
+monogram.graph.SingleGraph.prototype.private_method_01 = function() {};
+monogram.graph.SingleGraph.prototype.private_method_02 = function() {};
+monogram.graph.SingleGraph.prototype.private_method_03 = function() {};
+monogram.graph.SingleGraph.prototype.private_method_04 = function() {};
+monogram.graph.SingleGraph.prototype.private_method_05 = function() {};
+monogram.graph.SingleGraph.prototype.private_method_06 = function() {};
 
 
 /**
  * sample_method_calls
  */
-monograph.graph.SingleGraph.prototype.sample_method_calls = function() {
-  monograph.graph.SingleGraph.superClass_.method_02.call(this);                                    // call is important
-  this.dispatchEvent(new goog.events.Event(monograph.graph.SingleGraph.EVENT_01));
+monogram.graph.SingleGraph.prototype.sample_method_calls = function() {
+  monogram.graph.SingleGraph.superClass_.method_02.call(this);                                    // call is important
+  this.dispatchEvent(new goog.events.Event(monogram.graph.SingleGraph.EVENT_01));
 };
 
 //    ____  _   _ ____  _     ___ ____
@@ -158,7 +158,7 @@ monograph.graph.SingleGraph.prototype.sample_method_calls = function() {
 /**
  * @param {monogram.graph.Data} graph_data_param
  */
-monograph.graph.SingleGraph.prototype.set_data = function(graph_data_param) {
+monogram.graph.SingleGraph.prototype.set_data = function(graph_data_param) {
 
   this.graph_data = graph_data_param;
 
@@ -176,24 +176,24 @@ monograph.graph.SingleGraph.prototype.set_data = function(graph_data_param) {
 };
 
 /*
-monograph.graph.SingleGraph.prototype.test_01 = function() {
+monogram.graph.SingleGraph.prototype.test_01 = function() {
   this.graph_item.animate_in();
 };
-monograph.graph.SingleGraph.prototype.test_02 = function() {
+monogram.graph.SingleGraph.prototype.test_02 = function() {
   this.graph_item.animate_out();
 };
-monograph.graph.SingleGraph.prototype.test_03 = function() {
+monogram.graph.SingleGraph.prototype.test_03 = function() {
   this.graph_item.instant_animate_in();
 };
-monograph.graph.SingleGraph.prototype.test_04 = function() {
+monogram.graph.SingleGraph.prototype.test_04 = function() {
   this.graph_item.instant_animate_out();
 };
 */
 
-monograph.graph.SingleGraph.prototype.public_method_03 = function() {};
-monograph.graph.SingleGraph.prototype.public_method_04 = function() {};
-monograph.graph.SingleGraph.prototype.public_method_05 = function() {};
-monograph.graph.SingleGraph.prototype.public_method_06 = function() {};
+monogram.graph.SingleGraph.prototype.public_method_03 = function() {};
+monogram.graph.SingleGraph.prototype.public_method_04 = function() {};
+monogram.graph.SingleGraph.prototype.public_method_05 = function() {};
+monogram.graph.SingleGraph.prototype.public_method_06 = function() {};
 
 
 //    _______     _______ _   _ _____ ____
@@ -207,27 +207,27 @@ monograph.graph.SingleGraph.prototype.public_method_06 = function() {};
  * event handler
  * @param  {object} event
  */
-monograph.graph.SingleGraph.prototype.on_event_handler_01 = function(event) {
+monogram.graph.SingleGraph.prototype.on_event_handler_01 = function(event) {
 };
 
 /**
  * event handler
  * @param  {object} event
  */
-monograph.graph.SingleGraph.prototype.on_event_handler_02 = function(event) {
+monogram.graph.SingleGraph.prototype.on_event_handler_02 = function(event) {
 };
 
 /**
  * event handler
  * @param  {object} event
  */
-monograph.graph.SingleGraph.prototype.on_event_handler_03 = function(event) {
+monogram.graph.SingleGraph.prototype.on_event_handler_03 = function(event) {
 };
 
 /**
  * event handler
  * @param  {object} event
  */
-monograph.graph.SingleGraph.prototype.on_event_handler_04 = function(event) {
+monogram.graph.SingleGraph.prototype.on_event_handler_04 = function(event) {
 };
 

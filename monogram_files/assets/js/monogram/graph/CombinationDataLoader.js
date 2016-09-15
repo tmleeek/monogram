@@ -1,20 +1,20 @@
-goog.provide('monograph.graph.CombinationDataLoader');
+goog.provide('monogram.graph.CombinationDataLoader');
 
 goog.require('goog.events.Event');
 goog.require('goog.events.EventTarget');
 
-goog.require('monograph.graph.DataLoader');
+goog.require('monogram.graph.DataLoader');
 
 /**
  * The CombinationDataLoader constructor
  * @param {object} options The object extendable like jquery plugins
  * @param {element} element The element connected to class
  * @constructor
- * @extends {monograph.graph.DataLoader}
+ * @extends {monogram.graph.DataLoader}
  */
-monograph.graph.CombinationDataLoader = function(options, element) {
-  monograph.graph.DataLoader.call(this, options, element);
-  this.options = $.extend({}, monograph.graph.CombinationDataLoader.DEFAULT, options);
+monogram.graph.CombinationDataLoader = function(options, element) {
+  monogram.graph.DataLoader.call(this, options, element);
+  this.options = $.extend({}, monogram.graph.CombinationDataLoader.DEFAULT, options);
 
   this.combined_json_url = '';
 
@@ -48,13 +48,13 @@ monograph.graph.CombinationDataLoader = function(options, element) {
     
 
   } else {
-    console.log('Error: monograph.graph.DataLoader: Missing attr')
+    console.log('Error: monogram.graph.DataLoader: Missing attr')
   }
 
   // data-graph-data-url="assets/json/graph-data.json"
   // data-combined-graph-data-url="assets/json/combined-graph-data.json">
 };
-goog.inherits(monograph.graph.CombinationDataLoader, monograph.graph.DataLoader);
+goog.inherits(monogram.graph.CombinationDataLoader, monogram.graph.DataLoader);
 
 
 
@@ -65,7 +65,7 @@ goog.inherits(monograph.graph.CombinationDataLoader, monograph.graph.DataLoader)
  * default options for CombinationDataLoader
  * @const {object}
  */
-monograph.graph.CombinationDataLoader.DEFAULT = {
+monogram.graph.CombinationDataLoader.DEFAULT = {
   'option_01': '',
   'option_02': ''
 };
@@ -75,14 +75,14 @@ monograph.graph.CombinationDataLoader.DEFAULT = {
  * @const
  * @type {string}
  */
-monograph.graph.CombinationDataLoader.EVENT_01 = '';
+monogram.graph.CombinationDataLoader.EVENT_01 = '';
 
 /**
  * CombinationDataLoader Event Constant
  * @const
  * @type {string}
  */
-monograph.graph.CombinationDataLoader.ON_COMBINED_GRAPH_DATA_LOAD_COMPLETE = 'on_combined_graph_data_load_complete';
+monogram.graph.CombinationDataLoader.ON_COMBINED_GRAPH_DATA_LOAD_COMPLETE = 'on_combined_graph_data_load_complete';
 
 
 //    ____  ____  _____     ___  _____ _____
@@ -97,37 +97,23 @@ monograph.graph.CombinationDataLoader.ON_COMBINED_GRAPH_DATA_LOAD_COMPLETE = 'on
  * @override
  * @inheritDoc
  */
-monograph.graph.CombinationDataLoader.prototype.parse_data = function() {
+monogram.graph.CombinationDataLoader.prototype.parse_data = function() {
 
-  monograph.graph.CombinationDataLoader.superClass_.parse_data.call(this);
+  monogram.graph.CombinationDataLoader.superClass_.parse_data.call(this);
 
 
   this.combined_json_parser.start_load();
 
 };
 
-monograph.graph.CombinationDataLoader.prototype.parse_combined_data = function() {
+monogram.graph.CombinationDataLoader.prototype.parse_combined_data = function() {
   this.original_combined_data_array = this.combined_json_parser.data_array;
 
 
-  this.dispatchEvent(new goog.events.Event(monograph.graph.CombinationDataLoader.ON_COMBINED_GRAPH_DATA_LOAD_COMPLETE));
+  this.dispatchEvent(new goog.events.Event(monogram.graph.CombinationDataLoader.ON_COMBINED_GRAPH_DATA_LOAD_COMPLETE));
 
 };
 
-monograph.graph.CombinationDataLoader.prototype.private_method_03 = function() {};
-monograph.graph.CombinationDataLoader.prototype.private_method_04 = function() {};
-monograph.graph.CombinationDataLoader.prototype.private_method_05 = function() {};
-monograph.graph.CombinationDataLoader.prototype.private_method_06 = function() {};
-
-
-/**
- * sample_method_calls
- */
-monograph.graph.CombinationDataLoader.prototype.sample_method_calls = function() {
-  monograph.graph.CombinationDataLoader.superClass_.method_02.call(this);                                    // call is important
-  this.dispatchEvent(new goog.events.Event(monograph.graph.CombinationDataLoader.EVENT_01));
-  
-};
 
 //    ____  _   _ ____  _     ___ ____
 //   |  _ \| | | | __ )| |   |_ _/ ___|
@@ -137,12 +123,29 @@ monograph.graph.CombinationDataLoader.prototype.sample_method_calls = function()
 //
 
 
-monograph.graph.CombinationDataLoader.prototype.public_method_01 = function() {};
-monograph.graph.CombinationDataLoader.prototype.public_method_02 = function() {};
-monograph.graph.CombinationDataLoader.prototype.public_method_03 = function() {};
-monograph.graph.CombinationDataLoader.prototype.public_method_04 = function() {};
-monograph.graph.CombinationDataLoader.prototype.public_method_05 = function() {};
-monograph.graph.CombinationDataLoader.prototype.public_method_06 = function() {};
+
+/**
+ * @param  {string} str_01_param
+ * @param  {string} str_02_param
+ * @return {object}
+ */
+monogram.graph.CombinationDataLoader.prototype.get_combined_data_by_ids = function(str_01_param, str_02_param) {
+
+  var data_obj = null;
+
+  for (var i = 0, l=this.original_combined_data_array.length; i < l; i++) {
+
+    data_obj = this.original_combined_data_array[i]
+
+    if ((data_obj['tea-01'] == str_01_param && data_obj['tea-02'] == str_02_param) ||
+        (data_obj['tea-01'] == str_02_param && data_obj['tea-02'] == str_01_param)) {
+
+      return data_obj; 
+    }
+  }
+
+  return null;    // if nothing is found, return null
+};
 
 
 //    _______     _______ _   _ _____ ____
@@ -156,7 +159,7 @@ monograph.graph.CombinationDataLoader.prototype.public_method_06 = function() {}
  * event handler
  * @param  {object} event
  */
-monograph.graph.CombinationDataLoader.prototype.on_combined_json_load_complete = function(event) {
+monogram.graph.CombinationDataLoader.prototype.on_combined_json_load_complete = function(event) {
   this.parse_combined_data();
 };
 
@@ -164,20 +167,5 @@ monograph.graph.CombinationDataLoader.prototype.on_combined_json_load_complete =
  * event handler
  * @param  {object} event
  */
-monograph.graph.CombinationDataLoader.prototype.on_event_handler_02 = function(event) {
+monogram.graph.CombinationDataLoader.prototype.on_event_handler_02 = function(event) {
 };
-
-/**
- * event handler
- * @param  {object} event
- */
-monograph.graph.CombinationDataLoader.prototype.on_event_handler_03 = function(event) {
-};
-
-/**
- * event handler
- * @param  {object} event
- */
-monograph.graph.CombinationDataLoader.prototype.on_event_handler_04 = function(event) {
-};
-

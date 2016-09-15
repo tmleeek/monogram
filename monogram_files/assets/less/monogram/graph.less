@@ -19,9 +19,74 @@
     height: 600px;
 
   }
+  .graph-name-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 600px;
+  }
 
 } // .monogram-single-graph, .monogram-combination-graph
 
+
+
+.graph-name-overlay .graph-name-item{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+
+  pointer-events: none;
+
+  &.floral-version{
+    .graph-label-floral;
+    top: 237.5px;
+    left: 445.2px;
+  }
+  &.creamy-version{
+    .graph-label-creamy;
+    top: 385px;
+    left: 393.65px;
+  }
+  &.marine-version{
+    .graph-label-marine;
+    top: 429.5px;
+    left: 327.15px;
+  }
+  &.mineral-version{
+    .graph-label-mineral;
+    top: 445px;
+    left: 244.7px;
+  }
+  &.citrus-version{
+    .graph-label-citrus;
+    top: 426.5px;
+    left: 168.2px;
+  }
+  &.fruity-version{
+    .graph-label-fruity;
+    top: 357.5px;
+    left: 88.2px;
+  }
+  &.sweet-version{
+    .graph-label-sweet;
+    top: 200px;
+    left: 65.7px;
+  }
+  &.wood-version{
+    .graph-label-wood;
+    top: 77px;
+    left: 167px;
+  }
+  &.herbaceous-version{
+    .graph-label-herbaceous;
+    top: 66px;
+    left: 308px;
+  }
+
+}
 
 
 
@@ -63,6 +128,8 @@
     position: absolute;
     top: 0;
     left: 0;
+
+    pointer-events: none;
   }
 
   .graph-svg-circle-text{

@@ -2,7 +2,8 @@ goog.provide('monogram.page.Home');
 goog.require('monogram.page.Default');
 
 goog.require('monogram.component.GraphSection');
-goog.require('monogram.component.MobileGraphSection');
+
+// goog.require('monogram.component.MobileGraphSection');
 
 
 /**
@@ -22,11 +23,36 @@ monogram.page.Home = function(options, element) {
   this.tea_selection_section =  $("#home-tea-selection-section");
   this.graph_section_element =          $("#home-graph-section");
 
+  /**
+   * @type {manic.ui.Mouse}
+   */
+  this.introduction_mouse = null;
+  this.introduction_mouse = new manic.ui.Mouse({}, this.intro_section);
 
+  goog.events.listen(this.introduction_mouse, manic.ui.Mouse.SWIPE_UP, function(){
+    window.location.hash = '#selection';
+  }.bind(this));
+  goog.events.listen(this.introduction_mouse, manic.ui.Mouse.SCROLL_DOWN, function(){
+    window.location.hash = '#selection';
+  }.bind(this));
+
+
+  /**
+   * @type {manic.ui.Mouse}
+   */
+  this.selection_mouse = null;
+  this.selection_mouse = new manic.ui.Mouse({}, this.tea_selection_section);
+  
+  goog.events.listen(this.selection_mouse, manic.ui.Mouse.SWIPE_DOWN, function(){
+    window.location.hash = '#intro';
+  }.bind(this));
+  goog.events.listen(this.selection_mouse, manic.ui.Mouse.SCROLL_UP, function(){
+    window.location.hash = '#intro';
+  }.bind(this));
 
 
   this.graph_section = null;
-  this.mobile_graph_section = null;
+  //this.mobile_graph_section = null;
 
 };
 goog.inherits(monogram.page.Home, monogram.page.Default);
@@ -304,10 +330,11 @@ monogram.page.Home.prototype.create_graph = function() {
     this.graph_section = new monogram.component.GraphSection({}, $('#graph-section'));
   }
 
-
+  /*
   if ($('#tea-layering-detail-graph-section').length != 0) {
     this.mobile_graph_section = new monogram.component.MobileGraphSection({}, $('#tea-layering-detail-graph-section'));
   }
+  */
 
 };
 
@@ -371,9 +398,17 @@ monogram.page.Home.prototype.update_page_layout = function() {
   // var target_zoom = target_height / 600;
   var target_zoom = target_height / 600;
 
+
+  /*
   $('#combination-graph-04').css({
     'zoom': target_zoom
   });
+  */
+  
+  $('#graph-section-combination-graph').css({
+    'zoom': target_zoom
+  });
+
 
 
   var mobile_target_zoom = 0.6333;

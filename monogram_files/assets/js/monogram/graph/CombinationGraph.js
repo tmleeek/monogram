@@ -187,6 +187,8 @@ monogram.graph.CombinationGraph.prototype.set_data_02 = function(graph_data_para
   this.graph_item_02.animate_in();
 
 };
+
+
 monogram.graph.CombinationGraph.prototype.public_method_03 = function() {};
 monogram.graph.CombinationGraph.prototype.public_method_04 = function() {};
 monogram.graph.CombinationGraph.prototype.public_method_05 = function() {};

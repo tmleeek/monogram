@@ -220,6 +220,9 @@ monogram.graph.RaphaelGraphItem.prototype.create_dots = function() {
     
     // create element via template
     circle_element = $(nano(circle_template, circle_data_object));
+    circle_element.mouseover(function(event){
+      this.parent().append(this);
+    }.bind(circle_element));
 
     // this is needed to modify the x & y properties of the object
     this.overlay_element.append(circle_element);      
