@@ -34,6 +34,11 @@
 
   #tea-matrix-content {
     .section {
+      position: absolute;
+      top: 102px;
+      left: 0;
+      width: 100%;
+            
       h3 {
         text-transform: uppercase;
         padding-bottom: 10px;
@@ -46,13 +51,20 @@
         font-size: 10px;
         line-height: 16px; 
       } 
-      ul {
+      hr.top {
         border-top: 1px solid rgba(241, 239, 238, 0.5);
-        border-bottom: 1px solid rgba(241, 239, 238, 0.5);
+        margin-top: 15px;        
+        margin-bottom: 0px;        
+      }
+      hr.bottom {
+        border-top: 1px solid rgba(241, 239, 238, 0.5);
+        margin-top: 0px;        
+        margin-bottom: 15px;        
+      }
+      ul {        
         padding: 15px 0 10px 10px;
-        margin: 15px 0;
 
-        li {
+        li {        
           padding-bottom: 7px;
           span {
             display: inline-block;
@@ -96,10 +108,13 @@
       }
 
       .tea-matrix-content-text-cta {
-        padding-right: 90px;
-        display: none;
+        padding-right: 90px;        
         a.square-cta {
           margin-right: 15px;
+        }
+
+        .tea-matrix-content-animate {
+          .opacity(0);
         }
       }
 

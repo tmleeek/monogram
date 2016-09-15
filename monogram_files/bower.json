@@ -27,6 +27,7 @@
     "video.js": "^5.10.7",
     "jquery-mousewheel": "^3.1.13",
     "imagesloaded": "^4.1.0",
-    "fullpage.js": "^2.8.6"
+    "fullpage.js": "^2.8.6",
+    "waypoints": "^4.0.1"
   }
 }

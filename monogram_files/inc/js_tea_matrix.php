@@ -17,7 +17,7 @@
 
   
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <link rel="stylesheet" type="text/css" href="assets/libs/fullpage.js/dist/jquery.fullpage.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="assets/libs/fullpage.js/dist/jquery.fullpage.min.css"> -->
 
   <!-- Page Library -->
   <script type="text/javascript" src="assets/libs/jquery-other/jquery-1.9.1.min.js"></script>
@@ -42,7 +42,7 @@
   <script type="text/javascript" src="assets/libs/raphael/raphael.min.js"></script>
   <script type="text/javascript" src="assets/libs/slick-carousel/slick/slick.min.js"></script>
   <script type="text/javascript" src="assets/libs/hammer/hammer.min.js"></script>
-  <script type="text/javascript" src="assets/libs/fullpage.js/dist/jquery.fullpage.min.js"></script>
+  <!-- <script type="text/javascript" src="assets/libs/fullpage.js/dist/jquery.fullpage.min.js"></script> -->
   
   <!-- Google Closure -->
   <!-- <script type="text/javascript" src="assets/libs/google-closure/closure-library/closure/goog/base.js"></script>
@@ -57,7 +57,15 @@
   <script>
   $(document).ready(function(){
 
-    function changeColor($firstAnchor, $lastAnchor) {
+    function changeIndicatorsColor($selector) {
+
+      $(".active").find('span').removeAttr('style');
+      $(".active").removeClass("active");
+      $selector.parent().addClass("active");
+
+      var $firstAnchor = $selector.find("span").first();
+      var $lastAnchor = $selector.find("span").last();
+
       var firstColor = $firstAnchor.data('color');
       var lastColor = $lastAnchor.data('color');
 
@@ -65,29 +73,135 @@
       $lastAnchor.attr("style", "color: "+lastColor);
     }
 
-    $('#tea-matrix-content').fullpage({
-      anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7', 'page8', 'page9', 'page10', 'page11', 'page12'],
-      menu: '#page-indicator',
-      onLeave: function(index, nextIndex, direction){
+    // $('#tea-matrix-content').fullpage({
+    //   anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7', 'page8', 'page9', 'page10', 'page11', 'page12'],
+    //   menu: '#page-indicator',
+    //   animateAnchor: false,
+    //   fadingEffect: true,
+    //   fitToSection: true,
+    //   fitToSectionDelay: 50000,
+    //   onLeave: function(index, nextIndex, direction){
 
-        $("#page-indicator li a span").attr("style", "color: #f1efee");
+    //     var loadedSection = $(this);
+    //     $animate_content = $(loadedSection).find(".tea-matrix-content-text-cta").find('.tea-matrix-content-animate');
 
-        var $firstAnchor = $("#anchor-"+nextIndex).find("span").first();
-        var $lastAnchor = $("#anchor-"+nextIndex).find("span").last();
+    //     TweenMax.staggerFromTo($animate_content, 0.1, { 'y': 0, opacity: 1, ease: Sine.easeOutQuad }, { 'y': 100, opacity: 0, ease: Sine.easeOutQuad }, 0.1);
 
-        changeColor($firstAnchor, $lastAnchor);
-      },
-      afterLoad: function(anchorLink, index){
-          var loadedSection = $(this);
-          $(".tea-matrix-content-text-cta").fadeOut();
-          $(loadedSection).find(".tea-matrix-content-text-cta").fadeIn();
-      }
+    //     changeIndicatorsColor($("#anchor-"+nextIndex));
+
+    //   },
+    //   afterLoad: function(anchorLink, index){
+
+    //       var loadedSection = $(this);          
+    //       $animate_content = $(loadedSection).find(".tea-matrix-content-text-cta").find('.tea-matrix-content-animate');
+
+    //       TweenMax.staggerFromTo($animate_content, 0.5, { 'y': 100, opacity: 0, ease: Sine.easeOutQuad }, { 'y': 0, opacity: 1, ease: Sine.easeOutQuad }, 0.1);
+    //   }
+    // });    
+
+    var currentSection = 1;
+    var showTransition = 0;
+
+    function updateStatus() {
+      showTransition = false;
+    }
+
+    function onceSectionHidden(showSectionNo) {
+
+      showSection(showSectionNo);
+
+    }
+
+    function hideSection(sectionNo, showSectionNo) {
+
+      var $hideSection = $('#tea-matrix-content-section-'+sectionNo);
+
+      $hideSection.removeClass('active-section');
+
+      $animate_content = $hideSection.find(".tea-matrix-content-text-cta").find('.tea-matrix-content-animate');
+      // $animate_content.attr('style', 'opacity:0;');
+
+      $animate_content = $hideSection.find(".tea-matrix-content-text-cta").find('.tea-matrix-content-animate');
+
+      var tl2 = new TimelineLite({ onComplete: onceSectionHidden, onCompleteParams: [showSectionNo] });
+      tl2.add(
+        TweenMax.staggerFromTo($animate_content, 0.1, { 'y': 0, opacity: 1, ease: Sine.easeOutQuad }, { 'y': 10, opacity: 0, ease: Sine.easeOutQuad })
+      );
+
+    }
+
+    function showSection(sectionNo) {
+
+      var $showSection = $('#tea-matrix-content-section-'+sectionNo);
+
+      $showSection.addClass('active-section');
+      $animate_content = $showSection.find(".tea-matrix-content-text-cta").find('.tea-matrix-content-animate');
+
+      var tl = new TimelineMax({onComplete:updateStatus});      
+      tl.add(
+        TweenMax.staggerFromTo($animate_content, 0.3, { 'y': 10, opacity: 0, ease: Sine.easeOutQuad }, { 'y': 0, opacity: 1, ease: Sine.easeOutQuad }, 0.1)
+      );
+
+      changeIndicatorsColor($("#anchor-"+sectionNo));
+
+    }
+
+    function init() {
+      showSection(1); // init
+      changeIndicatorsColor($("#page-indicator li.active a"));
+    }
+
+    init();
+    
+
+    // events
+
+    window.addEventListener('mousewheel', function(e){
+
+        wDelta = e.wheelDelta < 0 ? 'down' : 'up';
+                     
+        var totalSection = $('#tea-matrix-content').find(".section").length;
+
+        if(wDelta=='down' && showTransition == false) {          
+
+          if(currentSection>=1 && currentSection<totalSection) {            
+
+            showTransition = true;
+
+            hideSection(currentSection, currentSection+1);
+            currentSection++;            
+
+          }          
+
+        }else if(wDelta=='up' && showTransition == false) {        
+
+          if(currentSection>1) {
+
+            showTransition = true;
+
+            hideSection(currentSection, currentSection-1);
+            currentSection--;
+
+          }      
+
+        }
+
     });
 
-    var $firstAnchor = $("#page-indicator li.active").find("span").first();
-    var $lastAnchor = $("#page-indicator li.active").find("span").last();
+    $("#page-indicator .anchor").on("click", function(e){
 
-    changeColor($firstAnchor, $lastAnchor);
+
+      if(showTransition == false) {
+        showTransition = true;
+
+        var currentIndex = $(".active-section").index();
+        activeSection = currentIndex + 1;
+        currentSection = $(this).parent().data('menuanchor');
+        hideSection(activeSection, currentSection);
+        
+      }
+      
+    });
 
   });
   </script>

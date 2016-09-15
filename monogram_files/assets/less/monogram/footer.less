@@ -1,3 +1,134 @@
+#desktop-footer {  
+  
+  #desktop-footer-ctas-container {
+    background-color: @footer-brown;
+    padding-top: 75px;
+    padding-bottom: 75px;
+
+    h5 {
+      font-size: 9px;
+      color: @off-white;
+      text-transform: uppercase;
+    }
+
+    a,p {
+      .body-font;
+      color: @off-white;
+      font-size: 11px;   
+      display: block;   
+    }  
+
+    p {
+      line-height: 15px;
+    }
+
+    a {
+      &:hover {
+        color: @off-black;
+      }
+    }
+
+    ul.social-media-icons {
+      padding-bottom: 23px;
+      li {
+        display: inline-block;
+        margin-right: 8px;
+      }
+    }
+
+    .footer-follow-us-section {
+      padding-left: 30px;
+    }
+
+    #footer-newsletter-input {
+      position: relative;
+      input {
+        background: none;
+        border: none;
+        border-bottom: 1px solid @off-white;
+        font-size: 9px;
+        color: @off-white;
+        text-transform: uppercase;
+        width: 83%;
+        padding-top: 20px;
+        padding-bottom: 5px;
+        padding-left: 2px;
+        .header-font;
+
+        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+          font-size: 9px;
+          color: @off-white;
+          text-transform: uppercase;
+        }
+        &::-moz-placeholder { /* Firefox 19+ */
+          font-size: 9px;
+          color: @off-white;
+          text-transform: uppercase;
+        }
+        &:-ms-input-placeholder { /* IE 10+ */
+          font-size: 9px;
+          color: @off-white;
+          text-transform: uppercase;
+        }
+        &:-moz-placeholder { /* Firefox 18- */
+          font-size: 9px;
+          color: @off-white;
+          text-transform: uppercase;
+        } 
+      }
+      a {
+        position: absolute;
+        right: 55px;
+        bottom: 10px;
+      }
+    }
+  }
+  
+  #desktop-footer-logo-tnc-container {
+    padding: 5px 0;
+
+    .container-fluid {
+      padding: 0 20px;
+    }
+
+    #desktop-footer-logo{
+      .footer-desktop-logo-small;
+      display: inline-block;    
+      vertical-align: middle;
+    }
+
+    #monogram-name {      
+      display: inline-block;
+      vertical-align: middle;
+      color: @off-white;
+      text-transform: uppercase;
+      .subheader-font-2;
+      font-size: 10px;
+      line-height: 10px;
+      letter-spacing: 0.08em;
+      padding-left: 10px;
+      padding-top: 5px;
+    }
+
+    ul {
+      text-align: right;
+      padding-top: 10px;
+      li {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 15px;
+        a {
+          .body-font;
+          color: @off-white;
+          font-size: 11px;   
+          
+        }
+      }
+    }
+  }
+  
+}
+
 #mobile-footer{
 
   position: relative;

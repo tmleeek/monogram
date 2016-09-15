@@ -5,7 +5,7 @@
     // $is_debug = false;
   $is_debug = true;
 
-  $body_class = "tea-matrix-page";
+  $body_class = "tea-product-detail-page";
 ?>
 <!doctype html class="<?php echo $body_class; ?>">
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
@@ -25,10 +25,10 @@
             
             <?php include('inc/header.php'); ?>
 
-            <?php include('tea-matrix-content.php'); ?>
+            <?php include('tea-product-detail-content.php'); ?>
           
-            <?php include('inc/js_tea_matrix.php'); ?>
-            <?php //include('inc/footer.php'); ?>
+            <?php include('inc/js_tea_product_detail.php'); ?>
+            <?php include('inc/footer.php'); ?>
             <?php include('inc/fonts.php'); ?>
 
           </div> <!-- #page-wrapper-content -->
