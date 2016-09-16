@@ -49,8 +49,8 @@ goog.addDependency('../../../../../js/monogram/graph/Data.js', ['monogram.graph.
 goog.addDependency('../../../../../js/monogram/graph/DataLoader.js', ['monogram.graph.DataLoader'], ['goog.events.Event', 'goog.events.EventTarget', 'manic.util.JsonParser', 'monogram.graph.Data']);
 goog.addDependency('../../../../../js/monogram/graph/RaphaelGraphBG.js', ['monogram.graph.RaphaelGraphBG'], ['goog.events.Event', 'goog.events.EventTarget']);
 goog.addDependency('../../../../../js/monogram/graph/RaphaelGraphItem.js', ['monogram.graph.RaphaelGraphItem'], ['goog.events.Event', 'goog.events.EventTarget', 'monogram.graph.Data']);
-goog.addDependency('../../../../../js/monogram/graph/SingleGraph.js', ['monogram.graph.SingleGraph'], ['goog.events.Event', 'goog.events.EventTarget', 'monogram.graph.Data', 'monogram.graph.RaphaelGraphBG', 'monogram.graph.RaphaelGraphItem']);
-goog.addDependency('../../../../../js/monogram/page/Default.js', ['monogram.page.Default'], ['goog.events.Event', 'goog.events.EventTarget', 'manic.page.Page']);
+goog.addDependency('../../../../../js/monogram/graph/SingleGraph.js', ['monogram.graph.SingleGraph'], ['goog.events.Event', 'goog.events.EventTarget', 'monogram.graph.Data', 'monogram.graph.DataLoader', 'monogram.graph.RaphaelGraphBG', 'monogram.graph.RaphaelGraphItem']);
+goog.addDependency('../../../../../js/monogram/page/Default.js', ['monogram.page.Default'], ['goog.events.Event', 'goog.events.EventTarget', 'manic.page.Page', 'monogram.graph.SingleGraph']);
 goog.addDependency('../../../../../js/monogram/page/Home.js', ['monogram.page.Home'], ['monogram.component.GraphSection', 'monogram.page.Default']);
 goog.addDependency('../../../../../js/monogram/page/TeaLayeringDetail.js', ['monogram.page.TeaLayeringDetail'], ['monogram.component.GraphSection', 'monogram.component.MobileGraphSection', 'monogram.page.Default']);
 goog.addDependency('../../../../../js/monogram/page/Test.js', ['monogram.page.Test'], ['monogram.component.GraphSection', 'monogram.graph.CombinationDataLoader', 'monogram.graph.CombinationGraph', 'monogram.graph.Data', 'monogram.graph.DataLoader', 'monogram.graph.SingleGraph', 'monogram.page.Default']);

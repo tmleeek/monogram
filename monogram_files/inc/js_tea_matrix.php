@@ -145,23 +145,26 @@
 
 
       var single_graph = $('#graph-section-combination-graph').data('monogram.graph.SingleGraph');
+      if(single_graph != null){
+        
+        var id_array = [
+            'uji-sencha',
+            'cherry-japonais',
+            'jasmine-silk-pearls',
+            'milky-oolong',
+            'lapsang-florale',
+            'kashmere',
+            'earl-grey-neroli',
+            'morning-english',
+            'rose-of-ariana',
+            'shiso-mint',
+            'saffronais',
+            'provencal-herbs'
+          ];
+        var target_id = id_array[Math.floor(Math.random() * id_array.length)];
+        single_graph.set_data_by_id(target_id);
+      }
                   
-      var id_array = [
-          'uji-sencha',
-          'cherry-japonais',
-          'jasmine-silk-pearls',
-          'milky-oolong',
-          'lapsang-florale',
-          'kashmere',
-          'earl-grey-neroli',
-          'morning-english',
-          'rose-of-ariana',
-          'shiso-mint',
-          'saffronais',
-          'provencal-herbs'
-        ];
-      var target_id = id_array[Math.floor(Math.random() * id_array.length)];
-      single_graph.set_data_by_id(target_id);
 
     }
 

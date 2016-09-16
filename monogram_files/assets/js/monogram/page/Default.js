@@ -94,7 +94,10 @@ monogram.page.Default.prototype.init = function() {
   */
   
 
-  this.single_graph = new monogram.graph.SingleGraph({}, $('#sample-single-graph'));
+  if($('#graph-section-combination-graph').length != 0){
+
+    this.single_graph = new monogram.graph.SingleGraph({}, $('#graph-section-combination-graph'));
+  }
 
   console.log('monogram.page.Default: init');
 };

@@ -26,6 +26,8 @@ monogram.graph.SingleGraph = function(options, element) {
 
 
   this.data_loader = new monogram.graph.DataLoader({}, $('#monograph-graph-data'));
+  console.log($('#monograph-graph-data'));
+  console.log($('#monograph-graph-data'));
 
 
   this.data_id = '';
