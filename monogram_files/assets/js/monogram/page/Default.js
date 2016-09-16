@@ -7,6 +7,9 @@ goog.require('goog.events.EventTarget');
 goog.require('manic.page.Page');
 
 
+goog.require('monogram.graph.SingleGraph');
+
+
 // goog.require('savour.component.DesktopHeader');
 // goog.require('savour.component.MobileHeader');
 
@@ -90,6 +93,8 @@ monogram.page.Default.prototype.init = function() {
   });
   */
   
+
+  this.single_graph = new monogram.graph.SingleGraph({}, $('#sample-single-graph'));
 
   console.log('monogram.page.Default: init');
 };

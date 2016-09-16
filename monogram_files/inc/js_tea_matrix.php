@@ -42,17 +42,16 @@
   <script type="text/javascript" src="assets/libs/raphael/raphael.min.js"></script>
   <script type="text/javascript" src="assets/libs/slick-carousel/slick/slick.min.js"></script>
   <script type="text/javascript" src="assets/libs/hammer/hammer.min.js"></script>
-  <!-- <script type="text/javascript" src="assets/libs/fullpage.js/dist/jquery.fullpage.min.js"></script> -->
   
   <!-- Google Closure -->
-  <!-- <script type="text/javascript" src="assets/libs/google-closure/closure-library/closure/goog/base.js"></script>
+  <script type="text/javascript" src="assets/libs/google-closure/closure-library/closure/goog/base.js"></script>
   <script type="text/javascript" src="assets/js/google-closure-dependency-list.js"></script>
   <script type="text/javascript">
-    goog.require('monogram.page.Home');
+    goog.require('monogram.page.Default');
   </script>
   <script type="text/javascript">
-    window.monogram_page = new monogram.page.Home({});
-  </script> -->
+    window.monogram_page = new monogram.page.Default({});
+  </script>
 
   <script>
   $(document).ready(function(){
@@ -143,6 +142,26 @@
       );
 
       changeIndicatorsColor($("#anchor-"+sectionNo));
+
+
+      var single_graph = $('#graph-section-combination-graph').data('monogram.graph.SingleGraph');
+                  
+      var id_array = [
+          'uji-sencha',
+          'cherry-japonais',
+          'jasmine-silk-pearls',
+          'milky-oolong',
+          'lapsang-florale',
+          'kashmere',
+          'earl-grey-neroli',
+          'morning-english',
+          'rose-of-ariana',
+          'shiso-mint',
+          'saffronais',
+          'provencal-herbs'
+        ];
+      var target_id = id_array[Math.floor(Math.random() * id_array.length)];
+      single_graph.set_data_by_id(target_id);
 
     }
 
