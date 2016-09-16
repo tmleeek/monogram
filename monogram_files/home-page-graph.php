@@ -79,8 +79,7 @@
 
             <div id="graph-section-combination-graph-container">
               <div id="graph-section-combination-graph" class="monogram-combination-graph">
-                <div class="graph-svg"></div>
-                <div class="graph-overlay"></div>
+                <div class="graph-svg"></div>                
                 <div class="graph-name-overlay">
                   <div class="graph-name-item floral-version"></div>
                   <div class="graph-name-item creamy-version"></div>
@@ -92,6 +91,7 @@
                   <div class="graph-name-item wood-version"></div>
                   <div class="graph-name-item herbaceous-version"></div>
                 </div>
+                <div class="graph-overlay"></div>
               </div>
             </div>
 

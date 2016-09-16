@@ -20,9 +20,29 @@
     </div>  
   </div>     
   <div id="tea-matrix-content">
+      <div id="monograph-combined-graph-data"
+        data-graph-data-url="assets/json/graph-data.json"
+        data-combined-graph-data-url="assets/json/combined-graph-data.json">
+      </div>
       <div id="tea-matrix-content-section-1" class="section">
         <div class="container">
-          <div class="col-md-6 col-md-offset-2"></div>
+          <div class="col-md-6 col-md-offset-2">              
+              <div id="graph-section-combination-graph" class="monogram-combination-graph">
+                <div class="graph-svg"></div>                
+                <div class="graph-name-overlay">
+                  <div class="graph-name-item floral-version"></div>
+                  <div class="graph-name-item creamy-version"></div>
+                  <div class="graph-name-item marine-version"></div>
+                  <div class="graph-name-item mineral-version"></div>
+                  <div class="graph-name-item citrus-version"></div>
+                  <div class="graph-name-item fruity-version"></div>
+                  <div class="graph-name-item sweet-version"></div>
+                  <div class="graph-name-item wood-version"></div>
+                  <div class="graph-name-item herbaceous-version"></div>
+                </div>
+                <div class="graph-overlay"></div>
+              </div>
+          </div>
           <div class="col-md-4">
             <div class="tea-matrix-content-text-cta">
               <h3 class="tea-matrix-content-animate"><span style="color: #edbec9;">cherry</span> <span style="color: #eccdce">japonais</span></h3>

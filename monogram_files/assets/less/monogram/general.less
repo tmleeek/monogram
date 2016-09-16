@@ -56,6 +56,12 @@ h3 {
   letter-spacing: 0.08em;    
 }
 
+h4 {
+  .header-font;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+
 h5 {
   .subheader-font-2;
   font-size: 8px;
@@ -72,4 +78,13 @@ p {
   .body-font;
   font-size: 14px;
   line-height: 22px;
+}
+
+.appearance(@appearance) {
+  -webkit-appearance: @appearance;
+      -ms-appearance: @appearance;
+       -o-appearance: @appearance;
+          appearance: @appearance;
+         text-indent: 0.01px;
+       text-overflow: '';
 }
