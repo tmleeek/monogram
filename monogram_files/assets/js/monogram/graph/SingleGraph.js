@@ -7,6 +7,8 @@ goog.require('monogram.graph.Data');
 goog.require('monogram.graph.RaphaelGraphBG');
 goog.require('monogram.graph.RaphaelGraphItem');
 
+goog.require('monogram.graph.DataLoader');
+
 
 /**
  * The SingleGraph constructor
@@ -19,6 +21,11 @@ monogram.graph.SingleGraph = function(options, element) {
   goog.events.EventTarget.call(this);
   this.options = $.extend({}, monogram.graph.SingleGraph.DEFAULT, options);
   this.element = element;
+
+  this.element.data('monogram.graph.SingleGraph', this);
+
+
+  this.data_loader = new monogram.graph.DataLoader({}, $('#monograph-graph-data'));
 
 
   this.data_id = '';
@@ -66,6 +73,7 @@ monogram.graph.SingleGraph = function(options, element) {
   //   |___|_| \_|___| |_|
   //
 
+  goog.events.listen(this.data_loader, monogram.graph.DataLoader.ON_GRAPH_DATA_LOAD_COMPLETE, this.on_graph_data_load_complete.bind(this));
 
 
   if (goog.isDefAndNotNull(this.element.attr('data-id'))) {
@@ -161,10 +169,8 @@ monogram.graph.SingleGraph.prototype.sample_method_calls = function() {
 monogram.graph.SingleGraph.prototype.set_data = function(graph_data_param) {
 
   this.graph_data = graph_data_param;
-
   this.graph_item.set_data_and_element(this.graph_data, this.overlay_element);
-
-  this.graph_item.animate_in(2);
+  this.graph_item.animate_in();
 
   /*
   TweenMax.delayedCall(5, this.test_01, [], this);
@@ -173,6 +179,16 @@ monogram.graph.SingleGraph.prototype.set_data = function(graph_data_param) {
   TweenMax.delayedCall(20, this.test_04, [], this);
   */
   
+};
+monogram.graph.SingleGraph.prototype.set_data_by_id = function(str_param) {
+  /**
+   * @type {monogram.graph.Data}
+   */
+  var target_graph_data = this.data_loader.get_data_by_id(str_param);
+
+  if (target_graph_data != null) {
+    this.set_data(target_graph_data);
+  }
 };
 
 /*
@@ -190,7 +206,7 @@ monogram.graph.SingleGraph.prototype.test_04 = function() {
 };
 */
 
-monogram.graph.SingleGraph.prototype.public_method_03 = function() {};
+
 monogram.graph.SingleGraph.prototype.public_method_04 = function() {};
 monogram.graph.SingleGraph.prototype.public_method_05 = function() {};
 monogram.graph.SingleGraph.prototype.public_method_06 = function() {};
@@ -207,7 +223,10 @@ monogram.graph.SingleGraph.prototype.public_method_06 = function() {};
  * event handler
  * @param  {object} event
  */
-monogram.graph.SingleGraph.prototype.on_event_handler_01 = function(event) {
+monogram.graph.SingleGraph.prototype.on_graph_data_load_complete = function(event) {
+  this.set_data_by_id(this.data_id);
+  
+
 };
 
 /**

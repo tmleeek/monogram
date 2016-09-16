@@ -109,20 +109,17 @@ monogram.page.Test.prototype.create_single_graph = function(){
    */
   this.single_graph = new monogram.graph.SingleGraph({}, $('#sample-single-graph'));
 
-
-  this.data_loader = new monograph.graph.DataLoader({}, $('#monograph-graph-data'));
+  /*
+  this.data_loader = new monogram.graph.DataLoader({}, $('#monograph-graph-data'));
 
   
-  goog.events.listen(this.data_loader, monograph.graph.DataLoader.ON_GRAPH_DATA_LOAD_COMPLETE, function(event){
+  goog.events.listen(this.data_loader, monogram.graph.DataLoader.ON_GRAPH_DATA_LOAD_COMPLETE, function(event){
 
 
-    console.log('monograph.graph.DataLoader.ON_GRAPH_DATA_LOAD_COMPLETE');
+    console.log('monogram.graph.DataLoader.ON_GRAPH_DATA_LOAD_COMPLETE');
 
     var graph_id = this.single_graph.data_id;
 
-    /**
-     * @type {monogram.graph.Data}
-     */
     var graph_data = this.data_loader.get_data_by_id(graph_id);
 
     if (graph_data != null) {
@@ -132,6 +129,7 @@ monogram.page.Test.prototype.create_single_graph = function(){
     
 
   }.bind(this));  
+  */
 
 };
 
