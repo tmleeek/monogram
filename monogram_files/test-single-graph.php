@@ -65,9 +65,14 @@
                     saffronais
                     provencal-herbs
                     -->
-                    <div id="sample-single-graph" class="monogram-single-graph" data-id="provencal-herbs">
+                    <div id="sample-single-graph" class="monogram-single-graph" data-id="uji-sencha">
                       <div class="graph-svg"></div>
                       <div class="graph-overlay"></div>
+                    </div>
+
+
+                    <div id="test-btn">
+                      <h4>test</h4>
                     </div>
 
                   </div>
@@ -82,10 +87,35 @@
 
 
 
-
             <?php include('inc/js_test.php'); ?>
             <?php include('inc/footer.php'); ?>
             <?php include('inc/fonts.php'); ?>
+
+
+            <style type="text/css">
+              #test-btn{
+                cursor: pointer;
+              }
+            </style>
+
+            <script type="text/javascript">
+              jQuery(document).ready(function($) {
+                
+
+                $('#test-btn').click(function(event){
+
+                  var single_graph = $('#sample-single-graph').data('monogram.graph.SingleGraph');
+                  
+                  var id_array = ['uji-sencha','cherry-japonais','jasmine-silk-pearls','milky-oolong','lapsang-florale','kashmere','earl-grey-neroli','morning-english','rose-of-ariana','shiso-mint','saffronais','provencal-herbs'];
+                  var target_id = id_array[Math.floor(Math.random() * id_array.length)];
+                  single_graph.set_data_by_id(target_id);
+                  
+
+
+                }.bind(this));
+
+              });
+            </script>
 
           </div> <!-- #page-wrapper-content -->
       </div> <!-- #page-wrapper -->
