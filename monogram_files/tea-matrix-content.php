@@ -24,15 +24,13 @@
       <div id="monograph-graph-data" 
         data-graph-data-url="assets/json/graph-data.json">
       </div>
-
-
-      </div>
+      
       <div id="tea-matrix-content-section-1" class="section">
         <div class="container">
           <div class="col-md-6 col-md-offset-2">              
 
 
-              <div id="graph-section-combination-graph" class="monogram-combination-graph" data-id="cherry-japonais">
+              <div id="tea-matrix-combination-graph" class="monogram-combination-graph" data-id="cherry-japonais">
                 <div class="graph-svg"></div>                
                 <div class="graph-name-overlay">
                   <div class="graph-name-item floral-version"></div>

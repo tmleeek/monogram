@@ -144,12 +144,12 @@
       changeIndicatorsColor($("#anchor-"+sectionNo));
 
 
-      var single_graph = $('#graph-section-combination-graph').data('monogram.graph.SingleGraph');
+      var single_graph = $('#tea-matrix-combination-graph').data('monogram.graph.SingleGraph');
       if(single_graph != null){
         
         var id_array = [
-            'uji-sencha',
             'cherry-japonais',
+            'uji-sencha',            
             'jasmine-silk-pearls',
             'milky-oolong',
             'lapsang-florale',
