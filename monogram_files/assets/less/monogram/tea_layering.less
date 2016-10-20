@@ -1,8 +1,5 @@
 .tea-layering-page {
   overflow: visible;
-}
-
-.tea-layering-page {
   background: #7b706b;
 }
 
@@ -35,11 +32,9 @@
       .table-header-text {  
         padding-left: 40px;                      
         padding-right: 40px;                      
-        span {
-          color: #f1efee;
-          text-transform: uppercase;
-          .brandon-grotesque-regular;
-          font-size: 10px;
+        h5 {
+          color: @off-white;
+          text-transform: uppercase;                    
           line-height: 10px;
           letter-spacing: 0.05em;          
         }
@@ -118,9 +113,9 @@
           //   padding-bottom: 0px;
           // }           
           a.tea-layering-text-link {
-            .subheader-font-2;
-            font-size: 9px;
-            line-height: 18px;
+            .header-font;
+            font-size: 10px;
+            line-height: 20px;
             position: absolute;
             left: 0px;
             color: @off-white;
@@ -129,8 +124,9 @@
             .opacity(0);
             .transition(.3s);
           }
-          p {
-            color: @off-white;            
+          span {
+            color: @off-white;    
+            .body-font;        
             font-size: 10px;
             line-height: 16px; 
             visibility: visible;
@@ -138,7 +134,7 @@
             .transition(.3s);
           } 
           &:hover {
-            p {
+            span {
               visibility: hidden;
               .opacity(0);
             }

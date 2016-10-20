@@ -19,13 +19,13 @@
           <hr class="top">
         </div>
         <div class="col-md-3 col-md-offset-1 table-header-text">
-          <span>monogram teas</span>
+          <h5>monogram teas</h5>
         </div>
         <div class="col-md-3 table-header-text">
-          <span>layering suggestions</span>
+          <h5>layering suggestions</h5>
         </div>
         <div class="col-md-4 table-header-text">
-          <span>tasting notes</span>
+          <h5>tasting notes</h5>
         </div>
         <div class="col-md-10 col-md-offset-1">
           <hr class="bottom">
@@ -44,7 +44,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>Saffronias elevates the intensity of sweet floral notes; with a lingering creamy finish.</p>
+                <span>Saffronias elevates the intensity of sweet floral notes; with a lingering creamy finish.</span>
               </div> 
             </div>
           </div>
@@ -55,7 +55,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>If you like the pairing of Fujian Oolonog with Persian  Rose, I would recommend this as well. The sencha is more pronunced but nonetheless a good pairing.</p>
+                <span>If you like the pairing of Fujian Oolonog with Persian  Rose, I would recommend this as well. The sencha is more pronunced but nonetheless a good pairing.</span>
               </div> 
             </div>
           </div>
@@ -66,7 +66,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>The hebs and rose hips lends a sour not which cuts through the full bodied sencha and gives a softer silhouette to the structure.</p>
+                <span>The hebs and rose hips lends a sour not which cuts through the full bodied sencha and gives a softer silhouette to the structure.</span>
               </div>
             </div>
           </div>
@@ -86,7 +86,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>Fresh notes of mint and shiso provides a lift to a mellow umami flavour of sencha.</p>
+                <span>Fresh notes of mint and shiso provides a lift to a mellow umami flavour of sencha.</span>
               </div>
             </div>
           </div>
@@ -97,7 +97,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>A soft floral acentuates the sublime nature of uji Sencha.</p>
+                <span>A soft floral acentuates the sublime nature of uji Sencha.</span>
               </div>
             </div>
           </div>
@@ -117,7 +117,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>Lovely Jasmin Blu meets the crimson Saffronais to produce a magical spectacular.</p>
+                <span>Lovely Jasmin Blu meets the crimson Saffronais to produce a magical spectacular.</span>
               </div>
             </div>
           </div>
@@ -128,7 +128,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>If you like the pairing of Fujian Oolonog with Persian Rose, I would recommend this as well. The sencha is more pronunced but nonetheless a good pairing.</p>
+                <span>If you like the pairing of Fujian Oolonog with Persian Rose, I would recommend this as well. The sencha is more pronunced but nonetheless a good pairing.</span>
               </div>
             </div>
           </div>
@@ -148,7 +148,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut pharetra cursus velit, a accumsan sapien consequat ut.</p>
+                <span>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut pharetra cursus velit, a accumsan sapien consequat ut.</span>
               </div> 
             </div>
           </div>
@@ -159,7 +159,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>Praesent hendrerit gravida velit, eget porttitor massa tincidunt eget. Nulla vulputate a ante lobortis bibendum. Curabitur vitae nulla in risus ultrices rutrum et semper ex.</p>
+                <span>Praesent hendrerit gravida velit, eget porttitor massa tincidunt eget. Nulla vulputate a ante lobortis bibendum. Curabitur vitae nulla in risus ultrices rutrum et semper ex.</span>
               </div> 
             </div>
           </div>
@@ -179,7 +179,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>Exotic notes of Spanish saffron pairs with notes of pine smoke and white florals; a sophisticated affair.</p>
+                <span>Exotic notes of Spanish saffron pairs with notes of pine smoke and white florals; a sophisticated affair.</span>
               </div> 
             </div>
           </div>
@@ -190,7 +190,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>A layer of sensual floral veil  provides the bold tea a comfortable refuge.</p>
+                <span>A layer of sensual floral veil  provides the bold tea a comfortable refuge.</span>
               </div> 
             </div>
           </div>
@@ -210,7 +210,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>Nullam tristique velit et dictum condimentum. Etiam a tristique velit, at imperdiet est. Aenean suscipit scelerisque magna, ut commodo metus faucibus a.</p>
+                <span>Nullam tristique velit et dictum condimentum. Etiam a tristique velit, at imperdiet est. Aenean suscipit scelerisque magna, ut commodo metus faucibus a.</span>
               </div> 
             </div>
           </div>
@@ -221,7 +221,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>Curabitur at velit vitae quam mattis sollicitudin vitae aliquam leo.  Fringilla ex ac, varius mauris.</p>
+                <span>Curabitur at velit vitae quam mattis sollicitudin vitae aliquam leo.  Fringilla ex ac, varius mauris.</span>
               </div> 
             </div>
           </div>
@@ -241,7 +241,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>A interesting blend of mint and bergamot makes the experience exotic and promise of more bold creation.</p>
+                <span>A interesting blend of mint and bergamot makes the experience exotic and promise of more bold creation.</span>
               </div> 
             </div>
           </div>
@@ -252,7 +252,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>Highly recommended! A good balance of bergamot and rose profile. The floral  note makes a lasting impression.</p>
+                <span>Highly recommended! A good balance of bergamot and rose profile. The floral  note makes a lasting impression.</span>
               </div> 
             </div>
           </div>
@@ -263,7 +263,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>A soft floral escape with citrus notes of bergamot.</p>
+                <span>A soft floral escape with citrus notes of bergamot.</span>
               </div> 
             </div>
           </div>
@@ -283,7 +283,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>Ut finibus felis viverra lorem porta sagittis. Vivamus dignissim et leo ut sagittis.</p>
+                <span>Ut finibus felis viverra lorem porta sagittis. Vivamus dignissim et leo ut sagittis.</span>
               </div> 
             </div>
           </div>
@@ -294,7 +294,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>Donec vel massa malesuada sem bibendum rhoncus. Mauris dui ligula, faucibus pretium arcu sed, elementum cursus ex.</p>
+                <span>Donec vel massa malesuada sem bibendum rhoncus. Mauris dui ligula, faucibus pretium arcu sed, elementum cursus ex.</span>
               </div> 
             </div>
           </div>
@@ -314,7 +314,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>A soft floral acentuates the sublime nature of uji Sencha.</p>
+                <span>A soft floral acentuates the sublime nature of uji Sencha.</span>
               </div> 
             </div>
           </div>
@@ -325,7 +325,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>The hebs and rose hips lends a sour not which cuts through the full bodied sencha.</p>
+                <span>The hebs and rose hips lends a sour not which cuts through the full bodied sencha.</span>
               </div> 
             </div>
           </div>
@@ -336,7 +336,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>Donec vel massa malesuada sem bibendum faucibus pretium arcu sed, elementum cursus ex.</p>
+                <span>Donec vel massa malesuada sem bibendum faucibus pretium arcu sed, elementum cursus ex.</span>
               </div> 
             </div>
           </div>
@@ -347,7 +347,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>A soft floral escape with citrus notes of bergamot.</p>
+                <span>A soft floral escape with citrus notes of bergamot.</span>
               </div> 
             </div>
           </div>
@@ -367,7 +367,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>A soft floral acentuates the sublime nature of uji Sencha.</p>
+                <span>A soft floral acentuates the sublime nature of uji Sencha.</span>
               </div> 
             </div>
           </div>
@@ -378,7 +378,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>Donec vel massa malesuada sem bibendum rhoncus. Mauris dui ligula, faucibus pretium arcu sed.</p>
+                <span>Donec vel massa malesuada sem bibendum rhoncus. Mauris dui ligula, faucibus pretium arcu sed.</span>
               </div> 
             </div>
           </div>
@@ -389,7 +389,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>A soft floral escape with citrus notes of bergamot.</p>
+                <span>A soft floral escape with citrus notes of bergamot.</span>
               </div> 
             </div>
           </div>
@@ -400,7 +400,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>The hebs and rose hips gives a softer silhouette to the structure.</p>
+                <span>The hebs and rose hips gives a softer silhouette to the structure.</span>
               </div> 
             </div>
           </div>
@@ -411,7 +411,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>In tempus lobortis sagittis. Nam tristique diam porttitor lectus ornare luctus.</p>
+                <span>In tempus lobortis sagittis. Nam tristique diam porttitor lectus ornare luctus.</span>
               </div> 
             </div>
           </div>
@@ -422,7 +422,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>Integer condimentum, neque in ornare eleifend lacus mi sed enim. Nam aliquam ac diam et.</p>
+                <span>Integer condimentum, neque in ornare eleifend lacus mi sed enim. Nam aliquam ac diam et.</span>
               </div> 
             </div>
           </div>
@@ -442,7 +442,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>A soft floral acentuates the sublime nature of uji Sencha.</p>
+                <span>A soft floral acentuates the sublime nature of uji Sencha.</span>
               </div> 
             </div>
           </div>
@@ -453,7 +453,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>Donec vel massa malesuada sem bibendum rhoncus. Mauris dui ligula, faucibus.</p>
+                <span>Donec vel massa malesuada sem bibendum rhoncus. Mauris dui ligula, faucibus.</span>
               </div> 
             </div>
           </div>
@@ -464,7 +464,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>A soft floral escape with citrus notes of bergamot.</p>
+                <span>A soft floral escape with citrus notes of bergamot.</span>
               </div> 
             </div>
           </div>
@@ -475,7 +475,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>The hebs and rose hips gives a softer silhouette to the structure.</p>
+                <span>The hebs and rose hips gives a softer silhouette to the structure.</span>
               </div> 
             </div>
           </div>
@@ -486,7 +486,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>In tempus lobortis sagittis. Nam tristique diam porttitor lectus ornare luctus.</p>
+                <span>In tempus lobortis sagittis. Nam tristique diam porttitor lectus ornare luctus.</span>
               </div> 
             </div>
           </div>
@@ -497,7 +497,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>Integer condimentum, neque in ornare eleifend lacus mi sed enim. Nam aliquam ac diam et.</p>
+                <span>Integer condimentum, neque in ornare eleifend lacus mi sed enim. Nam aliquam ac diam et.</span>
               </div> 
             </div>
           </div>
@@ -517,7 +517,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>Donec vel massa malesuada sem bibendum rhoncus. Mauris dui ligula, elementum cursus ex.</p>
+                <span>Donec vel massa malesuada sem bibendum rhoncus. Mauris dui ligula, elementum cursus ex.</span>
               </div> 
             </div>
           </div>
@@ -528,7 +528,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>The full bodied sencha and gives a softer silhouette to the structure.</p>
+                <span>The full bodied sencha and gives a softer silhouette to the structure.</span>
               </div> 
             </div>
           </div>
@@ -539,7 +539,7 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>In tempus lobortis sagittis. Nam tristique diam porttitor lectus ornare luctus.</p>
+                <span>In tempus lobortis sagittis. Nam tristique diam porttitor lectus ornare luctus.</span>
               </div> 
             </div>
           </div>
@@ -550,14 +550,16 @@
             <div class="col-md-6 tea-layering-table-text">
               <div class="tea-layering-text">
                 <a href="#" class="tea-layering-text-link">See tea matrix >></a>
-                <p>Integer condimentum, neque in hendrerit dignissim, est arcu iaculis felis, ornare eleifend lacus mi sed enim. Nam aliquam ac diam et.</p>
+                <span>Integer condimentum, neque in hendrerit dignissim, est arcu iaculis felis, ornare eleifend lacus mi sed enim. Nam aliquam ac diam et.</span>
               </div> 
             </div>
           </div>          
         </div>        
-        <div class="col-md-10 col-md-offset-1"><hr class="bottom"></div>
+        <!-- <div class="col-md-10 col-md-offset-1"><hr class="bottom"></div> -->
       </div>
 
     </div>
   </div>
+
+  <div class="desktop-header-spacer" style="height: 100px;"></div>
 </article>

@@ -99,11 +99,10 @@
     // });    
 
     var currentSection = 1;
-    var animating = false;
-    // var tl2 = new TimelineLite();
+    var showTransition = 0;
 
     function updateStatus() {
-      animating = false;
+      showTransition = false;
     }
 
     function onceSectionHidden(showSectionNo) {
@@ -123,12 +122,10 @@
 
       $animate_content = $hideSection.find(".tea-matrix-content-text-cta").find('.tea-matrix-content-animate');
 
-      TweenMax.killTweensOf($animate_content);
-
-      // var tl2 = new TimelineLite({ onComplete: onceSectionHidden, onCompleteParams: [showSectionNo] });
-      // tl2.add(
-        TweenMax.staggerFromTo($animate_content, 0.1, { 'y': 0, opacity: 1, ease: Sine.easeOutQuad }, { 'y': 10, opacity: 0, ease: Sine.easeOutQuad, onComplete: onceSectionHidden, onCompleteParams: [showSectionNo] })
-      // );
+      var tl2 = new TimelineLite({ onComplete: onceSectionHidden, onCompleteParams: [showSectionNo] });
+      tl2.add(
+        TweenMax.staggerFromTo($animate_content, 0.1, { 'y': 0, opacity: 1, ease: Sine.easeOutQuad }, { 'y': 10, opacity: 0, ease: Sine.easeOutQuad })
+      );
 
     }
 
@@ -137,14 +134,12 @@
       var $showSection = $('#tea-matrix-content-section-'+sectionNo);
 
       $showSection.addClass('active-section');
-      $animate_content = $showSection.find(".tea-matrix-content-text-cta").find('.tea-matrix-content-animate');      
+      $animate_content = $showSection.find(".tea-matrix-content-text-cta").find('.tea-matrix-content-animate');
 
-      TweenMax.killTweensOf($animate_content);
-
-      // var tl = new TimelineLite({ onComplete:updateStatus });      
-      // tl.add(
-        TweenMax.staggerFromTo($animate_content, 0.3, { 'y': 10, opacity: 0, ease: Sine.easeOutQuad }, { 'y': 0, opacity: 1, ease: Sine.easeOutQuad, onComplete:updateStatus }, 0.1)
-      // );
+      var tl = new TimelineMax({onComplete:updateStatus});      
+      tl.add(
+        TweenMax.staggerFromTo($animate_content, 0.3, { 'y': 10, opacity: 0, ease: Sine.easeOutQuad }, { 'y': 0, opacity: 1, ease: Sine.easeOutQuad }, 0.1)
+      );
 
       changeIndicatorsColor($("#anchor-"+sectionNo));
 
@@ -174,7 +169,7 @@
     }
 
     function init() {
-      animating = true;
+      showTransition = true;
       showSection(1); // init
       // changeIndicatorsColor($("#page-indicator li.active a"));
     }
@@ -190,24 +185,22 @@
                      
         var totalSection = $('#tea-matrix-content').find(".section").length;
 
-        console.log(animating)
-
-        if(wDelta=='down' && animating == false) {          
+        if(wDelta=='down' && showTransition == false) {          
 
           if(currentSection>=1 && currentSection<totalSection) {            
 
-            animating = true;
+            showTransition = true;
 
             hideSection(currentSection, currentSection+1);
             currentSection++;            
 
           }          
 
-        }else if(wDelta=='up' && animating == false) {        
+        }else if(wDelta=='up' && showTransition == false) {        
 
           if(currentSection>1) {
 
-            animating = true;
+            showTransition = true;
 
             hideSection(currentSection, currentSection-1);
             currentSection--;
@@ -221,8 +214,8 @@
     $("#page-indicator .anchor").on("click", function(e){
 
 
-      // if(animating == false) {
-        animating = true;
+      if(showTransition == false) {
+        showTransition = true;
 
         var currentIndex = $(".active-section").index();
         console.log('currentIndex:'+currentIndex)
@@ -232,7 +225,7 @@
         console.log('destination: '+currentSection)
         hideSection(activeSection, currentSection);
         
-      // }
+      }
       
     });
 

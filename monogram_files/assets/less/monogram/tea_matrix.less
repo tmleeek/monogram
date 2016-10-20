@@ -1,5 +1,5 @@
 .tea-matrix-page {
-  background: #827773;
+  background: rgba(123, 112, 107, 0.8);
 }
 
 #tea-matrix-section-1 {
@@ -14,8 +14,8 @@
       }
       a {
         text-transform: uppercase;
-        .brandon-grotesque-regular;
-        font-size: 10px;
+        .header-font;
+        font-size: 11px;
         line-height: 10px;
         letter-spacing: 0.05em;  
         color: @off-white;
@@ -30,6 +30,12 @@
         }        
       }
     }    
+  }
+
+  .monogram-combination-graph {
+    left: -50px;
+    top: -100px;
+    z-index: 2;
   }
 
   #tea-matrix-content {
@@ -59,10 +65,10 @@
       hr.bottom {
         border-top: 1px solid rgba(241, 239, 238, 0.5);
         margin-top: 0px;        
-        margin-bottom: 15px;        
+        margin-bottom: 20px;        
       }
       ul {        
-        padding: 15px 0 10px 10px;
+        padding: 15px 0 7px 10px;
 
         li {        
           padding-bottom: 7px;
@@ -87,17 +93,20 @@
       
       .suggestions {
         margin-bottom: 38px;
+        padding-left: 5px;
 
-        h6 {        
+        h5 {        
           display: block;
           color: @off-white;
           text-transform: uppercase;
+          padding-bottom: 5px;
         }
         div.suggestion {
           display: inline-block;
           span {
             .header-font;
-            font-size: 12px;
+            font-size: 11px;
+            line-height: 11px;
             letter-spacing: 0.08em;
             text-transform: uppercase;
             sup {

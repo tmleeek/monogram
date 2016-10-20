@@ -13,17 +13,17 @@
       <div class="col-md-9">
         <div id="desktop-header-right-container">
           <div id="desktop-header-logo-container">
-            <a href="#">
+            <a href="index.php">
               <span id="desktop-header-logo"></span>
               <span id="monogram-name"></span>
             </a>
           </div>
           <div id="desktop-header-menu-conainer">
             <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Shop</a></li>
+              <li><a href="monogram-experience.php">About</a></li>
+              <li><a href="tea-store.php">Shop</a></li>
               <li><a href="#">Blog</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="contact.php">Contact</a></li>
             </ul>
           </div>
         </div>

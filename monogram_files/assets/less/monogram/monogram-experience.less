@@ -1,0 +1,91 @@
+.monogram-experience-page {
+  overflow: visible;
+}
+
+#monogram-experience-section-1 {
+  #monogram-experience-heading-text {
+    margin-bottom: 77px;
+    h1 {      
+      color: @off-white;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    p {
+      text-align: center;
+      color: @off-white;
+    }
+  }
+
+  .container-fluid {
+    padding: 0px;
+    .col-md-6 {
+      padding: 0px;
+    }
+  }
+
+  #monogram-experience-content-container {
+    position: relative;
+    margin: 0px;
+    #monogram-experience-img-content {
+      background: url('../images/monogram_experience/content-1.jpg') no-repeat;
+      width: 100%;
+      height: 486px;
+      background-size: cover;
+
+      @media only screen and (min-width: 1300px) {
+        height: 650px;
+      }
+    }
+
+    #monogram-experience-text-content {
+      background-color: @greenish-grey;
+      height: 486px;
+
+      @media only screen and (min-width: 1300px) {
+        height: 650px;
+      }
+
+      .table {
+        display: table;
+        height: 100%;
+        .table-cell {
+          display: table-cell;
+          vertical-align: middle;
+          float: none;
+        }
+      }
+
+      p {
+        color: @off-white;
+        &:nth-of-type(1) {
+          padding-bottom: 20px;  
+        }        
+      }
+
+      hr {
+        margin: 40px 0px;
+        width: 104%;
+        margin-left: -5px;
+      }
+
+      #find-out-further-information-container {
+        margin: 0px;
+        
+        #find-out-further-information-cta {
+          padding-left: 30px;
+          ul {
+            li {
+              margin-bottom: 10px;
+              &:last-child {
+                margin-bottom: 0px;
+              }
+            }
+          }
+        }
+        
+      }
+
+    }
+  }
+}

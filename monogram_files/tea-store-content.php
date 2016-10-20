@@ -91,7 +91,7 @@
           --><div class="tea-store-product">
             <a href="#"><img src="assets/images/products/sample-product-7.png" alt=""></a>
             <a href="#" class="tea-store-product-info">
-              <h3><span style="color: #c2cb7f;">provencal</span> <span style="color: #d5d755">herbs<sup>TM</sup></span></h3>
+              <h3><span style="color: #c2cb7f;">provencal</span> <span style="color: #d5d755">herbs</span></h3>
               <span class="category">Herbs</span>
               <span class="price">S$23.90</span>
             </a>

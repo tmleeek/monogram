@@ -69,7 +69,7 @@
       <div class="col-md-4">
         <a href="#">
           <span id="desktop-footer-logo"></span>
-          <span id="monogram-name">monogram by gryphon tea company</span>
+          <h5 id="monogram-name">monogram by gryphon tea company</h5>
         </a>
       </div>
       <div class="col-md-3 col-md-offset-5">

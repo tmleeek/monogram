@@ -293,9 +293,9 @@ manic.page.Page.prototype.initial_scroll_to_target = function() {
   if (this.window_hash != '') {
     str_array = this.window_hash.split('/');
 
-    console.log('str_array2: ');
-    console.log(str_array);
-    console.log(str_array.length)
+    // console.log('str_array2: ');
+    // console.log(str_array);
+    // console.log(str_array.length)
 
     if(str_array.length == 1){
       this.scroll_to_target(str_array[0]);

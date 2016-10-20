@@ -15,7 +15,9 @@
       padding-left: 45px;
       padding-right: 45px;
       h5 {
-        font-size: 9px;
+        // font-size: 9px;
+        line-height: 10px;
+        padding-bottom: 7px;
         color: @off-white;
         text-transform: uppercase;
       }
@@ -32,6 +34,10 @@
       }
       .row {
         margin-bottom: 28px;
+      }
+
+      .product-info-col-2 {
+        padding-left: 30px;
       }
 
       .steeping-suggestion {
@@ -62,6 +68,9 @@
             margin-right: 5px;
             a {
               color: @off-white;
+              &:hover {
+                color: @off-black;
+              }
             }
           }
         }
@@ -101,7 +110,7 @@
       }
 
       #add-to-cart {
-        margin-top: 20px;
+        margin-top: 17px;
       }
       
     }
@@ -114,9 +123,11 @@
     }
     .suggestion {
       padding-top: 80px;
-      padding-bottom: 30px;
+      padding-bottom: 10px;
       h5 {
-        font-size: 9px;
+        // font-size: 9px;
+        line-height: 10px;
+        padding-bottom: 7px;        
         color: @off-white;
         text-transform: uppercase;
         text-align: center;
@@ -132,13 +143,18 @@
         li {
           a {
             .header-font;
-            font-size: 9px;
+            font-size: 10px;
+            line-height: 10px;
+            padding-bottom: 7px;
             color: @off-white;
             text-transform: uppercase;          
             display: inline-block;
             i {
               font-size: 10px;
               padding-left: 3px;
+            }
+            &:hover {
+              color: fade(@off-white, 50%);
             }
           }
         }
@@ -183,7 +199,9 @@
       }
     }
     h5 {
-      font-size: 9px;
+      // font-size: 9px;
+      line-height: 10px;
+      padding-bottom: 7px;
       color: @footer-brown;
       text-transform: uppercase;
       text-align: center;
@@ -227,6 +245,10 @@
     background-color: #756b66;
     width: 100%;
     height: 26px;
+    .body-font; 
+    font-size: 10px;    
+    color: @off-white; 
+    padding-left: 20px;     
   }
   .col-md-6 {
     padding-right: 0px;
@@ -236,6 +258,10 @@
     background-color: #756b66;
     width: 233px;
     height: 105px;
+    .body-font; 
+    font-size: 10px;    
+    color: @off-white; 
+    padding-left: 20px; 
   }
   .submit-review {
     margin-top: 40px;

@@ -14,29 +14,29 @@
           <p>Japanese Yabukita jade-green tea with pickled Cherry Blossoms. A lively floral emsemble of sweet hay, cherry blossoms with fruity accord.</p>
           
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 product-info-col-1">
               <h5>Price</h5>
               <span>$17.50</span>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 product-info-col-2">
               <h5>no. of sachet</h5>
               <span>16 per Box</span>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 product-info-col-1">
               <h5>tea type</h5>
               <span>Green tea</span>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 product-info-col-2">
               <h5>weight</h5>
               <span>2 g per Sachet</span>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 product-info-col-1">
               <div class="steeping-suggestion">
                 <h5>Steeping Suggestion</h5>
                 <ul class="steeping-suggestion">
@@ -54,7 +54,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 product-info-col-2">
               <h5>Ingredients</h5>
               <ul>
                 <li><span>Green Tea</span></li>
@@ -67,13 +67,13 @@
           </div>
 
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 product-info-col-1">
               <h5>Quantity</h5>
               <a href="#" class="minus"></a><!--
               --><input type="text" name="qty" class="qty" value="1"><!--
               --><a href="#" class="plus"></a>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 product-info-col-2">
               <a href="#" id="add-to-cart" class="square-cta">Add to cart</a>
             </div>
           </div>

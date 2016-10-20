@@ -41,16 +41,16 @@ h1 {
   .header-font;
   font-size: 25px;
   line-height: 25px;
-  letter-spacing: 0.1em;  
+  letter-spacing: 0.1em;
 }
 
 h2 {
   .header-font;
-  font-size: 14px;
-  letter-spacing: 0.1em;    
+  font-size: 16px;
+  letter-spacing: 0.08em;    
 }
 
-h3 {
+h3 { // tea name
   .header-font;
   font-size: 14px;
   letter-spacing: 0.08em;    
@@ -63,20 +63,22 @@ h4 {
 }
 
 h5 {
-  .subheader-font-2;
-  font-size: 8px;
+  .header-font;
+  font-size: 10px;
+  line-height: 14px;
   letter-spacing: 0.08em;
 }
 
 h6 {
   .header-font;
-  font-size: 10px;
+  font-size: 8px;
+  line-height: 12px;
   letter-spacing: 0.08em;    
 }
 
 p {
   .body-font;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 22px;
 }
 
@@ -88,3 +90,57 @@ p {
          text-indent: 0.01px;
        text-overflow: '';
 }
+
+.v-align {
+  vertical-align: middle;
+  float: none;
+  display: inline-block;
+}
+
+.custom-checkbox-container {
+  width: 10px;
+  height: 10px;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid @off-white;
+  // background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+  border-radius: 50px;
+  // box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+  label.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-radius: 50px;    
+    &:after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      background: #544c49;
+      opacity: 0;
+      border-radius: 50px;
+    }  
+    &:hover::after {
+      opacity: 0.3;
+    }
+  }
+  input[type=checkbox] {
+    visibility: hidden;
+    &:checked + label:after {
+      opacity: 1;
+    }
+  }
+  input[type=radio] {
+    visibility: hidden;
+    &:checked + label:after {
+      opacity: 1;
+    }
+  }
+}
+
