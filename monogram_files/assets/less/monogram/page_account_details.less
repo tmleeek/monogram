@@ -1,0 +1,403 @@
+
+//    _        _ __   _____  _   _ _____
+//   | |      / \\ \ / / _ \| | | |_   _|
+//   | |     / _ \\ V / | | | | | | | |
+//   | |___ / ___ \| || |_| | |_| | | |
+//   |_____/_/   \_\_| \___/ \___/  |_|
+//
+
+html.monogram-page-account-details,
+body.monogram-page-account-details{
+  overflow: visible;
+}
+
+
+
+body.monogram-page-account-details{
+  #content-wrapper{
+    .main.account.container{
+      width: 100%;
+    }
+  }
+
+
+  #content-wrapper .col-right.sidebar{
+
+    margin-right: -80px;
+    
+    background: #ebe9e8;
+    position: relative;
+
+    &:before{
+      content: '';
+      display: block;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #ebe9e8;
+      height: 500px;
+    }
+
+    .block.block-account{
+      position: relative;
+    }
+
+  }
+  #content-wrapper .col-main{
+    padding-top: 70px;
+
+    margin-left: 80px;
+
+    background: #827773;
+    // #989779
+    // 
+    // 
+    padding-left: 10px + 70px;
+    padding-right: 10px + 40px;
+
+  }
+
+  footer#desktop-footer{
+
+    z-index: 2000;
+    position: relative;
+  }
+
+}
+
+ 
+
+
+
+
+//    ____ ___ ____  _____ ____    _    ____
+//   / ___|_ _|  _ \| ____| __ )  / \  |  _ \
+//   \___ \| || | | |  _| |  _ \ / _ \ | |_) |
+//    ___) | || |_| | |___| |_) / ___ \|  _ <
+//   |____/___|____/|_____|____/_/   \_\_| \_\
+//
+
+body.monogram-page-account-details #content-wrapper .col-right.sidebar{
+
+  padding-top: 124px;
+  padding-left: 40px;
+  padding-right: 40px;
+
+
+
+  hr{
+    .opacity(0.4);
+    border-top: 1px solid #6b615b;
+
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  ul{
+    li{
+      margin-bottom: 15px;
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  strong,
+  a{
+
+    .header-font;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 0.05em;  
+    text-transform: uppercase;
+    color: #6b615b !important;
+    white-space: nowrap;
+
+    display: block;
+  }
+
+  a{
+    &:focus,
+    &:hover{
+      .opacity(0.7);
+    }
+  }
+
+
+  h4{
+    font-size: 10px;
+    line-height: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6b615b;
+
+
+    margin-bottom: 9px;
+  }
+
+  strong{
+    color: @off-black !important;
+  }
+  
+}
+
+
+
+//    ____    _    ____  _   _ ____   ___    _    ____  ____    _   _ _____    _    ____  _____ ____
+//   |  _ \  / \  / ___|| | | | __ ) / _ \  / \  |  _ \|  _ \  | | | | ____|  / \  |  _ \| ____|  _ \
+//   | | | |/ _ \ \___ \| |_| |  _ \| | | |/ _ \ | |_) | | | | | |_| |  _|   / _ \ | | | |  _| | |_) |
+//   | |_| / ___ \ ___) |  _  | |_) | |_| / ___ \|  _ <| |_| | |  _  | |___ / ___ \| |_| | |___|  _ <
+//   |____/_/   \_\____/|_| |_|____/ \___/_/   \_\_| \_\____/  |_| |_|_____/_/   \_\____/|_____|_| \_\
+//
+
+
+
+
+
+
+#monogram-page-account-details-dashboard-header{
+  background: #989779;
+
+  padding-top: 38px;
+  padding-bottom: 41px;
+
+  .body-font;
+  font-size: 13px;
+  line-height: 20px;
+  color: @white;
+
+  margin-left: -10px - 70px;
+  margin-right: -10px - 40px;
+
+  padding-left: 10px + 70px;
+  padding-right: 10px + 40px;
+
+  margin-bottom: 40px;
+
+  //padding-left: 70px;
+  //padding-right: 40px;
+
+  h1{
+    .header-font;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  h4{
+    .subheader-font;
+    font-size: 10px;
+    line-height: 15px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  p{
+
+  }
+
+
+  .monogram-page-account-details-dashboard-header-item{
+
+    text-align: center;
+    position: relative;
+    padding-top: 4px;
+    padding-bottom: 12px;
+
+
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      border-left: 1px solid @white;
+    }
+
+    &.first-version{
+      text-align: left;
+      padding-top: 17px;
+
+      &:before{
+        display: none;
+      }
+
+      .cta-container{
+        padding-top: 40px;
+      }
+    }
+
+    .monogram-page-account-details-dashboard-header-icon{
+        
+      width: 40px;
+      height: 40px;
+
+      margin: 0 auto;
+
+      &.store-version{
+        .icon-image('../images/icons/account-details-dashboard-store.svg', 40, 40);
+      }
+      &.rebates-version{
+        .icon-image('../images/icons/account-details-dashboard-rebates.svg', 40, 40);
+      }
+      &.giftcard-version{
+        .icon-image('../images/icons/account-details-dashboard-giftcard.svg', 40, 40);
+      }
+    } // .monogram-page-account-details-dashboard-header-icon
+
+
+
+    h4{
+      margin-top: 3px;
+      margin-bottom: 13px;
+    }
+
+    .value{
+      .body-font;
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 16px;
+    }
+
+
+  } // .monogram-page-account-details-dashboard-header-item
+
+
+} // #monogram-page-account-details-dashboard-header
+
+
+
+
+
+
+//     ____ ___  _   _ _____ _____ _   _ _____
+//    / ___/ _ \| \ | |_   _| ____| \ | |_   _|
+//   | |  | | | |  \| | | | |  _| |  \| | | |
+//   | |__| |_| | |\  | | | | |___| |\  | | |
+//    \____\___/|_| \_| |_| |_____|_| \_| |_|
+//
+
+body.monogram-page-account-details #content-wrapper .col-main{
+
+  .body-font;
+  font-size: 13px;
+  line-height: 20px;
+  color: @off-white;
+  padding-bottom: 100px;
+
+  .each-input{
+    font-size: 0;
+    margin-bottom: 20px;
+    position: relative;
+
+    &.message-version{
+      margin-bottom: 9px;
+    }
+
+    h2{
+      .subheader-font;
+      font-size: 10px;
+      line-height: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+
+      .display-inline-block;
+      width: 50%;
+
+    }
+    p{
+      .body-font;
+      font-size: 13px;
+      line-height: 20px;
+        
+      .display-inline-block;
+      width: 50%;
+
+      a{
+        .body-font;
+        font-size: 13px;
+        line-height: 20px;
+        color: @off-white;
+
+        &:focus,
+        &:hover{
+          .opacity(0.7);
+        }
+      }
+
+      &.subscribe-msg{
+        width: 100%;
+        display: block;
+      }
+    }
+
+
+
+    input[type=checkbox]{
+      visibility: hidden;
+    }
+    .checkbox-label{
+
+      padding-left: 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 20px;
+
+      span{
+        .fa;
+        font-size: 10px;
+        line-height: 20px;
+        
+        &:before{
+          // content: "\f10c";
+          content: "\f1db";
+        }
+        
+        text-align: center;
+        color: @off-white;
+
+        position: absolute;
+        top: 0;
+        left: -5px;
+        width: 20px;
+        height: 20px;
+      }
+      p{
+        .subheader-font;
+        font-size: 10px;
+        line-height: 20px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 22px;
+        right: 20px;
+      }
+    }
+    input[type=checkbox]:checked + .checkbox-label{
+      span{
+        &:before{
+          content: "\f111";
+        }
+      }
+    }
+
+
+  } // .each input
+
+
+  .edit-button-container{
+    padding-top: 37px;
+    text-align: right;
+  }
+
+} // end of content
+
