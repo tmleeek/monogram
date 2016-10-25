@@ -51,7 +51,6 @@ body.monogram-page-account-details{
     margin-left: 80px;
 
     background: #827773;
-    // #989779
     // 
     // 
     padding-left: 10px + 70px;
@@ -159,7 +158,7 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar{
 
 
 #monogram-page-account-details-dashboard-header{
-  background: #989779;
+  background: @account-green;
 
   padding-top: 38px;
   padding-bottom: 41px;
@@ -402,3 +401,337 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
 } // end of content
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//       _    ____  ____  ____  _____ ____ ____
+//      / \  |  _ \|  _ \|  _ \| ____/ ___/ ___|
+//     / _ \ | | | | | | | |_) |  _| \___ \___ \
+//    / ___ \| |_| | |_| |  _ <| |___ ___) |__) |
+//   /_/   \_\____/|____/|_| \_\_____|____/____/
+//
+
+
+
+
+#monogram-page-account-details-address-header{
+  background: @account-green;
+
+  padding-top: 38px + 22px;
+  padding-bottom: 41px;
+
+  .body-font;
+  font-size: 13px;
+  line-height: 20px;
+  color: @white;
+
+  margin-left: -10px - 70px;
+  margin-right: -10px - 40px;
+
+  padding-left: 10px + 70px;
+  padding-right: 10px + 40px;
+
+  margin-bottom: 40px;
+
+  a{
+    color: @white;
+
+    &:focus,
+    &:hover{
+      color: @white;
+      .opacity(0.7);
+    }
+  }
+
+  h1{
+    .header-font;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    margin-bottom: 19px;
+  }
+
+  .cta-container{
+    font-size: 0;
+    padding-top: 19px;
+    padding-bottom: 12px;
+
+    .square-cta{
+      height: auto;
+      line-height: 20px;
+      .display-inline-block;
+      margin-right: 20px;
+    }
+  }
+
+  .each-billing-detail,
+  .each-shipping-detail{
+    margin-bottom: 11px;
+
+    h2{
+      .subheader-font-2;
+      font-size: 10px;
+      line-height: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: @off-white;
+
+      margin-bottom: -1px;
+    }
+    p{
+      .body-font;
+      font-size: 10px;
+      line-height: 20px;
+      color: @off-white;
+    }
+
+  }
+
+  .billing-and-shipping .billing-address{
+    margin-top: 0px !important;
+    padding-right: 10px + 25px;
+    position: relative;
+
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 37px;
+      bottom: -3px;
+      right: 50px;
+      width: 0;
+      // height: 100%;
+      border-left: 1px solid @white;
+    }
+
+  }
+  .billing-and-shipping .shipping-address{
+    margin-top: 0px !important;
+    padding-left: 10px + 25px;
+  }
+}
+
+
+
+
+#monogram-page-account-details-other-shipping-address-container{
+  .body-font;
+  font-size: 12px;
+  line-height: 20px;
+  color: @white;
+
+  h2{
+    .header-font;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    padding-bottom: 17px;
+  }
+
+  p{
+    .body-font;
+    font-size: 12px;
+    line-height: 20px;
+    color: @white;
+
+    // &.address-name{
+    &.billing_address_no{
+
+      .subheader-font;
+      font-size: 10px;
+      line-height: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+  }
+
+
+  .table-responsive{
+    width: 100%;
+
+    border-top: 1px solid @white;
+    border-top: 1px solid fade(@white, 50%);
+
+    table{
+      width: 100%;
+
+      tbody{
+        tr{
+
+          td{
+
+            padding-top: 9px;
+            padding-bottom: 4px;
+
+            border-bottom: 1px solid @white;
+            border-bottom: 1px solid fade(@white, 50%);
+
+            .set_as_default_billing{
+              .arrow-cta;
+            }
+
+            &:first-child{
+              padding-left: 24px;
+            }
+            &:last-child{
+              text-align: right;
+              padding-right: 24px;
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+}
+
+.monogram-page-account-details-other-shipping-address-item{
+  padding-top: 10px;
+  padding-bottom: 6px;
+
+  border-bottom: 1px solid @white;
+  border-bottom: 1px solid fade(@white, 50%);
+
+  .cta-container{
+    margin-top: -2px;
+    text-align: right;
+    padding-right: 24px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+//     ___  ____  ____  _____ ____    _   _ ___ ____ _____ ___  ______   __
+//    / _ \|  _ \|  _ \| ____|  _ \  | | | |_ _/ ___|_   _/ _ \|  _ \ \ / /
+//   | | | | |_) | | | |  _| | |_) | | |_| || |\___ \ | || | | | |_) \ V /
+//   | |_| |  _ <| |_| | |___|  _ <  |  _  || | ___) || || |_| |  _ < | |
+//    \___/|_| \_\____/|_____|_| \_\ |_| |_|___|____/ |_| \___/|_| \_\|_|
+//
+
+
+
+#monogram-page-account-details-order-history{
+
+  .page-title{
+
+
+    background: @account-green;
+
+    padding-top: 38px + 20px;
+    padding-bottom: 41px + 17px;
+
+    .body-font;
+    font-size: 13px;
+    line-height: 20px;
+    color: @white;
+
+    margin-left: -70px;
+    margin-right: -40px;
+
+    padding-left: 70px;
+    padding-right: 40px;
+
+    display: block !important;
+    width: auto !important;
+    float: none !important;
+
+    margin-bottom: 40px;
+
+    h1{
+      .header-font;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    hr{
+      display: none;
+    }
+  }
+  #mobile-order-history-top-part{
+    display: none;
+  }
+
+
+  .custom-order-content-header{
+
+    border-top: 1px solid @white;
+    border-top: 1px solid fade(@white, 50%);
+
+    border-bottom: 1px solid @white;
+    border-bottom: 1px solid fade(@white, 50%);
+
+    padding-top: 4px;
+    padding-bottom: 3px;
+
+
+    p{
+      .subheader-font;
+      font-size: 10px;
+      line-height: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+
+      text-align: center;
+    }
+
+
+  }
+
+
+
+  .each-order{
+    padding-top: 25px;
+    padding-bottom: 24px;
+
+    border-bottom: 1px solid @white;
+    border-bottom: 1px solid fade(@white, 50%);
+
+    p{
+      .body-font;
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    .order-details{
+      .order-no{
+        text-align: center;
+      }
+      .order-date{
+        text-align: center;
+      }
+      .order-qty{
+        text-align: center;
+      }
+      .order-subtotal{
+        text-align: center;
+      }
+    }
+  }
+  
+} // #monogram-page-account-details-order-history
