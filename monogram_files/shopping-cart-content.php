@@ -815,15 +815,20 @@
                 -->
 
                 
-                            <div class="each-input">
-                                                                                            </div>
+                            
                             
                             <div class="each-input">
                                 <form id="discount-coupon-form" action="http://www.gryphontea.com/checkout/cart/couponPost/" method="post">
-    <label for="coupon_code">Discount Code</label>
-    <input type="hidden" name="remove" id="remove-coupone" value="0">
-    <input type="text" class="input-text" id="coupon_code" name="coupon_code" value="">    
-            <button type="button" title="Apply Coupon" class="button apply cta" onclick="discountForm.submit(false)" value="Apply Coupon"><span><span>Apply</span></span></button>
+
+                                    <div class="each-input">
+                                        <label for="coupon_code">Discount Code</label>
+                                        <input type="hidden" name="remove" id="remove-coupone" value="0">
+                                        <div class="input-box">
+                                            <input type="text" class="input-text" id="coupon_code" name="coupon_code" value="">    
+                                        </div>
+                                        <button type="button" title="Apply Coupon" class="button apply cta" onclick="discountForm.submit(false)" value="Apply Coupon"><span><span>Apply</span></span></button>
+                                    </div>
+                                    
     </form>
 <script type="text/javascript">
 //<![CDATA[
@@ -857,7 +862,9 @@ discountForm.submit = function (isRemove) {
                             <div>
                                 <label>
                                     Store Credits                                </label>                                
-                                <input class="input-text" type="text" value="" title="Credit" name="credit_amount">                     
+                                <div class="input-box">
+                                    <input class="input-text" type="text" value="" title="Credit" name="credit_amount">
+                                </div>                     
                                 <button class="form-button-alt button cta apply apply_giftcard" type="button">
                                     <span><span>Apply</span></span>
                                 </button>    
@@ -878,7 +885,9 @@ discountForm.submit = function (isRemove) {
                                                     </div>
                         <div id="giftvoucher-custom-code">
                             <label for="giftvoucher_code">GIFT CERTIFICATE</label>
-                            <input type="text" title="Gift Card Code" class="input-text" id="giftvoucher_code" name="giftvoucher_code">
+                            <div class="input-box">
+                                <input type="text" title="Gift Card Code" class="input-text" id="giftvoucher_code" name="giftvoucher_code">
+                            </div>
                             
                                                                                         <button class="form-button-alt button cta apply apply_giftcard" type="button">
                                     <span><span>Apply</span></span>
@@ -1024,7 +1033,9 @@ discountForm.submit = function (isRemove) {
                                                                                 <p class="no-display">Enter quantity of reward point(s) you want to use.</p>
                 <!-- <p>You have 789 reward point(s) available.</p> -->
                                                     <label for="coupon_code">REDEEM POINTS</label>
-                    <input type="text" value="" name="points_to_be_used" class="input-text">
+                    <div class="input-box">
+                        <input type="text" value="" name="points_to_be_used" class="input-text">
+                    </div>
                                                 <!-- <div class="buttons-set"> -->
                     <button class="form-button-alt button cta apply" value="Apply Points" onclick="discountFormPoints2.submit(false)" type="button">
                         <span><span>Apply</span></span>
