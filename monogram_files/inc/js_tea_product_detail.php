@@ -54,9 +54,8 @@
 
   <script>
   $(document).ready(function(){
-
-    
-
+    var suggestionHeight = $(".suggestion-container").height();
+    $("#product-detail-img-info-container").css("height", suggestionHeight);
   });
   </script>
 

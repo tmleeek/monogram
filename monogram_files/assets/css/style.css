@@ -4784,6 +4784,9 @@ body {
 html.overflow-version {
   overflow: scroll;
 }
+html.overflow-visible-version {
+  overflow: visible;
+}
 html,
 body {
   background: #7b706b;
@@ -5116,6 +5119,7 @@ p {
   line-height: 25px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  background: none;
   display: inline-block;
   vertical-align: top;
   *display: inline;
@@ -9165,7 +9169,8 @@ body.tea-layering-detail-page {
   font-size: 14px;
   margin-right: 8px;
 }
-.home-page #desktop-header {
+.home-page #desktop-header,
+.cms-home #desktop-header {
   background: none!important;
 }
 #home-intro-section {
@@ -10097,7 +10102,8 @@ body.tea-layering-detail-page {
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
   filter: alpha(opacity=0);
 }
-.tea-store-page {
+.tea-store-page,
+.category-store {
   overflow: visible;
 }
 #tea-store-section-1 .container-fluid {
@@ -10108,17 +10114,17 @@ body.tea-layering-detail-page {
     max-width: 83%;
   }
 }
-#tea-store-section-1 .tea-store-products .tea-store-product-row {
-  margin-bottom: 50px;
-}
 #tea-store-section-1 .tea-store-products .tea-store-product-row .tea-store-product {
   display: inline-block;
   width: 25%;
   text-align: center;
   vertical-align: top;
+  margin-bottom: 50px;
 }
 #tea-store-section-1 .tea-store-product-info {
   padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
   display: block;
 }
 #tea-store-section-1 .tea-store-product-info h3 {
@@ -10248,6 +10254,10 @@ body.tea-layering-detail-page {
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .product-info #add-to-cart {
   margin-top: 17px;
+  background: none;
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .product-info .j2t-loyalty-points {
+  display: none;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .suggestion-container {
   position: absolute;
@@ -10283,7 +10293,6 @@ body.tea-layering-detail-page {
   padding-bottom: 7px;
   color: #f1efee;
   text-transform: uppercase;
-  display: inline-block;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .suggestion ul li a i {
   font-size: 10px;
@@ -10292,17 +10301,24 @@ body.tea-layering-detail-page {
 #tea-product-detail-section-1 #product-detail-img-info-container .suggestion ul li a:hover {
   color: rgba(241, 239, 238, 0.5);
 }
+#tea-product-detail-section-1 #product-detail-img-info-container .suggestion ul li a.product-image {
+  padding-bottom: 0px;
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .custom-product-carousel .slick-prev,
+#tea-product-detail-section-1 #product-detail-img-info-container .custom-product-carousel .slick-next {
+  display: none!important;
+}
 #tea-product-detail-section-2 {
   background-color: #e2deda;
   padding-top: 80px;
   padding-bottom: 80px;
-  margin-top: 40px;
 }
 #tea-product-detail-section-2 .review-product {
   text-align: center;
   width: 202px;
   margin: 0 auto;
   display: inline-block;
+  vertical-align: top;
   width: 19.7%;
 }
 #tea-product-detail-section-2 img {

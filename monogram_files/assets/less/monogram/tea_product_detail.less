@@ -111,6 +111,11 @@
 
       #add-to-cart {
         margin-top: 17px;
+        background: none;
+      }
+
+      .j2t-loyalty-points {
+        display: none;
       }
       
     }
@@ -148,7 +153,7 @@
             padding-bottom: 7px;
             color: @off-white;
             text-transform: uppercase;          
-            display: inline-block;
+            // display: inline-block;
             i {
               font-size: 10px;
               padding-left: 3px;
@@ -156,9 +161,15 @@
             &:hover {
               color: fade(@off-white, 50%);
             }
+            &.product-image {
+              padding-bottom: 0px;
+            }
           }
         }
       }
+    }
+    .custom-product-carousel .slick-prev , .custom-product-carousel .slick-next {
+      display: none!important;
     }
   }    
 }
@@ -167,12 +178,13 @@
     background-color: @whiteish-grey;
     padding-top: 80px;
     padding-bottom: 80px;
-    margin-top: 40px;
+    // margin-top: 40px;
     .review-product {
       text-align: center;
       width: 202px;
       margin: 0 auto;
       display: inline-block;
+      vertical-align: top;
       width: 19.7%;
     }
     img {
