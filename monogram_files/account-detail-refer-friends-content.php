@@ -312,393 +312,221 @@
 
 
 
-                  <div id="monogram-page-account-details-address-header">
+                  <div id="monogram-page-account-details-refer-friends-container">
+
                     <!--
-                          _    ____  ____  ____  _____ ____ ____    ____ _____  _    ____ _____
-                         / \  |  _ \|  _ \|  _ \| ____/ ___/ ___|  / ___|_   _|/ \  |  _ \_   _|
-                        / _ \ | | | | | | | |_) |  _| \___ \___ \  \___ \ | | / _ \ | |_) || |
-                       / ___ \| |_| | |_| |  _ <| |___ ___) |__) |  ___) || |/ ___ \|  _ < | |
-                      /_/   \_\____/|____/|_| \_\_____|____/____/  |____/ |_/_/   \_\_| \_\|_|
+                       ____  _____ _____ _____ ____    _____ ____  ___ _____ _   _ ____  ____    ____ _____  _    ____ _____
+                      |  _ \| ____|  ___| ____|  _ \  |  ___|  _ \|_ _| ____| \ | |  _ \/ ___|  / ___|_   _|/ \  |  _ \_   _|
+                      | |_) |  _| | |_  |  _| | |_) | | |_  | |_) || ||  _| |  \| | | | \___ \  \___ \ | | / _ \ | |_) || |
+                      |  _ <| |___|  _| | |___|  _ <  |  _| |  _ < | || |___| |\  | |_| |___) |  ___) || |/ ___ \|  _ < | |
+                      |_| \_\_____|_|   |_____|_| \_\ |_|   |_| \_\___|_____|_| \_|____/|____/  |____/ |_/_/   \_\_| \_\|_|
 
                     -->
-
-                    <div class="billing-and-shipping">
-                      <div class="image-text-content">
-                          
-                          <!-- <div class="page-title title-buttons">
-                              <h1>Address Book</h1>
-                              <hr class="small" />
-                          </div> -->
-
-                          <div class="row">
-                              <div class="col-md-6 billing-address">
-
-
-
-                                  <!-- moved -->
-                                  <h1>billing Address</h1>
-                                  
-                                  <div class="billing-address-details">
-                                    <div class="each-billing-detail">
-                                      <h2>NAME</h2>
-                                      <p>zaw zaw aung</p>
-                                    </div>
-                                    <div class="each-billing-detail">
-                                      <h2>phone no.</h2>
-                                      <p>+65111111</p>
-                                    </div>
-                                    <div class="each-billing-detail">
-                                      <h2>ADDRESS</h2>
-                                      <p>abc 123 456 test Singapore 23232323</p>
-                                    </div>
-                                    <div class="each-billing-detail">
-                                      <h2>EMAIL</h2>
-                                      <p><a href="mailto:zza@manic.com.sg">zza@manic.com.sg</a></p>
-                                    </div>
-                                  </div>
-
-                                  <div class="cta-container">
-                                    <a href="http://www.monogramtea.com/customer/address/edit/id/102/" class="edit square-cta">Edit Details</a>
-                                    <a href="http://www.monogramtea.com/customer/address/new/" class="add_address square-cta">Add New Address</a>
-                                  </div>
-
-
-                                  <!-- restructured -->
-                                  <!--
-                                  <div class="row">
-                                      <div class="col-md-5 col-sm-5 col-xs-8">
-                                          <h1>billing Address</h1>
-                                          <hr class="small">
-                                      </div>
-                                      <div class="col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2 col-xs-4">
-                                          <ul>
-                                                                              <li><a href="http://www.monogramtea.com/customer/address/edit/id/102/" class="edit"><i class="fa fa-cog"></i> <span>Edit</span></a></li>
-                                                                          <li class="hidden-xs"><a href="http://www.monogramtea.com/customer/address/new/" class="add_address"><i class="fa fa-plus"></i> <span>Add Address</span></a></li>
-                                          </ul>
-                                      </div>
-                                  </div>
-
-                                  <div class="billing-address-details">
-
-                                      <div class="row">
-                                          <div class="col-md-12">
-                                              <h2 class="title">Default Billing Address</h2>
-                                          </div>
-                                      </div>
-                                      
-
-                                      <div class="row">
-                                                                                                                              <div class="col-md-6">
-                                                  <div class="each-billing-detail">
-                                                      <h2>NAME</h2>
-                                                      <p>zaw zaw aung</p>
-                                                  </div>
-                                                  <div class="each-billing-detail">
-                                                      <h2>phone no.</h2>
-                                                      <p>+65111111</p>
-                                                  </div>
-                                              </div>
-                                              <div class="col-md-6">
-                                                  <div class="each-billing-detail">
-                                                      <h2>ADDRESS</h2>
-                                                      <p>abc 123 456 test Singapore 23232323</p>
-                                                  </div>
-                                                  <div class="each-billing-detail">
-                                                      <h2>EMAIL</h2>
-                                                      <p><a href="mailto:zza@manic.com.sg">zza@manic.com.sg</a></p>
-                                                  </div>
-                                              </div>
-                                                              </div>
-                                  </div>
-
-                                  
-                                  <div class="visible-xs-block">
-                                      <div class="account-address-button-container">
-                                          <a href="http://www.monogramtea.com/customer/address/new/" class="account-address-button-cta">Add Address</a>
-                                      </div>
-                                  </div>
-                                   
-
-
-
-
-
-                                                      THIS WILL BE MOVED TO THE BOTTOM...
-
-                                                      <div class="row">
-                                          <div class="col-md-12">
-                                              <div class="table-responsive">
-                                                  <table class="gift-cards-tbl">
-                                                      <tbody>
-                                                                                                                                      <tr>
-                                                              <td><p class="billing_address_no">BILLING ADDRESS 1</p></td>
-                                                              <td>
-                                                                  <p class="billing_address">
-                                                                      lor 1 singapore Singapore 123456                                                </p>
-                                                              </td>
-                                                              <td><a href="http://www.monogramtea.com/customer/address/edit/id/2595/" class="set_as_default_billing">Edit</a></td>
-                                                          </tr>
-                                                                                              </tbody>
-                                                  </table>
-                                              </div>
-                                          </div>
-                                      </div>
-                                       -->
-
-
-
-
-
-
-
-                                              </div> <!-- .billing-address -->
-
-
-
-
-
-
-
-                              <div class="col-md-6 shipping-address" style="margin-top:70px;">
-
-                                  <h1>Shipping Address</h1>
-
-                                  <div class="shipping-address-details">
-                                    <div class="each-shipping-detail">
-                                      <h2>NAME</h2>
-                                      <p>zaw zaw aung</p>
-                                    </div>
-                                    <div class="each-shipping-detail">
-                                      <h2>phone no.</h2>
-                                      <p>12345678</p>
-                                    </div>
-                                    <div class="each-shipping-detail">
-                                      <h2>ADDRESS</h2>
-                                      <p>abc 123 singapore Singapore 12345</p>
-                                    </div>
-                                    <div class="each-shipping-detail">
-                                      <h2>EMAIL</h2>
-                                      <p><a href="mailto:zza@manic.com.sg">zza@manic.com.sg</a></p>
-                                    </div>
-                                  </div>
-
-
-                                  <div class="cta-container">
-                                    <a href="http://www.monogramtea.com/customer/address/edit/id/108/" class="edit square-cta">Edit Details</a>
-                                    <a href="http://www.monogramtea.com/customer/address/new/" class="add_address square-cta">Add New Address</a>
-                                  </div>
-
-
-                                  <!-- 
-                                  <div class="row">
-                                      <div class="col-md-5 col-sm-5 col-xs-8">
-                                          <h1>Shipping Address</h1>
-                                          <hr class="small">
-                                      </div>
-                                      <div class="col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2 col-xs-4">
-                                          <ul>
-                                                                              <li><a href="http://www.monogramtea.com/customer/address/edit/id/108/" class="edit"><i class="fa fa-cog"></i><span>Edit</span></a></li>
-                                                                          <li class="hidden-xs"><a href="http://www.monogramtea.com/customer/address/new/" class="add_address"><i class="fa fa-plus"></i><span>Add Address</span></a></li>
-                                          </ul>
-                                      </div>
-                                  </div>
-                                  
-                                  <div class="shipping-address-details">
-
-                                      <div class="row">
-                                          <div class="col-md-12">
-                                              <h2 class="title">Default Shipping Address</h2>
-                                          </div>
-                                      </div> 
-                                      
-                                      
-                                      <div class="row">
-                                                                                                                              <div class="col-md-6">
-                                                  <div class="each-shipping-detail">
-                                                      <h2>NAME</h2>
-                                                      <p>zaw zaw aung</p>
-                                                  </div>
-                                                  <div class="each-shipping-detail">
-                                                      <h2>phone no.</h2>
-                                                      <p>12345678</p>
-                                                  </div>
-                                              </div>
-                                              <div class="col-md-6">
-                                                  <div class="each-shipping-detail">
-                                                      <h2>ADDRESS</h2>
-                                                      <p>abc 123 singapore Singapore 12345</p>
-                                                  </div>
-                                                  <div class="each-shipping-detail">
-                                                      <h2>EMAIL</h2>
-                                                      <p><a href="mailto:zza@manic.com.sg">zza@manic.com.sg</a></p>
-                                                  </div>
-                                              </div>
-                                                              </div>
-                                  </div>
-
-
-
-                                                      
-                                                      <div class="row">
-                                          <div class="col-md-12">
-                                              <div class="table-responsive">
-                                                  <table class="gift-cards-tbl">
-                                                      <tbody>
-                                                                                                                                      <tr>
-                                                              <td><p class="billing_address_no">SHIPPING ADDRESS 1</p></td>
-                                                              <td>
-                                                                  <p class="billing_address">
-                                                                      lor 1 singapore Singapore 123456                                                </p>
-                                                              </td>
-                                                              <td><a href="http://www.monogramtea.com/customer/address/edit/id/2595/" class="set_as_default_billing">Edit</a></td>
-                                                          </tr>
-                                                                                              </tbody>
-                                                  </table>
-                                              </div>
-                                          </div>
-                                      </div>
-                                       
-
-
-
-                                      -->
-
-                                
-
-
-
-
-                            </div> <!-- .shipping-address -->
+                    <div class="my-account">
+                      <div class="referral-container">
+                          <div class="page-title">
+                              <h1>REFERRAL</h1>
+                              <hr class="small">
                           </div>
-
-                          <div class="visible-xs-block">
-                              <div class="account-address-button-container">
-                                  <a href="http://www.monogramtea.com/customer/address/new/" class="account-address-button-cta">Add Address</a>
+                                      <div class="points">
+                                  <div class="left">
+                                      <div class="pts"><span class="no">10</span><span class="text">points</span></div>
+                                  </div>
+                                  <div class="right">
+                                      <span class="pts-text">For any referred friend's registration</span>
+                                  </div>
                               </div>
-                          </div>
+                              <!-- <p>For any referred friend's registration, you earn: <strong>10 points</strong></p>  -->
+                                                      <div class="points">
+                                  <div class="left">
+                                      <div class="pts"><span class="no">20</span><span class="text">points</span></div>
+                                  </div>
+                                  <div class="right">
+                                      <span class="pts-text">For any first valid order placed by referred friend</span>
+                                  </div>
+                              </div>
+                              <!-- <p>For any first valid order placed by referred friend, you earn: <strong>20 points</strong></p> -->
+                                              
+                              </div>
+                          <form action="http://www.monogramtea.com/rewardpoints/index/referral/" method="post" class="refer-friend-form" id="form-validate">
+                          <div class="group-select fieldset" id="j2t-referral-lines">
+                                          <input name="form_key" type="hidden" value="C03ppXMn4dfVgWQi">
+                              <h1 class="legend">Refer a friend</h1>
+                              <hr class="small">
 
-                          <div class="buttons-set row">
-                              <!-- <p class="back-link"><a href="http://www.monogramtea.com/customer/account/"><small>&laquo; </small>Back</a></p> -->
-                          </div>
+                                  <ul class="form-list">
+                                      <li class="fields">
+                                          <div class="j2t-rewardpoints-referral">
+                                              <div class="field j2t-rewardpoints-name">
+                                                  <label for="name" class="required" id="label-name"><em>*</em>Friend's name</label>
+                                                  <input type="text" name="name[]" value="" title="Friend' name" class="required-entry input-text" id="name">
+                                              </div>
+                                              <div class="field j2t-rewardpoints-email">
+                                                  <label for="email" class="required validate-email" id="label-email"><em>*</em>Friend's email address</label>
+                                                  <input type="text" name="email[]" value="" title="Friend's email address" class="required-entry input-text" id="email">
+                                              </div>
+                                          </div>
+                                      </li>
+                                  </ul>
+                                  <div class="button-set">
+                                      <!-- <p class="required">* Required Fields</p> -->
+                                      <!--<a href="" class="left">&laquo; Back</a>-->
 
+                                      <button class="form-button button cta send" type="submit"><span><span>Send</span></span></button>
+
+                                      <!-- MOVED HERE... -->
+                                      <a id="j2t-add-line" href="javascript:j2t_add_line();" title="Add new line">Add More</a>
+                                  </div>
+
+
+                                  
+                          
+                              <script type="text/javascript">
+                                  var elmt_id_j2t = 0;
+                                  function j2t_add_line(){
+                                      var form_list_ul = $('j2t-add-line').up().down("ul");
+                                      //var form_list_ul_clone = Element.clone(form_list_ul, true);
+                                      var form_list_ul_clone = form_list_ul.cloneNode(true);
+
+                                      form_list_ul_clone.down("#label-name").id = "label-name-"+elmt_id_j2t;
+                                      form_list_ul_clone.down("#name").id = "name-"+elmt_id_j2t;
+                                      form_list_ul_clone.down("#label-email").id = "label-email-"+elmt_id_j2t;
+                                      form_list_ul_clone.down("#email").id = "email-"+elmt_id_j2t;
+
+                                      form_list_ul_clone.down("#name-"+elmt_id_j2t).value = "";
+                                      form_list_ul_clone.down("#email-"+elmt_id_j2t).value = "";
+
+                                      var del_img = new Element('img', {src: 'http://www.monogramtea.com/skin/frontend/base/default/images/j2t_minus_one.png'})
+                                      form_list_ul_clone.down(".j2t-rewardpoints-email").insert({
+                                          bottom: del_img
+                                      });
+                                      del_img.observe('click', function(event) {
+                                          Event.element(event).up("ul").remove();
+                                      });
+
+                                      $('j2t-add-line').insert({ before: form_list_ul_clone });
+                                      elmt_id_j2t++;
+                                  }
+                              </script>            
+                          </div>
+                      </form>
+
+                      <script type="text/javascript">
+                          var dataForm = new VarienForm('form-validate', true);
+                      </script>
+                      
+                      <div class="page-title invite-friends">
+                          <h1>Invited friends</h1>
+                          <hr class="small">
                       </div>
+                              <div class="referral-table">
+                                  <div class="table-responsive">
+                              <table cellspacing="0" class="data-table" id="referred-friends-table">
+                                  <thead>
+                                      <tr>
+                                          <th>Full Name</th>                        <th>Email</th>
+                                          <!--<th>Registered?</th>-->
+                                          <!--<th>First order?</th>-->
+                                          <!-- <th class="custom-first-order-title-container"><span class="custom-first-order-title-01">First</span><span class="custom-first-order-title-02">order?</span></th> -->
+                                          <th class="custom-first-order-title-container">First order?</th>
+
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                                                                  <tr>
+                                              <td>zaw zaw aung</td>                            <td>zza@manic.com.sg</td>
+                                              <!--<td>yes</td>-->
+                                              <td class="a-right">yes</td>
+                                          </tr>
+                                                              <tr>
+                                              <td>zaw zaw aung</td>                            <td>zaw@manic.com.sg</td>
+                                              <!--<td>yes</td>-->
+                                              <td class="a-right">yes</td>
+                                          </tr>
+                                                              <tr>
+                                              <td>zaw zaw aung</td>                            <td>zaw4@manic.com.sg</td>
+                                              <!--<td>no</td>-->
+                                              <td class="a-right">no</td>
+                                          </tr>
+                                                              <tr>
+                                              <td>zaw zaw aung</td>                            <td>zawtester1@gmail.com</td>
+                                              <!--<td>no</td>-->
+                                              <td class="a-right">no</td>
+                                          </tr>
+                                                              <tr>
+                                              <td>zaw zaw aung</td>                            <td>zawtest@manic.com.sg</td>
+                                              <!--<td>no</td>-->
+                                              <td class="a-right">no</td>
+                                          </tr>
+                                                              <tr>
+                                              <td>zaw manic</td>                            <td>zaw3@manic.com.sg</td>
+                                              <!--<td>no</td>-->
+                                              <td class="a-right">no</td>
+                                          </tr>
+                                                              <tr>
+                                              <td>zaw zaw aung</td>                            <td>zaw2@manic.com.sg</td>
+                                              <!--<td>no</td>-->
+                                              <td class="a-right">no</td>
+                                          </tr>
+                                                              <tr>
+                                              <td>zawtester</td>                            <td>zawtester2@gmail.com</td>
+                                              <!--<td>no</td>-->
+                                              <td class="a-right">no</td>
+                                          </tr>
+                                                      </tbody>
+                              </table>
+                          </div>
+                          <div class="pager">
+
+                  <p class="amount">
+                              <strong>8 Item(s)</strong>
+                      </p>
+
+                  <div class="limiter">
+                      <!-- <label>Show</label> -->
+                      <div class="dropdown">
+                          <select onchange="setLocation(this.value)">
+                                      <option value="http://www.monogramtea.com/rewardpoints/index/referral/?limit=10" selected="selected">
+                                  10            </option>
+                                      <option value="http://www.monogramtea.com/rewardpoints/index/referral/?limit=20">
+                                  20            </option>
+                                      <option value="http://www.monogramtea.com/rewardpoints/index/referral/?limit=50">
+                                  50            </option>
+                                  </select>
+                      </div>
+                      <p>per page</p>
+                  </div>
+
+
+                  </div>
+                      </div>
+                      </div>
+
+
+
+
+
+
+
+
+
+
+                      <div class="buttons-set">
+                      <p class="back-link"><a href="http://www.monogramtea.com/customer/account/"><small>« </small>Back</a></p>
                   </div>
 
 
 
-
                     <!--
-                          _    ____  ____  ____  _____ ____ ____    _____ _   _ ____
-                         / \  |  _ \|  _ \|  _ \| ____/ ___/ ___|  | ____| \ | |  _ \
-                        / _ \ | | | | | | | |_) |  _| \___ \___ \  |  _| |  \| | | | |
-                       / ___ \| |_| | |_| |  _ <| |___ ___) |__) | | |___| |\  | |_| |
-                      /_/   \_\____/|____/|_| \_\_____|____/____/  |_____|_| \_|____/
+                       ____  _____ _____ _____ ____    _____ ____  ___ _____ _   _ ____  ____    _____ _   _ ____
+                      |  _ \| ____|  ___| ____|  _ \  |  ___|  _ \|_ _| ____| \ | |  _ \/ ___|  | ____| \ | |  _ \
+                      | |_) |  _| | |_  |  _| | |_) | | |_  | |_) || ||  _| |  \| | | | \___ \  |  _| |  \| | | | |
+                      |  _ <| |___|  _| | |___|  _ <  |  _| |  _ < | || |___| |\  | |_| |___) | | |___| |\  | |_| |
+                      |_| \_\_____|_|   |_____|_| \_\ |_|   |_| \_\___|_____|_| \_|____/|____/  |_____|_| \_|____/
 
                     -->
 
-                  </div> <!-- #monogram-page-account-details-address-header -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  <!--
-                     _   _ _______        __  _____ _____    _  _____ _   _ ____  _____   ____ _____  _    ____ _____
-                    | \ | | ____\ \      / / |  ___| ____|  / \|_   _| | | |  _ \| ____| / ___|_   _|/ \  |  _ \_   _|
-                    |  \| |  _|  \ \ /\ / /  | |_  |  _|   / _ \ | | | | | | |_) |  _|   \___ \ | | / _ \ | |_) || |
-                    | |\  | |___  \ V  V /   |  _| | |___ / ___ \| | | |_| |  _ <| |___   ___) || |/ ___ \|  _ < | |
-                    |_| \_|_____|  \_/\_/    |_|   |_____/_/   \_\_|  \___/|_| \_\_____| |____/ |_/_/   \_\_| \_\|_|
-
-                  -->
-
-                  <div id="monogram-page-account-details-other-shipping-address-container">
-
-                    <h2>other shipping addresses</h2>
-
-
-                    <div class="table-responsive">
-                        <table class="gift-cards-tbl">
-                            <tbody>
-                                <tr>
-                                    <td><p class="billing_address_no">SHIPPING ADDRESS 1</p></td>
-                                    <td>
-                                        <p class="billing_address">
-                                            lor 1 singapore Singapore 123456                                                </p>
-                                    </td>
-                                    <td><a href="http://www.monogramtea.com/customer/address/edit/id/2595/" class="set_as_default_billing">Edit</a></td>
-                                </tr>
-                                <tr>
-                                    <td><p class="billing_address_no">SHIPPING ADDRESS 1</p></td>
-                                    <td>
-                                        <p class="billing_address">
-                                            lor 1 singapore Singapore 123456                                                </p>
-                                    </td>
-                                    <td><a href="http://www.monogramtea.com/customer/address/edit/id/2595/" class="set_as_default_billing">Edit</a></td>
-                                </tr>
-                                <tr>
-                                    <td><p class="billing_address_no">SHIPPING ADDRESS 1</p></td>
-                                    <td>
-                                        <p class="billing_address">
-                                            lor 1 singapore Singapore 123456                                                </p>
-                                    </td>
-                                    <td><a href="http://www.monogramtea.com/customer/address/edit/id/2595/" class="set_as_default_billing">Edit</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!--
-                    <div class="monogram-page-account-details-other-shipping-address-item">
-                      <div class="row">
-                        <div class="col-md-4">
-                          <p class="address-name">my home — default</p>
-                        </div>
-                        <div class="col-md-5">
-                          <p>#01-02, 251 Pandan Loop , Singapore 123456</p>
-                        </div>
-                        <div class="col-md-3">
-                          <div class="cta-container">
-                            <a href="" class="arrow-cta">edit</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="monogram-page-account-details-other-shipping-address-item">
-                      <div class="row">
-                        <div class="col-md-4">
-                          <p class="address-name">my home</p>
-                        </div>
-                        <div class="col-md-5">
-                          <p>#01-02, 251 Pandan Loop , Singapore 123456</p>
-                        </div>
-                        <div class="col-md-3">
-                          <div class="cta-container">
-                            <a href="" class="arrow-cta">edit</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    -->
-
-                  </div> <!-- monogram-page-account-details-other-shipping-address-container -->
-
-                  
-                  <!--
-                     _   _ _______        __  _____ _____    _  _____ _   _ ____  _____   _____ _   _ ____
-                    | \ | | ____\ \      / / |  ___| ____|  / \|_   _| | | |  _ \| ____| | ____| \ | |  _ \
-                    |  \| |  _|  \ \ /\ / /  | |_  |  _|   / _ \ | | | | | | |_) |  _|   |  _| |  \| | | | |
-                    | |\  | |___  \ V  V /   |  _| | |___ / ___ \| | | |_| |  _ <| |___  | |___| |\  | |_| |
-                    |_| \_|_____|  \_/\_/    |_|   |_____/_/   \_\_|  \___/|_| \_\_____| |_____|_| \_|____/
-
-                  -->
+                  </div> <!-- #monogram-page-account-details-refer-friends-container -->
 
 
 
@@ -860,25 +688,4 @@
 
 
 
-
-
-
-
-
-<!--
-   _   _  ___ _____ _____ ____
-  | \ | |/ _ \_   _| ____/ ___|
-  |  \| | | | || | |  _| \___ \
-  | |\  | |_| || | | |___ ___) |
-  |_| \_|\___/ |_| |_____|____/
-
-
-CHANGE THE CLASS HTML TO:
-
-1. col-md-6 billing-address
-2. col-md-6 shipping-address
-
-
-
--->
 

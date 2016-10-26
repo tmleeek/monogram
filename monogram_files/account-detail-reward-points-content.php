@@ -312,393 +312,307 @@
 
 
 
-                  <div id="monogram-page-account-details-address-header">
+                  <div id="monogram-page-account-reward-points-container">
+
                     <!--
-                          _    ____  ____  ____  _____ ____ ____    ____ _____  _    ____ _____
-                         / \  |  _ \|  _ \|  _ \| ____/ ___/ ___|  / ___|_   _|/ \  |  _ \_   _|
-                        / _ \ | | | | | | | |_) |  _| \___ \___ \  \___ \ | | / _ \ | |_) || |
-                       / ___ \| |_| | |_| |  _ <| |___ ___) |__) |  ___) || |/ ___ \|  _ < | |
-                      /_/   \_\____/|____/|_| \_\_____|____/____/  |____/ |_/_/   \_\_| \_\|_|
+                       ____  _______        ___    ____  ____    ____   ___ ___ _   _ _____ ____    ____ _____  _    ____ _____
+                      |  _ \| ____\ \      / / \  |  _ \|  _ \  |  _ \ / _ \_ _| \ | |_   _/ ___|  / ___|_   _|/ \  |  _ \_   _|
+                      | |_) |  _|  \ \ /\ / / _ \ | |_) | | | | | |_) | | | | ||  \| | | | \___ \  \___ \ | | / _ \ | |_) || |
+                      |  _ <| |___  \ V  V / ___ \|  _ <| |_| | |  __/| |_| | || |\  | | |  ___) |  ___) || |/ ___ \|  _ < | |
+                      |_| \_\_____|  \_/\_/_/   \_\_| \_\____/  |_|    \___/___|_| \_| |_| |____/  |____/ |_/_/   \_\_| \_\|_|
 
                     -->
 
-                    <div class="billing-and-shipping">
-                      <div class="image-text-content">
-                          
-                          <!-- <div class="page-title title-buttons">
-                              <h1>Address Book</h1>
-                              <hr class="small" />
-                          </div> -->
 
-                          <div class="row">
-                              <div class="col-md-6 billing-address">
+                    <div class="my-account reward-page">
+    <div class="page-title">
+        <h1>Reward points</h1>
+        <hr class="small">
+    </div>
 
+          <div id="my-rewardpoints-table">
+     <div class="each-input">
+        <h2>Reward Points</h2>
+        <p class="loyalty-point">789 points</p>
+    </div>
+</div>
+<!-- <div id="my-rewardpoints-table" class="row">
+    <div class="col-md-2 col-sm-6 col-xs-6">        
+        <div class="each-input">
+            <h2>Total Accumulated Points</h2>
+            <p>789</p>
+                    </div>
+    </div>
+    <div class="col-md-2 col-sm-6 col-xs-6">
+        <div class="each-input">
+            <h2>Total Points Spent</h2>
+            <p>0</p>
+        </div>
+        <div class="each-input">
+            <h2>Points waiting for validation</h2>
+            <p>0</p>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">decorateTable('my-rewardpoints-table')</script> -->
 
-
-                                  <!-- moved -->
-                                  <h1>billing Address</h1>
-                                  
-                                  <div class="billing-address-details">
-                                    <div class="each-billing-detail">
-                                      <h2>NAME</h2>
-                                      <p>zaw zaw aung</p>
-                                    </div>
-                                    <div class="each-billing-detail">
-                                      <h2>phone no.</h2>
-                                      <p>+65111111</p>
-                                    </div>
-                                    <div class="each-billing-detail">
-                                      <h2>ADDRESS</h2>
-                                      <p>abc 123 456 test Singapore 23232323</p>
-                                    </div>
-                                    <div class="each-billing-detail">
-                                      <h2>EMAIL</h2>
-                                      <p><a href="mailto:zza@manic.com.sg">zza@manic.com.sg</a></p>
-                                    </div>
-                                  </div>
-
-                                  <div class="cta-container">
-                                    <a href="http://www.monogramtea.com/customer/address/edit/id/102/" class="edit square-cta">Edit Details</a>
-                                    <a href="http://www.monogramtea.com/customer/address/new/" class="add_address square-cta">Add New Address</a>
-                                  </div>
-
-
-                                  <!-- restructured -->
-                                  <!--
-                                  <div class="row">
-                                      <div class="col-md-5 col-sm-5 col-xs-8">
-                                          <h1>billing Address</h1>
-                                          <hr class="small">
-                                      </div>
-                                      <div class="col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2 col-xs-4">
-                                          <ul>
-                                                                              <li><a href="http://www.monogramtea.com/customer/address/edit/id/102/" class="edit"><i class="fa fa-cog"></i> <span>Edit</span></a></li>
-                                                                          <li class="hidden-xs"><a href="http://www.monogramtea.com/customer/address/new/" class="add_address"><i class="fa fa-plus"></i> <span>Add Address</span></a></li>
-                                          </ul>
-                                      </div>
-                                  </div>
-
-                                  <div class="billing-address-details">
-
-                                      <div class="row">
-                                          <div class="col-md-12">
-                                              <h2 class="title">Default Billing Address</h2>
-                                          </div>
-                                      </div>
-                                      
-
-                                      <div class="row">
-                                                                                                                              <div class="col-md-6">
-                                                  <div class="each-billing-detail">
-                                                      <h2>NAME</h2>
-                                                      <p>zaw zaw aung</p>
-                                                  </div>
-                                                  <div class="each-billing-detail">
-                                                      <h2>phone no.</h2>
-                                                      <p>+65111111</p>
-                                                  </div>
-                                              </div>
-                                              <div class="col-md-6">
-                                                  <div class="each-billing-detail">
-                                                      <h2>ADDRESS</h2>
-                                                      <p>abc 123 456 test Singapore 23232323</p>
-                                                  </div>
-                                                  <div class="each-billing-detail">
-                                                      <h2>EMAIL</h2>
-                                                      <p><a href="mailto:zza@manic.com.sg">zza@manic.com.sg</a></p>
-                                                  </div>
-                                              </div>
-                                                              </div>
-                                  </div>
-
-                                  
-                                  <div class="visible-xs-block">
-                                      <div class="account-address-button-container">
-                                          <a href="http://www.monogramtea.com/customer/address/new/" class="account-address-button-cta">Add Address</a>
-                                      </div>
-                                  </div>
-                                   
+    
 
 
 
 
+    <!-- REMOVED -->
+    <!-- 
+    <div class="page-title">
+        <h1>History</h1>
+        <hr class="small">
+    </div>
+  -->
 
-                                                      THIS WILL BE MOVED TO THE BOTTOM...
+                
+        <div class="visible-md-block visible-lg-block">
+            <div class="table-responsive">
+                <table cellspacing="0" class="data-table linearize-table" id="reward-points-table">
+                    <thead>
+                        <tr>
+                            <th>Description</th>                            <th>Points added</th>
+                            <th>Points used</th>
+                            <th>Date</th>
+                            <th>Valid until</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                                                                                        <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145002452</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">830</td>
+                                                                <td data-theme-label="Points used">0</td>
+                                                                    
+                                <td data-theme-label="Allocation date"></td>
+                                <td data-theme-label="Valid until"></td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Birthday points</div>                                </td>
+                                <td data-theme-label="Points added">80</td>
+                                                                <td data-theme-label="Points used">0</td>
+                                                                    
+                                <td data-theme-label="Allocation date">1/1/2016</td>
+                                <td data-theme-label="Valid until"></td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000652</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">132</td>
+                                                                <td data-theme-label="Points used">0</td>
+                                                                    
+                                <td data-theme-label="Allocation date"></td>
+                                <td data-theme-label="Valid until"></td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000208</div><div class="j2t-in-txt">Order state: canceled</div>                                </td>
+                                <td data-theme-label="Points added">15</td>
+                                                                <td data-theme-label="Points used">0</td>
+                                                                    
+                                <td data-theme-label="Allocation date"></td>
+                                <td data-theme-label="Valid until"></td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000171</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">17</td>
+                                                                <td data-theme-label="Points used">0</td>
+                                                                    
+                                <td data-theme-label="Allocation date"></td>
+                                <td data-theme-label="Valid until"></td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000169</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">135</td>
+                                                                <td data-theme-label="Points used">0</td>
+                                                                    
+                                <td data-theme-label="Allocation date"></td>
+                                <td data-theme-label="Valid until"></td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000168</div><div class="j2t-in-txt">Order state: canceled</div>                                </td>
+                                <td data-theme-label="Points added">135</td>
+                                                                <td data-theme-label="Points used">0</td>
+                                                                    
+                                <td data-theme-label="Allocation date"></td>
+                                <td data-theme-label="Valid until"></td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000167</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">446</td>
+                                                                <td data-theme-label="Points used">0</td>
+                                                                    
+                                <td data-theme-label="Allocation date"></td>
+                                <td data-theme-label="Valid until"></td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000154</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">10</td>
+                                                                <td data-theme-label="Points used">0</td>
+                                                                    
+                                <td data-theme-label="Allocation date"></td>
+                                <td data-theme-label="Valid until"></td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Referral points (zaw zaw aung)</div><div class="j2t-in-txt">Referral order (#145000153) state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">20</td>
+                                                                <td data-theme-label="Points used">0</td>
+                                                                    
+                                <td data-theme-label="Allocation date"></td>
+                                <td data-theme-label="Valid until"></td>
+                            </tr>
+                                            </tbody>
+                </table>
+            </div>
+            
+        </div>
+        <div class="visible-xs-block visible-sm-block">
+            <div class="table-responsive">
+                <table cellspacing="0" class="data-table linearize-table" id="reward-points-table">
+                    <thead>
+                        <tr>
+                            <th>Description</th>                            <th>Points added</th>
+                            <th>Points used</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                                                                                        <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145002452</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">830</td>
+                                <td data-theme-label="Points used">0</td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Birthday points</div>                                </td>
+                                <td data-theme-label="Points added">80</td>
+                                <td data-theme-label="Points used">0</td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000652</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">132</td>
+                                <td data-theme-label="Points used">0</td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000208</div><div class="j2t-in-txt">Order state: canceled</div>                                </td>
+                                <td data-theme-label="Points added">15</td>
+                                <td data-theme-label="Points used">0</td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000171</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">17</td>
+                                <td data-theme-label="Points used">0</td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000169</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">135</td>
+                                <td data-theme-label="Points used">0</td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000168</div><div class="j2t-in-txt">Order state: canceled</div>                                </td>
+                                <td data-theme-label="Points added">135</td>
+                                <td data-theme-label="Points used">0</td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000167</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">446</td>
+                                <td data-theme-label="Points used">0</td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000154</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">10</td>
+                                <td data-theme-label="Points used">0</td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Referral points (zaw zaw aung)</div><div class="j2t-in-txt">Referral order (#145000153) state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">20</td>
+                                <td data-theme-label="Points used">0</td>
+                            </tr>
+                                            </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="pager">
 
-                                                      <div class="row">
-                                          <div class="col-md-12">
-                                              <div class="table-responsive">
-                                                  <table class="gift-cards-tbl">
-                                                      <tbody>
-                                                                                                                                      <tr>
-                                                              <td><p class="billing_address_no">BILLING ADDRESS 1</p></td>
-                                                              <td>
-                                                                  <p class="billing_address">
-                                                                      lor 1 singapore Singapore 123456                                                </p>
-                                                              </td>
-                                                              <td><a href="http://www.monogramtea.com/customer/address/edit/id/2595/" class="set_as_default_billing">Edit</a></td>
-                                                          </tr>
-                                                                                              </tbody>
-                                                  </table>
-                                              </div>
-                                          </div>
-                                      </div>
-                                       -->
+<p class="amount">
+            Items 1 to 10 of 64 total    </p>
 
+<div class="limiter">
+    <!-- <label>Show</label> -->
+    <div class="dropdown">
+        <select onchange="setLocation(this.value)">
+                    <option value="http://www.monogramtea.com/rewardpoints/index/points/?limit=10" selected="selected">
+                10            </option>
+                    <option value="http://www.monogramtea.com/rewardpoints/index/points/?limit=20">
+                20            </option>
+                    <option value="http://www.monogramtea.com/rewardpoints/index/points/?limit=50">
+                50            </option>
+                </select>
+    </div>
+    <p>per page</p>
+</div>
 
+<div class="pages">
+    <ol>
+    
+    
+    
+                        <li class="current">1</li>
+                                <li><a href="http://www.monogramtea.com/rewardpoints/index/points/?p=2">2</a></li>
+                                <li><a href="http://www.monogramtea.com/rewardpoints/index/points/?p=3">3</a></li>
+                                <li><a href="http://www.monogramtea.com/rewardpoints/index/points/?p=4">4</a></li>
+                                <li><a href="http://www.monogramtea.com/rewardpoints/index/points/?p=5">5</a></li>
+            
 
+            <li><a class="next_jump" title="" href="http://www.monogramtea.com/rewardpoints/index/points/?p=6">...</a></li>
+    
+          <li><a class="last" href="http://www.monogramtea.com/rewardpoints/index/points/?p=7">7</a></li>
+    
+            <li>
+            <a class="next i-next" href="http://www.monogramtea.com/rewardpoints/index/points/?p=2" title="Next">
+                                    
+                    <i class="fa fa-arrow-right"></i>
+                            </a>
+        </li>
+        </ol>
 
+</div>
 
-
-
-                                              </div> <!-- .billing-address -->
-
-
-
-
-
-
-
-                              <div class="col-md-6 shipping-address" style="margin-top:70px;">
-
-                                  <h1>Shipping Address</h1>
-
-                                  <div class="shipping-address-details">
-                                    <div class="each-shipping-detail">
-                                      <h2>NAME</h2>
-                                      <p>zaw zaw aung</p>
-                                    </div>
-                                    <div class="each-shipping-detail">
-                                      <h2>phone no.</h2>
-                                      <p>12345678</p>
-                                    </div>
-                                    <div class="each-shipping-detail">
-                                      <h2>ADDRESS</h2>
-                                      <p>abc 123 singapore Singapore 12345</p>
-                                    </div>
-                                    <div class="each-shipping-detail">
-                                      <h2>EMAIL</h2>
-                                      <p><a href="mailto:zza@manic.com.sg">zza@manic.com.sg</a></p>
-                                    </div>
-                                  </div>
-
-
-                                  <div class="cta-container">
-                                    <a href="http://www.monogramtea.com/customer/address/edit/id/108/" class="edit square-cta">Edit Details</a>
-                                    <a href="http://www.monogramtea.com/customer/address/new/" class="add_address square-cta">Add New Address</a>
-                                  </div>
-
-
-                                  <!-- 
-                                  <div class="row">
-                                      <div class="col-md-5 col-sm-5 col-xs-8">
-                                          <h1>Shipping Address</h1>
-                                          <hr class="small">
-                                      </div>
-                                      <div class="col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2 col-xs-4">
-                                          <ul>
-                                                                              <li><a href="http://www.monogramtea.com/customer/address/edit/id/108/" class="edit"><i class="fa fa-cog"></i><span>Edit</span></a></li>
-                                                                          <li class="hidden-xs"><a href="http://www.monogramtea.com/customer/address/new/" class="add_address"><i class="fa fa-plus"></i><span>Add Address</span></a></li>
-                                          </ul>
-                                      </div>
-                                  </div>
-                                  
-                                  <div class="shipping-address-details">
-
-                                      <div class="row">
-                                          <div class="col-md-12">
-                                              <h2 class="title">Default Shipping Address</h2>
-                                          </div>
-                                      </div> 
-                                      
-                                      
-                                      <div class="row">
-                                                                                                                              <div class="col-md-6">
-                                                  <div class="each-shipping-detail">
-                                                      <h2>NAME</h2>
-                                                      <p>zaw zaw aung</p>
-                                                  </div>
-                                                  <div class="each-shipping-detail">
-                                                      <h2>phone no.</h2>
-                                                      <p>12345678</p>
-                                                  </div>
-                                              </div>
-                                              <div class="col-md-6">
-                                                  <div class="each-shipping-detail">
-                                                      <h2>ADDRESS</h2>
-                                                      <p>abc 123 singapore Singapore 12345</p>
-                                                  </div>
-                                                  <div class="each-shipping-detail">
-                                                      <h2>EMAIL</h2>
-                                                      <p><a href="mailto:zza@manic.com.sg">zza@manic.com.sg</a></p>
-                                                  </div>
-                                              </div>
-                                                              </div>
-                                  </div>
-
-
-
-                                                      
-                                                      <div class="row">
-                                          <div class="col-md-12">
-                                              <div class="table-responsive">
-                                                  <table class="gift-cards-tbl">
-                                                      <tbody>
-                                                                                                                                      <tr>
-                                                              <td><p class="billing_address_no">SHIPPING ADDRESS 1</p></td>
-                                                              <td>
-                                                                  <p class="billing_address">
-                                                                      lor 1 singapore Singapore 123456                                                </p>
-                                                              </td>
-                                                              <td><a href="http://www.monogramtea.com/customer/address/edit/id/2595/" class="set_as_default_billing">Edit</a></td>
-                                                          </tr>
-                                                                                              </tbody>
-                                                  </table>
-                                              </div>
-                                          </div>
-                                      </div>
-                                       
-
-
-
-                                      -->
-
-                                
-
-
-
-
-                            </div> <!-- .shipping-address -->
-                          </div>
-
-                          <div class="visible-xs-block">
-                              <div class="account-address-button-container">
-                                  <a href="http://www.monogramtea.com/customer/address/new/" class="account-address-button-cta">Add Address</a>
-                              </div>
-                          </div>
-
-                          <div class="buttons-set row">
-                              <!-- <p class="back-link"><a href="http://www.monogramtea.com/customer/account/"><small>&laquo; </small>Back</a></p> -->
-                          </div>
-
-                      </div>
-                  </div>
-
+</div>
+    </div>
 
 
 
                     <!--
-                          _    ____  ____  ____  _____ ____ ____    _____ _   _ ____
-                         / \  |  _ \|  _ \|  _ \| ____/ ___/ ___|  | ____| \ | |  _ \
-                        / _ \ | | | | | | | |_) |  _| \___ \___ \  |  _| |  \| | | | |
-                       / ___ \| |_| | |_| |  _ <| |___ ___) |__) | | |___| |\  | |_| |
-                      /_/   \_\____/|____/|_| \_\_____|____/____/  |_____|_| \_|____/
+                       ____  _______        ___    ____  ____    ____   ___ ___ _   _ _____ ____    _____ _   _ ____
+                      |  _ \| ____\ \      / / \  |  _ \|  _ \  |  _ \ / _ \_ _| \ | |_   _/ ___|  | ____| \ | |  _ \
+                      | |_) |  _|  \ \ /\ / / _ \ | |_) | | | | | |_) | | | | ||  \| | | | \___ \  |  _| |  \| | | | |
+                      |  _ <| |___  \ V  V / ___ \|  _ <| |_| | |  __/| |_| | || |\  | | |  ___) | | |___| |\  | |_| |
+                      |_| \_\_____|  \_/\_/_/   \_\_| \_\____/  |_|    \___/___|_| \_| |_| |____/  |_____|_| \_|____/
 
                     -->
+                    
 
-                  </div> <!-- #monogram-page-account-details-address-header -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  <!--
-                     _   _ _______        __  _____ _____    _  _____ _   _ ____  _____   ____ _____  _    ____ _____
-                    | \ | | ____\ \      / / |  ___| ____|  / \|_   _| | | |  _ \| ____| / ___|_   _|/ \  |  _ \_   _|
-                    |  \| |  _|  \ \ /\ / /  | |_  |  _|   / _ \ | | | | | | |_) |  _|   \___ \ | | / _ \ | |_) || |
-                    | |\  | |___  \ V  V /   |  _| | |___ / ___ \| | | |_| |  _ <| |___   ___) || |/ ___ \|  _ < | |
-                    |_| \_|_____|  \_/\_/    |_|   |_____/_/   \_\_|  \___/|_| \_\_____| |____/ |_/_/   \_\_| \_\|_|
-
-                  -->
-
-                  <div id="monogram-page-account-details-other-shipping-address-container">
-
-                    <h2>other shipping addresses</h2>
-
-
-                    <div class="table-responsive">
-                        <table class="gift-cards-tbl">
-                            <tbody>
-                                <tr>
-                                    <td><p class="billing_address_no">SHIPPING ADDRESS 1</p></td>
-                                    <td>
-                                        <p class="billing_address">
-                                            lor 1 singapore Singapore 123456                                                </p>
-                                    </td>
-                                    <td><a href="http://www.monogramtea.com/customer/address/edit/id/2595/" class="set_as_default_billing">Edit</a></td>
-                                </tr>
-                                <tr>
-                                    <td><p class="billing_address_no">SHIPPING ADDRESS 1</p></td>
-                                    <td>
-                                        <p class="billing_address">
-                                            lor 1 singapore Singapore 123456                                                </p>
-                                    </td>
-                                    <td><a href="http://www.monogramtea.com/customer/address/edit/id/2595/" class="set_as_default_billing">Edit</a></td>
-                                </tr>
-                                <tr>
-                                    <td><p class="billing_address_no">SHIPPING ADDRESS 1</p></td>
-                                    <td>
-                                        <p class="billing_address">
-                                            lor 1 singapore Singapore 123456                                                </p>
-                                    </td>
-                                    <td><a href="http://www.monogramtea.com/customer/address/edit/id/2595/" class="set_as_default_billing">Edit</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!--
-                    <div class="monogram-page-account-details-other-shipping-address-item">
-                      <div class="row">
-                        <div class="col-md-4">
-                          <p class="address-name">my home — default</p>
-                        </div>
-                        <div class="col-md-5">
-                          <p>#01-02, 251 Pandan Loop , Singapore 123456</p>
-                        </div>
-                        <div class="col-md-3">
-                          <div class="cta-container">
-                            <a href="" class="arrow-cta">edit</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="monogram-page-account-details-other-shipping-address-item">
-                      <div class="row">
-                        <div class="col-md-4">
-                          <p class="address-name">my home</p>
-                        </div>
-                        <div class="col-md-5">
-                          <p>#01-02, 251 Pandan Loop , Singapore 123456</p>
-                        </div>
-                        <div class="col-md-3">
-                          <div class="cta-container">
-                            <a href="" class="arrow-cta">edit</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    -->
-
-                  </div> <!-- monogram-page-account-details-other-shipping-address-container -->
-
-                  
-                  <!--
-                     _   _ _______        __  _____ _____    _  _____ _   _ ____  _____   _____ _   _ ____
-                    | \ | | ____\ \      / / |  ___| ____|  / \|_   _| | | |  _ \| ____| | ____| \ | |  _ \
-                    |  \| |  _|  \ \ /\ / /  | |_  |  _|   / _ \ | | | | | | |_) |  _|   |  _| |  \| | | | |
-                    | |\  | |___  \ V  V /   |  _| | |___ / ___ \| | | |_| |  _ <| |___  | |___| |\  | |_| |
-                    |_| \_|_____|  \_/\_/    |_|   |_____/_/   \_\_|  \___/|_| \_\_____| |_____|_| \_|____/
-
-                  -->
+                  </div> <!-- #monogram-page-account-reward-points-container -->
 
 
 
@@ -860,25 +774,4 @@
 
 
 
-
-
-
-
-
-<!--
-   _   _  ___ _____ _____ ____
-  | \ | |/ _ \_   _| ____/ ___|
-  |  \| | | | || | |  _| \___ \
-  | |\  | |_| || | | |___ ___) |
-  |_| \_|\___/ |_| |_____|____/
-
-
-CHANGE THE CLASS HTML TO:
-
-1. col-md-6 billing-address
-2. col-md-6 shipping-address
-
-
-
--->
 

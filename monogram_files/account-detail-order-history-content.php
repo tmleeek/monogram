@@ -312,138 +312,102 @@
 
 
 
-                  <div id="monogram-page-account-details-address-header">
+                  <div id="monogram-page-account-details-order-history">
+
                     <!--
-                          _    ____  ____  ____  _____ ____ ____    ____ _____  _    ____ _____
-                         / \  |  _ \|  _ \|  _ \| ____/ ___/ ___|  / ___|_   _|/ \  |  _ \_   _|
-                        / _ \ | | | | | | | |_) |  _| \___ \___ \  \___ \ | | / _ \ | |_) || |
-                       / ___ \| |_| | |_| |  _ <| |___ ___) |__) |  ___) || |/ ___ \|  _ < | |
-                      /_/   \_\____/|____/|_| \_\_____|____/____/  |____/ |_/_/   \_\_| \_\|_|
+                        ___  ____  ____  _____ ____    _   _ ___ ____ _____ ___  ______   __  ____ _____  _    ____ _____
+                       / _ \|  _ \|  _ \| ____|  _ \  | | | |_ _/ ___|_   _/ _ \|  _ \ \ / / / ___|_   _|/ \  |  _ \_   _|
+                      | | | | |_) | | | |  _| | |_) | | |_| || |\___ \ | || | | | |_) \ V /  \___ \ | | / _ \ | |_) || |
+                      | |_| |  _ <| |_| | |___|  _ <  |  _  || | ___) || || |_| |  _ < | |    ___) || |/ ___ \|  _ < | |
+                       \___/|_| \_\____/|_____|_| \_\ |_| |_|___|____/ |_| \___/|_| \_\|_|   |____/ |_/_/   \_\_| \_\|_|
 
                     -->
 
-                    <div class="billing-and-shipping">
-                      <div class="image-text-content">
-                          
-                          <!-- <div class="page-title title-buttons">
-                              <h1>Address Book</h1>
-                              <hr class="small" />
-                          </div> -->
+                    <div class="order-history">
+    <div class="image-text-content">
+                <div class="row order-history-heading">
 
-                          <div class="row">
-                              <div class="col-md-6 billing-address">
+                        <div class="page-title col-md-12">
+                <h1>Order History</h1>
+                <hr class="small">
+            </div>
 
-
-
-                                  <!-- moved -->
-                                  <h1>billing Address</h1>
-                                  
-                                  <div class="billing-address-details">
-                                    <div class="each-billing-detail">
-                                      <h2>NAME</h2>
-                                      <p>zaw zaw aung</p>
-                                    </div>
-                                    <div class="each-billing-detail">
-                                      <h2>phone no.</h2>
-                                      <p>+65111111</p>
-                                    </div>
-                                    <div class="each-billing-detail">
-                                      <h2>ADDRESS</h2>
-                                      <p>abc 123 456 test Singapore 23232323</p>
-                                    </div>
-                                    <div class="each-billing-detail">
-                                      <h2>EMAIL</h2>
-                                      <p><a href="mailto:zza@manic.com.sg">zza@manic.com.sg</a></p>
-                                    </div>
-                                  </div>
-
-                                  <div class="cta-container">
-                                    <a href="http://www.monogramtea.com/customer/address/edit/id/102/" class="edit square-cta">Edit Details</a>
-                                    <a href="http://www.monogramtea.com/customer/address/new/" class="add_address square-cta">Add New Address</a>
-                                  </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
 
 
-                                  <!-- restructured -->
-                                  <!--
-                                  <div class="row">
-                                      <div class="col-md-5 col-sm-5 col-xs-8">
-                                          <h1>billing Address</h1>
-                                          <hr class="small">
-                                      </div>
-                                      <div class="col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2 col-xs-4">
-                                          <ul>
-                                                                              <li><a href="http://www.monogramtea.com/customer/address/edit/id/102/" class="edit"><i class="fa fa-cog"></i> <span>Edit</span></a></li>
-                                                                          <li class="hidden-xs"><a href="http://www.monogramtea.com/customer/address/new/" class="add_address"><i class="fa fa-plus"></i> <span>Add Address</span></a></li>
-                                          </ul>
-                                      </div>
-                                  </div>
+    <div id="mobile-order-history-top-part">
+        <div class="visible-md-block visible-lg-block">
+            <div class="pager">
 
-                                  <div class="billing-address-details">
+<p class="amount">
+            Items 1 to 10 of 50 total    </p>
 
-                                      <div class="row">
-                                          <div class="col-md-12">
-                                              <h2 class="title">Default Billing Address</h2>
-                                          </div>
-                                      </div>
-                                      
+<div class="limiter">
+    <!-- <label>Show</label> -->
+    <div class="dropdown">
+        <select onchange="setLocation(this.value)">
+                    <option value="http://www.monogramtea.com/sales/order/history/?limit=10" selected="selected">
+                10            </option>
+                    <option value="http://www.monogramtea.com/sales/order/history/?limit=20">
+                20            </option>
+                    <option value="http://www.monogramtea.com/sales/order/history/?limit=50">
+                50            </option>
+                </select>
+    </div>
+    <p>per page</p>
+</div>
 
-                                      <div class="row">
-                                                                                                                              <div class="col-md-6">
-                                                  <div class="each-billing-detail">
-                                                      <h2>NAME</h2>
-                                                      <p>zaw zaw aung</p>
-                                                  </div>
-                                                  <div class="each-billing-detail">
-                                                      <h2>phone no.</h2>
-                                                      <p>+65111111</p>
-                                                  </div>
-                                              </div>
-                                              <div class="col-md-6">
-                                                  <div class="each-billing-detail">
-                                                      <h2>ADDRESS</h2>
-                                                      <p>abc 123 456 test Singapore 23232323</p>
-                                                  </div>
-                                                  <div class="each-billing-detail">
-                                                      <h2>EMAIL</h2>
-                                                      <p><a href="mailto:zza@manic.com.sg">zza@manic.com.sg</a></p>
-                                                  </div>
-                                              </div>
-                                                              </div>
-                                  </div>
+<div class="pages">
+    <ol>
+    
+    
+    
+                        <li class="current">1</li>
+                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=2">2</a></li>
+                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=3">3</a></li>
+                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=4">4</a></li>
+                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=5">5</a></li>
+            
 
-                                  
-                                  <div class="visible-xs-block">
-                                      <div class="account-address-button-container">
-                                          <a href="http://www.monogramtea.com/customer/address/new/" class="account-address-button-cta">Add Address</a>
-                                      </div>
-                                  </div>
-                                   
+    
+    
+            <li>
+            <a class="next i-next" href="http://www.monogramtea.com/sales/order/history/?p=2" title="Next">
+                                    
+                    <i class="fa fa-arrow-right"></i>
+                            </a>
+        </li>
+        </ol>
+
+</div>
+
+</div>
+        </div>
+
+        <div class="clearfix"></div>
 
 
+        <hr class="order-headers-line">
+        <div class="row order-headers">
+            <div class="col-md-1 col-sm-1 col-xs-3 order-status"><h2>STATUS</h2></div>
+            <div class="col-md-1 col-sm-2 col-xs-4 order-no"><h2>ORDER NO.</h2></div>
+            <div class="col-md-1 col-sm-2 col-xs-4 order-date"><h2>DATE</h2></div>
 
+            <div class="col-md-9 col-sm-6 col-xs-6 visible-md-block visible-lg-block">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-4"><h2>PRODUCT</h2></div>
+                    <div class="col-md-2 col-sm-2 col-xs-2"><h2 style="text-align:center;">UNIT PRICE</h2></div>
+                    <div class="col-md-2 col-sm-2 col-xs-2 order-qty"><h2>QTY</h2></div>
+                    <div class="col-md-2 col-sm-2 col-xs-2"><h2>TOTAL</h2></div>
+                    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+                </div>
+            </div>
+        </div>
 
-
-                                                      THIS WILL BE MOVED TO THE BOTTOM...
-
-                                                      <div class="row">
-                                          <div class="col-md-12">
-                                              <div class="table-responsive">
-                                                  <table class="gift-cards-tbl">
-                                                      <tbody>
-                                                                                                                                      <tr>
-                                                              <td><p class="billing_address_no">BILLING ADDRESS 1</p></td>
-                                                              <td>
-                                                                  <p class="billing_address">
-                                                                      lor 1 singapore Singapore 123456                                                </p>
-                                                              </td>
-                                                              <td><a href="http://www.monogramtea.com/customer/address/edit/id/2595/" class="set_as_default_billing">Edit</a></td>
-                                                          </tr>
-                                                                                              </tbody>
-                                                  </table>
-                                              </div>
-                                          </div>
-                                      </div>
-                                       -->
+        <hr class="order-headers-line">
+    </div>
 
 
 
@@ -451,254 +415,218 @@
 
 
 
-                                              </div> <!-- .billing-address -->
 
 
 
 
 
-
-
-                              <div class="col-md-6 shipping-address" style="margin-top:70px;">
-
-                                  <h1>Shipping Address</h1>
-
-                                  <div class="shipping-address-details">
-                                    <div class="each-shipping-detail">
-                                      <h2>NAME</h2>
-                                      <p>zaw zaw aung</p>
-                                    </div>
-                                    <div class="each-shipping-detail">
-                                      <h2>phone no.</h2>
-                                      <p>12345678</p>
-                                    </div>
-                                    <div class="each-shipping-detail">
-                                      <h2>ADDRESS</h2>
-                                      <p>abc 123 singapore Singapore 12345</p>
-                                    </div>
-                                    <div class="each-shipping-detail">
-                                      <h2>EMAIL</h2>
-                                      <p><a href="mailto:zza@manic.com.sg">zza@manic.com.sg</a></p>
-                                    </div>
-                                  </div>
-
-
-                                  <div class="cta-container">
-                                    <a href="http://www.monogramtea.com/customer/address/edit/id/108/" class="edit square-cta">Edit Details</a>
-                                    <a href="http://www.monogramtea.com/customer/address/new/" class="add_address square-cta">Add New Address</a>
-                                  </div>
-
-
-                                  <!-- 
-                                  <div class="row">
-                                      <div class="col-md-5 col-sm-5 col-xs-8">
-                                          <h1>Shipping Address</h1>
-                                          <hr class="small">
-                                      </div>
-                                      <div class="col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2 col-xs-4">
-                                          <ul>
-                                                                              <li><a href="http://www.monogramtea.com/customer/address/edit/id/108/" class="edit"><i class="fa fa-cog"></i><span>Edit</span></a></li>
-                                                                          <li class="hidden-xs"><a href="http://www.monogramtea.com/customer/address/new/" class="add_address"><i class="fa fa-plus"></i><span>Add Address</span></a></li>
-                                          </ul>
-                                      </div>
-                                  </div>
-                                  
-                                  <div class="shipping-address-details">
-
-                                      <div class="row">
-                                          <div class="col-md-12">
-                                              <h2 class="title">Default Shipping Address</h2>
-                                          </div>
-                                      </div> 
-                                      
-                                      
-                                      <div class="row">
-                                                                                                                              <div class="col-md-6">
-                                                  <div class="each-shipping-detail">
-                                                      <h2>NAME</h2>
-                                                      <p>zaw zaw aung</p>
-                                                  </div>
-                                                  <div class="each-shipping-detail">
-                                                      <h2>phone no.</h2>
-                                                      <p>12345678</p>
-                                                  </div>
-                                              </div>
-                                              <div class="col-md-6">
-                                                  <div class="each-shipping-detail">
-                                                      <h2>ADDRESS</h2>
-                                                      <p>abc 123 singapore Singapore 12345</p>
-                                                  </div>
-                                                  <div class="each-shipping-detail">
-                                                      <h2>EMAIL</h2>
-                                                      <p><a href="mailto:zza@manic.com.sg">zza@manic.com.sg</a></p>
-                                                  </div>
-                                              </div>
-                                                              </div>
-                                  </div>
-
-
-
-                                                      
-                                                      <div class="row">
-                                          <div class="col-md-12">
-                                              <div class="table-responsive">
-                                                  <table class="gift-cards-tbl">
-                                                      <tbody>
-                                                                                                                                      <tr>
-                                                              <td><p class="billing_address_no">SHIPPING ADDRESS 1</p></td>
-                                                              <td>
-                                                                  <p class="billing_address">
-                                                                      lor 1 singapore Singapore 123456                                                </p>
-                                                              </td>
-                                                              <td><a href="http://www.monogramtea.com/customer/address/edit/id/2595/" class="set_as_default_billing">Edit</a></td>
-                                                          </tr>
-                                                                                              </tbody>
-                                                  </table>
-                                              </div>
-                                          </div>
-                                      </div>
-                                       
-
-
-
-                                      -->
-
-                                
+    <!-- removed all content, because there is a new content, no status, products are listed -->
 
 
 
 
-                            </div> <!-- .shipping-address -->
-                          </div>
+    <div class="row custom-order-content-header">
+      <div class="col-md-2">
+        <p>order no.</p>
+      </div>
+      <div class="col-md-2">
+        <p>date</p>
+      </div>
+      <div class="col-md-6">
+        <p class="product-header">product</p>
+      </div>
+      <div class="col-md-1">
+        <p>qty</p>
+      </div>
+      <div class="col-md-1">
+        <p>sub total</p>
+      </div>
+    </div> <!-- custom-order-content-header -->
 
-                          <div class="visible-xs-block">
-                              <div class="account-address-button-container">
-                                  <a href="http://www.monogramtea.com/customer/address/new/" class="account-address-button-cta">Add Address</a>
-                              </div>
-                          </div>
 
-                          <div class="buttons-set row">
-                              <!-- <p class="back-link"><a href="http://www.monogramtea.com/customer/account/"><small>&laquo; </small>Back</a></p> -->
-                          </div>
 
-                      </div>
+    <div class="row order-content">
+
+      <div class="orders">
+        <div class="col-md-12">
+
+          <div class="row each-order">
+            <div class="col-md-12">
+              <div class="single-order-item" data-id="145000652">
+                <div class="row order-details">
+                  <div class="col-md-2 order-no">
+                    <p class="order_no">145000652</p>
                   </div>
+                  <div class="col-md-2 order-date">
+                    <p class="date">12/7/2015</p>
+                  </div>
+                  <div class="col-md-6">
+                    <p>All About Lychee, Lucky Basterd Blend, Lucky Basterd Blend, Golden Nugget</p>
+                  </div>
+                  <div class="col-md-1 order-qty">
+                    <p>8</p>
+                  </div>
+                  <div class="col-md-1 order-subtotal">
+                    <p class="sub_total price"><span class="price">$131.40</span></p>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row each-order">
+            <div class="col-md-12">
+              <div class="single-order-item" data-id="145000652">
+                <div class="row order-details">
+                  <div class="col-md-2 order-no">
+                    <p class="order_no">145000652</p>
+                  </div>
+                  <div class="col-md-2 order-date">
+                    <p class="date">12/7/2015</p>
+                  </div>
+                  <div class="col-md-6">
+                    <p>All About Lychee, Lucky Basterd Blend, Lucky Basterd Blend, Golden Nugget</p>
+                  </div>
+                  <div class="col-md-1 order-qty">
+                    <p>8</p>
+                  </div>
+                  <div class="col-md-1 order-subtotal">
+                    <p class="sub_total price"><span class="price">$131.40</span></p>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row each-order">
+            <div class="col-md-12">
+              <div class="single-order-item" data-id="145000652">
+                <div class="row order-details">
+                  <div class="col-md-2 order-no">
+                    <p class="order_no">145000652</p>
+                  </div>
+                  <div class="col-md-2 order-date">
+                    <p class="date">12/7/2015</p>
+                  </div>
+                  <div class="col-md-6">
+                    <p>All About Lychee, Lucky Basterd Blend, Lucky Basterd Blend, Golden Nugget</p>
+                  </div>
+                  <div class="col-md-1 order-qty">
+                    <p>8</p>
+                  </div>
+                  <div class="col-md-1 order-subtotal">
+                    <p class="sub_total price"><span class="price">$131.40</span></p>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row each-order">
+            <div class="col-md-12">
+              <div class="single-order-item" data-id="145000652">
+                <div class="row order-details">
+                  <div class="col-md-2 order-no">
+                    <p class="order_no">145000652</p>
+                  </div>
+                  <div class="col-md-2 order-date">
+                    <p class="date">12/7/2015</p>
+                  </div>
+                  <div class="col-md-6">
+                    <p>All About Lychee, Lucky Basterd Blend, Lucky Basterd Blend, Golden Nugget</p>
+                  </div>
+                  <div class="col-md-1 order-qty">
+                    <p>8</p>
+                  </div>
+                  <div class="col-md-1 order-subtotal">
+                    <p class="sub_total price"><span class="price">$131.40</span></p>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
+        </div> <!-- col-md-12 -->
 
+      </div> <!-- orders -->
+    </div> <!-- order-content -->
+
+    <div id="mobile-order-history-bottom-part">
+        <div class="pager">
+
+<p class="amount">
+            Items 1 to 10 of 50 total    </p>
+
+<div class="limiter">
+    <!-- <label>Show</label> -->
+    <div class="dropdown">
+        <select onchange="setLocation(this.value)">
+                    <option value="http://www.monogramtea.com/sales/order/history/?limit=10" selected="selected">
+                10            </option>
+                    <option value="http://www.monogramtea.com/sales/order/history/?limit=20">
+                20            </option>
+                    <option value="http://www.monogramtea.com/sales/order/history/?limit=50">
+                50            </option>
+                </select>
+    </div>
+    <p>per page</p>
+</div>
+
+<div class="pages">
+    <ol>
+    
+    
+    
+                        <li class="current">1</li>
+                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=2">2</a></li>
+                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=3">3</a></li>
+                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=4">4</a></li>
+                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=5">5</a></li>
+            
+
+    
+    
+            <li>
+            <a class="next i-next" href="http://www.monogramtea.com/sales/order/history/?p=2" title="Next">
+                                    
+                    <i class="fa fa-arrow-right"></i>
+                            </a>
+        </li>
+        </ol>
+
+</div>
+
+</div>
+    </div>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $('#content-wrapper .my-account .order-history').gryphon_mobile_account_order_history({});
+        });
+    </script>
+
+
+            </div>
+        </div>
+    </div>
+</div>
 
                     <!--
-                          _    ____  ____  ____  _____ ____ ____    _____ _   _ ____
-                         / \  |  _ \|  _ \|  _ \| ____/ ___/ ___|  | ____| \ | |  _ \
-                        / _ \ | | | | | | | |_) |  _| \___ \___ \  |  _| |  \| | | | |
-                       / ___ \| |_| | |_| |  _ <| |___ ___) |__) | | |___| |\  | |_| |
-                      /_/   \_\____/|____/|_| \_\_____|____/____/  |_____|_| \_|____/
+                        ___  ____  ____  _____ ____    _   _ ___ ____ _____ ___  ______   __  _____ _   _ ____
+                       / _ \|  _ \|  _ \| ____|  _ \  | | | |_ _/ ___|_   _/ _ \|  _ \ \ / / | ____| \ | |  _ \
+                      | | | | |_) | | | |  _| | |_) | | |_| || |\___ \ | || | | | |_) \ V /  |  _| |  \| | | | |
+                      | |_| |  _ <| |_| | |___|  _ <  |  _  || | ___) || || |_| |  _ < | |   | |___| |\  | |_| |
+                       \___/|_| \_\____/|_____|_| \_\ |_| |_|___|____/ |_| \___/|_| \_\|_|   |_____|_| \_|____/
 
                     -->
 
-                  </div> <!-- #monogram-page-account-details-address-header -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-                  <!--
-                     _   _ _______        __  _____ _____    _  _____ _   _ ____  _____   ____ _____  _    ____ _____
-                    | \ | | ____\ \      / / |  ___| ____|  / \|_   _| | | |  _ \| ____| / ___|_   _|/ \  |  _ \_   _|
-                    |  \| |  _|  \ \ /\ / /  | |_  |  _|   / _ \ | | | | | | |_) |  _|   \___ \ | | / _ \ | |_) || |
-                    | |\  | |___  \ V  V /   |  _| | |___ / ___ \| | | |_| |  _ <| |___   ___) || |/ ___ \|  _ < | |
-                    |_| \_|_____|  \_/\_/    |_|   |_____/_/   \_\_|  \___/|_| \_\_____| |____/ |_/_/   \_\_| \_\|_|
-
-                  -->
-
-                  <div id="monogram-page-account-details-other-shipping-address-container">
-
-                    <h2>other shipping addresses</h2>
-
-
-                    <div class="table-responsive">
-                        <table class="gift-cards-tbl">
-                            <tbody>
-                                <tr>
-                                    <td><p class="billing_address_no">SHIPPING ADDRESS 1</p></td>
-                                    <td>
-                                        <p class="billing_address">
-                                            lor 1 singapore Singapore 123456                                                </p>
-                                    </td>
-                                    <td><a href="http://www.monogramtea.com/customer/address/edit/id/2595/" class="set_as_default_billing">Edit</a></td>
-                                </tr>
-                                <tr>
-                                    <td><p class="billing_address_no">SHIPPING ADDRESS 1</p></td>
-                                    <td>
-                                        <p class="billing_address">
-                                            lor 1 singapore Singapore 123456                                                </p>
-                                    </td>
-                                    <td><a href="http://www.monogramtea.com/customer/address/edit/id/2595/" class="set_as_default_billing">Edit</a></td>
-                                </tr>
-                                <tr>
-                                    <td><p class="billing_address_no">SHIPPING ADDRESS 1</p></td>
-                                    <td>
-                                        <p class="billing_address">
-                                            lor 1 singapore Singapore 123456                                                </p>
-                                    </td>
-                                    <td><a href="http://www.monogramtea.com/customer/address/edit/id/2595/" class="set_as_default_billing">Edit</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!--
-                    <div class="monogram-page-account-details-other-shipping-address-item">
-                      <div class="row">
-                        <div class="col-md-4">
-                          <p class="address-name">my home — default</p>
-                        </div>
-                        <div class="col-md-5">
-                          <p>#01-02, 251 Pandan Loop , Singapore 123456</p>
-                        </div>
-                        <div class="col-md-3">
-                          <div class="cta-container">
-                            <a href="" class="arrow-cta">edit</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="monogram-page-account-details-other-shipping-address-item">
-                      <div class="row">
-                        <div class="col-md-4">
-                          <p class="address-name">my home</p>
-                        </div>
-                        <div class="col-md-5">
-                          <p>#01-02, 251 Pandan Loop , Singapore 123456</p>
-                        </div>
-                        <div class="col-md-3">
-                          <div class="cta-container">
-                            <a href="" class="arrow-cta">edit</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    -->
-
-                  </div> <!-- monogram-page-account-details-other-shipping-address-container -->
-
-                  
-                  <!--
-                     _   _ _______        __  _____ _____    _  _____ _   _ ____  _____   _____ _   _ ____
-                    | \ | | ____\ \      / / |  ___| ____|  / \|_   _| | | |  _ \| ____| | ____| \ | |  _ \
-                    |  \| |  _|  \ \ /\ / /  | |_  |  _|   / _ \ | | | | | | |_) |  _|   |  _| |  \| | | | |
-                    | |\  | |___  \ V  V /   |  _| | |___ / ___ \| | | |_| |  _ <| |___  | |___| |\  | |_| |
-                    |_| \_|_____|  \_/\_/    |_|   |_____/_/   \_\_|  \___/|_| \_\_____| |_____|_| \_|____/
-
-                  -->
+                  </div> <!-- #monogram-page-account-details-order-history -->
 
 
 
