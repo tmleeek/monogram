@@ -432,37 +432,7 @@
                           <p class="flat_rate"><span class="price">$0.00</span></p>
                         </div>
                       </div>
-
-                          <!-- <h2>DELIVERY</h2>
-                          <div class="table-responsive">
-                                                                                                                  <table id="delivery-rate-tbl" class="table">
-                                      <thead>
-                                          <tr>
-                                              <th>COUNTRY</th>
-                                              <th>ESTIMATED DELIVERY TIME</th>
-                                              <th>RATE</th>
-                                          </tr>
-                                      </thead>
-                                      <tbody>
-                                          <tr>
-                                              <td><p class="country">Singapore</p></td>
-                                              <td><p class="delivery_time">3-5 working days</p></td>
-                                              <td>
-                                                  <div style="display:none;">
-                                                                                                                                          <span class="no-display"><input name="shipping_method" type="radio" value="customrate_customrate_free" id="s_method_customrate_customrate_free" checked="checked"></span>
-                                                                                                  <label for="s_method_customrate_customrate_free">FREE SHIPPING                                                                                                                                    <span class="price">$0.00</span>                                                                                    </label>
-                                                                                      </div>
-                                                  <p class="flat_rate">
-                                                                                                                              <span class="price">$0.00</span>                                                                    </p>
-                                              </td>
-                                          </tr>
-                                      </tbody>
-                                  </table>
-                                                  </div>
-                                                   -->
-
-
-                              </div>
+                    </div>
                   <script type="text/javascript">
                   //<![CDATA[
                               var shippingCodePrice = {'customrate_customrate_free':0};

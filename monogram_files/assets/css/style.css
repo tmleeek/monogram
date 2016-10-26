@@ -4898,12 +4898,12 @@ p {
 }
 .custom-checkbox-container label.custom-checkbox:after {
   content: '';
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   position: absolute;
-  top: 0px;
-  left: 0px;
-  background: #544c49;
+  top: -1px;
+  left: -1px;
+  background: #f1efee;
   opacity: 0;
   border-radius: 50px;
 }
@@ -5158,6 +5158,7 @@ p {
   border: 1px solid rgba(241, 239, 238, 0.9) !important;
   padding-left: 9px;
   padding-right: 9px;
+  background: transparent;
   -moz-opacity: 0.9;
   -khtml-opacity: 0.9;
   -webkit-opacity: 0.9;
@@ -7691,6 +7692,15 @@ textarea {
   outline: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+.add-input-class-font {
+  border: none;
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 24px;
+  color: #f1efee;
 }
 .image-container {
   position: relative;
@@ -10554,13 +10564,17 @@ body.tea-layering-detail-page {
   vertical-align: middle;
   width: 36%;
 }
-#account-login-section-1 .login-button-container a {
+#account-login-section-1 .login-button-container a,
+#account-login-section-1 .login-button-container button {
   display: block;
+  width: 100%;
 }
-#account-login-section-1 .login-button-container a:first-child {
+#account-login-section-1 .login-button-container a:first-child,
+#account-login-section-1 .login-button-container button:first-child {
   margin-bottom: 10px;
 }
-#account-login-section-1 .login-button-container a i {
+#account-login-section-1 .login-button-container a i,
+#account-login-section-1 .login-button-container button i {
   padding-right: 10px;
 }
 #account-login-section-1 span.login-button-seperator {
@@ -10919,6 +10933,10 @@ html.order-confirmation-page,
 body.order-confirmation-page {
   overflow: visible;
 }
+html.billing-shipping-page,
+body.billing-shipping-page {
+  overflow: visible;
+}
 #page-shopping-cart-breadcrumb {
   padding-top: 161px;
 }
@@ -11005,6 +11023,278 @@ body.order-confirmation-page {
   line-height: 20px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+#page-shopping-cart-content {
+  /*
+  .input-box.dropdown{
+
+    
+
+    position: relative;
+
+    select{
+      //display: none;
+      
+      .add-input-class-styling;
+      .display-inline-block;
+      width: 160px;
+    }
+  }
+  */
+}
+#page-shopping-cart-content .each-input {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+#page-shopping-cart-content .each-input form {
+  /*
+      .body-font;
+      font-size: 11px;
+      line-height: 20px;
+      color: @off-white;
+      letter-spacing: 0.08em;
+      */
+  font-size: 0;
+  display: block;
+  width: 100%;
+}
+#page-shopping-cart-content .each-input form#discount-coupon-form {
+  margin-bottom: 20px;
+}
+#page-shopping-cart-content .each-input label {
+  font-family: 'Brandon Grotesque Regular', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #f1efee;
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+  width: 150px;
+}
+#page-shopping-cart-content .each-input .input-box {
+  background-color: #756b66;
+  border: none;
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 20px;
+  color: #f1efee;
+  padding-left: 18px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+  width: 160px;
+}
+#page-shopping-cart-content .each-input .input-box:focus {
+  border: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+#page-shopping-cart-content .each-input .input-box p {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 24px;
+  color: #f1efee;
+}
+#page-shopping-cart-content .each-input .input-text {
+  border: none;
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 24px;
+  color: #f1efee;
+}
+#page-shopping-cart-content .each-input input[type=text],
+#page-shopping-cart-content .each-input input[type=email] {
+  border: none;
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 24px;
+  color: #f1efee;
+  background: transparent;
+}
+#page-shopping-cart-content .each-input .dropdown {
+  background-color: #756b66;
+  border: none;
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 20px;
+  color: #f1efee;
+  padding-left: 18px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+  width: 160px;
+  position: relative;
+}
+#page-shopping-cart-content .each-input .dropdown:focus {
+  border: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+#page-shopping-cart-content .each-input .dropdown select {
+  width: 100%;
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 24px;
+  color: #f1efee;
+  background: transparent;
+  outline: none;
+  border: none;
+  height: 24px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+#page-shopping-cart-content .each-input .dropdown select option {
+  color: #464646;
+}
+#page-shopping-cart-content .each-input .dropdown:after {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f107";
+  font-size: 13px;
+  line-height: 20px;
+  color: #f1efee;
+  text-align: center;
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+#page-shopping-cart-content .each-input .button {
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 25px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: none;
+  height: 25px;
+  color: #f1efee;
+  border: 1px solid #f1efee;
+  color: rgba(241, 239, 238, 0.9);
+  border: 1px solid rgba(241, 239, 238, 0.9) !important;
+  padding-left: 9px;
+  padding-right: 9px;
+  -moz-opacity: 0.9;
+  -khtml-opacity: 0.9;
+  -webkit-opacity: 0.9;
+  opacity: 0.9;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);
+  filter: alpha(opacity=90);
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  height: auto;
+  line-height: 20px;
+  background: transparent;
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+  margin-left: 20px;
+}
+#page-shopping-cart-content .each-input .button:focus,
+#page-shopping-cart-content .each-input .button:hover {
+  color: rgba(241, 239, 238, 0.5);
+  border: 1px solid rgba(241, 239, 238, 0.5) !important;
+}
+#page-shopping-cart-content .same-as-billing {
+  position: relative;
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+}
+#page-shopping-cart-content .same-as-billing input[type=checkbox] {
+  visibility: hidden;
+}
+#page-shopping-cart-content .same-as-billing .checkbox-label {
+  padding-left: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+}
+#page-shopping-cart-content .same-as-billing .checkbox-label span {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 10px;
+  line-height: 20px;
+  cursor: pointer;
+  text-align: center;
+  color: #f1efee;
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 20px;
+  height: 20px;
+}
+#page-shopping-cart-content .same-as-billing .checkbox-label span:before {
+  content: "\f1db";
+}
+#page-shopping-cart-content .same-as-billing .checkbox-label p {
+  font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #f1efee;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 22px;
+  right: 20px;
+}
+#page-shopping-cart-content .same-as-billing input[type=checkbox]:checked + .checkbox-label span:before {
+  content: "\f111";
+}
+@media only screen and (max-width: 1199px) and (min-width: 992px) {
+  #page-shopping-cart-content .each-input label {
+    width: 120px;
+  }
+  #page-shopping-cart-content .each-input .input-box,
+  #page-shopping-cart-content .each-input .input-text,
+  #page-shopping-cart-content .each-input .dropdown {
+    width: 130px;
+  }
 }
 #page-shopping-cart-item-container table {
   margin-bottom: 0;
@@ -11325,101 +11615,6 @@ body.order-confirmation-page {
   }
   */
 }
-#page-shopping-cart-discount-code-container .each-input {
-  display: block;
-  width: 100%;
-}
-#page-shopping-cart-discount-code-container .each-input form {
-  /*
-      .body-font;
-      font-size: 11px;
-      line-height: 20px;
-      color: @off-white;
-      letter-spacing: 0.08em;
-      */
-  font-size: 0;
-  display: block;
-  width: 100%;
-  margin-bottom: 20px;
-}
-#page-shopping-cart-discount-code-container .each-input form label {
-  font-family: 'Brandon Grotesque Regular', "Arial Black", Gadget, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 20px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #f1efee;
-  display: inline-block;
-  vertical-align: top;
-  *display: inline;
-  zoom: 1;
-  width: 150px;
-}
-#page-shopping-cart-discount-code-container .each-input form .input-text {
-  background-color: #756b66;
-  border: none;
-  font-family: 'Domine', "Times New Roman", Times, serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 10px;
-  line-height: 20px;
-  color: #f1efee;
-  padding-left: 18px;
-  height: 24px;
-  display: inline-block;
-  vertical-align: top;
-  *display: inline;
-  zoom: 1;
-  width: 160px;
-}
-#page-shopping-cart-discount-code-container .each-input form .input-text:focus {
-  border: none;
-  outline: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-#page-shopping-cart-discount-code-container .each-input form .button {
-  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 25px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background: none;
-  height: 25px;
-  color: #f1efee;
-  border: 1px solid #f1efee;
-  color: rgba(241, 239, 238, 0.9);
-  border: 1px solid rgba(241, 239, 238, 0.9) !important;
-  padding-left: 9px;
-  padding-right: 9px;
-  -moz-opacity: 0.9;
-  -khtml-opacity: 0.9;
-  -webkit-opacity: 0.9;
-  opacity: 0.9;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);
-  filter: alpha(opacity=90);
-  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-  -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-  -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-  height: auto;
-  line-height: 20px;
-  background: transparent;
-  display: inline-block;
-  vertical-align: top;
-  *display: inline;
-  zoom: 1;
-  margin-left: 20px;
-}
-#page-shopping-cart-discount-code-container .each-input form .button:focus,
-#page-shopping-cart-discount-code-container .each-input form .button:hover {
-  color: rgba(241, 239, 238, 0.5);
-  border: 1px solid rgba(241, 239, 238, 0.5) !important;
-}
 #page-shopping-cart-discount-code-container #giftvoucher_container .giftvoucher_credit {
   margin-bottom: 20px;
 }
@@ -11434,6 +11629,9 @@ body.order-confirmation-page {
 }
 #page-shopping-cart-discount-code-container br {
   display: none;
+}
+#page-shopping-cart-discount-code-container .each-input:nth-of-type(1) {
+  margin-bottom: 0px;
 }
 @media only screen and (max-width: 1199px) and (min-width: 992px) {
   #page-shopping-cart-discount-code-container {
@@ -11452,12 +11650,6 @@ body.order-confirmation-page {
       }
     }
     */
-  }
-  #page-shopping-cart-discount-code-container .each-input form label {
-    width: 120px;
-  }
-  #page-shopping-cart-discount-code-container .each-input form .input-text {
-    width: 130px;
   }
 }
 #page-shopping-cart-total-container {
@@ -11510,12 +11702,101 @@ body.order-confirmation-page {
   margin-top: 21px;
   margin-bottom: 0px;
 }
+#page-shopping-cart-billing-container {
+  margin-right: 25px;
+}
+#page-shopping-cart-shipping-container {
+  margin-left: 25px;
+}
+#page-shopping-cart-billing-container,
+#page-shopping-cart-shipping-container {
+  border-top: 1px solid #ffffff;
+}
+#page-shopping-cart-billing-container h1,
+#page-shopping-cart-shipping-container h1 {
+  font-family: 'Brandon Grotesque Regular', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0.08em;
+  color: #f1efee !important;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding-top: 12px;
+  margin-bottom: -9px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+#page-shopping-cart-billing-container .dropdown-address,
+#page-shopping-cart-shipping-container .dropdown-address {
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: 30px!important;
+  position: relative;
+  margin-top: -10px;
+  padding-bottom: 10px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+#page-shopping-cart-billing-container .dropdown-address label,
+#page-shopping-cart-shipping-container .dropdown-address label {
+  display: block;
+  width: 80%;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-transform: none;
+}
+#page-shopping-cart-billing-container .dropdown-address .input-box,
+#page-shopping-cart-shipping-container .dropdown-address .input-box {
+  background: transparent;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+#page-shopping-cart-billing-container .dropdown-address .input-box select,
+#page-shopping-cart-shipping-container .dropdown-address .input-box select {
+  background: transparent;
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  filter: alpha(opacity=0);
+  width: 100%;
+}
+#page-shopping-cart-billing-container .billing-shipping-checkbox-separator,
+#page-shopping-cart-shipping-container .billing-shipping-checkbox-separator {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+#page-shopping-cart-billing-container .each-input,
+#page-shopping-cart-shipping-container .each-input {
+  padding-left: 24px;
+}
+#page-shopping-cart-billing-container .same-as-billing,
+#page-shopping-cart-shipping-container .same-as-billing {
+  margin-left: 24px;
+}
+#page-shopping-cart-billing-container #billing-new-address-form .each-input .tel-input-box,
+#page-shopping-cart-shipping-container #billing-new-address-form .each-input .tel-input-box,
+#page-shopping-cart-billing-container #shipping-new-address-form .each-input .tel-input-box,
+#page-shopping-cart-shipping-container #shipping-new-address-form .each-input .tel-input-box {
+  padding-left: 0px;
+}
 #page-shopping-cart-cta-container {
   padding-top: 83px;
   padding-bottom: 100px;
   text-align: right;
   font-size: 0;
 }
+#page-shopping-cart-cta-container .button.continue,
 #page-shopping-cart-cta-container .btn-checkout {
   font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
@@ -11550,7 +11831,9 @@ body.order-confirmation-page {
   *display: inline;
   zoom: 1;
 }
+#page-shopping-cart-cta-container .button.continue:focus,
 #page-shopping-cart-cta-container .btn-checkout:focus,
+#page-shopping-cart-cta-container .button.continue:hover,
 #page-shopping-cart-cta-container .btn-checkout:hover {
   color: rgba(241, 239, 238, 0.5);
   border: 1px solid rgba(241, 239, 238, 0.5) !important;
@@ -11580,6 +11863,64 @@ body.order-confirmation-page {
   color: #f1efee;
   font-size: 27px;
   line-height: 30px;
+}
+#page-shopping-cart-billing-shipping-delivery-information {
+  color: #f1efee;
+  padding-top: 62px;
+  padding-bottom: 10px;
+}
+#page-shopping-cart-billing-shipping-delivery-information h2 {
+  font-family: 'Brandon Grotesque Regular', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0.08em;
+  color: #f1efee !important;
+  text-transform: uppercase;
+  white-space: nowrap;
+  display: block;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  padding-top: 11px;
+  padding-bottom: 13px;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-bottom: 24px;
+}
+#page-shopping-cart-billing-shipping-delivery-information-01 {
+  padding-left: 24px;
+}
+#page-shopping-cart-billing-shipping-delivery-information-02 {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+#page-shopping-cart-billing-shipping-delivery-information-02 p {
+  font-size: 13px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+#page-shopping-cart-billing-shipping-delivery-information-02 p:last-child {
+  margin-bottom: 0px;
+}
+.blockMsg {
+  border: 10px solid #6b615b !important;
+  display: table;
+}
+.blockMsg #question {
+  display: table-cell;
+  vertical-align: middle;
+}
+.blockMsg #question h3 {
+  text-transform: uppercase;
+  font-size: 13px;
+  padding-bottom: 30px;
+}
+.blockMsg #question a {
+  display: block;
+  width: 52%;
+  margin: 0 auto;
+  margin-bottom: 18px;
 }
 html.monogram-page-account-details,
 body.monogram-page-account-details {
@@ -11850,6 +12191,7 @@ body.monogram-page-account-details #content-wrapper .col-main .each-input .check
   -moz-osx-font-smoothing: grayscale;
   font-size: 10px;
   line-height: 20px;
+  cursor: pointer;
   text-align: center;
   color: #f1efee;
   position: absolute;
