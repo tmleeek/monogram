@@ -12,7 +12,7 @@
 -->
 
 
-<?php if($is_debug): ?>
+<?php //if($is_debug): ?>
   <!-- Development Version -->
 
   
@@ -60,7 +60,7 @@
   });
   </script>
 
-<?php else: ?>
+<?php //else: ?>
 
   <!-- Optimized Version -->
   <!-- <script type="text/javascript" src="assets/js_minified/head.load.min.js"></script>
@@ -83,4 +83,4 @@
     // start preload
   </script> -->
 
-<?php endif; ?>
+<?php //endif; ?>

@@ -27,7 +27,7 @@
 
             <?php include('tea-store-content.php'); ?>
           
-            <?php include('inc/js_tea_store.php'); ?>
+            <?php include('inc/js_default.php'); ?>
             <?php include('inc/footer.php'); ?>
             <?php include('inc/fonts.php'); ?>
 
