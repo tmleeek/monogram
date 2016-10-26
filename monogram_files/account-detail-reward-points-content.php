@@ -312,265 +312,259 @@
 
 
 
-                  <div id="monogram-page-account-details-order-history">
+                  <div id="monogram-page-account-reward-points-container">
 
                     <!--
-                        ___  ____  ____  _____ ____    _   _ ___ ____ _____ ___  ______   __  ____ _____  _    ____ _____
-                       / _ \|  _ \|  _ \| ____|  _ \  | | | |_ _/ ___|_   _/ _ \|  _ \ \ / / / ___|_   _|/ \  |  _ \_   _|
-                      | | | | |_) | | | |  _| | |_) | | |_| || |\___ \ | || | | | |_) \ V /  \___ \ | | / _ \ | |_) || |
-                      | |_| |  _ <| |_| | |___|  _ <  |  _  || | ___) || || |_| |  _ < | |    ___) || |/ ___ \|  _ < | |
-                       \___/|_| \_\____/|_____|_| \_\ |_| |_|___|____/ |_| \___/|_| \_\|_|   |____/ |_/_/   \_\_| \_\|_|
+                       ____  _______        ___    ____  ____    ____   ___ ___ _   _ _____ ____    ____ _____  _    ____ _____
+                      |  _ \| ____\ \      / / \  |  _ \|  _ \  |  _ \ / _ \_ _| \ | |_   _/ ___|  / ___|_   _|/ \  |  _ \_   _|
+                      | |_) |  _|  \ \ /\ / / _ \ | |_) | | | | | |_) | | | | ||  \| | | | \___ \  \___ \ | | / _ \ | |_) || |
+                      |  _ <| |___  \ V  V / ___ \|  _ <| |_| | |  __/| |_| | || |\  | | |  ___) |  ___) || |/ ___ \|  _ < | |
+                      |_| \_\_____|  \_/\_/_/   \_\_| \_\____/  |_|    \___/___|_| \_| |_| |____/  |____/ |_/_/   \_\_| \_\|_|
 
                     -->
 
-                    <div class="order-history">
-    <div class="image-text-content">
-                <div class="row order-history-heading">
 
-                        <div class="page-title col-md-12">
-                <h1>Order History</h1>
-                <hr class="small">
-            </div>
+                    <div class="my-account reward-page">
+    <div class="page-title">
+        <h1>Reward points</h1>
+        <hr class="small">
+    </div>
 
+          <div id="my-rewardpoints-table">
+     <div class="each-input">
+        <h2>Reward Points</h2>
+        <p class="loyalty-point">789 points</p>
+    </div>
+</div>
+<!-- <div id="my-rewardpoints-table" class="row">
+    <div class="col-md-2 col-sm-6 col-xs-6">        
+        <div class="each-input">
+            <h2>Total Accumulated Points</h2>
+            <p>789</p>
+                    </div>
+    </div>
+    <div class="col-md-2 col-sm-6 col-xs-6">
+        <div class="each-input">
+            <h2>Total Points Spent</h2>
+            <p>0</p>
         </div>
-        <div class="row">
-            <div class="col-md-12">
+        <div class="each-input">
+            <h2>Points waiting for validation</h2>
+            <p>0</p>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">decorateTable('my-rewardpoints-table')</script> -->
+
+    
 
 
-    <div id="mobile-order-history-top-part">
+
+
+    <!-- REMOVED -->
+    <!-- 
+    <div class="page-title">
+        <h1>History</h1>
+        <hr class="small">
+    </div>
+  -->
+
+                
         <div class="visible-md-block visible-lg-block">
-            <div class="pager">
-
-<p class="amount">
-            Items 1 to 10 of 50 total    </p>
-
-<div class="limiter">
-    <!-- <label>Show</label> -->
-    <div class="dropdown">
-        <select onchange="setLocation(this.value)">
-                    <option value="http://www.monogramtea.com/sales/order/history/?limit=10" selected="selected">
-                10            </option>
-                    <option value="http://www.monogramtea.com/sales/order/history/?limit=20">
-                20            </option>
-                    <option value="http://www.monogramtea.com/sales/order/history/?limit=50">
-                50            </option>
-                </select>
-    </div>
-    <p>per page</p>
-</div>
-
-<div class="pages">
-    <ol>
-    
-    
-    
-                        <li class="current">1</li>
-                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=2">2</a></li>
-                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=3">3</a></li>
-                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=4">4</a></li>
-                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=5">5</a></li>
+            <div class="table-responsive">
+                <table cellspacing="0" class="data-table linearize-table" id="reward-points-table">
+                    <thead>
+                        <tr>
+                            <th>Description</th>                            <th>Points added</th>
+                            <th>Points used</th>
+                            <th>Date</th>
+                            <th>Valid until</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                                                                                        <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145002452</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">830</td>
+                                                                <td data-theme-label="Points used">0</td>
+                                                                    
+                                <td data-theme-label="Allocation date"></td>
+                                <td data-theme-label="Valid until"></td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Birthday points</div>                                </td>
+                                <td data-theme-label="Points added">80</td>
+                                                                <td data-theme-label="Points used">0</td>
+                                                                    
+                                <td data-theme-label="Allocation date">1/1/2016</td>
+                                <td data-theme-label="Valid until"></td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000652</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">132</td>
+                                                                <td data-theme-label="Points used">0</td>
+                                                                    
+                                <td data-theme-label="Allocation date"></td>
+                                <td data-theme-label="Valid until"></td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000208</div><div class="j2t-in-txt">Order state: canceled</div>                                </td>
+                                <td data-theme-label="Points added">15</td>
+                                                                <td data-theme-label="Points used">0</td>
+                                                                    
+                                <td data-theme-label="Allocation date"></td>
+                                <td data-theme-label="Valid until"></td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000171</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">17</td>
+                                                                <td data-theme-label="Points used">0</td>
+                                                                    
+                                <td data-theme-label="Allocation date"></td>
+                                <td data-theme-label="Valid until"></td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000169</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">135</td>
+                                                                <td data-theme-label="Points used">0</td>
+                                                                    
+                                <td data-theme-label="Allocation date"></td>
+                                <td data-theme-label="Valid until"></td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000168</div><div class="j2t-in-txt">Order state: canceled</div>                                </td>
+                                <td data-theme-label="Points added">135</td>
+                                                                <td data-theme-label="Points used">0</td>
+                                                                    
+                                <td data-theme-label="Allocation date"></td>
+                                <td data-theme-label="Valid until"></td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000167</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">446</td>
+                                                                <td data-theme-label="Points used">0</td>
+                                                                    
+                                <td data-theme-label="Allocation date"></td>
+                                <td data-theme-label="Valid until"></td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000154</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">10</td>
+                                                                <td data-theme-label="Points used">0</td>
+                                                                    
+                                <td data-theme-label="Allocation date"></td>
+                                <td data-theme-label="Valid until"></td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Referral points (zaw zaw aung)</div><div class="j2t-in-txt">Referral order (#145000153) state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">20</td>
+                                                                <td data-theme-label="Points used">0</td>
+                                                                    
+                                <td data-theme-label="Allocation date"></td>
+                                <td data-theme-label="Valid until"></td>
+                            </tr>
+                                            </tbody>
+                </table>
+            </div>
             
-
-    
-    
-            <li>
-            <a class="next i-next" href="http://www.monogramtea.com/sales/order/history/?p=2" title="Next">
-                                    
-                    <i class="fa fa-arrow-right"></i>
-                            </a>
-        </li>
-        </ol>
-
-</div>
-
-</div>
         </div>
-
-        <div class="clearfix"></div>
-
-
-        <hr class="order-headers-line">
-        <div class="row order-headers">
-            <div class="col-md-1 col-sm-1 col-xs-3 order-status"><h2>STATUS</h2></div>
-            <div class="col-md-1 col-sm-2 col-xs-4 order-no"><h2>ORDER NO.</h2></div>
-            <div class="col-md-1 col-sm-2 col-xs-4 order-date"><h2>DATE</h2></div>
-
-            <div class="col-md-9 col-sm-6 col-xs-6 visible-md-block visible-lg-block">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4 col-xs-4"><h2>PRODUCT</h2></div>
-                    <div class="col-md-2 col-sm-2 col-xs-2"><h2 style="text-align:center;">UNIT PRICE</h2></div>
-                    <div class="col-md-2 col-sm-2 col-xs-2 order-qty"><h2>QTY</h2></div>
-                    <div class="col-md-2 col-sm-2 col-xs-2"><h2>TOTAL</h2></div>
-                    <div class="col-md-2 col-sm-2 col-xs-2"></div>
-                </div>
+        <div class="visible-xs-block visible-sm-block">
+            <div class="table-responsive">
+                <table cellspacing="0" class="data-table linearize-table" id="reward-points-table">
+                    <thead>
+                        <tr>
+                            <th>Description</th>                            <th>Points added</th>
+                            <th>Points used</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                                                                                        <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145002452</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">830</td>
+                                <td data-theme-label="Points used">0</td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Birthday points</div>                                </td>
+                                <td data-theme-label="Points added">80</td>
+                                <td data-theme-label="Points used">0</td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000652</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">132</td>
+                                <td data-theme-label="Points used">0</td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000208</div><div class="j2t-in-txt">Order state: canceled</div>                                </td>
+                                <td data-theme-label="Points added">15</td>
+                                <td data-theme-label="Points used">0</td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000171</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">17</td>
+                                <td data-theme-label="Points used">0</td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000169</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">135</td>
+                                <td data-theme-label="Points used">0</td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000168</div><div class="j2t-in-txt">Order state: canceled</div>                                </td>
+                                <td data-theme-label="Points added">135</td>
+                                <td data-theme-label="Points used">0</td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000167</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">446</td>
+                                <td data-theme-label="Points used">0</td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Order: 145000154</div><div class="j2t-in-txt">Order state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">10</td>
+                                <td data-theme-label="Points used">0</td>
+                            </tr>
+                                                                                <tr>
+                                <td data-theme-label="Type of point">
+                                    <div class="j2t-in-title">Referral points (zaw zaw aung)</div><div class="j2t-in-txt">Referral order (#145000153) state: pending_payment</div>                                </td>
+                                <td data-theme-label="Points added">20</td>
+                                <td data-theme-label="Points used">0</td>
+                            </tr>
+                                            </tbody>
+                </table>
             </div>
         </div>
-
-        <hr class="order-headers-line">
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- removed all content, because there is a new content, no status, products are listed -->
-
-
-
-
-    <div class="row custom-order-content-header">
-      <div class="col-md-2">
-        <p>order no.</p>
-      </div>
-      <div class="col-md-2">
-        <p>date</p>
-      </div>
-      <div class="col-md-6">
-        <p class="product-header">product</p>
-      </div>
-      <div class="col-md-1">
-        <p>qty</p>
-      </div>
-      <div class="col-md-1">
-        <p>sub total</p>
-      </div>
-    </div> <!-- custom-order-content-header -->
-
-
-
-    <div class="row order-content">
-
-      <div class="orders">
-        <div class="col-md-12">
-
-          <div class="row each-order">
-            <div class="col-md-12">
-              <div class="single-order-item" data-id="145000652">
-                <div class="row order-details">
-                  <div class="col-md-2 order-no">
-                    <p class="order_no">145000652</p>
-                  </div>
-                  <div class="col-md-2 order-date">
-                    <p class="date">12/7/2015</p>
-                  </div>
-                  <div class="col-md-6">
-                    <p>All About Lychee, Lucky Basterd Blend, Lucky Basterd Blend, Golden Nugget</p>
-                  </div>
-                  <div class="col-md-1 order-qty">
-                    <p>8</p>
-                  </div>
-                  <div class="col-md-1 order-subtotal">
-                    <p class="sub_total price"><span class="price">$131.40</span></p>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row each-order">
-            <div class="col-md-12">
-              <div class="single-order-item" data-id="145000652">
-                <div class="row order-details">
-                  <div class="col-md-2 order-no">
-                    <p class="order_no">145000652</p>
-                  </div>
-                  <div class="col-md-2 order-date">
-                    <p class="date">12/7/2015</p>
-                  </div>
-                  <div class="col-md-6">
-                    <p>All About Lychee, Lucky Basterd Blend, Lucky Basterd Blend, Golden Nugget</p>
-                  </div>
-                  <div class="col-md-1 order-qty">
-                    <p>8</p>
-                  </div>
-                  <div class="col-md-1 order-subtotal">
-                    <p class="sub_total price"><span class="price">$131.40</span></p>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row each-order">
-            <div class="col-md-12">
-              <div class="single-order-item" data-id="145000652">
-                <div class="row order-details">
-                  <div class="col-md-2 order-no">
-                    <p class="order_no">145000652</p>
-                  </div>
-                  <div class="col-md-2 order-date">
-                    <p class="date">12/7/2015</p>
-                  </div>
-                  <div class="col-md-6">
-                    <p>All About Lychee, Lucky Basterd Blend, Lucky Basterd Blend, Golden Nugget</p>
-                  </div>
-                  <div class="col-md-1 order-qty">
-                    <p>8</p>
-                  </div>
-                  <div class="col-md-1 order-subtotal">
-                    <p class="sub_total price"><span class="price">$131.40</span></p>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row each-order">
-            <div class="col-md-12">
-              <div class="single-order-item" data-id="145000652">
-                <div class="row order-details">
-                  <div class="col-md-2 order-no">
-                    <p class="order_no">145000652</p>
-                  </div>
-                  <div class="col-md-2 order-date">
-                    <p class="date">12/7/2015</p>
-                  </div>
-                  <div class="col-md-6">
-                    <p>All About Lychee, Lucky Basterd Blend, Lucky Basterd Blend, Golden Nugget</p>
-                  </div>
-                  <div class="col-md-1 order-qty">
-                    <p>8</p>
-                  </div>
-                  <div class="col-md-1 order-subtotal">
-                    <p class="sub_total price"><span class="price">$131.40</span></p>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-        </div> <!-- col-md-12 -->
-
-      </div> <!-- orders -->
-    </div> <!-- order-content -->
-
-    <div id="mobile-order-history-bottom-part">
         <div class="pager">
 
 <p class="amount">
-            Items 1 to 10 of 50 total    </p>
+            Items 1 to 10 of 64 total    </p>
 
 <div class="limiter">
     <!-- <label>Show</label> -->
     <div class="dropdown">
         <select onchange="setLocation(this.value)">
-                    <option value="http://www.monogramtea.com/sales/order/history/?limit=10" selected="selected">
+                    <option value="http://www.monogramtea.com/rewardpoints/index/points/?limit=10" selected="selected">
                 10            </option>
-                    <option value="http://www.monogramtea.com/sales/order/history/?limit=20">
+                    <option value="http://www.monogramtea.com/rewardpoints/index/points/?limit=20">
                 20            </option>
-                    <option value="http://www.monogramtea.com/sales/order/history/?limit=50">
+                    <option value="http://www.monogramtea.com/rewardpoints/index/points/?limit=50">
                 50            </option>
                 </select>
     </div>
@@ -583,16 +577,18 @@
     
     
                         <li class="current">1</li>
-                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=2">2</a></li>
-                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=3">3</a></li>
-                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=4">4</a></li>
-                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=5">5</a></li>
+                                <li><a href="http://www.monogramtea.com/rewardpoints/index/points/?p=2">2</a></li>
+                                <li><a href="http://www.monogramtea.com/rewardpoints/index/points/?p=3">3</a></li>
+                                <li><a href="http://www.monogramtea.com/rewardpoints/index/points/?p=4">4</a></li>
+                                <li><a href="http://www.monogramtea.com/rewardpoints/index/points/?p=5">5</a></li>
             
 
+            <li><a class="next_jump" title="" href="http://www.monogramtea.com/rewardpoints/index/points/?p=6">...</a></li>
     
+          <li><a class="last" href="http://www.monogramtea.com/rewardpoints/index/points/?p=7">7</a></li>
     
             <li>
-            <a class="next i-next" href="http://www.monogramtea.com/sales/order/history/?p=2" title="Next">
+            <a class="next i-next" href="http://www.monogramtea.com/rewardpoints/index/points/?p=2" title="Next">
                                     
                     <i class="fa fa-arrow-right"></i>
                             </a>
@@ -604,29 +600,19 @@
 </div>
     </div>
 
-    <script type="text/javascript">
-        jQuery(document).ready(function($) {
-            $('#content-wrapper .my-account .order-history').gryphon_mobile_account_order_history({});
-        });
-    </script>
 
-
-            </div>
-        </div>
-    </div>
-</div>
 
                     <!--
-                        ___  ____  ____  _____ ____    _   _ ___ ____ _____ ___  ______   __  _____ _   _ ____
-                       / _ \|  _ \|  _ \| ____|  _ \  | | | |_ _/ ___|_   _/ _ \|  _ \ \ / / | ____| \ | |  _ \
-                      | | | | |_) | | | |  _| | |_) | | |_| || |\___ \ | || | | | |_) \ V /  |  _| |  \| | | | |
-                      | |_| |  _ <| |_| | |___|  _ <  |  _  || | ___) || || |_| |  _ < | |   | |___| |\  | |_| |
-                       \___/|_| \_\____/|_____|_| \_\ |_| |_|___|____/ |_| \___/|_| \_\|_|   |_____|_| \_|____/
+                       ____  _______        ___    ____  ____    ____   ___ ___ _   _ _____ ____    _____ _   _ ____
+                      |  _ \| ____\ \      / / \  |  _ \|  _ \  |  _ \ / _ \_ _| \ | |_   _/ ___|  | ____| \ | |  _ \
+                      | |_) |  _|  \ \ /\ / / _ \ | |_) | | | | | |_) | | | | ||  \| | | | \___ \  |  _| |  \| | | | |
+                      |  _ <| |___  \ V  V / ___ \|  _ <| |_| | |  __/| |_| | || |\  | | |  ___) | | |___| |\  | |_| |
+                      |_| \_\_____|  \_/\_/_/   \_\_| \_\____/  |_|    \___/___|_| \_| |_| |____/  |_____|_| \_|____/
 
                     -->
+                    
 
-
-                  </div> <!-- #monogram-page-account-details-order-history -->
+                  </div> <!-- #monogram-page-account-reward-points-container -->
 
 
 
@@ -788,25 +774,4 @@
 
 
 
-
-
-
-
-
-<!--
-   _   _  ___ _____ _____ ____
-  | \ | |/ _ \_   _| ____/ ___|
-  |  \| | | | || | |  _| \___ \
-  | |\  | |_| || | | |___ ___) |
-  |_| \_|\___/ |_| |_____|____/
-
-
-CHANGE THE CLASS HTML TO:
-
-1. col-md-6 billing-address
-2. col-md-6 shipping-address
-
-
-
--->
 

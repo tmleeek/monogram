@@ -312,321 +312,221 @@
 
 
 
-                  <div id="monogram-page-account-details-order-history">
+                  <div id="monogram-page-account-details-refer-friends-container">
 
                     <!--
-                        ___  ____  ____  _____ ____    _   _ ___ ____ _____ ___  ______   __  ____ _____  _    ____ _____
-                       / _ \|  _ \|  _ \| ____|  _ \  | | | |_ _/ ___|_   _/ _ \|  _ \ \ / / / ___|_   _|/ \  |  _ \_   _|
-                      | | | | |_) | | | |  _| | |_) | | |_| || |\___ \ | || | | | |_) \ V /  \___ \ | | / _ \ | |_) || |
-                      | |_| |  _ <| |_| | |___|  _ <  |  _  || | ___) || || |_| |  _ < | |    ___) || |/ ___ \|  _ < | |
-                       \___/|_| \_\____/|_____|_| \_\ |_| |_|___|____/ |_| \___/|_| \_\|_|   |____/ |_/_/   \_\_| \_\|_|
+                       ____  _____ _____ _____ ____    _____ ____  ___ _____ _   _ ____  ____    ____ _____  _    ____ _____
+                      |  _ \| ____|  ___| ____|  _ \  |  ___|  _ \|_ _| ____| \ | |  _ \/ ___|  / ___|_   _|/ \  |  _ \_   _|
+                      | |_) |  _| | |_  |  _| | |_) | | |_  | |_) || ||  _| |  \| | | | \___ \  \___ \ | | / _ \ | |_) || |
+                      |  _ <| |___|  _| | |___|  _ <  |  _| |  _ < | || |___| |\  | |_| |___) |  ___) || |/ ___ \|  _ < | |
+                      |_| \_\_____|_|   |_____|_| \_\ |_|   |_| \_\___|_____|_| \_|____/|____/  |____/ |_/_/   \_\_| \_\|_|
+
+                    -->
+                    <div class="my-account">
+                      <div class="referral-container">
+                          <div class="page-title">
+                              <h1>REFERRAL</h1>
+                              <hr class="small">
+                          </div>
+                                      <div class="points">
+                                  <div class="left">
+                                      <div class="pts"><span class="no">10</span><span class="text">points</span></div>
+                                  </div>
+                                  <div class="right">
+                                      <span class="pts-text">For any referred friend's registration</span>
+                                  </div>
+                              </div>
+                              <!-- <p>For any referred friend's registration, you earn: <strong>10 points</strong></p>  -->
+                                                      <div class="points">
+                                  <div class="left">
+                                      <div class="pts"><span class="no">20</span><span class="text">points</span></div>
+                                  </div>
+                                  <div class="right">
+                                      <span class="pts-text">For any first valid order placed by referred friend</span>
+                                  </div>
+                              </div>
+                              <!-- <p>For any first valid order placed by referred friend, you earn: <strong>20 points</strong></p> -->
+                                              
+                              </div>
+                          <form action="http://www.monogramtea.com/rewardpoints/index/referral/" method="post" class="refer-friend-form" id="form-validate">
+                          <div class="group-select fieldset" id="j2t-referral-lines">
+                                          <input name="form_key" type="hidden" value="C03ppXMn4dfVgWQi">
+                              <h1 class="legend">Refer a friend</h1>
+                              <hr class="small">
+
+                                  <ul class="form-list">
+                                      <li class="fields">
+                                          <div class="j2t-rewardpoints-referral">
+                                              <div class="field j2t-rewardpoints-name">
+                                                  <label for="name" class="required" id="label-name"><em>*</em>Friend's name</label>
+                                                  <input type="text" name="name[]" value="" title="Friend' name" class="required-entry input-text" id="name">
+                                              </div>
+                                              <div class="field j2t-rewardpoints-email">
+                                                  <label for="email" class="required validate-email" id="label-email"><em>*</em>Friend's email address</label>
+                                                  <input type="text" name="email[]" value="" title="Friend's email address" class="required-entry input-text" id="email">
+                                              </div>
+                                          </div>
+                                      </li>
+                                  </ul>
+                                  <div class="button-set">
+                                      <!-- <p class="required">* Required Fields</p> -->
+                                      <!--<a href="" class="left">&laquo; Back</a>-->
+
+                                      <button class="form-button button cta send" type="submit"><span><span>Send</span></span></button>
+
+                                      <!-- MOVED HERE... -->
+                                      <a id="j2t-add-line" href="javascript:j2t_add_line();" title="Add new line">Add More</a>
+                                  </div>
+
+
+                                  
+                          
+                              <script type="text/javascript">
+                                  var elmt_id_j2t = 0;
+                                  function j2t_add_line(){
+                                      var form_list_ul = $('j2t-add-line').up().down("ul");
+                                      //var form_list_ul_clone = Element.clone(form_list_ul, true);
+                                      var form_list_ul_clone = form_list_ul.cloneNode(true);
+
+                                      form_list_ul_clone.down("#label-name").id = "label-name-"+elmt_id_j2t;
+                                      form_list_ul_clone.down("#name").id = "name-"+elmt_id_j2t;
+                                      form_list_ul_clone.down("#label-email").id = "label-email-"+elmt_id_j2t;
+                                      form_list_ul_clone.down("#email").id = "email-"+elmt_id_j2t;
+
+                                      form_list_ul_clone.down("#name-"+elmt_id_j2t).value = "";
+                                      form_list_ul_clone.down("#email-"+elmt_id_j2t).value = "";
+
+                                      var del_img = new Element('img', {src: 'http://www.monogramtea.com/skin/frontend/base/default/images/j2t_minus_one.png'})
+                                      form_list_ul_clone.down(".j2t-rewardpoints-email").insert({
+                                          bottom: del_img
+                                      });
+                                      del_img.observe('click', function(event) {
+                                          Event.element(event).up("ul").remove();
+                                      });
+
+                                      $('j2t-add-line').insert({ before: form_list_ul_clone });
+                                      elmt_id_j2t++;
+                                  }
+                              </script>            
+                          </div>
+                      </form>
+
+                      <script type="text/javascript">
+                          var dataForm = new VarienForm('form-validate', true);
+                      </script>
+                      
+                      <div class="page-title invite-friends">
+                          <h1>Invited friends</h1>
+                          <hr class="small">
+                      </div>
+                              <div class="referral-table">
+                                  <div class="table-responsive">
+                              <table cellspacing="0" class="data-table" id="referred-friends-table">
+                                  <thead>
+                                      <tr>
+                                          <th>Full Name</th>                        <th>Email</th>
+                                          <!--<th>Registered?</th>-->
+                                          <!--<th>First order?</th>-->
+                                          <!-- <th class="custom-first-order-title-container"><span class="custom-first-order-title-01">First</span><span class="custom-first-order-title-02">order?</span></th> -->
+                                          <th class="custom-first-order-title-container">First order?</th>
+
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                                                                  <tr>
+                                              <td>zaw zaw aung</td>                            <td>zza@manic.com.sg</td>
+                                              <!--<td>yes</td>-->
+                                              <td class="a-right">yes</td>
+                                          </tr>
+                                                              <tr>
+                                              <td>zaw zaw aung</td>                            <td>zaw@manic.com.sg</td>
+                                              <!--<td>yes</td>-->
+                                              <td class="a-right">yes</td>
+                                          </tr>
+                                                              <tr>
+                                              <td>zaw zaw aung</td>                            <td>zaw4@manic.com.sg</td>
+                                              <!--<td>no</td>-->
+                                              <td class="a-right">no</td>
+                                          </tr>
+                                                              <tr>
+                                              <td>zaw zaw aung</td>                            <td>zawtester1@gmail.com</td>
+                                              <!--<td>no</td>-->
+                                              <td class="a-right">no</td>
+                                          </tr>
+                                                              <tr>
+                                              <td>zaw zaw aung</td>                            <td>zawtest@manic.com.sg</td>
+                                              <!--<td>no</td>-->
+                                              <td class="a-right">no</td>
+                                          </tr>
+                                                              <tr>
+                                              <td>zaw manic</td>                            <td>zaw3@manic.com.sg</td>
+                                              <!--<td>no</td>-->
+                                              <td class="a-right">no</td>
+                                          </tr>
+                                                              <tr>
+                                              <td>zaw zaw aung</td>                            <td>zaw2@manic.com.sg</td>
+                                              <!--<td>no</td>-->
+                                              <td class="a-right">no</td>
+                                          </tr>
+                                                              <tr>
+                                              <td>zawtester</td>                            <td>zawtester2@gmail.com</td>
+                                              <!--<td>no</td>-->
+                                              <td class="a-right">no</td>
+                                          </tr>
+                                                      </tbody>
+                              </table>
+                          </div>
+                          <div class="pager">
+
+                  <p class="amount">
+                              <strong>8 Item(s)</strong>
+                      </p>
+
+                  <div class="limiter">
+                      <!-- <label>Show</label> -->
+                      <div class="dropdown">
+                          <select onchange="setLocation(this.value)">
+                                      <option value="http://www.monogramtea.com/rewardpoints/index/referral/?limit=10" selected="selected">
+                                  10            </option>
+                                      <option value="http://www.monogramtea.com/rewardpoints/index/referral/?limit=20">
+                                  20            </option>
+                                      <option value="http://www.monogramtea.com/rewardpoints/index/referral/?limit=50">
+                                  50            </option>
+                                  </select>
+                      </div>
+                      <p>per page</p>
+                  </div>
+
+
+                  </div>
+                      </div>
+                      </div>
+
+
+
+
+
+
+
+
+
+
+                      <div class="buttons-set">
+                      <p class="back-link"><a href="http://www.monogramtea.com/customer/account/"><small>« </small>Back</a></p>
+                  </div>
+
+
+
+                    <!--
+                       ____  _____ _____ _____ ____    _____ ____  ___ _____ _   _ ____  ____    _____ _   _ ____
+                      |  _ \| ____|  ___| ____|  _ \  |  ___|  _ \|_ _| ____| \ | |  _ \/ ___|  | ____| \ | |  _ \
+                      | |_) |  _| | |_  |  _| | |_) | | |_  | |_) || ||  _| |  \| | | | \___ \  |  _| |  \| | | | |
+                      |  _ <| |___|  _| | |___|  _ <  |  _| |  _ < | || |___| |\  | |_| |___) | | |___| |\  | |_| |
+                      |_| \_\_____|_|   |_____|_| \_\ |_|   |_| \_\___|_____|_| \_|____/|____/  |_____|_| \_|____/
 
                     -->
 
-                    <div class="order-history">
-    <div class="image-text-content">
-                <div class="row order-history-heading">
-
-                        <div class="page-title col-md-12">
-                <h1>Order History</h1>
-                <hr class="small">
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-
-
-    <div id="mobile-order-history-top-part">
-        <div class="visible-md-block visible-lg-block">
-            <div class="pager">
-
-<p class="amount">
-            Items 1 to 10 of 50 total    </p>
-
-<div class="limiter">
-    <!-- <label>Show</label> -->
-    <div class="dropdown">
-        <select onchange="setLocation(this.value)">
-                    <option value="http://www.monogramtea.com/sales/order/history/?limit=10" selected="selected">
-                10            </option>
-                    <option value="http://www.monogramtea.com/sales/order/history/?limit=20">
-                20            </option>
-                    <option value="http://www.monogramtea.com/sales/order/history/?limit=50">
-                50            </option>
-                </select>
-    </div>
-    <p>per page</p>
-</div>
-
-<div class="pages">
-    <ol>
-    
-    
-    
-                        <li class="current">1</li>
-                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=2">2</a></li>
-                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=3">3</a></li>
-                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=4">4</a></li>
-                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=5">5</a></li>
-            
-
-    
-    
-            <li>
-            <a class="next i-next" href="http://www.monogramtea.com/sales/order/history/?p=2" title="Next">
-                                    
-                    <i class="fa fa-arrow-right"></i>
-                            </a>
-        </li>
-        </ol>
-
-</div>
-
-</div>
-        </div>
-
-        <div class="clearfix"></div>
-
-
-        <hr class="order-headers-line">
-        <div class="row order-headers">
-            <div class="col-md-1 col-sm-1 col-xs-3 order-status"><h2>STATUS</h2></div>
-            <div class="col-md-1 col-sm-2 col-xs-4 order-no"><h2>ORDER NO.</h2></div>
-            <div class="col-md-1 col-sm-2 col-xs-4 order-date"><h2>DATE</h2></div>
-
-            <div class="col-md-9 col-sm-6 col-xs-6 visible-md-block visible-lg-block">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4 col-xs-4"><h2>PRODUCT</h2></div>
-                    <div class="col-md-2 col-sm-2 col-xs-2"><h2 style="text-align:center;">UNIT PRICE</h2></div>
-                    <div class="col-md-2 col-sm-2 col-xs-2 order-qty"><h2>QTY</h2></div>
-                    <div class="col-md-2 col-sm-2 col-xs-2"><h2>TOTAL</h2></div>
-                    <div class="col-md-2 col-sm-2 col-xs-2"></div>
-                </div>
-            </div>
-        </div>
-
-        <hr class="order-headers-line">
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- removed all content, because there is a new content, no status, products are listed -->
-
-
-
-
-    <div class="row custom-order-content-header">
-      <div class="col-md-2">
-        <p>order no.</p>
-      </div>
-      <div class="col-md-2">
-        <p>date</p>
-      </div>
-      <div class="col-md-6">
-        <p class="product-header">product</p>
-      </div>
-      <div class="col-md-1">
-        <p>qty</p>
-      </div>
-      <div class="col-md-1">
-        <p>sub total</p>
-      </div>
-    </div> <!-- custom-order-content-header -->
-
-
-
-    <div class="row order-content">
-
-      <div class="orders">
-        <div class="col-md-12">
-
-          <div class="row each-order">
-            <div class="col-md-12">
-              <div class="single-order-item" data-id="145000652">
-                <div class="row order-details">
-                  <div class="col-md-2 order-no">
-                    <p class="order_no">145000652</p>
-                  </div>
-                  <div class="col-md-2 order-date">
-                    <p class="date">12/7/2015</p>
-                  </div>
-                  <div class="col-md-6">
-                    <p>All About Lychee, Lucky Basterd Blend, Lucky Basterd Blend, Golden Nugget</p>
-                  </div>
-                  <div class="col-md-1 order-qty">
-                    <p>8</p>
-                  </div>
-                  <div class="col-md-1 order-subtotal">
-                    <p class="sub_total price"><span class="price">$131.40</span></p>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row each-order">
-            <div class="col-md-12">
-              <div class="single-order-item" data-id="145000652">
-                <div class="row order-details">
-                  <div class="col-md-2 order-no">
-                    <p class="order_no">145000652</p>
-                  </div>
-                  <div class="col-md-2 order-date">
-                    <p class="date">12/7/2015</p>
-                  </div>
-                  <div class="col-md-6">
-                    <p>All About Lychee, Lucky Basterd Blend, Lucky Basterd Blend, Golden Nugget</p>
-                  </div>
-                  <div class="col-md-1 order-qty">
-                    <p>8</p>
-                  </div>
-                  <div class="col-md-1 order-subtotal">
-                    <p class="sub_total price"><span class="price">$131.40</span></p>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row each-order">
-            <div class="col-md-12">
-              <div class="single-order-item" data-id="145000652">
-                <div class="row order-details">
-                  <div class="col-md-2 order-no">
-                    <p class="order_no">145000652</p>
-                  </div>
-                  <div class="col-md-2 order-date">
-                    <p class="date">12/7/2015</p>
-                  </div>
-                  <div class="col-md-6">
-                    <p>All About Lychee, Lucky Basterd Blend, Lucky Basterd Blend, Golden Nugget</p>
-                  </div>
-                  <div class="col-md-1 order-qty">
-                    <p>8</p>
-                  </div>
-                  <div class="col-md-1 order-subtotal">
-                    <p class="sub_total price"><span class="price">$131.40</span></p>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row each-order">
-            <div class="col-md-12">
-              <div class="single-order-item" data-id="145000652">
-                <div class="row order-details">
-                  <div class="col-md-2 order-no">
-                    <p class="order_no">145000652</p>
-                  </div>
-                  <div class="col-md-2 order-date">
-                    <p class="date">12/7/2015</p>
-                  </div>
-                  <div class="col-md-6">
-                    <p>All About Lychee, Lucky Basterd Blend, Lucky Basterd Blend, Golden Nugget</p>
-                  </div>
-                  <div class="col-md-1 order-qty">
-                    <p>8</p>
-                  </div>
-                  <div class="col-md-1 order-subtotal">
-                    <p class="sub_total price"><span class="price">$131.40</span></p>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-        </div> <!-- col-md-12 -->
-
-      </div> <!-- orders -->
-    </div> <!-- order-content -->
-
-    <div id="mobile-order-history-bottom-part">
-        <div class="pager">
-
-<p class="amount">
-            Items 1 to 10 of 50 total    </p>
-
-<div class="limiter">
-    <!-- <label>Show</label> -->
-    <div class="dropdown">
-        <select onchange="setLocation(this.value)">
-                    <option value="http://www.monogramtea.com/sales/order/history/?limit=10" selected="selected">
-                10            </option>
-                    <option value="http://www.monogramtea.com/sales/order/history/?limit=20">
-                20            </option>
-                    <option value="http://www.monogramtea.com/sales/order/history/?limit=50">
-                50            </option>
-                </select>
-    </div>
-    <p>per page</p>
-</div>
-
-<div class="pages">
-    <ol>
-    
-    
-    
-                        <li class="current">1</li>
-                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=2">2</a></li>
-                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=3">3</a></li>
-                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=4">4</a></li>
-                                <li><a href="http://www.monogramtea.com/sales/order/history/?p=5">5</a></li>
-            
-
-    
-    
-            <li>
-            <a class="next i-next" href="http://www.monogramtea.com/sales/order/history/?p=2" title="Next">
-                                    
-                    <i class="fa fa-arrow-right"></i>
-                            </a>
-        </li>
-        </ol>
-
-</div>
-
-</div>
-    </div>
-
-    <script type="text/javascript">
-        jQuery(document).ready(function($) {
-            $('#content-wrapper .my-account .order-history').gryphon_mobile_account_order_history({});
-        });
-    </script>
-
-
-            </div>
-        </div>
-    </div>
-</div>
-
-                    <!--
-                        ___  ____  ____  _____ ____    _   _ ___ ____ _____ ___  ______   __  _____ _   _ ____
-                       / _ \|  _ \|  _ \| ____|  _ \  | | | |_ _/ ___|_   _/ _ \|  _ \ \ / / | ____| \ | |  _ \
-                      | | | | |_) | | | |  _| | |_) | | |_| || |\___ \ | || | | | |_) \ V /  |  _| |  \| | | | |
-                      | |_| |  _ <| |_| | |___|  _ <  |  _  || | ___) || || |_| |  _ < | |   | |___| |\  | |_| |
-                       \___/|_| \_\____/|_____|_| \_\ |_| |_|___|____/ |_| \___/|_| \_\|_|   |_____|_| \_|____/
-
-                    -->
-
-
-                  </div> <!-- #monogram-page-account-details-order-history -->
+                  </div> <!-- #monogram-page-account-details-refer-friends-container -->
 
 
 
@@ -788,25 +688,4 @@
 
 
 
-
-
-
-
-
-<!--
-   _   _  ___ _____ _____ ____
-  | \ | |/ _ \_   _| ____/ ___|
-  |  \| | | | || | |  _| \___ \
-  | |\  | |_| || | | |___ ___) |
-  |_| \_|\___/ |_| |_____|____/
-
-
-CHANGE THE CLASS HTML TO:
-
-1. col-md-6 billing-address
-2. col-md-6 shipping-address
-
-
-
--->
 
