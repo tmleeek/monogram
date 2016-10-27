@@ -96,7 +96,14 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar{
 
   ul{
     li{
+      margin: 0;
       margin-bottom: 15px;
+
+
+      //override custom.css
+      background: transparent;
+      padding: 0;
+
 
       &:last-child {
         margin-bottom: 0px;
@@ -291,6 +298,10 @@ body.monogram-page-account-details #content-wrapper .col-main{
     margin-left: 0px;
     margin-right: 7px;
 
+    // override custom.css
+    float: none;
+    overflow: visible;
+
     .add-clearfix;
 
     p.amount{
@@ -453,6 +464,23 @@ body.monogram-page-account-details #content-wrapper .col-main{
     }
 
   } // .pager
+
+
+
+
+
+
+  .back-link{
+    padding-top: 30px;
+
+    a{
+      .reverse-arrow-cta;
+
+      small{
+        display: none;
+      }
+    }
+  }
 
 } // end .col-main
 
@@ -823,6 +851,10 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
 #monogram-page-account-details-order-history{
 
+  .order-history{
+    padding: 0;
+  }
+
   .page-title{
 
 
@@ -1014,6 +1046,7 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
   .customer-account-giftcard .balance{
     margin-bottom: 24px;
+    border: none;
 
     .page-title{
       display: none;
@@ -1435,6 +1468,7 @@ body.monogram-page-account-details #content-wrapper .col-main{
         font-size: 0;
 
         margin-bottom: 20px;
+        width: auto;
 
         label{
 
@@ -1539,19 +1573,7 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
 
 
-  .back-link{
-
-    padding-top: 30px;
-
-
-    a{
-      .reverse-arrow-cta;
-
-      small{
-        display: none;
-      }
-    }
-  }
+  
 
 
 
