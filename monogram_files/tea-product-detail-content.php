@@ -161,7 +161,7 @@
 
 <article id="tea-product-detail-section-3">
   <div class="container">
-    <h4><?php echo $this->__('Write your review for the product layering') ?></h4>
+    <h4>Write your review for the product layering</h4>
     <div class="row">
       <div class="col-md-4 col-md-offset-2">
         <div class="row">

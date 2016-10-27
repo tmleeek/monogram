@@ -10369,6 +10369,12 @@ body.tea-layering-detail-page {
   margin-top: 17px;
   background: none;
 }
+#tea-product-detail-section-1 #product-detail-img-info-container .product-info #ajax_loader_product img {
+  width: 15px;
+  position: absolute;
+  top: 22px;
+  right: 0;
+}
 #tea-product-detail-section-1 #product-detail-img-info-container .product-info .j2t-loyalty-points {
   display: none;
 }
