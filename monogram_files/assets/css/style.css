@@ -12078,7 +12078,7 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar h4 {
   margin-bottom: 9px;
 }
 body.monogram-page-account-details #content-wrapper .col-right.sidebar strong {
-  color: #262626 !important;
+  color: #989779 !important;
 }
 #monogram-page-account-details-dashboard-header {
   background: #989779;
@@ -12119,6 +12119,18 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar strong {
   position: relative;
   padding-top: 4px;
   padding-bottom: 12px;
+}
+#monogram-page-account-details-dashboard-header .monogram-page-account-details-dashboard-header-item a {
+  color: #ffffff;
+}
+#monogram-page-account-details-dashboard-header .monogram-page-account-details-dashboard-header-item a:focus,
+#monogram-page-account-details-dashboard-header .monogram-page-account-details-dashboard-header-item a:hover {
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  -webkit-opacity: 0.7;
+  opacity: 0.7;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+  filter: alpha(opacity=70);
 }
 #monogram-page-account-details-dashboard-header .monogram-page-account-details-dashboard-header-item:before {
   content: '';
@@ -12476,8 +12488,170 @@ body.monogram-page-account-details #content-wrapper .col-main .each-input p.subs
   width: 100%;
   display: block;
 }
+body.monogram-page-account-details #content-wrapper .col-main .each-input label {
+  font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+  width: 50%;
+}
+body.monogram-page-account-details #content-wrapper .col-main .each-input .input-box {
+  background-color: #756b66;
+  border: none;
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 20px;
+  color: #f1efee;
+  padding-left: 18px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+  width: 50%;
+}
+body.monogram-page-account-details #content-wrapper .col-main .each-input .input-box:focus {
+  border: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+body.monogram-page-account-details #content-wrapper .col-main .each-input .input-box p {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 24px;
+  color: #f1efee;
+}
+body.monogram-page-account-details #content-wrapper .col-main .each-input .input-text {
+  border: none;
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 24px;
+  color: #f1efee;
+}
+body.monogram-page-account-details #content-wrapper .col-main .each-input input[type=text],
+body.monogram-page-account-details #content-wrapper .col-main .each-input input[type=email] {
+  border: none;
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 24px;
+  color: #f1efee;
+  background: transparent;
+}
+body.monogram-page-account-details #content-wrapper .col-main .each-input .dropdown {
+  background-color: #756b66;
+  border: none;
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 20px;
+  color: #f1efee;
+  padding-left: 18px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+  width: 50%;
+  position: relative;
+}
+body.monogram-page-account-details #content-wrapper .col-main .each-input .dropdown:focus {
+  border: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+body.monogram-page-account-details #content-wrapper .col-main .each-input .dropdown.dropdown-dob {
+  width: 16.66%;
+  width: -moz-calc(16.6% - 7px);
+  width: -webkit-calc(16.6% - 7px);
+  width: -o-calc(16.6% - 7px);
+  width: calc(16.6% - 7px);
+  margin-right: 10px;
+}
+body.monogram-page-account-details #content-wrapper .col-main .each-input .dropdown.dropdown-dob.dob-year {
+  margin-right: -20px;
+}
+body.monogram-page-account-details #content-wrapper .col-main .each-input .dropdown select {
+  width: 100%;
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 24px;
+  color: #f1efee;
+  background: transparent;
+  outline: none;
+  border: none;
+  height: 24px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+body.monogram-page-account-details #content-wrapper .col-main .each-input .dropdown select option {
+  color: #464646;
+}
+body.monogram-page-account-details #content-wrapper .col-main .each-input .dropdown:after {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f107";
+  font-size: 13px;
+  line-height: 20px;
+  color: #f1efee;
+  text-align: center;
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+body.monogram-page-account-details #content-wrapper .col-main .each-input .gender-input {
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+  width: 50%;
+}
+body.monogram-page-account-details #content-wrapper .col-main .each-input .gender-input .gender-input-01,
+body.monogram-page-account-details #content-wrapper .col-main .each-input .gender-input .gender-input-02 {
+  position: relative;
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+}
 body.monogram-page-account-details #content-wrapper .col-main .each-input input[type=checkbox] {
-  visibility: hidden;
+  position: relative;
+  z-index: 10;
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  filter: alpha(opacity=0);
+  width: 100%;
 }
 body.monogram-page-account-details #content-wrapper .col-main .each-input .checkbox-label {
   padding-left: 20px;
@@ -12528,6 +12702,37 @@ body.monogram-page-account-details #content-wrapper .col-main .each-input input[
 body.monogram-page-account-details #content-wrapper .col-main .edit-button-container {
   padding-top: 37px;
   text-align: right;
+}
+#monogram-page-account-dashboard-edit-container .page-title {
+  background: #989779;
+  padding-top: 58px;
+  padding-bottom: 58px;
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  color: #ffffff;
+  margin-left: -70px;
+  margin-right: -40px;
+  padding-left: 70px;
+  padding-right: 40px;
+  display: block !important;
+  width: auto !important;
+  float: none !important;
+  margin-bottom: 40px;
+}
+#monogram-page-account-dashboard-edit-container .page-title h1 {
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+#monogram-page-account-dashboard-edit-container .page-title hr {
+  display: none;
 }
 #monogram-page-account-details-address-header {
   background: #989779;
@@ -12968,8 +13173,8 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   text-transform: uppercase;
   color: #ffffff;
   text-align: center;
-  border-bottom: 1px solid #ffffff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid #ffffff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
   padding-top: 4px;
   padding-bottom: 3px;
 }
@@ -12990,8 +13195,8 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   text-align: center;
   padding-top: 24px;
   padding-bottom: 17px;
-  border-bottom: 1px solid #ffffff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid #ffffff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
 }
 #monogram-page-account-giftcard-container .table-responsive table tbody tr td a {
   font-family: 'Domine', "Times New Roman", Times, serif;
