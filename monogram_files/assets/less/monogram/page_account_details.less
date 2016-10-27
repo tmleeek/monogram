@@ -593,6 +593,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
       .add-input-class-font;
     }
     input[type=text],
+    input[type=email],
+    input[type=password],
     input[type=email]{
       .add-input-class-font;
       background: transparent;
@@ -746,9 +748,17 @@ body.monogram-page-account-details #content-wrapper .col-main{
   } // .each input
 
 
+
+
+
+
   .edit-button-container{
     padding-top: 37px;
     text-align: right;
+
+    .square-cta{
+      height: auto;
+    }
   }
 
 } // end of content
@@ -1019,8 +1029,62 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
 
 
+//       _    ____  ____  ____  _____ ____ ____    _____ ____ ___ _____
+//      / \  |  _ \|  _ \|  _ \| ____/ ___/ ___|  | ____|  _ \_ _|_   _|
+//     / _ \ | | | | | | | |_) |  _| \___ \___ \  |  _| | | | | |  | |
+//    / ___ \| |_| | |_| |  _ <| |___ ___) |__) | | |___| |_| | |  | |
+//   /_/   \_\____/|____/|_| \_\_____|____/____/  |_____|____/___| |_|
+//
 
 
+#monogram-page-account-details-address-edit-container{
+  .page-title{
+
+
+    background: @account-green;
+
+    padding-top: 38px + 20px;
+    padding-bottom: 41px + 17px;
+
+    .body-font;
+    font-size: 13px;
+    line-height: 20px;
+    color: @white;
+
+    margin-left: -70px;
+    margin-right: -40px;
+
+    padding-left: 70px;
+    padding-right: 40px;
+
+    display: block !important;
+    width: auto !important;
+    float: none !important;
+
+    margin-bottom: 40px;
+
+    h1{
+      .header-font;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    hr{
+      display: none;
+    }
+  }
+
+
+  // override custom.css
+  .form-list .additional-address {   
+      margin-top: 0px !important;
+  }
+
+
+
+
+}
 
 
 
@@ -1362,6 +1426,208 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
 
 
+//     ____ ___ _____ _____ ____    _    ____  ____    _____ ____ ___ _____
+//    / ___|_ _|  ___|_   _/ ___|  / \  |  _ \|  _ \  | ____|  _ \_ _|_   _|
+//   | |  _ | || |_    | || |     / _ \ | |_) | | | | |  _| | | | | |  | |
+//   | |_| || ||  _|   | || |___ / ___ \|  _ <| |_| | | |___| |_| | |  | |
+//    \____|___|_|     |_| \____/_/   \_\_| \_\____/  |_____|____/___| |_|
+//
+
+
+#monogram-page-account-giftcard-detail-container{
+
+  .page-title{
+
+
+    .add-clearfix;
+
+
+    background: @account-green;
+
+    padding-top: 38px + 20px;
+    padding-bottom: 41px + 17px;
+
+    .body-font;
+    font-size: 13px;
+    line-height: 20px;
+    color: @white;
+
+    margin-left: -10px - 70px;
+    margin-right: -10px - 40px;
+
+    padding-left: 10px + 70px;
+    padding-right: 10px + 40px;
+
+    display: block !important;
+    width: auto !important;
+    float: none !important;
+
+    margin-bottom: 40px - 6px;
+
+    h1{
+      .header-font;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+
+      float: left;
+    }
+    hr{
+      display: none;
+    }
+    a{
+      .square-cta;
+      height: auto;
+      line-height: 20px;
+      .display-inline-block;
+      margin-right: 20px;
+
+      float: right;
+
+      position: relative;
+      top: 5px;
+    }
+  }
+
+  .form-list{
+    // font-size: 0;
+    
+    color: @white;
+    a{
+      color: @white;
+
+      &:focus,
+      &:hover{
+        .opacity(0.7);
+      }
+    }
+
+    .fields{
+      margin-bottom: 20px;
+
+      // .display-inline-block;
+      // width: 33.33%;
+      
+      .custom-field,
+      .custom-field p{
+        .subheader-font;
+        font-size: 10px;
+        line-height: 15px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .custom-field-right,
+      .custom-field-right p{
+        .body-font;
+        font-size: 13px;
+        line-height: 20px;
+        letter-spacing: 0;
+        text-transform: none;
+      }
+    }
+  }
+
+  table#giftcard_history_table{
+    // width: 100%;
+    table-layout: fixed;
+    width: 100%;
+
+    border-top: 1px solid @white;
+    border-top: 1px solid fade(@white, 50%);
+
+    margin-top: 60px;
+
+    thead{
+      tr{
+        th{
+          .subheader-font;
+          font-size: 10px;
+          line-height: 20px;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: @white;
+
+          text-align: center;
+
+          border-bottom: 1px solid @white !important;
+          border-bottom: 1px solid fade(@white, 50%) !important;
+
+          padding-top: 4px;
+          padding-bottom: 3px;
+
+          &:first-child{
+            padding-left: 24px;
+            text-align: left;
+          }
+          &:last-child{
+            padding-right: 24px;
+          }
+
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          .body-font;
+          font-size: 12px;
+          line-height: 20px;
+          color: @white;
+
+          text-align: center;
+
+          padding-top: 9px + 15px;
+          padding-bottom: 4px + 13px;
+
+          border-bottom: 1px solid @white !important;
+          border-bottom: 1px solid fade(@white, 50%) !important;      // this gets removed because of '.balance'
+
+          a{
+            .body-font;
+            font-size: 12px;
+            line-height: 20px;
+            color: @white;
+
+            &:focus,
+            &:hover{
+              .opacity(0.7);
+            }
+          }
+
+          .giftvoucher-grid-title-hidden{
+            display: none;
+          }
+
+          &:first-child{
+            padding-left: 24px;
+            text-align: left;
+          }
+          &:last-child{
+            padding-right: 24px;
+          }
+
+
+          &.action{
+            a{
+              .subheader-font;
+              font-size: 10px;
+              line-height: 20px;
+              letter-spacing: 0.08em;
+              text-transform: uppercase;
+
+              padding-left: 2px;
+              padding-right: 2px;
+            }
+          }
+
+        }
+      }
+    }
+
+  }
+  
+}
 
 
 
