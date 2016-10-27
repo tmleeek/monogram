@@ -5496,11 +5496,6 @@ p {
 .desktop-header-spacer {
   height: 70px;
 }
-@media only screen and (max-height: 668px) {
-  .desktop-header-spacer {
-    height: 90px !important;
-  }
-}
 #desktop-header-right-container {
   font-size: 0;
   margin-left: -4px;
