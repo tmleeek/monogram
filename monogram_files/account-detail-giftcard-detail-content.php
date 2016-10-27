@@ -494,10 +494,13 @@
 
                       </div>
 
+                          <!-- REMOVED -->
+                          <!-- 
                           <div class="page-title">
                               <h2>History</h2>
                           </div>
-
+                          -->
+                          
                           <div class="visible-md-block visible-lg-block">
                               <table class="data-table" id="giftcard_history_table">
                                   <thead>
