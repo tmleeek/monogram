@@ -437,6 +437,14 @@ body.monogram-page-account-details #content-wrapper .col-main{
           .display-inline-block;
           margin-left: 12px;
 
+
+
+          // overwrite custom.css
+          border: none;
+          background: transparent;
+          width: auto;
+
+
           a{
             .subheader-font-2;
             font-size: 10px;
@@ -453,6 +461,11 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
             .opacity(0.7);
 
+
+            // overwrite custom.css
+            width: auto;
+            height: auto;
+
             &:focus,
             &:hover{
               .opacity(1);
@@ -460,6 +473,12 @@ body.monogram-page-account-details #content-wrapper .col-main{
           }
 
           a.next{
+
+            //overwrite custom.css
+            &:before{
+              display: none;
+            }
+
             i.fa{
               font-size: 10px;
               line-height: 20px;
@@ -470,6 +489,12 @@ body.monogram-page-account-details #content-wrapper .col-main{
             }
           }
           a.prev{
+
+            //overwrite custom.css
+            &:before{
+              display: none;
+            }
+
             i.fa{
               font-size: 10px;
               line-height: 20px;
