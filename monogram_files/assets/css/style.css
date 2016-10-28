@@ -10292,6 +10292,12 @@ body.tea-layering-detail-page {
   font-size: 10px;
   line-height: 16px;
 }
+#tea-product-detail-section-1 #product-detail-img-info-container .product-info .ajax_msg_product {
+  position: absolute;
+  top: 22px;
+  width: 100%;
+  right: -130px;
+}
 #tea-product-detail-section-1 #product-detail-img-info-container .product-info .row {
   margin-bottom: 28px;
 }
@@ -10299,20 +10305,21 @@ body.tea-layering-detail-page {
   padding-left: 30px;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .product-info .steeping-suggestion .steeping-suggestion-icon-1 {
-  background: url('../images/icons/steeping-suggestion-icon-1.png') no-repeat;
-  width: 6px;
-  height: 14px;
+  background: url('../images/icons/thermometer-icon.svg') no-repeat;
+  width: 10px;
+  height: 20px;
   display: inline-block;
   vertical-align: middle;
   margin-right: 11px;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .product-info .steeping-suggestion .steeping-suggestion-icon-2 {
-  background: url('../images/icons/steeping-suggestion-icon-2.png') no-repeat;
-  width: 11px;
-  height: 11px;
+  background: url('../images/icons/clock-icon.svg') no-repeat;
+  width: 20px;
+  height: 20px;
   display: inline-block;
   vertical-align: middle;
   margin-right: 7px;
+  margin-left: -5px;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .product-info .social-media-share {
   margin-top: 24px;
@@ -10577,18 +10584,27 @@ body.tea-layering-detail-page {
   overflow: visible;
 }
 #account-login-section-1 {
-  padding-top: 100px;
+  padding-top: 70px;
 }
 #account-login-section-1 h1 {
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
   color: #f1efee;
   margin-bottom: 35px;
 }
 #account-login-section-1 p {
-  text-align: center;
+  text-align: left;
   color: #f1efee;
   margin-bottom: 60px;
+}
+#account-login-section-1 .container-fluid {
+  padding-left: 0px;
+}
+#account-login-section-1 .account-login-content-container #account-login-img-content {
+  background: url('../images/login/login-bg.png') no-repeat;
+  width: 100%;
+  height: 786px;
+  background-size: cover;
 }
 #account-login-section-1 .inputs {
   margin-bottom: 80px;
@@ -10596,7 +10612,7 @@ body.tea-layering-detail-page {
 #account-login-section-1 .inputs .row {
   margin-bottom: 15px;
 }
-#account-login-section-1 .inputs label.for-input {
+#account-login-section-1 .inputs .for-input {
   color: #f1efee;
   text-transform: uppercase;
   font-family: 'Brandon Grotesque Regular', "Arial Black", Gadget, sans-serif;
@@ -10606,8 +10622,17 @@ body.tea-layering-detail-page {
   line-height: 10px;
   letter-spacing: 0.05em;
 }
-#account-login-section-1 .inputs input.input-class {
-  width: 236px;
+#account-login-section-1 .inputs input.username-input {
+  width: 276px;
+}
+#account-login-section-1 .inputs input.password-input {
+  width: 203px;
+  margin-right: 10px;
+}
+#account-login-section-1 .inputs .forget-password {
+  margin-top: 7px;
+  margin-left: 7px;
+  display: block;
 }
 #account-login-section-1 .inputs .login-label-container label {
   padding-left: 68px;
@@ -10621,7 +10646,9 @@ body.tea-layering-detail-page {
 #account-login-section-1 .login-button-container {
   display: inline-block;
   vertical-align: middle;
-  width: 36%;
+}
+#account-login-section-1 .login-button-container:nth-of-type(1) {
+  width: 37%;
 }
 #account-login-section-1 .login-button-container a,
 #account-login-section-1 .login-button-container button {
@@ -10646,9 +10673,8 @@ body.tea-layering-detail-page {
   font-style: normal;
   font-weight: normal;
   text-transform: uppercase;
-}
-#account-login-section-1 .c-align {
   text-align: center;
+  margin-top: -7px;
 }
 #account-login-section-1 input[type=checkbox] {
   visibility: hidden;
@@ -11027,6 +11053,12 @@ body.billing-shipping-page {
   padding-top: 149px;
   padding-left: 45px;
   padding-right: 45px;
+  position: relative;
+}
+#page-shopping-cart-content .messages {
+  position: absolute;
+  top: -50px;
+  width: 97%;
 }
 #page-shopping-cart-sidebar-address {
   padding-top: 34px;
@@ -12039,6 +12071,10 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar ul li {
   background: transparent;
   padding: 0;
 }
+body.monogram-page-account-details #content-wrapper .col-right.sidebar ul li[data-name=account],
+body.monogram-page-account-details #content-wrapper .col-right.sidebar ul li[data-name=address_book] {
+  display: none;
+}
 body.monogram-page-account-details #content-wrapper .col-right.sidebar ul li:last-child {
   margin-bottom: 0px;
 }
@@ -12306,6 +12342,9 @@ body.monogram-page-account-details #content-wrapper .col-main .pager .pages ol l
   *display: inline;
   zoom: 1;
   margin-left: 12px;
+  border: none;
+  background: transparent;
+  width: auto;
 }
 body.monogram-page-account-details #content-wrapper .col-main .pager .pages ol li a {
   font-family: 'Brandon Grotesque Regular', "Arial Black", Gadget, sans-serif;
@@ -12331,6 +12370,8 @@ body.monogram-page-account-details #content-wrapper .col-main .pager .pages ol l
   opacity: 0.7;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
   filter: alpha(opacity=70);
+  width: auto;
+  height: auto;
 }
 body.monogram-page-account-details #content-wrapper .col-main .pager .pages ol li a:focus,
 body.monogram-page-account-details #content-wrapper .col-main .pager .pages ol li a:hover {
@@ -12341,12 +12382,18 @@ body.monogram-page-account-details #content-wrapper .col-main .pager .pages ol l
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
   filter: alpha(opacity=100);
 }
+body.monogram-page-account-details #content-wrapper .col-main .pager .pages ol li a.next:before {
+  display: none;
+}
 body.monogram-page-account-details #content-wrapper .col-main .pager .pages ol li a.next i.fa {
   font-size: 10px;
   line-height: 20px;
 }
 body.monogram-page-account-details #content-wrapper .col-main .pager .pages ol li a.next i.fa:before {
   content: "\f101" !important;
+}
+body.monogram-page-account-details #content-wrapper .col-main .pager .pages ol li a.prev:before {
+  display: none;
 }
 body.monogram-page-account-details #content-wrapper .col-main .pager .pages ol li a.prev i.fa {
   font-size: 10px;
@@ -12538,6 +12585,8 @@ body.monogram-page-account-details #content-wrapper .col-main .each-input .input
   color: #f1efee;
 }
 body.monogram-page-account-details #content-wrapper .col-main .each-input input[type=text],
+body.monogram-page-account-details #content-wrapper .col-main .each-input input[type=email],
+body.monogram-page-account-details #content-wrapper .col-main .each-input input[type=password],
 body.monogram-page-account-details #content-wrapper .col-main .each-input input[type=email] {
   border: none;
   font-family: 'Domine', "Times New Roman", Times, serif;
@@ -12697,6 +12746,9 @@ body.monogram-page-account-details #content-wrapper .col-main .each-input input[
 body.monogram-page-account-details #content-wrapper .col-main .edit-button-container {
   padding-top: 37px;
   text-align: right;
+}
+body.monogram-page-account-details #content-wrapper .col-main .edit-button-container .square-cta {
+  height: auto;
 }
 #monogram-page-account-dashboard-edit-container .page-title {
   background: #989779;
@@ -12950,6 +13002,40 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   margin-top: -2px;
   text-align: right;
   padding-right: 24px;
+}
+#monogram-page-account-details-address-edit-container .page-title {
+  background: #989779;
+  padding-top: 58px;
+  padding-bottom: 58px;
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  color: #ffffff;
+  margin-left: -70px;
+  margin-right: -40px;
+  padding-left: 70px;
+  padding-right: 40px;
+  display: block !important;
+  width: auto !important;
+  float: none !important;
+  margin-bottom: 40px;
+}
+#monogram-page-account-details-address-edit-container .page-title h1 {
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+#monogram-page-account-details-address-edit-container .page-title hr {
+  display: none;
+}
+#monogram-page-account-details-address-edit-container .form-list .additional-address {
+  margin-top: 0px !important;
 }
 #monogram-page-account-details-order-history .order-history {
   padding: 0;
@@ -13221,6 +13307,209 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   padding-right: 24px;
 }
 #monogram-page-account-giftcard-container .table-responsive table tbody tr td.action a {
+  font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+#monogram-page-account-giftcard-detail-container .page-title {
+  *zoom: 1;
+  background: #989779;
+  padding-top: 58px;
+  padding-bottom: 58px;
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  color: #ffffff;
+  margin-left: -80px;
+  margin-right: -50px;
+  padding-left: 80px;
+  padding-right: 50px;
+  display: block !important;
+  width: auto !important;
+  float: none !important;
+  margin-bottom: 34px;
+}
+#monogram-page-account-giftcard-detail-container .page-title:before,
+#monogram-page-account-giftcard-detail-container .page-title:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+#monogram-page-account-giftcard-detail-container .page-title:after {
+  clear: both;
+}
+#monogram-page-account-giftcard-detail-container .page-title h1 {
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  float: left;
+}
+#monogram-page-account-giftcard-detail-container .page-title hr {
+  display: none;
+}
+#monogram-page-account-giftcard-detail-container .page-title a {
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 25px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: none;
+  height: 25px;
+  color: #f1efee;
+  border: 1px solid #f1efee;
+  color: rgba(241, 239, 238, 0.9);
+  border: 1px solid rgba(241, 239, 238, 0.9) !important;
+  padding-left: 9px;
+  padding-right: 9px;
+  background: transparent;
+  -moz-opacity: 0.9;
+  -khtml-opacity: 0.9;
+  -webkit-opacity: 0.9;
+  opacity: 0.9;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);
+  filter: alpha(opacity=90);
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  height: auto;
+  line-height: 20px;
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+  margin-right: 20px;
+  float: right;
+  position: relative;
+  top: 5px;
+}
+#monogram-page-account-giftcard-detail-container .page-title a:focus,
+#monogram-page-account-giftcard-detail-container .page-title a:hover {
+  color: rgba(241, 239, 238, 0.5);
+  border: 1px solid rgba(241, 239, 238, 0.5) !important;
+}
+#monogram-page-account-giftcard-detail-container .form-list {
+  color: #ffffff;
+}
+#monogram-page-account-giftcard-detail-container .form-list a {
+  color: #ffffff;
+}
+#monogram-page-account-giftcard-detail-container .form-list a:focus,
+#monogram-page-account-giftcard-detail-container .form-list a:hover {
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  -webkit-opacity: 0.7;
+  opacity: 0.7;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+  filter: alpha(opacity=70);
+}
+#monogram-page-account-giftcard-detail-container .form-list .fields {
+  margin-bottom: 20px;
+}
+#monogram-page-account-giftcard-detail-container .form-list .fields .custom-field,
+#monogram-page-account-giftcard-detail-container .form-list .fields .custom-field p {
+  font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+#monogram-page-account-giftcard-detail-container .form-list .fields .custom-field-right,
+#monogram-page-account-giftcard-detail-container .form-list .fields .custom-field-right p {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+#monogram-page-account-giftcard-detail-container table#giftcard_history_table {
+  table-layout: fixed;
+  width: 100%;
+  border-top: 1px solid #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  margin-top: 60px;
+}
+#monogram-page-account-giftcard-detail-container table#giftcard_history_table thead tr th {
+  font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
+  border-bottom: 1px solid #ffffff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+  padding-top: 4px;
+  padding-bottom: 3px;
+}
+#monogram-page-account-giftcard-detail-container table#giftcard_history_table thead tr th:first-child {
+  padding-left: 24px;
+  text-align: left;
+}
+#monogram-page-account-giftcard-detail-container table#giftcard_history_table thead tr th:last-child {
+  padding-right: 24px;
+}
+#monogram-page-account-giftcard-detail-container table#giftcard_history_table tbody tr td {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 24px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #ffffff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+#monogram-page-account-giftcard-detail-container table#giftcard_history_table tbody tr td a {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff;
+}
+#monogram-page-account-giftcard-detail-container table#giftcard_history_table tbody tr td a:focus,
+#monogram-page-account-giftcard-detail-container table#giftcard_history_table tbody tr td a:hover {
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  -webkit-opacity: 0.7;
+  opacity: 0.7;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+  filter: alpha(opacity=70);
+}
+#monogram-page-account-giftcard-detail-container table#giftcard_history_table tbody tr td .giftvoucher-grid-title-hidden {
+  display: none;
+}
+#monogram-page-account-giftcard-detail-container table#giftcard_history_table tbody tr td:first-child {
+  padding-left: 24px;
+  text-align: left;
+}
+#monogram-page-account-giftcard-detail-container table#giftcard_history_table tbody tr td:last-child {
+  padding-right: 24px;
+}
+#monogram-page-account-giftcard-detail-container table#giftcard_history_table tbody tr td.action a {
   font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
