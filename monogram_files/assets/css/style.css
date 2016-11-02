@@ -5686,6 +5686,9 @@ p {
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
   filter: alpha(opacity=60);
 }
+#desktop-header-cart .currency .fa {
+  font-size: 11px;
+}
 .currency-switcher {
   position: absolute;
   top: 70px;
@@ -12705,7 +12708,7 @@ body.monogram-page-account-details #content-wrapper .col-main .each-input .intl-
   zoom: 1;
   width: 75px;
 }
-body.monogram-page-account-details #content-wrapper .col-main .each-input .intl-tel-input .phone_no_2 {
+body.monogram-page-account-details #content-wrapper .col-main .each-input .intl-tel-input #phone_no_2 {
   display: inline-block;
   vertical-align: top;
   *display: inline;
@@ -12865,6 +12868,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
 }
 body.monogram-page-account-details #content-wrapper .col-main .edit-button-container .square-cta {
   height: auto;
+  margin-left: 10px;
 }
 #monogram-page-account-dashboard-edit-container .page-title {
   background: #989779;
@@ -13996,6 +14000,146 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   }
 }
 */
+html.monogram-subscription-page,
+body.monogram-subscription-page {
+  overflow: visible;
+}
+#monogram-subscription-title-section {
+  background: #6b615b;
+  padding-top: 73px;
+  padding-bottom: 73px;
+}
+#monogram-subscription-title-section {
+  text-align: center;
+  color: #f1efee;
+}
+#monogram-subscription-title-section h1 {
+  font-family: 'Brandon Grotesque Black', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 32px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+#monogram-subscription-title-section p {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0em;
+}
+#monogram-subscription-content-section .container-fluid {
+  padding: 0;
+}
+#monogram-subscription-content-column-01 {
+  margin-right: -10px;
+}
+#monogram-subscription-content-column-02 {
+  margin-left: -10px;
+  background: #8d919a;
+  padding: 0 60px;
+}
+#monogram-subscription-content-image {
+  height: 600px;
+}
+#monogram-subscription-content-image .manic-image-container {
+  height: 600px;
+}
+#monogram-subscription-content-copy {
+  height: 600px;
+  color: #f1efee;
+  padding-top: 79px;
+}
+#monogram-subscription-content-copy #monogram-subscription-content-reason-container {
+  margin-bottom: 54px;
+}
+#monogram-subscription-content-copy #monogram-subscription-content-reason-container .monogram-subscription-content-reason {
+  text-align: center;
+}
+#monogram-subscription-content-copy #monogram-subscription-content-reason-container .monogram-subscription-content-reason h4 {
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 11px;
+}
+#monogram-subscription-content-copy #monogram-subscription-content-reason-container .monogram-subscription-content-reason p {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0em;
+  padding: 0 15px;
+}
+#monogram-subscription-content-copy .table-responsive {
+  width: 100%;
+  border-top: 1px solid #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+#monogram-subscription-content-copy .table-responsive table {
+  width: 100%;
+  table-layout: fixed;
+}
+#monogram-subscription-content-copy .table-responsive table thead tr th {
+  font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
+  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding-top: 4px;
+  padding-bottom: 3px;
+}
+#monogram-subscription-content-copy .table-responsive table thead tr th:first-child {
+  padding-left: 24px;
+  text-align: left;
+}
+#monogram-subscription-content-copy .table-responsive table thead tr th:last-child {
+  padding-right: 24px;
+}
+#monogram-subscription-content-copy .table-responsive table tbody tr td {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#monogram-subscription-content-copy .table-responsive table tbody tr td:first-child {
+  padding-left: 24px;
+  text-align: left;
+}
+#monogram-subscription-content-copy .table-responsive table tbody tr:first-child td {
+  padding-top: 25px;
+}
+#monogram-subscription-content-copy .table-responsive table tbody tr:last-child td {
+  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 18px;
+}
+#monogram-subscription-content-copy .cta-container {
+  text-align: center;
+  font-size: 0;
+  padding-top: 46px;
+}
+#monogram-subscription-content-copy .cta-container .square-cta {
+  margin: 0 13px;
+}
 /*
 @import "monogram/page_experience.less";
 @import "monogram/page_experience_detail.less";
