@@ -5663,6 +5663,13 @@ p {
   top: 2px;
 }
 #desktop-header-cart .fa {
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+  vertical-align: middle;
+}
+#desktop-header-cart .fa-bars {
   font-size: 21px;
   color: #f1efee;
   -moz-opacity: 0.9;
@@ -5671,14 +5678,9 @@ p {
   opacity: 0.9;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);
   filter: alpha(opacity=90);
-  display: inline-block;
-  vertical-align: top;
-  *display: inline;
-  zoom: 1;
-  vertical-align: middle;
 }
-#desktop-header-cart .fa:focus,
-#desktop-header-cart .fa:hover {
+#desktop-header-cart .fa-bars:focus,
+#desktop-header-cart .fa-bars:hover {
   -moz-opacity: 0.6;
   -khtml-opacity: 0.6;
   -webkit-opacity: 0.6;
@@ -5686,8 +5688,8 @@ p {
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
   filter: alpha(opacity=60);
 }
-#desktop-header-cart .currency .fa {
-  font-size: 11px;
+#desktop-header-cart .fa-dollar {
+  margin-bottom: 1px;
 }
 .currency-switcher {
   position: absolute;
