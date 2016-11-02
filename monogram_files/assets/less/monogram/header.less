@@ -362,7 +362,34 @@
 }
 
 
-
+.currency-switcher {
+  position: absolute;
+  top: 70px;
+  left: -24px;
+  .currency-form {
+    display: none;
+  }
+  ul {
+    display: none;
+    background-color: rgba(130, 119, 115, 0.9);
+    padding: 25px 35px;
+    text-align: left;
+    li {
+      margin-bottom: 5px;
+      a {
+        .header-font;
+        font-size: 10px;
+        line-height: 10px;
+        letter-spacing: 0.08em;
+        color: @white;
+        text-transform: uppercase;
+        &:hover {
+          color: rgba(241, 239, 238, 0.5)
+        }
+      }
+    }
+  }
+}
 
 
 

@@ -4922,6 +4922,49 @@ p {
 .custom-checkbox-container input[type=radio]:checked + label:after {
   opacity: 1;
 }
+.giftvoucher-index-addredeem .messages {
+  position: absolute;
+  top: 125px;
+  left: 320px;
+}
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown:before {
+  font-family: FontAwesome;
+  content: "\f107";
+  position: absolute;
+  display: block;
+  top: 3px;
+  right: 12px;
+  pointer-events: none;
+  font-size: 10px;
+  color: #f1efee;
+}
+.dropdown select {
+  background-color: #756b66;
+  border: none;
+  height: 26px;
+  padding-left: 20px;
+  width: 100%;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  text-indent: 0.01px;
+  text-overflow: '';
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  font-size: 10px;
+  color: #f1efee;
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+}
 .thermometer-icon {
   display: block;
   width: 10px;
@@ -5642,6 +5685,36 @@ p {
   opacity: 0.6;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
   filter: alpha(opacity=60);
+}
+.currency-switcher {
+  position: absolute;
+  top: 70px;
+  left: -24px;
+}
+.currency-switcher .currency-form {
+  display: none;
+}
+.currency-switcher ul {
+  display: none;
+  background-color: rgba(130, 119, 115, 0.9);
+  padding: 25px 35px;
+  text-align: left;
+}
+.currency-switcher ul li {
+  margin-bottom: 5px;
+}
+.currency-switcher ul li a {
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 10px;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.currency-switcher ul li a:hover {
+  color: rgba(241, 239, 238, 0.5);
 }
 #mobile-header-spacer {
   height: 50px;
@@ -10539,7 +10612,6 @@ body.tea-layering-detail-page {
 #tea-product-detail-section-3 .dropdown {
   display: inline-block;
   position: relative;
-  width: 100%;
 }
 #tea-product-detail-section-3 .dropdown select {
   -moz-appearance: none;
@@ -10686,18 +10758,27 @@ body.tea-layering-detail-page {
   overflow: visible;
 }
 #account-creation-section-1 {
-  padding-top: 100px;
+  padding-top: 70px;
 }
 #account-creation-section-1 h1 {
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
   color: #f1efee;
   margin-bottom: 35px;
 }
 #account-creation-section-1 p {
-  text-align: center;
+  text-align: left;
   color: #f1efee;
   margin-bottom: 60px;
+}
+#account-creation-section-1 .container-fluid {
+  padding-left: 0px;
+}
+#account-creation-section-1 .account-creation-content-container #account-creation-img-content {
+  background: url('../images/login/login-bg.png') no-repeat;
+  width: 100%;
+  height: 786px;
+  background-size: cover;
 }
 #account-creation-section-1 .h-align {
   margin: 0 auto;
@@ -10732,6 +10813,24 @@ body.tea-layering-detail-page {
 }
 #account-creation-section-1 .inputs .row:last-child {
   margin-bottom: 0px;
+}
+#account-creation-section-1 .create-account-btn {
+  display: block;
+  width: 192px;
+  margin-left: auto;
+}
+#account-creation-section-1 .dropdown:nth-of-type(1) {
+  width: 30.3%;
+}
+#account-creation-section-1 .dropdown:nth-of-type(2) {
+  width: 34.3%;
+}
+#account-creation-section-1 .dropdown:nth-of-type(3) {
+  width: 32.3%;
+}
+#account-creation-section-1 .validation-advice {
+  margin: 0;
+  width: 88%;
 }
 .monogram-experience-page {
   overflow: visible;
@@ -11166,7 +11265,7 @@ body.billing-shipping-page {
   vertical-align: top;
   *display: inline;
   zoom: 1;
-  width: 150px;
+  width: 145px;
 }
 #page-shopping-cart-content .each-input .input-box {
   background-color: #756b66;

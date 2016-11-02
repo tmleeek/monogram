@@ -148,3 +148,41 @@ p {
   }
 }
 
+.giftvoucher-index-addredeem {
+  .messages {
+    position: absolute;
+    top: 125px;
+    left: 320px;
+  }
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  // width: 100%;
+  &:before {
+    font-family: FontAwesome;
+    content: "\f107";
+    position:absolute;
+    display:block;
+    top: 3px;
+    right: 12px;
+    pointer-events: none;
+    font-size: 10px;
+    color: @off-white;
+  }
+  select {
+    background-color: #756b66;
+    border: none;
+    height: 26px;
+    padding-left: 20px;   
+    width: 100%;              
+    .appearance(none);
+    text-indent: 0.01px;
+    text-overflow: '';
+    .round(0px);  
+    font-size: 10px;    
+    color: @off-white;
+    .body-font;      
+  }
+}
