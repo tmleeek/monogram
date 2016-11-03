@@ -5797,6 +5797,7 @@ p {
 }
 #desktop-footer #desktop-footer-ctas-container p {
   line-height: 15px;
+  margin-bottom: 0px;
 }
 #desktop-footer #desktop-footer-ctas-container a:hover {
   color: #262626;
@@ -5820,12 +5821,13 @@ p {
   border-bottom: 1px solid #f1efee;
   font-family: 'Brandon Grotesque Regular', "Arial Black", Gadget, sans-serif;
   font-size: 10px;
-  color: #f1efee;
+  background-color: #f1efee;
+  color: #847870;
   text-transform: uppercase;
   width: 83%;
-  padding-top: 20px;
-  padding-bottom: 5px;
-  padding-left: 2px;
+  margin-top: 20px;
+  padding-left: 10px;
+  height: 30px;
   font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -5868,8 +5870,21 @@ p {
 }
 #desktop-footer #desktop-footer-ctas-container #footer-newsletter-input a {
   position: absolute;
-  right: 55px;
-  bottom: 10px;
+  right: 45px;
+  bottom: 0px;
+  background-color: rgba(132, 120, 112, 0.4);
+  width: 35px;
+  height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 6px;
+  font-size: 11px;
+  color: #6b615b;
+}
+#desktop-footer #desktop-footer-ctas-container #footer-newsletter-input .newsletter_ajax_loader {
+  position: absolute;
+  top: 27px;
+  right: 20px;
 }
 #desktop-footer #desktop-footer-logo-tnc-container {
   padding: 5px 0;
@@ -10759,6 +10774,19 @@ body.tea-layering-detail-page {
 #account-login-section-1 input[type=checkbox]:checked + label:after {
   opacity: 1;
 }
+#account-login-section-1 .forgot-password-submit {
+  vertical-align: middle!important;
+}
+#account-login-section-1 .back-to-login {
+  vertical-align: middle!important;
+  margin-left: 10px;
+  height: auto;
+  line-height: 10px;
+}
+#account-login-section-1 .validation-advice {
+  margin: 0px;
+  position: absolute;
+}
 .account-creation-page {
   overflow: visible;
 }
@@ -12581,6 +12609,24 @@ body.monogram-page-account-details #content-wrapper .col-main {
   padding-bottom: 100px;
 }
 body.monogram-page-account-details #content-wrapper .col-main .each-input {
+  margin: 0px;
+}
+body.monogram-page-account-details #content-wrapper .col-main .each-input .v-align {
+  padding: 0!important;
+}
+body.monogram-page-account-details #content-wrapper .col-main .each-input .v-align:nth-of-type(1) {
+  width: 40%!important;
+}
+body.monogram-page-account-details #content-wrapper .col-main .each-input .v-align:nth-of-type(2) {
+  width: 50%!important;
+}
+body.monogram-page-account-details #content-wrapper .col-main .each-input .v-align label {
+  width: 100%!important;
+}
+body.monogram-page-account-details #content-wrapper .col-main .each-input .v-align .input-box {
+  width: 100%!important;
+}
+body.monogram-page-account-details #content-wrapper .col-main .each-input {
   font-size: 0;
   margin-bottom: 20px;
   position: relative;
@@ -12647,7 +12693,7 @@ body.monogram-page-account-details #content-wrapper .col-main .each-input label 
   vertical-align: top;
   *display: inline;
   zoom: 1;
-  width: 50%;
+  width: 40%;
 }
 body.monogram-page-account-details #content-wrapper .col-main .each-input .input-box {
   background-color: #756b66;
@@ -12702,6 +12748,7 @@ body.monogram-page-account-details #content-wrapper .col-main .each-input input[
   line-height: 24px;
   color: #f1efee;
   background: transparent;
+  padding-left: 0px;
 }
 body.monogram-page-account-details #content-wrapper .col-main .each-input .intl-tel-input .phone_no_input {
   display: inline-block;
@@ -12735,6 +12782,7 @@ body.monogram-page-account-details #content-wrapper .col-main .each-input .dropd
   zoom: 1;
   width: 50%;
   position: relative;
+  padding-left: 0px;
 }
 body.monogram-page-account-details #content-wrapper .col-main .each-input .dropdown:focus {
   border: none;
@@ -12771,25 +12819,6 @@ body.monogram-page-account-details #content-wrapper .col-main .each-input .dropd
 }
 body.monogram-page-account-details #content-wrapper .col-main .each-input .dropdown select option {
   color: #464646;
-}
-body.monogram-page-account-details #content-wrapper .col-main .each-input .dropdown:after {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\f107";
-  font-size: 13px;
-  line-height: 20px;
-  color: #f1efee;
-  text-align: center;
-  position: absolute;
-  top: 2px;
-  right: 4px;
-  width: 20px;
-  height: 20px;
-  pointer-events: none;
 }
 body.monogram-page-account-details #content-wrapper .col-main .each-input .gender-input {
   display: inline-block;
@@ -12860,6 +12889,7 @@ body.monogram-page-account-details #content-wrapper .col-main .each-input .check
   top: 0;
   left: 22px;
   right: 20px;
+  color: #f1efee;
 }
 body.monogram-page-account-details #content-wrapper .col-main .each-input input[type=checkbox]:checked + .checkbox-label span:before {
   content: "\f111";
@@ -13746,9 +13776,6 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   padding-left: 24px;
   text-align: left;
 }
-#monogram-page-account-reward-points-container .table-responsive table thead tr th:last-child {
-  padding-right: 24px;
-}
 #monogram-page-account-reward-points-container .table-responsive table tbody tr td {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
@@ -13841,11 +13868,14 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
 #monogram-page-account-details-refer-friends-container .refer-friend-form hr {
   display: none;
 }
-#monogram-page-account-details-refer-friends-container .refer-friend-form .form-list {
+#monogram-page-account-details-refer-friends-container .refer-friend-form #clone-form .form-list {
   display: inline-block;
   vertical-align: top;
   *display: inline;
   zoom: 1;
+}
+#monogram-page-account-details-refer-friends-container .refer-friend-form .form-list {
+  display: block;
 }
 #monogram-page-account-details-refer-friends-container .refer-friend-form .button-set {
   display: inline-block;
@@ -13942,6 +13972,9 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   outline: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+#monogram-page-account-details-refer-friends-container .refer-friend-form .validation-advice {
+  margin: 0px;
 }
 #monogram-page-account-details-refer-friends-container .referral-table .table-responsive {
   width: 100%;
