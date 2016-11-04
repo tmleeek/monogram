@@ -39,6 +39,7 @@
           </ul>
         </div>
 
+        <!-- 
         <div class="currency-switcher">
           <div class="currency-form" style="display: none;">
             <label for="select-currency">Your Currency:</label>
@@ -66,6 +67,7 @@
               <li><a href="#" id="USD">USD - US Dollar</a></li>
           </ul>
         </div>
+        -->
 
       </div>
     </div>
