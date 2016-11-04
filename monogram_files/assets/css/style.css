@@ -4922,11 +4922,6 @@ p {
 .custom-checkbox-container input[type=radio]:checked + label:after {
   opacity: 1;
 }
-.giftvoucher-index-addredeem .messages {
-  position: absolute;
-  top: 125px;
-  left: 320px;
-}
 .dropdown {
   display: inline-block;
   position: relative;
@@ -11394,6 +11389,9 @@ body.billing-shipping-page {
 #page-shopping-cart-content .each-input .dropdown select option {
   color: #464646;
 }
+#page-shopping-cart-content .each-input .dropdown:before {
+  content: "" !important;
+}
 #page-shopping-cart-content .each-input .dropdown:after {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
@@ -11508,6 +11506,38 @@ body.billing-shipping-page {
 }
 #page-shopping-cart-content .same-as-billing input[type=checkbox]:checked + .checkbox-label span:before {
   content: "\f111";
+}
+#page-shopping-cart-content #empty-cart h1 {
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f1efee;
+}
+#page-shopping-cart-content #empty-cart hr {
+  display: none;
+}
+#page-shopping-cart-content #empty-cart p {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: #f1efee;
+}
+#page-shopping-cart-content #empty-cart p a {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: #f1efee;
+}
+#page-shopping-cart-content #empty-cart p a:hover {
+  color: rgba(241, 239, 238, 0.5);
 }
 @media only screen and (max-width: 1199px) and (min-width: 992px) {
   #page-shopping-cart-content .each-input label {
@@ -11964,7 +11994,7 @@ body.billing-shipping-page {
 #page-shopping-cart-billing-container .dropdown-address label,
 #page-shopping-cart-shipping-container .dropdown-address label {
   display: block;
-  width: 80%;
+  width: 90%;
   overflow: hidden;
   white-space: nowrap;
   font-family: 'Domine', "Times New Roman", Times, serif;
@@ -12086,6 +12116,9 @@ body.billing-shipping-page {
   color: #f1efee;
   font-size: 27px;
   line-height: 30px;
+}
+#page-shopping-cart-cta-container .action-container {
+  position: relative;
 }
 #page-shopping-cart-billing-shipping-delivery-information {
   color: #f1efee;
@@ -12598,6 +12631,16 @@ body.monogram-page-account-details #content-wrapper .col-main .back-link a:hover
 }
 body.monogram-page-account-details #content-wrapper .col-main .back-link a small {
   display: none;
+}
+body.monogram-page-account-details #content-wrapper .col-main .referral-message {
+  position: absolute;
+  top: 125px;
+  left: 180px;
+}
+body.monogram-page-account-details #content-wrapper .col-main .redeem-message {
+  position: absolute;
+  top: 125px;
+  left: 320px;
 }
 body.monogram-page-account-details #content-wrapper .col-main {
   font-family: 'Domine', "Times New Roman", Times, serif;
@@ -13487,6 +13530,10 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   text-transform: uppercase;
   padding-left: 2px;
   padding-right: 2px;
+}
+#monogram-page-account-giftcard-container .table-responsive table tbody tr td.action .print,
+#monogram-page-account-giftcard-container .table-responsive table tbody tr td.action .email {
+  display: none;
 }
 #monogram-page-account-giftcard-detail-container .page-title {
   *zoom: 1;

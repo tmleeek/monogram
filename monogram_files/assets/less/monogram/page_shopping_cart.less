@@ -220,6 +220,10 @@ body.billing-shipping-page{
         }
       }
 
+      &:before {
+        content: ""!important;
+      }
+
       &:after{
         .fa;
         content: "\f107";
@@ -341,6 +345,36 @@ body.billing-shipping-page{
     }
   }
   */
+
+  #empty-cart {
+    h1{
+      .header-font;
+      font-size: 24px;
+      line-height: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: @off-white;
+    }
+    hr {
+      display: none;
+    }
+    p{
+      .body-font;
+      font-size: 12px;
+      line-height: 20px;
+      color: @off-white;
+      a {
+        .body-font;
+        font-size: 12px;
+        line-height: 20px;
+        color: @off-white;
+        &:hover {
+          color: rgba(241, 239, 238, 0.5);
+        }
+      }
+    }
+  }
+
 
 } // #page-shopping-cart-content
 
@@ -968,7 +1002,7 @@ body.billing-shipping-page{
     label{
 
       display: block;
-      width: 80%;
+      width: 90%;
       overflow: hidden;
       white-space: nowrap;
       .body-font;
@@ -1077,6 +1111,10 @@ body.billing-shipping-page{
         }
       }
     }
+  }
+
+  .action-container {
+    position: relative;
   }
 }
 
