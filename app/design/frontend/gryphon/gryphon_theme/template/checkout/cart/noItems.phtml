@@ -1,0 +1,54 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="page-shopping-cart-content">
+                    <div class="row">
+                        <div class="col-md-12"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
+                    </div>
+                    <div id="empty-cart" class="row">
+                        <div class="col-md-12">
+                            <h1><?php echo $this->__('Shopping Cart is Empty') ?></h1>
+                            <hr class="small" />
+                            <div class="space30"></div>
+                            <?php echo $this->getChildHtml('checkout_cart_empty_widget'); ?>
+                            <p><?php echo $this->__('You have no items in your shopping cart.') ?></p>
+                            <p><?php echo $this->__('Click <a href="%s">here</a> to continue shopping.', $this->getUrl('store.html')) ?></p> <?php //$this->getContinueShoppingUrl() ?>
+                            <?php echo $this->getChildHtml('shopping.cart.table.after'); ?>
+                            <div class="space100"></div>
+                            <div class="space100"></div>
+                            <div class="space100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+<!-- <script type="text/javascript" src="http://gryphontea.com/skin/frontend/gryphon/gryphon_theme/js/no-banner.js"></script> -->

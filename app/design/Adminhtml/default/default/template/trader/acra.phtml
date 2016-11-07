@@ -1,0 +1,52 @@
+<?php
+$customer = Mage::registry('current_customer');
+$customer_email = $customer->getEmail();
+$customer_id = $customer->getId();
+?>
+
+<div style="" id="customer_info_tabs_customer_edit_tab_action_content">
+<div id="customer_info_tabs_customer_edit_tab_action_content">
+    <div class="entry-edit">
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend">View ACRA document</h4>
+        </div>
+        <div class="fieldset fieldset-wide" id="group_fields4">
+            <div class="hor-scroll">
+                <table cellspacing="10" cellpadding="10">
+                    <tbody>
+                            <tr>
+                                <td>
+                                    <?php 
+										$filepath = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'trader/trader_'.$customer_id.'.pdf';	
+										$filepath2 = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'trader/trader_'.$customer_id.'.PDF';											
+
+										$media = Mage::getBaseDir('media');
+										$localfolder = $media . DS. "trader". DS. "trader_".$customer_id.'.pdf';
+										$localfolder2 = $media . DS. "trader". DS. "trader_".$customer_id.'.PDF';
+
+										if(file_exists($localfolder))
+										{
+										?>
+										<a href="<?php echo $filepath ?>" target="_blank">View ACRA document</a>
+										<?php										
+										}elseif(file_exists($localfolder2))
+										{
+										?>
+										<a href="<?php echo $filepath2 ?>" target="_blank">View ACRA document</a>
+										<?php										
+										}else
+										{
+											echo '<b>No ACRA document Found!</b>';
+										}
+										?>
+                                </td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+

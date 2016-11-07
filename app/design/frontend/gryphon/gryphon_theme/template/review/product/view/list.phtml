@@ -1,0 +1,94 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+
+<?php $_items = $this->getReviewsCollection()->getItems();?>
+
+<article id="tea-product-detail-section-2">
+    <div class="container">
+        <div id="popular-tea-layering-container" class="row">      
+            <div class="col-md-12">
+                <h4><?php echo $this->__('Popular Tea Layering'); ?></h4>
+                <?php if (count($_items)):?>
+                    <?php echo $this->getChildHtml('toolbar') ?>      
+                    <?php foreach ($_items as $_review):?>
+                        <div class="review-product">
+                            <?php $product = Mage::getModel('catalog/product')->load($this->getProduct()->getId()); ?>
+                            <img src="<?php echo $this->helper('catalog/image')->init($product, 'small_image')->resize(123, 146); ?>" alt="">                
+                            <h3><?php echo $this->getProduct()->getName(); ?>+ <br><?php echo nl2br($this->escapeHtml($_review->getTitle())) ?></h3>
+                            <h5><?php echo $this->__('by %s', $this->escapeHtml($_review->getNickname())) ?></h5>
+                            <p><?php echo nl2br($this->escapeHtml($_review->getDetail())) ?></p>
+                        </div>            
+                    <?php endforeach; ?>
+                    <?php echo $this->getChildHtml('toolbar') ?>
+                <?php elseif($this->getParentBlock()): ?>
+                    <?php //echo $this->getParentBlock()->getReviewsSummaryHtml($this->getProduct(), 'short', true)?>
+                <?php endif;?>
+                <?php //echo $this->getChildHtml('review_form') ?>
+            </div>
+        </div>
+    </div>
+</article>
+
+<article id="tea-product-detail-section-3">
+    <div class="container">
+        <h4>write your review for the product layering</h4>
+        <div class="row">
+
+            <?php echo $this->getChildHtml('review_form') ?>
+                
+            <!-- <div class="col-md-4 col-md-offset-2">
+                <div class="row">
+                  <div class="col-md-5"><label for="">The Product</label></div>
+                  <div class="col-md-6"><h3><span style="color: #edbec9;">cherry</span> <span style="color: #eccdce">japonais</span></h3></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5"><label for="">Layering Tea</label></div>
+                  <div class="col-md-6">
+                    <div class="dropdown">
+                      <select name="layering_tea" id="layering-tea">
+                        <option value="">Choose the layering tea</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5"><label for="">Nickname</label></div>
+                  <div class="col-md-6"><input type="text" name="nickname"></div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="row">
+                  <div class="col-md-5"><label for="">layering comments</label></div>
+                  <div class="col-md-6">
+                    <textarea name="layering_comments" id="" cols="30" rows="10"></textarea>
+                    <a href="#" class="square-cta submit-review">Submit Review</a>
+                  </div>
+                </div>
+            </div> -->
+        </div>    
+    </div>
+</article>    

@@ -1,0 +1,85 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div class="row">
+	<div class="col-md-5 v-align">
+		<label for="<?php echo $this->getFieldId('gender')?>"<?php if ($this->isRequired()) echo ' class="required"' ?>><?php if ($this->isRequired()) echo '<em>*</em>' ?><?php echo $this->__('Gender') ?></label>
+	</div><!--
+  --><div class="col-md-7 v-align">
+			<div class="row">
+	      <div class="col-md-5">
+					<div class="custom-checkbox-container">
+		        <input class="gender" type="radio" id="female_gender" name="gender" value="Female">                      
+		        <label for="female_gender" class="custom-checkbox"></label>
+		      </div>
+		      <label for="gender">Female</label>
+	     	</div>
+	   	 	<div class="col-md-6">
+	   	 		<div class="custom-checkbox-container">
+		        <input class="gender" type="radio" id="male_gender" name="gender" value="Male" checked="checked">
+		        <label for="male_gender" class="custom-checkbox"></label>
+		      </div>
+		      <label for="gender">Male</label>
+	   	 	</div>
+	    </div>
+		</div>
+		<div class="dropdown" style="display:none;">
+		    <select id="hidden_<?php echo $this->getFieldId('gender')?>" name="<?php echo $this->getFieldName('gender')?>" title="<?php echo $this->__('Gender') ?>"<?php if ($this->isRequired()):?> class="validate-select"<?php endif; ?> <?php echo $this->getFieldParams() ?>>
+		        <?php $options = Mage::getResourceSingleton('customer/customer')->getAttribute('gender')->getSource()->getAllOptions();?>
+		        <?php $value = $this->getGender();?>
+		        <?php foreach ($options as $option):?>
+		            <option value="<?php echo $option['value'] ?>"<?php if ($option['value'] == $value) echo ' selected="selected"' ?>><?php echo $option['label'] ?></option>
+		        <?php endforeach;?>
+		    </select>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<script>
+	// $$('#gender-input input[type="checkbox"]').invoke('observe','click',function(field) {
+	//     if(this.checked && this.value=="Male") {
+	//     	$$('#gender-input select[name=="gender"]').value = 1;
+	//     }else if(this.checked && this.value=='Female') {
+	//     	$$('#gender-input select[name=="gender"]').value = 2;
+	//     }else {
+	//     	console.log('none');
+	//     }
+	// });	
+	jQuery(document).ready(function(){
+		var gender = jQuery('.gender');
+		gender.change(function() {
+	        if(jQuery(this).is(":checked")) {
+	        	if(jQuery(this).val()=='Male')
+	       			jQuery("#hidden_gender").val(1);
+	       		else
+	       			jQuery("#hidden_gender").val(2);
+	        }
+	    });
+
+	    gender.click(function() {
+		    gender.filter(':checked').not(this).removeAttr('checked');
+		});
+	});	
+</script>

@@ -1,0 +1,142 @@
+<!--@subject Newsletter unsubscription success @-->
+
+{{template config_path="design/email/header"}}
+{{inlinecss file="email-inline.css"}}
+
+<!-- ONE COLUMN SECTION -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#ffffff" align="center" style="padding: 0px 15px 70px 15px;" class="section-padding">
+            <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
+                <tr>
+                    <td>
+                        <!-- HERO IMAGE -->
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border: 2px solid #d7650f;padding: 45px 60px;margin-top: 40px;">
+                            <tr>
+                                <td class="padding-copy">
+                                    <h1 style="font-family: 'BombshellPro', Tahoma, Helvetica, Arial, sans-serif; color: #464646; font-size: 34px; text-align: center; padding-bottom: 10px;">We're sorry to see you go.</h1>
+									<p style="font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #464646; font-size: 12px; line-height: 19px; text-align: center;">Thank you for being part of us this whole time. <br> We hope that you have found our newsletters useful. <br> Please let us know what we can do to serve you better by giving us <br> some feedback. Do keep in touch with us by liking us on Facebook <br> and following us on Twitter. </p>
+                                </td>
+                            </tr>                                                        
+                        </table>
+                    </td>
+                </tr>
+            </table> 
+        </td>
+    </tr>
+</table>
+
+<!-- TWO COLUMN SECTION -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#f6f4f1" align="center" style="padding: 30px 15px 30px 15px;" class="section-padding">
+            <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
+                <tr>
+                    <td>
+                        <!-- TWO COLUMNS -->
+                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td valign="top" style="padding: 0;" class="mobile-wrapper">
+                                    <!-- LEFT COLUMN -->
+                                    <table cellpadding="0" cellspacing="0" border="0" align="left" class="responsive-table" style="width: 180px;">
+                                        <tr>
+                                            <td style="padding: 20px 0 40px 0;">
+                                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                    
+                                                    <tr>
+                                                        <td align="center" style="padding: 15px 0 0 0; font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; color: #333333; font-size: 12px;">CONTACT US</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" style="padding-bottom: 5px;">
+                                                            <table cellpadding="0" cellspacing="0" border="0" width="20" align="center" class="responsive-table">
+                                                                <tr>
+                                                                    <td aligh="center" width="20" style="width: 20px;height: 8px;border-bottom: 3px solid #ae4e0e;display: block;    margin: 0 auto;">&nbsp;</td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" style="padding: 5px 0 0 0; font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #666666; font-size: 11px; line-height: 16px;"><span class="appleBody">251 Pandan Loop <br> Singapore 128431</span><br><span class="appleBody" style="padding-top: 8px;display:block;color:#666;text-decoration:none;">+65 6779 2948</span></td>
+                                                    </tr>                                                    
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- CENTER COLUMN -->
+                                    <table cellpadding="0" cellspacing="0" border="0" align="left" class="responsive-table" style="width: 180px;">
+                                        <tr>
+                                            <td style="padding: 20px 0 40px 0;">
+                                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                    
+                                                    <tr>
+                                                        <td align="center" style="padding: 15px 0 0 0; font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; color: #333333; font-size: 12px;">EMAIL SETTINGS </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" style="padding-bottom: 5px;">
+                                                            <table cellpadding="0" cellspacing="0" border="0" width="20" align="center" class="responsive-table">
+                                                                <tr>
+                                                                    <td aligh="center" width="20" style="width: 20px;height: 8px;border-bottom: 3px solid #ae4e0e;display: block;    margin: 0 auto;">&nbsp;</td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" style="padding: 5px 0 0 0; font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #666666; font-size: 11px; line-height: 16px;"><span class="appleBody">To change your email settings or to unsubscribe emails containing special promotions, events and new products, <a href="{{var subscriber.getUnsubscriptionLink()}}" style="color: #666666; text-decoration: none;" class="{{var subscriber.getConfirmationLink()}}">click here.</a></span></td>
+                                                    </tr>                                                    
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- RIGHT COLUMN -->
+                                    <table cellpadding="0" cellspacing="0" border="0" align="left" class="responsive-table" style="width: 200px;">
+                                        <tr>
+                                            <td style="padding: 20px 0px 40px 30px;">
+                                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                    
+                                                    <tr>
+                                                        <td width="46%" colspan="6" align="center" style="padding: 15px 0 0 0; font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; color: #333333; font-size: 12px;">FOLLOW US</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" colspan="6" style="padding-bottom: 5px;">
+                                                            <table cellpadding="0" cellspacing="0" border="0" width="20" align="center" class="responsive-table">
+                                                                <tr>
+                                                                    <td aligh="center" width="20" style="width: 20px;height: 8px;border-bottom: 3px solid #ae4e0e;display: block;    margin: 0 auto;">&nbsp;</td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="12%" align="center" style="">
+                                                            <a href="https://instagram.com/gryphontea/" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://www.gryphontea.com/emailer/images/instagram.png" alt=""></a>
+                                                        </td>
+                                                        <td width="12%" align="center" style="">
+                                                            <a href="https://www.pinterest.com/gryphontea/" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://www.gryphontea.com/emailer/images/pintrest.png" alt=""></a>
+                                                        </td>
+                                                        <td width="12%" align="center" style="">
+                                                            <a href="https://www.facebook.com/gryphonteacompany" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://www.gryphontea.com/emailer/images/facebook.png" alt=""></a>
+                                                        </td>
+                                                        <td width="12%" align="center" style="">
+                                                            <a href="https://www.linkedin.com/company/gryphon-tea-company" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://www.gryphontea.com/emailer/images/linkedin.png" alt=""></a>
+                                                        </td>
+                                                        <td width="12%" align="center" style="">
+                                                            <a href="https://www.youtube.com/channel/UCrKNQcT3PHO-o_vQBMUlH8Q/videos" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://www.gryphontea.com/emailer/images/youtube.png" alt=""></a>
+                                                        </td>
+                                                        <td width="12%" align="center" style="">
+                                                            <a href="https://plus.google.com/+Gryphonteacompany/posts" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://www.gryphontea.com/emailer/images/google-plus.png" alt=""></a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>                
+            </table>
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer"}}

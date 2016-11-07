@@ -1,0 +1,738 @@
+<div class="subscription-form subscription" id="content-wrapper">
+
+		<div class="subscription-banner">
+			<div class="image-text-content container">
+				<div class="row">
+					<div class="col-md-12 caption-container">
+						<div class="caption">
+							<h1>The Gryphon Box</h1>
+							<p>A convenient way to save money and time, our subscription service allows you to enjoy a variety of teas at discounted prices, and have them helpfully delivered to your door every month.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="main-content">
+
+			<div class="first-content">
+
+				<div class="banner-text">
+					<div class="text-content container">
+						<div class="row">
+							<div class="col-md-12">
+								<h1>Artisan Curation</h1>
+
+								<hr class="small">
+
+								<div class="row">
+									<div class="col-md-8 col-md-offset-2">
+										<p class="hidden-xs hidden-sm">The choice is yours, as you pick an assortment from our esteemed<br> Artisan Selection, from the tried and tested to the exotic and experimental.</p>
+										<p class="visible-xs visible-sm">The choice is yours, as you pick an assortment from our esteemed Artisan Selection, from the tried and tested to the exotic and experimental.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			
+				<div class="image-text-content container">
+					<div class="all-products">							
+						<div class="row">
+							<div class="col-md-12">
+
+								<div class="each-product-container">
+									<?php   			
+											$category = Mage::getResourceModel('catalog/category_collection')
+												->addFieldToFilter('name', 'Collections')
+												->getFirstItem() // The parent category
+													->getChildrenCategories()
+													->addFieldToFilter('name', 'Artisan Selection')
+													->getFirstItem(); // The child category
+													
+											$locationskuSGPArray = array("SGP-ART-1M", "SGP-ART-3M", "SGP-ART-6M", "SGP-ART-12M", "SGP-GUR-1M", "SGP-GUR-3M", "SGP-GUR-6M", "SGP-GUR-12M","INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
+											
+											// $categoryId = $category->getId();
+											$categoryId = 115;
+											$cat = Mage::getModel('catalog/category')->load($categoryId);
+											$_productCollection = $cat->getProductCollection()
+												->addAttributeToSelect('*')
+												->addAttributeToFilter('status',1)
+												->addAttributeToFilter('visibility',array('neq' =>1))
+												->addAttributeToFilter('sku', array('nin' => $locationskuSGPArray))
+												->addAttributeToSort('name', Varien_Data_Collection::SORT_ORDER_ASC)
+												->load();
+												?>
+									<?php
+									$_helper = $this->helper('catalog/output'); 
+									foreach ($_productCollection as $_product):									
+									?>
+									<?php $_imgSize = 300; ?>
+									<div class="each-product">
+										<a href="<?php echo $_product->getProductUrl() ?>">
+											<img alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="img-responsive" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize($_imgSize); ?>">
+										</a>		
+										<a class="product-caption" href="<?php echo $_product->getProductUrl() ?>">
+											<h4><?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></h4>											
+											<p><?php echo $this->helper('catalogcustomiser')->getTypesCategory($_product, $this->getLayer()->getCurrentCategory()->getName()); ?></p>
+											</a><p class="product-qty"><a class="product-caption" href="<?php echo $_product->getProductUrl() ?>">
+							        	</a><a data-pid="<?php echo $_product->getId() ?>" class="minus" href="#"></a>
+							        	<span class="qty">0</span>
+							        	<a data-pid="<?php echo $_product->getId() ?>" class="add" href="#"></a>
+									    </p>
+										<input type="hidden" id="<?php echo $_product->getId() ?>" class="<?php echo $_product->getId() ?>" value="" />
+									</div>
+									<?php endforeach; ?>
+									<div class="each-product selected-tea">
+										<span class="small">30 Sachets left</span>
+										<h2 class="selected_tea_count">0</h2>
+										<h4>no. of sachets <br> selected</h4>										
+									</div>
+									
+								</div> <!-- each-product-container -->
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
+			<div class="second-content">
+
+				<div class="image-text-content container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="table-1">
+								<h1>plans in singapore</h1>
+								<hr class="small">
+								
+								<div class="table-responsive hidden-xs hidden-sm">
+									<table class="table">								  	
+								      	<tbody>
+										<?php
+										
+										$artisanSingaporeCollection = Mage::getModel('subscriptions/subscriptions')->getArtisanSingaporeSubscriptions();	
+										//echo count($artisanSingaporeCollection->getData());exit;								
+										$cnt = 1;
+										foreach($artisanSingaporeCollection->getData() as $productsing):
+											$_productId = $productsing['entity_id'];
+											$_productsingpur = Mage::getModel('catalog/product')->load($_productId);
+											
+											$nameStart = substr($_helper->productAttribute($_productsingpur, $_productsingpur->getName() , 'name'), 0,2);
+											$monthtext = ' MONTHS';
+											if($cnt == 1)
+											{
+												$monthtext = ' MONTH';
+										
+												$equivalent = ($_productsingpur->getPrice()/30);
+											}else if($cnt == 2)
+											{										
+												$equivalent = ($_productsingpur->getPrice()/90);
+											}else if($cnt == 3)
+											{										
+												$equivalent = ($_productsingpur->getPrice()/180);
+											}else
+											{										
+												$equivalent = ($_productsingpur->getPrice()/360);
+											}
+											
+										?>
+									        <tr>
+											<?php if(count($artisanSingaporeCollection->getData()) == $cnt){
+												?>
+												<td class="col-1"><div class="certificate-icon"></div><div class="certificate-text"><h3><?php echo $nameStart.$monthtext ?><!--<br><span>SGP Subscription</span>--></h3></div></td>
+												<?php 
+											}else{
+												?>
+												<td class="col-1"><h3><?php echo $nameStart.$monthtext ?><!--<br><span>SGP Subscription</span>--></h3></td>
+												<?php 
+											}
+											?>
+									          	
+									          	<td class="col-2"><p><?php echo $_helper->productAttribute($_productsingpur, $_productsingpur->getShortDescription() , 'short_description'); ?></p></td>
+									          	<td class="col-3"><h3><?php echo Mage::helper('core')->currency($_productsingpur->getPrice(),true,false); ?><br><span>shipping included</span></h3></td>
+									          	<td class="col-4"><p>Equivalent to <br> <?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per sachet</p></td>
+												
+									          	<td class="col-5">
+										          	<a class="add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpur) ?>">
+										          		<i class="fa fa-plus"></i><span>Add to Cart</span>
+														<span class='ajax_loader_product' style='display:none'><img src='<?php echo $this->getSkinUrl('images/content/opc-ajax-loader.gif')?>'/></span>
+										          	</a>
+										          	<span class="error-msg"></span>
+									          	</td>
+									        </tr>
+											
+											
+									       <?php 
+										   $cnt++;
+										   endforeach; ?>
+										   
+								      	</tbody>
+									</table>
+								</div>
+
+								<div id="sg-subscription-slick" class="subscription-slick plans visible-xs visible-sm">
+									<?php
+									$artisanSingaporeCollection = Mage::getModel('subscriptions/subscriptions')->getArtisanSingaporeSubscriptions();	
+									//echo count($artisanSingaporeCollection->getData());exit;								
+									$cnt = 1;
+									foreach($artisanSingaporeCollection->getData() as $productsing):
+										$_productId = $productsing['entity_id'];
+										$_productsingpur = Mage::getModel('catalog/product')->load($_productId);
+										
+										$nameStart = substr($_helper->productAttribute($_productsingpur, $_productsingpur->getName() , 'name'), 0,2);
+										$monthtext = ' MONTHS';
+										if($cnt == 1)
+										{
+											$monthtext = ' MONTH';
+									
+											$equivalent = ($_productsingpur->getPrice()/30);
+
+											$first_add_to_cart_url = $this->getAddToCartUrl($_productsingpur);
+										}else if($cnt == 2)
+										{										
+											$equivalent = ($_productsingpur->getPrice()/90);
+										}else if($cnt == 3)
+										{										
+											$equivalent = ($_productsingpur->getPrice()/180);
+										}else
+										{										
+											$equivalent = ($_productsingpur->getPrice()/360);
+										}
+										
+									?>	
+										<div class="plan">
+											<div class="background">
+												<?php if(count($artisanSingaporeCollection->getData()) == $cnt){
+													?>
+													<div class="certificate-icon"></div>
+													<div class="certificate-text"><h3><?php echo $nameStart.$monthtext ?></h3></div>
+													<h5><?php echo $_helper->productAttribute($_productsingpur, $_productsingpur->getShortDescription() , 'short_description'); ?></h5>
+													<?php 
+												}else{
+													?>
+													<h3><?php echo $nameStart.$monthtext ?><!--<br><span>SGP Subscription</span>--></h3>
+													<h5><?php echo $_helper->productAttribute($_productsingpur, $_productsingpur->getShortDescription() , 'short_description'); ?></h5>
+													<?php 
+												}
+												?>
+										          	<p class="price"><?php echo Mage::helper('core')->currency($_productsingpur->getPrice(),true,false); ?><br><span>shipping included</span></p>
+										          	<p>Equivalent to <br> <?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per sachet</p>
+											</div>
+								          	<a class="hidden-xs hidden-sm actual-add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpur) ?>"><span>Add to Cart</span></a>								          	
+								        </div>
+
+							          	
+									<?php 
+									   $cnt++;
+									   endforeach; 
+									?>
+								</div>
+								<a id="sg-add-to-cart-btn" class="add-to-cart-btn visible-xs visible-sm" href="javascript:void(0);" data-addtocarturl="<?php echo $first_add_to_cart_url; ?>"><span>Add to Cart</span><span class='ajax_loader_product' style='display:none'><img src='<?php echo $this->getSkinUrl('images/content/opc-ajax-loader.gif')?>'/></span></a>
+								<span class="error-msg"></span>
+		
+
+								<div class="terms-icon"></div>
+								<div class="terms">
+									<p class="hidden-xs hidden-sm">Customers who sign-up for a 1 year subscription can get a 10% discount off on all other online purchases throughout the subscription period.</p>
+									<p class="hidden-xs hidden-sm">Not applicable with other special promotions or discounts.</p>
+									<!-- <p class="hidden-xs hidden-sm">Note: Subscription plans cannot be checked out with other product purchases.</p> -->
+
+
+									<p class="visible-xs visible-sm">Customers who sign-up for a 1 year subscription can get a 10% discount off on all other online purchases throughout the subscription period. Not applicable with other special promotions or discounts.</p>
+
+								</div>
+							</div>
+
+							<div class="table-2">
+								<h1>international plans</h1>
+								<hr class="small">
+								
+								<div class="table-responsive hidden-xs hidden-sm">	
+									<table class="table">	
+
+								      	<tbody>
+									       <?php
+										
+										$artisanSingaporeIntCollection = Mage::getModel('subscriptions/subscriptions')->getArtisanInternationalSubscriptions();	
+										//echo count($artisanSingaporeCollection->getData());exit;								
+										$cnt = 1;
+										foreach($artisanSingaporeIntCollection->getData() as $productsingint):
+											$_productIdInt = $productsingint['entity_id'];
+											$_productsingpurint = Mage::getModel('catalog/product')->load($_productIdInt);
+											
+											$nameStart = substr($_helper->productAttribute($_productsingpurint, $_productsingpurint->getName() , 'name'), 0,2);
+											$monthtext = ' MONTHS';
+											if($cnt == 1)
+											{
+												$monthtext = ' MONTH';
+										
+												$equivalent = ($_productsingpurint->getPrice()/30);
+											}else if($cnt == 2)
+											{										
+												$equivalent = ($_productsingpurint->getPrice()/90);
+											}else if($cnt == 3)
+											{										
+												$equivalent = ($_productsingpurint->getPrice()/180);
+											}else
+											{										
+												$equivalent = ($_productsingpurint->getPrice()/360);
+											}
+											
+										?>
+									        <tr>
+											<?php if(count($artisanSingaporeCollection->getData()) == $cnt){
+												?>
+												<td class="col-1"><div class="certificate-icon"></div><div class="certificate-text"><h3><?php echo $nameStart.$monthtext ?><!--<br><span>SGP Subscription</span>--></h3></div></td>
+												<?php 
+											}else{
+												?>
+												<td class="col-1"><h3><?php echo $nameStart.$monthtext ?><!--<br><span>SGP Subscription</span>--></h3></td>
+												<?php 
+											}
+											?>
+									          	
+									          	<td class="col-2"><p><?php echo $_helper->productAttribute($_productsingpurint, $_productsingpurint->getShortDescription() , 'short_description'); ?></p></td>
+									          	<td class="col-3"><h3><?php echo Mage::helper('core')->currency($_productsingpurint->getPrice(),true,false); ?><br><span>shipping included</span></h3></td>
+									          	<td class="col-4"><p>Equivalent to <br> <?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per sachet</p></td>
+									          	<td class="col-5">
+									          		<a class="add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpurint) ?>"><i class="fa fa-plus"></i><span>Add to Cart</span>
+									          			<span class='ajax_loader_product' style='display:none'><img src='<?php echo $this->getSkinUrl('images/content/opc-ajax-loader.gif')?>'/></span>
+									          		</a>
+									          		<span class="error-msg"></span>
+									          	</td>
+									        </tr>
+											
+									       <?php 
+										   $cnt++;
+										   endforeach; ?>
+								      	</tbody>
+									</table>
+								</div>
+
+								<div id="int-subscription-slick" class="subscription-slick plans visible-xs visible-sm">
+									<?php										
+									$artisanSingaporeIntCollection = Mage::getModel('subscriptions/subscriptions')->getArtisanInternationalSubscriptions();	
+									//echo count($artisanSingaporeCollection->getData());exit;								
+									$cnt = 1;
+									foreach($artisanSingaporeIntCollection->getData() as $productsingint):
+										$_productIdInt = $productsingint['entity_id'];
+										$_productsingpurint = Mage::getModel('catalog/product')->load($_productIdInt);
+										
+										$nameStart = substr($_helper->productAttribute($_productsingpurint, $_productsingpurint->getName() , 'name'), 0,2);
+										$monthtext = ' MONTHS';
+										if($cnt == 1)
+										{
+											$monthtext = ' MONTH';
+									
+											$equivalent = ($_productsingpurint->getPrice()/30);
+
+											$first_add_to_cart_url = $this->getAddToCartUrl($_productsingpurint);
+										}else if($cnt == 2)
+										{										
+											$equivalent = ($_productsingpurint->getPrice()/90);
+										}else if($cnt == 3)
+										{										
+											$equivalent = ($_productsingpurint->getPrice()/180);
+										}else
+										{										
+											$equivalent = ($_productsingpurint->getPrice()/360);
+										}
+										
+									?>
+										<div class="plan">
+											<div class="background">
+												<?php if(count($artisanSingaporeCollection->getData()) == $cnt){
+													?>
+													<div class="certificate-icon"></div>
+													<div class="certificate-text"><h3><?php echo $nameStart.$monthtext ?></h3></div>
+													<h5><?php echo $_helper->productAttribute($_productsingpurint, $_productsingpurint->getShortDescription() , 'short_description'); ?></h5>
+													<?php 
+												}else{
+													?>
+													<h3><?php echo $nameStart.$monthtext ?><!--<br><span>SGP Subscription</span>--></h3>
+													<h5><?php echo $_helper->productAttribute($_productsingpurint, $_productsingpurint->getShortDescription() , 'short_description'); ?></h5>
+													<?php 
+												}
+												?>
+										          	<p class="price"><?php echo Mage::helper('core')->currency($_productsingpurint->getPrice(),true,false); ?><br><span>shipping included</span></p>
+										          	<p>Equivalent to <br> <?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per sachet</p>
+											</div>
+								          	<a class="hidden-xs hidden-sm actual-add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpurint) ?>"><span>Add to Cart</span></a>
+								        </div>								        
+								   <?php 
+								   $cnt++;
+								   endforeach; 
+								   ?>
+								</div>
+								<a id="int-add-to-cart-btn" class="add-to-cart-btn visible-xs visible-sm" href="javascript:void(0);" data-addtocarturl="<?php echo $first_add_to_cart_url; ?>"><span>Add to Cart</span><span class='ajax_loader_product' style='display:none'><img src='<?php echo $this->getSkinUrl('images/content/opc-ajax-loader.gif')?>'/></span></a>
+						        <span class="error-msg"></span>
+	
+
+								<div class="terms-icon"></div>
+								<div class="terms">									
+									<p class="hidden-xs hidden-sm">Customers who sign-up for a 1 year subscription can get a 10% discount off on all other online purchases throughout the subscription period.</p>
+									<p class="hidden-xs hidden-sm">Not applicable with other special promotions or discounts.</p>
+									<!-- <p class="hidden-xs hidden-sm">Note: Subscription plans cannot be checked out with other product purchases.</p> -->
+									
+									<p class="visible-xs visible-sm">Customers who sign-up for a 1 year subscription can get a 10% discount off on all other online purchases throughout the subscription period. Not applicable with other special promotions or discounts.</p>
+								</div>
+							</div>							
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="last-content">
+				<h1>WHAT YOU GET</h1>
+				<hr class="small">
+				
+				<div class="all-products container">
+					<div class="row">
+						<div class="col-md-12">
+
+							<div class="mobile-artisan-what-you-get-slider">
+								<div class="each-product">
+									<!-- <a href="product.html"> -->		
+										<img alt="product" class="img-responsive" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) ?>frontend/gryphon/gryphon_theme/images/content/subscription/subscription-2.jpg">
+									<!-- </a>		
+									<a class="product-caption" href="product.html"> -->
+										<h4>THE TEA</h4>
+										<p>Peruse and personalise the 30 silken sachets that will be delivered each month. </p>
+									<!-- </a> -->
+								</div>
+							
+								<div class="each-product">
+									<!-- <a href="product.html"> -->
+										<img alt="product" class="img-responsive" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) ?>frontend/gryphon/gryphon_theme/images/content/subscription/subscription-3.jpg">
+									<!-- </a>		
+									<a class="product-caption" href="product.html"> -->
+										<h4>THE FLEXIBILITY</h4>
+										<p>Let us know by the 17th of the month if you wish to make a change to your selection, and it will be ready for your next delivery. </p>													
+									<!-- </a> -->
+								</div>
+							
+								<div class="each-product">
+									<!-- <a href="product.html"> -->													
+										<img alt="product" class="img-responsive" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) ?>frontend/gryphon/gryphon_theme/images/content/subscription/gourmet-subscription-1.jpg">
+									<!-- </a>		
+									<a class="product-caption" href="product.html"> -->
+										<h4>THE EXTRAS</h4>
+										<p>With a one-year subscription, you receive 10% off all other regularly priced online orders.</p>
+										<p class="terms">Not applicable with other special promotions or discounts.</p>
+									<!-- </a> -->
+								</div>
+							
+								<div class="each-product">
+									<!-- <a href="product.html"> -->													
+										<img alt="product" class="img-responsive" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) ?>frontend/gryphon/gryphon_theme/images/content/subscription/subscription-4.jpg">
+									<!-- </a>		
+									<a class="product-caption" href="product.html"> -->
+										<h4>THE DELIVERY</h4>
+										<p>Order by the 17th of each month and have your tea shipped from our warehouse promptly on the 23rd, or the next available business day, along with tracking information sent via email.</p>													
+									<!-- </a> -->
+								</div>
+							</div>
+						</div>
+					</div>									
+				</div>
+
+			</div>
+			
+		</div>
+
+	</div>
+	<?php 
+	    $non_subscription_in_the_cart = 0;
+	    $allskus = array("SGP-ART-1M", "SGP-ART-3M", "SGP-ART-6M", "SGP-ART-12M", "SGP-GUR-1M", "SGP-GUR-3M", "SGP-GUR-6M", "SGP-GUR-12M","INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
+	    $quote = Mage::getSingleton('checkout/session')->getQuote();
+	    foreach ($quote->getAllVisibleItems() as $item) {
+	        $itemsku = $item->getProduct()->getData('sku');        
+	        if(!in_array($itemsku, $allskus)) {
+	            $non_subscription_in_the_cart = 1;
+	        }
+	    }
+	?>
+	<script type="text/javascript">
+		function do_update() {
+            jQuery.ajax({
+                url: '<?php echo $this->getUrl("discovertea/index/cartpreview"); ?>',
+                dataType: 'json',
+                type : 'get',
+                success: function(data){
+
+                    jQuery('.cart-preview-content').html('');
+                    jQuery.each(data.cart_items, function(key,value){
+
+                        jQuery('.cart-preview-content').append('<ul class="cart-content"><li><img src="'+value.image+'" alt=""><span>'+value.name+'</span></li><li>'+value.qty+'</li><li>'+value.row_price+'</li></ul>');
+
+                        jQuery('.cart-summary').find('.total-items-count').html(data.cart_qty);
+                        jQuery('.cart-summary').find('.sub-total-amount').html(data.cart_total);
+
+                    });
+
+                    jQuery('.cart-header').show();
+                    jQuery('.cart-summary').show();
+                    jQuery('.cta-btns').show();
+                    jQuery('#main-header .cart-preview-select').show();
+                    jQuery('#main-header .cart-preview-select').delay(5000).hide(400);
+
+                    var mobile_header = jQuery("#main-mobile-header").data('gryphon_mobile_header');
+                    mobile_header.public_open_cart();
+                    //jQuery('#mobile-cart-expand-container').show();
+                    
+
+                    jQuery('.mobile-cart-button').find('span').html(data.cart_qty);
+                    jQuery('.cart-summary-data').find('.price').html(data.cart_total);
+                    jQuery('.cart-summary-data').find('.count').html(data.cart_qty);
+                    jQuery('.cart-summary-data span').html('<span class="price">'+data.cart_total+'</span> (<span class="count">'+data.cart_qty+'</span>)');
+                }
+            });
+        }
+
+		function addtocartCustom(addtocartUrl, el)
+		{
+	            var counter = 0;
+			//alert(addtocartUrl);		
+			var jsonObject = '{';
+			jQuery('.each-product input:hidden').each(function() {
+				var hiddenvalue = jQuery(this).val();			
+				var pid = jQuery(this).attr('id');
+				
+				if(hiddenvalue != "" && hiddenvalue >0) 
+				{
+					jsonObject += '"'+pid+'":'+hiddenvalue;
+					jsonObject += ',';
+	                                counter = counter + hiddenvalue;
+					//alert(pid);
+					//alert(hiddenvalue);	
+				}
+				
+				// do something with the value
+			});
+			jsonObject += '}';
+			if(counter < 1)
+	                {
+	                    alert("Please Select Tea");
+	                    return false;
+	                }
+			var jsonObjectEncoded = encodeURIComponent(jsonObject);
+
+			jQuery(el).find('.ajax_loader_product').show();
+			//alert(jsonObjectEncoded);
+			
+	        // setLocation(addtocartUrl+'pg/'+jsonObjectEncoded);
+		    
+	        jQuery.get(addtocartUrl+'pg/'+jsonObjectEncoded, function( data ) {			  	
+				if(data=='Sorry, you either purchase  Singapore OR International Subscription not both.') {
+					alert(data);
+					jQuery(el).find('.ajax_loader_product').hide();	  	
+				}else {
+					do_update();	
+			  		jQuery(el).find('.ajax_loader_product').hide();		  	
+				}			  	
+			});
+		    			
+		}		
+											
+		jQuery(document).ready(function($) {
+
+			if( jQuery(window).width() < 992 ){
+				jQuery(window).scroll(function(event){
+
+					if(jQuery(window).scrollTop() > 257){
+						jQuery('.subscription-form .all-products .selected-tea').addClass('sticky-version');
+					} else {
+						jQuery('.subscription-form .all-products .selected-tea').removeClass('sticky-version');
+					}
+				})
+			}
+			
+
+
+			var total_tea_selected = 0;
+			var arr = jQuery(".each-product");
+			var product_element = null;
+
+			for (var i = 0, l = arr.length; i < l; i++) {
+
+				product_element = jQuery(arr[i]);
+				product_element.data('count', 0);
+				
+				product_element.find(".add").click(function(event){
+					event.preventDefault();
+					var product = jQuery(event.currentTarget).closest('.each-product');
+					var count = product.data('count');
+					var pid = jQuery(event.currentTarget).closest('.add').data('pid');
+
+					var target_count = count + 1;
+
+					if(total_tea_selected + 1 <= 30){
+						product.data('count', target_count);
+						total_tea_selected++;
+						product.find('p .qty').html(target_count);
+
+						jQuery(".each-product.selected-tea .small").html( (30 - total_tea_selected) +  " teas left");
+						jQuery(".each-product.selected-tea .selected_tea_count").html("" + total_tea_selected);
+						
+						jQuery("#"+pid).val(target_count);
+															
+			
+					}
+
+					
+				}.bind(this));
+				product_element.find(".minus").click(function(event){
+
+					event.preventDefault();
+					var product = jQuery(event.currentTarget).closest('.each-product');
+					var count = product.data('count');
+					var pid = jQuery(event.currentTarget).closest('.minus').data('pid');
+					var target_count = count - 1;
+
+					if(target_count >= 0){
+
+						product.data('count', target_count);
+						total_tea_selected--;
+						product.find('p .qty').html(target_count);
+
+						jQuery(".each-product.selected-tea .small").html( (30 - total_tea_selected) +  " teas left");
+						jQuery(".each-product.selected-tea .selected_tea_count").html("" + total_tea_selected);
+						
+						jQuery("#"+pid).val(target_count);
+					}
+
+					
+				}.bind(this));
+
+			} // end for
+		});
+	</script>
+
+	<script>
+            
+	/*
+	$('.add').on('click',function(e){
+		e.preventDefault();
+    var $qty=$(this).closest('p').find('.qty');
+    var currentVal = parseInt($qty.text());
+    if (!isNaN(currentVal)) {
+        $qty.text(currentVal + 1);
+    }
+  });
+  $('.minus').on('click',function(e){
+  	e.preventDefault();
+	  var $qty=$(this).closest('p').find('.qty');
+	  var currentVal = parseInt($qty.text());
+	  if (!isNaN(currentVal) && currentVal > 0) {
+	      $qty.text(currentVal - 1);
+	  }
+  });
+	*/
+
+	var initialLoad = true;
+	jQuery(document).ready(function(){		
+	    jQuery(window).on('scroll', function() {
+	        var scrollPos = jQuery(window).scrollTop();
+	        
+	        if( ( scrollPos != 0 ) ) {
+	            console.log('scrolling')
+	            jQuery('#header-wrapper').addClass('shadow');
+	        }       
+	        else if( ( scrollPos === 0 ) ) {
+	            jQuery('#header-wrapper').removeClass('shadow');
+	        }
+	    });
+
+	    initialLoad = false;
+
+	    jQuery('.subscription-slick').slick({
+	        dots: false,
+	        infinite: false,
+	        speed: 300,
+	        slidesToShow: 5,
+	        slidesToScroll: 1,
+	        responsive: [
+	            {
+	                breakpoint: 1099,
+	                settings: {
+	                    slidesToShow: 4,
+	                    slidesToScroll: 1,
+	                    infinite: true,
+	                    dots: false
+	                }
+	            },
+	            {
+	                breakpoint: 960,
+	                settings: {
+	                    slidesToShow: 3,
+	                    slidesToScroll: 1,
+	                    infinite: true,
+	                    dots: false
+	                }
+	            },
+	            {
+	                breakpoint: 760,
+	                settings: {
+	                    slidesToShow: 2,
+	                    slidesToScroll: 1,
+	                    infinite: true,
+	                    dots: false
+	                }
+	            },
+	            {
+	                breakpoint: 600,
+	                settings: {
+	                    slidesToShow: 1,
+	                    slidesToScroll: 1,
+	                    infinite: true,
+	                    dots: false
+	                }
+	            }                      
+	        ]
+	    });
+
+		// On before slide change
+		var sgSlick = jQuery('#sg-subscription-slick');
+		sgSlick.on('afterChange', function(event, slick, currentSlide){			
+		  sgSlick.find('.plan').each(function(){
+		  	var slickIndex = jQuery(this).data('slick-index');
+		  	if(parseInt(currentSlide) == parseInt(slickIndex)) {
+		  		var AddToCartUrl = jQuery(this).children('.actual-add-to-cart-btn').data('addtocarturl');
+		  		// console.log(AddToCartUrl);
+		  		jQuery('#sg-add-to-cart-btn').attr('data-addtocarturl', AddToCartUrl);
+		  	}
+		  });
+		});
+
+		// On before slide change
+		var intSlick = jQuery('#int-subscription-slick');
+		intSlick.on('afterChange', function(event, slick, currentSlide){			
+		  intSlick.find('.plan').each(function(){
+		  	var slickIndex = jQuery(this).data('slick-index');
+		  	if(parseInt(currentSlide) == parseInt(slickIndex)) {
+		  		var AddToCartUrl = jQuery(this).children('.actual-add-to-cart-btn').data('addtocarturl');
+		  		// console.log(AddToCartUrl);
+		  		jQuery('#int-add-to-cart-btn').attr('data-addtocarturl', AddToCartUrl);
+		  	}
+		  });
+		});
+
+		jQuery('.subscription-form').on('click', '.add-to-cart-btn', function(e){
+			e.preventDefault();
+			var AddToCartUrl = jQuery(this).attr('data-addtocarturl');
+			var non_subscription_in_the_cart = "<?php echo $non_subscription_in_the_cart ?>";
+			// console.log(AddToCartUrl);
+
+			if(non_subscription_in_the_cart==1) {					
+				jQuery(this).next('span.error-msg').html('This subscription plan cannot be purchased with other items in the cart. Please check out first before making any other purchases.');
+			}else {
+				addtocartCustom(AddToCartUrl, this);
+			}				
+		});
+	});
+	</script>

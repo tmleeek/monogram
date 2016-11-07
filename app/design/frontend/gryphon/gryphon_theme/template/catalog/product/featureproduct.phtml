@@ -1,0 +1,326 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Product list template
+ *
+ * @see Mage_Catalog_Block_Product_List
+ */
+/* @var $this Mage_Catalog_Block_Product_List */
+?>
+<?php
+    // $_productCollection=$this->getLoadedProductCollection()->addAttributeToSort('pos‌​ition');
+    $_productCollection = Mage::getModel('catalog/category')->load(92)
+                         ->getProductCollection()
+                         ->addAttributeToSelect('*')
+                         ->addAttributeToFilter('status', 1) // enabled
+                         ->addAttributeToFilter('visibility', 4) //visibility in catalog,search
+                         ->addAttributeToSort('position', Varien_Data_Collection::SORT_ORDER_ASC);
+    $_helper = $this->helper('catalog/output');    
+
+    function isMobile()  
+    {  
+        $regex_match = "/(nokia|iphone|android|motorola|^mot\-|softbank|foma|docomo|kddi|up\.browser|up\.link|"  
+                     . "htc|dopod|blazer|netfront|helio|hosin|huawei|novarra|CoolPad|webos|techfaith|palmsource|"  
+                     . "blackberry|alcatel|amoi|ktouch|nexian|samsung|^sam\-|s[cg]h|^lge|ericsson|philips|sagem|wellcom|bunjalloo|maui|"  
+                     . "symbian|smartphone|mmp|midp|wap|phone|windows ce|iemobile|^spice|^bird|^zte\-|longcos|pantech|gionee|^sie\-|portalmmm|"  
+                     . "jig\s browser|hiptop|^ucweb|^benq|haier|^lct|opera\s*mobi|opera\*mini|320x320|240x320|176x220"  
+                     . ")/i";  
+
+        if (preg_match($regex_match, strtolower($_SERVER['HTTP_USER_AGENT']))) {  
+            return TRUE;  
+        }  
+
+        if ((strpos(strtolower($_SERVER['HTTP_ACCEPT']),'application/vnd.wap.xhtml+xml') > 0) or ((isset($_SERVER['HTTP_X_WAP_PROFILE']) or isset($_SERVER['HTTP_PROFILE'])))) {  
+            return TRUE;  
+        }      
+
+        $mobile_ua = strtolower(substr($_SERVER['HTTP_USER_AGENT'], 0, 4));  
+        $mobile_agents = array(  
+            'w3c ','acs-','alav','alca','amoi','audi','avan','benq','bird','blac',  
+            'blaz','brew','cell','cldc','cmd-','dang','doco','eric','hipt','inno',  
+            'ipaq','java','jigs','kddi','keji','leno','lg-c','lg-d','lg-g','lge-',  
+            'maui','maxo','midp','mits','mmef','mobi','mot-','moto','mwbp','nec-',  
+            'newt','noki','oper','palm','pana','pant','phil','play','port','prox',  
+            'qwap','sage','sams','sany','sch-','sec-','send','seri','sgh-','shar',  
+            'sie-','siem','smal','smar','sony','sph-','symb','t-mo','teli','tim-',  
+            'tosh','tsm-','upg1','upsi','vk-v','voda','wap-','wapa','wapi','wapp',  
+            'wapr','webc','winw','winw','xda ','xda-');  
+
+        if (in_array($mobile_ua,$mobile_agents)) {  
+            return TRUE;  
+        }  
+
+        if (isset($_SERVER['ALL_HTTP']) && strpos(strtolower($_SERVER['ALL_HTTP']),'OperaMini') > 0) {  
+            return TRUE;  
+        }  
+
+        return FALSE;  
+    }  
+?>
+<div id="home-tea-item-container">
+    <?php $count = 0; ?>
+    <?php foreach ($_productCollection as $key => $_product):    
+        $_imgSize = 300;
+        $_imgSize2x = 600;
+        $categoryIds = $_product->getCategoryIds();
+
+        $color_arr = ["#eebec7", "#abc6ca", "#a1b2ca", "#d9d1c3", "#c7b4e3", "#f0a693", "#beced6", "#fed198", "#c2cb7e", "#f9a960", "#fa91a2", "#bac4b8"];        
+
+        $product_name = $_product->getName();
+
+        $product_name = strtolower($product_name);
+        $product_name = str_replace(" ", "-", $product_name);
+    ?>
+    <div class="home-tea-item" data-id="<?php echo $product_name; ?>">
+        <div class="home-tea-item-bg" style="background-color: <?php echo $color_arr[$count]; ?>;"></div>
+        <div class="home-tea-item-text">
+            <?php if(!empty($_product->getData('product_name_in_color'))): ?>
+            <h2><?php echo $_product->getData('product_name_in_color') ?></h2>
+            <?php else: ?>
+            <h2><?php echo $_product->getName(); ?></h2>
+            <?php endif; ?>
+            <?php 
+            if(count($categoryIds) ){
+                foreach ($categoryIds as $key => $categoryId) {
+                    $_category = Mage::getModel('catalog/category')->load($categoryId);
+                    $parent_category = Mage::getModel('catalog/category')->load($categoryId)->getParentCategory();                                                        
+                    if($parent_category->getId()==5) { ?>
+                        <h5><?php echo $_category->getName(); ?></h5>                        
+            <?php   }
+                }
+            }
+            ?>
+            
+            <p><?php echo $_product->getShortDescription(); ?></p>
+            <div class="cta-container">
+                <a href="<?php echo $this->getAddToCartUrl($_product) ?>" class="arrow-cta">add to cart</a>
+                <a href="#graph/<?php echo $product_name; ?>" class="arrow-cta">see tea layering</a>
+            </div>
+        </div>
+        <div class="home-tea-item-cover"></div>
+    </div>
+    <?php $count++; ?>
+    <?php endforeach; ?>    
+    <!-- <div class="home-tea-item" data-id="uji-sencha">
+        <div class="home-tea-item-bg" style="background-color: #abc6ca;"></div>
+        <div class="home-tea-item-text">
+            <h2>
+                <span style="color: #acc6c9;">uji</span>
+                <span style="color: #bdc8c4;">sencha</span>
+            </h2>
+            <h5>Green Tea</h5>
+            <p>Expressive and Umami</p>
+            <div class="cta-container">
+                <a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+                <a href="#graph/uji-sencha" class="arrow-cta">see tea layering</a>
+            </div>
+        </div>
+        <div class="home-tea-item-cover"></div>
+    </div>
+
+    <div class="home-tea-item" data-id="milky-oolong">
+        <div class="home-tea-item-bg" style="background-color: #a1b2ca;"></div>
+        <div class="home-tea-item-text">
+            <h2>
+                <span style="color: #bbdce5;">jasmine</span>
+                <span style="color: #a3b1c8;">silk pearls</span>
+            </h2>
+            <h5>Green Tea</h5>
+            <p>Graceful and Floral</p>
+            <div class="cta-container">
+                <a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+                <a href="#graph/jasmine-silk-pearls" class="arrow-cta">see tea layering</a>
+            </div>
+        </div>
+        <div class="home-tea-item-cover"></div>
+    </div>
+
+    <div class="home-tea-item" data-id="milky-oolong">
+        <div class="home-tea-item-bg" style="background-color: #d9d1c3;"></div>
+        <div class="home-tea-item-text">
+            <h2>
+                <span style="color: #e3c19e;">milky</span>
+                <span style="color: #d8d2c4;">oolong</span>
+            </h2>
+            <h5>Oolong Tea</h5>
+            <p>Voluptuous and Velvety</p>
+            <div class="cta-container">
+                <a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+                <a href="#graph/milky-oolong" class="arrow-cta">see tea layering</a>
+            </div>
+        </div>
+        <div class="home-tea-item-cover"></div>
+    </div>
+
+    <div class="home-tea-item" data-id="earl-grey-neroli">
+        <div class="home-tea-item-bg" style="background-color: #c7b4e3;"></div>
+        <div class="home-tea-item-text">
+            <h2>
+                <span style="color: #b8b8dd;">lapsang</span>
+                <span style="color: #c7b4e2;">florale<sup>tm</sup></span>
+            </h2>
+            <h5>Black Tea</h5>
+            <p>Confident and Citrus</p>
+            <div class="cta-container">
+                <a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+                <a href="#graph/lapsang-florale" class="arrow-cta">see tea layering</a>
+            </div>
+        </div>
+        <div class="home-tea-item-cover"></div>
+    </div>
+
+    <div class="home-tea-item" data-id="earl-grey-neroli">
+        <div class="home-tea-item-bg" style="background-color: #f0a693;"></div>
+        <div class="home-tea-item-text">
+            <h2>
+                <span style="color: #f1a693;">kashmere<sup>tm</sup></span>
+            </h2>
+            <h5>Black Tea</h5>
+            <p>Blossoming and Sweet</p>
+            <div class="cta-container">
+                <a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+                <a href="#graph/kashmere" class="arrow-cta">see tea layering</a>
+            </div>
+        </div>
+        <div class="home-tea-item-cover"></div>
+    </div>
+
+    <div class="home-tea-item" data-id="earl-grey-neroli">
+        <div class="home-tea-item-bg" style="background-color: #beced6;"></div>
+        <div class="home-tea-item-text">
+            <h2>
+                <span style="color: #c0cdd5;">earl grey</span>
+                <span style="color: #d8d1ca;">neroli</span>
+            </h2>
+            <h5>Black Tea</h5>
+            <p>Spirited and Fresh</p>
+            <div class="cta-container">
+                <a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+                <a href="#graph/earl-grey-neroli" class="arrow-cta">see tea layering</a>
+            </div>
+        </div>
+        <div class="home-tea-item-cover"></div>
+    </div>
+
+    <div class="home-tea-item" data-id="earl-grey-neroli">
+        <div class="home-tea-item-bg" style="background-color: #fed198;"></div>
+        <div class="home-tea-item-text">
+            <h2>
+                <span style="color: #f6c65b;">morning</span>
+                <span style="color: #fed298;">english<sup>tm</sup></span>
+            </h2>
+            <h5>Black Tea</h5>
+            <p>Soulful and Bold</p>
+            <div class="cta-container">
+                <a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+                <a href="#graph/morning-english" class="arrow-cta">see tea layering</a>
+            </div>
+        </div>
+        <div class="home-tea-item-cover"></div>
+    </div>
+
+    <div class="home-tea-item" data-id="provencial-herbs">
+        <div class="home-tea-item-bg" style="background-color: #c2cb7e;"></div>
+        <div class="home-tea-item-text">
+            <h2>
+                <span style="color: #c2cb7f;">provencial</span>
+                <span style="color: #d5d755;">herbs</span>
+            </h2>
+            <h5>Herbs</h5>
+            <p>Soothing and Relaxing</p>
+            <div class="cta-container">
+                <a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+                <a href="#graph/provencal-herbs" class="arrow-cta">see tea layering</a>
+            </div>
+        </div>
+        <div class="home-tea-item-cover"></div>
+    </div>
+
+    <div class="home-tea-item" data-id="provencial-herbs">
+        <div class="home-tea-item-bg" style="background-color: #f9a960;"></div>
+        <div class="home-tea-item-text">
+            <h2>
+                <span style="color: #ffaa61;">saffronais<sup>tm</sup></span>
+            </h2>
+            <h5>Herbs</h5>
+            <p>Refine and Intimate</p>
+            <div class="cta-container">
+                <a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+                <a href="#graph/saffronais" class="arrow-cta">see tea layering</a>
+            </div>
+        </div>
+        <div class="home-tea-item-cover"></div>
+    </div>
+
+    <div class="home-tea-item" data-id="provencial-herbs">
+        <div class="home-tea-item-bg" style="background-color: #fa91a2;"></div>
+        <div class="home-tea-item-text">
+            <h2>
+                <span style="color: #ff8189;">rose</span>
+                <span style="color: #fd92a3;">of ariana<sup>tm</sup></span>
+            </h2>
+            <h5>Herbs</h5>
+            <p>Sublime and Delicate</p>
+            <div class="cta-container">
+                <a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+                <a href="#graph/rose-of-ariana" class="arrow-cta">see tea layering</a>
+            </div>
+        </div>
+        <div class="home-tea-item-cover"></div>
+    </div>
+
+    <div class="home-tea-item" data-id="provencial-herbs">
+        <div class="home-tea-item-bg" style="background-color: #bac4b8;"></div>
+        <div class="home-tea-item-text">
+            <h2>
+                <span style="color: #c7c89b;">shiso</span>
+                <span style="color: #bcc4b9;">mint</span>
+            </h2>
+            <h5>Herbs</h5>
+            <p>Earthy and Balsamic</p>
+            <div class="cta-container">
+                <a href="javascript:void(0);" class="arrow-cta">add to cart</a>
+                <a href="#graph/shiso-mint" class="arrow-cta">see tea layering</a>
+            </div>
+        </div>
+        <div class="home-tea-item-cover"></div>
+    </div> -->
+
+</div> <!-- #home-tea-item-container -->
+<?php
+// Provides a block where additional page components may be attached, primarily good for in-page JavaScript
+if ($this->getChild('after')) {
+    $_afterChildren = $this->getChild('after')->getSortedChildren();
+    foreach ($_afterChildren as $_afterChildName) {
+        $_afterChild = $this->getChild('after')->getChild($_afterChildName);
+        //set product collection on after blocks
+        $_afterChild->setProductCollection($_productCollection);
+        // echo $_afterChild->toHtml();
+    }
+}
+?>

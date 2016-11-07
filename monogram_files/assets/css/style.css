@@ -10627,6 +10627,7 @@ body.tea-layering-detail-page {
 #tea-product-detail-section-3 .dropdown {
   display: inline-block;
   position: relative;
+  width: 100%;
 }
 #tea-product-detail-section-3 .dropdown select {
   -moz-appearance: none;
@@ -11029,6 +11030,10 @@ body.tea-layering-detail-page {
 }
 #contact-section-1 .inputs {
   margin-bottom: 80px;
+}
+#contact-section-1 .inputs .validation-advice {
+  margin: 0px;
+  position: absolute;
 }
 #contact-section-1 .inputs .row {
   margin-bottom: 15px;
@@ -14221,6 +14226,683 @@ body.monogram-subscription-page {
 }
 #monogram-subscription-content-copy .cta-container .square-cta {
   margin: 0 13px;
+}
+html.monogram-page-faq,
+body.monogram-page-faq {
+  overflow: visible;
+}
+.monogram-page-faq .page-title {
+  display: none;
+}
+#monogram-page-faq-title-section {
+  background: #9c986d;
+  padding-top: 73px;
+  padding-bottom: 73px;
+}
+#monogram-page-faq-title {
+  text-align: center;
+  color: #f1efee;
+}
+#monogram-page-faq-title h1 {
+  font-family: 'Brandon Grotesque Black', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 32px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+#monogram-page-faq-content-section {
+  overflow-x: hidden;
+  background: #f1efee;
+}
+#monogram-page-faq-content-section .container-fluid {
+  padding: 0;
+}
+#monogram-page-faq-content-bottom {
+  height: 95px;
+}
+#monogram-page-faq-sidebar {
+  background: #f1efee;
+  margin-top: 0px !important;
+  margin-right: -20px;
+  padding-top: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+#monogram-page-faq-sidebar ul li {
+  margin: 0;
+  margin-bottom: 15px;
+  background: transparent;
+  padding: 0;
+}
+#monogram-page-faq-sidebar ul li:last-child {
+  margin-bottom: 0px;
+}
+#monogram-page-faq-sidebar strong,
+#monogram-page-faq-sidebar a {
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #6b615b !important;
+  white-space: nowrap;
+  display: block;
+}
+#monogram-page-faq-sidebar a:focus,
+#monogram-page-faq-sidebar a:hover {
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  -webkit-opacity: 0.7;
+  opacity: 0.7;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+  filter: alpha(opacity=70);
+}
+#monogram-page-faq-sidebar h4 {
+  font-size: 10px;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b615b;
+  margin-bottom: 9px;
+}
+#monogram-page-faq-content {
+  color: #ffffff;
+  background: #7b706b;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 56px;
+}
+#monogram-page-faq-content-header {
+  border-top: 1px solid #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid #ffffff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+#monogram-page-faq-content-header .monogram-page-faq-content-item-question-header {
+  padding-left: 19px;
+  padding-right: 24px;
+}
+#monogram-page-faq-content-header .monogram-page-faq-content-item-answer-header {
+  padding-left: 24px;
+  padding-right: 29px;
+}
+#monogram-page-faq-content-header h4 {
+  font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.monogram-page-faq-content-item-container {
+  display: none;
+  -webkit-animation: plainFadeOut 0.3s both cubic-bezier(0.7, 0, 0.3, 1);
+  animation: plainFadeOut 0.3s both cubic-bezier(0.7, 0, 0.3, 1);
+  *zoom: 1;
+}
+.monogram-page-faq-content-item-container:before,
+.monogram-page-faq-content-item-container:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.monogram-page-faq-content-item-container:after {
+  clear: both;
+}
+.monogram-page-faq-content-item-container.first-version {
+  display: block;
+  -webkit-animation: plainFadeIn 0.3s both cubic-bezier(0.7, 0, 0.3, 1);
+  animation: plainFadeIn 0.3s both cubic-bezier(0.7, 0, 0.3, 1);
+}
+.monogram-page-faq-content-item-container.selected-version {
+  -webkit-animation: plainFadeIn 0.3s both cubic-bezier(0.7, 0, 0.3, 1);
+  animation: plainFadeIn 0.3s both cubic-bezier(0.7, 0, 0.3, 1);
+}
+.monogram-page-faq-content-item {
+  border-bottom: 1px solid #ffffff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+  padding-top: 27px;
+  padding-bottom: 18px;
+}
+.monogram-page-faq-content-item:last-child {
+  border-bottom: none !important;
+}
+.monogram-page-faq-content-item .monogram-page-faq-content-item-question {
+  padding-left: 19px;
+  padding-right: 24px;
+}
+.monogram-page-faq-content-item .monogram-page-faq-content-item-answer {
+  padding-left: 24px;
+  padding-right: 29px;
+}
+.monogram-page-faq-content-item .default-copy {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0em;
+}
+.monogram-page-faq-content-item .default-copy p {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0em;
+}
+.monogram-page-faq-content-item .default-copy p + p {
+  padding-top: 20px;
+}
+.monogram-page-faq-content-item .default-copy a {
+  color: #f1efee;
+}
+.monogram-page-faq-content-item .default-copy a:focus,
+.monogram-page-faq-content-item .default-copy a:hover {
+  color: #9c986d;
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  -webkit-opacity: 0.7;
+  opacity: 0.7;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+  filter: alpha(opacity=70);
+}
+.monogram-page-faq-content-item .default-copy ul {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.monogram-page-faq-content-item .default-copy ul li {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  color: #f1efee;
+  position: relative;
+  padding-left: 11px;
+}
+.monogram-page-faq-content-item .default-copy ul li:before {
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 4px;
+  line-height: 20px;
+  color: #f1efee;
+  content: "\f111";
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+  position: absolute;
+  top: 0px;
+  left: -1px;
+}
+.monogram-page-faq-content-item .default-copy ol {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  counter-reset: ol_counter;
+}
+.monogram-page-faq-content-item .default-copy ol li {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  color: #f1efee;
+  position: relative;
+  padding-left: 21px;
+}
+.monogram-page-faq-content-item .default-copy ol li:before {
+  /*
+          .fa;
+          font-size: 4px;
+          line-height: 20px;
+          color: @off-white;
+          content: "\f111";
+          */
+  content: " " counter(ol_counter) ". ";
+  counter-increment: ol_counter;
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+  position: absolute;
+  top: 0px;
+  left: -1px;
+}
+html.monogram-page-shipping-information,
+body.monogram-page-shipping-information {
+  overflow: visible;
+}
+.monogram-page-shipping-information .page-title {
+  display: none;
+}
+#monogram-page-shipping-info-title-section {
+  background: #6d615d;
+  padding-top: 73px;
+  padding-bottom: 73px;
+}
+#monogram-page-shipping-info-title {
+  text-align: center;
+  color: #f1efee;
+}
+#monogram-page-shipping-info-title h1 {
+  font-family: 'Brandon Grotesque Black', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 32px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+#monogram-page-shipping-info-content-section {
+  overflow-x: hidden;
+}
+#monogram-page-shipping-info-content-section .container-fluid {
+  padding: 0;
+}
+#monogram-page-shipping-info-content-column-01 {
+  margin-right: -10px;
+}
+#monogram-page-shipping-info-content-column-02 {
+  margin-left: -10px;
+}
+#monogram-page-shipping-info-content-section .default-copy {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  color: #ffffff;
+}
+#monogram-page-shipping-info-content-section .default-copy p {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0em;
+}
+#monogram-page-shipping-info-content-section .default-copy ul {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+#monogram-page-shipping-info-content-section .default-copy ul li {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0em;
+  color: #ffffff;
+  position: relative;
+  padding-left: 11px;
+  margin-bottom: 18px;
+}
+#monogram-page-shipping-info-content-section .default-copy ul li:before {
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 4px;
+  line-height: 20px;
+  color: #ffffff;
+  content: "\f111";
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+  position: absolute;
+  top: 0px;
+  left: -1px;
+}
+#monogram-page-shipping-info-content-section .default-copy h4 {
+  font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+#monogram-page-shipping-info-content-section .default-copy p + p {
+  padding-top: 20px;
+}
+#monogram-page-shipping-info-content-section .default-copy p + h4 {
+  padding-top: 42px;
+}
+#monogram-page-shipping-info-content-section .default-copy ul + h4 {
+  padding-top: 11px;
+}
+#monogram-page-shipping-info-content-section .default-copy.brown-version {
+  color: #6b615b;
+}
+#monogram-page-shipping-info-content-section .default-copy.brown-version ul li {
+  color: #6b615b;
+}
+#monogram-page-shipping-info-content-section .default-copy.brown-version ul li:before {
+  color: #6b615b;
+}
+#monogram-page-shipping-info-image-01 {
+  height: 360px;
+}
+#monogram-page-shipping-info-image-01 .manic-image-container {
+  height: 360px;
+}
+#monogram-page-shipping-info-image-02 {
+  height: 550px;
+}
+#monogram-page-shipping-info-image-02 .manic-image-container {
+  height: 550px;
+}
+#monogram-page-shipping-info-content-01 {
+  padding-top: 47px;
+  padding-bottom: 78px;
+  padding-left: 85px;
+  padding-right: 70px;
+  background: #ae887e;
+}
+#monogram-page-shipping-info-content-02 {
+  background: #ebe9e8;
+  padding-top: 47px;
+  padding-bottom: 78px;
+  padding-left: 85px;
+  padding-right: 70px;
+}
+#monogram-page-shipping-info-content-03 {
+  background: #ebe9e8;
+  padding-top: 47px;
+  padding-bottom: 78px;
+  padding-left: 65px;
+  padding-right: 85px;
+}
+#monogram-page-shipping-info-content-04 {
+  background: #827773;
+  padding-top: 47px;
+  padding-bottom: 78px;
+  padding-left: 60px;
+  padding-right: 60px;
+  position: relative;
+  display: block;
+  /*
+  &:after{
+    content: "";
+    display: block;
+
+    position: absolute;
+    bottom: -200px;
+    left: 0px;
+    width: 100%;
+    height: 200px;
+    
+    background: #827773;
+  }
+  */
+}
+#monogram-page-shipping-info-content-04 .table-responsive {
+  margin-top: 34px;
+  margin-bottom: 16px;
+}
+#monogram-page-shipping-info-content-04 .table-responsive {
+  width: 100%;
+  border-top: 1px solid #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+#monogram-page-shipping-info-content-04 .table-responsive table {
+  width: 100%;
+  table-layout: fixed;
+}
+#monogram-page-shipping-info-content-04 .table-responsive table thead tr th {
+  font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+  padding-top: 5px;
+  padding-bottom: 4px;
+}
+#monogram-page-shipping-info-content-04 .table-responsive table thead tr th:first-child {
+  padding-left: 24px;
+  text-align: left;
+}
+#monogram-page-shipping-info-content-04 .table-responsive table thead tr th:last-child {
+  padding-right: 24px;
+}
+#monogram-page-shipping-info-content-04 .table-responsive table tbody tr td {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff;
+  padding-top: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ffffff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+#monogram-page-shipping-info-content-04 .table-responsive table tbody tr td .tbl-shipping-info-weight,
+#monogram-page-shipping-info-content-04 .table-responsive table tbody tr td .tbl-shipping-info-rate {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 35px;
+  position: relative;
+  top: -6px;
+}
+#monogram-page-shipping-info-content-04 .table-responsive table tbody tr td a {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff;
+}
+#monogram-page-shipping-info-content-04 .table-responsive table tbody tr td a:focus,
+#monogram-page-shipping-info-content-04 .table-responsive table tbody tr td a:hover {
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  -webkit-opacity: 0.7;
+  opacity: 0.7;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+  filter: alpha(opacity=70);
+}
+#monogram-page-shipping-info-content-04 .table-responsive table tbody tr td:first-child {
+  padding-left: 24px;
+  text-align: left;
+}
+#monogram-page-shipping-info-content-04 .table-responsive table tbody tr td:last-child {
+  padding-right: 24px;
+}
+#monogram-page-shipping-info-content-04 .default-copy.default-copy-02 {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+html.monogram-page-terms-of-use,
+body.monogram-page-terms-of-use {
+  overflow: visible;
+}
+html.monogram-page-privacy-policy,
+body.monogram-page-privacy-policy {
+  overflow: visible;
+}
+.monogram-page-terms-of-use .page-title,
+.monogram-page-privacy-policy .page-title {
+  display: none;
+}
+#monogram-page-terms-of-use-title-section {
+  background: #a48e6e;
+  padding-top: 73px;
+  padding-bottom: 73px;
+}
+#monogram-page-terms-of-use-title {
+  text-align: center;
+  color: #f1efee;
+}
+#monogram-page-terms-of-use-title h1 {
+  font-family: 'Brandon Grotesque Black', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 32px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+#monogram-page-terms-of-use-content-section {
+  overflow-x: hidden;
+  padding-top: 48px;
+  padding-bottom: 114px;
+  /*
+  .container-fluid{
+    padding: 0;
+  }
+  */
+}
+#monogram-page-terms-of-use-content-column-01 {
+  margin-left: 26px;
+  margin-right: 55px;
+}
+#monogram-page-terms-of-use-content-column-02 {
+  margin-left: 55px;
+  margin-right: 26px;
+}
+#monogram-page-terms-of-use-content-section .default-copy {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  color: #ffffff;
+}
+#monogram-page-terms-of-use-content-section .default-copy p {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0em;
+}
+#monogram-page-terms-of-use-content-section .default-copy ul {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+#monogram-page-terms-of-use-content-section .default-copy ul li {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0em;
+  color: #ffffff;
+  position: relative;
+  padding-left: 11px;
+  margin-bottom: 18px;
+}
+#monogram-page-terms-of-use-content-section .default-copy ul li:before {
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 4px;
+  line-height: 20px;
+  color: #ffffff;
+  content: "\f111";
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+  position: absolute;
+  top: 0px;
+  left: -1px;
+}
+#monogram-page-terms-of-use-content-section .default-copy h4 {
+  font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+#monogram-page-terms-of-use-content-section .default-copy h4.sub-version {
+  color: #f1efee;
+  margin-top: 8px;
+  font-size: 14px;
+}
+#monogram-page-terms-of-use-content-section .default-copy p + p {
+  padding-top: 20px;
+}
+#monogram-page-terms-of-use-content-section .default-copy p + h4 {
+  padding-top: 42px;
+}
+#monogram-page-terms-of-use-content-section .default-copy p + h4.sub-version {
+  padding-top: 11px;
+}
+#monogram-page-terms-of-use-content-section .default-copy ul + h4 {
+  padding-top: 22px;
+}
+#monogram-page-terms-of-use-content-section .default-copy ol + h4 {
+  padding-top: 22px;
+}
+#monogram-page-terms-of-use-content-section .default-copy ol {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  counter-reset: ol_counter;
+}
+#monogram-page-terms-of-use-content-section .default-copy ol li {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  color: #f1efee;
+  position: relative;
+  padding-left: 21px;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 2px;
+}
+#monogram-page-terms-of-use-content-section .default-copy ol li:before {
+  /*
+          .fa;
+          font-size: 4px;
+          line-height: 20px;
+          color: @off-white;
+          content: "\f111";
+          */
+  content: " " counter(ol_counter) ". ";
+  counter-increment: ol_counter;
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+  position: absolute;
+  top: 0px;
+  left: -1px;
 }
 /*
 @import "monogram/page_experience.less";

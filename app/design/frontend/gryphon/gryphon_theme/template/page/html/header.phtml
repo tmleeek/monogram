@@ -1,0 +1,596 @@
+<?php
+$count = $this->helper('checkout/cart')->getSummaryCount();
+$quote = Mage::getModel('checkout/session')->getQuote();
+$quoteData= $quote->getData();
+?>
+<!-- <div id="mobile-header-wrapper" class="visible-xs visible-sm">
+	<header id="main-mobile-header">
+
+
+		<?php
+		if(Mage::getSingleton('customer/session')->isLoggedIn()):
+	      	// Get group Id
+			$groupId = Mage::getSingleton('customer/session')->getCustomerGroupId();
+			//Get customer Group name
+			$group = Mage::getModel('customer/group')->load($groupId);
+		?>
+			<?php if(strtolower(trim($group->getCode()))!=="general"): ?>
+				<div class="marquee">
+					<p class="rotate">Free local shipping when you spend over $250, Get greater discounts when you order online</p>
+				</div>
+			<?php else: ?>
+				<div class="marquee">
+					<p class="rotate">Use code "shopnow" to enjoy 10% off first purchase, Free local shipping when you spend over $60, Free samples with every order</p>
+				</div>
+			<?php endif; ?>
+		<?php else: ?>
+			<div class="marquee">
+				<p class="rotate">Use code "shopnow" to enjoy 10% off first purchase, Free local shipping when you spend over $60, Free samples with every order</p>
+			</div>
+		<?php endif; ?>
+		
+		<div id="mobile-fixed-container">
+			<div class="mobile-menu-button"></div>
+			<a href="<?php echo $this->getUrl('/'); ?>" class="mobile-menu-logo"></a>
+
+			<div class="mobile-menu-icon-button-container">
+				<div class="mobile-menu-icon-button mobile-search-button"></div>
+				<div class="mobile-menu-icon-button mobile-cart-button">
+					<span><?php echo $count; ?></span>
+				</div>
+			</div>
+
+		</div>
+		<div id="mobile-search-expand-container">
+			
+			<?php echo $this->getChildHtml('topSearch') ?>
+
+		</div>
+		<div id="mobile-cart-expand-container">
+			<div class="cart-preview-select">
+				<h5><img src="<?php echo $this->getSkinUrl('images/icons/cart.svg'); ?>" alt=""> SHOPPING CART</h5>
+				<?php 
+					$cart = Mage::getModel('checkout/cart')->getQuote();
+					$cartQty = $this->helper('checkout/cart')->getSummaryCount();
+					$cartTotal = Mage::getSingleton('checkout/cart')->getQuote()->getSubtotal();
+				?>
+				<?php if ($cartQty>0): ?>							        
+					    
+					<ul class="cart-header">
+						<li>PRODUCT</li>
+						<li>QTY</li>
+						<li>SUB TOTAL</li>
+					</ul>
+
+					<div class="cart-preview-content">
+						<?php								
+						foreach ($cart->getAllItems() as $item):
+						    $productName = $item->getProduct()->getName();
+						    $productPrice = $item->getProduct()->getPrice();
+						    $productQty = $item->getQty();
+						    $price = $item->getRowTotal();
+						    $productImage = Mage::helper('catalog/image')->init($item->getProduct(), 'thumbnail');
+						    
+						?>
+							<ul class="cart-content">							
+								<li><img src="<?php echo $productImage; ?>" alt=""><span><?php echo $productName; ?></span></li>
+								<li><?php echo $productQty; ?></li>
+								<li><?php echo Mage::helper('core')->formatPrice($price, true); ?></li>
+							</ul>
+						<?php
+						endforeach;
+						?>
+					</div>
+
+					<ul class="cart-summary">								
+				        <?php if ($cartQty==1): ?>
+				            <?php echo '<li><span class="total-items"><span class="total-items-count">1</span> ITEM</span></li>'; ?>
+				        <?php else: ?>
+				            <?php echo '<li><span class="total-items"><span class="total-items-count">'.$cartQty.'</span> ITEMS</span></li>'; ?>
+				        <?php endif; ?>
+				        <li><span class="sub-total">SUB TOTAL</span></li>									
+				        <li><span class="sub-total-amount"><?php echo Mage::helper('core')->formatPrice($cartTotal, true); ?></span></li>							
+					</ul>
+
+					<div class="cta-btns">
+						<a href="<?php echo $this->getUrl('store.html');?>" class="continue-shopping"><button type="button" class="cta button"><span><span>Back to Shopping</span></span></button></a>
+  						<a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="shopping-cart"><button type="button" class="cta button"><span><span>Shopping Cart</span></span></button></a>
+					</div>
+				<?php else: ?>					
+					<ul class="cart-header" style="display:none;">
+						<li>PRODUCT</li>
+						<li>QTY</li>
+						<li>SUB TOTAL</li>
+					</ul>
+					<div class="cart-preview-content">
+						<p>Your cart is empty. <a href="<?php echo $this->getUrl('checkout/cart'); ?>">Click here to go to cart anyway.</a></p>	
+					</div>
+					<ul class="cart-summary" style="display:none;">	
+						<li><span class="total-items"><span class="total-items-count">1</span> ITEM</span></li>
+						<li><span class="sub-total">SUB TOTAL</span></li>									
+						<li><span class="sub-total-amount"></span></li>							
+					</ul>
+					<div class="cta-btns" style="display:none;">
+						<a href="<?php echo $this->getUrl('store.html');?>" class="continue-shopping"><button type="button" class="cta button"><span><span>Back to Shopping</span></span></button></a>
+						<a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="shopping-cart"><button type="button" class="cta button"><span><span>Shopping Cart</span></span></button></a>
+					</div>
+				<?php endif; ?>
+			</div>
+		</div>
+		
+
+
+		<div id="mobile-expand-container">
+
+			<div id="mobile-account">
+				<?php 
+				$session = Mage::getSingleton('customer/session');
+				if($session->isLoggedIn()): ?>											
+					<div id="mobile-account-header">
+						<?php 
+						$session = Mage::getSingleton('customer/session');
+						if($session->isLoggedIn()) {
+						   $customer = $session->getCustomer();
+						   // echo $customer->getName();
+						   $customer_name = $customer->getFirstname();
+						}
+						?>						
+						<p><a href="#" class="account name"><?php echo (isset($customer_name)) ? 'Welcome, '.$customer_name : $this->__('Account'); ?></a></p>
+						<div id="mobile-account-expand-button"></div>
+					</div>
+
+					<ul>
+						<?php 
+							$groupname = '';							
+						    $customerGroupId = $customer->getGroupId();
+						    $groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();  							
+						?>
+						<li><a href="<?php echo Mage::getUrl('customer/account/'); ?>">account information</a></li>
+						<li><a href="<?php echo Mage::getUrl('customer/address/'); ?>">address book</a></li>
+						<li><a href="<?php echo Mage::getUrl('sales/order/history/'); ?>">my orders</a></li>
+						<?php if(($groupname!=='Trader-Temp' && $groupname!=='Trader-Regular' && $groupname!=='Trader-Priority' && $groupname!=='Trader-Premium')): ?>
+							<li><a href="<?php echo Mage::getUrl('giftvoucher/index/index'); ?>">gift card</a></li>
+							<li><a href="<?php echo Mage::getUrl('rewardpoints/index/points/'); ?>">reward points</a></li>
+							<li><a href="<?php echo Mage::getUrl('rewardpoints/index/referral/'); ?>">referred friends</a></li>
+						<?php endif; ?>
+						<li><a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>">log out</a></li>
+					</ul>
+				<?php else: ?>
+					<div id="mobile-account-header">					
+						<p><a href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>">Log In</a> | <a href="<?php echo Mage::getUrl('customer/account/create'); ?>">Register</a></p>
+						<div id="mobile-account-expand-button"></div>
+					</div>
+				<?php endif; ?>
+				
+			</div>
+
+			<div id="mobile-currency">
+
+				<div id="mobile-currency-header">
+					<?php $currency_code_02 = Mage::app()->getStore()->getCurrentCurrencyCode(); ?>
+					<p>Currency: <?php echo $currency_code_02; ?></p>	
+					<div id="mobile-currency-expand-button"></div>
+				</div>							
+
+				<div id="mobile-currency-expand-container">
+				</div>
+				
+			</div>
+
+			<div class="mobile-submenu">
+				<div class="mobile-submenu-header">Gryphon Store</div>
+				<ul>
+					<?php
+					// TEA
+					$store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store');
+					$type_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Types');
+
+					/*Returns comma separated ids*/
+					// $subcats = $type_category->getChildren();			
+					$subcategories = $type_category->getChildrenCategories();								
+
+					echo '<li class="has-sub-menu">
+							<a href="'.$store_category->getUrl().'">TEA</a>
+							<ul class="sub-menu">';
+						echo '<li><a href="'.$store_category->getUrl().'">All</a></li>';
+					// foreach(explode(',',$subcats) as $subCatid)
+					// {
+					//   	$_category = Mage::getModel('catalog/category')->load($subCatid);
+					//   	if($_category->getIsActive())
+					//   	{
+					//     	$caturl     = $_category->getURL();
+					//     	$catname     = $_category->getName();
+
+					//     	echo '<li><a href="'.$caturl.'">'.$catname.'</a></li>';
+					//     }
+					// }
+					foreach($subcategories as $_category) {
+						if($_category->getIsActive())
+					  	{
+					    	$caturl     = $_category->getURL();
+					    	$catname     = $_category->getName();
+
+					    	echo '<li><a href="'.$caturl.'">'.$catname.'</a></li>';
+					    }
+					}					
+					echo '</ul>
+					</li>';					
+					?>
+					<?php
+					// PANTRY
+					$pantry_products = Mage::getModel('catalog/category')->loadByAttribute('name', 'Pantry');					
+					if ($pantry_products->getIsActive()):
+					?>
+					<li>
+						<a href="<?php echo $pantry_products->getUrl(); ?>">PANTRY</a>
+					</li>
+					<?php 
+					endif;
+					// PANTRY
+					$gifts_products = Mage::getModel('catalog/category')->loadByAttribute('name', 'Gifts')->getProductCollection()
+					 	->addAttributeToSelect('*') // add all attributes - optional
+					 	->addAttributeToFilter('status', 1) // enabled
+					 	->addAttributeToFilter('visibility', 4) //visibility in catalog,search
+					 	->setOrder('price', 'ASC');			
+
+					$gifts_products_data = $gifts_products->getData();
+					?>					
+					<li>
+						<?php $gifts_products = Mage::getModel('catalog/category')->loadByAttribute('name', 'gifts');	?>
+						<?php $gifts_products_data = $gifts_products->getData(); ?>
+						<a href="<?php echo $this->getUrl($gifts_products_data['url_path']); ?>">GIFTS</a>
+					</li>
+					<li>
+						<a href="<?php echo $this->getUrl('subscription');?>">SUBSCRIPTION</a>
+					</li>									
+					<li>
+						<a href="<?php echo $this->getUrl('trade'); ?>">TRADE</a>
+					</li>					
+				</ul>
+			</div>
+
+			<div class="mobile-submenu">
+				<div class="mobile-submenu-header">About Gryphon</div>
+				<ul>
+					<li>
+						<a href="<?php echo $this->getUrl('collections');?>">COLLECTIONS</a>								
+					</li>
+					<li>
+						<a href="<?php echo $this->getUrl('/');?>blog">BLOG</a>
+					</li>
+					<li><a href="<?php echo $this->getUrl('discover-tea'); ?>">Discover Tea</a></li>
+					<li><a href="<?php echo $this->getUrl('our-story');?>">Our Story</a></li>
+					<li><a href="<?php echo $this->getUrl('careers');?>">Careers</a></li>
+				</ul>
+			</div>
+
+			<div class="mobile-submenu">
+				<div class="mobile-submenu-header">Customer Service</div>
+				<ul>
+															
+
+					<li><a href="<?php echo $this->getUrl('contact-us'); ?>">Contact Us</a></li>															
+					<li><a href="<?php echo $this->getUrl('faq'); ?>">FAQ</a></li>
+					<li><a href="<?php echo $this->getUrl('shipping-info'); ?>">Shipping Information</a></li>
+					<li><a href="http://www.trackntrace.com.sg/">Track Order</a></li>
+					<li><a href="<?php echo $this->getUrl('terms-and-conditions'); ?>">Terms & Conditions</a></li>
+					<li><a href="<?php echo $this->getUrl('privacy-policy'); ?>">Privacy Policy</a></li>
+					<li><a href="<?php echo $this->getUrl('rewards'); ?>">Rewards Program</a></li>
+					<li><a href="<?php echo $this->getUrl('store-locator'); ?>">Store Locator</a></li>
+
+				</ul>
+			</div>
+
+			<div class="extra-space"></div>
+			<div id="mobile-header-footer-copy" class="mobile-footer">
+				<h2>newsletter sign up</h2>
+				<hr class="small">
+				<p>Join our Gryphon Tea Family and be the first to learn about our latest news, enjoy exclusive deals and invites to events!</p>		
+
+				<div class="search">
+					<input type="text" name="subscribe_email" placeholder="Enter your email address" />
+					<button class="signup subscribe_newsletter"><i class="fa fa-check"></i> <span>Sign up</span></button>
+					<span id='ajax_loader' style='display:none'><img src='<?php echo $this->getSkinUrl('images/content/opc-ajax-loader.gif')?>'/></span>
+	            	<span class="ajax_msg italic"></span>
+				</div>
+
+				<hr class="dotted">
+
+				<h2>FOLLOW US</h2>
+				<hr class="small">
+				<ul class="share-ctas">
+					<li><a href="https://instagram.com/gryphontea/" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="https://www.pinterest.com/gryphontea/" target="_blank" class="pintrest"><i class="fa fa-pinterest"></i></a></li>
+					<li><a href="https://www.facebook.com/gryphonteacompany" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="https://www.linkedin.com/company/gryphon-tea-company" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+					<li><a href="https://www.youtube.com/channel/UCrKNQcT3PHO-o_vQBMUlH8Q" target="_blank" class="youtube"><i class="fa fa-youtube"></i></a></li>
+					<li><a href="https://plus.google.com/+Gryphonteacompany/posts" target="_blank" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
+				</ul>
+
+				<div class="copywrite">
+					<h6>&copy; 2013 GRYPHON TEA COMPANY.</h6>
+					<p>All material on this site is copyrighted by Gryphon Tea Company. Gryphon Tea Company® is a registered trademark. No images or copy on this site may be used without written permission by Gryphon Tea Company.</p>	
+				</div>
+
+			</div>
+		
+		</div>
+	</header>
+</div> -->
+<header id="desktop-header" class="hidden-sm hidden-xs">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-9">
+        <div id="desktop-header-right-container">
+          <div id="desktop-header-logo-container">
+            <a href="<?php echo $this->getUrl('') ?>">
+              <span id="desktop-header-logo"></span>
+              <span id="monogram-name"></span>
+            </a>
+          </div>
+          <div id="desktop-header-menu-conainer">
+          	<?php 
+							$currentUrl = Mage::helper('core/url')->getCurrentUrl();
+							$url = Mage::getSingleton('core/url')->parseUrl($currentUrl);
+							$path = $url->getPath();
+
+							if (strpos($path,'checkout') === false) {
+								echo $this->getChildHtml('topMenu');
+							}
+						?>            
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        
+        <div id="desktop-header-cart">
+          <ul>
+            <li>
+            	<?php $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode(); ?>
+							<a href="#" class="currency text"><span class="hidden-xs hidden-sm">
+							<?php if($currency_code=='SGD'): ?>
+								<i class="currency-icon">S</i><i class="fa fa-dollar"></i> Currency</span></a>
+							<?php elseif($currency_code=='AUD'): ?>
+								<i class="currency-icon">A</i><i class="fa fa-dollar"></i> Currency</span></a>
+							<?php elseif($currency_code=='HKD'): ?>
+								<i class="currency-icon">HK</i><i class="fa fa-dollar"></i> Currency</span></a>
+							<?php elseif($currency_code=='JPY'): ?>
+								<i class="fa fa-jpy"></i> Currency</span></a>
+							<?php elseif($currency_code=='EUR'): ?>
+								<i class="fa fa-eur"></i> Currency</span></a>
+							<?php elseif($currency_code=='GBP'): ?>
+								<i class="fa fa-gbp"></i> Currency</span></a>
+							<?php elseif($currency_code=='CNY'): ?>
+								<i class="fa fa-cny"></i> Currency</span></a>
+							<?php elseif($currency_code=='MYR'): ?>
+								<i class="currency-icon">MYR</i> Currency</span></a>
+							<?php else: ?>
+								<i class="fa fa-dollar"></i> Currency</span></a>
+							<?php endif; ?>
+            	<!-- <a href="#" class="text">Currency</a> -->
+            </li>
+            <?php $session = Mage::getSingleton('customer/session'); ?>
+            <?php if($session->isLoggedIn()): ?>
+						<li><a href="<?php echo Mage::getUrl('customer/account'); ?>" class="text">My Account</a></li>		
+						<?php else: ?>
+						<li><a href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>" class="text">Join/Log in</a></li>
+						<?php endif; ?>            
+            <li><a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="text">Cart <span class="count">(<?php echo (!empty($count)) ? $count : 0; ?>)</span></a></li>
+            <li><a href="#" class="menu-opener fa fa-bars"></a></li>
+          </ul>
+        </div>
+
+        <?php echo $this->getChildHtml('currency_top') ?>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+<!--<div id="header-wrapper" class="visible-md visible-lg">
+	<?php
+	if(Mage::getSingleton('customer/session')->isLoggedIn()):
+      	// Get group Id
+		$groupId = Mage::getSingleton('customer/session')->getCustomerGroupId();
+		//Get customer Group name
+		$group = Mage::getModel('customer/group')->load($groupId);
+	?>
+		<?php if(strtolower(trim($group->getCode()))!=="general"): ?>
+			<div class="marquee">
+				<div class="rotate">Free local shipping when you spend over $250, Get greater discounts when you order online</div>
+			</div>
+		<?php else: ?>
+			<div class="marquee">
+				<div class="rotate">Use code "shopnow" to enjoy 10% off first purchase, Free local shipping when you spend over $60, Free samples with every order</div>
+			</div>
+		<?php endif; ?>
+	<?php else: ?>
+		<div class="marquee">
+			<div class="rotate">Use code "shopnow" to enjoy 10% off first purchase, Free local shipping when you spend over $60, Free samples with every order</div>
+		</div>
+	<?php endif; ?>
+	
+	<header id="main-header" class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="logo-wrapper hidden-xs hidden-sm visible-md visible-lg">
+					<a href="<?php echo $this->getUrl('') ?>" class="site-logo">
+						<img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>">
+					</a>
+				</div>
+				<div id="menu-wrapper">
+					<?php 
+						$currentUrl = Mage::helper('core/url')->getCurrentUrl();
+						$url = Mage::getSingleton('core/url')->parseUrl($currentUrl);
+						$path = $url->getPath();
+
+						if (strpos($path,'checkout') === false) {
+							// echo $this->getChildHtml('topMenu');
+						}
+					?>
+				</div>	
+				<div id="header-cta">
+					<div class="promo-image-text">
+						<?php 
+							$currentUrl = Mage::helper('core/url')->getCurrentUrl();
+							$url = Mage::getSingleton('core/url')->parseUrl($currentUrl);
+							$path = $url->getPath();
+
+							if (strpos($path,'checkout') === false): ?>
+							<div class="cta">
+								<ul class="cta-list">
+									<li>
+										<?php $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode(); ?>
+										<a href="#" class="currency"><span class="hidden-xs hidden-sm">
+										<?php if($currency_code=='SGD'): ?>
+											<i class="currency-icon">S</i><i class="fa fa-dollar"></i>Currency</span></a>
+										<?php elseif($currency_code=='AUD'): ?>
+											<i class="currency-icon">A</i><i class="fa fa-dollar"></i>Currency</span></a>
+										<?php elseif($currency_code=='HKD'): ?>
+											<i class="currency-icon">HK</i><i class="fa fa-dollar"></i>Currency</span></a>
+										<?php elseif($currency_code=='JPY'): ?>
+											<i class="fa fa-jpy"></i>Currency</span></a>
+										<?php elseif($currency_code=='EUR'): ?>
+											<i class="fa fa-eur"></i>Currency</span></a>
+										<?php elseif($currency_code=='GBP'): ?>
+											<i class="fa fa-gbp"></i>Currency</span></a>
+										<?php elseif($currency_code=='CNY'): ?>
+											<i class="fa fa-cny"></i>Currency</span></a>
+										<?php elseif($currency_code=='MYR'): ?>
+											<i class="currency-icon">MYR</i>Currency</span></a>
+										<?php else: ?>
+											<i class="fa fa-dollar"></i>Currency</span></a>
+										<?php endif; ?>
+									</li>
+									<li>
+										<a href="#" class="search"><span class="hidden-xs hidden-sm">Search</span></a>									
+									</li>
+									<?php 
+									$session = Mage::getSingleton('customer/session');
+									if($session->isLoggedIn()) {
+									   $customer = $session->getCustomer();
+									   // echo $customer->getName();
+									   $customer_name = $customer->getFirstname();
+									}
+									?>						
+									<?php if($session->isLoggedIn()): ?>
+									<li><a href="#" class="account"><span class="hidden-xs hidden-sm"><?php echo (isset($customer_name)) ? $customer_name	 : $this->__('Account'); ?></span></a></li>
+									<?php else: ?>
+									<li><a href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>" class="account"><span class="hidden-xs hidden-sm"><?php echo (isset($customer_name)) ? $customer_name	 : $this->__('Join | Sign In'); ?></span></a></li>
+									<?php endif; ?>
+									<li class="hidden-md hidden-lg"><hr class="divider"></li>
+	                                <?php if ($count) :?>
+	                                <li><a href="#" class="cart cart-summary-data"><span><?php echo Mage::helper('core')->currency($quoteData['subtotal']); ?> (<span class="count"><?php echo $count; ?></span>)</span></a></li>
+	                            	<?php else: ?>
+	                            	<li><a href="#" class="cart cart-summary-data"><span><?php echo $this->__('CART'); ?></span></a></li>
+	                                <?php endif; ?>
+								</ul>
+							</div>
+							<?php if($session->isLoggedIn()): ?>
+								<ul class="account-select">
+									<li><a href="<?php echo Mage::getUrl('customer/account'); ?>">My Account</a></li>
+									<li><a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>">Log Out</a></li>
+								</ul>							
+							<?php endif; ?>
+							<div class="cart-preview-select">
+								<h5><img src="<?php echo $this->getSkinUrl('images/icons/cart.svg'); ?>" alt=""> SHOPPING CART</h5>
+
+								<?php 
+									$cart = Mage::getModel('checkout/cart')->getQuote();
+									$cartQty = $this->helper('checkout/cart')->getSummaryCount();
+									$cartTotal = Mage::getSingleton('checkout/cart')->getQuote()->getSubtotal();
+								?>
+								<?php if ($cartQty>0): ?>							        
+									    
+									<ul class="cart-header">
+										<li>PRODUCT</li>
+										<li>QTY</li>
+										<li>SUB TOTAL</li>
+									</ul>
+									
+									<div class="cart-preview-content">
+										<?php								
+										foreach ($cart->getAllItems() as $item) {
+										    $productName = $item->getProduct()->getName();
+										    $productPrice = $item->getProduct()->getPrice();
+										    $productQty = $item->getQty();
+										    $price = $item->getRowTotal();
+										    $productImage = Mage::helper('catalog/image')->init($item->getProduct(), 'thumbnail');
+										    
+										?>
+										<ul class="cart-content">							
+											<li><img src="<?php echo $productImage; ?>" alt=""><span><?php echo $productName; ?></span></li>
+											<li><?php echo $productQty; ?></li>
+											<li>
+												<?php echo Mage::helper('core')->formatPrice($price, true); ?>
+										</ul>
+										<?php
+										}
+										?>
+									</div>
+
+									<ul class="cart-summary">								
+								        <?php if ($cartQty==1): ?>
+								            <?php echo '<li><span class="total-items"><span class="total-items-count">1</span> ITEM</span></li>'; ?>
+								        <?php else: ?>
+								            <?php echo '<li><span class="total-items"><span class="total-items-count">'.$cartQty.'</span> ITEMS</span></li>'; ?>
+								        <?php endif; ?>
+								        <li><span class="sub-total">SUB TOTAL</span></li>									
+								        <li><span class="sub-total-amount"><?php echo Mage::helper('core')->formatPrice($cartTotal, true); ?></span></li>							
+									</ul>							
+
+									<div class="cta-btns">
+										<a href="<?php echo $this->getUrl('store.html');?>" class="continue-shopping"><button type="button" class="cta button"><span><span>Back to Shopping</span></span></button></a>
+	            						<a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="shopping-cart"><button type="button" class="cta button"><span><span>Shopping Cart</span></span></button></a>
+									</div>
+								<?php else: ?>
+									<ul class="cart-header" style="display:none;">
+										<li>PRODUCT</li>
+										<li>QTY</li>
+										<li>SUB TOTAL</li>
+									</ul>
+									<div class="cart-preview-content">
+										<p>Your cart is empty. <a href="<?php echo $this->getUrl('checkout/cart'); ?>">Click here to go to cart anyway.</a></p>	
+									</div>
+									<ul class="cart-summary" style="display:none;">	
+										<li><span class="total-items"><span class="total-items-count">1</span> ITEM</span></li>
+										<li><span class="sub-total">SUB TOTAL</span></li>									
+										<li><span class="sub-total-amount"></span></li>							
+									</ul>
+									<div class="cta-btns" style="display:none;">
+										<a href="<?php echo $this->getUrl('store.html');?>" class="continue-shopping"><button type="button" class="cta button"><span><span>Back to Shopping</span></span></button></a>
+	            						<a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="shopping-cart"><button type="button" class="cta button"><span><span>Shopping Cart</span></span></button></a>
+									</div>
+								<?php endif; ?>
+								
+							</div>
+						<?php else: ?>
+							<div class="cta">
+								<ul class="cart-cta-list">
+									<li><a href="<?php echo Mage::getUrl('faq'); ?>" target="_blank"><i class="question"></i><span>Gryphon FAQ</span></a></li>
+									<li><a href="<?php echo Mage::getUrl('shipping-info'); ?>" target="_blank"><i class="delivery-info"></i><span>Delivery Information</span></a></li>
+									<li><a href="http://www.trackntrace.com.sg/" target="_blank"><i class="tracking"></i><span>Track Delivery</span></a></li>
+								</ul>
+							</div>
+						<?php endif; ?>
+
+						<?php echo $this->getChildHtml('topSearch') ?>
+			            <?php echo $this->getChildHtml('currency_top') ?>			            
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+</div>-->
+
+<script type="text/javascript">
+	// jQuery(document).ready(function($) {
+	// 	$("#main-mobile-header").gryphon_mobile_header();
+
+	// 	$('#main-header .cart-preview-select .continue-shopping').click(function(event){
+	// 		event.preventDefault();
+	// 		$('#main-header .cart-preview-select').hide(0);
+	// 	});
+
+	// });
+</script>

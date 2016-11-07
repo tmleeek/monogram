@@ -1,0 +1,397 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Shopping cart template
+ *
+ * @see Mage_Checkout_Block_Cart
+ */
+
+function isMobile()  
+{
+    $regex_match = "/(nokia|iphone|android|motorola|^mot\-|softbank|foma|docomo|kddi|up\.browser|up\.link|"  
+                 . "htc|dopod|blazer|netfront|helio|hosin|huawei|novarra|CoolPad|webos|techfaith|palmsource|"  
+                 . "blackberry|alcatel|amoi|ktouch|nexian|samsung|^sam\-|s[cg]h|^lge|ericsson|philips|sagem|wellcom|bunjalloo|maui|"  
+                 . "symbian|smartphone|mmp|midp|wap|phone|windows ce|iemobile|^spice|^bird|^zte\-|longcos|pantech|gionee|^sie\-|portalmmm|"  
+                 . "jig\s browser|hiptop|^ucweb|^benq|haier|^lct|opera\s*mobi|opera\*mini|320x320|240x320|176x220"  
+                 . ")/i";  
+
+    if (preg_match($regex_match, strtolower($_SERVER['HTTP_USER_AGENT']))) {  
+        return TRUE;  
+    }  
+
+    if ((strpos(strtolower($_SERVER['HTTP_ACCEPT']),'application/vnd.wap.xhtml+xml') > 0) or ((isset($_SERVER['HTTP_X_WAP_PROFILE']) or isset($_SERVER['HTTP_PROFILE'])))) {  
+        return TRUE;  
+    }      
+
+    $mobile_ua = strtolower(substr($_SERVER['HTTP_USER_AGENT'], 0, 4));  
+    $mobile_agents = array(  
+        'w3c ','acs-','alav','alca','amoi','audi','avan','benq','bird','blac',  
+        'blaz','brew','cell','cldc','cmd-','dang','doco','eric','hipt','inno',  
+        'ipaq','java','jigs','kddi','keji','leno','lg-c','lg-d','lg-g','lge-',  
+        'maui','maxo','midp','mits','mmef','mobi','mot-','moto','mwbp','nec-',  
+        'newt','noki','oper','palm','pana','pant','phil','play','port','prox',  
+        'qwap','sage','sams','sany','sch-','sec-','send','seri','sgh-','shar',  
+        'sie-','siem','smal','smar','sony','sph-','symb','t-mo','teli','tim-',  
+        'tosh','tsm-','upg1','upsi','vk-v','voda','wap-','wapa','wapi','wapp',  
+        'wapr','webc','winw','winw','xda ','xda-');  
+
+    if (in_array($mobile_ua,$mobile_agents)) {  
+        return TRUE;  
+    }  
+
+    if (isset($_SERVER['ALL_HTTP']) && strpos(strtolower($_SERVER['ALL_HTTP']),'OperaMini') > 0) {  
+        return TRUE;  
+    }  
+
+    return FALSE;  
+}
+
+$groupname = '';    
+$session = Mage::getSingleton('customer/session');                        
+if($session->isLoggedIn()) {
+    $customer = $session->getCustomer();
+    $customerGroupId = $customer->getGroupId();
+    $groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();
+}
+?>
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <div id="page-shopping-cart-breadcrumb">
+                  <a class="active"><?php echo $this->__('Shopping Cart'); ?></a>
+                  <a href="<?php echo $this->getUrl('checkout/onepage'); ?>"><?php echo $this->__('Billing & Shipping Address'); ?></a>
+                  <a><?php echo $this->__('Order Confirmation'); ?></a>               
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div id="page-shopping-cart-content">
+                    
+                    <div class="row">
+                        <div class="col-md-12"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
+                    </div>
+
+                    <div id="page-shopping-cart-item-container">
+                        <div class="table-responsive">
+                            <?php echo $this->getChildHtml('form_before') ?>
+                            <form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post">
+                                <?php echo $this->getBlockHtml('formkey'); ?>
+                                <table id="shopping-cart-table" class="data-table cart-table table">
+                                    <col width="1" />
+                                    <col />
+                                    <col width="1" />
+                                    <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
+                                        <col width="1" />
+                                    <?php endif ?>
+                                    <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
+                                        <col width="1" />
+                                    <?php endif; ?>
+                                    <?php if ($this->helper('tax')->displayCartPriceInclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
+                                        <col width="1" />
+                                    <?php endif; ?>
+                                    <col width="1" />
+                                    <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
+                                        <col width="1" />
+                                    <?php endif; ?>
+                                    <?php if ($this->helper('tax')->displayCartPriceInclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
+                                        <col width="1" />
+                                    <?php endif; ?>
+                                    <col width="1" />
+
+                                    <?php $mergedCells = ($this->helper('tax')->displayCartBothPrices() ? 2 : 1); ?>
+                                    <thead>
+                                    <tr>
+                                        <th colspan="2" rowspan="<?php echo $mergedCells; ?>"><h2><?php echo $this->__('Product') ?></h2></th>
+                                        <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
+                                            <th rowspan="<?php echo $mergedCells; ?>" class="a-center"><h2><?php echo $this->__('Move to Wishlist') ?></h2></th>
+                                        <?php endif ?>
+                                        <th class="a-center" width="10%" colspan="<?php echo $mergedCells; ?>"><h2><?php echo $this->__('Unit Price') ?></h2></th>
+                                        <th width="10%" rowspan="<?php echo $mergedCells; ?>" class="a-center"><h2><?php echo $this->__('Quantity') ?></h2></th>
+                                        <th class="a-center" colspan="<?php echo $mergedCells; ?>"><h2><?php echo $this->__('Subtotal') ?></h2></th>
+                                        <th rowspan="<?php echo $mergedCells; ?>" class="a-center">&nbsp;</th>
+                                    </tr>
+                                    <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
+                                        <tr>
+                                            <th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
+                                            <th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
+                                            <th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
+                                            <th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
+                                        </tr>
+                                    <?php endif; ?>
+                                    </thead>                                    
+                                    <tbody>
+                                    <?php foreach($this->getItems() as $_item): ?>
+                                        <?php echo $this->getItemHtml($_item) ?>
+                                    <?php endforeach ?>
+                                    </tbody>
+                                    <tfoot>
+                                    <tr>
+                                        <td class="a-left">
+                                            
+                                        </td>
+                                        <td colspan="50" class="a-right">
+                                            <?php if (false && $this->getContinueShoppingUrl()): ?>
+                                                <button type="button" title="<?php echo $this->__('Continue Shopping') ?>" class="button btn-continue" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')"><span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
+                                            <?php endif; ?>
+                                            <button type="submit" name="update_cart_action" value="update_qty" title="<?php echo $this->__('Update Shopping Cart'); ?>" class="button btn-update"><span><span><i class="fa fa-refresh"></i> <?php echo $this->__('Update Shopping Cart'); ?></span></span></button>
+                                            <button type="submit" name="update_cart_action" value="empty_cart" title="<?php echo $this->__('Clear Shopping Cart'); ?>" class="button btn-empty" id="empty_cart_button"><span><span><i class="trash"></i> <?php echo $this->__('Clear All Products'); ?></span></span></button>
+                                            <!--[if lt IE 8]>
+                                            <input type="hidden" id="update_cart_action_container" />
+                                            <script type="text/javascript">
+                                            //<![CDATA[
+                                                Event.observe(window, 'load', function()
+                                                {
+                                                    // Internet Explorer (lt 8) does not support value attribute in button elements
+                                                    $emptyCartButton = $('empty_cart_button');
+                                                    $cartActionContainer = $('update_cart_action_container');
+                                                    if ($emptyCartButton && $cartActionContainer) {
+                                                        Event.observe($emptyCartButton, 'click', function()
+                                                        {
+                                                            $emptyCartButton.setAttribute('name', 'update_cart_action_temp');
+                                                            $cartActionContainer.setAttribute('name', 'update_cart_action');
+                                                            $cartActionContainer.setValue('empty_cart');
+                                                        });
+                                                    }
+
+                                                });
+                                            //]]>
+                                            </script>
+                                            <![endif]-->
+                                        </td>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+                                <script type="text/javascript">decorateTable('shopping-cart-table')</script>
+                            </form>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">                        
+                            </div>
+                            <div class="col-md-6">
+                            </div>
+                        </div>
+                    </div> <!-- #page-shopping-cart-item-container -->
+
+                    <div id="page-shopping-cart-in-between-container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="in-between-reward-points">
+                                    <!-- Update from JS -->
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="each-details-container">
+                                    <div class="each-details">
+                                        <!--  -->
+                                        <a href="javascript:void(0);" id="update-shopping-cart" class="button btn-update arrow-cta"><span><i class="fa fa-refresh"></i> <?php echo $this->__('Update Shopping Cart'); ?></span></a>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div> <!-- #page-shopping-cart-in-between-container -->
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div id="page-shopping-cart-discount-code-container">
+                                <div class="each-input">
+                                    <?php /* Extensions placeholder */ ?>
+                                    <?php echo $this->getChildHtml('checkout.cart.extra') ?>
+                                </div>
+                                
+                                <div class="each-input">
+                                    <?php echo $this->getChildHtml('coupon') ?>
+                                </div>
+                                <div class="each-input">
+                                    <?php echo $this->getBlockHtml('coupon_points'); ?>
+                                </div>
+                                <?php if (false && !$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
+                                <?php if(isMobile()==false): ?>
+                                    <?php if(Mage::getSingleton('customer/session')->isLoggedIn()):
+                                        // Get group Id
+                                        $groupId = Mage::getSingleton('customer/session')->getCustomerGroupId();
+                                        //Get customer Group name
+                                        $group = Mage::getModel('customer/group')->load($groupId);
+                                    ?>
+                                        <?php if(strtolower(trim($group->getCode()))=="general"): ?>
+                                            <!-- <div class="each-input gift-service-wrapper">
+                                                <input type="checkbox" name="gift_service" style="opacity:0;">
+                                                <label class="checkbox-label" for="gift_service">
+                                                    <span></span><p class="label-text">gryphon optional gift service - handwritten card</p>
+                                                </label>
+
+                                                <textarea name="special_message" id="special_message" cols="30" rows="10" placeholder="Write a special message for your recipient here, it will be handwritten and delivered together with the product."></textarea>
+                                                <span id="message_characters_remaining">Characters Remaining: 200</span>
+                                            </div> -->
+                                        <?php endif; ?>
+                                    <?php else: ?>
+                                        <!-- <div class="each-input gift-service-wrapper">
+                                            <input type="checkbox" name="gift_service" style="opacity:0;">
+                                            <label class="checkbox-label" for="gift_service">
+                                                <span></span><p class="label-text">gryphon optional gift service - handwritten card</p>
+                                            </label>
+
+                                            <textarea name="special_message" id="special_message" cols="30" rows="10" placeholder="Write a special message for your recipient here, it will be handwritten and delivered together with the product."></textarea>
+                                            <span id="message_characters_remaining">Characters Remaining: 200</span>
+                                        </div> -->
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                            </div><!-- #page-shopping-cart-discount-code-container -->
+                        </div>
+
+                        <div class="col-md-6">
+                            <div id="page-shopping-cart-total-container">
+                                <?php echo $this->getChildHtml('totals'); ?>
+                            </div><!-- #page-shopping-cart-total-container -->
+                        </div>
+                    </div><!-- #row -->
+
+                    <div id="page-shopping-cart-cta-container">
+                        <div class="row action-container">
+                            <div class="col-md-12">
+                                <?php if(!$this->hasError()): ?>
+                                    <ul class="checkout-types">
+                                        <?php foreach ($this->getMethods('methods') as $method): ?>
+                                            <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
+                                                <li><?php echo $methodHtml; ?></li>
+                                            <?php endif; ?>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #page-shopping-cart-content -->
+            </div><!-- #col-md-10 -->
+        </div>
+    </div><!-- #container -->
+</article>
+<script>
+    jQuery(document).ready(function($){
+        // console.log($("#rewardFormArea").find(".rewards_point_cart").html())
+        if($(".rewards_point_cart").length > 0) {
+            $("#page-shopping-cart-in-between-container").find(".in-between-reward-points").html('<p>'+$("#rewardFormArea").find(".rewards_point_cart").html()+'</p>');
+        }
+
+        $("#update-shopping-cart").on("click", function(e){
+            e.preventDefault();
+            $(".btn-update").trigger("click");
+        });
+    });
+</script>
+<?php if(isMobile()==true): ?>
+<script type="text/javascript">
+  
+    jQuery(document).ready(function($) {
+
+      // function update_mobile_cart(href){
+      //   var arr = $('#content-wrapper .cart-breadcrumb a[data-toggle="tab"]');
+      //   var element = null;
+      //   var element_href = "";
+      //   var has_passed = false;
+
+      //   arr.addClass('fake-active');
+
+
+      //   for (var i = 0, l = arr.length; i < l; i++) {
+      //     element = $(arr[i]);
+      //     element_href = "" + element.attr('href');
+
+      //     if(has_passed == false){
+      //       if(element_href == href) {
+      //         has_passed = true;
+      //       }
+      //     } else{
+      //       element.removeClass('fake-active');
+      //     }
+
+      //   }
+
+      // }
+
+      // update_mobile_cart('#cart');
+
+      // $('#content-wrapper .cart-breadcrumb a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+      //   var href = $(this).attr('href');
+      //   update_mobile_cart(href);
+      // });
+
+
+
+      ////////////////////////
+      
+
+      // update shopping cart html
+      var arr = $('#shopping-cart-table tbody tr');
+      var table_row = null;
+      var col_1 = null;
+      var col_3 = null;
+      var new_image_container = null;
+      for (var i = 0, l = arr.length; i < l; i++) {
+        table_row = $(arr[i]);
+        col_1 = table_row.find('td:first-child');
+        col_3 = table_row.find('td:nth-child(3)');
+        new_image_container = $('<div class="image-text-container-2"></div>');
+        new_image_container.append(col_1.find('.img-container').clone());
+
+        text_container = $('<div class="text-container"></div>');
+        text_container.append(table_row.find('.product-title').clone());
+        text_container.append($(table_row.find('.product-price')[0]).clone());
+
+        //text_container.append($(table_row.find('.item-options') ).clone());
+        text_container.find('.product-title').after($(table_row.find('.item-options') ).clone());
+
+        if(  text_container.find('.view-tin-details').length != 0 ){
+            text_container.find('.view-tin-details').before(text_container.find('.product-price'));
+        }
+
+        new_image_container.append(text_container);
+
+        col_1.prepend(new_image_container);
+        col_3.append(table_row.find('.last-image-text-container'));
+
+        console.log('row!');
+      }
+
+      $('.view-tin-details').on('click', function(e){
+        console.log('view-tin-details click');
+        e.preventDefault();
+        var $that = $(this);
+        var $link = $(this).parent().parent().find('.item-options');
+            $link.slideToggle('slow', function(){
+                if($link.css('display') !== 'none')
+                    $that.find('i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+                else
+                    $that.find('i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+            });
+
+       });            
+
+    });
+  </script>
+  <?php endif; ?>

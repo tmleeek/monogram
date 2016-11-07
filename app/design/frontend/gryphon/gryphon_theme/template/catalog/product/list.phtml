@@ -1,0 +1,95 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Product list template
+ *
+ * @see Mage_Catalog_Block_Product_List
+ */
+/* @var $this Mage_Catalog_Block_Product_List */
+?>
+<?php
+    $_productCollection=$this->getLoadedProductCollection()->addAttributeToSort('pos‌​ition');
+    $current_cat_id = $this->getLayer()->getCurrentCategory()->getId();
+    if($current_cat_id==102 || $current_cat_id==107 || $current_cat_id==92) {
+        $_productCollection = Mage::getModel('catalog/category')->load($current_cat_id)
+                             ->getProductCollection()
+                             ->addAttributeToSelect('*')
+                             ->addAttributeToFilter('status', 1) // enabled
+                             ->addAttributeToFilter('visibility', 4) //visibility in catalog,search
+                             ->addAttributeToSort('name', Varien_Data_Collection::SORT_ORDER_ASC);
+    }
+
+	
+	$locationskuSGPArray = array("SGP-ART-1M", "SGP-ART-3M", "SGP-ART-6M", "SGP-ART-12M", "SGP-GUR-1M", "SGP-GUR-3M", "SGP-GUR-6M", "SGP-GUR-12M","INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
+	
+    $_helper = $this->helper('catalog/output');    
+
+    // $currentCategory = Mage::registry('current_category');
+    // $current_category_data = $currentCategory->getData();
+
+    $session = Mage::getSingleton('customer/session');
+    $groupname = '';                            
+    if($session->isLoggedIn()) {
+        $customer = $session->getCustomer();
+        $customerGroupId = $customer->getGroupId();
+        $groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();
+    }                                
+?>
+<div id="result_products">
+<?php if(!$_productCollection->count()): ?>
+    <div class="row">
+        <div class="col-md-12">
+            <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+        </div>
+    </div>
+<?php else: ?>
+    <?php //echo $this->getToolbarHtml() ?>
+        <div class="products tea-store-product-row" id="products_list">
+            <?php $counter = 1; ?>
+            <?php foreach ($_productCollection as $key => $_product): 
+			if(in_array($_product->getSku(),$locationskuSGPArray))
+			{
+				continue;
+			}
+			?><div class="tea-store-product"> <!--<form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" style="margin-bottom: 5px;" id="product_addtocart_form" <?php if($_product->getOptions()): ?> enctype="multipart/form-data" <?php endif; ?>> <?php echo $this->getBlockHtml('formkey') ?> <input type="hidden" name="product" value="<?php echo $_product->getId() ?>"/> <input type="hidden" name="related_product" id="related-products-field" value=""/> <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?><a href="#" class="arrow-cta" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">Add to cart</a> <?php else: ?><a href="<?php echo $_product->getProductUrl() ?>" class="arrow-cta">Add to cart</a> <?php endif; ?> </form>--> <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"> <?php $_imgSize=242; ?> <img id="product-collection-image-<?php echo $_product->getId(); ?>" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize($_imgSize); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="img"/> </a> <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-caption tea-store-product-info"> <?php $_productNameStripped=$this->stripTags($_product->getName(), null, true); ?> <?php if(!empty($_product->getData('product_name_in_color'))): ?> <h3><?php echo $_product->getData('product_name_in_color'); ?></h3> <?php else: ?> <h3><?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></h3> <?php endif; ?> <span class="category"><?php echo $this->helper('catalogcustomiser')->getTypesCategory($_product, $this->getLayer()->getCurrentCategory()->getName()); ?></span> <span class="price"><?php echo $this->getPriceHtml($_product, true) ?></span> <?php if($_productNameStripped=='Gift Card'): ?> <?php if(($groupname!=='Trader-Temp' && $groupname!=='Trader-Regular' && $groupname!=='Trader-Priority' && $groupname!=='Trader-Premium')): ?> <?php endif; ?> <?php endif; ?> </a></div><?php $counter++; ?><?php endforeach; ?>
+        </div>
+    <?php //echo $this->getToolbarBlock()->setTemplate('miragedesign/catalog/product/list/toolbar_bottom.phtml')->toHtml(); ?>
+<?php endif;
+
+        // Provides a block where additional page components may be attached, primarily good for in-page JavaScript
+        if ($this->getChild('after')) {
+            $_afterChildren = $this->getChild('after')->getSortedChildren();
+            foreach ($_afterChildren as $_afterChildName) {
+                $_afterChild = $this->getChild('after')->getChild($_afterChildName);
+                //set product collection on after blocks
+                $_afterChild->setProductCollection($_productCollection);
+                echo $_afterChild->toHtml();
+            }
+        }
+        ?>             
+</div>

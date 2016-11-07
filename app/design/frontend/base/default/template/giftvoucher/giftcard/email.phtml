@@ -1,0 +1,70 @@
+<?php
+/**
+ * Grid template
+ */
+?>
+
+<?php $_giftCard = $this->getGiftVoucher() ?>
+<div id="monogram-page-account-giftcard-detail-container">
+<div class="page-title">
+    <h3><?php echo $this->__('Email Gift Card to Friend') ?></h3>
+</div>
+
+<?php echo $this->getChildHtml('giftvoucher.basic') ?>
+
+<form id="email-giftcard-tofriend" method="post" action="<?php echo $this->getUrl('*/*/sendEmail') ?>">
+    <div class="fieldset">
+        <h2 class="legend"><?php echo $this->__('Email to a Friend') ?></h2>
+        <ul class="form-list">
+            <li>
+                <input name="giftcard_id" type="hidden" value="<?php echo $_giftCard->getId() ?>" />
+            </li>
+            <li class="fields">
+                <div class="field">
+                    <div class="each-input">
+                        <label class="required" for="recipient_name"><em>*</em><?php echo $this->__('Name:') ?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text required-entry" value="<?php echo $_giftCard->getRecipientName() ?>" id="recipient_name" name="recipient_name" />
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="each-input">
+                        <label class="required" for="recipient_email"><em>*</em><?php echo $this->__('Email Address:') ?></label>
+                        <div class="input-box">
+                            <input type="text" class="input-text required-entry" value="<?php echo $_giftCard->getRecipientEmail() ?>" id="recipient_email" name="recipient_email" />
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="wide">
+                <div class="each-input">
+                    <label class="required" for="message"><em>*</em><?php echo $this->__('Message:') ?></label>
+                    <div class="input-box-2">
+                        <textarea name="message" class="input-text required-entry" id="message" cols="3" rows="3"><?php echo $_giftCard->getMessage() ?></textarea>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="buttons-set">
+        <p class="back-link">
+            <a href="#" onclick="setLocation('<?php echo $this->getUrl('*/*/index') ?>');return false;">
+                <small>« </small>
+                <?php echo $this->__('Back') ?>
+            </a>
+        </p>
+        <div class="edit-button-container">
+            <button type="submit" class="button square-cta">
+                <span>
+                    <span><?php echo $this->__('Send to Friend') ?></span>
+                </span>
+            </button>
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+    var emailGiftcardTofriendForm = new VarienForm('email-giftcard-tofriend',true);
+</script>
+</div>

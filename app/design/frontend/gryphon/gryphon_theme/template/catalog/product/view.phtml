@@ -1,0 +1,472 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/**
+ * Product view template
+ *
+ * @see Mage_Catalog_Block_Product_View
+ * @see Mage_Review_Block_Product_View
+ */
+?>
+<style>
+#trade-product-weight-table .price
+{
+	color: #464646;
+    font-family: minion-pro,Verdana,sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    line-height: 39px;
+    text-align: left;
+}
+</style>
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php $_product = $this->getProduct(); ?>
+<?php
+$isGiftcardType = $this->helper('catalogcustomiser')->isGiftcardType($_product);
+
+if ($_product->getShortDescription()):
+    $shortDescription = $_helper->productAttribute($_product, nl2br($_product->getDescription()), 'short_description');
+endif; 
+?>
+<?php 
+    $subscription_in_the_cart = 0;
+    $allskus = array("SGP-ART-1M", "SGP-ART-3M", "SGP-ART-6M", "SGP-ART-12M", "SGP-GUR-1M", "SGP-GUR-3M", "SGP-GUR-6M", "SGP-GUR-12M","INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
+    $quote = Mage::getSingleton('checkout/session')->getQuote();
+    foreach ($quote->getAllVisibleItems() as $item) {
+        $itemsku = $item->getProduct()->getData('sku');        
+        if(in_array($itemsku, $allskus)) {
+            $subscription_in_the_cart = 1;
+        }
+    }
+?>
+<div id="content-wrapper" class="product">
+    <article id="tea-product-detail-section-1">
+        <div class="desktop-header-spacer" style="height: 70px;"></div>
+
+        <div class="container">
+            <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+                <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
+                <?php echo $this->getBlockHtml('formkey') ?>                    
+                <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+                <input type="hidden" name="related_product" id="related-products-field" value="" />
+                <div id="product-detail-img-info-container" class="row">
+                    <div class="col-md-4 v-align">
+                        <?php if ($isGiftcardType) : ?>
+                        <div class="gift-card-img">
+                        <?php elseif($_product->getTypeId() == 'tin'): ?>
+                        <div class="treasure-design-img">
+                        <?php else: ?>
+                        <div class="product-img-box product-img">
+                        <?php endif; ?>
+                            <?php echo $this->getChildHtml('media') ?>
+                        </div>
+                    </div><!--
+                    --><div class="col-md-4 v-align">
+                        <?php if ($isGiftcardType || $_product->getTypeId() == 'tin') : ?>
+                        <div class="gift-card-content">                        
+                        <?php else: ?>
+                        <div class="product-content product-info">
+                        <?php endif; ?>
+                            <h5>Tasting notes</h5>
+                            <?php if ($this->canEmailToFriend()): ?>
+                                <p class="email-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a></p>
+                            <?php endif; ?>
+                            
+                            <?php if ($isGiftcardType) :?>
+                                <?php echo $this->getChildHtml('product_type_data') ?>
+                            <?php else : ?>                            
+                                <?php 
+                                $catIds = $_product->getCategoryIds(); 
+                                foreach ($catIds as $category_id) { $_cat = Mage::getModel('catalog/category')->load($category_id) ;
+                                    $catNames[] = $_cat->getName();
+                                } ?>
+                                <?php if( $_product->getTypeId() !== 'tin' ): ?>
+                                    <p><?php echo $shortDescription; ?></p>
+                                    <div class="row">
+                                        <div class="col-md-6 product-info-col-1">
+                                            <h5><?php echo $this->__('Price'); ?></h5>
+                                            <?php if (!$isGiftcardType) :?> 
+                                                <span><?php echo $this->getPriceHtml($_product); ?></span>
+                                                <?php echo $this->getChildHtml('bundle_prices') ?>
+                                            <?php endif; ?>
+                                        </div>
+                                        <div class="col-md-6 product-info-col-2">
+                                            <h5><?php echo $this->__('No. of Sachet'); ?></h5>
+                                            <span><?php echo $_product->getData('number_of_sachet'); ?> per Box</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 product-info-col-1">
+                                            <?php $product_category_name = $this->helper('catalogcustomiser')->getTypesCategory($_product); ?>
+                                            <?php if( !empty($product_category_name) ): ?>
+                                                <h5><?php echo $this->__('Tea Type'); ?></h5>
+                                                <span><?php echo $product_category_name; ?></span>
+                                            <?php endif; ?>
+                                        </div>
+                                        <?php if($_product->getData('weight') > 0): ?>
+                                        <div class="col-md-6 product-info-col-2">
+                                            <h5><?php echo $this->__('Weight'); ?></h5>
+                                            <span><?php echo number_format($_product->getData('weight'), 1); ?> g per Sachet</span>
+                                        </div>
+                                        <?php endif; ?>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 product-info-col-1">
+                                            <?php if( !empty($_product->getTemperature()) && !empty($_product->getTime()) ): //!empty($_product->getAmountOfWater()) &&  ?>
+                                            <div class="steeping-suggestion">
+                                                <h5><?php echo $this->__('Steeping Suggestion'); ?></h5>
+                                                <ul class="steeping-suggestion">
+                                                    <!-- <li><i class="spoon steeping-suggestion-icon-1"></i><span><?php echo $_product->getAmountOfWater(); ?></span></li> -->
+                                                    <li><i class="temperature steeping-suggestion-icon-1"></i><span><?php echo $_product->getTemperature(); ?></span></li>
+                                                    <li><i class="time steeping-suggestion-icon-2"></i><span><?php echo $_product->getTime(); ?></span></li>
+                                                </ul>                                            
+                                            </div>
+                                            <?php endif; ?>
+                                          
+                                            <div class="social-media-share">
+                                                <h5><?php echo $this->__('Share'); ?></h5>
+                                                <?php echo $this->getChildHtml('sharing') ?>
+                                                <!-- <ul>
+                                                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                                </ul> -->
+                                            </div>
+                                        </div>
+                                        <?php if( !empty($_product->getIngredients()) ): ?>
+                                        <div class="col-md-6 product-info-col-2">
+                                            <h5><?php echo $this->__('Ingredients'); ?></h5>
+                                            <ul>
+                                                <li><span><?php echo $_product->getIngredients(); ?></span></li>
+                                            </ul>
+                                        </div>
+                                        <?php endif; ?>
+                                    </div>
+                                <?php else: ?>                            
+                                    <p><?php echo $shortDescription; ?></p>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                            
+                            <div class="row">                                
+                                <?php echo $this->getChildHtml('other');?>
+
+                                <?php if( $_product->getTypeId() == 'tin' ): ?>
+                                    <div class="col-md-6 product-info-col-1">
+                                        <div class="inputs">
+
+                                            <div class="each-input">
+                                              <label for="treasure_quantity">Quantity*</label>
+
+                                              <div class="quantity-container" id="treasure_quantity_container">
+                                                <div class="minus-button minus"></div>
+                                                <input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="<?php echo max($this->getProductDefaultQty() * 1, 1) ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty short" />
+                                                <div class="plus-button plus"></div>                    
+                                              </div>                                              
+                                            </div>                                            
+                                            
+                                            <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                                            <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+                                            <?php endif;?>       
+
+                                             <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                                                <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
+                                            <?php endif;?>
+                                            
+                                        </div>  
+                                    </div>  
+                                    <div class="col-md-6 product-info-col-2">
+
+                                        <?php if (!$this->hasOptions()):?>
+                                            <div class="add-to-box">
+                                                <?php if($_product->isSaleable()): ?>
+                                                    <?php echo $this->getChildHtml('addtocart') ?>
+                                                <?php endif; ?>
+                                                <?php echo $this->getChildHtml('addto') ?>
+                                            </div>
+                                            <?php echo $this->getChildHtml('extra_buttons') ?>
+                                        <?php elseif (!$_product->isSaleable()): ?>
+                                            <div class="add-to-box">
+                                                <?php echo $this->getChildHtml('addto') ?>
+                                            </div>
+                                        <?php endif; ?>  
+
+                                    </div>
+                                <?php else: ?>
+                                     <?php if (!$this->hasOptions()):?>
+                                        <div class="add-to-box">
+                                            <?php if($_product->isSaleable()): ?>
+                                                <?php echo $this->getChildHtml('addtocart') ?>
+                                            <?php endif; ?>
+                                            <?php echo $this->getChildHtml('addto') ?>
+                                        </div>
+                                        <?php echo $this->getChildHtml('extra_buttons') ?>
+                                    <?php elseif (!$_product->isSaleable()): ?>
+                                        <div class="add-to-box">
+                                            <?php echo $this->getChildHtml('addto') ?>
+                                        </div>
+                                    <?php endif; ?>
+                                <?php endif; ?>                                                            
+                            </div>
+                        </div>
+                    </div><!--    
+                  --><div class="col-md-4 v-align suggestion-container">
+                    <?php echo $this->getChildHtml('upsell_products') ?>    
+                  </div><!-- end suggestion-container -->
+                </div>
+            </form>
+            <script>
+            jQuery(document).ready(function(e){
+                if(jQuery('.messages').html()!= undefined) {
+                    jQuery('#messages_product_view').html('<ul class="messages">'+jQuery('.messages').html()+'</ul>');                
+                }
+                var suggestionHeight = $j(".suggestion-container").height();
+                var productdetailHeight = $j("#product-detail-img-info-container").height();
+
+                if(suggestionHeight > productdetailHeight)
+                    $j("#product-detail-img-info-container").css("height", suggestionHeight);
+                else
+                    $j(".suggestion-container").css("height", productdetailHeight);
+            });
+            </script>
+            <script type="text/javascript">
+            //<![CDATA[
+
+                function do_update() {
+                    jQuery.ajax({
+                        url: '<?php echo $this->getUrl("discovertea/index/cartpreview"); ?>',
+                        dataType: 'json',
+                        type : 'get',
+                        success: function(data){
+
+                            // update product count in cart
+                            jQuery("#desktop-header-cart").find(".count").text("("+data.cart_qty+")");
+
+                            jQuery('.cart-preview-content').html('');
+                            jQuery.each(data.cart_items, function(key,value){
+
+                                jQuery('.cart-preview-content').append('<ul class="cart-content"><li><img src="'+value.image+'" alt=""><span>'+value.name+'</span></li><li>'+value.qty+'</li><li>'+value.row_price+'</li></ul>');
+
+                                jQuery('.cart-summary').find('.total-items-count').html(data.cart_qty);
+                                jQuery('.cart-summary').find('.sub-total-amount').html(data.cart_total);
+
+                            });
+
+                            jQuery('.cart-header').show();
+                            jQuery('.cart-summary').show();
+                            jQuery('.cta-btns').show();
+                            jQuery('#main-header .cart-preview-select').show();
+                            jQuery('#main-header .cart-preview-select').delay(5000).hide(400);
+
+                            var mobile_header = jQuery("#main-mobile-header").data('gryphon_mobile_header');
+                            mobile_header.public_open_cart();
+                            //jQuery('#mobile-cart-expand-container').show();
+                            
+
+                            jQuery('.mobile-cart-button').find('span').html(data.cart_qty);
+                            jQuery('.cart-summary-data').find('.price').html(data.cart_total);
+                            jQuery('.cart-summary-data').find('.count').html(data.cart_qty);
+                            jQuery('.cart-summary-data span').html('<span class="price">'+data.cart_total+'</span> (<span class="count">'+data.cart_qty+'</span>)');
+                        }
+                    });                     
+                }
+
+                var productAddToCartForm = new VarienForm('product_addtocart_form');
+                productAddToCartForm.submit = function(button, url) {
+                    if (this.validator.validate()) {
+                        var form = this.form;
+                        var oldUrl = form.action;
+
+                        if (url) {
+                           form.action = url;
+                        }
+                        var e = null;
+                        // try {
+                        //     this.form.submit();
+                        // } catch (e) {
+                        // }
+                        //Start of our new ajax code
+                        if(!url){
+                            url = jQuery('#product_addtocart_form').attr('action');
+                        }
+                        var data = jQuery('#product_addtocart_form').serialize();
+                        data += '&isAjax=1';   
+                        jQuery('#ajax_loader_product').show();
+
+                        var subscription_in_the_cart = <?php echo $subscription_in_the_cart; ?>;
+
+                        if(subscription_in_the_cart==1) {                                
+                            jQuery('span.ajax_msg_product').html('This item cannot be purchased with a subscription plan in the cart. Please check out first before making any other purchases.').show();
+                            jQuery('#ajax_loader_product').hide();
+                        }else {
+                            try {
+                                jQuery.ajax({
+                                    url: url,
+                                    dataType: 'json',
+                                    type : 'post',
+                                    data: data,
+                                    success: function(data){
+                                        jQuery('#ajax_loader_product').hide();
+                                        console.log(data.status + ": " + data.message);
+
+                                        if(data.status=="ERROR") {
+                                            jQuery('span.ajax_msg_product').html(data.message).show().delay(5000).fadeOut();
+                                        }else {
+                                            do_update();
+                                            jQuery('span.ajax_msg_product').html('Added to cart!').show().delay(5000).fadeOut();
+                                        }
+                                    },
+                                    error: function() {
+                                        console.log(jqXHR, textStatus, errorThrown);
+                                        do_update();
+                                        jQuery('span.ajax_msg_product').html('Added to cart!').show().delay(5000).fadeOut();
+                                    }
+                                });
+                            } catch (e) {
+                            }                                
+                        }
+                        //End of our new ajax code    
+                        this.form.action = oldUrl;
+                        if (e) {
+                            throw e;
+                        }
+
+                        // if (button && button != 'undefined') {
+                        //     button.disabled = true;
+                        // }
+                    }
+                }.bind(productAddToCartForm);
+
+                productAddToCartForm.submitLight = function(button, url){
+                    if(this.validator) {
+                        var nv = Validation.methods;
+                        delete Validation.methods['required-entry'];
+                        delete Validation.methods['validate-one-required'];
+                        delete Validation.methods['validate-one-required-by-name'];
+                        // Remove custom datetime validators
+                        for (var methodName in Validation.methods) {
+                            if (methodName.match(/^validate-datetime-.*/i)) {
+                                delete Validation.methods[methodName];
+                            }
+                        }
+
+                        if (this.validator.validate()) {
+                            if (url) {
+                                this.form.action = url;
+                            }
+                            this.form.submit();
+                        }
+                        Object.extend(Validation.methods, nv);
+                    }
+                }.bind(productAddToCartForm);
+            //]]>
+            </script>
+            <?php if ($isGiftcardType || $_product->getTypeId() == 'tin') : ?>
+            <script>
+            jQuery(document).ready(function(){
+
+                var face_index = 0;
+
+                function show_index( index_param ){
+
+                    face_index = index_param;
+
+                    var face_array = [
+                      jQuery("#treasure-design-front"),
+                      jQuery("#treasure-design-back"),
+                      jQuery("#treasure-design-side")
+                      //jQuery(".treasure-design-img #treasure-design-side")
+                    ];
+
+                    var face_element = null;
+
+                    for (var i = 0, l = face_array.length; i < l; i++) {
+
+                      face_element = jQuery(face_array[i]);
+
+                      if (i == index_param) {
+                        face_element.show(0);
+                      } else {
+                        face_element.hide(0);
+                      }
+                    }
+                    
+                }
+
+                jQuery(".treasure-design-img .next-image-button").click(function(){
+                    var target_index = face_index + 1;
+                    target_index = target_index > 2 ? 0 : target_index;
+                    show_index(target_index);
+
+                }.bind(this));
+
+                jQuery(".treasure-design-img .prev-image-button").click(function(){
+                    var target_index = face_index - 1;
+                    target_index = target_index < 0 ? 2 : target_index;
+                    show_index(target_index);
+                }.bind(this));
+
+
+                jQuery(".treasure_recipient_name").keyup(function(event) {
+                    var str = "" + jQuery(".treasure_recipient_name").val();
+                    var remaining = 25 - str.length;
+                    if(str.length > 25){
+                      str = str.substring(0, 25);
+                      jQuery(".treasure_recipient_name").val(str);
+                      remaining = 0;
+                    }
+
+                    jQuery("#recipient_name_characters_remaining").html('Characters Remainding: ' + remaining);
+                    jQuery("#treasure-design-front .treasuretext-name").html(str);
+
+                });
+
+                jQuery(".treasure_message").keyup(function(event) {
+                    var str = "" + jQuery(".treasure_message").val();
+                    var remaining = 200 - str.length;
+                    if(str.length > 200){
+                      str = str.substring(0, 200);
+                      jQuery(".treasure_message").val(str);
+                      remaining = 0;
+                    }
+
+                    jQuery("#message_characters_remaining").html('Characters Remainding: ' + remaining);
+                    jQuery("#treasure-design-back .treasuretext-message").html(str);
+                });                    
+            }); 
+            </script>            
+            <?php endif; ?>
+        </div>
+    </article>
+
+    <?php //echo $this->getChildHtml('product.info.selections') ?>       
+
+    <?php echo $this->getChildHtml('product_additional_data') ?>
+
+</div>

@@ -1,0 +1,193 @@
+<!--@subject A gift card from {{htmlescape var=$sendername}} @-->
+<!--@vars
+{"htmlescape var=$name":"Recipient Name",
+"htmlescape var=$sendername":"Sender name",
+"var code":"Gift Card Code",
+"var balance":"Gift Card Balance",
+"var status":"Status",
+"htmlescape var=$message":"Message",
+"var expiredat":"Expired At"}
+@-->
+
+<!--@styles
+@-->
+<style>
+.gift-card-img{
+  display: inline-block;
+  width: 53%;
+  border: 1px solid #cccccc;
+  height: 700px;
+  position: relative;
+}
+
+.gift-card-img.giftcard-product-media {
+  float: none!important;;
+  width: auto!important;;
+  height: auto!important;;
+}
+
+.gift-card-img.vcenter{
+    display: table;
+    width: 100%;
+    //height: 467px;
+    height: 700px;
+    float: none!important;
+}
+
+.gift-card-img.vcenter.vcenter2{
+  display: table-cell;
+  vertical-align: middle;
+  position: static!important;
+  height: 100%!important;
+  background-size: 448px 617px;          
+}
+
+#gift-design-01,
+#gift-design-02{
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  width: 450px;
+  height: 620px;          
+}
+
+
+#gift-design-01{
+
+}
+#gift-design-02{
+  display: none;          
+}
+.gifttext{
+  color: #ae4e0e !important;
+}
+
+img{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.gifttext{
+  position: absolute;
+  top: 155px;
+  left: 80px - 4px;
+  width: 300px;
+  height: 420px;
+  text-align: center;
+  color: #ffffff;          
+}
+.gifttext-intro{
+  font-family: 'MinionPro-Semibold-Italic', Tahoma, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.02em;
+
+  height: 65px + 8px;                              
+}
+.dear {
+  font-size: 20px;
+  margin-bottom: 4px;                      
+}
+.gifttext-title{
+  font-family: 'MinionPro-Regular', Tahoma, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+
+  margin-bottom: -1px;
+}
+.gifttext-amount{
+  font-family: 'MinionPro-Regular', Tahoma, Helvetica, Arial, sans-serif;
+  font-size: 50px;
+  line-height: 50px;
+  letter-spacing: 0.01em;
+  margin-bottom: 25px;
+}
+.gifttext-copy{
+  font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+
+  height: 113px;
+  margin-bottom: 29px;
+}
+.gifttext-code-title{
+  font-family: 'Gotham-Bold', Tahoma, Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  line-height: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: -2px;                    
+}
+.gifttext-code{
+  font-family: 'Gotham-Bold', Tahoma, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 32px;
+}
+.gifttext-disclaimer{
+  font-family: 'MinionPro-Semibold-Italic', Tahoma, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  color: #d98d54;                    
+}
+.white {
+  color: #ffffff !important;          
+}
+.gifttext-disclaimer{
+  color: #ffffff !important;
+}
+</style>
+
+<!-- ONE COLUMN SECTION -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#ffffff" align="center" style="padding: 0px 15px 70px 15px;" class="section-padding">
+            <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
+                <tr>
+                    <td>
+                        <!-- HERO IMAGE -->
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">  
+                            <tr>
+                                <td align="center">
+                                    <div class="gift-card-img">
+                                        <img src="{{var image}}">
+                                        <div class="gifttext">
+                                            <div class="gifttext-intro">Dear {{htmlescape var=$name}},  a special gift for you. <br>(from {{htmlescape var=$sendername}})</div>
+                                            <div class="gifttext-title">gift card</div>
+                                            <div class="gifttext-amount">S$ <span class="gifttext-amount-number">{{ balance }}</span></div>
+                                            <div class="gifttext-copy">{{ htmlescape var=$message }}</div>
+                                            <div class="gifttext-code-title">gift card code</div>
+                                            <div class="gifttext-code">{{ code }}</div>
+                                            <div class="gifttext-disclaimer">Converting to cash is not allowed. <br>You can use the gift card code or redeem it to pay for your order at <a href="{{store url=""}}">{{var store.getFrontendName()}}</a>.</div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>                          
+                            <!-- <tr>
+                                <td>
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td align="center" style="font-size: 14px; font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; color: #252525; padding-top: 40px;" class="padding-copy">Hi, {{htmlescape var=$name}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" style="padding: 20px 45px 0 45px; font-size: 12px; line-height: 19px; font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy">We are glad to inform that {{htmlescape var=$sendername}} has sent you a Gift Card from {{var store.getFrontendName()}}.</td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" style="padding: 20px 45px 0 45px; font-size: 12px; line-height: 19px; font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy">You can comfortably use the Gift Card(s) to purchase other products at <a href="{{store url=""}}">{{var store.getFrontendName()}}</a> or add it as store credit at my account page.</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr> -->
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

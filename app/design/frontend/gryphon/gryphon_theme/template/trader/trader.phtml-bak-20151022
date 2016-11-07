@@ -1,0 +1,508 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Create account form template
+ *
+ * @var $this Mage_Customer_Block_Form_Register
+ */
+//echo "<pre>"; print_r($formdata);die();
+?> 
+
+<div class="trade-signup" id="content-wrapper">
+
+    <div class="trade-signup-banner">
+        <div class="image-text-content container">
+            <div class="row">
+                <div class="col-md-12 caption-container">
+                    <div class="caption">
+                        <h1>Partner With Gryphon</h1>
+                        <p>We are always looking for new partners who share our love of quality tea and great customer experiences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+
+        <div class="first-content">
+            <div class="image-text-content container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="center">
+                            <h1>SPREADING A BETTER CUP OF <br class="visible-xs"> TEA TO EVERYONE</h1>
+                            <hr class="small">
+
+                            <p>We appreciate your interest in brewing our tea. Please take a few moments to fill out the form below and we will get back to you within 2 business days to discuss setting up a business account with Gryphon Tea Company.</p>								
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php echo $this->getMessagesBlock()->toHtml() ?>
+        <div class="last-content">
+            <div class="form-content container"> 
+                <div class="row"> 
+                    <form action="<?php echo $this->getUrl("trader/customer_account/") ?>createpost/" method="post" id="trader_register" name="trader_register" enctype="multipart/form-data">
+                        <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
+                        <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />
+                        <input type="hidden" name="group" value="Trader-Temp" />
+                        <input type="hidden" name="isactivated" value="0" />
+                        <input type="hidden" name="formtype" value="trader"/>
+                        <input type="hidden" name="istrader" value="1"/>
+                        <?php $password = Mage::helper('core')->getRandomString($length = 7) ?>
+                        <input type="hidden" name="password" value="<?php echo $password ?>"/>
+                        <input type="hidden" name="confirmation" value="<?php echo $password ?>"/>
+                        <div class="col-md-5 col-md-offset-1">
+                            <h1>Organization details</h1>
+                            <hr class="small">	 
+                            <div class="inputs">
+                                <div class="each-input">
+                                    <label for="companyname">COMPANY NAME*</label>
+                                    <input type="text" name="companyname" id="companyname" class="input-text required-entry validate-alpha" value="<?php echo $this->escapeHtml($this->getFormData()->getCompanyname()) ?>" />
+                                </div> 
+                                <div class=" each-input">
+                                    <label for="registrationnumber">business registration number*</label>
+                                    <input type="text" name="registrationnumber" class="input-text required-entry" value="<?php echo $this->escapeHtml($this->getFormData()->getRegistrationnumber()) ?>" />
+                                </div> 
+                                <div class="each-input">
+                                    <p>Business Registration Number: The unique number given to you when you register as an entity, or your existing ACRA registration number. <br>Note: optional for foreign companies.</p>
+                                </div> 
+                                <div class="each-input">
+                                    <label for="uploadacrapdf">Upload ACRA document(pdf)*</label>                                   
+                                    <input style=" display: inline; font-size: 12px;" type="file" accept=".pdf" name="uploadacrapdf" class="input-text required-entry custom-file-input" value=""/>
+                                    <span class="upload-restriction">File must be in .pdf format and no more than 5MB</span>
+                                </div>
+                                <div class="each-input">
+                                    <label>date of business registration*</label> 
+                                    <div class="dropdown-container">
+                                        <!-- <div class="row"> -->
+                                            <!-- <div class="col-xs-4">  -->
+                                                <div class=" dropdown date-dropdown">
+                                                    <select class="input-text required-entry" id="registration_date_day" name="registration_date_day" value="<?php echo $this->escapeHtml($this->getFormData()->getRegistrationDateDay()) ?>" />>
+                                                    <?php
+// use your own attribute code here 
+                                                    $attribute_code = "registration_date_day";
+                                                    $attribute_details = Mage::getSingleton("eav/config")->getAttribute("customer", $attribute_code);
+                                                    $options = $attribute_details->getSource()->getAllOptions(false);
+                                                    foreach ($options as $option) {
+                                                        if ($this->escapeHtml($this->getFormData()->getRegistrationDateDay()) == $option["value"]) {
+                                                            echo "<option selected='true' value=" . $option["value"] . ">" . $option["label"] . "</option>";
+                                                        } else {
+                                                            echo "<option value=" . $option["value"] . ">" . $option["label"] . "</option>";
+                                                        }
+                                                    }
+                                                    ?>
+                                                    </select>
+                                                </div>
+                                            <!-- </div>
+                                            <div class="col-xs-4"> -->
+                                                <div class=" dropdown date-dropdown">
+                                                    <select class="input-text required-entry" id="registration_date_month" name="registration_date_month">
+                                                        <?php
+// use your own attribute code here 
+                                                        $attribute_code = "registration_date_month";
+                                                        $attribute_details = Mage::getSingleton("eav/config")->getAttribute("customer", $attribute_code);
+                                                        $options = $attribute_details->getSource()->getAllOptions(false);
+                                                        foreach ($options as $option) {
+                                                            if ($this->escapeHtml($this->getFormData()->getRegistrationDateMonth()) == $option["value"]) {
+                                                                echo "<option selected='true' value=" . $option["value"] . ">" . $option["label"] . "</option>";
+                                                            } else {
+                                                                echo "<option value=" . $option["value"] . ">" . $option["label"] . "</option>";
+                                                            }
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            <!-- </div>
+                                            <div class="col-xs-4"> -->
+                                                <div class="input dropdown date-dropdown">
+                                                    <select class="input-text required-entry" id="registration_date_year" name="registration_date_year">
+                                                        <?php
+// use your own attribute code here 
+                                                        $attribute_code = "registration_date_year";
+                                                        $attribute_details = Mage::getSingleton("eav/config")->getAttribute("customer", $attribute_code);
+                                                        $options = $attribute_details->getSource()->getAllOptions(false);
+                                                        foreach ($options as $option) {
+                                                            if ($this->escapeHtml($this->getFormData()->getRegistrationDateYear()) == $option["value"]) {
+                                                                echo "<option selected='true' value=" . $option["value"] . ">" . $option["label"] . "</option>";
+                                                            } else {
+                                                                echo "<option value=" . $option["value"] . ">" . $option["label"] . "</option>";
+                                                            }
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            <!-- </div> -->
+
+                                        <!-- </div> -->
+                                    </div>
+                                </div>
+
+                                <div class="each-input">
+                                    <label for="type_of_establishment*">Type of establishment*</label>
+                                    <div class="dropdown">
+                                        <select id="type_of_establishment" name="type_of_establishment" class="input-text required-entry">
+                                            <option value="">Choose the type</option>
+                                            <?php
+// use your own attribute code here 
+                                            $attribute_code = "type_of_establishment";
+                                            $attribute_details = Mage::getSingleton("eav/config")->getAttribute("customer", $attribute_code);
+                                            $options = $attribute_details->getSource()->getAllOptions(false);
+                                            foreach ($options as $key => $row)
+                                            {
+                                                $num[$key] = $row['value'];
+                                            }
+                                            array_multisort($num, SORT_ASC, $options);
+
+                                            foreach ($options as $option) {
+                                                if ($this->escapeHtml($this->getFormData()->getTypeOfEstablishment()) == $option["value"]) {
+                                                    echo "<option selected='true' value=" . $option["value"] . ">" . $option["label"] . "</option>";
+                                                } else {
+                                                    echo "<option value=" . $option["value"] . ">" . $option["label"] . "</option>";
+                                                }
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="each-input">
+                                    <label for="address">address</label>
+                                    <input type="text" name="street[]" class="input-text" value="<?php echo $this->escapeHtml($this->getFormData()->getStreet(1)) ?>" />
+                                </div>
+
+                                <div class="each-input">
+                                    <label for="address_2"></label>
+                                    <input type="text" name="street[]" class="input-text"  value="<?php echo $this->escapeHtml($this->getFormData()->getStreet(2)) ?>" />
+                                </div>
+
+
+                                <div class="each-input"><label for="country">country</label>
+                                    <div class="dropdown">
+                                        <?php echo $this->getCountryHtmlSelect() ?>
+                                    </div>
+                                </div>
+                                <div class="each-input">
+                                    <label for="state">STATE</label>	
+                                    <select id="region_id" name="region_id" title="<?php echo $this->__('State/Province') ?>" class="validate-select" style="display:none;">
+                                <option value=""><?php echo $this->__('Please select region, state or province') ?></option>
+                            </select>
+                            <script type="text/javascript">
+                            //<![CDATA[
+                                $('region_id').setAttribute('defaultValue', "<?php echo $this->getFormData()->getRegionId() ?>");
+                            //]]>
+                            </script>
+                            <input type="text" id="region" name="region" value="<?php echo $this->escapeHtml($this->getRegion()) ?>" title="<?php echo $this->__('State/Province') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('region') ?>" style="display:none;" />
+                        
+                                </div>
+                                <div class="each-input">
+                                    <label for="city">CITY</label>
+                                    <input type="text" name="city" id="city" class="input-text" value="<?php echo $this->escapeHtml($this->getFormData()->getCity()) ?>" />
+                                </div>
+                                <div class="each-input">
+                                    <label for="postal_code">Postal code</label>
+                                    <input type="text" name="postal_code" class="input-text" value="<?php echo $this->escapeHtml($this->getFormData()->getPostalCode()) ?>" />
+                                </div>
+
+                                <div class="each-input">
+                                    <label for="website">website</label>
+                                    <input type="text" name="website" class="input-text" value="<?php echo $this->escapeHtml($this->getFormData()->getWebsite()) ?>" />
+                                </div>
+
+                                <!-- <div class="each-input">
+                                    <label for="tea_consumption">estimate monthly tea usage by number of cups*</label>
+                                    <input type="text" name="tea_consumption" class="input-text" value="<?php echo $this->escapeHtml($this->getFormData()->getTeaConsumption()) ?>" />
+                                </div> -->
+								
+                                <!-- <div class="each-input">
+                                    <p>This gives us a more accurate gauge of how much tea youâ€™ll need.</p>
+                                </div> -->
+
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="vertical-line"></div>
+                        </div>
+                        <div class="col-md-5">
+                            <h1>User Details</h1>
+                            <hr class="small">
+                            <div class="inputs">
+                                <div class="each-input">
+                                    <label for="salutation">Salutation*</label>
+                                    <div class="dropdown">
+                                        <select id="salutation" name="salutation">
+                                            <option <?php
+                                            if ($this->escapeHtml($this->getFormData()->getSalutation()) == 'mr') {
+                                                echo "selected=selected";
+                                            }
+                                            ?>  value="mr">Mr.</option>
+                                            <option <?php
+                                            if ($this->escapeHtml($this->getFormData()->getSalutation()) == 'ms') {
+                                                echo "selected=selected";
+                                            }
+                                            ?>  value="ms">Ms.</option>
+                                            <option <?php
+                                                if ($this->escapeHtml($this->getFormData()->getSalutation()) == 'mrs') {
+                                                    echo "selected=selected";
+                                                }
+                                                ?>  value="mrs">Mrs.</option>
+                                            <option <?php
+                                                if ($this->escapeHtml($this->getFormData()->getSalutation()) == 'dr') {
+                                                    echo "selected=selected";
+                                                }
+                                                ?>  value="dr">Dr.</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="each-input">
+                                    <label for="lastname">Last name*</label>
+                                    <input type="text" name="lastname" id="lastname" class="input-text required-entry" value="<?php echo $this->escapeHtml($this->getFormData()->getLastname()) ?>" />
+                                </div>
+
+                                <div class="each-input">
+                                    <label for="firstname">First name*</label>
+                                    <input type="text" name="firstname" id="firstname" class="input-text required-entry" value="<?php echo $this->escapeHtml($this->getFormData()->getFirstname()) ?>" />
+                                </div>
+
+                                <div class="each-input">
+                                    <label for="email">email address*</label>
+                                    <input type="text" name="email" class="input-text required-entry validate-email" value="<?php echo $this->escapeHtml($this->getFormData()->getEmail()) ?>" />
+                                </div> 
+                                <div class="notice">
+                                    <h5>IMPORTANT</h5> 
+                                    <p>This email address will be used for access to the site and for call communications. 
+                                        <br>Please ensure you enter the address correctly.</p>
+                                </div>                                 
+                                <div class="each-input">
+                                    <label for="phone_no"><?php echo $this->__('PHONE NUMBER*'); ?></label> 
+                                    <div class="intl-tel-input">
+                                        <input type="text" id="phone_no" class="phone_no_input">                                
+                                        <input type="text" id="phone_no_2" class="required-entry">                                                                                    
+                                    </div>
+                                    <div class="hide-input">
+                                        <input id="telephone" type="hidden" name="telephone" value="<?php echo $this->escapeHtml($this->getFormData()->getTelephone()) ?>" />
+                                    </div>                                    
+                                </div> 
+                                <div class="each-input">
+                                    <label for="mobile_no">mobile number</label> 
+                                    <div class="intl-tel-input">
+                                        <input type="text" id="mobile_no" class="phone_no_input">                                
+                                        <input type="text" id="mobile_no_2" class="">
+                                    </div>
+                                    <div class="hide-input">
+                                        <input id="mobile" type="hidden" name="mobile_no" value="<?php echo $this->escapeHtml($this->getFormData()->getMobileNo()) ?>" />
+                                    </div>                                    
+                                </div> 
+                                <div class="each-input">
+                                    <label for="role_within_organization">role within organization*</label>
+                                    <div class="dropdown">
+                                        <select id="role_within_organization" class="input-text required-entry" name="role_within_organization">
+                                            <option value="">Choose your role</option>
+                                            <?php
+                                            // use your own attribute code here 
+                                            $attribute_code = "role_within_organization";
+                                            $attribute_details = Mage::getSingleton("eav/config")->getAttribute("customer", $attribute_code);
+                                            $options = $attribute_details->getSource()->getAllOptions(false);
+                                            foreach ($options as $option) {
+                                                if ($this->escapeHtml($this->getFormData()->getRoleWithinOrganization()) == $option["value"]) {
+                                                    echo "<option selected='true' value=" . $option["value"] . ">" . $option["label"] . "</option>";
+                                                } else {
+                                                    echo "<option value=" . $option["value"] . ">" . $option["label"] . "</option>";
+                                                }
+                                            }
+                                            ?>
+                                        </select>
+                                    </div> 
+                                </div> 
+                                <div class="each-input">
+                                    <label for="security_question">security question*</label>
+                                    <div class="dropdown">
+                                        <select id="security_question" class="input-text required-entry" name="security_question">
+                                            <option value="">Choose your question</option>
+                                            <?php
+                                            // use your own attribute code here 
+                                            $attribute_code = "security_question";
+                                            $attribute_details = Mage::getSingleton("eav/config")->getAttribute("customer", $attribute_code);
+                                            $options = $attribute_details->getSource()->getAllOptions(false);
+                                            Foreach ($options as $option) {
+                                                if ($this->escapeHtml($this->getFormData()->getSecurityQuestion()) == $option["value"]) {
+                                                    echo "<option selected='true' value=" . $option["value"] . ">" . $option["label"] . "</option>";
+                                                } else {
+                                                    echo "<option value=" . $option["value"] . ">" . $option["label"] . "</option>";
+                                                }
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div> 
+                                <div class="each-input">
+                                    <label for="answer">answer*</label>
+                                    <input type="text" class="input-text required-entry" name="answer" value="<?php echo $this->escapeHtml($this->getFormData()->getAnswer()) ?>" />
+                                </div>
+
+                                <div class="each-input">
+                                    <label for="message">message/inquiry</label>	
+                                    <textarea rows="10" cols="30" id="" name="message" class="input-text"><?php echo $this->escapeHtml($this->getFormData()->getMessage()) ?></textarea>
+                                </div>
+                            </div> 
+                                <?php echo $this->getChildHtml('form.additional.info'); ?>
+                            <input type="submit" value="Submit" class="button sign-up-btn cta">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+
+<link href="<?php echo $this->getSkinUrl(); ?>css/intlTelInput.css" rel="stylesheet">
+<script src="<?php echo $this->getSkinUrl(); ?>js/plugins/intlTelInput.min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        // $(".phone_no_input, .mobile_no_input").intlTelInput({
+        //     defaultCountry: 'sg',
+        //     nationalMode: false,
+        //     autoHideDialCode: false,
+        //     autoPlaceholder: false
+        // });
+
+        // $("#telephone").intlTelInput({
+        //     utilsScript: "lib/intl-tel-input/lib/libphonenumber/build/utils.js"
+        // });
+        $("#phone_no, #mobile_no").intlTelInput({
+            defaultCountry: 'sg',
+            nationalMode: false,
+            autoHideDialCode: false,
+            autoPlaceholder: false
+        });
+
+        var $phone_no = $("#phone_no");
+        var $phone_no_2 = $("#phone_no_2");
+        var $telephone = $("#telephone");
+        $phone_no.on('change', function() {
+            var finalNo = $(this).val() + $phone_no_2.val();
+            $telephone.val(finalNo);
+        });
+
+        $phone_no_2.keyup(function() {
+            var finalNo = $phone_no.val() + $(this).val();
+            $telephone.val(finalNo);
+        });
+
+         // setting up value to inputs
+        var countryCode = jQuery("#telephone").intlTelInput("getSelectedCountryData").dialCode;
+        $phone_no.intlTelInput("setNumber", countryCode);
+
+        var current_number = jQuery("#telephone").intlTelInput("getNumber");
+        if($("#telephone").val()!="") {            
+            var current_number_without_country_code = current_number.replace('+'+countryCode, '');        
+            $phone_no_2.val(current_number_without_country_code);    
+        }   
+
+        var $mobile_no = $("#mobile_no");
+        var $mobile_no_2 = $("#mobile_no_2");
+        var $mobile = $("#mobile");
+        $mobile_no.on('change', function() {
+            var finalNo = $(this).val() + $mobile_no_2.val();
+            $mobile.val(finalNo);
+        });
+
+        $mobile_no_2.keyup(function() {
+            var finalNo = $mobile_no.val() + $(this).val();
+            $mobile.val(finalNo);
+        });
+
+         // setting up value to inputs
+        var countryCode = jQuery("#mobile").intlTelInput("getSelectedCountryData").dialCode;
+        $mobile_no.intlTelInput("setNumber", countryCode);
+
+        var current_number = jQuery("#mobile").intlTelInput("getNumber");
+        if($("#mobile").val()!="") {            
+            var current_number_without_country_code = current_number.replace('+'+countryCode, '');        
+            $mobile_no_2.val(current_number_without_country_code);    
+        }   
+
+    });
+</script>
+<script>
+    var initialLoad = true;
+    jQuery(document).ready(function () {
+        jQuery(window).on('scroll', function () {
+            var scrollPos = jQuery(window).scrollTop();
+
+            if ((scrollPos != 0)) {
+                //console.log('scrolling')
+                jQuery('#header-wrapper').addClass('shadow');
+            }
+            else if ((scrollPos === 0)) {
+                jQuery('#header-wrapper').removeClass('shadow');
+            }
+        });
+
+        initialLoad = false;
+    });
+</script>
+<script type="text/javascript">
+//<![CDATA[
+    var dataForm = new VarienForm('trader_register', true); 
+     new RegionUpdater('country', 'region', 'region_id', <?php echo $this->helper('directory')->getRegionJson() ?>, undefined, 'zip');
+//]]>
+</script>
+<style>
+    /*    #trader-register .validation-advice {
+        clear: both;
+        color: #a70101;
+        float: right;
+        font-size: 11px !important;
+        font-weight: normal;
+        line-height: 13px;
+        margin: 29px 0 0 -104px;
+        min-height: 13px;
+        position: relative;
+        right: 0;
+    }*/
+    #advice-validate-alpha-companyname,
+    #advice-required-entry-companyname,
+    #advice-required-entry-registrationnumber,
+    #advice-required-entry-address_1,
+    #advice-required-entry-postal_code,
+    #advice-required-entry-website,
+    #advice-required-entry-tea_consumption,
+    #advice-required-entry-lastname,
+    #advice-required-entry-firstname,
+    #advice-required-entry-email,
+    #advice-required-entry-city, 
+    #advice-required-entry-answer{
+        margin-left: 163px!important;
+    }
+    #advice-validate-phoneLax-phone_no_2{
+        margin-right: -110px !important;
+    }
+
+</style>

@@ -1,0 +1,98 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @see Mage_Catalog_Block_Category_View
+ */
+?>
+<?php
+    $_helper    = $this->helper('catalog/output');
+    $_category  = $this->getCurrentCategory();
+    $current_category_data = $_category->getData();
+    $_imgHtml   = '';
+    if ($_imgUrl = $_category->getImageUrl()) {
+        $_imgHtml = '<p class="category-image"><img src="'.$_imgUrl.'" alt="'.$this->escapeHtml($_category->getName()).'" title="'.$this->escapeHtml($_category->getName()).'" /></p>';
+        $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
+    }    
+?>
+<article id="tea-store-section-1" class="store">
+
+    <!-- <div class="store-banner <?php echo strtolower($_category->getName()); ?>-banner">
+        <div class="image-text-content container">
+            <div class="row">
+                <div class="col-md-12">                    
+                    <div class="caption">
+                        <h1><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h1>
+                        <?php if($current_category_data['url_key']!=='gifts' && $current_category_data['url_key']!=='pantry'): ?>
+                            <p><?php echo $_helper->categoryAttribute($_category, $current_category_data['description'], 'description') ?></p>
+                        <?php endif; ?>
+
+                        <?php echo $this->getMessagesBlock()->toHtml() ?>
+
+                        <?php if($_imgUrl): ?>
+                            <?php //echo $_imgHtml ?>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="desktop-header-spacer" style="height: 130px;"></div>
+
+    <div class="main-content">
+        <div class="container-fluid image-text-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <?php echo $this->getChildHtml('category.sidebar'); ?>
+                    
+                    <div class="all-products tea-store-products">
+                        <?php if($this->isContentMode()): ?>
+                            <?php echo $this->getCmsBlockHtml() ?>
+
+                        <?php elseif($this->isMixedMode()): ?>
+                            <?php echo $this->getCmsBlockHtml() ?>
+                            <?php echo $this->getProductListHtml() ?>
+
+                        <?php else: ?>
+                            <?php echo $this->getProductListHtml() ?>
+                        <?php endif; ?>
+
+                        <div id="loading-mask" style="display: none;">
+                            <div class="loader">
+                                <img src="<?php echo $this->getSkinUrl('images/content/products/ajax-loader.gif'); ?>" alt="<?php echo $this->__('Loading...'); ?>">
+                                <br /><?php echo $this->__('Loading...'); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</article>

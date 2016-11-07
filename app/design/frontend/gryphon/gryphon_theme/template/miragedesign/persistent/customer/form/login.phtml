@@ -1,0 +1,224 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Customer login form template
+ *
+ * @see app/design/frontend/base/default/template/customer/form/login.phtml
+ */
+/** @var $this Mage_Customer_Block_Form_Login */
+?>
+<article id="account-login-section-1">
+    <!-- <div class="desktop-header-spacer" style="height: 70px;"></div> -->
+    
+    <div class="container-fluid">
+        <div class="row account-login-content-container">
+            <div class="col-md-6 v-align">
+            <div id="account-login-img-content"></div>
+        </div><!--
+        --><div class="col-md-5 col-md-offset-1 v-align">
+                <h1>Member Login</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean iaculis, tellus a efficitur pellente, nibh arcu ultrices mi, ac commodo erat erat sit amet eros. Morbi rutrum arcu.</p>
+
+                <div class="account-login<?php if (!$this->helper('customer')->isRegistrationAllowed()) echo ' login-only' ?>">
+                    <form action="<?php echo $this->getUrl("trader/customer_account/") ?>loginpost/" method="post" id="login-form" class="scaffold-form login-form">
+                        <?php echo $this->getBlockHtml('formkey'); ?>
+                        <!--<div class="col-md-6 first-col">
+                            <h1><?php if ($this->helper('customer')->isRegistrationAllowed()): ?>
+                                    <?php echo $this->__('Login or Create an Account') ?>
+                                <?php else: ?>
+                                    <?php echo $this->__('Login'); ?>
+                                <?php endif; ?></h1>
+                            <hr class="small">                        
+                            <?php if ($this->helper('customer')->isRegistrationAllowed()): ?>
+                                <div class="content">
+                                    <h2><?php echo $this->__('New Here?') ?></h2>
+                                    <p><?php echo $this->__('Registration is free and easy!') ?></p>
+                                    <ul class="benefits">
+                                        <li><?php echo $this->__('Faster checkout') ?></li>
+                                        <li><?php echo $this->__('Save multiple shipping addresses') ?></li>
+                                        <li><?php echo $this->__('View and track orders and more') ?></li>
+                                    </ul>
+                                </div>
+                                <div class=" ctas"> 
+                                    <a title="<?php echo $this->__('Create an Account') ?>" class="button sign-up-btn cta" href="<?php echo Mage::helper('persistent')->getCreateAccountUrl($this->getCreateAccountUrl()) ?>"><span><span><?php echo $this->__('Create an Account') ?></span></span></a>
+                                    <span class="or">or</span> 
+                                    <a title="<?php echo $this->__('Create a Trader Account') ?>" class="button sign-up-btn cta" href="<?php echo $this->getUrl('trader') ?>"><span><span><?php echo $this->__('Create a Trader Account') ?></span></span></a>
+
+                                </div>
+                            <?php endif; ?>
+                        </div>-->
+                        <div class="row">
+                            <div class="col-md-12">          
+                              <div class="inputs">
+                                <div class="row">
+                                    <div class="col-md-3 v-align">
+                                        <label for="email" class="for-input required"><?php echo $this->__('Email Address') ?></label>
+                                    </div><!--
+                                      --><div class="col-md-6 v-align">
+                                        <input type="text" autocapitalize="off" autocorrect="off" spellcheck="false" name="login[username]" value="<?php echo $this->escapeHtml($this->getUsername()) ?>" id="email" class="username-input input-class required-entry validate-email" title="<?php echo $this->__('Email Address') ?>" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-3 v-align">
+                                    <label for="pass" class="for-input required"><?php echo $this->__('Password') ?></label>
+                                  </div><!--
+                                  --><div class="col-md-7 v-align">
+                                    <input type="password" name="login[password]" class="password-input input-class required-entry validate-password" id="pass" title="<?php echo $this->__('Password') ?>" />
+                                    <button type="submit" class="button sign-in-btn square-cta" title="<?php echo $this->__('Login') ?>" name="send" id="send2"><span><span><?php echo $this->__('Sign In') ?></span></span></button>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-3 col-md-offset-3 v-align">
+                                    <?php echo $this->getChildHtml('persistent.remember.me'); ?>
+                                  </div><!--
+                                    --><div class="col-md-6 v-align">
+                                      <a href="<?php echo $this->getForgotPasswordUrl() ?>" class="f-left forgot-password forget-password for-input"><?php echo $this->__('Forgot Your Password?') ?></a>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                              <div class="login-button-container">
+                                <a class="sign-in-facebook square-cta"><i class="fa fa-facebook"></i> Sign In with Facebook</a>
+                              </div>
+                              <span class="login-button-seperator">Or</span>
+                              <div class="login-button-container">
+                                <a title="<?php echo $this->__('Create A Monogram Account') ?>" class="button sign-up-btn square-cta" href="<?php echo Mage::helper('persistent')->getCreateAccountUrl($this->getCreateAccountUrl()) ?>"><span><span><?php echo $this->__('Create A Monogram Account') ?></span></span></a>
+                              </div>
+                            </div>
+                        </div>
+                        <?php if (Mage::helper('checkout')->isContextCheckout()): ?>
+                            <input name="context" type="hidden" value="checkout" />
+                        <?php endif; ?>
+                    </form>
+                    <script type="text/javascript">
+                        //<![CDATA[
+                        var dataForm = new VarienForm('login-form', true);
+                        //]]>
+                    </script>
+                    <script>
+                        jQuery(document).ready(function($){
+                            // This is called with the results from from FB.getLoginStatus().
+                            function statusChangeCallback(response) {
+                                console.log('statusChangeCallback');
+                                console.log(response);
+                                // The response object is returned with a status field that lets the
+                                // app know the current login status of the person.
+                                // Full docs on the response object can be found in the documentation
+                                // for FB.getLoginStatus().
+                                if (response.status === 'connected') {
+                                  // Logged into your app and Facebook.
+                                  logFacebookUserIn(response.authResponse.accessToken);
+                                } else if (response.status === 'not_authorized') {
+                                  // The person is logged into Facebook, but not your app.
+                                  document.getElementById('status').innerHTML = 'Please log ' +
+                                    'into this app.';
+                                } else {
+                                  // The person is not logged into Facebook, so we're not sure if
+                                  // they are logged into this app or not.
+                                  document.getElementById('status').innerHTML = 'Please log ' +
+                                    'into Facebook.';
+                                }
+                            }
+
+                            $('.sign-in-facebook').on('click', function(e){
+                                e.preventDefault();
+
+                                $('#ajax_loader_fb_signin').show();
+
+                                FB.login(function(response) {
+                                  statusChangeCallback(response);
+                                }, {scope: 'public_profile, email, user_location, user_birthday'});
+                            });
+
+                             window.fbAsyncInit = function() {
+                                FB.init({
+                                  appId      : '1157337617690727',
+                                  xfbml      : true,
+                                  version    : 'v2.6'
+                                });
+                            };
+
+                            (function(d, s, id){
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) {return;}
+                            js = d.createElement(s); js.id = id;
+                            js.src = "//connect.facebook.net/en_US/sdk.js";
+                            fjs.parentNode.insertBefore(js, fjs);
+                            }(document, 'script', 'facebook-jssdk'));                        
+
+                            // Here we run a very simple test of the Graph API after login is
+                            // successful.  See statusChangeCallback() for when this call is made.
+                            var request;
+                            function logFacebookUserIn(token) {
+                                console.log('Welcome!  Fetching your information.... ');
+                                FB.api('/me?fields=email,id,name,location,first_name,last_name,gender,birthday', function(response) {                              
+                                    console.log('Successful login for: ' + response.name);
+
+                                    if(response && response.email != '') {
+                                        if (request) {
+                                            request.abort();
+                                        }
+
+                                        request = $.ajax({
+                                            url: "//www.monogramtea.com/discovertea/index/loginCustomer",
+                                            method: "POST",
+                                            data: { id: response.id, first_name : response.first_name, last_name : response.last_name, email : response.email, gender : response.gender, dob : response.birthday, _token : token },                                    
+                                            success: function(data){
+                                                var objData = $.parseJSON(data);
+
+                                                // console.log(data);
+                                                // console.log(objData);
+
+                                                if(objData.success==true) {
+                                                    location.reload();
+                                                }else {
+                                                    if(objData.error_messages) {
+                                                        alert(objData.error_messages);
+                                                    }else {
+                                                        alert('Something went wrong please try again.');
+                                                    }
+                                                }
+                                            }
+                                        });
+                                    }else {
+                                        alert('Couldn\'t fetch the infomation we need from Facebook. Please try signin/sign up normally.')
+                                    }
+                                    
+                                });
+                            }
+                        });
+                      
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

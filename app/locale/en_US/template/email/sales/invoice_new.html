@@ -1,0 +1,204 @@
+<!--@subject  {{var store.getFrontendName()}}: Invoice # {{var invoice.increment_id}} for Order # {{var order.increment_id}} @-->
+<!--@vars
+{"store url=\"\"":"Store Url",
+"var logo_url":"Email Logo Image Url",
+"var logo_alt":"Email Logo Image Alt",
+"htmlescape var=$order.getCustomerName()":"Customer Name",
+"var store.getFrontendName()":"Store Name",
+"store url=\"customer/account/\"":"Customer Account Url",
+"var invoice.increment_id":"Invoice Id",
+"var order.increment_id":"Order Id",
+"var order.billing_address.format('html')":"Billing Address",
+"var payment_html":"Payment Details",
+"var order.shipping_address.format('html')":"Shipping Address",
+"var order.shipping_description":"Shipping Description",
+"layout area=\"frontend\" handle=\"sales_email_order_invoice_items\" invoice=$invoice order=$order":"Invoice Items Grid",
+"var comment":"Invoice Comment"}
+@-->
+<!--@styles
+@-->
+
+
+{{template config_path="design/email/header"}}
+{{inlinecss file="email-inline.css"}}
+
+<!-- ONE COLUMN SECTION -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#ffffff" align="center" style="padding: 0px 15px 70px 15px;" class="section-padding">
+            <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
+                <tr>
+                    <td>
+                        <!-- HERO IMAGE -->
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">                            
+                            <tr>
+                                <td>
+                                    <!-- COPY -->
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                          <td>
+                                              <h2 style="font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; font-size: 14px; font-style:normal; font-weight:normal; line-height:20px; letter-spacing:0.03em; text-align:center; text-transform:uppercase; color: #252525; padding-top: 40px;">Thank you for your order from {{var store.getFrontendName()}}</h2>
+                                              <hr style="width: 30px;height: 8px;border:none;border-bottom: 3px solid #ae4e0e;display: block;margin: 0 auto!important;background:none!important;">                                              
+                                              <p style="font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #464646; font-size: 12px; line-height: 19px;text-align:center;">You can check the status of your order by <a style="color: #ae4e0e; text-decoration: none;" href="{{store url="customer/account/"}}">logging into your account</a>.</p>
+                                              <br />
+                                              <h1 style="font-family:'MinionPro-Medium', Tahoma, Helvetica, Arial, sans-serif; font-size:17px; font-style:normal; font-weight:normal; line-height:26px;letter-spacing:0.1em; text-align:center; border: 1px solid #ae4e0e; color: #ae4e0e;padding:13px;margin: 0 auto;max-width: 330px; text-transform: uppercase;">Your invoice # is: {{var invoice.increment_id}}</h1>
+                                              <br />                                              
+                                              <p style="font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #464646; font-size: 12px; line-height: 19px;text-align:center;">Don’t forget to leave a rating a review of the product or recommend us to your friends <br> to earn more rewards points.</p>
+                                              <br />
+                                              <!--  -->
+                                          </td>
+                                        </tr>
+                                        <tr class="order-information">
+                                            <td>
+                                                {{if comment}}
+                                                <table cellspacing="0" cellpadding="0" class="message-container">
+                                                    <tr>
+                                                        <td>{{var comment}}</td>
+                                                    </tr>
+                                                </table>
+                                                {{/if}}
+                                                {{layout area="frontend" handle="sales_email_order_invoice_items" invoice=$invoice order=$order}}
+                                                <table cellspacing="0" cellpadding="0" border="0" width="100%">                                                
+                                                    <tr>
+                                                        <td class="address-details" style="padding-bottom: 30px;">
+                                                            <h3 style="font-family:'MinionPro-Regular', Tahoma, Helvetica, Arial, sans-serif; color: #252525; font-size: 13px; line-height: 16px; letter-spacing: 0.1em; text-transform: uppercase; margin:0px;">Bill to:</h3>
+                                                            <p style="font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #464646; font-size: 12px; line-height: 19px;"><span class="no-link">{{var order.billing_address.format('html')}}</span></p>
+                                                        </td>
+                                                        {{depend order.getIsNotVirtual()}}
+                                                        <td class="address-details" style="padding-bottom: 30px;">
+                                                            <h3 style="font-family:'MinionPro-Regular', Tahoma, Helvetica, Arial, sans-serif; color: #252525; font-size: 13px; line-height: 16px; letter-spacing: 0.1em; text-transform: uppercase; margin:0px;">Ship to:</h3>
+                                                            <p style="font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #464646; font-size: 12px; line-height: 19px;"><span class="no-link">{{var order.shipping_address.format('html')}}</span></p>
+                                                        </td>
+                                                        {{/depend}}
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        {{depend order.getIsNotVirtual()}}
+                                                        <td class="address-details">
+                                                            <h6 style="font-family:'MinionPro-Regular', Tahoma, Helvetica, Arial, sans-serif; color: #252525; font-size: 13px; line-height: 16px; letter-spacing: 0.1em; text-transform: uppercase; margin:0px;">Shipping method:</h6>
+                                                            <p style="font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #464646; font-size: 12px; line-height: 19px;">{{var order.shipping_description}}</p>
+                                                        </td>
+                                                        {{/depend}}
+                                                        <td class="address-details">
+                                                            <h6 style="font-family:'MinionPro-Regular', Tahoma, Helvetica, Arial, sans-serif; color: #252525; font-size: 13px; line-height: 16px; letter-spacing: 0.1em; text-transform: uppercase; margin:0px;">Payment method:</h6>
+                                                            <p style="font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #464646; font-size: 12px; line-height: 19px;">{{var order.getPayment().getMethodInstance().getTitle()}}</p>
+                                                        </td>
+                                                    </tr>                                                 
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>                            
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- TWO COLUMN SECTION -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#f6f4f1" align="center" style="padding: 30px 15px 30px 15px;" class="section-padding">
+            <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
+                <tr>
+                    <td>
+                        <!-- TWO COLUMNS -->
+                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td valign="top" style="padding: 0;" class="mobile-wrapper">
+                                    <!-- LEFT COLUMN -->
+                                    <table cellpadding="0" cellspacing="0" border="0" width="33%" align="left" class="responsive-table">
+                                        <tr>
+                                            <td style="padding: 20px 0 40px 0;">
+                                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                    
+                                                    <tr>
+                                                        <td align="center" style="padding: 15px 0 0 0; font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; color: #333333; font-size: 12px;">CONTACT US</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" style="padding-bottom: 5px;">
+                                                            <table cellpadding="0" cellspacing="0" border="0" width="20" align="center" class="responsive-table">
+                                                                <tr>
+                                                                    <td aligh="center" width="20" style="width: 20px;height: 8px;border-bottom: 3px solid #ae4e0e;display: block;    margin: 0 auto;">&nbsp;</td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" style="padding: 5px 0 0 0; font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #666666; font-size: 11px; line-height: 16px;"><span class="appleBody">251 Pandan Loop <br> Singapore 128431</span><br><span class="appleBody" style="padding-top: 8px;display:block;color:#666;text-decoration:none;">+65 6779 2948</span></td>
+                                                    </tr>                                                    
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- CENTER COLUMN -->
+                                    <table cellpadding="0" cellspacing="0" border="0" width="33%" align="left" class="responsive-table">
+                                        <tr>
+                                            <td style="padding: 20px 0 40px 0;">
+                                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                    
+                                                    <tr>
+                                                        <td align="center" style="padding: 15px 0 0 0; font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; color: #333333; font-size: 12px;">EMAIL SETTINGS</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" style="padding-bottom: 5px;">
+                                                            <table cellpadding="0" cellspacing="0" border="0" width="20" align="center" class="responsive-table">
+                                                                <tr>
+                                                                    <td aligh="center" width="20" style="width: 20px;height: 8px;border-bottom: 3px solid #ae4e0e;display: block;    margin: 0 auto;">&nbsp;</td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" style="padding: 5px 0 0 0; font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #666666; font-size: 11px; line-height: 16px;"><span class="appleBody">To change your email settings or to unsubscribe emails containing special promotions, events and new products, <a href="{{var unsubscribe}}" style="color: #ae4e0e; text-decoration: none;" class="{{var subscriber.getConfirmationLink()}}">Click here.</a></span></td>
+                                                    </tr>                                                    
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- RIGHT COLUMN -->
+                                    <table cellpadding="0" cellspacing="0" border="0" width="33%" align="right" class="responsive-table">
+                                        <tr>
+                                            <td style="padding: 20px 0 40px 0;">
+                                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                    
+                                                    <tr>
+                                                        <td align="center" style="padding: 15px 0 0 0; font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; color: #333333; font-size: 12px;">FOLLOW US</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" style="padding-bottom: 5px;">
+                                                            <table cellpadding="0" cellspacing="0" border="0" width="20" align="center" class="responsive-table">
+                                                                <tr>
+                                                                    <td aligh="center" width="20" style="width: 20px;height: 8px;border-bottom: 3px solid #ae4e0e;display: block;    margin: 0 auto;">&nbsp;</td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" style="padding: 5px 0 0 0;">
+                                                            <a href="https://instagram.com/gryphontea/" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://www.gryphontea.com/emailer/images/instagram.png" alt=""></a>
+                                                            <a href="https://www.pinterest.com/gryphontea/" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://www.gryphontea.com/emailer/images/pintrest.png" alt=""></a>
+                                                            <a href="https://www.facebook.com/gryphonteacompany" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://www.gryphontea.com/emailer/images/facebook.png" alt=""></a>
+                                                            <a href="https://www.linkedin.com/company/gryphon-tea-company" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://www.gryphontea.com/emailer/images/linkedin.png" alt=""></a>
+                                                            <a href="https://www.youtube.com/channel/UCrKNQcT3PHO-o_vQBMUlH8Q/videos" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://www.gryphontea.com/emailer/images/youtube.png" alt=""></a>
+                                                            <a href="https://plus.google.com/+Gryphonteacompany/posts" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://www.gryphontea.com/emailer/images/google-plus.png" alt=""></a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>                
+            </table>
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer"}}

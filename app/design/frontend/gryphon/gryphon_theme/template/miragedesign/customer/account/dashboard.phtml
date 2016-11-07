@@ -1,0 +1,132 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+
+
+
+
+<div id="monogram-page-account-details-dashboard-header">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="monogram-page-account-details-dashboard-header-item first-version">
+        <h1><?php echo $this->escapeHtml($this->getCustomer()->getName()) ?></h1>
+        <p><a href="mailto:<?php echo $this->escapeHtml($this->getCustomer()->getEmail()) ?>" class="email"><?php echo $this->escapeHtml($this->getCustomer()->getEmail()) ?></a></p>
+        
+        <div class="cta-container">
+          <?php if (Mage::helper('customer')->isLoggedIn() ): ?>
+            <a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>" class="square-cta">Log Out</a>
+          <?php endif; ?>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="monogram-page-account-details-dashboard-header-item" data-value="reward-points">
+        <div class="monogram-page-account-details-dashboard-header-icon store-version"></div>
+        <h4>store credit</h4>
+        <?php 
+        $store = Mage::app()->getStore();
+        $creadit = Mage::getModel('giftvoucher/credit')->getCreditAccountLogin();
+        $currency = Mage::app()->getStore()->getCurrentCurrency();        
+        ?>
+        <p class="value"><?php echo $currency->format($store->convertPrice($creadit->getBalance())); ?></p>
+        <a href="<?php echo $this->getUrl('giftvoucher/index/index') ?>" class="arrow-cta">see history</a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="monogram-page-account-details-dashboard-header-item" data-value="rebates">
+        <div class="monogram-page-account-details-dashboard-header-icon rebates-version"></div>
+        <h4>rebates</h4>
+        <?php 
+        $store_id = Mage::app()->getStore()->getId();
+        $customerId = Mage::getModel('customer/session')->getCustomerId();
+        if (Mage::getStoreConfig('rewardpoints/default/flatstats', $store_id)){
+            $reward_flat_model = Mage::getModel('rewardpoints/flatstats');
+            $current_point = $reward_flat_model->collectPointsCurrent($customerId, $store_id)+0;
+        } else {
+          $reward_model = Mage::getModel('rewardpoints/stats');
+          $current_point = $reward_model->getPointsCurrent($customerId, $store_id)+0;
+        }                
+        ?>
+        <p class="value"><?php echo $currency->format($store->convertPrice($current_point)); ?></p>
+        <a href="<?php echo $this->getUrl('rewardpoints/index/points') ?>" class="arrow-cta">see valid date</a>
+      </div>
+    </div>
+    <!-- <div class="col-md-3">
+      <div class="monogram-page-account-details-dashboard-header-item" data-value="gift-card">
+        <div class="monogram-page-account-details-dashboard-header-icon giftcard-version"></div>
+        <h4>gift card</h4>
+        <p class="value">$ 888.88</p>
+        <a href="<?php echo $this->getUrl('giftvoucher/index/addredeem') ?>" class="arrow-cta">add gift card</a>
+      </div>
+    </div> -->
+  </div>
+</div> <!-- #monogram-page-account-details-dashboard-header -->
+
+
+
+<div class="dashboard first-content">
+    <div class="account-details-saved">
+        <div class="visible-xs-block visible-sm-block" id="custom-mobile-account-messages">
+            <?php echo $this->getMessagesBlock()->toHtml() ?>
+        </div>
+        <div class="image-text-content">
+            <div class="visible-md-block visible-lg-block">
+                <?php echo $this->getMessagesBlock()->toHtml() ?>
+            </div>
+            <?php // echo $this->getChildHtml('hello') ?>            
+            <?php echo $this->getChildHtml('customer.account.dashboard.extra') ?>
+            <?php echo $this->getChildHtml('info') ?>
+            <?php echo $this->getChildHtml('top') ?>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $('body').addClass('account-page-version');
+
+
+
+    // by jairus
+    
+    // var reward_points = '$ 888.88';
+    // var rebates = '<?php echo Mage::app()->getLocale()->currency(Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol(); ?> ' + $("#my-rewardpoints-table .loyalty-point").html();
+    // var giftcard = '$ 888.88';
+
+    // $("#monogram-page-account-details-dashboard-header .monogram-page-account-details-dashboard-header-item[data-value=reward-points] .value").html(reward_points);
+    // $("#monogram-page-account-details-dashboard-header .monogram-page-account-details-dashboard-header-item[data-value=rebates] .value").html(rebates);
+    // $("#monogram-page-account-details-dashboard-header .monogram-page-account-details-dashboard-header-item[data-value=gift-card] .value").html(giftcard);
+
+  });
+</script>
+
+<style type="text/css">
+  #my-rewardpoints-table{
+    display: none;
+  }
+</style>
+
+<?php //echo $this->getChildHtml('address') ?>
