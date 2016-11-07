@@ -1,0 +1,58 @@
+.tea-store-page, .category-store {
+  overflow: visible;
+}
+
+#tea-store-section-1 {
+    
+  .container-fluid {
+    padding: 0 40px;
+  }
+  
+  @media only screen and (min-width: 1400px) {
+    .container-fluid {
+      max-width: 83%;
+    }
+  }
+
+  .tea-store-products {
+    
+    .tea-store-product-row {      
+      .tea-store-product {
+        display: inline-block;
+        width: 25%;      
+        text-align: center;      
+        vertical-align: top;
+        margin-bottom: 50px;
+      }
+    }    
+
+  }
+  .tea-store-product-info {    
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: block;
+    h3 {
+      text-transform: uppercase;
+      padding-bottom: 10px;
+      sup {
+        font-size: 9px;
+      }
+    }
+    span.category {
+      .header-font;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: block;
+      color: @off-white;
+    }
+    span.price {
+      .body-font;
+      font-size: 11px;
+      letter-spacing: 0.02em;
+      display: block;
+      color: @off-white;
+    }
+  }
+}

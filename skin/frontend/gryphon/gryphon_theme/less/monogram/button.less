@@ -1,0 +1,153 @@
+.square-cta{
+  // .subheader-font;
+  // .subheader-font-2;
+  .header-font;
+  font-size: 10px;
+  line-height: 25px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  .display-inline-block;
+  height: 25px;
+
+  color: @off-white;
+  border: 1px solid @off-white;
+
+  color: fade(@off-white, 90%);
+  border: 1px solid fade(@off-white, 90%);
+
+  padding-left: 9px;
+  padding-right: 9px;
+
+  .opacity(0.9);
+  .transition-in(0.3s);
+
+  &:focus,
+  &:hover{
+    // .opacity_important(0.5);
+    color: fade(@off-white, 50%);
+    border: 1px solid fade(@off-white, 50%);
+    
+  }
+
+}
+
+.arrow-cta{  
+  // .subheader-font-2;
+  .header-font;
+  font-size: 10px;
+  line-height: 25px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  position: relative;
+
+  .display-inline-block;
+  height: 25px;
+
+  color: @off-white;
+  color: fade(@off-white, 90%);
+
+  .opacity(0.9);
+  .transition-in(0.3s);
+
+  /*
+  &:before{
+    position: absolute;
+    display: block;
+    content: '';
+    border-bottom: 1px solid @off-white;
+    border-bottom: 1px solid fade(@off-white, 30%);
+
+    bottom: 7px;
+    left: 0px;
+    width: 100%;
+
+    .transition-in(0.3s);
+  }
+  */
+
+  &:after{
+    font-size: 8px;
+    margin-left: 3px;
+
+    content: '>>';
+    position: relative;
+    top: -1px;
+  }
+
+
+  &:focus,
+  &:hover{
+    // .opacity_important(0.5);
+    color: fade(@off-white, 50%);
+
+    /*
+    &:before{
+      border-bottom: 1px solid fade(@off-white, 10%);
+    }
+    */
+
+    
+  }
+}
+
+.prev-arrow-cta{  
+  // .subheader-font-2;
+  .header-font;
+  font-size: 10px;
+  line-height: 25px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  position: relative;
+
+  .display-inline-block;
+  height: 25px;
+
+  color: @off-white;
+  color: fade(@off-white, 90%);
+
+  .opacity(0.9);
+  .transition-in(0.3s);
+
+  /*
+  &:before{
+    position: absolute;
+    display: block;
+    content: '';
+    border-bottom: 1px solid @off-white;
+    border-bottom: 1px solid fade(@off-white, 30%);
+
+    bottom: 7px;
+    left: 0px;
+    width: 100%;
+
+    .transition-in(0.3s);
+  }
+  */
+
+  &:before{
+    font-size: 8px;
+    margin-left: 3px;
+
+    content: '<<';
+    position: relative;
+    top: -1px;
+  }
+
+
+  &:focus,
+  &:hover{
+    // .opacity_important(0.5);
+    color: fade(@off-white, 50%);
+
+    /*
+    &:before{
+      border-bottom: 1px solid fade(@off-white, 10%);
+    }
+    */
+
+    
+  }
+}

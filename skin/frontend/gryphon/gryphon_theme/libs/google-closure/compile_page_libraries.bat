@@ -1,0 +1,18 @@
+java -jar "compiler.jar" ^
+  --js=..\js\all.js ^
+  --js=jquery\jquery-1.9.1.min.js ^
+  --js=jquery\jquery.mousewheel.min.js ^
+  --js=_js\mobile-detect.js ^
+  --js=_js\preloadjs-0.4.0.min.js ^
+  --js=gsap\TweenMax.min.js ^
+  --js=gsap\jquery.gsap.min.js ^
+  --js=gsap\easing\EasePack.min.js ^
+  --js=gsap\plugins\ScrollToPlugin.min.js ^
+  --js=scrollmagic\ScrollMagic.js ^
+  --js=scrollmagic\plugins\animation.gsap.js ^
+  --js=scrollmagic\plugins\debug.addIndicators.js ^
+  --js=scrollmagic\lib\iscroll-probe.js ^
+  --js=slick\slick.min.js ^
+  --js=instafeed\instafeed.min.js ^
+  --compilation_level WHITESPACE_ONLY ^
+  --js_output_file=..\..\bin\js\page-libraries.min.js

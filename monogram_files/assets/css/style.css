@@ -14252,6 +14252,19 @@ body.monogram-page-faq {
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
+@media only screen and (max-width: 991px) {
+  #monogram-page-faq-title-section {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  #monogram-page-faq-title h1 {
+    font-family: 'Brandon Grotesque Black', "Arial Black", Gadget, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 25px;
+  }
+}
 #monogram-page-faq-content-section {
   overflow-x: hidden;
   background: #f1efee;
@@ -14261,6 +14274,15 @@ body.monogram-page-faq {
 }
 #monogram-page-faq-content-bottom {
   height: 95px;
+}
+@media only screen and (max-width: 991px) {
+  #monogram-page-faq-content-section {
+    background: #7b706b;
+  }
+  #monogram-page-faq-content-section .container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 #monogram-page-faq-sidebar {
   background: #f1efee;
@@ -14309,12 +14331,30 @@ body.monogram-page-faq {
   color: #6b615b;
   margin-bottom: 9px;
 }
+@media only screen and (max-width: 991px) {
+  #monogram-page-faq-sidebar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 #monogram-page-faq-content {
   color: #ffffff;
   background: #7b706b;
   padding-left: 70px;
   padding-right: 70px;
   padding-top: 56px;
+}
+@media only screen and (max-width: 991px) {
+  #monogram-page-faq-content {
+    background: transparent;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 40px;
+  }
 }
 #monogram-page-faq-content-header {
   border-top: 1px solid #ffffff;
@@ -14482,6 +14522,36 @@ body.monogram-page-faq {
   top: 0px;
   left: -1px;
 }
+@media only screen and (max-width: 991px) {
+  .monogram-page-faq-content-item {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .monogram-page-faq-content-item .monogram-page-faq-content-item-question {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 14px;
+  }
+  .monogram-page-faq-content-item .monogram-page-faq-content-item-question .default-copy {
+    padding-right: 20px;
+  }
+  .monogram-page-faq-content-item .monogram-page-faq-content-item-question .default-copy p {
+    font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .monogram-page-faq-content-item .monogram-page-faq-content-item-answer {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .monogram-page-faq-content-item .monogram-page-faq-content-item-answer .default-copy {
+    padding-right: 20px;
+  }
+}
 html.monogram-page-shipping-information,
 body.monogram-page-shipping-information {
   overflow: visible;
@@ -14507,6 +14577,19 @@ body.monogram-page-shipping-information {
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
+@media only screen and (max-width: 991px) {
+  #monogram-page-shipping-info-title-section {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  #monogram-page-shipping-info-title h1 {
+    font-family: 'Brandon Grotesque Black', "Arial Black", Gadget, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 25px;
+  }
+}
 #monogram-page-shipping-info-content-section {
   overflow-x: hidden;
 }
@@ -14518,6 +14601,18 @@ body.monogram-page-shipping-information {
 }
 #monogram-page-shipping-info-content-column-02 {
   margin-left: -10px;
+}
+@media only screen and (max-width: 991px) {
+  #monogram-page-shipping-info-content-section .container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #monogram-page-shipping-info-content-column-01 {
+    margin-right: 0px;
+  }
+  #monogram-page-shipping-info-content-column-02 {
+    margin-left: 0px;
+  }
 }
 #monogram-page-shipping-info-content-section .default-copy {
   font-family: 'Domine', "Times New Roman", Times, serif;
@@ -14610,12 +14705,54 @@ body.monogram-page-shipping-information {
 #monogram-page-shipping-info-image-02 .manic-image-container {
   height: 550px;
 }
+@media only screen and (max-width: 991px) {
+  #monogram-page-shipping-info-image-01 {
+    margin-left: -10px;
+    margin-right: -10px;
+    height: 550px;
+  }
+  #monogram-page-shipping-info-image-01 .manic-image-container {
+    height: 550px;
+  }
+  #monogram-page-shipping-info-image-02 {
+    margin-left: -10px;
+    margin-right: -10px;
+    height: 550px;
+  }
+  #monogram-page-shipping-info-image-02 .manic-image-container {
+    height: 550px;
+  }
+}
+@media (max-width: 767px) {
+  #monogram-page-shipping-info-image-01 {
+    height: 230px;
+  }
+  #monogram-page-shipping-info-image-01 .manic-image-container {
+    height: 230px;
+  }
+  #monogram-page-shipping-info-image-02 {
+    height: 230px;
+  }
+  #monogram-page-shipping-info-image-02 .manic-image-container {
+    height: 230px;
+  }
+}
 #monogram-page-shipping-info-content-01 {
   padding-top: 47px;
   padding-bottom: 78px;
   padding-left: 85px;
   padding-right: 70px;
   background: #ae887e;
+}
+@media only screen and (max-width: 991px) {
+  #monogram-page-shipping-info-content-01 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
 }
 #monogram-page-shipping-info-content-02 {
   background: #ebe9e8;
@@ -14624,12 +14761,32 @@ body.monogram-page-shipping-information {
   padding-left: 85px;
   padding-right: 70px;
 }
+@media only screen and (max-width: 991px) {
+  #monogram-page-shipping-info-content-02 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+}
 #monogram-page-shipping-info-content-03 {
   background: #ebe9e8;
   padding-top: 47px;
   padding-bottom: 78px;
   padding-left: 65px;
   padding-right: 85px;
+}
+@media only screen and (max-width: 991px) {
+  #monogram-page-shipping-info-content-03 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
 }
 #monogram-page-shipping-info-content-04 {
   background: #827773;
@@ -14738,6 +14895,16 @@ body.monogram-page-shipping-information {
   padding-left: 24px;
   padding-right: 24px;
 }
+@media only screen and (max-width: 991px) {
+  #monogram-page-shipping-info-content-04 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+}
 html.monogram-page-terms-of-use,
 body.monogram-page-terms-of-use {
   overflow: visible;
@@ -14768,6 +14935,19 @@ body.monogram-page-privacy-policy {
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
+@media only screen and (max-width: 991px) {
+  #monogram-page-terms-of-use-title-section {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  #monogram-page-terms-of-use-title h1 {
+    font-family: 'Brandon Grotesque Black', "Arial Black", Gadget, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 25px;
+  }
+}
 #monogram-page-terms-of-use-content-section {
   overflow-x: hidden;
   padding-top: 48px;
@@ -14785,6 +14965,24 @@ body.monogram-page-privacy-policy {
 #monogram-page-terms-of-use-content-column-02 {
   margin-left: 55px;
   margin-right: 26px;
+}
+@media only screen and (max-width: 991px) {
+  #monogram-page-terms-of-use-content-section {
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }
+  #monogram-page-terms-of-use-content-section .container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #monogram-page-terms-of-use-content-column-01 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  #monogram-page-terms-of-use-content-column-02 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 }
 #monogram-page-terms-of-use-content-section .default-copy {
   font-family: 'Domine', "Times New Roman", Times, serif;

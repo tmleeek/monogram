@@ -1,0 +1,122 @@
+[
+  {
+    "id": "uji-sencha--shiso-mint",
+    "tea-01": "uji-sencha",
+    "tea-02": "shiso-mint",
+    "description": "Fresh notes of shiso and mint provides lift to mellow umami flavour of sencha. An enduring finale and a pleasure to all senses."
+  },
+  {
+    "id": "uji-sencha--saffronais",
+    "tea-01": "uji-sencha",
+    "tea-02": "saffronais",
+    "description": "Magnificently magical honey sweetness of Saffronais tame by the umami flavour of sencha. An enchanting delicious and flavorsome experience."
+  },
+  {
+    "id": "uji-sencha--provencal-herbs",
+    "tea-01": "uji-sencha",
+    "tea-02": "provencal-herbs",
+    "description": "Soft floral acentuates sublime nature of Uji Sencha, complemented by sparkling notes of fresh lemon. A soothing blend for a perfect summer quencher."
+  },
+  {
+    "id": "cherry-japonais--rose-of-ariana",
+    "tea-01": "cherry-japonais",
+    "tea-02": "rose-of-ariana",
+    "description": "Light and gentle blend with aroma of cherries and Ispahan Rose. The brew whispers of sweetness and romance in warm embrace."
+  },
+  {
+    "id": "cherry-japonais--saffronais",
+    "tea-01": "cherry-japonais",
+    "tea-02": "saffronais",
+    "description": "Exquisite in taste, Saffronias elevates the intensity of sweet floral notes. The lingering creamy finish is the perfect treat to carry through the day."
+  },
+  {
+    "id": "cherry-japonais--provencal-herbs",
+    "tea-01": "cherry-japonais",
+    "tea-02": "provencal-herbs",
+    "description": "Jubilant blend of herbs and rose hips lends a tartness to a fruity aroma of sencha. The combination projects a softer silhouette to the firm structure."
+  },
+  {
+    "id": "jasmine-silk-pearls--rose-of-ariana",
+    "tea-01": "jasmine-silk-pearls",
+    "tea-02": "rose-of-ariana",
+    "description": "Obssessive combination of jasmine and rose for a distinctly floral palate. Individualistic, yet complementary for a matrimony of icons."
+  },
+  {
+    "id": "jasmine-silk-pearls--saffronais",
+    "tea-01": "jasmine-silk-pearls",
+    "tea-02": "saffronais",
+    "description": "Flowery blend where lovely midnght Jasmine Silk Pearl meets crimson Saffronais for a subtle alchemy."
+  },
+  {
+    "id": "milky-oolong--saffronais",
+    "tea-01": "milky-oolong",
+    "tea-02": "saffronais",
+    "description": "Soft notes of flowery hyacith and vanilla marries the elegance of honeyed Saffronais. When two royals meet, magic happens."
+  },
+  {
+    "id": "milky-oolong--provencal-herbs",
+    "tea-01": "milky-oolong",
+    "tea-02": "provencal-herbs",
+    "description": "Healthy dose of delicious vanilla with citrus herbs. A functional brew that is tantalising on the taste buds."
+  },
+  {
+    "id": "lapsang-florale--rose-of-ariana",
+    "tea-01": "lapsang-florale",
+    "tea-02": "rose-of-ariana",
+    "description": "Rich and robust with trail of smoke magnificiently entwined under layer of floral veil. A perfect tea for a comfortable refuge."
+  },
+  {
+    "id": "lapsang-florale--saffronais",
+    "tea-01": "lapsang-florale",
+    "tea-02": "saffronais",
+    "description": "A glorious blend with exotic notes of Spanish saffron, pine smoke and white florals. An opulent tea with a sophisticated flair."
+  },
+  {
+    "id": "kashmere--rose-of-ariana",
+    "tea-01": "kashmere",
+    "tea-02": "rose-of-ariana",
+    "description": "Complex yet smooth on the palate with soft sweetness of rose on the first sip. Fruity notes of lychee on the finish, this melodious pairing is ideal as a refreshing ice tea."
+  },
+  {
+    "id": "kashmere--shiso-mint",
+    "tea-01": "kashmere",
+    "tea-02": "shiso-mint",
+    "description": "Robust and invigorating blend with accenting notes of fresh cut flowers. Touch of Middle Eastern mystic and Oriental finesse dreams of a surreal experience."
+  },
+  {
+    "id": "kashmere--saffronais",
+    "tea-01": "kashmere",
+    "tea-02": "saffronais",
+    "description": "Elegant and refined blend of exotic spice with redolent black tea. A wholesome interpretation of a sweet escapade."
+  },
+  {
+    "id": "earl-grey-neroli--rose-of-ariana",
+    "tea-01": "earl-grey-neroli",
+    "tea-02": "rose-of-ariana",
+    "description": "Elegant brew with an evened profile of bergamot and rose awaken the senses. The floral and citrus notes soothe the palate for a lasting impression"
+  },
+  {
+    "id": "earl-grey-neroli--shiso-mint",
+    "tea-01": "earl-grey-neroli",
+    "tea-02": "shiso-mint",
+    "description": "Fresh approach to a unique blend of mint and bergamot. An alluring experience that promises more adventure to come."
+  },
+  {
+    "id": "earl-grey-neroli--provencal-herbs",
+    "tea-01": "earl-grey-neroli",
+    "tea-02": "provencal-herbs",
+    "description": "Eclectic combination of bergamot, lemon verbena, lemon myrtle, eucalyptus, lavender and rosemary. Treat your senses to a exclusive journey."
+  },
+  {
+    "id": "morning-english--rose-of-ariana",
+    "tea-01": "morning-english",
+    "tea-02": "rose-of-ariana",
+    "description": "Bold yet dainty blend with delicate notes of Ispahan Rose. An indulgent combination, perfect for an afternoon retreat."
+  },
+  {
+    "id": "morning-english--shiso-mint",
+    "tea-01": "morning-english",
+    "tea-02": "shiso-mint",
+    "description": "Enjoy a spirited brew with dose of shiso mint to brighten up the flavour. A combination that goes well after hearty feast."
+  }
+]
