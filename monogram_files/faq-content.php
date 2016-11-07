@@ -90,7 +90,7 @@
 
         <div id="monogram-page-faq-content">
 
-          <div id="monogram-page-faq-content-header">
+          <div id="monogram-page-faq-content-header" class="visible-md visible-sm">
             <div class="row">
               <div class="col-md-4">
                 <div class="monogram-page-faq-content-item-question-header">

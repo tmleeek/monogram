@@ -5,6 +5,7 @@ body.monogram-page-faq{
 
 
 
+
 // remove page title div
 .monogram-page-faq{
   .page-title{
@@ -40,6 +41,23 @@ body.monogram-page-faq{
 
 
 
+@media only screen and (max-width: 991px) {
+  #monogram-page-faq-title-section{
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  #monogram-page-faq-title{
+    h1{
+      .header-font-02;
+      font-size: 15px;
+      line-height: 25px;
+    }
+  }
+}
+
+
+
+
 //     ____ ___  _   _ _____ _____ _   _ _____
 //    / ___/ _ \| \ | |_   _| ____| \ | |_   _|
 //   | |  | | | |  \| | | | |  _| |  \| | | |
@@ -61,6 +79,20 @@ body.monogram-page-faq{
 #monogram-page-faq-content-bottom{
   height: 110px - 15px;
 }
+
+@media only screen and (max-width: 991px) {
+
+  #monogram-page-faq-content-section{
+    background: @dark-brown;
+
+    .container-fluid{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+}
+
 
 
 
@@ -133,6 +165,31 @@ body.monogram-page-faq{
 
 }
 
+
+@media only screen and (max-width: 991px) {
+  #monogram-page-faq-sidebar{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+
+
+
+
+//     ____ ___  ______   __
+//    / ___/ _ \|  _ \ \ / /
+//   | |  | | | | |_) \ V /
+//   | |__| |_| |  __/ | |
+//    \____\___/|_|    |_|
+//
+
+
 #monogram-page-faq-content{
   color: @white;
   background: @dark-brown;
@@ -141,6 +198,16 @@ body.monogram-page-faq{
   padding-right: 70px;
   padding-top: 56px;
 
+}
+
+@media only screen and (max-width: 991px) {
+  #monogram-page-faq-content{
+    background: transparent;
+
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 40px;
+  }
 }
 
 
@@ -206,6 +273,13 @@ body.monogram-page-faq{
 
   }
 }
+
+
+
+
+
+
+
 
 .monogram-page-faq-content-item{
   border-bottom: 1px solid @white !important;
@@ -338,3 +412,40 @@ body.monogram-page-faq{
      
    
 
+@media only screen and (max-width: 991px) {
+  .monogram-page-faq-content-item{
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+
+
+    .monogram-page-faq-content-item-question{
+      padding-left: 0px;
+      padding-right: 0px;
+
+      margin-bottom: 14px;
+
+      .default-copy{
+        padding-right: 20px;
+
+        p{
+          .subheader-font;
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+        }
+      }
+    }
+    .monogram-page-faq-content-item-answer{
+      padding-left: 0px;
+      padding-right: 0px;
+
+      .default-copy{
+        padding-right: 20px;
+      }
+    }
+
+
+  }
+}
