@@ -88,7 +88,10 @@
 
           <div id="monogram-page-shipping-info-image-01">
             <div class="manic-image-container">
-              <img src="" data-image-desktop="http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/images/monogram_shipping_info/shipping-content-01.jpg">
+              <img src="" 
+                data-image-mobile="http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/images/monogram_shipping_info/shipping-content-01-mobile.jpg"
+                data-image-tablet="http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/images/monogram_shipping_info/shipping-content-01-tablet.jpg"
+                data-image-desktop="http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/images/monogram_shipping_info/shipping-content-01.jpg">
             </div>
           </div>
 
@@ -163,7 +166,10 @@
 
           <div id="monogram-page-shipping-info-image-02">
             <div class="manic-image-container">
-              <img src="" data-image-desktop="http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/images/monogram_shipping_info/shipping-content-02.jpg">
+              <img src="" 
+                data-image-mobile="http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/images/monogram_shipping_info/shipping-content-02-mobile.jpg"
+                data-image-tablet="http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/images/monogram_shipping_info/shipping-content-02-tablet.jpg"
+                data-image-desktop="http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/images/monogram_shipping_info/shipping-content-02.jpg">
             </div>
           </div>
 
