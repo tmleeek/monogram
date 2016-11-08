@@ -221,6 +221,19 @@ monogram.page.Home.prototype.display_graph_section = function(){
 
       if(target_main_index != -1){
         this.graph_section.display_combination_index(target_main_index,0);
+
+
+        var current_url           = window.location.href;
+        var twitter_share_url     = 'https://twitter.com/share?url=' + encodeURIComponent(current_url) + 
+                                    '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + this.page_hash_02);
+        var facebook_share_url    = 'http://www.facebook.com/sharer.php?u=' + encodeURIComponent(current_url);
+                
+        $('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
+        $('#graph-social-icons ul li a.fa-facebook').attr('href', facebook_share_url);
+
+
+
+
       } else {
         this.graph_section.display_combination_index(0,0);
       }
@@ -229,6 +242,15 @@ monogram.page.Home.prototype.display_graph_section = function(){
                 goog.isDefAndNotNull(this.page_hash_03) == true) {
 
       this.graph_section.display_combination(this.page_hash_02, this.page_hash_03);
+
+
+      var current_url           = window.location.href;
+      var twitter_share_url     = 'https://twitter.com/share?url=' + encodeURIComponent(current_url) + 
+                                  '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + this.page_hash_02);
+      var facebook_share_url    = 'http://www.facebook.com/sharer.php?u=' + encodeURIComponent(current_url);
+              
+      $('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
+      $('#graph-social-icons ul li a.fa-facebook').attr('href', facebook_share_url);
 
     }
     

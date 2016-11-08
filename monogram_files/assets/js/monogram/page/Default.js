@@ -73,6 +73,8 @@ monogram.page.Default.prototype.init = function() {
 
   window.onbeforeunload = function(){ window.scrollTo(0,0); }     // from zaw's main.js
 
+  this.create_desktop_header();
+
   /*
   this.desktop_header = new savour.component.DesktopHeader({}, $('#desktop-header'));
   this.desktop_header.set_controller(this.controller);
@@ -110,7 +112,38 @@ monogram.page.Default.prototype.init = function() {
 //
 
 
-monogram.page.Default.prototype.private_method_01 = function() {};
+monogram.page.Default.prototype.create_desktop_header = function() {
+
+
+
+  $("#desktop-header-menu-btn").click(function(event){
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    if($('#desktop-header-menu-conainer').hasClass('open-version') == true){
+
+      // close
+      $('#desktop-header-menu-conainer').removeClass('open-version');
+      TweenMax.to($('#desktop-header-menu-conainer'), 0.5, {autoAlpha:0});
+
+    } else {
+
+      // open
+      $('#desktop-header-menu-conainer').addClass('open-version');
+      TweenMax.to($('#desktop-header-menu-conainer'), 0.5, {autoAlpha:1});
+
+    }
+
+    
+    
+    
+
+
+  }.bind(this));
+
+
+};
 monogram.page.Default.prototype.private_method_02 = function() {};
 monogram.page.Default.prototype.private_method_03 = function() {};
 monogram.page.Default.prototype.private_method_04 = function() {};
