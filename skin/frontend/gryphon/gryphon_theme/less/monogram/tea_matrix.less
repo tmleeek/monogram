@@ -5,7 +5,7 @@
 #tea-matrix-section-1 {
   #page-indicator {
     position: absolute;
-    top: 105px; 
+    top: 102px; 
     z-index: 2;   
     li {
       margin-bottom: 20px;
@@ -18,7 +18,7 @@
         font-size: 11px;
         line-height: 10px;
         letter-spacing: 0.05em;  
-        color: @off-white;
+        color: @off-white; 
         .opacity(.3);
         sup {
           font-size: 7px;
@@ -41,7 +41,7 @@
   #tea-matrix-content {
     .section {
       position: absolute;
-      top: 102px;
+      top: 99px;
       left: 0;
       width: 100%;
             
@@ -89,7 +89,11 @@
             }
           }
         }
-      }      
+      }     
+
+      .active-section {
+        z-index: 9999;
+      } 
       
       .suggestions {
         margin-bottom: 38px;

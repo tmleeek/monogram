@@ -19,7 +19,7 @@ html, body{
   background: @dark-brown;
 }
 
-
+ 
 .is-mac{
   *{
     -webkit-font-smoothing : antialiased;
@@ -121,12 +121,12 @@ p {
     border-radius: 50px;    
     &:after {
       content: '';
-      width: 8px;
-      height: 8px;
+      width: 10px;
+      height: 10px;
       position: absolute;
-      top: 0px;
-      left: 0px;
-      background: #544c49;
+      top: -1px;
+      left: -1px;
+      background: @off-white;
       opacity: 0;
       border-radius: 50px;
     }  
@@ -148,3 +148,33 @@ p {
   }
 }
 
+.dropdown {
+  display: inline-block;
+  position: relative;
+  // width: 100%;
+  &:before {
+    font-family: FontAwesome;
+    content: "\f107";
+    position:absolute;
+    display:block;
+    top: 3px;
+    right: 12px;
+    pointer-events: none;
+    font-size: 10px;
+    color: @off-white;
+  }
+  select {
+    background-color: #756b66;
+    border: none;
+    height: 26px;
+    padding-left: 20px;   
+    width: 100%;              
+    .appearance(none);
+    text-indent: 0.01px;
+    text-overflow: '';
+    .round(0px);  
+    font-size: 10px;    
+    color: @off-white;
+    .body-font;      
+  }
+}

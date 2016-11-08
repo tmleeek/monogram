@@ -45,6 +45,50 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    ____   _____        ___   _      _    ____  ____   _____        __
+//   |  _ \ / _ \ \      / / \ | |    / \  |  _ \|  _ \ / _ \ \      / /
+//   | | | | | | \ \ /\ / /|  \| |   / _ \ | |_) | |_) | | | \ \ /\ / /
+//   | |_| | |_| |\ V  V / | |\  |  / ___ \|  _ <|  _ <| |_| |\ V  V /
+//   |____/ \___/  \_/\_/  |_| \_| /_/   \_\_| \_\_| \_\\___/  \_/\_/
+//
+
+
+
+@-webkit-keyframes downArrowAnimation {
+  0% { .transform( translate3d(0,0,0) ); }
+  40% { .transform( translate3d(0,5px,0) ); }
+  100% { .transform( translate3d(0,0,0) ); }
+}
+@keyframes downArrowAnimation {
+  0% { .transform( translate3d(0,0,0) ); }
+  40% { .transform( translate3d(0,5px,0) ); }
+  100% { .transform( translate3d(0,0,0) ); }
+}
+
+#home-intro-section{
+  .down-arrow-container{
+    i {
+      -webkit-animation: downArrowAnimation 1.0s both cubic-bezier(0.7,0,0.3,1) infinite;
+      animation: downArrowAnimation 1.0s both cubic-bezier(0.7,0,0.3,1) infinite;
+    }
+  }
+}
+
+
+
 //    ___ _   _ _____ ____   ___       _    _   _ ___ __  __    _  _____ _____   ___ _   _
 //   |_ _| \ | |_   _|  _ \ / _ \     / \  | \ | |_ _|  \/  |  / \|_   _| ____| |_ _| \ | |
 //    | ||  \| | | | | |_) | | | |   / _ \ |  \| || || |\/| | / _ \ | | |  _|    | ||  \| |

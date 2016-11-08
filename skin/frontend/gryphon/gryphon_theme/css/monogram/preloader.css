@@ -1,0 +1,24 @@
+#page-preloader {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 200000;
+  -webkit-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+  overflow: hidden;
+}
+#page-preloader:before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #7b706b;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}

@@ -1,0 +1,96 @@
+.account-login-page {
+  overflow: visible;
+}
+
+#account-login-section-1 {
+  padding-top: 100px;
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: @off-white;
+    margin-bottom: 35px;
+  }
+  p {
+    text-align: center;
+    color: @off-white;
+    margin-bottom: 60px;
+  }
+
+  .inputs {
+    margin-bottom: 80px;
+    
+    .login-label-container {
+      // text-align: right;
+    }
+
+    .row {
+      margin-bottom: 15px;
+    }
+
+    label.for-input {
+      color: @off-white;
+
+      text-transform: uppercase;
+      .brandon-grotesque-regular;
+      font-size: 10px;
+      line-height: 10px;
+      letter-spacing: 0.05em;          
+    }
+
+    input.input-class {
+      width: 236px;
+    }
+
+    .login-label-container {
+      label {        
+        padding-left: 68px;
+      }
+    }
+    
+    label.remember_me {      
+      display: inline-block;
+      vertical-align: top;      
+      margin-top: 8px;
+      padding-left: 10px;
+    }
+    
+  }
+
+
+  .login-button-container {
+    display: inline-block;
+    vertical-align: middle;
+    width: 36%;
+    a {
+      display: block;
+      // width: 200px;
+      &:first-child {
+        margin-bottom: 10px;  
+      }     
+      i {
+        padding-right: 10px;
+      } 
+    }
+  }
+
+  span.login-button-seperator {
+    display: inline-block;
+    vertical-align: middle;
+    width: 5%;
+    color: @off-white;
+    font-size: 8px;
+    .body-font;
+    text-transform: uppercase;
+  }
+
+  .c-align {
+    text-align: center;
+  }
+
+  input[type=checkbox] {
+    visibility: hidden;
+    &:checked + label:after {
+      opacity: 1;
+    }
+  }   
+}

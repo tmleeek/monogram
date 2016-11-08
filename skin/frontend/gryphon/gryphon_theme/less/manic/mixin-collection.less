@@ -321,3 +321,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
+
+.justify-inline-blocks{
+  text-align: justify;
+  font-size: inherit !important;
+  &:after{
+    content: "";
+    display: inline-block;
+    width: 100%;
+  }
+}

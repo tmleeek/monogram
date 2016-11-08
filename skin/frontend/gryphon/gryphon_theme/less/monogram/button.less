@@ -6,6 +6,7 @@
   line-height: 25px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  background: none;
 
   .display-inline-block;
   height: 25px;
@@ -14,22 +15,24 @@
   border: 1px solid @off-white;
 
   color: fade(@off-white, 90%);
-  border: 1px solid fade(@off-white, 90%);
+  border: 1px solid fade(@off-white, 90%) !important;
 
   padding-left: 9px;
   padding-right: 9px;
 
+  background: transparent;
+
   .opacity(0.9);
   .transition-in(0.3s);
-
+ 
   &:focus,
   &:hover{
     // .opacity_important(0.5);
     color: fade(@off-white, 50%);
-    border: 1px solid fade(@off-white, 50%);
+    border: 1px solid fade(@off-white, 50%) !important;
     
   }
-
+ 
 }
 
 .arrow-cta{  
@@ -92,7 +95,14 @@
   }
 }
 
-.prev-arrow-cta{  
+
+
+
+
+
+
+
+.reverse-arrow-cta{  
   // .subheader-font-2;
   .header-font;
   font-size: 10px;
@@ -129,7 +139,7 @@
 
   &:before{
     font-size: 8px;
-    margin-left: 3px;
+    margin-right: 3px;
 
     content: '<<';
     position: relative;
