@@ -14,14 +14,14 @@ goog.require('monogram.component.GraphSection');
  */
 monogram.page.Home = function(options, element) {
   monogram.page.Default.call(this, options, element);
-  this.options = $.extend(this.options, monogram.page.Home.DEFAULT, options);
+  this.options = $j.extend(this.options, monogram.page.Home.DEFAULT, options);
 
   console.log('this is the home page');
 
 
-  this.intro_section =          $("#home-intro-section");
-  this.tea_selection_section =  $("#home-tea-selection-section");
-  this.graph_section_element =          $("#home-graph-section");
+  this.intro_section =          $j("#home-intro-section");
+  this.tea_selection_section =  $j("#home-tea-selection-section");
+  this.graph_section_element =          $j("#home-graph-section");
 
   /**
    * @type {manic.ui.Mouse}
@@ -93,14 +93,14 @@ monogram.page.Home.prototype.init = function() {
 
   // this.display_intro_section();
 
-  // $("#home-intro-section").hide();
-  // $("#home-graph-section").hide();
+  // $j("#home-intro-section").hide();
+  // $j("#home-graph-section").hide();
 
   /*
-  $("#home-tea-selection-section").hide();
-  $('#scroll-down').on("click", function(e){
-    $("#home-intro-section").slideUp();
-    $("#home-tea-selection-section").slideDown();
+  $j("#home-tea-selection-section").hide();
+  $j('#scroll-down').on("click", function(e){
+    $j("#home-intro-section").slideUp();
+    $j("#home-tea-selection-section").slideDown();
   });
   */
  
@@ -228,8 +228,8 @@ monogram.page.Home.prototype.display_graph_section = function(){
                                     '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + this.page_hash_02);
         var facebook_share_url    = 'http://www.facebook.com/sharer.php?u=' + encodeURIComponent(current_url);
                 
-        $('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
-        $('#graph-social-icons ul li a.fa-facebook').attr('href', facebook_share_url);
+        $j('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
+        $j('#graph-social-icons ul li a.fa-facebook').attr('href', facebook_share_url);
 
 
 
@@ -249,8 +249,8 @@ monogram.page.Home.prototype.display_graph_section = function(){
                                   '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + this.page_hash_02);
       var facebook_share_url    = 'http://www.facebook.com/sharer.php?u=' + encodeURIComponent(current_url);
               
-      $('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
-      $('#graph-social-icons ul li a.fa-facebook').attr('href', facebook_share_url);
+      $j('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
+      $j('#graph-social-icons ul li a.fa-facebook').attr('href', facebook_share_url);
 
     }
     
@@ -291,16 +291,16 @@ monogram.page.Home.prototype.create_intro = function() {
   /**
    * @type {manic.ui.SpanSplit}
    */
-  var h1_split = $("#home-intro-section .center-content h1").data('manic.ui.SpanSplit');
+  var h1_split = $j("#home-intro-section .center-content h1").data('manic.ui.SpanSplit');
   h1_split.add_numbered_classes('in-dd');
   h1_split.add_numbered_classes_reverse('out-dd');
 
 
-  var arr = $("#home-intro-section .center-content p");
+  var arr = $j("#home-intro-section .center-content p");
   var item = null;
 
   for (var i = 0, l=arr.length; i < l; i++) {
-    item = $(arr[i]);
+    item = $j(arr[i]);
     /**
      * @type {manic.ui.SpanSplit}
      */
@@ -316,26 +316,26 @@ monogram.page.Home.prototype.create_tea_selection = function() {
 
 
 
-  $('#home-tea-item-container').mouseleave(function(event){
+  $j('#home-tea-item-container').mouseleave(function(event){
 
-    $('#home-tea-item-container .home-tea-item')
+    $j('#home-tea-item-container .home-tea-item')
       .removeClass('selected')
       .removeClass('not-selected')
 
   }.bind(this));
 
 
-  var arr = $('#home-tea-item-container .home-tea-item');
+  var arr = $j('#home-tea-item-container .home-tea-item');
   var item = null;
 
   for (var i = 0, l=arr.length; i < l; i++) {
-    item = $(arr[i]);
+    item = $j(arr[i]);
     item.mouseover(function(event){
 
-      var target = $(event.currentTarget);
+      var target = $j(event.currentTarget);
 
-      $('#home-tea-item-container .home-tea-item').removeClass('selected');
-      $('#home-tea-item-container .home-tea-item').addClass('not-selected');
+      $j('#home-tea-item-container .home-tea-item').removeClass('selected');
+      $j('#home-tea-item-container .home-tea-item').addClass('not-selected');
 
       target.addClass('selected');
       target.removeClass('not-selected');
@@ -348,13 +348,13 @@ monogram.page.Home.prototype.create_tea_selection = function() {
 
 monogram.page.Home.prototype.create_graph = function() {
 
-  if ($('#graph-section').length != 0) {
-    this.graph_section = new monogram.component.GraphSection({}, $('#graph-section'));
+  if ($j('#graph-section').length != 0) {
+    this.graph_section = new monogram.component.GraphSection({}, $j('#graph-section'));
   }
 
   /*
-  if ($('#tea-layering-detail-graph-section').length != 0) {
-    this.mobile_graph_section = new monogram.component.MobileGraphSection({}, $('#tea-layering-detail-graph-section'));
+  if ($j('#tea-layering-detail-graph-section').length != 0) {
+    this.mobile_graph_section = new monogram.component.MobileGraphSection({}, $j('#tea-layering-detail-graph-section'));
   }
   */
 
@@ -396,24 +396,24 @@ monogram.page.Home.prototype.update_page_layout = function() {
 
   // TEMP GRAPH UPDATE START
   
-  var target_height = $(window).height() - 90;
+  var target_height = $j(window).height() - 90;
   console.log('target_height: ' + target_height);
 
-  $('#graph-column-01-container').css({
+  $j('#graph-column-01-container').css({
     'height': target_height + 'px'
   });
-  $('#graph-column-02-container').css({
+  $j('#graph-column-02-container').css({
     'height': target_height + 'px'
   });
 
-  $('#graph-center-column-container').css({
+  $j('#graph-center-column-container').css({
     'height': target_height + 'px'
   });
 
 
 
   var space_extra = 600 - 768;
-  var target_height = $(window).height() - space_extra - 351 - 31;
+  var target_height = $j(window).height() - space_extra - 351 - 31;
 
   
 
@@ -422,12 +422,12 @@ monogram.page.Home.prototype.update_page_layout = function() {
 
 
   /*
-  $('#combination-graph-04').css({
+  $j('#combination-graph-04').css({
     'zoom': target_zoom
   });
   */
   
-  $('#graph-section-combination-graph').css({
+  $j('#graph-section-combination-graph').css({
     'zoom': target_zoom
   });
 
@@ -435,7 +435,7 @@ monogram.page.Home.prototype.update_page_layout = function() {
 
   var mobile_target_zoom = 0.6333;
   var mobile_target_height = (mobile_target_zoom * 600);
-  $('#tea-layering-detail-graph-section').css({
+  $j('#tea-layering-detail-graph-section').css({
    'height': mobile_target_height + 'px'
   });
 

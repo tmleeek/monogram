@@ -24,7 +24,7 @@ goog.require('monogram.graph.SingleGraph');
 monogram.page.Default = function(options) {
 
   manic.page.Page.call(this, options);
-  this.options = $.extend(this.options, monogram.page.Default.DEFAULT, options);
+  this.options = $j.extend(this.options, monogram.page.Default.DEFAULT, options);
 
 
 };
@@ -76,13 +76,13 @@ monogram.page.Default.prototype.init = function() {
   this.create_desktop_header();
 
   /*
-  this.desktop_header = new savour.component.DesktopHeader({}, $('#desktop-header'));
+  this.desktop_header = new savour.component.DesktopHeader({}, $j('#desktop-header'));
   this.desktop_header.set_controller(this.controller);
 
-  this.mobile_header = new savour.component.MobileHeader({}, $('#mobile-header'));
+  this.mobile_header = new savour.component.MobileHeader({}, $j('#mobile-header'));
 
 
-  $('.page-template-slider').slick({
+  $j('.page-template-slider').slick({
     'speed': 350,
     'dots': false,
     'arrows': true,
@@ -96,9 +96,9 @@ monogram.page.Default.prototype.init = function() {
   */
   
 
-  if($('#tea-matrix-combination-graph').length != 0){
+  if($j('#tea-matrix-combination-graph').length != 0){
 
-    this.single_graph = new monogram.graph.SingleGraph({}, $('#tea-matrix-combination-graph'));
+    this.single_graph = new monogram.graph.SingleGraph({}, $j('#tea-matrix-combination-graph'));
   }
 
   console.log('monogram.page.Default: init');
@@ -116,22 +116,22 @@ monogram.page.Default.prototype.create_desktop_header = function() {
 
 
 
-  $("#desktop-header-menu-btn").click(function(event){
+  $j("#desktop-header-menu-btn").click(function(event){
 
     event.preventDefault();
     event.stopPropagation();
 
-    if($('#desktop-header-menu-conainer').hasClass('open-version') == true){
+    if($j('#desktop-header-menu-conainer').hasClass('open-version') == true){
 
       // close
-      $('#desktop-header-menu-conainer').removeClass('open-version');
-      TweenMax.to($('#desktop-header-menu-conainer'), 0.5, {autoAlpha:0});
+      $j('#desktop-header-menu-conainer').removeClass('open-version');
+      TweenMax.to($j('#desktop-header-menu-conainer'), 0.5, {autoAlpha:0});
 
     } else {
 
       // open
-      $('#desktop-header-menu-conainer').addClass('open-version');
-      TweenMax.to($('#desktop-header-menu-conainer'), 0.5, {autoAlpha:1});
+      $j('#desktop-header-menu-conainer').addClass('open-version');
+      TweenMax.to($j('#desktop-header-menu-conainer'), 0.5, {autoAlpha:1});
 
     }
 

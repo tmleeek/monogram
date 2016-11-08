@@ -43,9 +43,9 @@
 	          <ul>
 	            <li><a href="<?php echo $this->getUrl('experience'); ?>">Experience</a></li>
 	            <li><a href="<?php echo $this->getUrl('tea-layering'); ?>">Tea Layering</a></li>
-	            <li><a href="<?php echo $this->getUrl('recommendations'); ?>">Recommendations</a></li>
+	            <li><a href="<?php echo $this->getUrl('/'); ?>/#graph/cherry-japonais">Recommendations</a></li>
 	            <li><a href="<?php echo $this->getUrl('tea-matrix'); ?>">Tea Matrix</a></li>
-	            <li><a href="<?php echo $this->getUrl('monologue'); ?>">Monologue</a></li>
+	            <li><a href="<?php echo $this->getUrl('monolog'); ?>">Monologue</a></li>
 	          </ul>
 	        </div>
 	        <div class="col-md-2">
@@ -60,7 +60,7 @@
 	        <div class="col-md-2">
 	          <h5>Order Information</h5>
 	          <ul>
-	            <li><a href="<?php echo Mage::helper('persistent')->getCreateAccountUrl($this->getCreateAccountUrl()) ?>">Account Registration</a></li>
+	            <li><a href="<?php echo $this->getUrl('customer/account/create/') ?>">Account Registration</a></li>
 	            <li><a href="<?php echo $this->getUrl('faq'); ?>">Frequently Asked Questions</a></li>
 	            <li><a href="<?php echo $this->getUrl('shipping-info'); ?>">Shipping Information</a></li>
 	            <li><a href="http://www.trackntrace.com.sg/">Track Order</a></li>

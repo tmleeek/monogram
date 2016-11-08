@@ -46,9 +46,7 @@ $path = $url->getPath();
 </head>
 <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
     
-    <?php if($path=="/"): ?>
-    <div id="page-preloader"><div id="page-preloader-logo-v2"></div></div>
-    <?php endif; ?>
+    <div id="page-preloader"><div id="page-preloader-logo-v2"></div></div>    
 
     <?php echo $this->getChildHtml('after_body_start') ?>
 
