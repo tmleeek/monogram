@@ -165,7 +165,9 @@
     <ul>
       <li> <a href="www.twitter.com" class="fa fa-twitter"></a> </li>
       <li> <a href="www.facebook.com" class="fa fa-facebook"></a> </li>
-      <li> <a href="www.intagram.com" class="fa fa-instagram"></a> </li>
+
+      <!-- you cannot share to instagram from pc -->
+      <!-- <li> <a href="www.intagram.com" class="fa fa-instagram"></a> </li> -->
     </ul>
   </div>
   

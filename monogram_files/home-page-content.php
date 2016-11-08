@@ -47,7 +47,7 @@
 				<p>Lively and Floral</p>
 				<div class="cta-container">
 					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
-					<a href="#graph/cherry-japonais" class="arrow-cta">see tea layering</a>
+					<a href="#graph/cherry-japonais" class="arrow-cta">See Tea Recommendations</a>
 				</div>
 			</div>
 			<div class="home-tea-item-cover"></div>
@@ -64,7 +64,7 @@
 				<p>Expressive and Umami</p>
 				<div class="cta-container">
 					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
-					<a href="#graph/uji-sencha" class="arrow-cta">see tea layering</a>
+					<a href="#graph/uji-sencha" class="arrow-cta">See Tea Recommendations</a>
 				</div>
 			</div>
 			<div class="home-tea-item-cover"></div>
@@ -81,7 +81,7 @@
 				<p>Graceful and Floral</p>
 				<div class="cta-container">
 					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
-					<a href="#graph/jasmine-silk-pearls" class="arrow-cta">see tea layering</a>
+					<a href="#graph/jasmine-silk-pearls" class="arrow-cta">See Tea Recommendations</a>
 				</div>
 			</div>
 			<div class="home-tea-item-cover"></div>
@@ -98,7 +98,7 @@
 				<p>Voluptuous and Velvety</p>
 				<div class="cta-container">
 					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
-					<a href="#graph/milky-oolong" class="arrow-cta">see tea layering</a>
+					<a href="#graph/milky-oolong" class="arrow-cta">See Tea Recommendations</a>
 				</div>
 			</div>
 			<div class="home-tea-item-cover"></div>
@@ -115,7 +115,7 @@
 				<p>Confident and Citrus</p>
 				<div class="cta-container">
 					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
-					<a href="#graph/lapsang-florale" class="arrow-cta">see tea layering</a>
+					<a href="#graph/lapsang-florale" class="arrow-cta">See Tea Recommendations</a>
 				</div>
 			</div>
 			<div class="home-tea-item-cover"></div>
@@ -131,7 +131,7 @@
 				<p>Blossoming and Sweet</p>
 				<div class="cta-container">
 					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
-					<a href="#graph/kashmere" class="arrow-cta">see tea layering</a>
+					<a href="#graph/kashmere" class="arrow-cta">See Tea Recommendations</a>
 				</div>
 			</div>
 			<div class="home-tea-item-cover"></div>
@@ -148,7 +148,7 @@
 				<p>Spirited and Fresh</p>
 				<div class="cta-container">
 					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
-					<a href="#graph/earl-grey-neroli" class="arrow-cta">see tea layering</a>
+					<a href="#graph/earl-grey-neroli" class="arrow-cta">See Tea Recommendations</a>
 				</div>
 			</div>
 			<div class="home-tea-item-cover"></div>
@@ -165,7 +165,7 @@
 				<p>Soulful and Bold</p>
 				<div class="cta-container">
 					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
-					<a href="#graph/morning-english" class="arrow-cta">see tea layering</a>
+					<a href="#graph/morning-english" class="arrow-cta">See Tea Recommendations</a>
 				</div>
 			</div>
 			<div class="home-tea-item-cover"></div>
@@ -182,7 +182,7 @@
 				<p>Soothing and Relaxing</p>
 				<div class="cta-container">
 					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
-					<a href="#graph/provencal-herbs" class="arrow-cta">see tea layering</a>
+					<a href="#graph/provencal-herbs" class="arrow-cta">See Tea Recommendations</a>
 				</div>
 			</div>
 			<div class="home-tea-item-cover"></div>
@@ -198,7 +198,7 @@
 				<p>Refine and Intimate</p>
 				<div class="cta-container">
 					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
-					<a href="#graph/saffronais" class="arrow-cta">see tea layering</a>
+					<a href="#graph/saffronais" class="arrow-cta">See Tea Recommendations</a>
 				</div>
 			</div>
 			<div class="home-tea-item-cover"></div>
@@ -215,7 +215,7 @@
 				<p>Sublime and Delicate</p>
 				<div class="cta-container">
 					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
-					<a href="#graph/rose-of-ariana" class="arrow-cta">see tea layering</a>
+					<a href="#graph/rose-of-ariana" class="arrow-cta">See Tea Recommendations</a>
 				</div>
 			</div>
 			<div class="home-tea-item-cover"></div>
@@ -232,7 +232,7 @@
 				<p>Earthy and Balsamic</p>
 				<div class="cta-container">
 					<a href="javascript:void(0);" class="arrow-cta">add to cart</a>
-					<a href="#graph/shiso-mint" class="arrow-cta">see tea layering</a>
+					<a href="#graph/shiso-mint" class="arrow-cta">See Tea Recommendations</a>
 				</div>
 			</div>
 			<div class="home-tea-item-cover"></div>

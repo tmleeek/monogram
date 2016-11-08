@@ -35,7 +35,7 @@
             <li><a href="#" class="text">Currency</a></li>
             <li><a href="#" class="text">Join/Log in</a></li>
             <li><a href="#" class="text">Cart <span>(0)</span></a></li>
-            <li><a href="#" class="fa fa-bars"></a></li>
+            <li><a href="#" class="fa fa-bars" id="desktop-header-menu-btn"></a></li>
           </ul>
         </div>
 
