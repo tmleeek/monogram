@@ -5696,7 +5696,8 @@ p {
 .currency-switcher {
   position: absolute;
   top: 70px;
-  left: -39px;
+  right: 108px;
+  width: 250px;
 }
 .currency-switcher .currency-form {
   display: none;
@@ -14156,6 +14157,9 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
 html.monogram-subscription-page,
 body.monogram-subscription-page {
   overflow: visible;
+}
+.cms-subscription .page-title {
+  display: none;
 }
 #monogram-subscription-title-section {
   background: #6b615b;

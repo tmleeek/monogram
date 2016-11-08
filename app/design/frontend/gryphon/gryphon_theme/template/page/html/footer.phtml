@@ -41,20 +41,20 @@
 					<div class="col-md-2">
 	          <h5>About Monogram</h5>
 	          <ul>
-	            <li><a href="<?php echo $this->getUrl('experience'); ?>">Experience</a></li>
-	            <li><a href="<?php echo $this->getUrl('tea-layering'); ?>">Tea Layering</a></li>
-	            <li><a href="<?php echo $this->getUrl('/'); ?>/#graph/cherry-japonais">Recommendations</a></li>
+	            <li><a href="<?php echo $this->getUrl('experience'); ?>">Experience Monogram</a></li>
+	            <li><a href="<?php echo $this->getUrl('tea-layering'); ?>">Tea Layering</a></li>	            
 	            <li><a href="<?php echo $this->getUrl('tea-matrix'); ?>">Tea Matrix</a></li>
-	            <li><a href="<?php echo $this->getUrl('monolog'); ?>">Monologue</a></li>
+	            <li><a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais">Layering Recommendations</a></li>
+	            <li><a href="<?php echo $this->getUrl('monolog'); ?>">Monolog</a></li>
 	          </ul>
 	        </div>
 	        <div class="col-md-2">
 	          <h5>Shop</h5>
 	          <?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
 	          <ul>
-	            <li><a href="<?php echo $store_category->getUrl(); ?>">TeaStore</a></li>
-	            <li><a href="<?php echo $this->getUrl('monogram-service'); ?>">MonogramService</a></li>
+	            <li><a href="<?php echo $store_category->getUrl(); ?>">Tea Store</a></li>
 	            <li><a href="<?php echo $this->getUrl('subscription'); ?>">Subscription</a></li>
+	            <li><a href="<?php echo $this->getUrl('monogram-service'); ?>">Monogram Services</a></li>	
 	          </ul>
 	        </div>
 	        <div class="col-md-2">
