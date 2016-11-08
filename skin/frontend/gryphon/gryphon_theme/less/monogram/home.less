@@ -241,14 +241,25 @@
   .cta-container{
     position: absolute;
     bottom: 24px;
-    right: 22px;
+    left: 22px;
+    // right: 22px;
+    right: 4px;
+    text-align: left;
 
     .opacity(0);
 
     .transition-in(0.3s);
 
     .arrow-cta{
-      margin-left: 19px;
+      // margin-left: 19px;
+      // margin-right: 19px;
+      margin-right: 6px;
+
+      &:last-child{
+        margin-right: 0px;
+
+
+      }
     }
   }
 
@@ -301,7 +312,21 @@
 } // .home-tea-item
 
 
+@media only screen and (min-width: 1300px) {
+  .home-tea-item{
+    .cta-container{
+      .arrow-cta{
 
+
+        
+        margin-right: 19px;
+        &:last-child{
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+}
 
 
 
