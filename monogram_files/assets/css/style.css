@@ -10165,7 +10165,7 @@ body.tea-layering-detail-page {
 }
 #tea-matrix-section-1 #page-indicator {
   position: absolute;
-  top: 105px;
+  top: 102px;
   z-index: 2;
 }
 #tea-matrix-section-1 #page-indicator li {
@@ -10208,7 +10208,7 @@ body.tea-layering-detail-page {
 }
 #tea-matrix-section-1 #tea-matrix-content .section {
   position: absolute;
-  top: 102px;
+  top: 99px;
   left: 0;
   width: 100%;
 }
@@ -10258,6 +10258,9 @@ body.tea-layering-detail-page {
   font-style: normal;
   font-weight: normal;
   font-size: 10px;
+}
+#tea-matrix-section-1 #tea-matrix-content .section .active-section {
+  z-index: 9999;
 }
 #tea-matrix-section-1 #tea-matrix-content .section .suggestions {
   margin-bottom: 38px;

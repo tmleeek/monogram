@@ -150,6 +150,9 @@
 
 
       var single_graph = $('#tea-matrix-combination-graph').data('monogram.graph.SingleGraph');
+
+      console.log(single_graph);
+
       if(single_graph != null){
         
         var id_array = [
@@ -167,43 +170,50 @@
             'provencal-herbs'
           ];
         var target_id = id_array[parseFloat(sectionNo)-1]; //Math.floor(Math.random() * id_array.length)
+        
         single_graph.set_data_by_id(target_id);
       }
                   
-
+      console.log(sectionNo)
     }
+
 
     function init() {
       animating = true;
-      showSection(1); // init
+      if(window.location.hash) {
+        var hash = window.location.hash.replace('#', '');        
+
+        showSection(hash);
+        currentSection = parseInt(hash);
+
+      } else {        
+        showSection(1); // init
+      }
       // changeIndicatorsColor($("#page-indicator li.active a"));
     }
 
     init();
-    
 
     // events
+    
+    $('body').on('mousewheel', function(event) {
 
-    window.addEventListener('mousewheel', function(e){
-
-        wDelta = e.wheelDelta < 0 ? 'down' : 'up';
-                     
         var totalSection = $('#tea-matrix-content').find(".section").length;
 
-        console.log(animating)
+        console.log(currentSection)
 
-        if(wDelta=='down' && animating == false) {          
+        if(event.deltaY < 0 && animating == false) {     
 
           if(currentSection>=1 && currentSection<totalSection) {            
 
             animating = true;
 
             hideSection(currentSection, currentSection+1);
-            currentSection++;            
+            currentSection++;
 
-          }          
+          }
 
-        }else if(wDelta=='up' && animating == false) {        
+        }else if(event.deltaY > 0  && animating == false) {                  
 
           if(currentSection>1) {
 
@@ -215,7 +225,6 @@
           }      
 
         }
-
     });
 
     $("#page-indicator .anchor").on("click", function(e){
@@ -234,7 +243,7 @@
         
       // }
       
-    });
+    });    
 
   });
   </script>
