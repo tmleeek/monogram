@@ -19,15 +19,18 @@ goog.require('monogram.graph.DataLoader');
  */
 monogram.graph.SingleGraph = function(options, element) {
   goog.events.EventTarget.call(this);
-  this.options = $.extend({}, monogram.graph.SingleGraph.DEFAULT, options);
+  this.options = $j.extend({}, monogram.graph.SingleGraph.DEFAULT, options);
   this.element = element;
 
   this.element.data('monogram.graph.SingleGraph', this);
 
 
-  this.data_loader = new monogram.graph.DataLoader({}, $('#monograph-graph-data'));
-  console.log($('#monograph-graph-data'));
-  console.log($('#monograph-graph-data'));
+  this.data_loader = new monogram.graph.DataLoader({}, $j('#monograph-graph-data'));
+  console.log($j('#monograph-graph-data'));
+  console.log($j('#monograph-graph-data'));
+
+
+  this.label_element_array = this.element.find('.graph-name-overlay .graph-name-item');
 
 
   this.data_id = '';
@@ -194,6 +197,25 @@ monogram.graph.SingleGraph.prototype.set_data = function(graph_data_param) {
   this.graph_data = graph_data_param;
   this.graph_item.set_data_and_element(this.graph_data, this.overlay_element);
   this.graph_item.animate_in();
+
+  // update label array
+
+  var item = null;
+  var target_opacity = 0;
+  var graph_flavor_score = monogram.graph.Data.get_solo_calculated_score(this.graph_data);
+
+
+  for (var i = 0, l=this.label_element_array.length; i < l; i++) {
+
+    item = $j(this.label_element_array[i]);
+    target_opacity = 0.3 + ( 0.7 * (graph_flavor_score[i] / 20) * 1.8 );
+    target_opacity = target_opacity > 1 ? 1 : target_opacity;
+
+    
+    TweenMax.killTweensOf(item);
+    TweenMax.to(item, 0.5, {opacity:target_opacity});
+  }
+  
 
   /*
   TweenMax.delayedCall(5, this.test_01, [], this);

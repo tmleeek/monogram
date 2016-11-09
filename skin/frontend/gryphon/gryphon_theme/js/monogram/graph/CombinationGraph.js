@@ -45,6 +45,10 @@ monogram.graph.CombinationGraph = function(options, element) {
 
 
 
+  this.label_element_array = this.element.find('.graph-name-overlay .graph-name-item');
+
+
+
   /**
    * @type {monogram.graph.Data}
    */
@@ -172,6 +176,9 @@ monogram.graph.CombinationGraph.prototype.set_data_01 = function(graph_data_para
 
 
 
+  this.update_label_opacity();
+
+
 };
 
 /**
@@ -186,10 +193,34 @@ monogram.graph.CombinationGraph.prototype.set_data_02 = function(graph_data_para
   // temp
   this.graph_item_02.animate_in();
 
+  this.update_label_opacity();
+
 };
 
 
-monogram.graph.CombinationGraph.prototype.public_method_03 = function() {};
+
+monogram.graph.CombinationGraph.prototype.update_label_opacity = function() {
+
+  if(this.graph_data_01 != null && this.graph_data_02 != null){
+
+    var item = null;
+    var target_opacity = 0;
+    var graph_flavor_score = monogram.graph.Data.get_combined_calculated_score(this.graph_data_01, this.graph_data_02);
+
+
+    for (var i = 0, l=this.label_element_array.length; i < l; i++) {
+
+      item = $j(this.label_element_array[i]);
+      target_opacity = 0.3 + ( 0.7 * (graph_flavor_score[i] / 20) * 1.8 );
+      target_opacity = target_opacity > 1 ? 1 : target_opacity;
+
+      TweenMax.killTweensOf(item);
+      TweenMax.to(item, 0.5, {opacity:target_opacity});
+    }
+  }
+};
+
+
 monogram.graph.CombinationGraph.prototype.public_method_04 = function() {};
 monogram.graph.CombinationGraph.prototype.public_method_05 = function() {};
 monogram.graph.CombinationGraph.prototype.public_method_06 = function() {};
