@@ -19,6 +19,10 @@
 			</div>
 
 
+			
+
+
+
 		</div>
 	</div>
 	<div class="down-arrow-container">
@@ -252,3 +256,67 @@
 
 	
 </article>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+	 __  __  ___  ____ ___ _     _____      _    _____
+	|  \/  |/ _ \| __ )_ _| |   | ____|    / \  |  ___|
+	| |\/| | | | |  _ \| || |   |  _|     / _ \ | |_
+	| |  | | |_| | |_) | || |___| |___   / ___ \|  _|
+	|_|  |_|\___/|____/___|_____|_____| /_/   \_\_|
+	
+-->
+
+
+<!-- DON'T MIND ME, I'M JUST PREPARING FOR HOME PAGE MOBILE... -->
+
+<article id="home-mobile-landing-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="default-copy">
+					<h1>The art of tea layering</h1>
+					<p>Excite the palate and discover a world of simplexity tea flavours with Monogram. Exuding class and sophistication, yet playful and dynamic, explore the art of tea layering with every cup. With no two brews tasting the same, curate a personal unique identity with the world’s finest handpicked tea leaves and herbs. Get hands on and experimental with Monogram, layering the silken sachets to harmonious perfection. With each sachet carefully selected to complement each other, half the fun is to discover your very own brew. More importantly, the special bond that comes with each tea layering experience.</p>
+
+					<h4>tea layering suggestion</h4>
+					<!-- insert graph here -->
+
+					<h2>earl grey neroli + Shiso mint</h2>
+					<p>Suspendisse in enim nisl. Duis nec lacus magna. Curabitur tempus metus in libero. lacinia posuere. Duis accumsan bibendum dapibus. </p>
+					
+
+					<div class="cta-container">
+						<a href="" class="square-cta">buy both teas</a>
+						<a href="" class="square-cta">see more layering</a>
+					</div>
+
+					<h4>popular tea layering</h4>
+
+					<div class="something">
+						<h2>cherry japonais + kashmeretm</h2>
+						<h6>by monogram</h6>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada massa...</p>
+					</div>
+
+					<p>visit store</p>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</article> <!-- home-mobile-landing-section -->
+
+
+
+<article id="home-mobile-tea-layering-section">
+</article> <!-- home-mobile-tea-layering-section -->
