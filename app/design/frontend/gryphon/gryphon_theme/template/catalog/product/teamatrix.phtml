@@ -9,7 +9,7 @@ $_helper = $this->helper('catalog/output');
 $count = 1;
 ?>
 <article id="tea-matrix-section-1">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-md-2">
         <ul id="page-indicator">
@@ -35,7 +35,7 @@ $count = 1;
           $product_name = $_product->getName();
       ?>
       <div id="tea-matrix-content-section-<?php echo $count; ?>" class="section">
-        <div class="container">
+        <div class="container-fluid">
           <div class="col-md-6 col-md-offset-2">
           <?php if($count==1): ?>             
               <div id="tea-matrix-combination-graph" class="monogram-combination-graph" data-id="cherry-japonais">
