@@ -28,6 +28,21 @@ monogram.graph.Data = function(data_obj_param) {
   this.data_flavor_complexity         = this.data_object["flavor-complexity"];       // this is optional, and not used
 
 
+  this.calculated_flavor_score_array = {
+    'floral': 0,
+    'creamy': 0,
+    'marine': 0,
+    'mineral': 0,
+    'citrus': 0,
+    'fruity': 0,
+    'sweet': 0,
+    'wood': 0,
+    'herbaceous': 0
+  };
+  
+  this.calculate_flavor_score();
+
+
   this.data_point_array               = this.data_object["point-array"];
 
   this.data_pair_array                = this.data_object["pair-array"];
@@ -193,7 +208,28 @@ monogram.graph.Data.SUBFLAVOR_DATA_ARRAY = [
 //
 
 
-monogram.graph.Data.prototype.private_method_01 = function() {};
+monogram.graph.Data.prototype.calculate_flavor_score = function() {
+
+  var flavor_item = null;
+  var original_id = '';
+  var cropped_id = '';
+  var parsed_value = 0;
+
+  for (var i = 0, l=this.data_flavor_array.length; i < l; i++) {
+
+
+    flavor_item = this.data_flavor_array[i];
+
+    original_id = flavor_item['id'];
+    cropped_id = original_id.split('--')[0];
+    parsed_value = parseInt(flavor_item['value']);
+    
+    this.calculated_flavor_score_array[cropped_id] += parsed_value;
+  }
+
+  // console.log(this.calculated_flavor_score_array);
+  
+};
 
 
 /**
@@ -277,3 +313,67 @@ monogram.graph.Data.get_flavor_index = function(str_param) {
 };
 
 
+
+
+/**
+ * @type {function}
+ * @param  {monogram.graph.Data} data_01
+ * @param  {monogram.graph.Data} data_02
+ * @return {Array}
+ */
+monogram.graph.Data.get_combined_calculated_score = function(data_01, data_02) { 
+
+  // this might fail...
+
+  try {
+
+    return [
+      data_01.calculated_flavor_score_array['floral'] + data_02.calculated_flavor_score_array['floral'],
+      data_01.calculated_flavor_score_array['creamy'] + data_02.calculated_flavor_score_array['creamy'],
+      data_01.calculated_flavor_score_array['marine'] + data_02.calculated_flavor_score_array['marine'],
+      data_01.calculated_flavor_score_array['mineral'] + data_02.calculated_flavor_score_array['mineral'],
+      data_01.calculated_flavor_score_array['citrus'] + data_02.calculated_flavor_score_array['citrus'],
+      data_01.calculated_flavor_score_array['fruity'] + data_02.calculated_flavor_score_array['fruity'],
+      data_01.calculated_flavor_score_array['sweet'] + data_02.calculated_flavor_score_array['sweet'],
+      data_01.calculated_flavor_score_array['wood'] + data_02.calculated_flavor_score_array['wood'],
+      data_01.calculated_flavor_score_array['herbaceous'] + data_02.calculated_flavor_score_array['herbaceous']
+    ];
+
+  } catch (e) {
+
+    return [0,0,0,0,0,0,0,0,0];
+
+  }
+
+};
+
+/**
+ * @type {function}
+ * @param  {monogram.graph.Data} data_01
+ * @return {Array}
+ */
+monogram.graph.Data.get_solo_calculated_score = function(data_01) {
+
+  // this might fail...
+
+  try {
+
+    return [
+      data_01.calculated_flavor_score_array['floral'],
+      data_01.calculated_flavor_score_array['creamy'],
+      data_01.calculated_flavor_score_array['marine'],
+      data_01.calculated_flavor_score_array['mineral'],
+      data_01.calculated_flavor_score_array['citrus'],
+      data_01.calculated_flavor_score_array['fruity'],
+      data_01.calculated_flavor_score_array['sweet'],
+      data_01.calculated_flavor_score_array['wood'],
+      data_01.calculated_flavor_score_array['herbaceous']
+    ];
+
+  } catch (e) {
+
+    return [0,0,0,0,0,0,0,0,0];
+
+  }
+
+};
