@@ -1,0 +1,319 @@
+<?php
+$_productCollection = Mage::getModel('catalog/category')->load(92)
+                     ->getProductCollection()
+                     ->addAttributeToSelect('*')
+                     ->addAttributeToFilter('status', 1) // enabled
+                     ->addAttributeToFilter('visibility', 4) //visibility in catalog,search
+                     ->addAttributeToSort('position', Varien_Data_Collection::SORT_ORDER_ASC);
+$_helper = $this->helper('catalog/output');   
+$count = 1;
+?>
+<article id="tea-matrix-section-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <ul id="page-indicator">
+          <?php foreach ($_productCollection as $key => $_product):            
+              $product_name = $_product->getName();
+          ?>
+          <li id="page-indicator-<?php echo $count; ?>" data-menuanchor="<?php echo $count; ?>" class="<?php echo ($count==1) ? 'active' : ''; ?> page-indicator"><a href="#<?php echo $count; ?>" class="anchor" id="anchor-<?php echo $count; ?>"><?php echo ($_product->getData('product_name_in_color')) ? $_product->getData('product_name_in_color') : $product_name ; ?></a></li>          
+          <?php $count++; ?>
+          <?php endforeach; ?>
+        </ul>  
+      </div>
+    </div>  
+  </div>     
+  <div id="tea-matrix-content">
+
+      <div id="monograph-graph-data" 
+        data-graph-data-url="/skin/frontend/gryphon/gryphon_theme/json/graph-data.json">
+      </div>
+      
+      <?php 
+      $count = 1;
+      foreach ($_productCollection as $key => $_product):            
+          $product_name = $_product->getName();
+      ?>
+      <div id="tea-matrix-content-section-<?php echo $count; ?>" class="section">
+        <div class="container">
+          <div class="col-md-6 col-md-offset-2">
+          <?php if($count==1): ?>             
+              <div id="tea-matrix-combination-graph" class="monogram-combination-graph" data-id="cherry-japonais">
+                <div class="graph-svg"></div>                
+                <div class="graph-name-overlay">
+                  <div class="graph-name-item floral-version"></div>
+                  <div class="graph-name-item creamy-version"></div>
+                  <div class="graph-name-item marine-version"></div>
+                  <div class="graph-name-item mineral-version"></div>
+                  <div class="graph-name-item citrus-version"></div>
+                  <div class="graph-name-item fruity-version"></div>
+                  <div class="graph-name-item sweet-version"></div>
+                  <div class="graph-name-item wood-version"></div>
+                  <div class="graph-name-item herbaceous-version"></div>
+                </div>
+                <div class="graph-overlay"></div>
+              </div>
+          <?php endif; ?>
+          </div>
+          <div class="col-md-4">
+            <div class="tea-matrix-content-text-cta">
+              <h3 class="tea-matrix-content-animate"><?php echo ($_product->getData('product_name_in_color')) ? $_product->getData('product_name_in_color') : $product_name ; ?></h3>
+              <p class="tea-matrix-content-animate"><?php echo $_product->getDescription(); ?></p>
+              <hr class="top tea-matrix-content-animate">
+              <?php echo $_product->getData('tea_matrix_content'); ?>              
+              <hr class="bottom tea-matrix-content-animate">
+
+              <div class="suggestions">                
+                <h5 class="tea-matrix-content-animate">layering suggestion</h5>
+                <?php 
+                $object = Mage::getModel('catalog/product');
+                $upsell_product = $_product->getUpSellProductCollection()->addAttributeToSort('position', Varien_Db_Select::SQL_ASC)->addStoreFilter();
+                  //if result is not empty then get  upsell product detail using foreach loop      
+                  foreach($upsell_product as $_upsell):
+                    //get detail of single upsell prdocut using upsell product id
+                    $upsp = $object->load($_upsell->getId());        
+                  ?>    
+                
+                <div class="suggestion tea-matrix-content-animate"><?php echo $upsp->getData('product_name_in_color') ?></div>
+                <?php endforeach; ?>
+              </div>
+  
+              <a href="<?php echo $_product->getProductUrl() ?>" class="square-cta tea-matrix-content-animate">find out more</a>
+              <a href="<?php echo $this->getAddToCartUrl($_product) ?>" class="square-cta tea-matrix-content-animate tea-matrix-add-to-cart">add to cart</a>
+              <span id='ajax_loader_product' style='display:none'><img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/></span>
+              <span class="ajax_msg_product italic"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+        <?php $count++; ?>
+      <?php endforeach; ?>      
+  </div>
+</article>
+<script>
+  $j(document).ready(function($){    
+
+    $(".page-indicator").each(function(index, el){
+      $(el).find("span").each(function(i, sel){
+        var color = $(sel).attr("style").substring(6);
+        $(sel).data('color', color);
+        $(sel).attr('style', 'color: #fff');
+      });
+    });
+
+    function changeIndicatorsColor($selector) {
+
+      $(".active").find('span').removeAttr('style');
+      $(".active").removeClass("active");
+      $selector.parent().addClass("active");
+
+      var $firstAnchor = $selector.find("span").first();
+      var $lastAnchor = $selector.find("span").last();
+
+      var firstColor = $firstAnchor.data('color');
+      var lastColor = $lastAnchor.data('color');
+
+      $firstAnchor.attr("style", "color: "+firstColor);
+      $lastAnchor.attr("style", "color: "+lastColor);      
+    }
+
+    // $('#tea-matrix-content').fullpage({
+    //   anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7', 'page8', 'page9', 'page10', 'page11', 'page12'],
+    //   menu: '#page-indicator',
+    //   animateAnchor: false,
+    //   fadingEffect: true,
+    //   fitToSection: true,
+    //   fitToSectionDelay: 50000,
+    //   onLeave: function(index, nextIndex, direction){
+
+    //     var loadedSection = $(this);
+    //     $animate_content = $(loadedSection).find(".tea-matrix-content-text-cta").find('.tea-matrix-content-animate');
+
+    //     TweenMax.staggerFromTo($animate_content, 0.1, { 'y': 0, opacity: 1, ease: Sine.easeOutQuad }, { 'y': 100, opacity: 0, ease: Sine.easeOutQuad }, 0.1);
+
+    //     changeIndicatorsColor($("#anchor-"+nextIndex));
+
+    //   },
+    //   afterLoad: function(anchorLink, index){
+
+    //       var loadedSection = $(this);          
+    //       $animate_content = $(loadedSection).find(".tea-matrix-content-text-cta").find('.tea-matrix-content-animate');
+
+    //       TweenMax.staggerFromTo($animate_content, 0.5, { 'y': 100, opacity: 0, ease: Sine.easeOutQuad }, { 'y': 0, opacity: 1, ease: Sine.easeOutQuad }, 0.1);
+    //   }
+    // });    
+
+    var currentSection = 1;
+    var animating = false;
+    // var tl2 = new TimelineLite();
+
+    function updateStatus() {
+      animating = false;
+    }
+
+    function onceSectionHidden(showSectionNo) {
+
+      showSection(showSectionNo);
+
+    }
+
+    function hideSection(sectionNo, showSectionNo) {
+
+      var $hideSection = $('#tea-matrix-content-section-'+sectionNo);
+
+      $hideSection.removeClass('active-section');
+
+      $animate_content = $hideSection.find(".tea-matrix-content-text-cta").find('.tea-matrix-content-animate');
+      // $animate_content.attr('style', 'opacity:0;');
+
+      $animate_content = $hideSection.find(".tea-matrix-content-text-cta").find('.tea-matrix-content-animate');
+
+      TweenMax.killTweensOf($animate_content);
+
+      // var tl2 = new TimelineLite({ onComplete: onceSectionHidden, onCompleteParams: [showSectionNo] });
+      // tl2.add(
+        TweenMax.staggerFromTo($animate_content, 0.1, { 'y': 0, opacity: 1, ease: Sine.easeOutQuad }, { 'y': 10, opacity: 0, ease: Sine.easeOutQuad, onComplete: onceSectionHidden, onCompleteParams: [showSectionNo] })
+      // );
+
+    }
+
+    function showSection(sectionNo) {
+
+      var $showSection = $('#tea-matrix-content-section-'+sectionNo);
+
+      $showSection.addClass('active-section');
+      $animate_content = $showSection.find(".tea-matrix-content-text-cta").find('.tea-matrix-content-animate');      
+
+      TweenMax.killTweensOf($animate_content);
+
+      // var tl = new TimelineLite({ onComplete:updateStatus });      
+      // tl.add(
+        TweenMax.staggerFromTo($animate_content, 0.3, { 'y': 10, opacity: 0, ease: Sine.easeOutQuad }, { 'y': 0, opacity: 1, ease: Sine.easeOutQuad, onComplete:updateStatus }, 0.1)
+      // );
+
+      changeIndicatorsColor($("#anchor-"+sectionNo));
+
+
+      var single_graph = $('#tea-matrix-combination-graph').data('monogram.graph.SingleGraph');
+
+      console.log(single_graph);
+
+      if(single_graph != null){
+        
+        var id_array = [
+            'cherry-japonais',
+            'uji-sencha',            
+            'jasmine-silk-pearls',
+            'milky-oolong',
+            'lapsang-florale',
+            'kashmere',
+            'earl-grey-neroli',
+            'morning-english',
+            'rose-of-ariana',
+            'shiso-mint',
+            'saffronais',
+            'provencal-herbs'
+          ];
+        var target_id = id_array[parseFloat(sectionNo)-1]; //Math.floor(Math.random() * id_array.length)
+        
+        single_graph.set_data_by_id(target_id);
+      }
+                  
+      console.log(sectionNo)
+    }
+
+
+    function init() {
+      animating = true;
+      if(window.location.hash) {
+        var hash = window.location.hash.replace('#', '');        
+
+        showSection(hash);
+        currentSection = parseInt(hash);
+
+      } else {        
+        showSection(1); // init
+      }
+      // changeIndicatorsColor($("#page-indicator li.active a"));
+    }
+
+    init();
+
+    // events
+    
+    $('body').on('mousewheel', function(event) {
+
+        var totalSection = $('#tea-matrix-content').find(".section").length;
+
+        console.log(currentSection)
+
+        if(event.deltaY < 0 && animating == false) {     
+
+          if(currentSection>=1 && currentSection<totalSection) {            
+
+            animating = true;
+
+            hideSection(currentSection, currentSection+1);
+            currentSection++;
+
+          }
+
+        }else if(event.deltaY > 0  && animating == false) {                  
+
+          if(currentSection>1) {
+
+            animating = true;
+
+            hideSection(currentSection, currentSection-1);
+            currentSection--;
+
+          }      
+
+        }
+    });
+
+    $("#page-indicator .anchor").on("click", function(e){
+
+
+      // if(animating == false) {
+        animating = true;
+
+        var currentIndex = $(".active-section").index();
+        console.log('currentIndex:'+currentIndex)
+        activeSection = currentIndex;
+        console.log('current: '+activeSection)        
+        currentSection = $(this).parent().data('menuanchor');
+        console.log('destination: '+currentSection)
+        hideSection(activeSection, currentSection);
+        
+      // }
+      
+    });    
+
+    function do_update($el) {
+        $.ajax({
+            url: '/discovertea/index/cartpreview',
+            dataType: 'json',
+            type : 'get',
+            success: function(data){
+              $el.parent().find('span.ajax_msg_product').html('Added to cart!').show().delay(5000).fadeOut();
+              $("#desktop-header-cart").find(".count").text("("+data.cart_qty+")");
+              $el.parent().find('#ajax_loader_product').hide();
+            }
+        });                     
+    }
+
+    $(".tea-matrix-add-to-cart").on("click", function(e){
+      e.preventDefault();
+      $(this).parent().find('#ajax_loader_product').show();
+
+      var $el = $(this);
+
+      var add_to_cart_url = $(this).attr("href");
+      $.get( add_to_cart_url, function( data ) {
+         do_update($el);
+      });
+    });
+
+  });
+</script>

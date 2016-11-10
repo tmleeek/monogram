@@ -1,0 +1,93 @@
+<?php
+$_productCollection = Mage::getModel('catalog/category')->load(92)
+                     ->getProductCollection()
+                     ->addAttributeToSelect('*')
+                     ->addAttributeToFilter('status', 1) // enabled
+                     ->addAttributeToFilter('visibility', 4) //visibility in catalog,search
+                     ->addAttributeToSort('position', Varien_Data_Collection::SORT_ORDER_ASC);
+$_helper = $this->helper('catalog/output');   
+?>
+
+<?php foreach ($_productCollection as $key => $_product):            
+    $product_name = $_product->getName();
+
+    $product_name = strtolower($product_name);
+    $product_name = str_replace(" ", "-", $product_name);
+
+    $name_id_arr = [
+      'cherry-japonais'=>'1', 
+      'uji-sencha'=>'2', 
+      'jasmine-silk-pearls'=>'3', 
+      'milky-oolong'=>'4',
+      'lapsang-florale'=>'5',
+      'kashmere'=>'6',
+      'earl-grey-neroli'=>'7',
+      'morning-english'=>'8',
+      'provencal-herbs'=>'9',
+      'saffronais'=>'10',
+      'rose-of-ariana'=>'11',
+      'shiso-mint'=>'12'
+    ];
+?>
+<div class="row tea-layering-table-contents">
+  <div class="col-md-3 col-md-offset-1 tea-layering-table-text">
+    <?php if(!empty($_product->getData('product_name_in_color'))): ?>
+    <h3><?php echo $_product->getData('product_name_in_color') ?></h3>
+    <?php else: ?>
+    <h3><?php echo $_product->getName(); ?></h3>
+    <?php endif; ?>
+  </div>
+  <div class="col-md-7">
+    <?php 
+    $object = Mage::getModel('catalog/product');
+    $upsell_product = $_product->getUpSellProductCollection()->addAttributeToSort('position', Varien_Db_Select::SQL_ASC)->addStoreFilter();
+    $count = 1;
+    foreach($upsell_product as $_upsell):
+      //get detail of single upsell prdocut using upsell product id
+      $upsp = $object->load($_upsell->getId());        
+    ?>      
+    <div class="row">
+      <div class="col-md-5 tea-layering-table-text">
+        <?php if(!empty($upsp->getData('product_name_in_color'))): ?>
+        <a href="/tea-matrix#<?php echo $name_id_arr[$product_name]; ?>"><h3><?php echo $upsp->getData('product_name_in_color') ?></h3></a>
+        <?php else: ?>
+        <a href="/tea-matrix#<?php echo $name_id_arr[$product_name]; ?>"><h3><?php echo $upsp->getName(); ?></h3></a>
+        <?php endif; ?>
+      </div>
+      <div class="col-md-6 tea-layering-table-text">
+        <div class="tea-layering-text">
+          <a href="/#graph/<?php echo $product_name; ?>" class="tea-layering-text-link">See tea recommendation >></a>
+          <span><?php echo $upsp->getDescription(); ?></span>
+        </div> 
+      </div>
+    </div>
+    <?php
+      $count++;
+    endforeach; 
+    ?>
+    <!-- <div class="row">
+      <div class="col-md-5 tea-layering-table-text">
+        <h3><span style="color: #ff8189;">rose</span> <span style="color: #fd92a3">of arianatm<sup>TM</sup></span></h3>
+      </div>
+      <div class="col-md-6 tea-layering-table-text">
+        <div class="tea-layering-text">
+          <a href="/tea-matrix#9" class="tea-layering-text-link">See tea matrix >></a>
+          <span>If you like the pairing of Fujian Oolonog with Persian  Rose, I would recommend this as well. The sencha is more pronunced but nonetheless a good pairing.</span>
+        </div> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5 tea-layering-table-text">
+        <h3><span style="color: #c2cb7f;">provencal</span> <span style="color: #d5d755">herbs<sup>TM</sup></span></h3>
+      </div>
+      <div class="col-md-6 tea-layering-table-text">
+        <div class="tea-layering-text">
+          <a href="/tea-matrix#12" class="tea-layering-text-link">See tea matrix >></a>
+          <span>The hebs and rose hips lends a sour not which cuts through the full bodied sencha and gives a softer silhouette to the structure.</span>
+        </div>
+      </div>
+    </div> -->
+  </div>        
+  <div class="col-md-10 col-md-offset-1"><hr class="bottom"></div>
+</div>
+<?php endforeach; ?>        

@@ -91,9 +91,11 @@
         }
       }     
 
-      .active-section {
-        z-index: 9999;
-      } 
+      &.active-section {
+        .col-md-4 {
+          z-index: 9999;
+        }        
+      }   
       
       .suggestions {
         margin-bottom: 38px;
@@ -123,11 +125,27 @@
       .tea-matrix-content-text-cta {
         padding-right: 90px;        
         a.square-cta {
-          margin-right: 15px;
+          margin-right: 15px;          
+        }
+        a.tea-matrix-add-to-cart {
+          margin-right: 0px;
         }
 
         .tea-matrix-content-animate {
           .opacity(0);
+        }
+
+        #ajax_loader_product {
+          position: absolute;
+          right: 135px;
+          bottom: 0px;
+        }
+        .ajax_msg_product {
+          color: @off-white;
+          font-size: 11px;
+          position: absolute;
+          right: 75px;
+          bottom: 3px;
         }
       }
 

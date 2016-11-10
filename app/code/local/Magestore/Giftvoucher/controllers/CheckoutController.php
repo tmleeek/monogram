@@ -34,9 +34,12 @@ class Magestore_Giftvoucher_CheckoutController extends Mage_Core_Controller_Fron
 
     public function giftcardPostAction() {
         $session = Mage::getSingleton('checkout/session');
+        $points_currently_used = Mage::helper('rewardpoints/event')->getCreditPoints();
 
         if ($session->getQuote()->getCouponCode() && !Mage::helper('giftvoucher')->getGeneralConfig('use_with_coupon')) {
             $session->addNotice(Mage::helper('giftvoucher')->__('A coupon code has been used. You cannot apply gift codes or Gift Card credit with the coupon to get discount.'));
+        } else if(!empty($points_currently_used) && $points_currently_used > 0) {
+            $session->addNotice(Mage::helper('giftvoucher')->__('You cannot apply gift codes or Gift Card credit with the rebate.'));
         } else {
             $request = $this->getRequest();
             if ($request->isPost()) {

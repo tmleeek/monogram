@@ -60,6 +60,7 @@ monogram.graph.Data = function(data_obj_param) {
 
 
   this.graph_section_data_obj = {
+    'id': this.data_id,
     'htmlname': this.data_html_name,
     'description': this.data_description,
     'teatype': this.data_type, 

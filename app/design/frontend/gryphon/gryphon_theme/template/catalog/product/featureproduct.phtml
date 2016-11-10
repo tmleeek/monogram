@@ -118,8 +118,8 @@
             
             <p><?php echo $_product->getShortDescription(); ?></p>
             <div class="cta-container">
-                <a id="add-to-cart-<?php echo $product_name; ?>" href="<?php echo $this->getAddToCartUrl($_product) ?>" class="arrow-cta">add to cart</a>
-                <a href="#graph/<?php echo $product_name; ?>" class="arrow-cta">see tea recommendations</a>
+                <a id="add-to-cart-<?php echo $product_name; ?>" href="<?php echo $this->getAddToCartUrl($_product) ?>" class="home-page-add-to-cart arrow-cta">add to cart</a>
+                <a href="#graph/<?php echo $product_name; ?>" class="arrow-cta">see tea layering</a>
             </div>
         </div>
         <div class="home-tea-item-cover"></div>
@@ -139,3 +139,28 @@ if ($this->getChild('after')) {
     }
 }
 ?>
+<script>
+$j(document).ready(function($){
+    function do_update() {
+        $.ajax({
+            url: '/discovertea/index/cartpreview',
+            dataType: 'json',
+            type : 'get',
+            success: function(data){
+
+                // update product count in cart
+                $j("#desktop-header-cart").find(".count").text("("+data.cart_qty+")");
+          
+            }
+        });                     
+    }
+    $(".home-page-add-to-cart").on("click", function(e){
+        e.preventDefault();
+
+        var add_to_cart_url = $(this).attr("href");
+        $.get( add_to_cart_url, function( data ) {
+           do_update();
+        });
+    });
+});
+</script>

@@ -436,7 +436,7 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
         //getProductPoints($product, $noCeil = false, $from_list = false, $money_points = false, $tierprice_incl_tax = null, $tierprice_excl_tax = null, $customer_group_id = null){
         $point_no_ceil = $this->getProductPoints($product, true, $from_list, false, null, null, $customer_group_id);
         $points = $point_no_ceil; 
-	$img = '';
+        $img = '';
         
         $img_size = Mage::getStoreConfig(self::XML_PATH_DESIGN_SMALL_INLINE_IMAGE_SIZE, Mage::app()->getStore()->getId());
         if (Mage::getStoreConfig(self::XML_PATH_DESIGN_SMALL_INLINE_IMAGE_SHOW, Mage::app()->getStore()->getId()) && $img_size){
@@ -1069,7 +1069,6 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
             return 0;
         }
         
-        
         if (!$storeId){
             $storeId = Mage::app()->getStore()->getId();
         }
@@ -1290,6 +1289,23 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
 
         //Only add/remove
         $points = Mage::getModel('rewardpoints/pointrules')->getAllRulePointsGathered($cartLoaded, $customer_group_id, false, $points, false, true);
+
+        $session = Mage::getSingleton('checkout/session');
+        $codesArray = array_unique(explode(',', $session->getGiftCodes()));        
+
+        if(count($codesArray) > 0 && !empty($codesArray[0])) {
+            $codesDiscountArray = explode(',',$session->getCodesDiscount());            
+
+            if(count($codesDiscountArray) > 0 && !empty($codesDiscountArray[0])) {
+                $giftcard_discount = $codesDiscountArray[0];
+            }
+        }
+
+        if(!empty($giftcard_discount)) {
+            $points = $points - $giftcard_discount;
+        }
+
+
         
         return round($points*0.1); // 10 percent
     }

@@ -157,24 +157,30 @@ class Rewardpoints_IndexController extends Mage_Core_Controller_Front_Action
 
     public function quotationAction(){
         $session = Mage::getSingleton('core/session');
+        $checkout_session = Mage::getSingleton('checkout/session');
         $points_value = $this->getRequest()->getPost('points_to_be_used');
-        if (Mage::getStoreConfig('rewardpoints/default/max_point_used_order', Mage::app()->getStore()->getId())){
-            if ((int)Mage::getStoreConfig('rewardpoints/default/max_point_used_order', Mage::app()->getStore()->getId()) < $points_value){
-                $points_max = (int)Mage::getStoreConfig('rewardpoints/default/max_point_used_order', Mage::app()->getStore()->getId());
-                $session->addError($this->__('You tried to use %s reward points, but you can use a maximum of %s points per shopping cart.', ceil($points_value), $points_max));
-                $points_value = $points_max;
-            }
-        }
-        $quote_id = Mage::helper('checkout/cart')->getCart()->getQuote()->getId();
 
-        Mage::getSingleton('rewardpoints/session')->setProductChecked(0);
-        Mage::getSingleton('rewardpoints/session')->setShippingChecked(0);
-        
-        Mage::helper('rewardpoints/event')->setCreditPoints($points_value);
-        
-        Mage::helper('checkout/cart')->getCart()->getQuote()
-                ->setRewardpointsQuantity($points_value)
-                ->save();
+        if (!Mage::helper('giftvoucher')->getGeneralConfig('use_with_coupon') && ($checkout_session->getUseGiftCreditAmount() > 0 || $checkout_session->getGiftVoucherDiscount() > 0)) {
+            $checkout_session->addNotice(Mage::helper('giftvoucher')->__('You cannot apply gift codes with the rebate.'));
+        } else {
+            if (Mage::getStoreConfig('rewardpoints/default/max_point_used_order', Mage::app()->getStore()->getId())){
+                if ((int)Mage::getStoreConfig('rewardpoints/default/max_point_used_order', Mage::app()->getStore()->getId()) < $points_value){
+                    $points_max = (int)Mage::getStoreConfig('rewardpoints/default/max_point_used_order', Mage::app()->getStore()->getId());
+                    $session->addError($this->__('You tried to use %s reward points, but you can use a maximum of %s points per shopping cart.', ceil($points_value), $points_max));
+                    $points_value = $points_max;
+                }
+            }
+            $quote_id = Mage::helper('checkout/cart')->getCart()->getQuote()->getId();
+
+            Mage::getSingleton('rewardpoints/session')->setProductChecked(0);
+            Mage::getSingleton('rewardpoints/session')->setShippingChecked(0);
+            
+            Mage::helper('rewardpoints/event')->setCreditPoints($points_value);
+            
+            Mage::helper('checkout/cart')->getCart()->getQuote()
+                    ->setRewardpointsQuantity($points_value)
+                    ->save();
+        }        
 
         $refererUrl = $this->_getRefererUrl();
         if (empty($refererUrl)) {

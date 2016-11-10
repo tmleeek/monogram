@@ -9534,7 +9534,9 @@ body.tea-layering-detail-page {
 .home-tea-item .cta-container {
   position: absolute;
   bottom: 24px;
+  left: 22px;
   right: 22px;
+  text-align: right;
   -moz-opacity: 0;
   -khtml-opacity: 0;
   -webkit-opacity: 0;
@@ -9547,7 +9549,10 @@ body.tea-layering-detail-page {
   transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 }
 .home-tea-item .cta-container .arrow-cta {
-  margin-left: 19px;
+  margin-right: 19px;
+}
+.home-tea-item .cta-container .arrow-cta:last-child {
+  margin-right: 0px;
 }
 .home-tea-item .home-tea-item-cover {
   position: absolute;
@@ -9635,6 +9640,14 @@ body.tea-layering-detail-page {
   -moz-transition: all 0.7s ease-out;
   -o-transition: all 0.7s ease-out;
   transition: all 0.7s ease-out;
+}
+@media only screen and (min-width: 1300px) {
+  .home-tea-item .cta-container .arrow-cta {
+    margin-right: 19px;
+  }
+  .home-tea-item .cta-container .arrow-cta:last-child {
+    margin-right: 0px;
+  }
 }
 #home-tea-selection-section {
   position: absolute;
@@ -10323,7 +10336,7 @@ body.tea-layering-detail-page {
   font-weight: normal;
   font-size: 10px;
 }
-#tea-matrix-section-1 #tea-matrix-content .section .active-section {
+#tea-matrix-section-1 #tea-matrix-content .section.active-section .col-md-4 {
   z-index: 9999;
 }
 #tea-matrix-section-1 #tea-matrix-content .section .suggestions {
@@ -10357,6 +10370,9 @@ body.tea-layering-detail-page {
 #tea-matrix-section-1 #tea-matrix-content .section .tea-matrix-content-text-cta a.square-cta {
   margin-right: 15px;
 }
+#tea-matrix-section-1 #tea-matrix-content .section .tea-matrix-content-text-cta a.tea-matrix-add-to-cart {
+  margin-right: 0px;
+}
 #tea-matrix-section-1 #tea-matrix-content .section .tea-matrix-content-text-cta .tea-matrix-content-animate {
   -moz-opacity: 0;
   -khtml-opacity: 0;
@@ -10364,6 +10380,18 @@ body.tea-layering-detail-page {
   opacity: 0;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
   filter: alpha(opacity=0);
+}
+#tea-matrix-section-1 #tea-matrix-content .section .tea-matrix-content-text-cta #ajax_loader_product {
+  position: absolute;
+  right: 135px;
+  bottom: 0px;
+}
+#tea-matrix-section-1 #tea-matrix-content .section .tea-matrix-content-text-cta .ajax_msg_product {
+  color: #f1efee;
+  font-size: 11px;
+  position: absolute;
+  right: 75px;
+  bottom: 3px;
 }
 .tea-store-page,
 .category-store {
@@ -11991,6 +12019,7 @@ body.billing-shipping-page {
 #page-shopping-cart-total-container .each-details .a-right {
   display: inline-block;
   width: 50%;
+  vertical-align: middle;
 }
 #page-shopping-cart-total-container .each-details .a-left {
   text-align: left;
