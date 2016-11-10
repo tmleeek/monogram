@@ -157,7 +157,15 @@ function isMobile()
           <div class="col-md-6">
 
             <div class="in-between-reward-points">
-              <!-- <p>This shopping cart is worth 590 reward points.</p> -->
+              <p>
+              <?php 
+              $quoteId = Mage::getSingleton('checkout/session')->getQuoteId(); 
+              $quote = Mage::getModel("sales/quote")->load($quoteId);
+
+              $rewardPoints = Mage::helper('rewardpoints/data')->getPointsOnOrder($quote, null, null, true, $quote->getStoreId());
+              echo $this->__("This shopping cart is worth %s in rebates", Mage::helper('core')->currency($rewardPoints, true, false));?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($rewardPoints);
+              ?>
+              </p>
             </div>
 
           </div>

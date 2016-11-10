@@ -81,7 +81,7 @@
                 <?php echo $this->getIllustrationImage()?>
                 <div class="rewards_point_cart">
                     <?php if (!$this->isCouponPointsRemoved()): ?>
-                        <?php echo $this->__("This shopping cart is worth %s rebate.", $pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
+                        <?php echo $this->__("This shopping cart is worth %s in rebates", Mage::helper('core')->currency($pts, true, false));?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
                     <?php else:?>
                         <?php echo $this->__("You are currently using a discount code. Therefore, this order will not allow point gathering.");?>
                     <?php endif;?>
@@ -104,7 +104,7 @@
                             <?php echo $this->getIllustrationImage()?>
                             <div class="rewards_point_cart">
                                 <?php if (!$this->isCouponPointsRemoved()): ?>
-                                    <?php echo $this->__("This shopping cart is worth %s rebate.", $pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
+                                    <?php echo $this->__("This shopping cart is worth %s in rebates", Mage::helper('core')->currency($pts, true, false));?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
                                 <?php else:?>
                                     <?php echo $this->__("You are currently using a discount code. Therefore, this order will not allow rebate gathering.");?>
                                 <?php endif;?>
@@ -243,7 +243,7 @@
                             <?php echo $this->getIllustrationImage()?>
                             <div class="rewards_point_cart">
                                 <?php if (!$this->isCouponPointsRemoved()): ?>
-                                    <?php echo $this->__("This shopping cart is worth %s reward point(s).", $pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
+                                    <?php echo $this->__("This shopping cart is worth %s in rebate(s)", $pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
                                 <?php else:?>
                                     <?php echo $this->__("You are currently using a discount code. Therefore, this order will not allow point gathering.");?>
                                 <?php endif;?>
@@ -289,7 +289,7 @@
     <?php echo $this->getIllustrationImage()?>
     <div class="rewards_point_cart">
         <?php if (!$this->isCouponPointsRemoved()): ?>
-            <?php echo $this->__("This shopping cart is worth %s reward point(s).", $pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
+            <?php echo $this->__("This shopping cart is worth %s in rebate(s)", $pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
         <?php else:?>
             <?php echo $this->__("You are currently using a discount code. Therefore, this order will not allow point gathering.");?>
         <?php endif;?>

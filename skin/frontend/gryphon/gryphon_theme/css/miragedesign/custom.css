@@ -538,7 +538,7 @@ ul.messages li.success-msg {
     display: none;
 }
 .delivery-rates.loading:before, .delivery-rates.loading:after {
-    display: block;
+    display: none;
 }
 .delivery-rates:after {
     background-image: url("../../images/content/opc-ajax-loader.gif");

@@ -42,7 +42,7 @@
                         <input type="checkbox" name="<?php echo $_code ?>_credit" id="<?php echo $_code ?>_credit"<?php if ($this->getUseGiftCredit()): ?> checked="checked"<?php endif ?> value="1" onclick="showCartCreditInput(this)" />
                         <label for="<?php echo $_code ?>_credit" style="font-weight: bold; color: #666;"><?php echo $this->__('Use Gift Card credit to check out (%s)', $this->formatBalance($_customerCredit, true)) ?></label>
                         </dt>
-                        <dd class="<?php echo $_code ?>_credit"<?php if (!$this->getUseGiftCredit()): ?> style="display: none;"<?php endif ?>>
+                        <dd class="<?php echo $_code ?>_credit"<?php if (!$this->getUseGiftCredit()): ?> style="display: none;"<?php else: ?>style="display: none;"<?php endif ?>>
                             <div>
                                 <label>
                                     <?php echo $this->__('Store Credits') ?>

@@ -156,7 +156,7 @@
                 <?php endforeach ?>
             </colgroup> -->
             <thead>
-                <tr <?php if ($this->getData('add_searchable_row')): ?>class="giftvoucher-grid-title"<?php endif ?>>
+                <tr <?php if ($this->getData('add_searchable_row')): ?>class="giftvoucher-grid-title test"<?php endif ?>>
 
                     <?php 
                         $column_counter = 0; 
@@ -166,9 +166,9 @@
 
                         <?php $column_counter++; ?>
                         <?php if($column_counter != $column_counter_max): ?>
-                            <th><?php echo $column['header'] ?></th>
+                            <th><?php echo (strtolower($column['header'])=='balance') ? 'amount' : $column['header']; ?></th>
                         <?php else: ?>
-                            <th colspan="2"><?php echo $column['header'] ?></th>
+                            <!-- <th colspan="2"><?php echo $column['header'] ?></th> -->
                         <?php endif; ?>
                         
                     <?php endforeach ?>
@@ -254,11 +254,9 @@
                         <tr <?php if (($row->getCustomerCheckId() == $customer->getId() || $row->getCustomerEmail() == $customer->getEmail() ) && $row->getRecipientName()) { ?> class="gift-voucher-sent-friend" <?php } ?>>
                             <?php foreach ($columns as $id => $column): ?>
 
-                                <?php if($id == 'action'): ?>
-                                    <td class="<?php echo $id; ?>" colspan="2">
-                                <?php else: ?>
+                                <?php if($id !== 'action'): ?>
                                     <td class="<?php echo $id; ?>">
-                                <?php endif; ?>
+                                
                              
                                 
                                 
@@ -315,6 +313,9 @@
                                         <?php endif ?>
                                     </p><!--edit by Sally-->
                                 </td>
+                                <?php else: ?>
+                                    <!-- <td class="<?php echo $id; ?>"></td> -->
+                                <?php endif; ?>
                             <?php endforeach ?>
                         </tr>
                     <?php endforeach ?>

@@ -30,7 +30,7 @@
 
 <div id="monogram-page-account-details-dashboard-header">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-8">
       <div class="monogram-page-account-details-dashboard-header-item first-version">
         <h1><?php echo $this->escapeHtml($this->getCustomer()->getName()) ?></h1>
         <p><a href="mailto:<?php echo $this->escapeHtml($this->getCustomer()->getEmail()) ?>" class="email"><?php echo $this->escapeHtml($this->getCustomer()->getEmail()) ?></a></p>
@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4">
+    <!-- <div class="col-md-4">
       <div class="monogram-page-account-details-dashboard-header-item" data-value="reward-points">
         <div class="monogram-page-account-details-dashboard-header-icon store-version"></div>
         <h4>store credit</h4>
@@ -54,7 +54,7 @@
         <p class="value"><?php echo $currency->format($store->convertPrice($creadit->getBalance())); ?></p>
         <a href="<?php echo $this->getUrl('giftvoucher/index/index') ?>" class="arrow-cta">see history</a>
       </div>
-    </div>
+    </div> -->
     <div class="col-md-4">
       <div class="monogram-page-account-details-dashboard-header-item" data-value="rebates">
         <div class="monogram-page-account-details-dashboard-header-icon rebates-version"></div>
@@ -74,14 +74,15 @@
         <a href="<?php echo $this->getUrl('rewardpoints/index/points') ?>" class="arrow-cta">see valid date</a>
       </div>
     </div>
-    <!-- <div class="col-md-3">
+    <!--<div class="col-md-3">
       <div class="monogram-page-account-details-dashboard-header-item" data-value="gift-card">
         <div class="monogram-page-account-details-dashboard-header-icon giftcard-version"></div>
         <h4>gift card</h4>
+        <?php //print_r(Mage::getModel('giftvoucher/giftvoucher')->getCollection()->getAvailable()); ?>
         <p class="value">$ 888.88</p>
         <a href="<?php echo $this->getUrl('giftvoucher/index/addredeem') ?>" class="arrow-cta">add gift card</a>
       </div>
-    </div> -->
+    </div>-->
   </div>
 </div> <!-- #monogram-page-account-details-dashboard-header -->
 

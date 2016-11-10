@@ -5190,19 +5190,11 @@ p {
   *display: inline;
   zoom: 1;
   height: 25px;
-  color: #f1efee;
-  border: 1px solid #f1efee;
-  color: rgba(241, 239, 238, 0.9);
-  border: 1px solid rgba(241, 239, 238, 0.9) !important;
+  color: #ffffff;
+  border: 1px solid #ffffff;
   padding-left: 9px;
   padding-right: 9px;
   background: transparent;
-  -moz-opacity: 0.9;
-  -khtml-opacity: 0.9;
-  -webkit-opacity: 0.9;
-  opacity: 0.9;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);
-  filter: alpha(opacity=90);
   -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
@@ -5229,12 +5221,6 @@ p {
   height: 25px;
   color: #f1efee;
   color: rgba(241, 239, 238, 0.9);
-  -moz-opacity: 0.9;
-  -khtml-opacity: 0.9;
-  -webkit-opacity: 0.9;
-  opacity: 0.9;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);
-  filter: alpha(opacity=90);
   -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
@@ -5287,12 +5273,6 @@ p {
   height: 25px;
   color: #f1efee;
   color: rgba(241, 239, 238, 0.9);
-  -moz-opacity: 0.9;
-  -khtml-opacity: 0.9;
-  -webkit-opacity: 0.9;
-  opacity: 0.9;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);
-  filter: alpha(opacity=90);
   -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
@@ -5781,11 +5761,11 @@ p {
 }
 #desktop-footer #desktop-footer-ctas-container {
   background-color: #6b615b;
-  padding-top: 75px;
-  padding-bottom: 75px;
+  padding-top: 65px;
+  padding-bottom: 65px;
 }
 #desktop-footer #desktop-footer-ctas-container h5 {
-  color: #f1efee;
+  color: #ffffff;
   text-transform: uppercase;
   margin-bottom: 5px;
 }
@@ -5795,7 +5775,8 @@ p {
   font-style: normal;
   font-weight: normal;
   color: #f1efee;
-  font-size: 10px;
+  font-size: 12.5px;
+  line-height: 30px;
   display: block;
 }
 #desktop-footer #desktop-footer-ctas-container p {
@@ -5827,7 +5808,7 @@ p {
   background-color: #f1efee;
   color: #847870;
   text-transform: uppercase;
-  width: 83%;
+  width: 80%;
   margin-top: 20px;
   padding-left: 10px;
   height: 30px;
@@ -5873,14 +5854,14 @@ p {
 }
 #desktop-footer #desktop-footer-ctas-container #footer-newsletter-input a {
   position: absolute;
-  right: 45px;
+  right: 20%;
   bottom: 0px;
   background-color: rgba(132, 120, 112, 0.4);
   width: 35px;
   height: 30px;
   text-align: center;
   vertical-align: middle;
-  padding-top: 6px;
+  padding-top: 2px;
   font-size: 11px;
   color: #6b615b;
 }
@@ -5927,7 +5908,7 @@ p {
   font-style: normal;
   font-weight: normal;
   color: #f1efee;
-  font-size: 10px;
+  font-size: 12px;
 }
 #mobile-footer {
   position: relative;
@@ -6082,7 +6063,7 @@ p {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 80%;
   height: 33px;
   padding-left: 8px;
   padding-right: 8px;
@@ -6090,7 +6071,7 @@ p {
 #mobile-newsletter-subscribe-form input[type=submit] {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 20%;
   width: 35px;
   height: 37px;
   -moz-opacity: 0;
@@ -8314,7 +8295,7 @@ html * {
   font-family: 'Brandon Grotesque Black', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 20px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -8368,7 +8349,7 @@ html * {
 }
 .graph-selection-tea .arrow-cta {
   position: absolute;
-  bottom: 34px;
+  bottom: 44px;
   right: 32px;
 }
 @media only screen and (max-height: 768px) {
@@ -8378,6 +8359,10 @@ html * {
   }
   .graph-selection-tea {
     padding-top: 29px;
+    padding-bottom: 29px;
+  }
+  .graph-selection-tea .arrow-cta {
+    bottom: 24px;
   }
 }
 @media only screen and (max-height: 668px) {
@@ -8387,6 +8372,10 @@ html * {
   }
   .graph-selection-tea {
     padding-top: 19px;
+    padding-bottom: 19px;
+  }
+  .graph-selection-tea .arrow-cta {
+    bottom: 14px;
   }
 }
 .graph-selection-tea h2 {
@@ -8631,7 +8620,7 @@ html * {
   font-family: 'Brandon Grotesque Black', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -8651,17 +8640,16 @@ html * {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 11px;
-  font-size: 11.5px;
-  line-height: 18px;
-  letter-spacing: 0.04em;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0;
   width: 450px;
   margin-left: auto;
   margin-right: auto;
 }
 #graph-section-center-copy .cta-container {
   font-size: 0px;
-  padding-top: 24px;
+  padding-top: 30px;
 }
 #graph-section-center-copy .cta-container .square-cta {
   margin-left: 10px;
@@ -9421,6 +9409,8 @@ body.tea-layering-detail-page {
 #home-intro-section .content-container .center-content p {
   color: #ffffff;
   text-align: center;
+  font-size: 14px;
+  line-height: 24px;
 }
 #home-intro-section .down-arrow-container {
   position: absolute;
@@ -9511,6 +9501,9 @@ body.tea-layering-detail-page {
   padding-right: 25px;
 }
 .home-tea-item h2 {
+  font-family: 'Brandon Grotesque Black', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 14px;
 }
@@ -9526,10 +9519,10 @@ body.tea-layering-detail-page {
 }
 .home-tea-item h5 {
   text-transform: uppercase;
-}
-.home-tea-item p {
+  font-family: 'Brandon Grotesque Black', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
   font-size: 11px;
-  line-height: 20px;
 }
 .home-tea-item .cta-container {
   position: absolute;
@@ -10120,6 +10113,8 @@ body.tea-layering-detail-page {
   color: #f1efee;
   width: 55%;
   margin: 0 auto;
+  font-size: 14px;
+  color: #ffffff;
 }
 #tea-layering-section-1 #tea-layering-table {
   margin-top: 60px;
@@ -10156,6 +10151,7 @@ body.tea-layering-detail-page {
 }
 #tea-layering-section-1 #tea-layering-table .tea-layering-table-contents .tea-layering-table-text h3 {
   text-transform: uppercase;
+  font-size: 15px;
 }
 #tea-layering-section-1 #tea-layering-table .tea-layering-table-contents .tea-layering-table-text sup {
   font-size: 8px;
@@ -10172,7 +10168,8 @@ body.tea-layering-detail-page {
   line-height: 20px;
   position: absolute;
   left: 0px;
-  color: #f1efee;
+  color: #ffffff;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   visibility: hidden;
   -moz-opacity: 0;
@@ -10192,11 +10189,11 @@ body.tea-layering-detail-page {
   transition: all 0.3s ease-out 0s;
 }
 #tea-layering-section-1 #tea-layering-table .tea-layering-table-contents .tea-layering-table-text .tea-layering-text span {
-  color: #f1efee;
+  color: #ffffff;
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 10px;
+  font-size: 12.5px;
   line-height: 16px;
   visibility: visible;
   -moz-opacity: 1;
@@ -10461,18 +10458,18 @@ body.tea-layering-detail-page {
 #tea-product-detail-section-1 #product-detail-img-info-container .product-info h5 {
   line-height: 10px;
   padding-bottom: 7px;
-  color: #f1efee;
+  color: #ffffff;
   text-transform: uppercase;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .product-info p {
-  color: #f1efee;
-  font-size: 10px;
+  color: #ffffff;
+  font-size: 12.5px;
   line-height: 16px;
   margin-bottom: 24px;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .product-info span {
-  color: #f1efee;
-  font-size: 10px;
+  color: #ffffff;
+  font-size: 12.5px;
   line-height: 16px;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .product-info .ajax_msg_product {
@@ -10577,7 +10574,7 @@ body.tea-layering-detail-page {
 #tea-product-detail-section-1 #product-detail-img-info-container .suggestion h5 {
   line-height: 10px;
   padding-bottom: 7px;
-  color: #f1efee;
+  color: #ffffff;
   text-transform: uppercase;
   text-align: center;
 }
@@ -10595,8 +10592,9 @@ body.tea-layering-detail-page {
   font-size: 10px;
   line-height: 10px;
   padding-bottom: 7px;
-  color: #f1efee;
+  color: #ffffff;
   text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .suggestion ul li a i {
   font-size: 10px;
@@ -10676,8 +10674,11 @@ body.tea-layering-detail-page {
   padding-bottom: 45px;
 }
 #tea-product-detail-section-3 h3 {
+  font-family: 'Brandon Grotesque Black', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 13px;
   padding-left: 20px;
 }
 #tea-product-detail-section-3 label {
@@ -10685,19 +10686,20 @@ body.tea-layering-detail-page {
   font-style: normal;
   font-weight: 400;
   text-transform: uppercase;
-  color: #f1efee;
-  font-size: 9px;
+  color: #ffffff;
+  font-size: 10px;
+  letter-spacing: 0.08em;
 }
 #tea-product-detail-section-3 input {
   border: none;
   background-color: #756b66;
   width: 100%;
-  height: 26px;
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 10px;
-  color: #f1efee;
+  height: 30px;
+  color: #ffffff;
+  font-size: 12px;
   padding-left: 20px;
 }
 #tea-product-detail-section-3 .col-md-6 {
@@ -10706,14 +10708,15 @@ body.tea-layering-detail-page {
 #tea-product-detail-section-3 textarea {
   border: none;
   background-color: #756b66;
-  width: 233px;
-  height: 105px;
+  width: 100%;
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 10px;
-  color: #f1efee;
   padding-left: 20px;
+  height: 113px;
+  font-size: 12px;
+  color: #ffffff;
+  padding-top: 7px;
 }
 #tea-product-detail-section-3 .submit-review {
   margin-top: 40px;
@@ -10743,7 +10746,6 @@ body.tea-layering-detail-page {
 #tea-product-detail-section-3 .dropdown select {
   background-color: #756b66;
   border: none;
-  height: 26px;
   padding-left: 20px;
   width: 100%;
   -webkit-appearance: none;
@@ -10757,11 +10759,12 @@ body.tea-layering-detail-page {
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  font-size: 10px;
-  color: #f1efee;
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
+  height: 30px;
+  font-size: 12px;
+  color: #ffffff;
 }
 .account-login-page {
   overflow: visible;
@@ -11521,18 +11524,10 @@ body.billing-shipping-page {
   letter-spacing: 0.05em;
   background: none;
   height: 25px;
-  color: #f1efee;
-  border: 1px solid #f1efee;
-  color: rgba(241, 239, 238, 0.9);
-  border: 1px solid rgba(241, 239, 238, 0.9) !important;
+  color: #ffffff;
+  border: 1px solid #ffffff;
   padding-left: 9px;
   padding-right: 9px;
-  -moz-opacity: 0.9;
-  -khtml-opacity: 0.9;
-  -webkit-opacity: 0.9;
-  opacity: 0.9;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);
-  filter: alpha(opacity=90);
   -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
@@ -12161,18 +12156,10 @@ body.billing-shipping-page {
   letter-spacing: 0.05em;
   background: none;
   height: 25px;
-  color: #f1efee;
-  border: 1px solid #f1efee;
-  color: rgba(241, 239, 238, 0.9);
-  border: 1px solid rgba(241, 239, 238, 0.9) !important;
+  color: #ffffff;
+  border: 1px solid #ffffff;
   padding-left: 9px;
   padding-right: 9px;
-  -moz-opacity: 0.9;
-  -khtml-opacity: 0.9;
-  -webkit-opacity: 0.9;
-  opacity: 0.9;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);
-  filter: alpha(opacity=90);
   -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
@@ -12688,12 +12675,6 @@ body.monogram-page-account-details #content-wrapper .col-main .back-link a {
   height: 25px;
   color: #f1efee;
   color: rgba(241, 239, 238, 0.9);
-  -moz-opacity: 0.9;
-  -khtml-opacity: 0.9;
-  -webkit-opacity: 0.9;
-  opacity: 0.9;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);
-  filter: alpha(opacity=90);
   -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
@@ -12899,7 +12880,7 @@ body.monogram-page-account-details #content-wrapper .col-main .each-input .intl-
   vertical-align: top;
   *display: inline;
   zoom: 1;
-  width: 75px;
+  padding-left: 40px;
 }
 body.monogram-page-account-details #content-wrapper .col-main .each-input .intl-tel-input #phone_no_2 {
   display: inline-block;
@@ -13239,12 +13220,6 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   height: 25px;
   color: #f1efee;
   color: rgba(241, 239, 238, 0.9);
-  -moz-opacity: 0.9;
-  -khtml-opacity: 0.9;
-  -webkit-opacity: 0.9;
-  opacity: 0.9;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);
-  filter: alpha(opacity=90);
   -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
@@ -13472,19 +13447,11 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   letter-spacing: 0.05em;
   background: none;
   height: 25px;
-  color: #f1efee;
-  border: 1px solid #f1efee;
-  color: rgba(241, 239, 238, 0.9);
-  border: 1px solid rgba(241, 239, 238, 0.9) !important;
+  color: #ffffff;
+  border: 1px solid #ffffff;
   padding-left: 9px;
   padding-right: 9px;
   background: transparent;
-  -moz-opacity: 0.9;
-  -khtml-opacity: 0.9;
-  -webkit-opacity: 0.9;
-  opacity: 0.9;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);
-  filter: alpha(opacity=90);
   -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
@@ -13688,19 +13655,11 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   letter-spacing: 0.05em;
   background: none;
   height: 25px;
-  color: #f1efee;
-  border: 1px solid #f1efee;
-  color: rgba(241, 239, 238, 0.9);
-  border: 1px solid rgba(241, 239, 238, 0.9) !important;
+  color: #ffffff;
+  border: 1px solid #ffffff;
   padding-left: 9px;
   padding-right: 9px;
   background: transparent;
-  -moz-opacity: 0.9;
-  -khtml-opacity: 0.9;
-  -webkit-opacity: 0.9;
-  opacity: 0.9;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);
-  filter: alpha(opacity=90);
   -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
@@ -14047,18 +14006,10 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   *display: inline;
   zoom: 1;
   height: 25px;
-  color: #f1efee;
-  border: 1px solid #f1efee;
-  color: rgba(241, 239, 238, 0.9);
-  border: 1px solid rgba(241, 239, 238, 0.9) !important;
+  color: #ffffff;
+  border: 1px solid #ffffff;
   padding-left: 9px;
   padding-right: 9px;
-  -moz-opacity: 0.9;
-  -khtml-opacity: 0.9;
-  -webkit-opacity: 0.9;
-  opacity: 0.9;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);
-  filter: alpha(opacity=90);
   -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;

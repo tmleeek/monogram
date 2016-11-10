@@ -56,6 +56,56 @@ $telephone = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->
                             </div>            
                         </div> -->
                         <div class="col-md-6 col-sm-6">
+                            <div class="hide-input">
+                            <?php
+                                echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getCustomer())
+                                    ->setTemplate('miragedesign/customer/widget/name.phtml')
+                                    ->toHtml()
+                            ?>
+                            </div>
+                            <div class="each-input">
+                                <label for="email" class="required"><?php echo $this->__('Email') ?><em>*</em></label>
+                                <div class="input-box">
+                                    <input type="text" name="email" id="email" value="<?php echo $this->escapeHtml($this->getCustomer()->getEmail()) ?>" title="<?php echo $this->__('Email') ?>" class="input-text required-entry validate-email" />
+                                </div>
+                            </div>
+                            <div class="checkbox-input">
+                                <div class="each-input">
+                                    <input type="checkbox" name="change_password" id="change_password" value="1" onclick="setPasswordForm(this.checked)" title="<?php echo $this->__('Change Password') ?>"<?php if($this->getCustomer()->getChangePassword()==1): ?> checked="checked"<?php endif; ?> class="checkbox" />
+                                    <label class="checkbox-label" for="change_password">
+                                        <span></span><p class="label-text"><?php echo $this->__('Change Password') ?></p>
+                                    </label>
+                                </div>
+
+
+                                <div style="display: none;">
+                                    <div>
+                                        <div>
+                                            <div class="each-input">
+                                                <label for="current_password" class="required"><?php echo $this->__('Current Password') ?><em>*</em></label>
+                                                <div class="input-box">
+                                                    <input type="text" class="input-text no-display" name="dummy" id="dummy" />
+                                                    <input type="password" title="<?php echo $this->__('Current Password') ?>" class="input-text" name="current_password" id="current_password" />
+                                                </div>
+                                            </div>
+                                            <div class="each-input">
+                                                <label for="password" class="required"><?php echo $this->__('Change Password') ?><em>*</em></label>
+                                                <div class="input-box">
+                                                    <input type="password" title="<?php echo $this->__('Change Password') ?>" class="input-text validate-password" name="password" id="password" />
+                                                </div>
+                                            </div>
+                                            <div class="each-input">
+                                                <label for="confirmation" class="required"><?php echo $this->__('Confirm Password') ?><em>*</em></label>
+                                                <div class="input-box">
+                                                    <input type="password" title="<?php echo $this->__('Confirm New Password') ?>" class="input-text validate-cpassword" name="confirmation" id="confirmation" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
                             <?php $_gender = $this->getLayout()->createBlock('customer/widget_gender') ?>
                             <?php if ($_gender->isEnabled()): ?>
                                 <div class="each-input">
@@ -87,25 +137,22 @@ $telephone = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->
                             <div class="each-input">
                                 <label for="telephone" class="required"><?php echo $this->__('PHONE NO.'); ?><em>*</em></label>
                                 <div class="input-box">
-                                    <div class="intl-tel-input">
-                                        <input type="text" id="phone_no" class="phone_no_input">
-                                        <input type="text" id="phone_no_2">                                
-                                    </div>
+                                    <input type="text" id="telephone" class="phone_no_input" value="<?php echo $this->escapeHtml($telephone) ?>">
                                 </div>
 
                             </div>
 
-                            <div class="hide-input">
+                            <div class="hide-input" style="display: none;">
                                 <div class="each-input">
                                     <label>&nbsp;</label>
                                     <div class="input-box">
-                                        <input type="hidden" name="telephone" value="<?php echo $this->escapeHtml($telephone) ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?>" id="telephone" />
+                                        <!-- <input type="hidden" name="telephone" value="<?php echo $this->escapeHtml($telephone) ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?>" id="telephone" /> -->
                                     </div>
                                 </div>
                             </div>
 
 
-                            <div class="each-input">
+                            <!-- <div class="each-input">
                                 <?php $_streetValidationClass = $this->helper('customer/address')->getAttributeValidationClass('street'); ?>                            
                                 <label for="address" class="required"><?php echo $this->__('Address'); ?><em>*</em></label>
                                 <div class="input-box">
@@ -169,61 +216,10 @@ $telephone = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->
                                             <?php echo $this->helper('customercustomiser')->getCountryHtmlSelect() ?>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
 
                         </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="hide-input">
-                            <?php
-                                echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getCustomer())
-                                    ->setTemplate('miragedesign/customer/widget/name.phtml')
-                                    ->toHtml()
-                            ?>
-                            </div>
-                            <div class="each-input">
-                                <label for="email" class="required"><?php echo $this->__('Email') ?><em>*</em></label>
-                                <div class="input-box">
-                                    <input type="text" name="email" id="email" value="<?php echo $this->escapeHtml($this->getCustomer()->getEmail()) ?>" title="<?php echo $this->__('Email') ?>" class="input-text required-entry validate-email" />
-                                </div>
-                            </div>
-                            <div class="checkbox-input">
-                                <div class="each-input">
-                                    <input type="checkbox" name="change_password" id="change_password" value="1" onclick="setPasswordForm(this.checked)" title="<?php echo $this->__('Change Password') ?>"<?php if($this->getCustomer()->getChangePassword()==1): ?> checked="checked"<?php endif; ?> class="checkbox" />
-                                    <label class="checkbox-label" for="change_password">
-                                        <span></span><p class="label-text"><?php echo $this->__('Change Password') ?></p>
-                                    </label>
-                                </div>
-
-
-                                <div style="display: none;">
-                                    <div>
-                                        <div>
-                                            <div class="each-input">
-                                                <label for="current_password" class="required"><?php echo $this->__('Current Password') ?><em>*</em></label>
-                                                <div class="input-box">
-                                                    <input type="text" class="input-text no-display" name="dummy" id="dummy" />
-                                                    <input type="password" title="<?php echo $this->__('Current Password') ?>" class="input-text" name="current_password" id="current_password" />
-                                                </div>
-                                            </div>
-                                            <div class="each-input">
-                                                <label for="password" class="required"><?php echo $this->__('Change Password') ?><em>*</em></label>
-                                                <div class="input-box">
-                                                    <input type="password" title="<?php echo $this->__('Change Password') ?>" class="input-text validate-password" name="password" id="password" />
-                                                </div>
-                                            </div>
-                                            <div class="each-input">
-                                                <label for="confirmation" class="required"><?php echo $this->__('Confirm Password') ?><em>*</em></label>
-                                                <div class="input-box">
-                                                    <input type="password" title="<?php echo $this->__('Confirm New Password') ?>" class="input-text validate-cpassword" name="confirmation" id="confirmation" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
                     </div>
 
 
