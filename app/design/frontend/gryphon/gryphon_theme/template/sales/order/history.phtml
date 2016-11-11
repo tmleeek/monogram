@@ -107,7 +107,7 @@
                   <div class="single-order-item" data-id="145000652">
                     <div class="row order-details">
                       <div class="col-md-2 order-no">
-                        <p class="order_no"><?php echo $_order->getRealOrderId() ?></p>
+                        <p class="order_no"><a href="<?php echo $this->getViewUrl($_order); ?>"><?php echo $_order->getRealOrderId() ?></a></p>
                       </div>
                       <div class="col-md-2 order-date">
                         <p class="date"><?php echo $this->formatDate($_order->getCreatedAtStoreDate()) ?></p>
