@@ -89,7 +89,7 @@
                     <?php if($_pAddsses = Mage::getSingleton('customer/session')->getCustomer()->getDefaultBilling()): ?>
                       <a href="<?php echo $this->getAddressEditUrl(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)) ?>" class="edit square-cta"><?php echo $this->__('Edit Details') ?></a>
                     <?php endif; ?>
-                    <a href="<?php echo Mage::getUrl('customer/address/new'); ?>" class="add_address square-cta">Add Address</a>
+                    <!-- <a href="<?php echo Mage::getUrl('customer/address/new'); ?>" class="add_address square-cta">Add Address</a> -->
                   </div>
 
 

@@ -86,6 +86,7 @@ ul.messages li.success-msg {
     right: 134px;
 }
 #page-shopping-cart-discount-code-container #giftvoucher_container .giftvoucher_credit {
+    display: none;
     position: relative;
 }
 #page-shopping-cart-discount-code-container #giftvoucher_container .giftvoucher_credit #giftcredit_notice {

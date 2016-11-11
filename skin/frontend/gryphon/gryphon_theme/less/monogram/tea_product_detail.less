@@ -219,11 +219,25 @@
       display: inline-block;
       vertical-align: top;
       width: 19.7%;
+
+      .img-container {
+        position: relative;
+        margin: 0 auto;
+        display: block;
+        padding-bottom: 30px;
+      }
     }
     img {
-      margin: 0 auto;
-      display: block;
-      padding-bottom: 30px;
+      position: absolute;
+      width: 180px;   
+      &.parent {
+        z-index: 1;                   
+      }
+      &.overlay {        
+        top: 0;
+        left: 0;
+        z-index: 0;        
+      }
     }
 
     h4 {

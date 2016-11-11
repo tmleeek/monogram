@@ -10615,6 +10615,9 @@ body.tea-layering-detail-page {
   padding-top: 80px;
   padding-bottom: 80px;
 }
+#tea-product-detail-section-2 #popular-tea-layering-container {
+  text-align: center;
+}
 #tea-product-detail-section-2 .review-product {
   text-align: center;
   width: 202px;
@@ -10623,10 +10626,23 @@ body.tea-layering-detail-page {
   vertical-align: top;
   width: 19.7%;
 }
-#tea-product-detail-section-2 img {
+#tea-product-detail-section-2 .review-product .img-container {
+  position: relative;
   margin: 0 auto;
   display: block;
   padding-bottom: 30px;
+}
+#tea-product-detail-section-2 img {
+  position: absolute;
+  width: 180px;
+}
+#tea-product-detail-section-2 img.parent {
+  z-index: 1;
+}
+#tea-product-detail-section-2 img.overlay {
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 #tea-product-detail-section-2 h4 {
   color: #6b615b;
@@ -10970,10 +10986,16 @@ body.tea-layering-detail-page {
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 20px;
+  font-family: 'Brandon Grotesque Black', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
 }
 #monogram-experience-section-1 #monogram-experience-heading-text p {
   text-align: center;
-  color: #f1efee;
+  font-size: 14px;
+  color: #ffffff;
 }
 #monogram-experience-section-1 .container-fluid {
   padding: 0px;
@@ -11015,7 +11037,8 @@ body.tea-layering-detail-page {
   float: none;
 }
 #monogram-experience-section-1 #monogram-experience-content-container #monogram-experience-text-content p {
-  color: #f1efee;
+  font-size: 13px;
+  color: #ffffff;
 }
 #monogram-experience-section-1 #monogram-experience-content-container #monogram-experience-text-content p:nth-of-type(1) {
   padding-bottom: 20px;
@@ -12889,6 +12912,9 @@ body.monogram-page-account-details #content-wrapper .col-main .each-input .intl-
   zoom: 1;
   padding: 0;
   width: 82px;
+}
+body.monogram-page-account-details #content-wrapper .col-main .each-input .intl-tel-input .flag-dropdown {
+  left: -17px;
 }
 body.monogram-page-account-details #content-wrapper .col-main .each-input .dropdown {
   background-color: #756b66;
