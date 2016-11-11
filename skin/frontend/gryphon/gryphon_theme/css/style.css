@@ -10631,17 +10631,20 @@ body.tea-layering-detail-page {
   margin: 0 auto;
   display: block;
   padding-bottom: 30px;
+  height: 180px;
 }
 #tea-product-detail-section-2 img {
   position: absolute;
   width: 180px;
 }
 #tea-product-detail-section-2 img.parent {
+  top: 0;
+  left: 10%;
   z-index: 1;
 }
 #tea-product-detail-section-2 img.overlay {
   top: 0;
-  left: 0;
+  left: 10%;
   z-index: 0;
 }
 #tea-product-detail-section-2 h4 {
