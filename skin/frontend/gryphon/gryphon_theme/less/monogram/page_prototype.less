@@ -761,35 +761,74 @@ html{
 
   background: @footer-brown;
   background: fade(@footer-brown, 90%);
+
+  //display: none;
+  visibility: hidden;
+  .opacity(0);
 }
 
 #graph-desktop-guide{
   font-size: 0;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 0;
+
+  width: 100%;
+  text-align: center;
+
+  transform: translate(0%, -50%);
 }
 
 .graph-guide-item{
   .display-inline-block;
+  padding: 0 108px;
 
   .graph-guide-item-icon{
-    .guide-arrow-icon{
-      &.guide-arrow-icon-01{
+    display: block;
+    width: 230px;
+    height: 110px;
+    position: relative;
+    margin: 0 auto;
 
+    .guide-arrow-icon{
+      position: absolute;
+      top: 50%;
+
+      &.guide-arrow-icon-01{
+        .rotation(180deg);
+        left: 0;
+
+        margin-top: -9px;
+        margin-left: 27px;
       }
       &.guide-arrow-icon-02{
-        
+        right: 0;
+
+        margin-top: -9px;
+        margin-right: 27px;
       }
       &.guide-arrow-icon-03{
+        .rotation(270deg);
         
+        left: 0;
+
+        margin-top: -9px;
+        margin-left: 36px;
       }
       &.guide-arrow-icon-04{
-        
+        .rotation(90deg);
+        right: 0;
+
+        margin-top: -9px;
+        margin-right: 36px;
       }
     } // .guide-arrow-icon
     .guide-mouse-icon{
-
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -30px;
+      margin-left: -20px;
     }
   } // .graph-guide-item-icon
 
@@ -803,7 +842,7 @@ html{
     text-transform: uppercase;
     color: @white;
 
-    padding-top: 15px;
+    padding-top: 11px;
   }
 }
 
