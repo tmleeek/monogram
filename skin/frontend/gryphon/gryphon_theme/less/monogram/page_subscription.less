@@ -1,6 +1,7 @@
 html.monogram-subscription-page,
 body.monogram-subscription-page{
-  overflow: visible;
+  // overflow: visible;
+  overflow-x: hidden;
 }
 
 .cms-subscription {
@@ -178,6 +179,7 @@ body.monogram-subscription-page{
 
             padding-top: 5px;
             padding-bottom: 5px;
+            border: none;
             //padding-top: 9px + 15px;
             //padding-bottom: 4px + 13px;
 
@@ -189,7 +191,11 @@ body.monogram-subscription-page{
               text-align: left;
             }
 
-
+            .ajax_loader_product {
+              position: absolute;
+              right: -20px;
+              top: 2px;
+            }
           }
           &:first-child{
             td{

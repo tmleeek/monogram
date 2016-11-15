@@ -87,9 +87,11 @@
 
                   <div class="cta-container">
                     <?php if($_pAddsses = Mage::getSingleton('customer/session')->getCustomer()->getDefaultBilling()): ?>
-                      <a href="<?php echo $this->getAddressEditUrl(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)) ?>" class="edit square-cta"><?php echo $this->__('Edit Details') ?></a>
+                      <a href="<?php echo $this->getAddressEditUrl(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)) ?>?address=billing" class="edit square-cta"><?php echo $this->__('Edit Billing Address') ?></a>
                     <?php endif; ?>
-                    <!-- <a href="<?php echo Mage::getUrl('customer/address/new'); ?>" class="add_address square-cta">Add Address</a> -->
+                    <?php if(!$_pAddsses): ?>
+                    <a href="<?php echo Mage::getUrl('customer/address/new'); ?>?address=billing" class="add_address square-cta">Add Address</a>
+                    <?php endif; ?>
                   </div>
 
 
@@ -229,9 +231,9 @@
 
                   <div class="cta-container">
                     <?php if($_pAddsses = Mage::getSingleton('customer/session')->getCustomer()->getDefaultShipping()): ?>
-                      <a href="<?php echo $this->getAddressEditUrl(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)) ?>" class="edit square-cta">Edit Details</a>
+                      <a href="<?php echo $this->getAddressEditUrl(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)) ?>?address=shipping" class="edit square-cta">Edit Shipping Address</a>
                     <?php endif; ?>
-                    <a href="<?php echo Mage::getUrl('customer/address/new'); ?>" class="add_address square-cta">Add New Address</a>
+                    <a href="<?php echo Mage::getUrl('customer/address/new'); ?>?address=shipping" class="add_address square-cta">Add New Address</a>
                   </div>
 
 

@@ -1283,12 +1283,7 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
             $object_tovalidate = $cartQuote;
         } else if (is_object(Mage::getSingleton('checkout/cart'))){
             $object_tovalidate = Mage::getSingleton('checkout/cart')->getQuote();
-        }        
-        
-        $points = Mage::getModel('rewardpoints/pointrules')->getAllRulePointsGathered($cartLoaded, $customer_group_id, true, $points, false);
-
-        //Only add/remove
-        $points = Mage::getModel('rewardpoints/pointrules')->getAllRulePointsGathered($cartLoaded, $customer_group_id, false, $points, false, true);
+        }                        
 
         $session = Mage::getSingleton('checkout/session');
         $codesArray = array_unique(explode(',', $session->getGiftCodes()));        
@@ -1305,7 +1300,10 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
             $points = $points - $giftcard_discount;
         }
 
+        $points = Mage::getModel('rewardpoints/pointrules')->getAllRulePointsGathered($cartLoaded, $customer_group_id, true, $points, false);
 
+        //Only add/remove
+        $points = Mage::getModel('rewardpoints/pointrules')->getAllRulePointsGathered($cartLoaded, $customer_group_id, false, $points, false, true);
         
         return round($points*0.1); // 10 percent
     }

@@ -235,8 +235,10 @@ endif;
                                 <?php endif; ?>                                                            
                             </div>
                         </div>
+                        <?php $product_name = str_replace("&", "and", strtolower($_product->getName())); ?>
                     </div><!--    
-                  --><div class="col-md-4 v-align suggestion-container">
+                  --><div class="col-md-4 v-align suggestion-container <?php echo str_replace(" ", "-", strtolower($product_name)) . '-suggestion-bg'; ?>">
+
                     <?php echo $this->getChildHtml('upsell_products') ?>    
                   </div><!-- end suggestion-container -->
                 </div>

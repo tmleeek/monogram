@@ -41,8 +41,14 @@
                               <?php 
                               $tea_name = str_replace(" ", "-", strtolower($this->getProduct()->getName()));
                               $overlay_tea_name = str_replace(" ", "-", strtolower($_review->getTitle())); ?>
-                              <img src="<?php echo $this->getSkinUrl('images/products_svg/'.$tea_name.'.svg') ?>" class="parent" alt="">                              
-                              <img src="<?php echo $this->getSkinUrl('images/products_svg/'.$overlay_tea_name.'.svg') ?>" class="overlay" alt="">                              
+                              <?php $file_name = $this->getSkinUrl('images/products_svg/'.$tea_name.'.svg');
+                              $file_headers = @get_headers($file_name);
+                              if(strpos($file_headers[0], '404 Not Found') == false): ?>
+                                <img src="<?php echo $this->getSkinUrl('images/products_svg/'.$tea_name.'.svg') ?>" class="parent" alt="">                              
+                                <img src="<?php echo $this->getSkinUrl('images/products_svg/'.$overlay_tea_name.'.svg') ?>" class="overlay" alt="">              
+                              <?php else: ?>         
+                                <img class="<?php echo $file_name; ?>" src="<?php echo $this->helper('catalog/image')->init($product, 'small_image')->resize(123, 146); ?>" alt="">
+                              <?php endif; ?>
                             </div>
                             <h3><?php echo $this->getProduct()->getName(); ?>+ <br><?php echo nl2br($this->escapeHtml($_review->getTitle())) ?></h3>
                             <h5><?php echo $this->__('by %s', $this->escapeHtml($_review->getNickname())) ?></h5>

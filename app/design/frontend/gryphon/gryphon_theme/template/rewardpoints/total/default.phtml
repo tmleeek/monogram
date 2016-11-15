@@ -2,6 +2,7 @@
 <?php if (Mage::getStoreConfig('amrules/general/breakdown')):?>
     <?php if (is_array($this->getTotal()->getFullInfo())) : ?>
     <?php foreach ($this->getTotal()->getFullInfo() as $info): ?>
+    <div class="each-details">
         <tr class="summary-details-amrules summary-details" style="display:none;">
             <td class="a-right" colspan="<?php echo $this->getColspan(); ?>">
                 <?php echo $info['label']; ?>
@@ -11,9 +12,10 @@
                 -<?php echo $this->helper('checkout')->formatPrice($info['amount']); ?>
             </td>
         </tr>
+    </div>
     <?php endforeach; ?>
         <?php if (Mage::getConfig()->getModuleConfig('Amasty_Rules')->is('active', 'true') && ($pts = Mage::helper('rewardpoints/event')->getCreditPoints($this->getQuote()))):?>
-            
+        <div class="each-details">
             <tr class="summary-details-amrules summary-details" style="display:none;">
                 <td class="a-right totals-rewards" colspan="<?php echo $this->getColspan(); ?>">
                     <?php echo $this->__('%s points used', $pts);?>
@@ -23,58 +25,89 @@
                     -<?php echo $this->helper('checkout')->formatPrice($this->getQuote()->getStore()->convertPrice(Mage::helper('rewardpoints/data')->convertPointsToMoneyEquivalence($pts))); ?>
                 </td>
             </tr>
-        
+        </div>
         <?php endif;?>
     <?php endif; ?>
-    <tr class="summary-total" onclick="expandDetails(this, '.summary-details-amrules')" >
-        <td colspan="<?php echo $this->getColspan(); ?>" style="<?php echo $this->getTotal()->getStyle() ?>" class="a-right">
-            <?php if ($this->getRenderingArea() == $this->getTotal()->getArea()): ?><strong><?php endif; ?>
-                 <div class="summary-collapse"><?php echo $this->getTotal()->getTitle() ?></div>
-            <?php if ($this->getRenderingArea() == $this->getTotal()->getArea()): ?></strong><?php endif; ?>
-        </td>
-        <td style="<?php echo $this->getTotal()->getStyle() ?>" class="a-right">
-            <?php if ($this->getRenderingArea() == $this->getTotal()->getArea()): ?><strong><?php endif; ?>
-                <?php echo $this->helper('checkout')->formatPrice($this->getTotal()->getValue()) ?>
-            <?php if ($this->getRenderingArea() == $this->getTotal()->getArea()): ?></strong><?php endif; ?>
-        </td>
-    </tr>
-<?php else:?>
-
-<div class="each-details">
-    <tr>
-        <div class="a-right label discount" colspan="1">
-            <th colspan="<?php echo $this->getColspan(); ?>" style="<?php echo $this->getTotal()->getStyle() ?>" class="a-right totals-rewards">
+    <div class="each-details">
+        <tr class="summary-total" onclick="expandDetails(this, '.summary-details-amrules')" >
+            <td colspan="<?php echo $this->getColspan(); ?>" style="<?php echo $this->getTotal()->getStyle() ?>" class="a-right">
                 <?php if ($this->getRenderingArea() == $this->getTotal()->getArea()): ?><strong><?php endif; ?>
-                    <?php 
-                        $appliedRuleIds = Mage::getSingleton('checkout/session')->getQuote()->getAppliedRuleIds();
-                        $appliedRuleIds = explode(',', $appliedRuleIds);
-
-                        $all_rules = Mage::getResourceModel('salesrule/rule_collection')->load();
-                        $rules =  Mage::getModel('salesrule/rule')->getCollection()->addFieldToFilter('rule_id' , array('in' => $appliedRuleIds));
-
-                        foreach ($rules as $rule) {
-                            if ($rule->getIsActive()) {
-                                if(!empty($current_rule_name))
-                                    $current_rule_name .= ', ' . $rule->getName();
-                                else
-                                    $current_rule_name = $rule->getName();
-                            }
-                        }
-                    ?>
-                    <!-- <p><?php echo $this->getTotal()->getTitle(); ?></p> -->
-                    <p>DISCOUNT</p>
-                    <!-- <span><?php if(!empty($current_rule_name)): ?>( <?php echo $current_rule_name; ?> )<?php endif; ?></span> -->
-                    <span class="discount_desc"><?php echo $this->getTotal()->getTitle(); ?></span>
-                <?php if ($this->getRenderingArea() == $this->getTotal()->getArea()): ?></strong><?php endif; ?>
-            </th>
-        </div>
-        <div class="a-right value discount">
-            <td style="<?php echo $this->getTotal()->getStyle() ?>" class="a-right">
-                <?php if ($this->getRenderingArea() == $this->getTotal()->getArea()): ?><strong><?php endif; ?>
-                    <p class="applied_discount_code minus"><?php echo $this->helper('checkout')->formatPrice($this->getTotal()->getValue()) ?></p>
+                     <div class="summary-collapse"><?php echo $this->getTotal()->getTitle() ?></div>
                 <?php if ($this->getRenderingArea() == $this->getTotal()->getArea()): ?></strong><?php endif; ?>
             </td>
+            <td style="<?php echo $this->getTotal()->getStyle() ?>" class="a-right">
+                <?php if ($this->getRenderingArea() == $this->getTotal()->getArea()): ?><strong><?php endif; ?>
+                    <?php echo $this->helper('checkout')->formatPrice($this->getTotal()->getValue()) ?>
+                <?php if ($this->getRenderingArea() == $this->getTotal()->getArea()): ?></strong><?php endif; ?>
+            </td>
+        </tr>
+    </div>
+<?php else:?>
+
+
+    <?php if ($pts = Mage::helper('rewardpoints/event')->getCreditPoints($this->getQuote())):?>
+        <div class="each-details">
+            <tr>
+                <div class="a-right label discount" colspan="1">
+                    <th colspan="<?php echo $this->getColspan(); ?>" style="<?php echo $this->getTotal()->getStyle() ?>" class="a-right totals-rewards">
+                        <p>REBATE</p>
+                    </th>
+                </div>
+                <div class="a-right value discount">
+                    <td style="<?php echo $this->getTotal()->getStyle() ?>" class="a-right">
+                        <p class="applied_discount_code minus">-<?php echo $this->helper('checkout')->formatPrice($this->getQuote()->getStore()->convertPrice(Mage::helper('rewardpoints/data')->convertPointsToMoneyEquivalence($pts))); ?></p>
+                    </td>
+                </div>
+            </tr>
         </div>
-    </tr>
-</div>
+    <?php endif; ?>
+    
+
+    <?php 
+        $appliedRuleIds = Mage::getSingleton('checkout/session')->getQuote()->getAppliedRuleIds();
+        $appliedRuleIds = explode(',', $appliedRuleIds);
+
+        $all_rules = Mage::getResourceModel('salesrule/rule_collection')->load();
+        $rules =  Mage::getModel('salesrule/rule')->getCollection()->addFieldToFilter('rule_id' , array('in' => $appliedRuleIds));
+
+        foreach ($rules as $rule) {
+            if ($rule->getIsActive()) {
+                if(!empty($current_rule_name))
+                    $current_rule_name .= ', ' . $rule->getName();
+                else
+                    $current_rule_name = $rule->getName();
+            }
+        }
+    ?>
+    <?php if(!empty($current_rule_name)): ?>
+
+    <div class="each-details">
+        <tr>
+            <div class="a-right label discount" colspan="1">
+                <th colspan="<?php echo $this->getColspan(); ?>" style="<?php echo $this->getTotal()->getStyle() ?>" class="a-right totals-rewards">
+                    <?php if ($this->getRenderingArea() == $this->getTotal()->getArea()): ?><strong><?php endif; ?>                        
+                        <!-- <p><?php echo $this->getTotal()->getTitle(); ?></p> -->
+                        <p>DISCOUNT</p>
+                        <!-- <span><?php if(!empty($current_rule_name)): ?>( <?php echo $current_rule_name; ?> )<?php endif; ?></span> -->
+                        <span class="discount_desc"><?php echo $this->getTotal()->getTitle(); ?></span>
+                    <?php if ($this->getRenderingArea() == $this->getTotal()->getArea()): ?></strong><?php endif; ?>
+                </th>
+            </div>
+            <div class="a-right value discount">            
+                <td style="<?php echo $this->getTotal()->getStyle() ?>" class="a-right">
+                    <?php if ($this->getRenderingArea() == $this->getTotal()->getArea()): ?><strong><?php endif; ?>
+                        <?php if($pts > 0): ?>
+                            <?php $pts = $this->getQuote()->getStore()->convertPrice(Mage::helper('rewardpoints/data')->convertPointsToMoneyEquivalence($pts)) ?>
+                            <?php $discount_including_pts = abs($this->getTotal()->getValue()); ?>
+                            <p class="applied_discount_code minus">-<?php echo $this->helper('checkout')->formatPrice($discount_including_pts - $pts) ?></p>
+                        <?php else: ?>
+                            <p class="applied_discount_code minus no-rebate"><?php echo $this->helper('checkout')->formatPrice($this->getTotal()->getValue()) ?></p>
+                        <?php endif; ?>
+                    <?php if ($this->getRenderingArea() == $this->getTotal()->getArea()): ?></strong><?php endif; ?>
+                </td>
+            </div>
+        </tr>
+    </div>
+
+    <?php endif; ?>
 <?php endif; ?>

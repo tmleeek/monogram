@@ -2,7 +2,21 @@
   overflow: visible;
 }
 
+.catalog-product-view {
+  .messages {
+    display: none;
+  }
+}
+
 #tea-product-detail-section-1 {
+  #messages_product_view {
+    position: absolute;
+    width: 60%;
+    top: 100px;
+    .messages {
+      display: inline-block;
+    }
+  }  
   #product-detail-img-info-container {
     .v-align {
       display: inline-block;
@@ -146,8 +160,57 @@
       width: 30%;
       padding: 0px;
       right: 0px;
+      background-color: rgba(236, 205, 206, 0.5);      
+    }
+    .earl-grey-neroli-suggestion-bg {
+      background-color: rgba(179, 197, 205, 0.5);
+    }
+    .cherry-japonais-suggestion-bg {
       background-color: rgba(236, 205, 206, 0.5);
     }
+    .black-tea-selection-suggestion-bg {
+      background-color: rgba(197, 180, 227, 0.5);
+    }
+    .green-tea-and-oolong-selection-suggestion-bg {
+      background-color: rgba(171 ,199 ,202, 0.5);
+    }
+    .herbal-tea-selection-suggestion-bg {
+      background-color: rgba(186, 197, 185, 0.5);
+    }
+    .jasmine-silk-pearls-suggestion-bg {        
+      background-color: rgba(163, 177, 200, 0.5);
+    }
+    .kashmere-suggestion-bg {        
+      background-color: rgba(241, 166, 147, 0.5);
+    }
+    .lapsang-florale-suggestion-bg {        
+      background-color: rgba(199, 180, 226, 0.5);
+    }
+    .milky-oolong-suggestion-bg {        
+      background-color: rgba(216, 210, 196, 0.5);
+    }
+    .morning-english-suggestion-bg {        
+      background-color: rgba(254, 210, 152, 0.5);
+    }
+    .provencal-herbs-suggestion-bg {        
+      background-color: rgba(213, 215, 85, 0.5);
+    }
+    .rose-of-ariana-suggestion-bg {        
+      background-color: rgba(253, 146, 163, 0.5);
+    }
+    .saffronais-suggestion-bg {        
+      background-color: rgba(255, 170, 97, 0.5);
+    }
+    .shiso-mint-suggestion-bg {        
+      background-color: rgba(188, 196, 185, 0.5);
+    }
+    .tea-tasting-assortment-suggestion-bg {        
+      background-color: rgba(235, 194, 131, 0.5);
+    }
+    .uji-sencha-suggestion-bg {        
+      background-color: rgba(189, 200, 196, 0.5);
+    }
+
     .suggestion {
       padding-top: 80px;
       padding-bottom: 10px;
@@ -192,6 +255,17 @@
             }
           }
         }
+        &.two-column {
+          li.each-product {
+            width: 45%;
+            display: inline-block;
+            a {
+              img {
+                width: 128px;
+              }
+            }
+          }
+        }
       }
     }
     .custom-product-carousel .slick-prev , .custom-product-carousel .slick-next {
@@ -229,14 +303,17 @@
       }
     }
     img {
-      position: absolute;
-      width: 180px;   
+
       &.parent {
+        position: absolute;
+        width: 180px;   
         top: 0;
         left: 10%;
         z-index: 1;                   
       }
-      &.overlay {        
+      &.overlay {   
+        position: absolute;
+        width: 180px;        
         top: 0;
         left: 10%;
         z-index: 0;        

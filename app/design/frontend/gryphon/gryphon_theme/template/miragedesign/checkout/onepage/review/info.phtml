@@ -157,15 +157,34 @@ function isMobile()
           <div class="col-md-6">
 
             <div class="in-between-reward-points">
+              
+              <?php 
+                  $quote = Mage::getSingleton('checkout/session')->getQuote();
+                  $cartItems = $quote->getAllVisibleItems();
+                  $subscription = false;
+                  $locationskuSGPArray = array("SGP-ART-1M", "SGP-ART-3M", "SGP-ART-6M", "SGP-ART-12M", "SGP-GUR-1M", "SGP-GUR-3M", "SGP-GUR-6M", "SGP-GUR-12M","INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
+                  foreach ($cartItems as $item) {
+                      if(in_array($item->getSku(), $locationskuSGPArray)) {
+                          $subscription = true;
+                      }
+                  }
+
+                $groupId = Mage::getSingleton('customer/session')->getCustomerGroupId(); //Get Customers Group ID
+                $groupname = Mage::getModel('customer/group')->load($groupId)->getCustomerGroupCode();
+                if($groupname !='Trader-Temp' && $groupname!='Trader-Regular' && $groupname!='Trader-Priority' && $groupname!='Trader-Premium' && $subscription == false)
+                {
+              ?>    
               <p>
               <?php 
               $quoteId = Mage::getSingleton('checkout/session')->getQuoteId(); 
               $quote = Mage::getModel("sales/quote")->load($quoteId);
 
               $rewardPoints = Mage::helper('rewardpoints/data')->getPointsOnOrder($quote, null, null, true, $quote->getStoreId());
-              echo $this->__("This shopping cart is worth %s in rebates", Mage::helper('core')->currency($rewardPoints, true, false));?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($rewardPoints);
-              ?>
+              echo $this->__("This shopping cart is worth %s in rebates", Mage::helper('core')->currency($rewardPoints, true, false));?>
               </p>
+              <?php 
+                }
+              ?>
             </div>
 
           </div>

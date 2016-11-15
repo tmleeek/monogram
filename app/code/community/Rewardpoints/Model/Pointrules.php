@@ -241,7 +241,38 @@ class Rewardpoints_Model_Pointrules extends Mage_Rule_Model_Rule
                 } else if ($rule_validate->getActionType() == self::RULE_ACTION_TYPE_DONTPROCESS || $rule_validate->getActionType() == self::RULE_ACTION_TYPE_DONTPROCESS_USAGE){
                     return false;
                 } else if (($rule_validate->getActionType() != self::RULE_ACTION_TYPE_DONTPROCESS && ($point_value || $point_value === 0)) /*|| ($rule_validate->getActionType() == self::RULE_ACTION_TYPE_ADD)*/) {
-                    $points_tmp = $rule_validate->getPoints() + $point_value; 
+
+                    // zza
+                    $baseCurrencyCode = Mage::app()->getStore()->getBaseCurrencyCode();
+                    $currentCurrencyCode = Mage::app()->getStore()->getCurrentCurrencyCode();
+
+                    if($rule_validate->getPoints() == 80) { //if subtotal is 200 and adding 80 points $8 
+                        
+                        $amount = Mage::helper('directory')->currencyConvert(200, $currentCurrencyCode, $baseCurrencyCode);
+                        $amount_2 = Mage::helper('directory')->currencyConvert(150, $currentCurrencyCode, $baseCurrencyCode);
+
+                        if($point_value>$amount) {
+                            $points_tmp = $rule_validate->getPoints() + $point_value;         
+                        } else if($point_value>$amount_2) {
+                            $points_tmp = 40 + $point_value;
+                        }
+                        else {
+                            $points_tmp = $point_value;
+                        }
+                    }else if($rule_validate->getPoints() == 40) {
+
+                        $amount = Mage::helper('directory')->currencyConvert(150, $currentCurrencyCode, $baseCurrencyCode);
+
+                        if($point_value>$amount) {
+                            $points_tmp = $rule_validate->getPoints() + $point_value;         
+                        } else {
+                            $points_tmp = $point_value;
+                        }
+                    }else {
+                        $points_tmp = $rule_validate->getPoints() + $point_value;  
+                    }
+                    // zza
+                    
                     if ($rule_validate->getPoints() > 0){
                         if ($message){
                             $rules_message_cart[] = Mage::helper('rewardpoints')->__("Addition (%s points + %s = %s points, %s)", $point_value, $rule_validate->getPoints(), ceil($points_tmp), $message);

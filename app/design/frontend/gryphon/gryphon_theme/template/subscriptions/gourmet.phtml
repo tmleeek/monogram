@@ -169,9 +169,9 @@
             		<thead>
                   <tr>
                     <th>period</th>
-                    <th>price</th>
-                    <!-- <th>discount</th> -->
-                    <th>equivalent</th>
+                    <th>price</th>                    
+                    <!-- <th>equivalent</th> -->
+                    <th>discount</th>
                     <th>links</th>
                   </tr>
                 </thead>
@@ -193,15 +193,19 @@
 											$monthtext = ' MONTH';
 									
 											$equivalent = ($_productsingpur->getPrice()/1);
+                      $discount_percentage = '7%';
 										}else if($cnt == 2)
 										{										
 											$equivalent = ($_productsingpur->getPrice()/3);
+                      $discount_percentage = '14%';
 										}else if($cnt == 3)
 										{										
 											$equivalent = ($_productsingpur->getPrice()/6);
+                      $discount_percentage = '18%';
 										}else
 										{										
 											$equivalent = ($_productsingpur->getPrice()/12);
+                      $discount_percentage = '20%';
 										}
 										
 									?>
@@ -217,8 +221,9 @@
 										}
 										?>
 								          	<td><?php echo Mage::helper('core')->currency($_productsingpur->getPrice(),true,false); ?></td>
-								          	<td><?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per month</td>
-								          	<td><a class="arrow-cta add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpur) ?>">Add to Cart<span class='ajax_loader_product' style='display:none'><img src='<?php echo $this->getSkinUrl('images/content/opc-ajax-loader.gif')?>'/></span></a><span class="error-msg"></span></td>
+								          	<!-- <td><?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per month</td> -->
+                            <td><?php echo $discount_percentage; ?></td>
+								          	<td><a class="arrow-cta add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpur) ?>">Add to Cart<span class='ajax_loader_product' style='display:none'><img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/></span></a><span class="error-msg"></span></td>
 								        </tr>
 									
 							       <?php 
@@ -231,8 +236,9 @@
 
 
             <div class="cta-container">
-              <a href="http://www.monogramtea.com/recommendations/" class="square-cta">layering recommendation</a>
-              <a href="http://www.monogramtea.com/store.html" class="square-cta">visit tea store</a>
+              <a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais" class="square-cta">layering recommendation</a>
+              <?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
+              <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta">visit tea store</a>
             </div>
 
           </div> <!-- #monogram-subscription-content-copy -->
@@ -269,6 +275,44 @@
 
 	  jQuery('html').addClass('monogram-subscription-page');
 	  jQuery('body').addClass('monogram-subscription-page');
+
+    function do_update() {
+        jQuery.ajax({
+            url: '<?php echo $this->getUrl("discovertea/index/cartpreview"); ?>',
+            dataType: 'json',
+            type : 'get',
+            success: function(data){
+
+                jQuery("#desktop-header-cart").find(".count").text("("+data.cart_qty+")");
+
+                // jQuery('.cart-preview-content').html('');
+                // jQuery.each(data.cart_items, function(key,value){
+
+                //     jQuery('.cart-preview-content').append('<ul class="cart-content"><li><img src="'+value.image+'" alt=""><span>'+value.name+'</span></li><li>'+value.qty+'</li><li>'+value.row_price+'</li></ul>');
+
+                //     jQuery('.cart-summary').find('.total-items-count').html(data.cart_qty);
+                //     jQuery('.cart-summary').find('.sub-total-amount').html(data.cart_total);
+
+                // });
+
+                // jQuery('.cart-header').show();
+                // jQuery('.cart-summary').show();
+                // jQuery('.cta-btns').show();
+                // jQuery('#main-header .cart-preview-select').show();
+                // jQuery('#main-header .cart-preview-select').delay(5000).hide(400);
+
+                // var mobile_header = jQuery("#main-mobile-header").data('gryphon_mobile_header');
+                // mobile_header.public_open_cart();
+                // //jQuery('#mobile-cart-expand-container').show();
+                
+
+                // jQuery('.mobile-cart-button').find('span').html(data.cart_qty);
+                // jQuery('.cart-summary-data').find('.price').html(data.cart_total);
+                // jQuery('.cart-summary-data').find('.count').html(data.cart_qty);
+                // jQuery('.cart-summary-data span').html('<span class="price">'+data.cart_total+'</span> (<span class="count">'+data.cart_qty+'</span>)');
+            }
+        });
+    }
 
 
 		jQuery('.subscription-form').on('click', '.add-to-cart-btn', function(e){

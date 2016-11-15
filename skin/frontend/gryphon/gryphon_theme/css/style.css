@@ -10477,6 +10477,17 @@ body.tea-layering-detail-page {
 .tea-product-detail-page {
   overflow: visible;
 }
+.catalog-product-view .messages {
+  display: none;
+}
+#tea-product-detail-section-1 #messages_product_view {
+  position: absolute;
+  width: 60%;
+  top: 100px;
+}
+#tea-product-detail-section-1 #messages_product_view .messages {
+  display: inline-block;
+}
 #tea-product-detail-section-1 #product-detail-img-info-container .v-align {
   display: inline-block;
   vertical-align: middle;
@@ -10600,6 +10611,54 @@ body.tea-layering-detail-page {
   right: 0px;
   background-color: rgba(236, 205, 206, 0.5);
 }
+#tea-product-detail-section-1 #product-detail-img-info-container .earl-grey-neroli-suggestion-bg {
+  background-color: rgba(179, 197, 205, 0.5);
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .cherry-japonais-suggestion-bg {
+  background-color: rgba(236, 205, 206, 0.5);
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .black-tea-selection-suggestion-bg {
+  background-color: rgba(197, 180, 227, 0.5);
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .green-tea-and-oolong-selection-suggestion-bg {
+  background-color: rgba(171, 199, 202, 0.5);
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .herbal-tea-selection-suggestion-bg {
+  background-color: rgba(186, 197, 185, 0.5);
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .jasmine-silk-pearls-suggestion-bg {
+  background-color: rgba(163, 177, 200, 0.5);
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .kashmere-suggestion-bg {
+  background-color: rgba(241, 166, 147, 0.5);
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .lapsang-florale-suggestion-bg {
+  background-color: rgba(199, 180, 226, 0.5);
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .milky-oolong-suggestion-bg {
+  background-color: rgba(216, 210, 196, 0.5);
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .morning-english-suggestion-bg {
+  background-color: rgba(254, 210, 152, 0.5);
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .provencal-herbs-suggestion-bg {
+  background-color: rgba(213, 215, 85, 0.5);
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .rose-of-ariana-suggestion-bg {
+  background-color: rgba(253, 146, 163, 0.5);
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .saffronais-suggestion-bg {
+  background-color: rgba(255, 170, 97, 0.5);
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .shiso-mint-suggestion-bg {
+  background-color: rgba(188, 196, 185, 0.5);
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .tea-tasting-assortment-suggestion-bg {
+  background-color: rgba(235, 194, 131, 0.5);
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .uji-sencha-suggestion-bg {
+  background-color: rgba(189, 200, 196, 0.5);
+}
 #tea-product-detail-section-1 #product-detail-img-info-container .suggestion {
   padding-top: 80px;
   padding-bottom: 10px;
@@ -10639,6 +10698,13 @@ body.tea-layering-detail-page {
 #tea-product-detail-section-1 #product-detail-img-info-container .suggestion ul li a.product-image {
   padding-bottom: 0px;
 }
+#tea-product-detail-section-1 #product-detail-img-info-container .suggestion ul.two-column li.each-product {
+  width: 45%;
+  display: inline-block;
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .suggestion ul.two-column li.each-product a img {
+  width: 128px;
+}
 #tea-product-detail-section-1 #product-detail-img-info-container .custom-product-carousel .slick-prev,
 #tea-product-detail-section-1 #product-detail-img-info-container .custom-product-carousel .slick-next {
   display: none!important;
@@ -10666,16 +10732,16 @@ body.tea-layering-detail-page {
   padding-bottom: 30px;
   height: 180px;
 }
-#tea-product-detail-section-2 img {
+#tea-product-detail-section-2 img.parent {
   position: absolute;
   width: 180px;
-}
-#tea-product-detail-section-2 img.parent {
   top: 0;
   left: 10%;
   z-index: 1;
 }
 #tea-product-detail-section-2 img.overlay {
+  position: absolute;
+  width: 180px;
   top: 0;
   left: 10%;
   z-index: 0;
@@ -14198,7 +14264,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
 */
 html.monogram-subscription-page,
 body.monogram-subscription-page {
-  overflow: visible;
+  overflow-x: hidden;
 }
 .cms-subscription .page-title {
   display: none;
@@ -14318,10 +14384,16 @@ body.monogram-subscription-page {
   text-align: center;
   padding-top: 5px;
   padding-bottom: 5px;
+  border: none;
 }
 #monogram-subscription-content-copy .table-responsive table tbody tr td:first-child {
   padding-left: 24px;
   text-align: left;
+}
+#monogram-subscription-content-copy .table-responsive table tbody tr td .ajax_loader_product {
+  position: absolute;
+  right: -20px;
+  top: 2px;
 }
 #monogram-subscription-content-copy .table-responsive table tbody tr:first-child td {
   padding-top: 25px;
