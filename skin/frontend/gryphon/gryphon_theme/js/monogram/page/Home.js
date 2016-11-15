@@ -51,6 +51,8 @@ monogram.page.Home = function(options, element) {
   }.bind(this));
 
 
+  this.has_displayed_guide = false;
+
   this.graph_section = null;
   //this.mobile_graph_section = null;
 
@@ -190,6 +192,17 @@ monogram.page.Home.prototype.display_graph_section = function(){
   this.intro_section.removeClass('slide-animate-in');
   this.tea_selection_section.removeClass('slide-animate-in');
   this.graph_section_element.addClass('slide-animate-in');
+
+
+  if (this.has_displayed_guide == false) {
+    this.has_displayed_guide = true;
+    TweenMax.killTweensOf($('#graph-desktop-guide-container'));
+
+    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:1, delay: 2});
+    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:0, delay: 5.5});
+  }
+  
+  
 
   this.intro_section.removeClass('animate-in');
   this.tea_selection_section.removeClass('animate-in');
