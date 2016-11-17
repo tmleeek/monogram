@@ -89,6 +89,12 @@ monogram.page.Home.prototype.init = function() {
   
 
 
+  // on guide click, remove the damn thing
+  $j('#graph-desktop-guide-container').click(function(event){
+    TweenMax.killTweensOf($('#graph-desktop-guide-container'));
+    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:0});
+  });
+
 
 
 
@@ -199,7 +205,7 @@ monogram.page.Home.prototype.display_graph_section = function(){
     TweenMax.killTweensOf($('#graph-desktop-guide-container'));
 
     TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:1, delay: 2});
-    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:0, delay: 5.5});
+    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:0, delay: 3.5});
   }
   
   
