@@ -32,9 +32,9 @@ $_helper = $this->helper('catalog/output');
 <div class="row tea-layering-table-contents">
   <div class="col-md-3 col-md-offset-1 tea-layering-table-text">
     <?php if(!empty($_product->getData('product_name_in_color'))): ?>
-    <h3><?php echo $_product->getData('product_name_in_color') ?></h3>
+    <a href="/tea-matrix#<?php echo $name_id_arr[$product_name]; ?>"><h3><?php echo $_product->getData('product_name_in_color') ?></h3></a>
     <?php else: ?>
-    <h3><?php echo $_product->getName(); ?></h3>
+    <a href="/tea-matrix#<?php echo $name_id_arr[$product_name]; ?>"><h3><?php echo $_product->getName(); ?></h3></a>
     <?php endif; ?>
   </div>
   <div class="col-md-7">
@@ -48,10 +48,15 @@ $_helper = $this->helper('catalog/output');
     ?>      
     <div class="row">
       <div class="col-md-5 tea-layering-table-text">
+        <?php 
+          $child_product_name = $upsp->getName();
+          $child_product_name = strtolower($child_product_name);
+          $child_product_name = str_replace(" ", "-", $child_product_name);
+        ?>
         <?php if(!empty($upsp->getData('product_name_in_color'))): ?>
-        <a href="/tea-matrix#<?php echo $name_id_arr[$product_name]; ?>"><h3><?php echo $upsp->getData('product_name_in_color') ?></h3></a>
+        <a href="/tea-matrix#<?php echo $name_id_arr[$child_product_name]; ?>"><h3><?php echo $upsp->getData('product_name_in_color') ?></h3></a>
         <?php else: ?>
-        <a href="/tea-matrix#<?php echo $name_id_arr[$product_name]; ?>"><h3><?php echo $upsp->getName(); ?></h3></a>
+        <a href="/tea-matrix#<?php echo $name_id_arr[$child_product_name]; ?>"><h3><?php echo $upsp->getName(); ?></h3></a>
         <?php endif; ?>
       </div>
       <div class="col-md-6 tea-layering-table-text">

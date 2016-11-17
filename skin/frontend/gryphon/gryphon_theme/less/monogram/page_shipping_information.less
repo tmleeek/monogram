@@ -133,6 +133,10 @@ body.monogram-page-shipping-information{
       font-size: 13px;
       line-height: 20px;
       letter-spacing: 0em;
+      a {
+        color: @white;
+        cursor: pointer;        
+      }
     }
 
     ul{
@@ -196,8 +200,10 @@ body.monogram-page-shipping-information{
       ul{
         li{
           color: @footer-brown;
+
           &:before{
             color: @footer-brown;
+            display: none;
           }
         }
       }
@@ -220,16 +226,16 @@ body.monogram-page-shipping-information{
 //
 
 #monogram-page-shipping-info-image-01{
-  height: 360px;
+  height: 492px;
   .manic-image-container{
-    height: 360px;
+    height: 492px;
   }
 }
 
 #monogram-page-shipping-info-image-02{
-  height: 550px;
+  height: 418px;
   .manic-image-container{
-    height: 550px;
+    height: 418px;
   }
 }
 
@@ -355,6 +361,121 @@ body.monogram-page-shipping-information{
 
   padding-left: 65px;
   padding-right: 85px;
+
+  .table-responsive{
+    margin-top: 34px;
+    margin-bottom: 30px - 14px;
+  }
+
+  .table-responsive{
+    width: 100%;
+
+    border-top: 1px solid @dark-brown;
+    border-top: 1px solid fade(@dark-brown, 50%);
+
+    table{
+      width: 100%;
+      table-layout: fixed;
+
+      thead{
+        tr{
+          th{
+            .subheader-font;
+            font-size: 10px;
+            line-height: 20px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: @dark-brown;
+
+            // text-align: center;
+
+            border-bottom: 1px solid @dark-brown !important;
+            border-bottom: 1px solid fade(@dark-brown, 30%) !important;
+
+            padding-top: 5px;
+            padding-bottom: 4px;
+
+            vertical-align: middle;
+
+            &:first-child{
+              padding-left: 24px;
+              text-align: left;
+            }
+            &:last-child{
+              padding-right: 6px;
+            }
+
+          }
+        }
+      }
+      tbody{
+        tr{
+          td{
+            .body-font;
+            font-size: 12px;
+            line-height: 20px;
+            color: @dark-brown;
+
+            // text-align: center;
+
+            padding-top: 9px + 15px - 8px;
+            padding-bottom: 4px + 13px - 7px;
+
+            border-bottom: 1px solid @dark-brown !important;
+            border-bottom: 1px solid fade(@dark-brown, 30%) !important;      // this gets removed because of '.balance'
+
+            border-top: 0px;
+
+            .tbl-shipping-info-weight,
+            .tbl-shipping-info-rate{
+              .body-font;
+              font-size: 12px;
+              line-height: 35px;
+
+              position: relative;
+              top: -6px;
+            }
+
+            a{
+              .body-font;
+              font-size: 12px;
+              line-height: 20px;
+              color: @white;
+
+              &:focus,
+              &:hover{
+                .opacity(0.7);
+              }
+            }
+
+            &:first-child{
+              padding-left: 24px;
+              text-align: left;
+            }
+            &:last-child{
+              padding-right: 21px;
+            }
+
+          }
+          &.color {
+            td {
+              text-align: center;
+              background-color: #eec5bb;
+              .subheader-font;
+              font-size: 10px;
+              line-height: 20px;
+              letter-spacing: 0.08em;
+              text-transform: uppercase;
+              color: @dark-brown;
+              border: none!important;
+            }
+          }
+        }
+      }
+
+    }
+
+  }
 }
 
 @media only screen and (max-width: 991px) {
@@ -381,7 +502,7 @@ body.monogram-page-shipping-information{
 
   background: #827773;
   padding-top: 47px;
-  padding-bottom: 78px;
+  padding-bottom: 88px;
 
   padding-left: 60px;
   padding-right: 60px;
@@ -438,12 +559,18 @@ body.monogram-page-shipping-information{
             padding-top: 5px;
             padding-bottom: 4px;
 
+            vertical-align: middle;
+
+            &:nth-of-type(3) {
+              text-align: center;
+            }
+
             &:first-child{
               padding-left: 24px;
               text-align: left;
             }
             &:last-child{
-              padding-right: 24px;
+              padding-right: 6px;
             }
 
           }
@@ -465,7 +592,12 @@ body.monogram-page-shipping-information{
             border-bottom: 1px solid @white !important;
             border-bottom: 1px solid fade(@white, 50%) !important;      // this gets removed because of '.balance'
 
-
+            &:nth-of-type(2) {
+              white-space: nowrap;
+            }
+            &:nth-of-type(3) {
+              text-align: center;
+            }
 
             .tbl-shipping-info-weight,
             .tbl-shipping-info-rate{
@@ -495,8 +627,21 @@ body.monogram-page-shipping-information{
             }
             &:last-child{
               padding-right: 24px;
-            }
+            }            
 
+          }
+
+          &.color {
+            td {
+              text-align: center;
+              background-color: #ae887e;
+              .subheader-font;
+              font-size: 10px;
+              line-height: 20px;
+              letter-spacing: 0.08em;
+              text-transform: uppercase;
+              color: @white;
+            }
           }
         }
       }

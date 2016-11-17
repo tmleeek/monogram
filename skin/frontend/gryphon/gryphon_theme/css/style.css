@@ -5176,6 +5176,18 @@ p {
   height: 20px;
   background: transparent url("../images/icons/cart-remove-icon.svg") center center no-repeat;
 }
+.guide-arrow-icon {
+  display: block;
+  width: 60px;
+  height: 16px;
+  background: transparent url("../images/icons/guide-arrow-icon.svg") center center no-repeat;
+}
+.guide-mouse-icon {
+  display: block;
+  width: 40px;
+  height: 60px;
+  background: transparent url("../images/icons/guide-mouse-icon.svg") center center no-repeat;
+}
 .square-cta {
   font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
@@ -5563,14 +5575,16 @@ p {
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
   filter: alpha(opacity=0);
 }
-#desktop-header-menu-conainer ul {
+#desktop-header-menu-conainer ul.main-nav {
   font-size: 0;
 }
-#desktop-header-menu-conainer ul li {
+#desktop-header-menu-conainer ul.main-nav > li {
+  padding-bottom: 20px;
+  position: relative;
   display: inline-block;
   margin-right: 38px;
 }
-#desktop-header-menu-conainer ul li a {
+#desktop-header-menu-conainer ul.main-nav li a {
   font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -5579,6 +5593,43 @@ p {
   letter-spacing: 0.08em;
   color: #ffffff;
   text-transform: uppercase;
+}
+#desktop-header-menu-conainer ul.main-nav li:hover ul.sub-nav {
+  visibility: visible;
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+  filter: alpha(opacity=100);
+}
+#desktop-header-menu-conainer ul.main-nav li ul.sub-nav {
+  position: absolute;
+  visibility: hidden;
+  background-color: rgba(130, 119, 115, 0.9);
+  padding: 25px 15px 25px 35px;
+  text-align: left;
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  filter: alpha(opacity=0);
+  /* transition */
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+  left: -35px;
+  top: 45px;
+  width: 245px;
+}
+#desktop-header-menu-conainer ul.main-nav li ul.sub-nav li {
+  display: block;
 }
 #graph-social-icons {
   position: fixed;
@@ -7793,6 +7844,7 @@ input.input-class {
   color: #f1efee;
   padding-left: 18px;
   height: 24px;
+  -webkit-text-fill-color: white !important;
 }
 textarea {
   background-color: #756b66;
@@ -7804,6 +7856,9 @@ textarea {
   line-height: 20px;
   color: #f1efee;
   padding-left: 18px;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 .add-input-class-styling {
   background-color: #756b66;
@@ -7831,6 +7886,59 @@ textarea {
   font-size: 10px;
   line-height: 24px;
   color: #f1efee;
+}
+#page-preloader {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 200000;
+  -webkit-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+  overflow: hidden;
+}
+#page-preloader:before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #7b706b;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+#page-preloader:after {
+  content: '';
+  display: block;
+  width: 65px;
+  height: 65px;
+  background: transparent url("../images/logo/header-desktop-logo.svg") center center no-repeat;
+  background-size: 65px 65px;
+  -webkit-background-size: 65px 65px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-top: -32.5px;
+  margin-left: -32.5px;
+}
+#page-preloader #page-preloader-monogram-name {
+  margin-left: 16px;
+  display: block;
+  width: 111px;
+  height: 16px;
+  background: transparent url("../images/logo/monogram-name.svg") center center no-repeat;
+  background-size: 111px 16px;
+  -webkit-background-size: 111px 16px;
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  top: 50%;
+  left: 44.5%;
+  margin-top: 10px;
 }
 .image-container {
   position: relative;
@@ -8783,18 +8891,85 @@ html * {
   height: 100%;
   background: #6b615b;
   background: rgba(107, 97, 91, 0.9);
+  visibility: hidden;
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  filter: alpha(opacity=0);
 }
 #graph-desktop-guide {
   font-size: 0;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  transform: translate(0%, -50%);
 }
 .graph-guide-item {
   display: inline-block;
   vertical-align: top;
   *display: inline;
   zoom: 1;
+  padding: 0 108px;
+}
+.graph-guide-item .graph-guide-item-icon {
+  display: block;
+  width: 230px;
+  height: 110px;
+  position: relative;
+  margin: 0 auto;
+}
+.graph-guide-item .graph-guide-item-icon .guide-arrow-icon {
+  position: absolute;
+  top: 50%;
+}
+.graph-guide-item .graph-guide-item-icon .guide-arrow-icon.guide-arrow-icon-01 {
+  /* transform */
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  left: 0;
+  margin-top: -9px;
+  margin-left: 27px;
+}
+.graph-guide-item .graph-guide-item-icon .guide-arrow-icon.guide-arrow-icon-02 {
+  right: 0;
+  margin-top: -9px;
+  margin-right: 27px;
+}
+.graph-guide-item .graph-guide-item-icon .guide-arrow-icon.guide-arrow-icon-03 {
+  /* transform */
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+  left: 0;
+  margin-top: -9px;
+  margin-left: 36px;
+}
+.graph-guide-item .graph-guide-item-icon .guide-arrow-icon.guide-arrow-icon-04 {
+  /* transform */
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  right: 0;
+  margin-top: -9px;
+  margin-right: 36px;
+}
+.graph-guide-item .graph-guide-item-icon .guide-mouse-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -30px;
+  margin-left: -20px;
 }
 .graph-guide-item h4 {
   font-family: 'Brandon Grotesque Regular', "Arial Black", Gadget, sans-serif;
@@ -8806,7 +8981,7 @@ html * {
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
-  padding-top: 15px;
+  padding-top: 11px;
 }
 .tea-detail h4 {
   font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
@@ -10520,7 +10695,7 @@ body.tea-layering-detail-page {
   position: absolute;
   top: 22px;
   width: 100%;
-  right: -130px;
+  right: -140px;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .product-info .row {
   margin-bottom: 28px;
@@ -10599,7 +10774,7 @@ body.tea-layering-detail-page {
   width: 15px;
   position: absolute;
   top: 22px;
-  right: 0;
+  right: -10px;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .product-info .j2t-loyalty-points {
   display: none;
@@ -10831,14 +11006,33 @@ body.tea-layering-detail-page {
   font-style: normal;
   font-weight: normal;
   padding-left: 20px;
+  padding-right: 20px;
   height: 113px;
   font-size: 12px;
   color: #ffffff;
   padding-top: 7px;
+  resize: vertical;
+}
+#tea-product-detail-section-3 p {
+  color: #ffffff;
 }
 #tea-product-detail-section-3 .submit-review {
   margin-top: 40px;
   float: right;
+}
+#tea-product-detail-section-3 .review-input {
+  position: relative;
+}
+#tea-product-detail-section-3 .review-input #ajax_loader_review {
+  position: absolute;
+  right: -15px;
+  bottom: -2px;
+  display: none;
+}
+#tea-product-detail-section-3 .review-input .ajax_msg_review {
+  position: absolute;
+  right: -60px;
+  bottom: 0;
 }
 #tea-product-detail-section-3 .dropdown {
   display: inline-block;
@@ -11727,6 +11921,9 @@ body.billing-shipping-page {
 #page-shopping-cart-content .same-as-billing input[type=checkbox]:checked + .checkbox-label span:before {
   content: "\f111";
 }
+#page-shopping-cart-content .same-as-billing.save-in-address-book {
+  display: none;
+}
 #page-shopping-cart-content #empty-cart h1 {
   font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
@@ -12263,6 +12460,13 @@ body.billing-shipping-page {
 #page-shopping-cart-billing-container #shipping-new-address-form .each-input .tel-input-box,
 #page-shopping-cart-shipping-container #shipping-new-address-form .each-input .tel-input-box {
   padding-left: 0px;
+}
+#page-shopping-cart-billing-container #billing-new-address-form .each-input .tel-input-box .intl-tel-input .validation-advice,
+#page-shopping-cart-shipping-container #billing-new-address-form .each-input .tel-input-box .intl-tel-input .validation-advice,
+#page-shopping-cart-billing-container #shipping-new-address-form .each-input .tel-input-box .intl-tel-input .validation-advice,
+#page-shopping-cart-shipping-container #shipping-new-address-form .each-input .tel-input-box .intl-tel-input .validation-advice {
+  position: absolute;
+  left: 20px;
 }
 #page-shopping-cart-cta-container {
   padding-top: 83px;
@@ -13018,6 +13222,9 @@ body.monogram-page-account-details #content-wrapper .col-main .each-input .intl-
 body.monogram-page-account-details #content-wrapper .col-main .each-input .intl-tel-input .flag-dropdown {
   left: -17px;
 }
+body.monogram-page-account-details #content-wrapper .col-main .each-input .intl-tel-input .input-text {
+  padding-left: 30px;
+}
 body.monogram-page-account-details #content-wrapper .col-main .each-input .dropdown {
   background-color: #756b66;
   border: none;
@@ -13506,6 +13713,18 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   font-weight: normal;
   font-size: 12px;
   line-height: 20px;
+}
+#monogram-page-account-details-order-history .each-order p a {
+  color: #f1efee;
+}
+#monogram-page-account-details-order-history .each-order p a:focus,
+#monogram-page-account-details-order-history .each-order p a:hover {
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  -webkit-opacity: 0.7;
+  opacity: 0.7;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+  filter: alpha(opacity=70);
 }
 #monogram-page-account-details-order-history .each-order .order-details .order-no {
   text-align: center;
@@ -14098,6 +14317,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
 #monogram-page-account-details-refer-friends-container .refer-friend-form {
   position: relative;
   font-size: 0;
+  margin-top: 30px;
 }
 #monogram-page-account-details-refer-friends-container .refer-friend-form h1,
 #monogram-page-account-details-refer-friends-container .refer-friend-form hr {
@@ -14113,6 +14333,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   display: block;
 }
 #monogram-page-account-details-refer-friends-container .refer-friend-form .button-set {
+  position: relative;
   display: inline-block;
   vertical-align: top;
   *display: inline;
@@ -14202,6 +14423,17 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
 }
 #monogram-page-account-details-refer-friends-container .refer-friend-form .validation-advice {
   margin: 0px;
+}
+#monogram-page-account-details-refer-friends-container .refer-friend-form #ajax_loader_referral {
+  display: none;
+  position: absolute;
+  right: -20px;
+  top: 5px;
+}
+#monogram-page-account-details-refer-friends-container .refer-friend-form .ajax_msg_referral {
+  position: absolute;
+  right: -70px;
+  top: 0px;
 }
 #monogram-page-account-details-refer-friends-container .referral-table .table-responsive {
   width: 100%;
@@ -14815,6 +15047,10 @@ body.monogram-page-shipping-information {
   line-height: 20px;
   letter-spacing: 0em;
 }
+#monogram-page-shipping-info-content-section .default-copy p a {
+  color: #ffffff;
+  cursor: pointer;
+}
 #monogram-page-shipping-info-content-section .default-copy ul {
   padding-top: 18px;
   padding-bottom: 18px;
@@ -14876,18 +15112,19 @@ body.monogram-page-shipping-information {
 }
 #monogram-page-shipping-info-content-section .default-copy.brown-version ul li:before {
   color: #6b615b;
+  display: none;
 }
 #monogram-page-shipping-info-image-01 {
-  height: 360px;
+  height: 492px;
 }
 #monogram-page-shipping-info-image-01 .manic-image-container {
-  height: 360px;
+  height: 492px;
 }
 #monogram-page-shipping-info-image-02 {
-  height: 550px;
+  height: 418px;
 }
 #monogram-page-shipping-info-image-02 .manic-image-container {
-  height: 550px;
+  height: 418px;
 }
 @media only screen and (max-width: 991px) {
   #monogram-page-shipping-info-image-01 {
@@ -14962,6 +15199,101 @@ body.monogram-page-shipping-information {
   padding-left: 65px;
   padding-right: 85px;
 }
+#monogram-page-shipping-info-content-03 .table-responsive {
+  margin-top: 34px;
+  margin-bottom: 16px;
+}
+#monogram-page-shipping-info-content-03 .table-responsive {
+  width: 100%;
+  border-top: 1px solid #7b706b;
+  border-top: 1px solid rgba(123, 112, 107, 0.5);
+}
+#monogram-page-shipping-info-content-03 .table-responsive table {
+  width: 100%;
+  table-layout: fixed;
+}
+#monogram-page-shipping-info-content-03 .table-responsive table thead tr th {
+  font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7b706b;
+  border-bottom: 1px solid #7b706b !important;
+  border-bottom: 1px solid rgba(123, 112, 107, 0.3) !important;
+  padding-top: 5px;
+  padding-bottom: 4px;
+  vertical-align: middle;
+}
+#monogram-page-shipping-info-content-03 .table-responsive table thead tr th:first-child {
+  padding-left: 24px;
+  text-align: left;
+}
+#monogram-page-shipping-info-content-03 .table-responsive table thead tr th:last-child {
+  padding-right: 6px;
+}
+#monogram-page-shipping-info-content-03 .table-responsive table tbody tr td {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: #7b706b;
+  padding-top: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #7b706b !important;
+  border-bottom: 1px solid rgba(123, 112, 107, 0.3) !important;
+  border-top: 0px;
+}
+#monogram-page-shipping-info-content-03 .table-responsive table tbody tr td .tbl-shipping-info-weight,
+#monogram-page-shipping-info-content-03 .table-responsive table tbody tr td .tbl-shipping-info-rate {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 35px;
+  position: relative;
+  top: -6px;
+}
+#monogram-page-shipping-info-content-03 .table-responsive table tbody tr td a {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff;
+}
+#monogram-page-shipping-info-content-03 .table-responsive table tbody tr td a:focus,
+#monogram-page-shipping-info-content-03 .table-responsive table tbody tr td a:hover {
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  -webkit-opacity: 0.7;
+  opacity: 0.7;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+  filter: alpha(opacity=70);
+}
+#monogram-page-shipping-info-content-03 .table-responsive table tbody tr td:first-child {
+  padding-left: 24px;
+  text-align: left;
+}
+#monogram-page-shipping-info-content-03 .table-responsive table tbody tr td:last-child {
+  padding-right: 21px;
+}
+#monogram-page-shipping-info-content-03 .table-responsive table tbody tr.color td {
+  text-align: center;
+  background-color: #eec5bb;
+  font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7b706b;
+  border: none!important;
+}
 @media only screen and (max-width: 991px) {
   #monogram-page-shipping-info-content-03 {
     padding-top: 20px;
@@ -14975,7 +15307,7 @@ body.monogram-page-shipping-information {
 #monogram-page-shipping-info-content-04 {
   background: #827773;
   padding-top: 47px;
-  padding-bottom: 78px;
+  padding-bottom: 88px;
   padding-left: 60px;
   padding-right: 60px;
   position: relative;
@@ -15021,13 +15353,17 @@ body.monogram-page-shipping-information {
   border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
   padding-top: 5px;
   padding-bottom: 4px;
+  vertical-align: middle;
+}
+#monogram-page-shipping-info-content-04 .table-responsive table thead tr th:nth-of-type(3) {
+  text-align: center;
 }
 #monogram-page-shipping-info-content-04 .table-responsive table thead tr th:first-child {
   padding-left: 24px;
   text-align: left;
 }
 #monogram-page-shipping-info-content-04 .table-responsive table thead tr th:last-child {
-  padding-right: 24px;
+  padding-right: 6px;
 }
 #monogram-page-shipping-info-content-04 .table-responsive table tbody tr td {
   font-family: 'Domine', "Times New Roman", Times, serif;
@@ -15040,6 +15376,12 @@ body.monogram-page-shipping-information {
   padding-bottom: 10px;
   border-bottom: 1px solid #ffffff !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+#monogram-page-shipping-info-content-04 .table-responsive table tbody tr td:nth-of-type(2) {
+  white-space: nowrap;
+}
+#monogram-page-shipping-info-content-04 .table-responsive table tbody tr td:nth-of-type(3) {
+  text-align: center;
 }
 #monogram-page-shipping-info-content-04 .table-responsive table tbody tr td .tbl-shipping-info-weight,
 #monogram-page-shipping-info-content-04 .table-responsive table tbody tr td .tbl-shipping-info-rate {
@@ -15074,6 +15416,18 @@ body.monogram-page-shipping-information {
 }
 #monogram-page-shipping-info-content-04 .table-responsive table tbody tr td:last-child {
   padding-right: 24px;
+}
+#monogram-page-shipping-info-content-04 .table-responsive table tbody tr.color td {
+  text-align: center;
+  background-color: #ae887e;
+  font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 #monogram-page-shipping-info-content-04 .default-copy.default-copy-02 {
   padding-left: 24px;

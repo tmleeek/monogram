@@ -266,13 +266,18 @@
   .opacity(0);
   
 
-  ul {
+  ul.main-nav {
     font-size: 0;
 
-    li {
+    > li {
+      padding-bottom: 20px;
+      position: relative;
       display: inline-block;
       //padding-right: 40px;
       margin-right: 38px;
+    }
+    
+    li {      
 
       a {
         .header-font;
@@ -281,6 +286,29 @@
         letter-spacing: 0.08em;
         color: @white;
         text-transform: uppercase;
+      }
+
+      &:hover {
+        ul.sub-nav {
+          visibility: visible;
+          .opacity(1);
+        }
+      }
+
+      ul.sub-nav {
+        position: absolute;
+        visibility: hidden;
+        background-color: rgba(130, 119, 115, 0.9);
+        padding: 25px 15px 25px 35px;
+        text-align: left;
+        .opacity(0);
+        .transition(.3s);
+        left: -35px;
+        top: 45px;
+        width: 245px;
+        li {
+          display: block;
+        }
       }
     }
   }

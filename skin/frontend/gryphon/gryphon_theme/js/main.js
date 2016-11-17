@@ -27,7 +27,6 @@ var initialLoad = true;
 (function($){
     $(document).ready(function(){
 
-        // test
 
         setTimeout(function(){
             $('html').animate({scrollTop:0}, 1);
@@ -655,7 +654,12 @@ var initialLoad = true;
         }, '.cta-list');  
 
         // header menus
-        $('#desktop-header-cart .currency').on('click', function() {
+        $('#desktop-header-cart .currency').on( "clickoutside", function(e){    
+            $('.currency-select').hide();
+        });
+
+        $('#desktop-header-cart .currency').on('click', function(e) {
+            e.preventDefault();
             $('.currency-select').toggle();
             $('.search-select').hide();
             $('.account-select').hide();
@@ -690,6 +694,29 @@ var initialLoad = true;
             console.log(currencyCode);
             $("#select-currency option:contains(" + currencyCode + ")").attr('selected', 'selected').trigger("change");           
         });
+
+        $('#graph-social-icons').on("click", "a.fa-facebook", function(e){
+            e.preventDefault();
+            var share_url = $(this).attr("href");
+            FB.ui({
+                display: 'popup',
+                method: 'share',
+                href: share_url,
+            }, function(response){});
+        });
+
+        function PopupCenter(pageURL, title,w,h) {
+            var left = (screen.width/2)-(w/2);
+            var top = (screen.height/2)-(h/2);
+            var targetWin = window.open (pageURL, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+            return targetWin;
+        } 
+
+        $('#graph-social-icons').on("click", "a.fa-twitter", function(e){
+            e.preventDefault();
+            var share_url = $(this).attr("href");
+            PopupCenter(share_url, '', 500, 500);
+        });   
 
         try{
             $(".fancybox").fancybox();  

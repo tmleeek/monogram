@@ -24,12 +24,32 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div class="page-title">
-    <h1><?php echo Mage::helper('customer')->__('You are now logged out') ?></h1>
-</div>
-<p><?php echo Mage::helper('customer')->__('You have logged out and will be redirected to our homepage in 5 seconds.') ?></p>
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="page-shopping-cart-content">
+                    <div class="row">
+                        <div class="col-md-12"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
+                    </div>
+                    <div id="empty-cart" class="row">
+                        <div class="col-md-12">
+                            <h1><?php echo Mage::helper('customer')->__('You are now logged out') ?></h1>
+                            <hr class="small" />
+                            <div class="space30"></div>                            
+                            <p><?php echo Mage::helper('customer')->__('You have logged out and will be redirected to our homepage in 5 seconds.') ?></p>                            
+                            <div class="space100"></div>
+                            <div class="space100"></div>
+                            <div class="space100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
 <script type="text/javascript">
 //<![CDATA[
-    setTimeout(function(){ location.href = '<?php echo $this->getUrl() ?>'},1000);
+    setTimeout(function(){ location.href = '<?php echo $this->getUrl() ?>'}, 1000);
 //]]>
 </script>

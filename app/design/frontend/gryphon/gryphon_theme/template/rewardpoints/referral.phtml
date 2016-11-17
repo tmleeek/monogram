@@ -35,10 +35,10 @@
                       <span class="pts-text">For any referred friend's registration</span>
                   </div>
               </div>
-              <!-- <p><?php echo $this->__('For any referred friend\'s registration, you earn: <strong>%s points</strong>', $this->getReferrerRegistrationPoints());?></p>  -->
+              <p><?php echo $this->__('For any referred friend\'s registration, you earn: <strong>%s points</strong>', $this->getReferrerRegistrationPoints());?></p> 
           <?php endif;?>
           <?php if($this->getFriendRegistrationPoints()):?>
-              <!-- <p><?php echo $this->__('For any referred friend\'s registration, you friend earn: <strong>%s points</strong>', $this->getFriendRegistrationPoints());?></p> -->
+              <p><?php echo $this->__('For any referred friend\'s registration, you friend earn: <strong>%s points</strong>', $this->getFriendRegistrationPoints());?></p>
           <?php endif;?>
           <?php if($this->getReferrerPoints() && $this->getReferrerCalculationType() == Rewardpoints_Model_Calculationtype::STATIC_VALUE):?>
               <div class="points">
@@ -49,14 +49,17 @@
                       <span class="pts-text">For any first valid order placed by referred friend</span>
                   </div>
               </div>
-              <!-- <p><?php echo $this->__('For any first valid order placed by referred friend, you earn: <strong>%s points</strong>', $this->getReferrerPoints());?></p> -->
+              <?php 
+              $rewardPoints = $this->getReferrerPoints();
+              ?>              
+              <p><?php echo $this->__('For every valid first order by a referred friend, you earn a <strong>%s</strong> rebate.', Mage::helper('core')->currency($rewardPoints, true, false));?></p>
               <?php elseif ($this->getReferrerPoints() && $this->getReferrerCalculationType() == Rewardpoints_Model_Calculationtype::RATIO_POINTS):?>
               <p><?php echo $this->__('For any first valid order placed by referred friend, you earn: <strong>%s points x product price values</strong>', $this->getReferrerPoints());?></p>
               <?php elseif ($this->getReferrerPoints() && $this->getReferrerCalculationType() == Rewardpoints_Model_Calculationtype::CART_SUMMARY):?>
               <p><?php echo $this->__('For any first valid order placed by referred friend, you earn: <strong>%s points x cart summary</strong>', $this->getReferrerPoints());?></p>
           <?php endif;?>
           <?php if($this->getFriendPoints() && $this->getFriendCalculationType() == Rewardpoints_Model_Calculationtype::STATIC_VALUE):?>
-              <p><?php echo $this->__('For any first valid order placed by referred friend, your friend gets: <strong>%s extra points</strong>', $this->getFriendPoints());?></p>
+              <!-- <p><?php echo $this->__('For any first valid order placed by referred friend, your friend gets: <strong>%s extra points</strong>', $this->getFriendPoints());?></p> -->
               <?php elseif ($this->getFriendPoints() && $this->getFriendCalculationType() == Rewardpoints_Model_Calculationtype::RATIO_POINTS):?>
               <p><?php echo $this->__('For any first valid order placed by referred friend, you friend gets: <strong>%s points x product price values</strong>', $this->getFriendPoints());?></p>        
               <?php elseif ($this->getFriendPoints() && $this->getFriendCalculationType() == Rewardpoints_Model_Calculationtype::CART_SUMMARY):?>
@@ -168,6 +171,8 @@
                         <!-- <p class="required"><?php echo $this->__('* Required Fields') ?></p> -->
                         <!--<a href="<?php echo $this->getBackUrl() ?>" class="left">&laquo; <?php echo $this->__('Back') ?></a>-->
                         <button class="form-button button cta send" type="submit"><span><span><?php echo $this->__('Send') ?></span></span></button>
+                        <span id='ajax_loader_referral'><img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/></span>
+                        <span class="ajax_msg_referral italic"></span>
                         <a id="j2t-add-line" href="javascript:j2t_add_line();" title="<?php echo $this->__('Add new line') ?>">Add More</a>            
                     </div>
                   </div>            
@@ -198,6 +203,29 @@
                       $('clone-form').insert({ after: form_list_ul_clone });
                       elmt_id_j2t++;
                   }
+
+                  $j('.refer-friend-form').find('.send').on("click", function(e){
+                    
+                    if (dataForm.validator && dataForm.validator.validate()) {
+                      e.preventDefault();
+
+                      var $form =  $j('.refer-friend-form'),
+                          action_url =  $form.attr('action'),
+                          data = $form.serialize();                     
+
+                      $j('#ajax_loader_referral').show();                
+
+                      $j.ajax({
+                        method: "POST",
+                        url: action_url,
+                        data: data
+                      }).done(function( msg ) {
+                          $j('span.ajax_msg_referral').html('<p>Submitted!</p>').show().delay(5000).fadeOut();
+                          $j('#ajax_loader_referral').hide();
+                      });
+                    }
+
+                  });
               </script>            
           </div>
       </form>

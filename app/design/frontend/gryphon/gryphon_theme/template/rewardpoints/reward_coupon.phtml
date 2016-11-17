@@ -243,7 +243,7 @@
                             <?php echo $this->getIllustrationImage()?>
                             <div class="rewards_point_cart">
                                 <?php if (!$this->isCouponPointsRemoved()): ?>
-                                    <?php echo $this->__("This shopping cart is worth %s in rebate(s)", $pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
+                                    <?php echo $this->__("This shopping cart is worth %s in rebates", Mage::helper('core')->currency($pts, true, false));?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
                                 <?php else:?>
                                     <?php echo $this->__("You are currently using a discount code. Therefore, this order will not allow point gathering.");?>
                                 <?php endif;?>
@@ -253,12 +253,16 @@
                             <?php endif;?>
                             <?php echo $login_extra_box;?>
                             <?php if ($points_currently_used > 0):?>
-                            <!-- <p class="used-points-msg"><?php echo $this->__('You are currently using %d point(s) of your %d reward point(s) available.', $points_currently_used, $this->getCustomerPoints()); ?></p> -->
+                            <?php 
+                            $balance = floatval($this->getCustomerPoints()) - floatval($points_currently_used);
+                            $balance = Mage::helper('core')->currency($balance, true, false); 
+                            ?>                            
                             <?php endif;?>
                             <!-- <div class="buttons-set"> -->
                                 <label for="coupon_code">REDEEM REBATE</label>
                                 <div class="input-box test">
                                     <input <?php if($point_details['full_use']):?>type="text"<?php else:?>type="text"<?php endif;?> value="<?php echo $points_currently_used; ?>"  name="points_to_be_used" class="input-text" />
+                                    <p class="used-points-msg">Rebate balance: <?php echo $balance; ?></p>
                                 </div>
                                 <button class="form-button-alt button cta apply" type="button" onclick="discountFormPoints2.submit(false)" value="<?php echo $this->__('Remove Points') ?>"><span><span><?php echo $this->__('Remove') ?></span></span></button>
                             <!-- </div> -->

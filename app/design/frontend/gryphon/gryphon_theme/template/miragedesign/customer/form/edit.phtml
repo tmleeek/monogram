@@ -137,7 +137,7 @@ $telephone = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->
                             <div class="each-input">
                                 <label for="telephone" class="required"><?php echo $this->__('PHONE NO.'); ?><em>*</em></label>
                                 <div class="input-box">
-                                    <input type="text" id="telephone" class="phone_no_input" value="<?php echo $this->escapeHtml($telephone) ?>">
+                                    <input type="text" id="telephone" class="phone_no_input test" value="<?php echo $this->escapeHtml($telephone) ?>">
                                 </div>
 
                             </div>
@@ -280,11 +280,12 @@ $telephone = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->
             // var current_number_without_country_code = current_number.replace('+'+countryCode, '');        
             // $phone_no_2.val(current_number_without_country_code);
 
-            $telephone.intlTelInput({
-                defaultCountry: 'sg',
-                nationalMode: false,
-                autoPlaceholder: false           
-            });
+            // $telephone.intlTelInput({
+            //     defaultCountry: 'sg',
+            //     nationalMode: false,
+            //     autoHideDialCode: true,
+            //     autoPlaceholder: false  
+            // });
         });
     </script>
     <script type="text/javascript">
@@ -293,7 +294,7 @@ $telephone = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->
         jQuery('#form-validate').submit(function(ev) {
             ev.preventDefault(); // to stop the form from submitting;
             if (dataForm.validator &&  dataForm.validator.validate()) {
-                jQuery("#telephone").val(jQuery("#telephone").intlTelInput("getNumber"))
+                // jQuery("#telephone").val(jQ  uery("#telephone").intlTelInput("getNumber"))
                 dataForm.submit();
             }
         });

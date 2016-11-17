@@ -50,7 +50,12 @@
                                 <img class="<?php echo $file_name; ?>" src="<?php echo $this->helper('catalog/image')->init($product, 'small_image')->resize(123, 146); ?>" alt="">
                               <?php endif; ?>
                             </div>
-                            <h3><?php echo $this->getProduct()->getName(); ?>+ <br><?php echo nl2br($this->escapeHtml($_review->getTitle())) ?></h3>
+                            <?php $selection_product_name_arr = ['black tea selection', 'herbal tea selection', 'green tea & oolong selection', 'tea tasting assortment']; ?>
+                            <?php if(!in_array(strtolower($product->getName()), $selection_product_name_arr)): ?>
+                              <h3><?php echo $this->getProduct()->getName(); ?>+ <br><?php echo nl2br($this->escapeHtml($_review->getTitle())) ?></h3>
+                            <?php else: ?>
+                              <h3><?php echo $this->getProduct()->getName(); ?></h3>
+                            <?php endif; ?>
                             <h5><?php echo $this->__('by %s', $this->escapeHtml($_review->getNickname())) ?></h5>
                             <p><?php echo nl2br($this->escapeHtml($_review->getDetail())) ?></p>
                         </div>            

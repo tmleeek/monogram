@@ -31,7 +31,10 @@
  * @see Mage_Customer_Block_Address_Edit
  */
 ?>
-<?php $creating_or_editing_address_type = Mage::app()->getRequest()->getParam('address'); ?>
+<?php 
+$creating_or_editing_address_type = Mage::app()->getRequest()->getParam('address');
+if(empty($creating_or_editing_address_type)) $creating_or_editing_address_type = 'billing';
+?>
 
 <div id="monogram-page-account-details-address-edit-container">
 
@@ -43,7 +46,11 @@
                     <?php if($this->getTitle()): ?>
                         <div class="row">
                             <div class="page-title col-md-12">
-                                <h1><?php echo $this->getTitle() ?></h1>
+                                <?php if($this->getTitle()=="Add New Address"): ?>
+                                <h1><?php echo ($creating_or_editing_address_type=='billing') ? "Add New Billing Address" : "Add New Shipping Address" ?></h1>
+                                <?php else: ?>
+                                <h1><?php echo ($creating_or_editing_address_type=='billing') ? "Edit Billing Address" : "Edit Shipping Address" ?></h1>
+                                <?php endif; ?>
                                 <hr class="small" />
                             </div>
                         </div>
@@ -64,12 +71,12 @@
 
                                 <ul class="form-list">
 
-                                    <div class="each-input">
+                                    <!-- <div class="each-input">
                                         <label for="company"><?php echo $this->__('Company') ?></label>
                                         <div class="input-box">
                                             <input type="text" name="company" id="company" title="<?php echo $this->__('Company') ?>" value="<?php echo $this->escapeHtml($this->getAddress()->getCompany()) ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('company') ?>" />
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="each-input">
                                         <label for="telephone" class="required"><?php echo $this->__('Telephone') ?><em>*</em></label>
                                         <div class="input-box">
@@ -138,7 +145,20 @@
                                         </div>
                                     </li>
                                     <?php endif; ?>
-                                    <li class="fields">
+                                </ul>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <ul class="form-list">
+                                    <li class="field">
+                                        <div class="field address">
+
+                                            <div class="each-input">
+                                                <label for="country" class="required"><?php echo $this->__('Country') ?><em>*</em></label>
+                                                <div class="input-box dropdown dropdown-country">
+                                                    <?php echo $this->getCountryHtmlSelect() ?>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="field">
 
                                             <div class="each-input">
@@ -148,33 +168,6 @@
                                                 </div>
                                             </div>
 
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <ul class="form-list">
-                                    <li class="field">
-                                        <div class="field">
-
-
-                                            <div class="each-input">
-                                                <label for="zip" class="required"><?php echo $this->__('Zip/Postal Code') ?><em>*</em></label>
-                                                <div class="input-box">
-                                                    <input type="text" name="postcode" value="<?php echo $this->escapeHtml($this->getAddress()->getPostcode()) ?>" title="<?php echo $this->__('Zip/Postal Code') ?>" id="zip" class="input-text validate-zip-international <?php echo $this->helper('customer/address')->getAttributeValidationClass('postcode') ?>" />
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-                                        <div class="field address">
-
-                                            <div class="each-input">
-                                                <label for="country" class="required"><?php echo $this->__('Country') ?><em>*</em></label>
-                                                <div class="input-box dropdown dropdown-country">
-                                                    <?php echo $this->getCountryHtmlSelect() ?>
-                                                </div>
-                                            </div>
                                         </div>
                                         <div class="field address">
 
@@ -192,6 +185,18 @@
                                                     <input type="text" id="region" name="region" value="<?php echo $this->escapeHtml($this->getAddress()->getRegion()) ?>"  title="<?php echo $this->__('State/Province') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('region') ?>" />
                                                 </div>
                                             </div>
+
+                                        </div>
+                                        <div class="field">
+
+
+                                            <div class="each-input">
+                                                <label for="zip" class="required"><?php echo $this->__('Zip/Postal Code') ?><em>*</em></label>
+                                                <div class="input-box">
+                                                    <input type="text" name="postcode" value="<?php echo $this->escapeHtml($this->getAddress()->getPostcode()) ?>" title="<?php echo $this->__('Zip/Postal Code') ?>" id="zip" class="input-text validate-zip-international <?php echo $this->helper('customer/address')->getAttributeValidationClass('postcode') ?>" />
+                                                </div>
+                                            </div>
+
 
                                         </div>
                                     </li>                                
@@ -221,8 +226,7 @@
                                                 </label>
                                             </div>
                                         <?php else: ?>
-
-                                            <!-- <input type="hidden" name="default_billing" value="1" /> -->
+                                            <input type="hidden" name="default_billing" value="1" />
                                         <?php endif; ?>
                                     </li>
                                     <?php else: ?>
@@ -283,6 +287,14 @@
         var dataForm = new VarienForm('form-validate', true);
         new CustomRegionUpdater('country', 'region', 'region_id', <?php echo $this->helper('directory')->getRegionJson() ?>, undefined, 'zip');
     //]]>
+
+    $telephone_input = $j('#telephone');
+    $telephone_input.intlTelInput({
+        defaultCountry: 'sg',
+        nationalMode: false,
+        autoHideDialCode: true,
+        autoPlaceholder: false  
+    });
     </script>
 
 

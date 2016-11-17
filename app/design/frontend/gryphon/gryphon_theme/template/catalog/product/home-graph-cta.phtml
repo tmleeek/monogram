@@ -1,0 +1,10 @@
+<div class="cta-container">
+<?php if(Mage::getSingleton('customer/session')->isLoggedIn()): ?>
+  <a href="javascript:void(0);" class="square-cta square-cta-01">Save tea layering</a>
+<?php else: ?>
+  <?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
+  <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta square-cta-01">Visit tea store</a>
+<?php endif; ?>
+  <a href="javascript:void(0);" class="add-both-to-cart square-cta square-cta-02">add both to cart</a>
+  <a href="#selection" class="square-cta square-cta-03">choose another layering</a>
+</div>

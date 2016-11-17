@@ -370,7 +370,9 @@
                             <?php echo implode(' ', array(implode(' ', $_address->getStreet()), $_address->getCity(), $shippingCountryName, $_address->getPostcode())); ?>
                         </p>
                     </td>
-                    <td><a href="<?php echo $this->getAddressEditUrl($_address) ?>" class="set_as_default_billing"><?php echo $this->__('Edit'); ?></a></td>
+                    <td style="text-align: right;"><a href="<?php echo $this->getAddressEditUrl($_address) ?>?address=shipping" class="set_as_default_billing"><?php echo $this->__('Edit'); ?></a>
+                    </td>
+                    <td style="width: 10%;"><a href="<?php echo $this->getDeleteUrl() ?>id/<?php echo $_address->getId() ?>" class="set_as_default_billing"><?php echo $this->__('Remove'); ?></a></td>
                 </tr>
                 <?php $i++; endforeach; ?>
             </tbody>

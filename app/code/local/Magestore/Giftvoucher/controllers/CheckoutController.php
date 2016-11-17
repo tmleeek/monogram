@@ -93,7 +93,7 @@ class Magestore_Giftvoucher_CheckoutController extends Mage_Core_Controller_Fron
                                         $giftVoucher->addToSession($session);
                                         if ($giftVoucher->getCustomerId() == Mage::getSingleton('customer/session')->getCustomerId() && $giftVoucher->getRecipientName() && $giftVoucher->getRecipientEmail() && $giftVoucher->getCustomerId()
                                         ) {
-                                            $session->addNotice($this->__('Please note that gift code "%s" has been sent to your friend. When using, both you and your friend will share the same balance in the gift code.', Mage::helper('giftvoucher')->getHiddenCode($code)));
+                                            // $session->addNotice($this->__('Please note that gift code "%s" has been sent to your friend. When using, both you and your friend will share the same balance in the gift code.', Mage::helper('giftvoucher')->getHiddenCode($code)));
                                         }
                                         if ($flag && $giftVoucher->validate($quote->setQuote($quote))) {
                                             $isGiftVoucher = true;
