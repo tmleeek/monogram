@@ -256,6 +256,15 @@
                             <?php 
                             $balance = floatval($this->getCustomerPoints()) - floatval($points_currently_used);
                             $balance = Mage::helper('core')->currency($balance, true, false); 
+
+                            $baseCurrencyCode = Mage::app()->getStore()->getBaseCurrencyCode(); 
+                            $currentCurrencyCode = Mage::app()->getStore()->getCurrentCurrencyCode();
+                                                          
+                            // convert price from base currency to current currency
+                            $points_currently_used = Mage::helper('directory')->currencyConvert($points_currently_used, $baseCurrencyCode, $currentCurrencyCode);
+
+                            // edited rebate
+                            $points_currently_used = round($points_currently_used, 2);
                             ?>                            
                             <?php endif;?>
                             <!-- <div class="buttons-set"> -->

@@ -19,7 +19,7 @@
 class Rewardpoints_Helper_Event extends Mage_Core_Helper_Abstract
 {
     
-    public function setCreditPoints($points_value){
+    public function setCreditPoints($points_value){        
         Mage::getSingleton('rewardpoints/session')->setCreditPoints($points_value);
     }
 
@@ -28,7 +28,9 @@ class Rewardpoints_Helper_Event extends Mage_Core_Helper_Abstract
         if ($quote == null){
              $quote = Mage::helper('checkout/cart')->getCart()->getQuote();
         }
-        return ceil($quote->getRewardpointsQuantity());
+
+        // edited rebate
+        return round($quote->getRewardpointsQuantity(), 2);
     }
     
     public function removeCreditPoints($quote = null, $no_save = false){

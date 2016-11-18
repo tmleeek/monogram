@@ -160,6 +160,17 @@ class Rewardpoints_IndexController extends Mage_Core_Controller_Front_Action
         $checkout_session = Mage::getSingleton('checkout/session');
         $points_value = $this->getRequest()->getPost('points_to_be_used');
 
+
+        // edited rebate
+        $baseCurrencyCode = Mage::app()->getStore()->getBaseCurrencyCode(); 
+        $currentCurrencyCode = Mage::app()->getStore()->getCurrentCurrencyCode();
+
+        $allowedCurrencies = Mage::getModel('directory/currency')->getConfigAllowCurrencies();
+        $rates = Mage::getModel('directory/currency')->getCurrencyRates($baseCurrencyCode, array_values($allowedCurrencies));
+        // the price converted
+        $points_value = $points_value/$rates[$currentCurrencyCode];
+        $points_value = number_format($points_value, 2, '.', '');
+
         if (!Mage::helper('giftvoucher')->getGeneralConfig('use_with_coupon') && ($checkout_session->getUseGiftCreditAmount() > 0 || $checkout_session->getGiftVoucherDiscount() > 0)) {
             $checkout_session->addNotice(Mage::helper('giftvoucher')->__('You cannot apply gift codes with the rebate.'));
         } else {
@@ -186,7 +197,7 @@ class Rewardpoints_IndexController extends Mage_Core_Controller_Front_Action
         if (empty($refererUrl)) {
             $refererUrl = empty($defaultUrl) ? Mage::getBaseUrl() : $defaultUrl;
         }
-        $this->getResponse()->setRedirect($refererUrl);
+        $this->getResponse()->setRedirect($refererUrl.'?test='.$points_value);
     }
 
     public function preDispatch()

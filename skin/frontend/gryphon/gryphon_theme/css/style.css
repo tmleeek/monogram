@@ -7926,7 +7926,7 @@ input:-webkit-autofill {
   margin-left: -32.5px;
 }
 #page-preloader #page-preloader-monogram-name {
-  margin-left: 16px;
+  margin-left: -56px;
   display: block;
   width: 111px;
   height: 16px;
@@ -7937,7 +7937,7 @@ input:-webkit-autofill {
   vertical-align: middle;
   position: absolute;
   top: 50%;
-  left: 44.5%;
+  left: 50%;
   margin-top: 10px;
 }
 .image-container {

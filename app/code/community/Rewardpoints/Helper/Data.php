@@ -1307,6 +1307,9 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
 
         $totals = Mage::getSingleton('checkout/session')->getQuote()->getTotals();
 
+        // print_r($totals["discount"]->getValue());
+        // print_r($totals["subtotal"]->getValue());
+
         if(isset($totals["discount"])) {
             $totalDiscount = $totals["discount"]->getValue();    
         }        
@@ -1315,11 +1318,12 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
             $subtotal = $totals["subtotal"]->getValue();
         }
         
-        if(!empty($subtotal) && !empty($totalDiscount)) {
+        if(!empty($subtotal)) {
 
-            $totalDiscount = abs($totalDiscount);
-
-            $subtotal_after_discount = $subtotal - $totalDiscount;
+            if(!empty($totalDiscount)) {
+                $totalDiscount = abs($totalDiscount);
+                $subtotal = $subtotal - $totalDiscount;
+            }
 
             $baseCurrencyCode = Mage::app()->getStore()->getBaseCurrencyCode(); 
             $currentCurrencyCode = Mage::app()->getStore()->getCurrentCurrencyCode();
@@ -1328,25 +1332,25 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
 
             $min_amount_to_give_discount_2 = Mage::helper('directory')->currencyConvert(150, $baseCurrencyCode, $currentCurrencyCode);
 
-            $points_to_give_for_discount_1 = Mage::helper('directory')->currencyConvert(80, $baseCurrencyCode, $currentCurrencyCode);
+            $points_to_give_for_discount_1 = 80; // no need to change currency caz points is in base currency & conver will do once on display reward_coupon.phtml
 
-            $points_to_give_for_discount_2 = Mage::helper('directory')->currencyConvert(40, $baseCurrencyCode, $currentCurrencyCode);
+            $points_to_give_for_discount_2 = 40;
 
             // echo $min_amount_to_give_discount_1 . " >> ";
             // echo $min_amount_to_give_discount_2 . " >> ";
-            // echo $subtotal_after_discount . " >> ";
+            // echo $subtotal . " >> ";
             // echo $points_to_give_for_discount_1 . " >> ";
             // echo $points_to_give_for_discount_2 . " >> ";
             // echo $points . " >> ";
 
-            if($subtotal_after_discount > $min_amount_to_give_discount_1) {
+            if($subtotal > $min_amount_to_give_discount_1) {
                 $points = $points + $points_to_give_for_discount_1;
-            } else if($subtotal_after_discount > $min_amount_to_give_discount_2) {
+            } else if($subtotal > $min_amount_to_give_discount_2) {
                 $points = $points + $points_to_give_for_discount_2;
             }
 
             // echo $points;
-        } 
+        }
         
         return round($points*0.1); // 10 percent
     }
