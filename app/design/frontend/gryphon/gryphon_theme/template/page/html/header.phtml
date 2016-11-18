@@ -330,13 +330,13 @@ $quoteData= $quote->getData();
           </div>
           <div id="desktop-header-menu-conainer">
           	<?php 
-							$currentUrl = Mage::helper('core/url')->getCurrentUrl();
-							$url = Mage::getSingleton('core/url')->parseUrl($currentUrl);
-							$path = $url->getPath();
+							// $currentUrl = Mage::helper('core/url')->getCurrentUrl();
+							// $url = Mage::getSingleton('core/url')->parseUrl($currentUrl);
+							// $path = $url->getPath();
 
-							if (strpos($path,'checkout') === false) {
+							// if (strpos($path,'checkout') === false) {
 								echo $this->getChildHtml('topMenu');
-							}
+							// }
 						?>
           </div>
         </div>
@@ -386,8 +386,9 @@ $quoteData= $quote->getData();
 		          </ul>
 		        <?php else: ?>
 		        	<ul>
-		        		<li><a href="<?php echo $this->getUrl('shipping-info') ?>">Shipping Information</a></li>
-		        		<li><a href="<?php echo $this->getUrl('faq') ?>">FAQ</a></li>
+		        		<li><a href="<?php echo $this->getUrl('shipping-info') ?>" class="text">Shipping Information</a></li>
+		        		<li><a href="<?php echo $this->getUrl('faq') ?>" class="text">FAQ</a></li>
+		        		<li><a href="#" class="menu-opener fa fa-bars" id="desktop-header-menu-btn"></a></li>
 		        	</ul>
 						<?php endif; ?>
 					?>

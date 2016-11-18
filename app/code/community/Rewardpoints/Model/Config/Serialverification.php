@@ -80,15 +80,16 @@ class Rewardpoints_Model_Config_Serialverification extends Mage_Core_Model_Confi
             
             $version = Mage::getConfig()->getModuleConfig("Rewardpoints")->version;
             $version_array = explode('.', $version);
-            $module_branch_version = $version_array[0].'.'.$version_array[1];
+            // $module_branch_version = $version_array[0].'.'.$version_array[1];
+            $module_branch_version = 1.8;
             $module_key = $current_key;
             
-            $url = "http://www.".base64_decode("ajJ0LWRlc2lnbi5uZXQ=")."/j2tmoduleintegrity/index/checkIntegrityNew/version/$module_branch_version/serial/$module_key/code/rewardpoints/domain/$domain";
+            $url = "http://www.".base64_decode("ajJ0LWRlc2lnbi5uZXQ=")."/j2tmoduleintegrity/index/checkIntegrityNew/version/$module_branch_version/serial/$module_key/code/rewardpoints/domain/$domain";            
             
             $curl = new Varien_Http_Adapter_Curl();
             $curl->setConfig(array(
                 'timeout'   => 20
-            ));
+            ));            
 
             $curl->write(Zend_Http_Client::GET, $url, '1.0');
             $data = $curl->read();
