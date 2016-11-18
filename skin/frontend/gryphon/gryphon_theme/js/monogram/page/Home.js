@@ -55,6 +55,9 @@ monogram.page.Home = function(options, element) {
 
   this.graph_section = null;
   //this.mobile_graph_section = null;
+  
+
+
 
 };
 goog.inherits(monogram.page.Home, monogram.page.Default);
@@ -383,12 +386,53 @@ monogram.page.Home.prototype.create_graph = function() {
 
 
 
+
+
+
+
+
+
+
+
+
 //    __  __  ___  ____ ___ _     _____
 //   |  \/  |/ _ \| __ )_ _| |   | ____|
 //   | |\/| | | | |  _ \| || |   |  _|
 //   | |  | | |_| | |_) | || |___| |___
 //   |_|  |_|\___/|____/___|_____|_____|
 //
+
+
+
+
+//    __  __  ___  ____ ___ _     _____   ____ ___ ____  ____  _        _ __   __
+//   |  \/  |/ _ \| __ )_ _| |   | ____| |  _ \_ _/ ___||  _ \| |      / \\ \ / /
+//   | |\/| | | | |  _ \| || |   |  _|   | | | | |\___ \| |_) | |     / _ \\ V /
+//   | |  | | |_| | |_) | || |___| |___  | |_| | | ___) |  __/| |___ / ___ \| |
+//   |_|  |_|\___/|____/___|_____|_____| |____/___|____/|_|   |_____/_/   \_\_|
+//
+
+
+
+monogram.page.Home.prototype.display_mobile_intro_section = function() {
+
+  this.body.removeClass('mobile-home-tea-layering-version');
+  this.body.removeClass('mobile-home-graph-version');
+
+};
+monogram.page.Home.prototype.display_mobile_selection_section = function() {
+
+  this.body.addClass('mobile-home-tea-layering-version');
+  this.body.removeClass('mobile-home-graph-version');
+
+};
+monogram.page.Home.prototype.display_mobile_graph_section = function() {
+
+  this.body.removeClass('mobile-home-tea-layering-version');
+  this.body.addClass('mobile-home-graph-version');
+
+};
+
 
 
 
@@ -487,12 +531,29 @@ monogram.page.Home.prototype.update_page_layout = function() {
 monogram.page.Home.prototype.scroll_to_target = function(str_param, str_param_2, str_param_3) {
   monogram.page.Home.superClass_.scroll_to_target.call(this, str_param, str_param_2, str_param_3);
 
-  if (str_param == 'intro') {
-    this.display_intro_section();
-  } else if (str_param == 'selection') {
-    this.display_selection_section();
-  } else if (str_param == 'graph') {
-    this.display_graph_section();
+
+  if (manic.IS_MOBILE == true) {
+
+    // MOBILE DISPLAY
+    if (str_param == 'intro') {
+      this.display_mobile_intro_section();
+    } else if (str_param == 'selection') {
+      this.display_mobile_selection_section();
+    } else if (str_param == 'graph') {
+      this.display_mobile_graph_section();
+    }
+
+  } else {
+
+    // DESKTOP DISPLAY
+    if (str_param == 'intro') {
+      this.display_intro_section();
+    } else if (str_param == 'selection') {
+      this.display_selection_section();
+    } else if (str_param == 'graph') {
+      this.display_graph_section();
+    }
+
   }
 
 
@@ -523,15 +584,17 @@ monogram.page.Home.prototype.on_scroll_to_no_target = function(){
 
   monogram.page.Home.superClass_.on_scroll_to_no_target.call(this);
 
-  this.display_intro_section();
+  if (manic.IS_MOBILE == true) {
 
-  // Mice venue landing
-  /*
-  if(manic.IS_MOBILE == true && this.is_mice_venue_landing == true){
-    // console.log('go home!!');
-    this.mice_landing_mobile_both_close();
+    this.display_mobile_intro_section();
+
+  } else {
+
+    // DESKTOP DISPLAY
+    this.display_intro_section();
+
   }
-  */
+
 
 };
 

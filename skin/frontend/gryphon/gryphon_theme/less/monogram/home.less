@@ -528,3 +528,112 @@
   visibility: hidden;
   .opacity(0);
 }
+
+
+//    _   _ _   _ ____  _____ ____     ____ ___  _   _ ____ _____ ____  _   _  ____ _____ ___ ___  _   _
+//   | | | | \ | |  _ \| ____|  _ \   / ___/ _ \| \ | / ___|_   _|  _ \| | | |/ ___|_   _|_ _/ _ \| \ | |
+//   | | | |  \| | | | |  _| | |_) | | |  | | | |  \| \___ \ | | | |_) | | | | |     | |  | | | | |  \| |
+//   | |_| | |\  | |_| | |___|  _ <  | |__| |_| | |\  |___) || | |  _ <| |_| | |___  | |  | | |_| | |\  |
+//    \___/|_| \_|____/|_____|_| \_\  \____\___/|_| \_|____/ |_| |_| \_\\___/ \____| |_| |___\___/|_| \_|
+//
+
+#under-construction-disclaimer{
+
+  z-index: 200000;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 90px;
+  height: 40px;
+
+  background: @black;
+
+  p{
+    .body-font;
+
+    font-size: 10px;
+    line-height: 10px;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+// TABLET PORTRAIT & SMALL DESKTOP
+@media only screen and (max-width: 991px) {
+  #under-construction-disclaimer{
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+//    __  __  ___  ____ ___ _     _____
+//   |  \/  |/ _ \| __ )_ _| |   | ____|
+//   | |\/| | | | |  _ \| || |   |  _|
+//   | |  | | |_| | |_) | || |___| |___
+//   |_|  |_|\___/|____/___|_____|_____|
+//
+
+
+
+#home-mobile-landing-section{
+  display: none;
+}
+
+#home-mobile-tea-layering-section{
+  display: none;
+}
+
+
+
+#tea-layering-detail-graph-section,
+#tea-layering-detail-copy-section,
+#tea-layering-detail-footer-mobile-fixed,
+#tea-layering-detail-footer-mobile-spacer,
+#tea-layering-detail-footer-mobile{
+  display: none;
+}
+
+
+
+
+
+
+
+// TABLET PORTRAIT & SMALL DESKTOP
+@media only screen and (max-width: 991px) {
+
+  #home-mobile-landing-section{
+    display: block;
+  }
+
+  body.mobile-home-tea-layering-version{
+    #home-mobile-landing-section{
+      display: none;
+    }
+    #home-mobile-tea-layering-section{
+      display: block;
+    }
+  }
+  body.mobile-home-graph-version{
+    #home-mobile-landing-section{
+      display: none;
+    }
+    #tea-layering-detail-graph-section,
+    #tea-layering-detail-copy-section,
+    #tea-layering-detail-footer-mobile-fixed,
+    #tea-layering-detail-footer-mobile-spacer,
+    #tea-layering-detail-footer-mobile{
+      display: block;
+    }
+  }
+
+}
