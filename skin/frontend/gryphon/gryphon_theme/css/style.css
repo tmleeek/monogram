@@ -5912,7 +5912,7 @@ p {
   height: 30px;
   text-align: center;
   vertical-align: middle;
-  padding-top: 2px;
+  padding-top: 5px;
   font-size: 11px;
   color: #6b615b;
 }
@@ -9697,16 +9697,25 @@ body.tea-layering-detail-page {
 }
 .home-tea-item .home-tea-item-text {
   position: absolute;
-  top: 12px;
-  bottom: 12px;
-  left: 12px;
-  right: 12px;
+  /*
+		top: 12px;
+		bottom: 12px;
+		left: 12px;
+		right: 12px;
+    */
   background: #7b706b;
   text-align: left;
-  padding-top: 39px;
-  padding-bottom: 10px;
-  padding-left: 25px;
-  padding-right: 25px;
+  /*
+		padding-top: 39px;
+		padding-bottom: 10px;
+		padding-left: 25px;
+		padding-right: 25px;
+    */
+  top: 5.5%;
+  bottom: 5.5%;
+  left: 3.3%;
+  right: 3.3%;
+  padding: 8% 8%;
 }
 .home-tea-item h2 {
   font-family: 'Brandon Grotesque Black', "Arial Black", Gadget, sans-serif;
@@ -9734,7 +9743,7 @@ body.tea-layering-detail-page {
 }
 .home-tea-item .cta-container {
   position: absolute;
-  bottom: 24px;
+  bottom: 15px;
   left: 22px;
   right: 22px;
   text-align: right;
@@ -10310,22 +10319,36 @@ body.tea-layering-detail-page {
   background: #827773;
   height: 70px;
 }
+#tea-layering-section-1 #monogram-tea-layering-title {
+  padding-top: 73px;
+}
 #tea-layering-section-1 #heading-text h1 {
   color: #f1efee;
-  text-transform: uppercase;
   text-align: center;
   margin-bottom: 30px;
+  font-family: 'Brandon Grotesque Black', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 32px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
 }
 #tea-layering-section-1 #heading-text p {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0em;
   text-align: center;
   color: #f1efee;
-  width: 55%;
+  width: 80%;
   margin: 0 auto;
-  font-size: 14px;
-  color: #ffffff;
 }
 #tea-layering-section-1 #tea-layering-table {
-  margin-top: 60px;
+  margin-top: 51px;
 }
 #tea-layering-section-1 #tea-layering-table hr {
   border-color: #918985;
@@ -10926,12 +10949,15 @@ body.tea-layering-detail-page {
   text-align: center;
   text-transform: uppercase;
   padding-bottom: 45px;
+  font-size: 16px;
+  letter-spacing: 0.08em;
 }
 #tea-product-detail-section-2 h3 {
   text-transform: uppercase;
   text-align: center;
   color: #6b615b;
   font-size: 12px;
+  line-height: 16px;
   padding-bottom: 10px;
 }
 #tea-product-detail-section-2 h3 sup {
@@ -10947,10 +10973,10 @@ body.tea-layering-detail-page {
 #tea-product-detail-section-2 p {
   text-align: center;
   color: #6b615b;
-  font-size: 10px;
-  line-height: 16px;
+  font-size: 12px;
+  line-height: 18px;
   margin-bottom: 24px;
-  width: 150px;
+  width: 85%;
   margin: 0 auto;
 }
 #tea-product-detail-section-3 {
@@ -10965,6 +10991,8 @@ body.tea-layering-detail-page {
   text-align: center;
   text-transform: uppercase;
   padding-bottom: 45px;
+  font-size: 16px;
+  letter-spacing: 0.08em;
 }
 #tea-product-detail-section-3 h3 {
   font-family: 'Brandon Grotesque Black', "Arial Black", Gadget, sans-serif;
@@ -11010,7 +11038,7 @@ body.tea-layering-detail-page {
   height: 113px;
   font-size: 12px;
   color: #ffffff;
-  padding-top: 7px;
+  padding-top: 10px;
   resize: vertical;
 }
 #tea-product-detail-section-3 p {
@@ -11275,23 +11303,32 @@ body.tea-layering-detail-page {
   overflow: visible;
 }
 #monogram-experience-section-1 #monogram-experience-heading-text {
-  margin-bottom: 77px;
+  padding-top: 73px;
+  padding-bottom: 73px;
 }
 #monogram-experience-section-1 #monogram-experience-heading-text h1 {
   color: #f1efee;
-  text-transform: uppercase;
   text-align: center;
-  margin-bottom: 20px;
   font-family: 'Brandon Grotesque Black', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 26px;
-  line-height: 30px;
+  line-height: 32px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
 }
 #monogram-experience-section-1 #monogram-experience-heading-text p {
   text-align: center;
+  color: #f1efee;
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
   font-size: 14px;
-  color: #ffffff;
+  line-height: 22px;
+  letter-spacing: 0em;
+  width: 80%;
+  margin: 0 auto;
 }
 #monogram-experience-section-1 .container-fluid {
   padding: 0px;
@@ -11366,7 +11403,7 @@ body.tea-layering-detail-page {
   padding: 0px;
 }
 #monogram-service-section-1 .monogram-service-text-container h1 {
-  color: #f1efee;
+  color: #ffffff;
   text-transform: uppercase;
   text-align: left;
   margin-bottom: 20px;
@@ -11376,12 +11413,13 @@ body.tea-layering-detail-page {
   margin-bottom: 30px;
 }
 #monogram-service-section-1 .monogram-service-text-container h4 {
-  color: #f1efee;
+  color: #ffffff;
   text-transform: uppercase;
 }
 #monogram-service-section-1 .monogram-service-text-container p {
+  font-size: 13px;
   text-align: left;
-  color: #f1efee;
+  color: #ffffff;
 }
 #monogram-service-section-1 #monogram-service-col-1 #monogram-service-img-content {
   background: url(../images/monogram_service/monogram-service-content-1.jpg) no-repeat;
@@ -12690,6 +12728,12 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar h4 {
   letter-spacing: 0.08em;
   color: #6b615b;
   margin-bottom: 9px;
+  -moz-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  -webkit-opacity: 0.8;
+  opacity: 0.8;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+  filter: alpha(opacity=80);
 }
 body.monogram-page-account-details #content-wrapper .col-right.sidebar strong {
   color: #989779 !important;
@@ -12828,13 +12872,13 @@ body.monogram-page-account-details #content-wrapper .col-main .pager .dropdown {
 }
 body.monogram-page-account-details #content-wrapper .col-main .pager .dropdown select {
   width: 100%;
-  font-family: 'Brandon Grotesque Regular', "Arial Black", Gadget, sans-serif;
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #f1efee;
+  color: #ffffff;
   background: transparent;
   outline: none;
   border: none;
@@ -12890,13 +12934,13 @@ body.monogram-page-account-details #content-wrapper .col-main .pager .limiter .d
   margin-right: 6px;
 }
 body.monogram-page-account-details #content-wrapper .col-main .pager .limiter p {
-  font-family: 'Brandon Grotesque Regular', "Arial Black", Gadget, sans-serif;
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #f1efee;
+  color: #ffffff;
   display: inline-block;
   vertical-align: top;
   *display: inline;
@@ -12912,10 +12956,10 @@ body.monogram-page-account-details #content-wrapper .col-main .pager .pages ol {
   font-size: 0;
 }
 body.monogram-page-account-details #content-wrapper .col-main .pager .pages ol li {
-  font-family: 'Brandon Grotesque Regular', "Arial Black", Gadget, sans-serif;
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 20px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -12930,10 +12974,10 @@ body.monogram-page-account-details #content-wrapper .col-main .pager .pages ol l
   width: auto;
 }
 body.monogram-page-account-details #content-wrapper .col-main .pager .pages ol li a {
-  font-family: 'Brandon Grotesque Regular', "Arial Black", Gadget, sans-serif;
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 20px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -12989,9 +13033,6 @@ body.monogram-page-account-details #content-wrapper .col-main .back-link {
   padding-top: 30px;
 }
 body.monogram-page-account-details #content-wrapper .col-main .back-link a {
-  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
-  font-style: normal;
-  font-weight: 400;
   font-size: 10px;
   line-height: 25px;
   text-transform: uppercase;
@@ -13023,6 +13064,10 @@ body.monogram-page-account-details #content-wrapper .col-main .back-link a {
     .transition-in(0.3s);
   }
   */
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #ffffff;
 }
 body.monogram-page-account-details #content-wrapper .col-main .back-link a:before {
   font-size: 8px;
@@ -13136,13 +13181,14 @@ body.monogram-page-account-details #content-wrapper .col-main .each-input p.subs
   display: block;
 }
 body.monogram-page-account-details #content-wrapper .col-main .each-input label {
-  font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
   line-height: 20px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: #ffffff;
   display: inline-block;
   vertical-align: top;
   *display: inline;
@@ -13385,7 +13431,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 20px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -13406,8 +13452,8 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   margin-left: -80px;
   margin-right: -50px;
   padding-left: 80px;
-  padding-right: 50px;
-  margin-bottom: 40px;
+  padding-right: 30px;
+  margin-bottom: 60px;
 }
 #monogram-page-account-details-address-header a {
   color: #ffffff;
@@ -13426,7 +13472,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 20px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -13448,18 +13494,18 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
 }
 #monogram-page-account-details-address-header .each-billing-detail,
 #monogram-page-account-details-address-header .each-shipping-detail {
-  margin-bottom: 11px;
+  margin-bottom: 15px;
 }
 #monogram-page-account-details-address-header .each-billing-detail h2,
 #monogram-page-account-details-address-header .each-shipping-detail h2 {
-  font-family: 'Brandon Grotesque Regular', "Arial Black", Gadget, sans-serif;
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
   line-height: 20px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #f1efee;
+  color: #ffffff;
   margin-bottom: -1px;
 }
 #monogram-page-account-details-address-header .each-billing-detail p,
@@ -13467,9 +13513,9 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 20px;
-  color: #f1efee;
+  color: #ffffff;
 }
 #monogram-page-account-details-address-header .billing-and-shipping .billing-address {
   margin-top: 0px !important;
@@ -13502,7 +13548,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 20px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -13517,7 +13563,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   color: #ffffff;
 }
 #monogram-page-account-details-other-shipping-address-container p.billing_address_no {
-  font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -13534,8 +13580,8 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   width: 100%;
 }
 #monogram-page-account-details-other-shipping-address-container .table-responsive table tbody tr td {
-  padding-top: 9px;
-  padding-bottom: 4px;
+  padding-top: 10px;
+  padding-bottom: 7px;
   border-bottom: 1px solid #ffffff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
@@ -13592,7 +13638,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
     */
 }
 #monogram-page-account-details-other-shipping-address-container .table-responsive table tbody tr td:first-child {
-  padding-left: 24px;
+  padding-left: 20px;
 }
 #monogram-page-account-details-other-shipping-address-container .table-responsive table tbody tr td:last-child {
   text-align: right;
@@ -13632,7 +13678,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 20px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -13669,7 +13715,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 20px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -13685,11 +13731,11 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-bottom: 1px solid #ffffff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  padding-top: 4px;
-  padding-bottom: 3px;
+  padding-top: 9px;
+  padding-bottom: 8px;
 }
 #monogram-page-account-details-order-history .custom-order-content-header p {
-  font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -13697,6 +13743,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-align: center;
+  color: #ffffff;
 }
 #monogram-page-account-details-order-history .custom-order-content-header p.product-header {
   text-align: left;
@@ -13746,7 +13793,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   *zoom: 1;
   background: #989779;
   padding-top: 58px;
-  padding-bottom: 58px;
+  padding-bottom: 53px;
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
@@ -13775,7 +13822,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 20px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -13803,7 +13850,6 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-  height: auto;
   line-height: 20px;
   display: inline-block;
   vertical-align: top;
@@ -13812,7 +13858,9 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   margin-right: 20px;
   float: right;
   position: relative;
-  top: 5px;
+  padding-top: 5px;
+  height: 30px;
+  top: -5px;
 }
 #monogram-page-account-giftcard-container .customer-account-giftcard > .page-title a:focus,
 #monogram-page-account-giftcard-container .customer-account-giftcard > .page-title a:hover {
@@ -13983,7 +14031,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 20px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -14168,7 +14216,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 20px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -14180,13 +14228,14 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   padding-bottom: 3px;
 }
 #monogram-page-account-reward-points-container #my-rewardpoints-table .each-input h2 {
-  font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
   line-height: 20px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: #ffffff;
   display: block;
   margin-bottom: 7px;
   width: 100%;
@@ -14268,7 +14317,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 20px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -14301,7 +14350,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 20px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -14502,7 +14551,7 @@ body.monogram-subscription-page {
   display: none;
 }
 #monogram-subscription-title-section {
-  background: #6b615b;
+  background: #7b706b;
   padding-top: 73px;
   padding-bottom: 73px;
 }
@@ -14527,6 +14576,8 @@ body.monogram-subscription-page {
   font-size: 14px;
   line-height: 22px;
   letter-spacing: 0em;
+  width: 80%;
+  margin: 0 auto;
 }
 #monogram-subscription-content-section .container-fluid {
   padding: 0;
@@ -14540,13 +14591,13 @@ body.monogram-subscription-page {
   padding: 0 60px;
 }
 #monogram-subscription-content-image {
-  height: 600px;
+  height: 621px;
 }
 #monogram-subscription-content-image .manic-image-container {
-  height: 600px;
+  height: 621px;
 }
 #monogram-subscription-content-copy {
-  height: 600px;
+  height: 621px;
   color: #f1efee;
   padding-top: 79px;
 }
@@ -14570,10 +14621,11 @@ body.monogram-subscription-page {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 22px;
   letter-spacing: 0em;
   padding: 0 15px;
+  margin: 0 15%;
 }
 #monogram-subscription-content-copy .table-responsive {
   width: 100%;
@@ -14596,8 +14648,8 @@ body.monogram-subscription-page {
   text-align: center;
   border-bottom: 1px solid #ffffff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  padding-top: 4px;
-  padding-bottom: 3px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 #monogram-subscription-content-copy .table-responsive table thead tr th:first-child {
   padding-left: 24px;
@@ -14610,12 +14662,12 @@ body.monogram-subscription-page {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 20px;
   color: #ffffff;
   text-align: center;
   padding-top: 5px;
-  padding-bottom: 5px;
+  padding-bottom: 25px;
   border: none;
 }
 #monogram-subscription-content-copy .table-responsive table tbody tr td:first-child {
@@ -14789,7 +14841,7 @@ body.monogram-page-faq {
   padding-right: 29px;
 }
 #monogram-page-faq-content-header h4 {
-  font-family: 'Brandon Grotesque Medium', "Arial Black", Gadget, sans-serif;
+  font-family: 'Brandon Grotesque Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -14825,8 +14877,8 @@ body.monogram-page-faq {
 .monogram-page-faq-content-item {
   border-bottom: 1px solid #ffffff !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
-  padding-top: 27px;
-  padding-bottom: 18px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 .monogram-page-faq-content-item:last-child {
   border-bottom: none !important;

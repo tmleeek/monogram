@@ -44,7 +44,11 @@ $_helper = $this->helper('catalog/output');
     $count = 1;
     foreach($upsell_product as $_upsell):
       //get detail of single upsell prdocut using upsell product id
-      $upsp = $object->load($_upsell->getId());        
+      $upsp = $object->load($_upsell->getId());
+
+      $upsp_name = $upsp->getName();
+      $upsp_name = strtolower($upsp_name);
+      $upsp_name = str_replace(" ", "-", $upsp_name);
     ?>      
     <div class="row">
       <div class="col-md-5 tea-layering-table-text">
@@ -61,7 +65,7 @@ $_helper = $this->helper('catalog/output');
       </div>
       <div class="col-md-6 tea-layering-table-text">
         <div class="tea-layering-text">
-          <a href="/#graph/<?php echo $product_name; ?>" class="tea-layering-text-link">See tea recommendation >></a>
+          <a href="/#graph/<?php echo $product_name; ?>/<?php echo $upsp_name; ?>" class="tea-layering-text-link">See Layering Suggestions >></a>
           <span><?php echo $upsp->getDescription(); ?></span>
         </div> 
       </div>

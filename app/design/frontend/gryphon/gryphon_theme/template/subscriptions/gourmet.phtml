@@ -187,10 +187,12 @@
 										$_productsingpur = Mage::getModel('catalog/product')->load($_productId);
 										
 										$nameStart = substr($_helper->productAttribute($_productsingpur, $_productsingpur->getName() , 'name'), 0,2);
-										$monthtext = ' MONTHS';
+                    // $monthtext = ' MONTHS';
+										$monthtext = ' Months';
 										if($cnt == 1)
 										{
-											$monthtext = ' MONTH';
+                      // $monthtext = ' MONTH';
+											$monthtext = ' Month';
 									
 											$equivalent = ($_productsingpur->getPrice()/1);
                       $discount_percentage = '7%';

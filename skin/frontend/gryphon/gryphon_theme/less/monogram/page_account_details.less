@@ -149,6 +149,7 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar{
 
 
     margin-bottom: 9px;
+    .opacity(0.8);
   }
 
   strong{
@@ -336,11 +337,13 @@ body.monogram-page-account-details #content-wrapper .col-main{
       select{
         width: 100%;
 
-        .subheader-font-2;
+        // .subheader-font-2;
+        .header-font;
         font-size: 10px;
         text-transform: uppercase;
         letter-spacing: 0.08em;
-        color: @off-white;
+        // color: @off-white;
+        color: @white;
 
 
         background: transparent;
@@ -404,13 +407,13 @@ body.monogram-page-account-details #content-wrapper .col-main{
         margin-right: 6px;
       }
       p{
-        
-
-        .subheader-font-2;
+        // .subheader-font-2;
+        .header-font;
         font-size: 10px;
         text-transform: uppercase;
         letter-spacing: 0.08em;
-        color: @off-white;
+        // color: @off-white;
+        color: @white;
 
         .display-inline-block;
         position: relative;
@@ -426,8 +429,11 @@ body.monogram-page-account-details #content-wrapper .col-main{
         font-size: 0;
 
         li{
-          .subheader-font-2;
-          font-size: 10px;
+          // .subheader-font-2;
+          .header-font;
+          // font-size: 10px;
+          font-size: 12px;
+
           line-height: 20px;
           text-transform: uppercase;
           letter-spacing: 0.08em;
@@ -447,8 +453,11 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
 
           a{
-            .subheader-font-2;
-            font-size: 10px;
+            // .subheader-font-2;
+            .header-font;
+            // font-size: 10px;
+            font-size: 12px;
+            
             line-height: 20px;
             text-transform: uppercase;
             letter-spacing: 0.08em;
@@ -521,6 +530,9 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
     a{
       .reverse-arrow-cta;
+
+      .header-font;
+      color: @white;
 
       small{
         display: none;
@@ -631,11 +643,13 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
 
     label{
-      .subheader-font;
+      // .subheader-font;
+      .header-font;
       font-size: 10px;
       line-height: 20px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      color: @white;
 
       .display-inline-block;
       width: 40%;
@@ -899,7 +913,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
     h1{
       .header-font;
-      font-size: 14px;
+      // font-size: 14px;
+      font-size: 15px;
       line-height: 20px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -942,9 +957,13 @@ body.monogram-page-account-details #content-wrapper .col-main{
   margin-right: -10px - 40px;
 
   padding-left: 10px + 70px;
-  padding-right: 10px + 40px;
+  // padding-right: 10px + 40px;
+  // margin-bottom: 40px;
+  
+  padding-right: 30px;
+  margin-bottom: 60px;
 
-  margin-bottom: 40px;
+  
 
   a{
     color: @white;
@@ -958,7 +977,9 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
   h1{
     .header-font;
-    font-size: 14px;
+    // font-size: 14px;
+    font-size: 15px;
+
     line-height: 20px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -981,23 +1002,28 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
   .each-billing-detail,
   .each-shipping-detail{
-    margin-bottom: 11px;
+    // margin-bottom: 11px;
+    margin-bottom: 15px;
 
     h2{
-      .subheader-font-2;
+      // .subheader-font-2;
+      .header-font;
       font-size: 10px;
       line-height: 20px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: @off-white;
+      // color: @off-white;
+      color: @white;
 
       margin-bottom: -1px;
     }
     p{
       .body-font;
-      font-size: 10px;
+      // font-size: 10px;
+      font-size: 12px;
       line-height: 20px;
-      color: @off-white;
+      // color: @off-white;
+      color: @white;
     }
 
   }
@@ -1037,7 +1063,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
   h2{
     .header-font;
-    font-size: 14px;
+    // font-size: 14px;
+    font-size: 15px;
     line-height: 20px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -1054,7 +1081,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
     // &.address-name{
     &.billing_address_no{
 
-      .subheader-font;
+      // .subheader-font;
+      .header-font;
       font-size: 10px;
       line-height: 20px;
       letter-spacing: 0.08em;
@@ -1077,8 +1105,11 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
           td{
 
-            padding-top: 9px;
-            padding-bottom: 4px;
+            // padding-top: 9px;
+            // padding-bottom: 4px;
+
+            padding-top: 10px;
+            padding-bottom: 7px;
 
             border-bottom: 1px solid @white;
             border-bottom: 1px solid fade(@white, 50%);
@@ -1088,7 +1119,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
             }
 
             &:first-child{
-              padding-left: 24px;
+              // padding-left: 24px;
+              padding-left: 20px;
             }
             &:last-child{
               text-align: right;
@@ -1156,7 +1188,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
     h1{
       .header-font;
-      font-size: 14px;
+      // font-size: 14px;
+      font-size: 15px;
       line-height: 20px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -1222,7 +1255,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
     h1{
       .header-font;
-      font-size: 14px;
+      // font-size: 14px;
+      font-size: 15px;
       line-height: 20px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -1244,18 +1278,23 @@ body.monogram-page-account-details #content-wrapper .col-main{
     border-bottom: 1px solid @white;
     border-bottom: 1px solid fade(@white, 50%);
 
-    padding-top: 4px;
-    padding-bottom: 3px;
+    // padding-top: 4px;
+    // padding-bottom: 3px;
+
+    padding-top: 9px;
+    padding-bottom: 8px;
 
 
     p{
-      .subheader-font;
+      // .subheader-font;
+      .header-font;
       font-size: 10px;
       line-height: 20px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
 
       text-align: center;
+      color: @white;
 
       &.product-header{
         text-align: left;
@@ -1348,7 +1387,9 @@ body.monogram-page-account-details #content-wrapper .col-main{
     background: @account-green;
 
     padding-top: 38px + 20px;
-    padding-bottom: 41px + 17px;
+
+    // padding-bottom: 41px + 17px;
+    padding-bottom: 53px;
 
     .body-font;
     font-size: 13px;
@@ -1369,7 +1410,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
     h1{
       .header-font;
-      font-size: 14px;
+      // font-size: 14px;
+      font-size: 15px;
       line-height: 20px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -1381,7 +1423,7 @@ body.monogram-page-account-details #content-wrapper .col-main{
     }
     a{
       .square-cta;
-      height: auto;
+      // height: auto;
       line-height: 20px;
       .display-inline-block;
       margin-right: 20px;
@@ -1389,7 +1431,11 @@ body.monogram-page-account-details #content-wrapper .col-main{
       float: right;
 
       position: relative;
-      top: 5px;
+      // top: 5px;
+
+      padding-top: 5px;
+      height: 30px;
+      top: -5px;
     }
   }
 
@@ -1580,7 +1626,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
     h1{
       .header-font;
-      font-size: 14px;
+      // font-size: 14px;
+      font-size: 15px;
       line-height: 20px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -1794,7 +1841,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
     h1{
       .header-font;
-      font-size: 14px;
+      // font-size: 14px;
+      font-size: 15px;
       line-height: 20px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -1810,11 +1858,13 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
     .each-input{
       h2{
-        .subheader-font;
+        // .subheader-font;
+        .header-font;
         font-size: 10px;
         line-height: 20px;
         letter-spacing: 0.08em;
         text-transform: uppercase;
+        color: @white;
 
         display: block;
         margin-bottom: 7px;
@@ -1935,7 +1985,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
     h1{
       .header-font;
-      font-size: 14px;
+      // font-size: 14px;
+      font-size: 15px;
       line-height: 20px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -1976,7 +2027,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
     h1{
       .header-font;
-      font-size: 14px;
+      // font-size: 14px;
+      font-size: 15px;
       line-height: 20px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
