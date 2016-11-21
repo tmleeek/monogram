@@ -7,6 +7,16 @@ goog.require('monogram.component.GraphSectionMobile');
 // goog.require('monogram.component.MobileGraphSection');
 
 
+goog.require('monogram.graph.Data');
+
+goog.require('monogram.graph.DataLoader');
+goog.require('monogram.graph.SingleGraph');
+
+goog.require('monogram.graph.CombinationDataLoader');
+goog.require('monogram.graph.CombinationGraph');
+
+
+
 /**
  * The MICE constructor
  * @inheritDoc
@@ -403,6 +413,13 @@ monogram.page.Home.prototype.create_graph = function() {
 
 
 
+
+
+monogram.page.Home.prototype.create_both_graph = function(){
+
+};
+
+
 monogram.page.Home.prototype.create_graph_mobile = function(){
 
 
@@ -412,6 +429,41 @@ monogram.page.Home.prototype.create_graph_mobile = function(){
   if ($j('#tea-layering-detail-graph-section').length != 0) {
     // this.mobile_graph_section = new monogram.component.MobileGraphSection({}, $j('#tea-layering-detail-graph-section'));
   }
+
+
+  /**
+   * @type {monogram.graph.CombinationGraph}
+   */
+  this.combination_graph = new monogram.graph.CombinationGraph({
+    'scale_factor': 0.6333,
+    'is_mobile': true
+  }, $j('#home-mobile-landing-graph-container'));
+  
+  this.combination_data_loader = new monogram.graph.CombinationDataLoader({}, $j('#monograph-combined-graph-data'));
+
+  
+  goog.events.listen(this.combination_data_loader, monogram.graph.CombinationDataLoader.ON_COMBINED_GRAPH_DATA_LOAD_COMPLETE, function(event){
+
+    console.log('monogram.graph.CombinationDataLoader.ON_COMBINED_GRAPH_DATA_LOAD_COMPLETE');
+
+    // this.combination_graph.set_data
+    
+    /**
+     * @type {monogram.graph.Data}
+     */
+    var graph_data_01 = this.combination_data_loader.get_data_by_id('earl-grey-neroli');
+
+    /**
+     * @type {monogram.graph.Data}
+     */
+    var graph_data_02 = this.combination_data_loader.get_data_by_id('shiso-mint');
+    
+    this.combination_graph.set_data_01(graph_data_01);
+    this.combination_graph.set_data_02(graph_data_02);
+
+  }.bind(this));
+
+
 };
 
 
@@ -507,14 +559,48 @@ monogram.page.Home.prototype.update_page_layout = function() {
 
 
 
-  /*
+  
   var mobile_target_zoom = 0.6333;
   var mobile_target_height = (mobile_target_zoom * 600);
+  /*
   $j('#tea-layering-detail-graph-section').css({
    'height': mobile_target_height + 'px'
   });
-
   */
+
+  /*
+  $j('#home-mobile-landing-combination-graph').css({
+   'height': mobile_target_height + 'px'
+  });
+  */
+  
+
+  /*
+  $j('#home-mobile-landing-combination-graph, #home-mobile-landing-combination-graph .graph-name-overlay, #home-mobile-landing-combination-graph .graph-svg, #home-mobile-landing-combination-graph .graph-overlay').css({
+    'width': mobile_target_height + 'px',
+    'height': mobile_target_height + 'px'
+  });
+  */
+
+  $j('#home-mobile-landing-combination-graph').css({
+    'width': mobile_target_height + 'px',
+    'height': mobile_target_height + 'px'
+  });
+
+  /*
+  $j('#home-mobile-landing-combination-graph .graph-overlay').css({
+    'zoom': mobile_target_zoom
+  });
+  $j('#home-mobile-landing-combination-graph .graph-name-overlay').css({
+    'zoom': mobile_target_zoom
+  });
+  */
+
+  TweenMax.to($j('#home-mobile-landing-combination-graph .graph-overlay'), 0 , {scaleX: mobile_target_zoom, scaleY:mobile_target_zoom});
+  TweenMax.to($j('#home-mobile-landing-combination-graph .graph-name-overlay'), 0 , {scaleX: mobile_target_zoom, scaleY:mobile_target_zoom});
+  
+  
+  
    
   
   if( manic.IS_MOBILE == true || manic.IS_TABLET_PORTRAIT == true){
