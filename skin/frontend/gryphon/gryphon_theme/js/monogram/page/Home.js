@@ -2,6 +2,7 @@ goog.provide('monogram.page.Home');
 goog.require('monogram.page.Default');
 
 goog.require('monogram.component.GraphSection');
+goog.require('monogram.component.GraphSectionMobile');
 
 // goog.require('monogram.component.MobileGraphSection');
 
@@ -27,28 +28,39 @@ monogram.page.Home = function(options, element) {
    * @type {manic.ui.Mouse}
    */
   this.introduction_mouse = null;
-  this.introduction_mouse = new manic.ui.Mouse({}, this.intro_section);
-
-  goog.events.listen(this.introduction_mouse, manic.ui.Mouse.SWIPE_UP, function(){
-    window.location.hash = '#selection';
-  }.bind(this));
-  goog.events.listen(this.introduction_mouse, manic.ui.Mouse.SCROLL_DOWN, function(){
-    window.location.hash = '#selection';
-  }.bind(this));
-
 
   /**
    * @type {manic.ui.Mouse}
    */
   this.selection_mouse = null;
-  this.selection_mouse = new manic.ui.Mouse({}, this.tea_selection_section);
-  
-  goog.events.listen(this.selection_mouse, manic.ui.Mouse.SWIPE_DOWN, function(){
-    window.location.hash = '#intro';
-  }.bind(this));
-  goog.events.listen(this.selection_mouse, manic.ui.Mouse.SCROLL_UP, function(){
-    window.location.hash = '#intro';
-  }.bind(this));
+
+
+
+  if (manic.IS_MOBILE == true) {
+
+  } else {
+
+    // if desktop, listen to mouse events
+
+    this.introduction_mouse = new manic.ui.Mouse({}, this.intro_section);
+
+    goog.events.listen(this.introduction_mouse, manic.ui.Mouse.SWIPE_UP, function(){
+      window.location.hash = '#selection';
+    }.bind(this));
+    goog.events.listen(this.introduction_mouse, manic.ui.Mouse.SCROLL_DOWN, function(){
+      window.location.hash = '#selection';
+    }.bind(this));
+    
+    this.selection_mouse = new manic.ui.Mouse({}, this.tea_selection_section);
+    
+    goog.events.listen(this.selection_mouse, manic.ui.Mouse.SWIPE_DOWN, function(){
+      window.location.hash = '#intro';
+    }.bind(this));
+    goog.events.listen(this.selection_mouse, manic.ui.Mouse.SCROLL_UP, function(){
+      window.location.hash = '#intro';
+    }.bind(this));
+
+  }
 
 
   this.has_displayed_guide = false;
@@ -85,37 +97,26 @@ monogram.page.Home.prototype.init = function() {
   monogram.page.Home.superClass_.init.call(this);
 
 
-  this.create_intro();
-  this.create_tea_selection();
-  this.create_graph();
-
-  
 
 
-  // on guide click, remove the damn thing
-  $j('#graph-desktop-guide-container').click(function(event){
-    TweenMax.killTweensOf($('#graph-desktop-guide-container'));
-    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:0});
-  });
+  if (manic.IS_MOBILE == true) {
 
+    this.create_graph_mobile();
 
+  } else {
 
+    // INIT DESKTOP
+    this.create_intro();
+    this.create_tea_selection();
+    this.create_graph();
 
+    // on guide click, remove the damn thing
+    $j('#graph-desktop-guide-container').click(function(event){
+      TweenMax.killTweensOf($('#graph-desktop-guide-container'));
+      TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:0});
+    });
 
-  // this.display_intro_section();
-
-  // $j("#home-intro-section").hide();
-  // $j("#home-graph-section").hide();
-
-  /*
-  $j("#home-tea-selection-section").hide();
-  $j('#scroll-down').on("click", function(e){
-    $j("#home-intro-section").slideUp();
-    $j("#home-tea-selection-section").slideDown();
-  });
-  */
- 
-
+  }
 
   this.update_page_layout();    // this is called after the initial create to update the layout
 
@@ -374,13 +375,11 @@ monogram.page.Home.prototype.create_graph = function() {
     this.graph_section = new monogram.component.GraphSection({}, $j('#graph-section'));
   }
 
-  /*
-  if ($j('#tea-layering-detail-graph-section').length != 0) {
-    this.mobile_graph_section = new monogram.component.MobileGraphSection({}, $j('#tea-layering-detail-graph-section'));
-  }
-  */
-
+  
 };
+
+
+
 
 
 
@@ -402,6 +401,18 @@ monogram.page.Home.prototype.create_graph = function() {
 //   |_|  |_|\___/|____/___|_____|_____|
 //
 
+
+
+monogram.page.Home.prototype.create_graph_mobile = function(){
+
+
+  // monogram.component.GraphSectionMobile
+
+  // home-mobile-landing-combination-graph
+  if ($j('#tea-layering-detail-graph-section').length != 0) {
+    // this.mobile_graph_section = new monogram.component.MobileGraphSection({}, $j('#tea-layering-detail-graph-section'));
+  }
+};
 
 
 
@@ -496,12 +507,14 @@ monogram.page.Home.prototype.update_page_layout = function() {
 
 
 
+  /*
   var mobile_target_zoom = 0.6333;
   var mobile_target_height = (mobile_target_zoom * 600);
   $j('#tea-layering-detail-graph-section').css({
    'height': mobile_target_height + 'px'
   });
 
+  */
    
   
   if( manic.IS_MOBILE == true || manic.IS_TABLET_PORTRAIT == true){
