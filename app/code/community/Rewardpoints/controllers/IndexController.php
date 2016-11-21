@@ -197,7 +197,7 @@ class Rewardpoints_IndexController extends Mage_Core_Controller_Front_Action
         if (empty($refererUrl)) {
             $refererUrl = empty($defaultUrl) ? Mage::getBaseUrl() : $defaultUrl;
         }
-        $this->getResponse()->setRedirect($refererUrl.'?test='.$points_value);
+        $this->getResponse()->setRedirect($refererUrl);
     }
 
     public function preDispatch()

@@ -17,7 +17,10 @@
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
  ?>
-<?php 
+<?php
+    $baseCurrencyCode = Mage::app()->getStore()->getBaseCurrencyCode(); 
+    $currentCurrencyCode = Mage::app()->getStore()->getCurrentCurrencyCode();
+
     $quote = Mage::getSingleton('checkout/session')->getQuote();
     $cartItems = $quote->getAllVisibleItems();
     $subscription = false;
@@ -81,7 +84,13 @@
                 <?php echo $this->getIllustrationImage()?>
                 <div class="rewards_point_cart">
                     <?php if (!$this->isCouponPointsRemoved()): ?>
-                        <?php echo $this->__("This shopping cart is worth %s in rebates", Mage::helper('core')->currency($pts, true, false));?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
+                        <?php                                     
+                        $pts = round(Mage::helper('directory')->currencyConvert($pts, $baseCurrencyCode, $currentCurrencyCode));
+                        $symbol = Mage::app()->getLocale()->currency(Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol();
+
+                        // Mage::helper('core')->currency($pts, true, false)
+                        ?>
+                        <?php echo $this->__("This shopping cart is worth %s in rebates", $symbol.$pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
                     <?php else:?>
                         <?php echo $this->__("You are currently using a discount code. Therefore, this order will not allow point gathering.");?>
                     <?php endif;?>
@@ -104,7 +113,11 @@
                             <?php echo $this->getIllustrationImage()?>
                             <div class="rewards_point_cart">
                                 <?php if (!$this->isCouponPointsRemoved()): ?>
-                                    <?php echo $this->__("This shopping cart is worth %s in rebates", Mage::helper('core')->currency($pts, true, false));?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
+                                    <?php                                     
+                                    $pts = round(Mage::helper('directory')->currencyConvert($pts, $baseCurrencyCode, $currentCurrencyCode));
+                                    $symbol = Mage::app()->getLocale()->currency(Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol();
+                                    ?>
+                                    <?php echo $this->__("This shopping cart is worth %s in rebates", $symbol.$pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
                                 <?php else:?>
                                     <?php echo $this->__("You are currently using a discount code. Therefore, this order will not allow rebate gathering.");?>
                                 <?php endif;?>
@@ -243,7 +256,13 @@
                             <?php echo $this->getIllustrationImage()?>
                             <div class="rewards_point_cart">
                                 <?php if (!$this->isCouponPointsRemoved()): ?>
-                                    <?php echo $this->__("This shopping cart is worth %s in rebates", Mage::helper('core')->currency($pts, true, false));?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
+                                    <?php                                     
+                                    $pts = round(Mage::helper('directory')->currencyConvert($pts, $baseCurrencyCode, $currentCurrencyCode));
+                                    $symbol = Mage::app()->getLocale()->currency(Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol();
+
+                                    // Mage::helper('core')->currency($pts, true, false)
+                                    ?>
+                                    <?php echo $this->__("This shopping cart is worth %s in rebates", $symbol.$pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
                                 <?php else:?>
                                     <?php echo $this->__("You are currently using a discount code. Therefore, this order will not allow point gathering.");?>
                                 <?php endif;?>
