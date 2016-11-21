@@ -22,5 +22,6 @@ subprocess.Popen([
   '--root_with_prefix=../../js/manic/video ../../../../../js/manic/video/',
   '--root_with_prefix=../../js/monogram/page ../../../../../js/monogram/page/',
   '--root_with_prefix=../../js/monogram/component ../../../../../js/monogram/component/',
+  '--root_with_prefix=../../js/monogram/graph ../../../../../js/monogram/graph/',
   '--output_file=../../js/google-closure-dependency-list.js'
   ], shell=True);
