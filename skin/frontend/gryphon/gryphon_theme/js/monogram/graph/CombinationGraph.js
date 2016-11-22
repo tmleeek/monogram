@@ -43,7 +43,12 @@ monogram.graph.CombinationGraph = function(options, element) {
   this.original_width = 600 * this.scale_factor;
   this.original_height = 600 * this.scale_factor;
 
-
+  /*
+  this.overlay_element.css({
+    'width': this.original_width + 'px',
+    'height': this.original_height + 'px',
+  });
+  */
 
   this.label_element_array = this.element.find('.graph-name-overlay .graph-name-item');
 
@@ -79,6 +84,10 @@ monogram.graph.CombinationGraph = function(options, element) {
   //   |___|_| \_|___| |_|
   //
 
+  console.log('>>>>>>>>>');
+  console.log(this.element)
+  console.log(this.svg_element);
+  console.log('>>>>>>>>>');
     
   // create raphaelJS
   this.paper = Raphael(this.svg_element[0],this.original_width, this.original_height);
@@ -91,9 +100,13 @@ monogram.graph.CombinationGraph = function(options, element) {
 
   // layering, graph item 02 is lower than graph item 01
   
-  this.graph_item_02 = new monogram.graph.RaphaelGraphItem({}, this.paper);
+  this.graph_item_02 = new monogram.graph.RaphaelGraphItem({
+    'scale_factor': this.scale_factor
+  }, this.paper);
 
-  this.graph_item_01 = new monogram.graph.RaphaelGraphItem({}, this.paper);
+  this.graph_item_01 = new monogram.graph.RaphaelGraphItem({
+    'scale_factor': this.scale_factor
+  }, this.paper);
 
 
 

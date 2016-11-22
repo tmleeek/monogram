@@ -10,6 +10,8 @@
     left: 0;
     width: 600px;
     height: 600px;
+
+    .transform-origin(0% , 0%);
   }
   .graph-overlay{
     position: absolute;
@@ -18,6 +20,8 @@
     width: 600px;
     height: 600px;
 
+    .transform-origin(0% , 0%);
+
   }
   .graph-name-overlay{
     position: absolute;
@@ -25,10 +29,23 @@
     left: 0;
     width: 600px;
     height: 600px;
+
+    .transform-origin(0% , 0%);
   }
 
 } // .monogram-single-graph, .monogram-combination-graph
 
+
+@media only screen and (max-width: 991px) {
+  .monogram-single-graph, .monogram-combination-graph{
+    overflow: hidden;
+  }
+}
+@media (max-width: 767px) {
+  .monogram-single-graph, .monogram-combination-graph{
+    overflow: hidden;
+  }
+}
 
 
 .graph-name-overlay .graph-name-item{
@@ -39,6 +56,8 @@
   height: 100px;
 
   pointer-events: none;
+
+
 
   &.floral-version{
     .graph-label-floral;

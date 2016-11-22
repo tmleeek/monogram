@@ -2,8 +2,19 @@ goog.provide('monogram.page.Home');
 goog.require('monogram.page.Default');
 
 goog.require('monogram.component.GraphSection');
+goog.require('monogram.component.GraphSectionMobile');
 
 // goog.require('monogram.component.MobileGraphSection');
+
+
+goog.require('monogram.graph.Data');
+
+goog.require('monogram.graph.DataLoader');
+goog.require('monogram.graph.SingleGraph');
+
+goog.require('monogram.graph.CombinationDataLoader');
+goog.require('monogram.graph.CombinationGraph');
+
 
 
 /**
@@ -27,28 +38,39 @@ monogram.page.Home = function(options, element) {
    * @type {manic.ui.Mouse}
    */
   this.introduction_mouse = null;
-  this.introduction_mouse = new manic.ui.Mouse({}, this.intro_section);
-
-  goog.events.listen(this.introduction_mouse, manic.ui.Mouse.SWIPE_UP, function(){
-    window.location.hash = '#selection';
-  }.bind(this));
-  goog.events.listen(this.introduction_mouse, manic.ui.Mouse.SCROLL_DOWN, function(){
-    window.location.hash = '#selection';
-  }.bind(this));
-
 
   /**
    * @type {manic.ui.Mouse}
    */
   this.selection_mouse = null;
-  this.selection_mouse = new manic.ui.Mouse({}, this.tea_selection_section);
-  
-  goog.events.listen(this.selection_mouse, manic.ui.Mouse.SWIPE_DOWN, function(){
-    window.location.hash = '#intro';
-  }.bind(this));
-  goog.events.listen(this.selection_mouse, manic.ui.Mouse.SCROLL_UP, function(){
-    window.location.hash = '#intro';
-  }.bind(this));
+
+
+
+  if (manic.IS_MOBILE == true) {
+
+  } else {
+
+    // if desktop, listen to mouse events
+
+    this.introduction_mouse = new manic.ui.Mouse({}, this.intro_section);
+
+    goog.events.listen(this.introduction_mouse, manic.ui.Mouse.SWIPE_UP, function(){
+      window.location.hash = '#selection';
+    }.bind(this));
+    goog.events.listen(this.introduction_mouse, manic.ui.Mouse.SCROLL_DOWN, function(){
+      window.location.hash = '#selection';
+    }.bind(this));
+    
+    this.selection_mouse = new manic.ui.Mouse({}, this.tea_selection_section);
+    
+    goog.events.listen(this.selection_mouse, manic.ui.Mouse.SWIPE_DOWN, function(){
+      window.location.hash = '#intro';
+    }.bind(this));
+    goog.events.listen(this.selection_mouse, manic.ui.Mouse.SCROLL_UP, function(){
+      window.location.hash = '#intro';
+    }.bind(this));
+
+  }
 
 
   this.has_displayed_guide = false;
@@ -56,6 +78,11 @@ monogram.page.Home = function(options, element) {
   this.graph_section = null;
   //this.mobile_graph_section = null;
   
+
+  /**
+   * @type {monogram.component.GraphSectionMobile}
+   */
+  this.mobile_graph = null;
 
 
 
@@ -85,37 +112,26 @@ monogram.page.Home.prototype.init = function() {
   monogram.page.Home.superClass_.init.call(this);
 
 
-  this.create_intro();
-  this.create_tea_selection();
-  this.create_graph();
-
-  
 
 
-  // on guide click, remove the damn thing
-  $j('#graph-desktop-guide-container').click(function(event){
-    TweenMax.killTweensOf($('#graph-desktop-guide-container'));
-    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:0});
-  });
+  if (manic.IS_MOBILE == true) {
 
+    this.create_graph_mobile();
 
+  } else {
 
+    // INIT DESKTOP
+    this.create_intro();
+    this.create_tea_selection();
+    this.create_graph();
 
+    // on guide click, remove the damn thing
+    $j('#graph-desktop-guide-container').click(function(event){
+      TweenMax.killTweensOf($('#graph-desktop-guide-container'));
+      TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:0});
+    });
 
-  // this.display_intro_section();
-
-  // $j("#home-intro-section").hide();
-  // $j("#home-graph-section").hide();
-
-  /*
-  $j("#home-tea-selection-section").hide();
-  $j('#scroll-down').on("click", function(e){
-    $j("#home-intro-section").slideUp();
-    $j("#home-tea-selection-section").slideDown();
-  });
-  */
- 
-
+  }
 
   this.update_page_layout();    // this is called after the initial create to update the layout
 
@@ -374,13 +390,11 @@ monogram.page.Home.prototype.create_graph = function() {
     this.graph_section = new monogram.component.GraphSection({}, $j('#graph-section'));
   }
 
-  /*
-  if ($j('#tea-layering-detail-graph-section').length != 0) {
-    this.mobile_graph_section = new monogram.component.MobileGraphSection({}, $j('#tea-layering-detail-graph-section'));
-  }
-  */
-
+  
 };
+
+
+
 
 
 
@@ -402,6 +416,74 @@ monogram.page.Home.prototype.create_graph = function() {
 //   |_|  |_|\___/|____/___|_____|_____|
 //
 
+
+
+
+
+monogram.page.Home.prototype.create_both_graph = function(){
+
+};
+
+
+monogram.page.Home.prototype.create_graph_mobile = function(){
+
+
+  // monogram.component.GraphSectionMobile
+
+  // home-mobile-landing-combination-graph
+  if ($j('#tea-layering-detail-graph-section').length != 0) {
+    // this.mobile_graph_section = new monogram.component.MobileGraphSection({}, $j('#tea-layering-detail-graph-section'));
+  }
+
+
+  /**
+   * @type {monogram.graph.CombinationGraph}
+   */
+  this.combination_graph = new monogram.graph.CombinationGraph({
+    'scale_factor': 0.6333,
+    'is_mobile': true
+  }, $j('#home-mobile-landing-graph-container'));
+  
+  this.combination_data_loader = new monogram.graph.CombinationDataLoader({}, $j('#monograph-combined-graph-data'));
+
+  
+  goog.events.listen(this.combination_data_loader, monogram.graph.CombinationDataLoader.ON_COMBINED_GRAPH_DATA_LOAD_COMPLETE, function(event){
+
+    console.log('monogram.graph.CombinationDataLoader.ON_COMBINED_GRAPH_DATA_LOAD_COMPLETE');
+
+    // this.combination_graph.set_data
+    
+    /**
+     * @type {monogram.graph.Data}
+     */
+    var graph_data_01 = this.combination_data_loader.get_data_by_id('earl-grey-neroli');
+
+    /**
+     * @type {monogram.graph.Data}
+     */
+    var graph_data_02 = this.combination_data_loader.get_data_by_id('shiso-mint');
+    
+    this.combination_graph.set_data_01(graph_data_01);
+    this.combination_graph.set_data_02(graph_data_02);
+
+  }.bind(this));
+
+
+
+
+  // create tea layering mobile graph
+  
+  
+
+  if ($j('#tea-layering-detail-graph-section').length != 0) {
+    this.mobile_graph = new monogram.component.GraphSectionMobile({}, $j('#tea-layering-detail-graph-section'));
+  }
+
+  
+  
+
+
+};
 
 
 
@@ -430,6 +512,55 @@ monogram.page.Home.prototype.display_mobile_graph_section = function() {
 
   this.body.removeClass('mobile-home-tea-layering-version');
   this.body.addClass('mobile-home-graph-version');
+
+  if(this.mobile_graph != null){
+    if (goog.isDefAndNotNull(this.page_hash_02) == false) {
+      
+      this.mobile_graph.display_combination_index(0,0);
+
+    } else if ( goog.isDefAndNotNull(this.page_hash_02) == true && 
+                goog.isDefAndNotNull(this.page_hash_03) == false) {
+
+      var target_main_index = this.mobile_graph.get_index_of_main_str(this.page_hash_02)
+
+      if(target_main_index != -1){
+        this.mobile_graph.display_combination_index(target_main_index,0);
+
+        /*
+        var current_url           = window.location.href;
+        var twitter_share_url     = 'https://twitter.com/share?url=' + encodeURIComponent(current_url) + 
+                                    '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + this.page_hash_02);
+        var facebook_share_url    = 'http://www.facebook.com/sharer.php?u=' + encodeURIComponent(current_url);
+                
+        $j('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
+        $j('#graph-social-icons ul li a.fa-facebook').attr('href', facebook_share_url);
+        */
+
+
+      } else {
+        this.mobile_graph.display_combination_index(0,0);
+      }
+
+    } else if ( goog.isDefAndNotNull(this.page_hash_02) == true && 
+                goog.isDefAndNotNull(this.page_hash_03) == true) {
+
+      this.mobile_graph.display_combination(this.page_hash_02, this.page_hash_03);
+
+      /*
+      var current_url           = window.location.href;
+      var twitter_share_url     = 'https://twitter.com/share?url=' + encodeURIComponent(current_url) + 
+                                  '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + this.page_hash_02);
+      var facebook_share_url    = 'http://www.facebook.com/sharer.php?u=' + encodeURIComponent(current_url);
+              
+      $j('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
+      $j('#graph-social-icons ul li a.fa-facebook').attr('href', facebook_share_url);
+      */
+
+    }
+
+
+
+  }
 
 };
 
@@ -496,11 +627,70 @@ monogram.page.Home.prototype.update_page_layout = function() {
 
 
 
+
+
+  
   var mobile_target_zoom = 0.6333;
   var mobile_target_height = (mobile_target_zoom * 600);
+  /*
   $j('#tea-layering-detail-graph-section').css({
    'height': mobile_target_height + 'px'
   });
+  */
+
+  /*
+  $j('#home-mobile-landing-combination-graph').css({
+   'height': mobile_target_height + 'px'
+  });
+  */
+  
+
+  /*
+  $j('#home-mobile-landing-combination-graph, #home-mobile-landing-combination-graph .graph-name-overlay, #home-mobile-landing-combination-graph .graph-svg, #home-mobile-landing-combination-graph .graph-overlay').css({
+    'width': mobile_target_height + 'px',
+    'height': mobile_target_height + 'px'
+  });
+  */
+
+  $j('#home-mobile-landing-combination-graph').css({
+    'width': mobile_target_height + 'px',
+    'height': mobile_target_height + 'px'
+  });
+
+  /*
+  $j('#home-mobile-landing-combination-graph .graph-overlay').css({
+    'zoom': mobile_target_zoom
+  });
+  $j('#home-mobile-landing-combination-graph .graph-name-overlay').css({
+    'zoom': mobile_target_zoom
+  });
+  */
+
+  //TweenMax.to($j('#home-mobile-landing-combination-graph .graph-overlay'), 0 , {scaleX: mobile_target_zoom, scaleY:mobile_target_zoom});
+  TweenMax.to($j('#home-mobile-landing-combination-graph .graph-name-overlay'), 0 , {scaleX: mobile_target_zoom, scaleY:mobile_target_zoom});
+  
+  
+  
+
+
+
+  /////////////////////
+  
+  /*
+  $j('#tea-layering-graph-mobile').css({
+    'zoom': target_zoom
+  });
+  */
+
+  $j('#tea-layering-graph-mobile').css({
+    'width': mobile_target_height + 'px',
+    'height': mobile_target_height + 'px'
+  });
+  //TweenMax.to($j('#tea-layering-graph-mobile .graph-overlay'), 0 , {scaleX: mobile_target_zoom, scaleY:mobile_target_zoom});
+  TweenMax.to($j('#tea-layering-graph-mobile .graph-name-overlay'), 0 , {scaleX: mobile_target_zoom, scaleY:mobile_target_zoom});
+
+
+
 
    
   
