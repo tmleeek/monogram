@@ -194,10 +194,11 @@
             var $form = $j("#review-form"),
                 data = $form.serialize(),
                 action_url = $form.attr('action');
+                valid = true;
 
             if($j('input[name="nickname"]').val()=="") {
                 $j('input[name="nickname"]').next('.validation').html("<p>This is a required field.</p>");
-                valid = false
+                valid = false;
             }
 
             if($j('input[name="title"]').val()=="") {

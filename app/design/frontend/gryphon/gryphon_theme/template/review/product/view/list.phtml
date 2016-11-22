@@ -34,7 +34,9 @@
                 <h4><?php echo $this->__('Popular Tea Layering'); ?></h4>
                 <?php if (count($_items)):?>
                     <?php echo $this->getChildHtml('toolbar') ?>      
+                    <?php $counter = 0; ?>
                     <?php foreach ($_items as $_review):?>
+                        <?php if($counter < 5): ?>
                         <div class="review-product">
                             <?php $product = Mage::getModel('catalog/product')->load($this->getProduct()->getId()); ?>
                             <div class="img-container">
@@ -58,7 +60,9 @@
                             <?php endif; ?>
                             <h5><?php echo $this->__('by %s', $this->escapeHtml($_review->getNickname())) ?></h5>
                             <p><?php echo nl2br($this->escapeHtml($_review->getDetail())) ?></p>
-                        </div>            
+                        </div>  
+                        <?php endif; ?>
+                        <?php $counter++; ?>          
                     <?php endforeach; ?>
                     <?php echo $this->getChildHtml('toolbar') ?>
                 <?php elseif($this->getParentBlock()): ?>
