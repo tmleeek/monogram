@@ -79,6 +79,11 @@ monogram.page.Home = function(options, element) {
   //this.mobile_graph_section = null;
   
 
+  /**
+   * @type {monogram.component.GraphSectionMobile}
+   */
+  this.mobile_graph = null;
+
 
 
 };
@@ -464,6 +469,20 @@ monogram.page.Home.prototype.create_graph_mobile = function(){
   }.bind(this));
 
 
+
+
+  // create tea layering mobile graph
+  
+  
+
+  if ($j('#tea-layering-detail-graph-section').length != 0) {
+    this.mobile_graph = new monogram.component.GraphSectionMobile({}, $j('#tea-layering-detail-graph-section'));
+  }
+
+  
+  
+
+
 };
 
 
@@ -493,6 +512,55 @@ monogram.page.Home.prototype.display_mobile_graph_section = function() {
 
   this.body.removeClass('mobile-home-tea-layering-version');
   this.body.addClass('mobile-home-graph-version');
+
+  if(this.mobile_graph != null){
+    if (goog.isDefAndNotNull(this.page_hash_02) == false) {
+      
+      this.mobile_graph.display_combination_index(0,0);
+
+    } else if ( goog.isDefAndNotNull(this.page_hash_02) == true && 
+                goog.isDefAndNotNull(this.page_hash_03) == false) {
+
+      var target_main_index = this.mobile_graph.get_index_of_main_str(this.page_hash_02)
+
+      if(target_main_index != -1){
+        this.mobile_graph.display_combination_index(target_main_index,0);
+
+        /*
+        var current_url           = window.location.href;
+        var twitter_share_url     = 'https://twitter.com/share?url=' + encodeURIComponent(current_url) + 
+                                    '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + this.page_hash_02);
+        var facebook_share_url    = 'http://www.facebook.com/sharer.php?u=' + encodeURIComponent(current_url);
+                
+        $j('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
+        $j('#graph-social-icons ul li a.fa-facebook').attr('href', facebook_share_url);
+        */
+
+
+      } else {
+        this.mobile_graph.display_combination_index(0,0);
+      }
+
+    } else if ( goog.isDefAndNotNull(this.page_hash_02) == true && 
+                goog.isDefAndNotNull(this.page_hash_03) == true) {
+
+      this.mobile_graph.display_combination(this.page_hash_02, this.page_hash_03);
+
+      /*
+      var current_url           = window.location.href;
+      var twitter_share_url     = 'https://twitter.com/share?url=' + encodeURIComponent(current_url) + 
+                                  '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + this.page_hash_02);
+      var facebook_share_url    = 'http://www.facebook.com/sharer.php?u=' + encodeURIComponent(current_url);
+              
+      $j('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
+      $j('#graph-social-icons ul li a.fa-facebook').attr('href', facebook_share_url);
+      */
+
+    }
+
+
+
+  }
 
 };
 
@@ -559,6 +627,8 @@ monogram.page.Home.prototype.update_page_layout = function() {
 
 
 
+
+
   
   var mobile_target_zoom = 0.6333;
   var mobile_target_height = (mobile_target_zoom * 600);
@@ -596,11 +666,32 @@ monogram.page.Home.prototype.update_page_layout = function() {
   });
   */
 
-  TweenMax.to($j('#home-mobile-landing-combination-graph .graph-overlay'), 0 , {scaleX: mobile_target_zoom, scaleY:mobile_target_zoom});
+  //TweenMax.to($j('#home-mobile-landing-combination-graph .graph-overlay'), 0 , {scaleX: mobile_target_zoom, scaleY:mobile_target_zoom});
   TweenMax.to($j('#home-mobile-landing-combination-graph .graph-name-overlay'), 0 , {scaleX: mobile_target_zoom, scaleY:mobile_target_zoom});
   
   
   
+
+
+
+  /////////////////////
+  
+  /*
+  $j('#tea-layering-graph-mobile').css({
+    'zoom': target_zoom
+  });
+  */
+
+  $j('#tea-layering-graph-mobile').css({
+    'width': mobile_target_height + 'px',
+    'height': mobile_target_height + 'px'
+  });
+  //TweenMax.to($j('#tea-layering-graph-mobile .graph-overlay'), 0 , {scaleX: mobile_target_zoom, scaleY:mobile_target_zoom});
+  TweenMax.to($j('#tea-layering-graph-mobile .graph-name-overlay'), 0 , {scaleX: mobile_target_zoom, scaleY:mobile_target_zoom});
+
+
+
+
    
   
   if( manic.IS_MOBILE == true || manic.IS_TABLET_PORTRAIT == true){

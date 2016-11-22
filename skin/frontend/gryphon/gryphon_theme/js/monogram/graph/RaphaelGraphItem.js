@@ -363,8 +363,11 @@ monogram.graph.RaphaelGraphItem.prototype.draw_graph = function(){
   // this.temp_path_array[this.temp_path_array.length] = 'M';
   this.temp_path_array[this.temp_path_array.length] = 'M';
 
-  target_x = (this.center_x + (this.data_x[0] * this.display_percent[0]['p'])) * this.scale_factor;
-  target_y = (this.center_y + (this.data_y[0] * this.display_percent[0]['p'])) * this.scale_factor;
+  // target_x = (this.center_x + (this.data_x[0] * this.display_percent[0]['p'])) * this.scale_factor;
+  // target_y = (this.center_y + (this.data_y[0] * this.display_percent[0]['p'])) * this.scale_factor;
+
+  target_x = this.center_x + ((this.data_x[0] * this.display_percent[0]['p'])) * this.scale_factor;
+  target_y = this.center_y + ((this.data_y[0] * this.display_percent[0]['p'])) * this.scale_factor;
 
   this.temp_path_array[this.temp_path_array.length] = target_x;
   this.temp_path_array[this.temp_path_array.length] = target_y;
@@ -380,8 +383,11 @@ monogram.graph.RaphaelGraphItem.prototype.draw_graph = function(){
 
   for (var i = 1, l=this.point_length; i < l; i++) {
     
-    target_x = (this.center_x + (this.data_x[i] * this.display_percent[i]['p'])) * this.scale_factor;
-    target_y = (this.center_y + (this.data_y[i] * this.display_percent[i]['p'])) * this.scale_factor;
+    // target_x = (this.center_x + (this.data_x[i] * this.display_percent[i]['p'])) * this.scale_factor;
+    // target_y = (this.center_y + (this.data_y[i] * this.display_percent[i]['p'])) * this.scale_factor;
+
+    target_x = this.center_x + ((this.data_x[i] * this.display_percent[i]['p'])) * this.scale_factor;
+    target_y = this.center_y + ((this.data_y[i] * this.display_percent[i]['p'])) * this.scale_factor;
 
     this.temp_path_array[this.temp_path_array.length] = target_x;
     this.temp_path_array[this.temp_path_array.length] = target_y;

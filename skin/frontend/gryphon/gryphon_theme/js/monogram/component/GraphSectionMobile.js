@@ -23,7 +23,8 @@ monogram.component.GraphSectionMobile = function(options, element) {
   this.options = $j.extend({}, monogram.component.GraphSectionMobile.DEFAULT, options);
   this.element = element;
 
-
+  console.log('monogram.component.GraphSectionMobile');
+  console.log(this.element);
 
 
   this.is_enabled = false;
@@ -106,7 +107,7 @@ monogram.component.GraphSectionMobile = function(options, element) {
 
 
   // starts load on init
-  this.combination_data_loader = new monogram.graph.CombinationDataLoader({}, this.element.find('#monograph-combined-graph-data'));
+  this.combination_data_loader = new monogram.graph.CombinationDataLoader({}, $j('#monograph-combined-graph-data'));
 
 
 
@@ -132,6 +133,36 @@ monogram.component.GraphSectionMobile = function(options, element) {
 
   // TEMPORARY
   this.enable_graph();
+
+
+
+
+
+
+
+
+  $j('.page-tea-layering-detail-next-suggestion-btn').click(function(event){
+    event.preventDefault();
+    this.goto_next_sub();
+  }.bind(this));
+
+  $j('#page-tea-layering-detail-next-arrow').click(function(event){
+    this.goto_next_sub();
+  }.bind(this));
+
+  $j('#page-tea-layering-detail-prev-arrow').click(function(event){
+    this.goto_prev_sub();
+  }.bind(this));
+
+
+  this.hammer = new Hammer($j('body')[0], {});
+  this.hammer.on('swipeleft', function(event){
+    this.goto_next_sub();
+  }.bind(this));
+  this.hammer.on('swiperight', function(event){
+    this.goto_prev_sub();
+  }.bind(this));
+
 
 
 
@@ -290,9 +321,15 @@ monogram.component.GraphSectionMobile.prototype.create_mouse = function() {
 
 monogram.component.GraphSectionMobile.prototype.create_graph = function(){
 
-  this.combination_graph = new monogram.graph.CombinationGraph({
+  console.log('create_graph');
+  console.log(this.element.find('#tea-layering-graph-mobile'));
 
-  }, this.element.find('#graph-section-combination-graph'));
+  this.combination_graph = new monogram.graph.CombinationGraph({
+    'scale_factor': 0.6333,
+    'is_mobile': true
+  }, this.element.find('#tea-layering-graph-mobile'));
+
+
 
 };
 
@@ -500,9 +537,9 @@ monogram.component.GraphSectionMobile.prototype.display_combination_index = func
         this.combination_graph.set_data_02(this.sub_data_item);
       }
 
-      
+      $j('#tea-layering-detail-copy-section').removeClass('animate-in');
 
-      // TweenMax.delayedCall(1, this.delayed_display_combination_index, [], this);
+      TweenMax.delayedCall(1, this.delayed_display_combination_index, [], this);
 
       
     }
@@ -520,7 +557,7 @@ monogram.component.GraphSectionMobile.prototype.delayed_display_combination_inde
 
 
   
-  
+  /*
 
 
   if (this.is_main_data_item_different == true) {
@@ -578,7 +615,7 @@ monogram.component.GraphSectionMobile.prototype.delayed_display_combination_inde
 
   
 
-  
+  */
 
   
   // change description & title
@@ -589,11 +626,17 @@ monogram.component.GraphSectionMobile.prototype.delayed_display_combination_inde
   // console.log('target_combination_data_obj: ' + target_combination_data_obj);
   
   if (target_combination_data_obj != null) {
-    $j('#graph-section-center-copy p').html(target_combination_data_obj['description']);
+    // $j('#graph-section-center-copy p').html(target_combination_data_obj['description']);
+    // $j('#graph-section-center-copy p').html(target_combination_data_obj['description']);
+    
+    $j('#tea-layering-detail-copy-section .tea-copy-content p').html(target_combination_data_obj['description']);
+    
   }
 
   // change name
 
+
+  /*
   var target_html = [
     this.main_data_item.data_html_name,
     ' <span style="color:#f1efee">+</span> ',
@@ -602,8 +645,17 @@ monogram.component.GraphSectionMobile.prototype.delayed_display_combination_inde
 
   $j('#graph-section-center-copy h2').html(target_html);
   $j('#graph-section-center-copy').addClass('animate-in');
-  
+  */
 
+
+
+  var name_01 = '' + this.main_data_item.data_html_name;
+  var name_02 = '' + this.sub_data_item.data_html_name;
+
+  $j('#tea-layering-detail-copy-section .graph-selection-tea-mobile #graph-selection-name-01 h2').html(name_01);
+  $j('#tea-layering-detail-copy-section .graph-selection-tea-mobile #graph-selection-name-02 h2').html(name_02);
+
+  $j('#tea-layering-detail-copy-section').addClass('animate-in');
 
 };
 
