@@ -101,11 +101,11 @@
                 <?php echo $login_extra_box;?>
             </div>
         <?php endif; ?>
-        <?php if ($this->getCustomerId()): ?>
+        <?php if ($this->getCustomerId() && Mage::getSingleton('customer/session')->isLoggedIn()): ?>
             <?php $point_details = $this->getPointsInfo();?>
 
             <?php if ($this->canUseCouponCode() && ($couponCode == "" || $couponCode == null) || !$this->canUseCouponCode()):?>
-                <div class="discount-codes box discount" id="rewardFormArea">
+                <div class="discount-codes box discount <?php echo $this->getCustomerId(); ?>" id="rewardFormArea">
                     <?php if (!$points_currently_used): ?>
                     <form action="<?php echo $this->getUrl('rewardpoints/index/quotation/') ?>" method="post" name="discountFormPoints2" id="discountFormPoints2">
                         <fieldset>
@@ -230,6 +230,11 @@
                                     <label for="coupon_code">REDEEM REBATE</label>
                                     <div class="input-box">
                                         <input <?php if($point_details['full_use']):?>type="text"<?php else:?>type="text"<?php endif;?> value=""  name="points_to_be_used" class="input-text" />
+                                        <?php 
+                                        $balance = $point_details['customer_points']; 
+                                        $balance = Mage::helper('core')->currency($balance, true, false);
+                                        ?>
+                                        <p class="used-points-msg">Rebate balance: <?php echo $balance; ?></p>
                                     </div>
                                 <?php endif;?>
                                 <?php if($this->getCustomerPoints() > 0) : ?>

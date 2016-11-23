@@ -132,6 +132,7 @@
                                 <input type="hidden" title="<?php echo $this->__('Gift Card Code') ?>" class="input-text" value="<?php echo $code; ?>" id="<?php echo $_code ?>_code" name="giftvoucher_code" <?php if (!Mage::helper('giftvoucher')->isAvailableToAddCode()) echo 'disabled="true"' ?> />
                                 <div class="dropdown">
                                     <select name="select_gift_code" id="select_gift_code" style="padding-left: 0px;">
+                                    <option value="">Please select</option>
                                     <?php foreach ($collection as $row): ?>
                                         <option value="<?php echo $row->getGiftCode(); ?>"><?php echo $row->getGiftCode(); ?></option>
                                     <?php endforeach; ?>
