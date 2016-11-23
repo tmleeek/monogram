@@ -19,6 +19,8 @@ monogram.graph.Data = function(data_obj_param) {
 
   this.data_id                = this.data_object["id"];
   this.data_name              = this.data_object["name"];
+  this.data_url              = this.data_object["url"];
+
   this.data_html_name         = this.data_object["html-name"];
   this.data_type              = this.data_object["type"];
   this.data_color             = this.data_object["color"];
