@@ -90,7 +90,8 @@ monogram.component.GraphSection = function(options, element) {
         '<p><span class="custom-icon steep-icon"></span>{temperature}</p>',
         '<p><span class="custom-icon time-icon"></span>{time}</p>',
       '</div>',
-      '<a href="javascript:void(0);" data-id="{id}" class="add-to-cart arrow-cta">Add to cart</a>',
+      '<a href="javascript:void(0);" data-id="{id}" class="{id} add-to-cart arrow-cta">Add to cart</a>',
+	  '<div class="layerteaclass" id="{dataid}"></div>',
     '</div>'
   ].join('');
 
