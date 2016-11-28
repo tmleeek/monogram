@@ -85,13 +85,12 @@ $path = $url->getPath();
                 </script>
                 <script type="text/javascript">
                     window.monogram_page = new monogram.page.Default({});
-                </script>
-
+                </script>                
                 <?php if($path!=="/tea-matrix" && $path!=="/tea-matrix/"): ?>
-                    <?php echo $this->getChildHtml('footer_before') ?>
-                    <?php echo $this->getChildHtml('footer') ?>
+                  <?php echo $this->getChildHtml('footer_before') ?>
+                  <?php echo $this->getChildHtml('footer') ?>
                 <?php endif; ?>
-            <?php endif; ?>
+            <?php endif; ?>            
 
             <?php echo $this->getChildHtml('global_cookie_notice') ?>
             <?php echo $this->getChildHtml('before_body_end') ?>

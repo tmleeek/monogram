@@ -106,7 +106,7 @@
         vertical-align: middle;
         // padding-top: 6px;
         // padding-top: 2px;
-        padding-top: 5px;
+        // padding-top: 5px;
 
         font-size: 11px;
         color: @footer-brown;
@@ -299,7 +299,7 @@
   //width: 100%;
   width: auto;
   height: 37px;
-  overflow: hidden;
+  // overflow: hidden;
 
   background: @white;
 
@@ -361,10 +361,22 @@
   input[type=submit]{
     position: absolute;
     top: 0;
-    right: 20%;
+    // right: 20%;
+    right: -35px;
     width: 35px;
     height: 37px;
     .opacity(0);
+  }
+
+  .ajax_msg {
+    position: absolute;
+    bottom: -20px;
+  }
+
+  .newsletter_ajax_loader {
+    position: absolute;
+    right: -60px;
+    top: 10px;
   }
 
 } // #mobile-newsletter-subscribe-form

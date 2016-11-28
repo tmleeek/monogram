@@ -24,14 +24,36 @@ body.billing-shipping-page{
 //   |____/___|____/|_____|____/_/   \_\_| \_\
 //
 
+.col-md-2 {
+  padding: 0;
+}
+
 
 #page-shopping-cart-breadcrumb{
   padding-top: 161px;
-  a{
-    margin-bottom: 29px;
+  margin-bottom: 29px;
+  @media only screen and (max-width: 991px) {
+    padding-top: 0px;
+  }
+  a{    
     &:last-child {
       margin-bottom: 0px;
     }
+    
+    @media only screen and (max-width: 991px) {
+      display: none;
+      &.active {
+        display: block;
+        background-color: @off-white;
+        color: @dark-brown!important;
+        text-align: center;
+        padding: 15px 0px;
+      }
+      &.fake-active {
+
+      }
+    }
+    
 
     .header-font;
     font-size: 13px;
@@ -57,6 +79,12 @@ body.billing-shipping-page{
   padding-top: 149px;
   padding-left: 45px;
   padding-right: 45px;
+  @media only screen and (max-width: 991px) {
+    padding: 0px;
+  }
+  @media only screen and (max-width: 480px) {
+    padding: 0 10px;
+  }
   position: relative;
 
   .messages {
@@ -69,7 +97,7 @@ body.billing-shipping-page{
 
 
 
-#page-shopping-cart-sidebar-address{
+#page-shopping-cart-sidebar-address, #copy-page-shopping-cart-sidebar-address{
   padding-top: 34px;
 
   .billing-info{
@@ -125,6 +153,12 @@ body.billing-shipping-page{
 }
 
 
+#copy-page-shopping-cart-sidebar-address {
+  @media only screen and (max-width: 480px) {
+    margin-bottom: 60px;
+  }
+}
+
 
 //    ___ _   _ ____  _   _ _____
 //   |_ _| \ | |  _ \| | | |_   _|
@@ -157,6 +191,11 @@ body.billing-shipping-page{
       &#discount-coupon-form {
         margin-bottom: 20px;
       }
+      @media only screen and (max-width: 480px) {
+        &:after {
+          clear: both;
+        }
+      }
     }
     label{
       .subheader-font-2;
@@ -171,11 +210,31 @@ body.billing-shipping-page{
       .display-inline-block;
       width: 145px;
 
+      @media only screen and (max-width: 991px) {
+        width: 125px;
+      }
+      @media only screen and (max-width: 480px) {
+        display: block;
+      }
+
     }
     .input-box{
       .add-input-class-styling;
       .display-inline-block;
       width: 160px;
+
+
+      @media only screen and (max-width: 480px) {
+        width: 73%;
+        height: 33px;
+        input {
+          padding-top: 5px;
+        }
+      }
+
+      @media only screen and (max-width: 320px) {
+        width: 72%;
+      }
 
       p{
         .body-font;
@@ -185,7 +244,12 @@ body.billing-shipping-page{
       }
 
 
+    }
 
+    button.apply {
+      @media only screen and (max-width: 480px) {
+        width: 20%;
+      }
     }
 
     .input-text{
@@ -252,7 +316,7 @@ body.billing-shipping-page{
       .display-inline-block;
 
       margin-left: 20px;
-
+      float: right;
     }
 
 
@@ -413,7 +477,14 @@ body.billing-shipping-page{
 
 #page-shopping-cart-item-container{
 
-
+  .table-responsive {
+    @media only screen and (max-width: 991px) {
+      border: none;      
+    }
+    @media only screen and (max-width: 480px) {
+      margin-bottom: 0px;
+    }
+  }
   table{
     margin-bottom: 0;
 
@@ -480,12 +551,17 @@ body.billing-shipping-page{
         &.first{
           td{
             padding-top: 30px + 32px;
+            @media only screen and (max-width: 480px) {
+              padding-top: 30px;
+            }
           }
         }
         &.last{
           td{
             padding-bottom: 7px + 8px;
-
+            @media only screen and (max-width: 480px) {
+              padding-bottom: 30px;
+            }
           }
         }
         
@@ -535,6 +611,13 @@ body.billing-shipping-page{
           .image-text-container{
             padding-left: 202px;
             margin-bottom: 45px;
+            @media only screen and (max-width: 991px) {
+              padding-left: 180px;
+            }
+            @media only screen and (max-width: 480px) {
+              padding-left: 0px;
+              margin-bottom: 0px;
+            }            
           }
         }
 
@@ -565,6 +648,14 @@ body.billing-shipping-page{
             top: -23px;
             left: 25px;
 
+            @media only screen and (max-width: 480px) {
+              position: static;
+              vertical-align: middle;
+              width: 40%;
+              display: inline-block;
+              margin-right: 8%;
+            }            
+
             // position: relative;
             // top: -23px;
 
@@ -575,6 +666,9 @@ body.billing-shipping-page{
                 width: 100%;
                 height: auto;
                 max-width: none;
+                @media only screen and (max-width: 480px) {
+                  width: 80%;
+                }
               }
             }
           }
@@ -583,21 +677,33 @@ body.billing-shipping-page{
             font-size: 12px;
             line-height: 20px;
           }
+          
+          .product-title-container {          
+            @media only screen and (max-width: 480px) {
+              .display-inline-block;
+              vertical-align: middle;
+              width: 50%;
+            }
+  
 
-          .product-title{
-            .display-inline-block;
+            .product-title{
+              .display-inline-block;
 
-            
+              
 
-            a{
-              .header-font;
-              font-size: 14px;
-              line-height: 20px;
-              text-transform: uppercase;
-              letter-spacing: 0.08em;
-              color: @off-white !important;
+              a{
+                .header-font;
+                font-size: 14px;
+                line-height: 20px;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                color: @off-white !important;
+              }
+
             }
 
+          
+            
           }
         }
 
@@ -617,6 +723,10 @@ body.billing-shipping-page{
           height: 23px;
 
           border: 1px solid @off-white;
+
+          @media only screen and (max-width: 480px) {
+            margin-top: 22px;
+          }
 
           a.minus{
             .cart-minus-icon;
@@ -677,6 +787,17 @@ body.billing-shipping-page{
         .btn-remove{
           .cart-remove-icon;
 
+          @media only screen and (max-width: 991px) {            
+            margin: 0 auto;
+            text-align: center;
+            background-position-x: 13px;
+            color: white;
+            padding-top: 2px;
+            text-transform: uppercase;
+            width: auto;
+            .header-font;
+          }
+
           &:focus,
           &:hover{
             .opacity(0.5);
@@ -728,8 +849,32 @@ body.billing-shipping-page{
   padding-top: 10px;
   padding-bottom: 5px;
 
+  .row {
+    @media only screen and (max-width: 480px) {
+      margin: 0px;
+      .col-md-6 {
+        &:nth-of-type(1) {
+          border-bottom: 1px solid fade(#cccccc, 20%);
+          padding: 0px 0px 10px;
+        }
+        &:nth-of-type(2) {
+          padding: 8px 0px;
+          a {
+            padding-left: 0px!important;
+          }
+        }
+        #update-shopping-cart {
+          float: none;
+        }
+      }
+    }
+  }
+
   .in-between-reward-points{
     padding-left: 24px;
+    @media only screen and (max-width: 480px) {
+      padding-left: 0px;
+    }
     p{
       .body-font;
       font-size: 12px;
@@ -742,6 +887,9 @@ body.billing-shipping-page{
   .each-details-container{
     padding-left: 80px;
     margin-top: -1px;
+    @media only screen and (max-width: 480px) {
+      padding-left: 0px;
+    }
   }
 
   .each-details{
@@ -803,6 +951,18 @@ body.billing-shipping-page{
   
   padding-left: 24px;
   padding-top: 30px;
+
+  @media only screen and (max-width: 1024px) {
+    padding-left: 0px;
+  }
+
+  @media only screen and (max-width: 991px) {
+    padding-left: 24px;
+  }
+
+  @media only screen and (max-width: 480px) {
+    padding-left: 0px;
+  }
 
   
 
@@ -885,6 +1045,15 @@ body.billing-shipping-page{
 #page-shopping-cart-total-container{
   padding-top: 25px;
   padding-left: 80px;
+
+  @media only screen and (max-width: 991px) {
+    padding-left: 0px;    
+  }
+
+  @media only screen and (max-width: 480px) {
+    border-top: 1px solid fade(#cccccc, 20%);
+    padding-bottom: 50px;
+  }
   
 
   .each-details{
@@ -924,6 +1093,9 @@ body.billing-shipping-page{
 
     .value{
       padding-right: 60px;
+      @media only screen and (max-width: 991px) {
+        padding-right: 10px;
+      }
 
       p{
         .body-font;
@@ -963,10 +1135,19 @@ body.billing-shipping-page{
 #page-shopping-cart-billing-container{
   // margin-right: 45px;
   margin-right: 25px;
+  @media only screen and (max-width: 480px) {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 80px;
+  }
 }
 #page-shopping-cart-shipping-container{
   // margin-left: 45px;
   margin-left: 25px;
+  @media only screen and (max-width: 480px) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 }
 
 
@@ -993,6 +1174,10 @@ body.billing-shipping-page{
 
     padding-left: 24px;
     padding-right: 24px;
+
+    @media only screen and (max-width: 991px) {
+      padding-left: 10px;
+    }
   }
 
 
@@ -1016,6 +1201,9 @@ body.billing-shipping-page{
       line-height: 20px;
       letter-spacing: 0em;
       text-transform: none;
+      @media only screen and (max-width: 991px) {
+        padding-left: 10px;
+      }
     }
 
     padding-left: 24px;
@@ -1047,9 +1235,28 @@ body.billing-shipping-page{
 
   .each-input{
     padding-left: 24px;
+    @media only screen and (max-width: 480px) {
+      padding-left: 0px;
+      .input-box {
+        width: 100%;
+      }
+      .dropdown {
+        width: 100%;
+        height: 33px;
+        select {
+          height: 33px;          
+        }
+        &:after {
+          top: 5px;
+        }
+      }
+    }
   }
   .same-as-billing{
     margin-left: 24px;
+    @media only screen and (max-width: 480px) {
+      margin-left: 0px;
+    }
   }
 
   #billing-new-address-form, #shipping-new-address-form {
@@ -1060,6 +1267,11 @@ body.billing-shipping-page{
           .validation-advice {
             position: absolute;
             left: 20px;
+          }
+          @media only screen and (max-width: 480px) {
+            .selected-flag {
+              height: 33px;
+            }
           }
         }
       }
@@ -1089,6 +1301,16 @@ body.billing-shipping-page{
   padding-top: 83px;
   padding-bottom: 100px;
 
+  @media only screen and (max-width: 991px) {
+    padding-top: 43px;
+    padding-bottom: 200px;
+  }
+
+  @media only screen and (max-width: 480px) {
+    padding-bottom: 50px;
+    padding-top: 0px;
+  }
+
   text-align: right;
   font-size: 0;
 
@@ -1099,11 +1321,21 @@ body.billing-shipping-page{
     line-height: 20px;
     background: transparent;
     .display-inline-block;
+    @media only screen and (max-width: 480px) {
+      width: 100%;
+      background-color: @footer-brown;
+      border: none;
+    }
   }
 
   .we-accept.we-are-here{
     .display-inline-block;
     margin-right: 21px;
+
+    @media only screen and (max-width: 480px) {
+      text-align: center;
+      margin-top: 20px;
+    }
 
     ul{
       font-size: 0;
@@ -1145,6 +1377,10 @@ body.billing-shipping-page{
   padding-top: 62px;
   padding-bottom: 10px;
 
+  @media only screen and (max-width: 991px) {
+    padding-top: 80px;
+  }
+
   h2{
     .subheader-font-2;
     font-size: 10px;
@@ -1167,12 +1403,26 @@ body.billing-shipping-page{
 
     margin-bottom: 24px;
   }
+
+  #billing_shipping {
+    .col-md-6 {
+      label {
+        width: 100%;
+      }
+      > p {
+        margin-bottom: 25px;
+      }
+    }
+  }
 }
 
 
 
 #page-shopping-cart-billing-shipping-delivery-information-01{
   padding-left: 24px;
+  @media only screen and (max-width: 991px) {
+    padding-left: 0px;
+  }
   
 }
 #page-shopping-cart-billing-shipping-delivery-information-02{
@@ -1187,6 +1437,20 @@ body.billing-shipping-page{
     margin-bottom: 20px;
     &:last-child{
       margin-bottom: 0px;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #checkout-step-review {
+    #page-shopping-cart-in-between-container {
+      border: 0px;
+      .col-md-6 {
+        border: none;
+        &:nth-of-type(2) {
+          display: none;
+        }
+      }
     }
   }
 }
@@ -1206,6 +1470,9 @@ body.billing-shipping-page{
     a {
       display: block;
       width: 52%;
+      @media only screen and (max-width: 480px) {
+        width: 90%;
+      }
       margin: 0 auto;
       margin-bottom: 18px;
     }

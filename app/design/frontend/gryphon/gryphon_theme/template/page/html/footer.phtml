@@ -1,38 +1,4 @@
-	<!-- <div id="mobile-footer-wrapper" class="visible-xs visible-sm">
-		
-		<div id="mobile-header-footer-copy" class="mobile-footer">
-			<h2>newsletter sign up</h2>
-			<hr class="small">			
-			<p>Join our Gryphon Tea Family and be the first to learn about our latest news, enjoy exclusive deals and invites to events!</p>
 
-			<div class="search">
-				<input type="text" name="subscribe_email" placeholder="Enter your email address" />
-				<button class="signup subscribe_newsletter"><i class="fa fa-check"></i> <span>Sign up</span></button>
-				<span class='newsletter_ajax_loader' style='display:none'><img src='<?php echo $this->getSkinUrl('images/content/opc-ajax-loader.gif')?>'/></span>
-            	<span class="ajax_msg italic"></span>
-			</div>
-
-			<hr class="dotted">
-
-			<h2>FOLLOW US</h2>
-			<hr class="small">
-			<ul class="share-ctas">
-				<li><a href="https://instagram.com/gryphontea/" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a></li>
-				<li><a href="https://www.pinterest.com/gryphontea/" target="_blank" class="pintrest"><i class="fa fa-pinterest"></i></a></li>
-				<li><a href="https://www.facebook.com/gryphonteacompany" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="https://www.linkedin.com/company/gryphon-tea-company" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
-				<li><a href="https://www.youtube.com/channel/UCrKNQcT3PHO-o_vQBMUlH8Q/videos" target="_blank" class="youtube"><i class="fa fa-youtube"></i></a></li>
-				<li><a href="https://plus.google.com/+Gryphonteacompany/posts" target="_blank" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
-			</ul>
-
-			<div class="copywrite">
-				<h6>&copy; <?php echo date("Y"); ?> GRYPHON TEA COMPANY.</h6>
-				<p>All material on this site is copyrighted by Gryphon Tea Company. Gryphon Tea Company® is a registered trademark. No images or copy on this site may be used without written permission by Gryphon Tea Company.</p>	
-			</div>
-
-		</div>
-				
-	</div> -->
 
 	<footer id="desktop-footer" class="visible-md visible-lg">
 	  <div id="desktop-footer-ctas-container">
@@ -85,7 +51,7 @@
 	          <p>Get the latest news, product <br> announcements, promotions, and more!</p>
 	        
 	          <div id="footer-newsletter-input">
-	            <input type="text" name="subscribe_email" id="subscribe_email" placeholder="Enter your email address" />
+	            <input type="text" name="subscribe_email" class="subscribe_email" placeholder="Enter your email address" />
 	            <a href="#" class="signup subscribe_newsletter footer-newsletter-send-btn"><i class="fa fa-paper-plane" aria-hidden="true"></i></a>
 	            <span class='newsletter_ajax_loader' style='display:none'><img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/></span>        			
 	          </div>
@@ -113,15 +79,18 @@
  	</footer>
 	<script>
 		jQuery(document).ready(function($){
-			$('#subscribe_email').keypress(function(event){
+			$('.subscribe_email').keypress(function(event){
 				var keycode = (event.keyCode ? event.keyCode : event.which);
 				if(keycode == '13') 
 					$('.subscribe_newsletter').trigger('click');
 			});
-			$('.subscribe_newsletter').on('click', function(e){
-				var subscribe_email = $('#subscribe_email').val();
+			$('.subscribe_newsletter').click(function(e){
+        e.preventDefault();        
+				var subscribe_email = $(this).prev('.subscribe_email').val();
 
-				jQuery('.newsletter_ajax_loader').show();
+        console.log(subscribe_email);
+
+				$('.newsletter_ajax_loader').show();
 
 				var request = $.ajax({
 				  	url: "<?php echo $this->getUrl('discovertea/index/subscribe', array('_secure'=>true)) ?>",
@@ -133,67 +102,78 @@
 				request.done(function( msg ) {
 					var message = JSON.parse(msg);
 					console.log(message);
-					jQuery('.newsletter_ajax_loader').hide();
+					$('.newsletter_ajax_loader').hide();
 					if(message.error_messages)
-						jQuery('span.ajax_msg').html('<p>'+message.error_messages+'</p>').show().delay(5000).fadeOut();				  		
+						$('span.ajax_msg').html('<p>'+message.error_messages+'</p>').show().delay(5000).fadeOut();				  		
 				  	else
-						jQuery('span.ajax_msg').html('<p>Successfully subscribed to newsletter</p>').show().delay(5000).fadeOut();
+						$('span.ajax_msg').html('<p>Successfully subscribed to newsletter</p>').show().delay(5000).fadeOut();
 				});
 			});
 		});
 	</script>
 
+  <!--
+     __  __  ___  ____ ___ _     _____   _____ ___   ___ _____ _____ ____
+    |  \/  |/ _ \| __ )_ _| |   | ____| |  ___/ _ \ / _ \_   _| ____|  _ \
+    | |\/| | | | |  _ \| || |   |  _|   | |_ | | | | | | || | |  _| | |_) |
+    | |  | | |_| | |_) | || |___| |___  |  _|| |_| | |_| || | | |___|  _ <
+    |_|  |_|\___/|____/___|_____|_____| |_|   \___/ \___/ |_| |_____|_| \_\
+
+  -->
+
+  <!-- not sure why it's not available in the home page... -->
+
+  <footer id="mobile-footer" class="visible-sm visible-xs">
+
+    <div id="mobile-footer-copy-section">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12">
 
 
-<footer id="mobile-footer" class="visible-sm visible-xs">
+              
+            <div id="mobile-footer-copy">
+              <h4>Newsletter</h4>
+              <p>Get the latest news, product, announcments, promotions, and more!</p>
+            </div> <!-- mobile-footer-copy -->
 
-  <div id="mobile-footer-copy-section">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-12">
+            <form id="mobile-newsletter-subscribe-form" class="simple-form-check">
+              <div class="form-group">
+                <input type="text" name="subscribe_email" class="subscribe_email required only-email" placeholder="Enter Your Email Address">
+                <input type="submit" class="subscribe_newsletter">
+                <span class='newsletter_ajax_loader' style='display:none'><img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/></span>
+              </div>
+              <span class="ajax_msg italic"></span>
+            </form>
 
-
-            
-          <div id="mobile-footer-copy">
-            <h4>Newsletter</h4>
-            <p>Get the latest news, product, announcments, promotions, and more!</p>
-          </div> <!-- mobile-footer-copy -->
-
-          <form id="mobile-newsletter-subscribe-form" class="simple-form-check">
-            <div class="form-group">
-              <input type="text" class="required only-email" placeholder="Enter Your Email Address">
-              <input type="submit">
+            <div id="mobile-footer-links">
+              <ul>
+                <li><a href="<?php echo $this->getUrl('privacy-policy'); ?>">Privacy Policy</a></li>
+                <li><a href="<?php echo $this->getUrl('terms-and-conditions'); ?>">Terms & Conditions</a></li>
+              </ul>
             </div>
-          </form>
 
-          <div id="mobile-footer-links">
-            <ul>
-              <li><a href="<?php echo $this->getUrl('privacy-policy'); ?>">Privacy Policy</a></li>
-              <li><a href="<?php echo $this->getUrl('terms-and-conditions'); ?>">Terms & Conditions</a></li>
-            </ul>
           </div>
+        </div>
 
+
+
+      </div>
+    </div> <!-- mobile-footer-copy-section -->
+
+    <div id="mobile-footer-copyright-section">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12">
+
+            <div id="mobile-footer-copyright">
+              <a href="<?php echo $this->getUrl('') ?>" id="mobile-footer-logo"></a>
+              <h4>Monogram by Gryphon Tea Company</h4>
+            </div>
+
+          </div>
         </div>
       </div>
+    </div> <!-- mobile-footer-copywrite-section -->
 
-
-
-    </div>
-  </div> <!-- mobile-footer-copy-section -->
-
-  <div id="mobile-footer-copyright-section">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-12">
-
-          <div id="mobile-footer-copyright">
-            <a href="<?php echo $this->getUrl('') ?>" id="mobile-footer-logo"></a>
-            <h4>Monogram by Gryphon Tea Company</h4>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div> <!-- mobile-footer-copywrite-section -->
-
-</footer>
+  </footer>

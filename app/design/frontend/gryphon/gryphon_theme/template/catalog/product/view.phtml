@@ -75,7 +75,7 @@ endif;
                 <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
                 <input type="hidden" name="related_product" id="related-products-field" value="" />
                 <div id="product-detail-img-info-container" class="row">
-                    <div class="col-md-4 v-align">
+                    <div class="col-md-4 col-sm-12 col-xs-12 v-align">
                         <?php if ($isGiftcardType) : ?>
                         <div class="gift-card-img">
                         <?php elseif($_product->getTypeId() == 'tin'): ?>
@@ -86,7 +86,7 @@ endif;
                             <?php echo $this->getChildHtml('media') ?>
                         </div>
                     </div><!--
-                    --><div class="col-md-4 v-align">
+                    --><div class="col-md-4 col-sm-12 col-xs-12 v-align">
                         <?php if ($isGiftcardType || $_product->getTypeId() == 'tin') : ?>
                         <div class="gift-card-content">                        
                         <?php else: ?>
@@ -108,21 +108,21 @@ endif;
                                 <?php if( $_product->getTypeId() !== 'tin' ): ?>
                                     <p><?php echo $shortDescription; ?></p>
                                     <div class="row">
-                                        <div class="col-md-6 product-info-col-1">
+                                        <div class="col-md-6 col-sm-6 col-xs-6 product-info-col-1">
                                             <h5><?php echo $this->__('Price'); ?></h5>
                                             <?php if (!$isGiftcardType) :?> 
                                                 <span><?php echo $this->getPriceHtml($_product); ?></span>
                                                 <?php echo $this->getChildHtml('bundle_prices') ?>
                                             <?php endif; ?>
                                         </div>
-                                        <div class="col-md-6 product-info-col-2">
+                                        <div class="col-md-6 col-sm-6 col-xs-6 product-info-col-2">
                                             <h5><?php echo $this->__('No. of Sachet'); ?></h5>
                                             <span><?php echo $_product->getData('number_of_sachet'); ?> per Box</span>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-6 product-info-col-1">
+                                        <div class="col-md-6 col-sm-6 col-xs-6 product-info-col-1">
                                             <?php $product_category_name = $this->helper('catalogcustomiser')->getTypesCategory($_product); ?>
                                             <?php if( !empty($product_category_name) ): ?>
                                                 <h5><?php echo $this->__('Tea Type'); ?></h5>
@@ -130,7 +130,7 @@ endif;
                                             <?php endif; ?>
                                         </div>
                                         <?php if($_product->getData('weight') > 0): ?>
-                                        <div class="col-md-6 product-info-col-2">
+                                        <div class="col-md-6 col-sm-6 col-xs-6 product-info-col-2">
                                             <h5><?php echo $this->__('Weight'); ?></h5>
                                             <span><?php echo number_format($_product->getData('weight'), 1); ?> g per Sachet</span>
                                         </div>
@@ -138,7 +138,7 @@ endif;
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-6 product-info-col-1">
+                                        <div class="col-md-6 col-sm-6 col-xs-6 product-info-col-1">
                                             <?php if( !empty($_product->getTemperature()) && !empty($_product->getTime()) ): //!empty($_product->getAmountOfWater()) &&  ?>
                                             <div class="steeping-suggestion">
                                                 <h5><?php echo $this->__('Steeping Suggestion'); ?></h5>
@@ -161,7 +161,7 @@ endif;
                                             </div>
                                         </div>
                                         <?php if( !empty($_product->getIngredients()) ): ?>
-                                        <div class="col-md-6 product-info-col-2">
+                                        <div class="col-md-6 col-sm-6 col-xs-6 product-info-col-2">
                                             <h5><?php echo $this->__('Ingredients'); ?></h5>
                                             <ul>
                                                 <li><span><?php echo $_product->getIngredients(); ?></span></li>
@@ -178,7 +178,7 @@ endif;
                                 <?php echo $this->getChildHtml('other');?>
 
                                 <?php if( $_product->getTypeId() == 'tin' ): ?>
-                                    <div class="col-md-6 product-info-col-1">
+                                    <div class="col-md-6 col-sm-6 col-xs-6 product-info-col-1">
                                         <div class="inputs">
 
                                             <div class="each-input">
@@ -201,7 +201,7 @@ endif;
                                             
                                         </div>  
                                     </div>  
-                                    <div class="col-md-6 product-info-col-2">
+                                    <div class="col-md-6 col-sm-6 col-xs-6 product-info-col-2">
 
                                         <?php if (!$this->hasOptions()):?>
                                             <div class="add-to-box">
@@ -237,7 +237,7 @@ endif;
                         </div>
                         <?php $product_name = str_replace("&", "and", strtolower($_product->getName())); ?>
                     </div><!--    
-                  --><div class="col-md-4 v-align suggestion-container <?php echo str_replace(" ", "-", strtolower($product_name)) . '-suggestion-bg'; ?>">
+                  --><div class="col-md-4 col-sm-12 col-xs-12 v-align suggestion-container <?php echo str_replace(" ", "-", strtolower($product_name)) . '-suggestion-bg'; ?>">
 
                     <?php echo $this->getChildHtml('upsell_products') ?>    
                   </div><!-- end suggestion-container -->
@@ -286,12 +286,12 @@ endif;
                             jQuery('#main-header .cart-preview-select').show();
                             jQuery('#main-header .cart-preview-select').delay(5000).hide(400);
 
-                            var mobile_header = jQuery("#main-mobile-header").data('gryphon_mobile_header');
-                            mobile_header.public_open_cart();
+                            // var mobile_header = jQuery("#main-mobile-header").data('gryphon_mobile_header');
+                            // mobile_header.public_open_cart();
                             //jQuery('#mobile-cart-expand-container').show();
                             
 
-                            jQuery('.mobile-cart-button').find('span').html(data.cart_qty);
+                            // jQuery('.mobile-cart-button').find('span').html(data.cart_qty);
                             jQuery('.cart-summary-data').find('.price').html(data.cart_total);
                             jQuery('.cart-summary-data').find('.count').html(data.cart_qty);
                             jQuery('.cart-summary-data span').html('<span class="price">'+data.cart_total+'</span> (<span class="count">'+data.cart_qty+'</span>)');

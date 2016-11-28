@@ -214,9 +214,10 @@
   // height: 90px;
   height: 70px;
 }
-@media only screen and (max-height: 668px) {
+@media only screen and (max-width: 991px) {
   .desktop-header-spacer{
     // height: 90px !important;
+    height: 35px!important;
   }
 }  
 
@@ -458,6 +459,14 @@
   background: @dark-brown;
 }
 
+#mobile-header-monogram-name-container{
+  #mobile-header-monogram-name {    
+    .header-desktop-logo-name;
+    display: block;
+    margin: 0 auto;
+    margin-top: 18px;
+  }
+}
 
 #mobile-header-menu-btn-container{
   text-align: left;
@@ -477,7 +486,7 @@
   text-align: center;
 
   .display-inline-block;
-  width: 40px;
+  // width: 40px;
   height: 40px;
 
   color: @off-white;
@@ -488,3 +497,184 @@
     .opacity(0.6);
   }
 }
+
+
+
+///
+
+.mobile-menu-open{
+  height: auto;
+  overflow: scroll;
+  #content-wrapper{
+    
+    //max-height: 100%;
+    //overflow: hidden;
+    display: none;
+  }
+  #mobile-footer {
+    display: none!important;
+  }
+  #mobile-expand-container{
+    display: block;
+  }
+  #mobile-header {
+    position: absolute;
+    height: auto;
+    .container-fluid {
+      // padding-top: 10px;
+      // padding-bottom: 10px;
+    }
+  }
+}
+
+
+#mobile-expand-container{
+    display: none;
+
+    #mobile-currency{
+
+
+      #mobile-currency-header{
+        background: #484848;
+        position: relative;
+
+
+        p{
+          .header-font;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: @white;
+
+          font-size: 11.5px;
+          line-height: 41px;
+          text-transform: 
+
+          display: block;
+          width: 100%;
+          padding: 0 20px;
+        }
+        #mobile-currency-expand-button{
+
+          &:before{
+            content: "\f078";
+          }
+
+          font: normal normal normal 14px/1 FontAwesome;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+
+
+          font-size: 12px;
+          line-height: 39px;
+          color: @white;
+          text-align: center;
+
+          position: absolute;
+          top: 1px;
+          right: 5px;
+          width: 39px;
+          height: 39px;
+
+          .transition(0.3s);
+
+          &.expanded{
+            .rotation(180deg);
+          }
+
+        }
+      }
+      #mobile-currency-expand-container{
+
+        background: #202020;
+
+        display: none;
+        padding: 0 20px;
+
+        ul{
+          padding: 9px 0;
+          li{
+            a{
+              text-align: left;
+              .header-font;
+              font-size: 10px;
+              line-height: 24px;
+              color: @white;
+              letter-spacing: 0.05em;
+            }
+          }
+        }
+
+      }
+
+    }
+
+    .mobile-submenu{
+      .mobile-submenu-header{
+        .header-font;
+        font-size: 9px;
+        line-height: 25px;
+        color: @white;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        background: linear-gradient(to right, rgba(204,213,97,0.4) 50%, rgba(184, 199, 131,0.4) 50%);
+        background-size: 200% 100%;
+        background-position:left bottom;
+
+        padding: 0 20px;
+
+        ul.social-media-icons {
+          float: right;
+          display: inline-block;
+          padding-bottom: 23px;
+          li {
+            display: inline-block;
+            margin-right: 8px;            
+            a {
+              color: @white;
+              i {
+                font-size: 12px;
+                line-height: 25px;
+              }
+            }
+          }
+        }
+
+      }
+
+      > ul { // level 02
+
+        > li {
+          background: @white;
+          //border-bottom: 1px solid #e9e8e6;
+          border-bottom: 1px solid @border-grey;
+          position: relative;
+
+          &:last-child{
+            border-bottom: none;
+          }
+
+          > a{
+            .header-font;
+            font-size: 12px;
+            line-height: 40px;
+            color: @dark-brown;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+
+            display: block;
+            width: 100%;
+            padding: 5px 20px 0;
+          }          
+
+        }
+
+      } // level 02
+
+    } // .mobile-submenu
+
+    #mobile-header-footer-copy{
+      
+    }
+
+  } // #mobile-expand-container

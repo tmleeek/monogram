@@ -2,6 +2,12 @@
   overflow: visible;
 }
 
+@media only screen and (max-width: 991px) {
+  input {
+    border-radius: 0!important;
+  }
+}
+
 .catalog-product-view {
   .messages {
     display: none;
@@ -23,14 +29,35 @@
       vertical-align: middle;
       float: none;
     }
+    .product-img {
+      @media only screen and (max-width: 991px) {
+        margin-top: -100px; // when actual product comes in may be not needed
+        margin-bottom: -100px; // when actual product comes in may be not needed
+      }
+      @media only screen and (max-width: 480px) {
+        margin-top: -60px;
+      }
+    }
     .product-info {
       padding-top: 90px;
       padding-bottom: 90px;
       padding-left: 45px;
       padding-right: 45px;
+      @media only screen and (max-width: 1024px) {
+        padding-right: 0px;        
+      }
+      @media only screen and (max-width: 991px) {
+        padding-top: 40px;
+        padding-left: 0px;
+        padding-bottom: 20px;
+      }
+      @media only screen and (max-width: 480px) {
+        padding-top: 60px;
+        padding-bottom: 10px;
+      }
       h5 {
         // font-size: 9px;
-        line-height: 10px;
+        line-height: 15px;
         padding-bottom: 7px;
         // color: @off-white;
         color: @white;
@@ -57,6 +84,9 @@
         top: 22px;
         width: 100%;
         right: -140px;
+        @media only screen and (max-width: 992px) {
+          right: 118px;
+        }
       }
       .row {
         margin-bottom: 28px;
@@ -64,6 +94,12 @@
 
       .product-info-col-2 {
         padding-left: 30px;
+        @media only screen and (max-width: 1024px) {
+          padding-left: 0px;
+        }
+        .add-to-cart-buttons {
+          text-align: right;
+        }
       }
 
       .steeping-suggestion {
@@ -160,7 +196,21 @@
       width: 30%;
       padding: 0px;
       right: 0px;
-      background-color: rgba(236, 205, 206, 0.5);      
+      background-color: rgba(236, 205, 206, 0.5);
+      @media only screen and (max-width: 991px) {
+        position: static;
+        width: 102%;
+        height: auto!important;
+        margin-left: -10px;
+      }
+      @media only screen and (max-width: 480px) {
+        width: 105%;
+        margin-left: -10px;
+        margin-right: -10px;
+      }
+      @media only screen and (max-width: 320px) {
+        width: 106%;
+      }
     }
     .earl-grey-neroli-suggestion-bg {
       background-color: rgba(179, 197, 205, 0.5);
@@ -214,6 +264,9 @@
     .suggestion {
       padding-top: 80px;
       padding-bottom: 10px;
+      @media only screen and (max-width: 991px) {
+        padding: 40px 15px;
+      }
       h5 {
         // font-size: 9px;
         line-height: 10px;
@@ -222,14 +275,58 @@
         color: @white;
         text-transform: uppercase;
         text-align: center;
+        @media only screen and (max-width: 991px) {
+          text-align: left;
+        } 
       }
       ul.suggestion-list {
+        @media only screen and (max-width: 991px) {
+          margin-bottom: 0px;
+          padding-top: 20px;
+        } 
         > li {
           margin-bottom: 15px;
+          &:last-child {
+            @media only screen and (max-width: 991px) {
+              margin-bottom: 0px;
+            }  
+          }          
+        }
+        .slick-prev {
+          left: 0px;  
+          &:before {               
+            content: "\f053";
+          }
+          @media only screen and (max-width: 320px) {
+            left: -10px;
+          }
+        }
+        .slick-next { 
+          right: 0px; 
+          &:before {          
+            content: "\f054";
+          }
+          @media only screen and (max-width: 320px) {
+            right: -10px;
+          }
+        }
+        .slick-prev, .slick-next {
+          top: 60%;
+          z-index: 2;
+          &:before {         
+            display: inline-block;
+            font-family: FontAwesome;
+            font-size: 14px;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transform: translate(0, 0);            
+            color: @white;
+          }   
         }
       }
       ul {
-        padding-top: 10px;
+        padding-top: 10px;        
         text-align: center;
         li {
           a {
@@ -241,6 +338,12 @@
             color: @white;
             text-transform: uppercase;
             letter-spacing: 0.08em;
+            
+            &.view-details {
+              @media only screen and (max-width: 991px) {
+                display: none;
+              }
+            }
 
             // display: inline-block;
             i {
@@ -252,6 +355,11 @@
             }
             &.product-image {
               padding-bottom: 0px;
+              img {
+                @media only screen and (max-width: 991px) {
+                  margin: 0 auto;
+                }
+              }
             }
           }
         }
@@ -278,6 +386,10 @@
     background-color: @whiteish-grey;
     padding-top: 80px;
     padding-bottom: 80px;
+    @media only screen and (max-width: 480px) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
 
 
     #popular-tea-layering-container{
@@ -303,21 +415,68 @@
       }
     }
     img {
-
+      margin: 0 auto;
       &.parent {
         position: absolute;
         width: 180px;   
         top: 0;
         left: 10%;
-        z-index: 1;                   
+        z-index: 1;   
+        @media only screen and (max-width: 991px) {
+          left: -10%;
+        }  
+        @media only screen and (max-width: 320px) {
+          left: -30%;
+        }                
       }
       &.overlay {   
         position: absolute;
         width: 180px;        
         top: 0;
         left: 10%;
-        z-index: 0;        
+        z-index: 0;   
+        @media only screen and (max-width: 991px) {
+          left: 0%;
+        }   
+        @media only screen and (max-width: 320px) {
+          left: -20%;
+        }     
       }
+    }
+    .slick-slider {
+      margin: 0px;
+    }
+    .slick-prev {
+      left: 0px;  
+      &:before {               
+        content: "\f053";
+      }
+      @media only screen and (max-width: 320px) {
+        left: -10px;
+      }
+    }
+    .slick-next { 
+      right: 0px; 
+      &:before {          
+        content: "\f054";
+      }
+      @media only screen and (max-width: 320px) {
+        right: -10px;
+      }
+    }
+    .slick-prev, .slick-next {
+      top: 45%;
+      z-index: 2;
+      &:before {         
+        display: inline-block;
+        font-family: FontAwesome;
+        font-size: 14px;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transform: translate(0, 0);            
+        color: @footer-brown;
+      }   
     }
 
     h4 {
@@ -328,6 +487,10 @@
 
       font-size: 16px;
       letter-spacing: 0.08em;
+      @media only screen and (max-width: 991px) {
+        text-align: left;
+        padding-bottom: 0px;
+      }   
     }
 
     h3 {
@@ -368,6 +531,18 @@
 #tea-product-detail-section-3 {
   padding-top: 80px;
   padding-bottom: 80px;
+  @media only screen and (max-width: 480px) {
+    padding-top: 40px;
+    padding-bottom: 0px;
+  }
+  .container-fluid {
+    @media only screen and (max-width: 991px) {
+      padding: 0 40px;
+    }
+    @media only screen and (max-width: 480px) {
+      padding: 0 30px;
+    }
+  }
   .row {
     padding-bottom: 15px;
   }
@@ -379,6 +554,9 @@
 
     font-size: 16px;
     letter-spacing: 0.08em;
+    @media only screen and (max-width: 991px) {
+      text-align: left;
+    }
   }
   h3 {
     .header-font-02;
@@ -386,6 +564,9 @@
     // font-size: 12px;
     font-size: 13px;
     padding-left: 20px;
+    @media only screen and (max-width: 991px) {
+      padding-left: 0px;
+    }
   }
   label {
     .header-font;
@@ -413,6 +594,9 @@
   }
   .col-md-6 {
     padding-right: 0px;
+    @media only screen and (max-width: 991px) {
+      padding-right: 10px;
+    }
   }
   textarea {
     border: none;

@@ -36,7 +36,7 @@ if(Mage::getSingleton('customer/session')->isLoggedIn()) {
 <?php $buttonTitle = $this->__('Add to Cart'); ?>
 <?php $isGiftcardType = $this->helper('catalogcustomiser')->isGiftcardType($_product); ?>
 <?php if($_product->isSaleable()): ?>
-    <div class="col-md-6 product-info-col-1">
+    <div class="col-md-6 col-sm-6 col-xs-6 product-info-col-1">
         <?php if(!$_product->isGrouped()): ?>
             <?php if (!$isGiftcardType && $_product->getTypeId() !== 'tin') : ?>
                 <div class="qty-wrapper">
@@ -60,7 +60,7 @@ if(Mage::getSingleton('customer/session')->isLoggedIn()) {
             <?php endif; ?>
         <?php endif; ?>
     </div>
-    <div class="col-md-6 product-info-col-2">        
+    <div class="col-md-6 col-sm-6 col-xs-6 product-info-col-2">        
 
         <?php if (count($this->getTierPrices()) > 0): ?>   
         <br/> <?php echo $this->getTierPriceHtml() ?>   

@@ -44,7 +44,10 @@
   .container-fluid {
     padding: 0px;
     .col-md-6 {
-      padding: 0px;
+      padding: 0px;      
+      @media only screen and (max-width: 992px) {
+        display: block;        
+      }
     }
   }
 
@@ -69,10 +72,19 @@
       @media only screen and (min-width: 1300px) {
         height: 650px;
       }
+      
+      @media only screen and (max-width: 1024px) {        
+        padding: 40px 20px;
+      }
+
+      @media only screen and (max-width: 992px) {
+        height: auto;
+      }
 
       .table {
         display: table;
         height: 100%;
+        margin-bottom: 0px;
         .table-cell {
           display: table-cell;
           vertical-align: middle;
@@ -99,9 +111,18 @@
 
       #find-out-further-information-container {
         margin: 0px;
+
+        #find-out-further-information-text {
+          @media only screen and (max-width: 1024px) {
+            padding: 0;
+          }
+        }
         
         #find-out-further-information-cta {
           padding-left: 30px;
+          @media only screen and (max-width: 1024px) {
+            padding: 0;
+          }
           ul {
             li {
               margin-bottom: 10px;

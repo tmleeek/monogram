@@ -26,6 +26,7 @@ var Customcheckout = Class.create(Checkout, {
             }
         } else if (currentItem == 'review') {
             if (jQuery('#op-confirmation').size()) {
+                jQuery('#op-billing-shipping').removeClass('active');
                 jQuery('#op-confirmation').addClass('active');
             }
         }

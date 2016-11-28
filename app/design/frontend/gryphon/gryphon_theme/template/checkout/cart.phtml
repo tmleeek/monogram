@@ -130,10 +130,10 @@ if($session->isLoggedIn()) {
                                         <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
                                             <th rowspan="<?php echo $mergedCells; ?>" class="a-center"><h2><?php echo $this->__('Move to Wishlist') ?></h2></th>
                                         <?php endif ?>
-                                        <th class="a-center" width="10%" colspan="<?php echo $mergedCells; ?>"><h2><?php echo $this->__('Unit Price') ?></h2></th>
+                                        <th class="a-center hidden-xs" width="10%" colspan="<?php echo $mergedCells; ?>"><h2><?php echo $this->__('Unit Price') ?></h2></th>
                                         <th width="10%" rowspan="<?php echo $mergedCells; ?>" class="a-center"><h2><?php echo $this->__('Quantity') ?></h2></th>
-                                        <th class="a-center" colspan="<?php echo $mergedCells; ?>"><h2><?php echo $this->__('Subtotal') ?></h2></th>
-                                        <th rowspan="<?php echo $mergedCells; ?>" class="a-center">&nbsp;</th>
+                                        <th class="a-center hidden-xs" colspan="<?php echo $mergedCells; ?>"><h2><?php echo $this->__('Subtotal') ?></h2></th>
+                                        <th rowspan="<?php echo $mergedCells; ?>" class="a-center  hidden-xs">&nbsp;</th>
                                     </tr>
                                     <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
                                         <tr>
@@ -200,12 +200,12 @@ if($session->isLoggedIn()) {
 
                     <div id="page-shopping-cart-in-between-container">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-6 col-sm-12 col-xs-12">
                                 <div class="in-between-reward-points">
                                     <!-- Update from JS -->
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 col-sm-12 col-xs-12">
                                 <div class="each-details-container">
                                     <div class="each-details">
                                         <!--  -->
@@ -217,7 +217,7 @@ if($session->isLoggedIn()) {
                     </div> <!-- #page-shopping-cart-in-between-container -->
                     
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-7 col-xs-12">
                             <div id="page-shopping-cart-discount-code-container">
                                 <div class="each-input">
                                     <?php /* Extensions placeholder */ ?>
@@ -264,7 +264,7 @@ if($session->isLoggedIn()) {
                             </div><!-- #page-shopping-cart-discount-code-container -->
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-5 col-xs-12">
                             <div id="page-shopping-cart-total-container">
                                 <?php echo $this->getChildHtml('totals'); ?>
                             </div><!-- #page-shopping-cart-total-container -->
@@ -347,36 +347,36 @@ if($session->isLoggedIn()) {
       
 
       // update shopping cart html
-      var arr = $('#shopping-cart-table tbody tr');
-      var table_row = null;
-      var col_1 = null;
-      var col_3 = null;
-      var new_image_container = null;
-      for (var i = 0, l = arr.length; i < l; i++) {
-        table_row = $(arr[i]);
-        col_1 = table_row.find('td:first-child');
-        col_3 = table_row.find('td:nth-child(3)');
-        new_image_container = $('<div class="image-text-container-2"></div>');
-        new_image_container.append(col_1.find('.img-container').clone());
+      // var arr = $('#shopping-cart-table tbody tr');
+      // var table_row = null;
+      // var col_1 = null;
+      // var col_3 = null;
+      // var new_image_container = null;
+      // for (var i = 0, l = arr.length; i < l; i++) {
+      //   table_row = $(arr[i]);
+      //   col_1 = table_row.find('td:first-child');
+      //   col_3 = table_row.find('td:nth-child(3)');
+      //   new_image_container = $('<div class="image-text-container-2"></div>');
+      //   new_image_container.append(col_1.find('.img-container').clone());
 
-        text_container = $('<div class="text-container"></div>');
-        text_container.append(table_row.find('.product-title').clone());
-        text_container.append($(table_row.find('.product-price')[0]).clone());
+      //   text_container = $('<div class="text-container"></div>');
+      //   text_container.append(table_row.find('.product-title').clone());
+      //   text_container.append($(table_row.find('.product-price')[0]).clone());
 
-        //text_container.append($(table_row.find('.item-options') ).clone());
-        text_container.find('.product-title').after($(table_row.find('.item-options') ).clone());
+      //   //text_container.append($(table_row.find('.item-options') ).clone());
+      //   text_container.find('.product-title').after($(table_row.find('.item-options') ).clone());
 
-        if(  text_container.find('.view-tin-details').length != 0 ){
-            text_container.find('.view-tin-details').before(text_container.find('.product-price'));
-        }
+      //   if(  text_container.find('.view-tin-details').length != 0 ){
+      //       text_container.find('.view-tin-details').before(text_container.find('.product-price'));
+      //   }
 
-        new_image_container.append(text_container);
+      //   new_image_container.append(text_container);
 
-        col_1.prepend(new_image_container);
-        col_3.append(table_row.find('.last-image-text-container'));
+      //   col_1.prepend(new_image_container);
+      //   col_3.append(table_row.find('.last-image-text-container'));
 
-        console.log('row!');
-      }
+      //   console.log('row!');
+      // }
 
       $('.view-tin-details').on('click', function(e){
         console.log('view-tin-details click');

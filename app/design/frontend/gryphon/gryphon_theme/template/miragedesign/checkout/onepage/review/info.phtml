@@ -127,10 +127,10 @@ function isMobile()
                         <thead>
                             <tr>
                                 <th width="50%" colspan="<?php echo $colspan ?>" rowspan="<?php echo $rowspan ?>"><h2><?php echo $this->__('ITEMS') ?></h2></th>
-                                <th width="10%" colspan="<?php echo $colspan ?>" class="a-center"><h2><?php echo $this->__('Unit Price') ?></h2></th>
+                                <th width="10%" colspan="<?php echo $colspan ?>" class="a-center hidden-xs"><h2><?php echo $this->__('Unit Price') ?></h2></th>
                                 <th width="10%" rowspan="<?php echo $rowspan ?>" class="a-center"><h2><?php echo $this->__('Quantity') ?></h2></th>
-                                <th colspan="<?php echo $colspan ?>" class="a-center"><h2><?php echo $this->__('Subtotal') ?></h2></th>
-                                <th rowspan="<?php echo $rowspan ?>" class="a-center">&nbsp;</th>
+                                <th colspan="<?php echo $colspan ?>" class="a-center hidden-xs"><h2><?php echo $this->__('Subtotal') ?></h2></th>
+                                <th rowspan="<?php echo $rowspan ?>" class="a-center hidden-xs">&nbsp;</th>
                             </tr>
                             <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
                                 <tr>
@@ -214,9 +214,9 @@ function isMobile()
         </div>
     </div>
 
-    <div id="page-shopping-cart-cta-container">
-        <div class="action-container hidden-xs hidden-sm">            
-            <div class="we-accept we-are-here">                
+    <div id="page-shopping-cart-cta-container" class="page-review-cta-container">
+        <div class="action-container">            
+            <div class="we-accept we-are-here hidden-xs">                
                 <ul>
                     <li><i class="fa fa-cc-discover"></i></li>
                     <li><i class="fa fa-cc-visa"></i></li>
@@ -229,6 +229,14 @@ function isMobile()
               <img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/>
                 <!-- <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" alt="<?php echo $this->__('Submitting order information...') ?>" title="<?php echo $this->__('Submitting order information...') ?>" class="v-middle" /> <?php //echo $this->__('Submitting order information...') ?> -->
             </span>
+            <div class="we-accept we-are-here visible-xs">                
+                <ul>
+                    <li><i class="fa fa-cc-discover"></i></li>
+                    <li><i class="fa fa-cc-visa"></i></li>
+                    <li><i class="fa fa-cc-amex"></i></li>
+                    <li><i class="fa fa-cc-mastercard"></i></li>
+                </ul>
+            </div>
         </div>       
     </div>    
     <?php echo $this->getChildHtml('items_after'); ?>
@@ -300,29 +308,33 @@ function isMobile()
               
 
               // update shopping cart html
-              var arr = $('#checkout-review-table-wrapper tbody tr');
-              var table_row = null;
-              var col_1 = null;
-              var col_3 = null;
-              var new_image_container = null;
-              for (var i = 0, l = arr.length; i < l; i++) {
-                table_row = $(arr[i]);
-                col_1 = table_row.find('td:first-child');
-                col_3 = table_row.find('td:nth-child(3)');
-                new_image_container = $('<div class="image-text-container-2"></div>');            
-                new_image_container.append(col_1.find('.img-container').clone());
+              // var arr = $('#checkout-review-table-wrapper tbody tr');
+              // var table_row = null;
+              // var col_1 = null;
+              // var col_3 = null;
+              // var new_image_container = null;
+              // for (var i = 0, l = arr.length; i < l; i++) {
+              //   table_row = $(arr[i]);
+              //   col_1 = table_row.find('td:first-child');
+              //   col_3 = table_row.find('td:nth-child(3)');
+              //   new_image_container = $('<div class="image-text-container-2"></div>');            
+              //   new_image_container.append(col_1.find('.img-container').clone());
 
-                text_container = $('<div class="text-container"></div>');
-                text_container.append(table_row.find('.product-name').clone());
-                text_container.append($(table_row.find('.product-price')[0]).clone());
+              //   text_container = $('<div class="text-container"></div>');
+              //   text_container.append(table_row.find('.product-name').clone());
+              //   text_container.append($(table_row.find('.product-price')[0]).clone());
 
-                new_image_container.append(text_container);
+              //   new_image_container.append(text_container);
 
-                col_1.prepend(new_image_container);
-                col_3.append(table_row.find('.last-image-text-container'));
+              //   col_1.prepend(new_image_container);
+              //   col_3.append(table_row.find('.last-image-text-container'));
 
-                console.log('row!');
-              }
+              //   console.log('row!');
+              // }
+
+              var copyHtml = $("#page-shopping-cart-sidebar-address").html();
+              $("#page-shopping-cart-sidebar-address").hide();
+              $( ".page-review-cta-container" ).before('<div id="copy-page-shopping-cart-sidebar-address">'+copyHtml+'</div>');
 
 
             });

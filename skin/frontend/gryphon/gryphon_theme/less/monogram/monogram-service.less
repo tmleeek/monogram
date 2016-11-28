@@ -3,10 +3,19 @@
 }
 
 #monogram-service-section-1 {
+
+  @media only screen and (max-width: 991px) {
+    overflow: hidden;
+  }
+
   .container-fluid {
     padding: 0px;
     .col-md-6 {
       padding: 0px;
+      @media only screen and (max-width: 991px) {
+        padding-left: 10px; 
+        padding-right: 10px; 
+      }
     }
   }
 
@@ -16,6 +25,9 @@
       text-transform: uppercase;
       text-align: left;
       margin-bottom: 20px;
+      @media only screen and (max-width: 320px) {
+        line-height: 30px;
+      }
     } 
     div.sub-header {
       margin-top: 30px;
@@ -38,20 +50,32 @@
       height: 560px;
       width: 100%;
       background-size: cover;
+      @media only screen and (max-width: 991px) {
+        height: 480px;
+      }
     }
     #monogram-service-text-container-1 {
       padding-top: 80px;
       padding-bottom: 120px;
+      @media only screen and (max-width: 991px) {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
       p {
-        padding-bottom: 20px;
+        padding-bottom: 20px;      
       }
       ul {
         padding-top: 25px;
         li {
           display: inline-block;
+          @media only screen and (max-width: 320px) {
+            margin-bottom: 10px;
+          }
           a {
             &:nth-of-type(1) {
-              margin-right: 25px;  
+              margin-right: 24px;  
             }        
           }
         }
@@ -62,19 +86,38 @@
   #monogram-service-col-2 {
     .row {
       margin: 0px;
+      @media only screen and (max-width: 991px) {
+        margin-left: -10px;
+        margin-right: -10px;
+      }
     }
     #monogram-service-text-container-2 {
       background-color: @purplish-grey;
       padding-top: 80px;
       padding-bottom: 40px;
+      @media only screen and (max-width: 991px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
     }
     #monogram-service-text-container-3 {
       background-color: @off-white;
       padding-top: 40px;
       padding-bottom: 80px;
+      @media only screen and (max-width: 991px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
       p {
         color: @footer-brown;  
         padding-bottom: 20px;
+        &:last-child {
+          padding-bottom: 0px;
+        }
         a.contact-us-cta {
           color: @footer-brown;
           border-color: @footer-brown;

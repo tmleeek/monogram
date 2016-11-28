@@ -220,7 +220,11 @@
                         url: action_url,
                         data: data
                       }).done(function( msg ) {
-                          $j('span.ajax_msg_referral').html('<p>Submitted!</p>').show().delay(5000).fadeOut();
+
+                          var messages = $j('.messages', $j.parseHTML(msg))
+
+                          
+                          $j('span.ajax_msg_referral').html('<p>'+$(messages).find('span').html()+'</p>').show().delay(5000).fadeOut();
                           $j('#ajax_loader_referral').hide();
                       });
                     }

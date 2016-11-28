@@ -1266,7 +1266,7 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
             //$_item->setRewardpointsGathered(ceil($item_points+$xtra_points));
             $_item->setRewardpointsGatheredFloat($item_points);
             $_item->setRewardpointsGathered(ceil($item_points));
-        }
+        }        
         
         $rewardPoints = $this->processMathBaseValue($this->processMathValue($rewardPoints, $specific_rate) + $rewardPointsAtt);
         
@@ -1276,7 +1276,7 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
             }
         }
         // $points = ceil($rewardPoints);
-        $points = $rewardPoints;
+        $points = $rewardPoints;                
         
         $object_tovalidate = $cartLoaded;
         if ($object_tovalidate === null && $cartQuote != null){
@@ -1296,9 +1296,19 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
             }
         }
 
+        $baseCurrencyCode = Mage::app()->getStore()->getBaseCurrencyCode(); 
+        $currentCurrencyCode = Mage::app()->getStore()->getCurrentCurrencyCode();
+
         if(!empty($giftcard_discount)) {
-            $points = $points - $giftcard_discount;
+            $allowedCurrencies = Mage::getModel('directory/currency')->getConfigAllowCurrencies();
+            $rates = Mage::getModel('directory/currency')->getCurrencyRates($baseCurrencyCode, array_values($allowedCurrencies));
+            $giftcard_discount_in_base_cur = $giftcard_discount/$rates[$currentCurrencyCode];
+
+            // giftcard_discount needed to convert back to sgd bcaz points are always sgd
+            $points = $points - $giftcard_discount_in_base_cur;
         }
+        
+        // echo $points . ">>";
 
         $points = Mage::getModel('rewardpoints/pointrules')->getAllRulePointsGathered($cartLoaded, $customer_group_id, true, $points, false);
 
@@ -1312,7 +1322,7 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
 
         if(isset($totals["discount"])) {
             $totalDiscount = $totals["discount"]->getValue();    
-        }        
+        }            
 
         if(isset($totals["subtotal"])) {
             $subtotal = $totals["subtotal"]->getValue();
@@ -1325,8 +1335,9 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
                 $subtotal = $subtotal - $totalDiscount;
             }
 
-            $baseCurrencyCode = Mage::app()->getStore()->getBaseCurrencyCode(); 
-            $currentCurrencyCode = Mage::app()->getStore()->getCurrentCurrencyCode();
+            if(!empty($giftcard_discount)) {
+                $subtotal = $subtotal - $giftcard_discount;
+            }
 
             $min_amount_to_give_discount_1 = Mage::helper('directory')->currencyConvert(200, $baseCurrencyCode, $currentCurrencyCode);
 
@@ -1349,7 +1360,7 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
                 $points = $points + $points_to_give_for_discount_2;
             }
 
-            // echo $points;
+            // echo $points . " >> ";
         }
         
         return round($points*0.1); // 10 percent

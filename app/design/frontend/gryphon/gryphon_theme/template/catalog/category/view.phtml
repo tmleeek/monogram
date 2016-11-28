@@ -41,58 +41,60 @@
         $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
     }    
 ?>
-<article id="tea-store-section-1" class="store">
+<div id="content-wrapper" class="product">
+    <article id="tea-store-section-1" class="store">
 
-    <!-- <div class="store-banner <?php echo strtolower($_category->getName()); ?>-banner">
-        <div class="image-text-content container">
-            <div class="row">
-                <div class="col-md-12">                    
-                    <div class="caption">
-                        <h1><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h1>
-                        <?php if($current_category_data['url_key']!=='gifts' && $current_category_data['url_key']!=='pantry'): ?>
-                            <p><?php echo $_helper->categoryAttribute($_category, $current_category_data['description'], 'description') ?></p>
-                        <?php endif; ?>
+        <!-- <div class="store-banner <?php echo strtolower($_category->getName()); ?>-banner">
+            <div class="image-text-content container">
+                <div class="row">
+                    <div class="col-md-12">                    
+                        <div class="caption">
+                            <h1><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h1>
+                            <?php if($current_category_data['url_key']!=='gifts' && $current_category_data['url_key']!=='pantry'): ?>
+                                <p><?php echo $_helper->categoryAttribute($_category, $current_category_data['description'], 'description') ?></p>
+                            <?php endif; ?>
 
-                        <?php echo $this->getMessagesBlock()->toHtml() ?>
+                            <?php echo $this->getMessagesBlock()->toHtml() ?>
 
-                        <?php if($_imgUrl): ?>
-                            <?php //echo $_imgHtml ?>
-                        <?php endif; ?>
+                            <?php if($_imgUrl): ?>
+                                <?php //echo $_imgHtml ?>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div> -->
-    <div class="desktop-header-spacer" style="height: 130px;"></div>
+        </div> -->
+        <div class="desktop-header-spacer" style="height: 130px;"></div>
 
-    <div class="main-content">
-        <div class="container-fluid image-text-content">
-            <div class="row">
-                <div class="col-md-12">
-                    <?php echo $this->getChildHtml('category.sidebar'); ?>
-                    
-                    <div class="all-products tea-store-products">
-                        <?php if($this->isContentMode()): ?>
-                            <?php echo $this->getCmsBlockHtml() ?>
+        <div class="main-content">
+            <div class="container-fluid image-text-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php echo $this->getChildHtml('category.sidebar'); ?>
+                        
+                        <div class="all-products tea-store-products">
+                            <?php if($this->isContentMode()): ?>
+                                <?php echo $this->getCmsBlockHtml() ?>
 
-                        <?php elseif($this->isMixedMode()): ?>
-                            <?php echo $this->getCmsBlockHtml() ?>
-                            <?php echo $this->getProductListHtml() ?>
+                            <?php elseif($this->isMixedMode()): ?>
+                                <?php echo $this->getCmsBlockHtml() ?>
+                                <?php echo $this->getProductListHtml() ?>
 
-                        <?php else: ?>
-                            <?php echo $this->getProductListHtml() ?>
-                        <?php endif; ?>
+                            <?php else: ?>
+                                <?php echo $this->getProductListHtml() ?>
+                            <?php endif; ?>
 
-                        <div id="loading-mask" style="display: none;">
-                            <div class="loader">
-                                <img src="<?php echo $this->getSkinUrl('images/content/products/ajax-loader.gif'); ?>" alt="<?php echo $this->__('Loading...'); ?>">
-                                <br /><?php echo $this->__('Loading...'); ?>
+                            <div id="loading-mask" style="display: none;">
+                                <div class="loader">
+                                    <img src="<?php echo $this->getSkinUrl('images/content/products/ajax-loader.gif'); ?>" alt="<?php echo $this->__('Loading...'); ?>">
+                                    <br /><?php echo $this->__('Loading...'); ?>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-</article>
+    </article>
+</div>

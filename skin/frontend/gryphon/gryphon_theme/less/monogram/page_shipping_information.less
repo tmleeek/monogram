@@ -155,6 +155,10 @@ body.monogram-page-shipping-information{
         padding-left: 11px;
 
         margin-bottom: 18px;
+
+        &:last-child {
+          margin-bottom: 0px;
+        }
         
         &:before{
           .fa;
@@ -298,6 +302,11 @@ body.monogram-page-shipping-information{
   padding-right: 70px;
 
   background: #ae887e;
+
+  @media only screen and (max-width: 1024px) {
+    padding-left: 45px;
+    padding-right: 40px;
+  }  
 }
 
 @media only screen and (max-width: 991px) {
@@ -329,6 +338,12 @@ body.monogram-page-shipping-information{
 
   padding-left: 85px;
   padding-right: 70px;
+
+  @media only screen and (max-width: 1024px) {
+    padding-left: 45px;
+    padding-right: 40px;
+    padding-bottom: 161px;
+  }
 }
 
 
@@ -362,6 +377,11 @@ body.monogram-page-shipping-information{
   padding-left: 65px;
   padding-right: 85px;
 
+  @media only screen and (max-width: 1024px) {
+    padding-left: 45px;
+    padding-right: 40px;
+  }
+
   .table-responsive{
     margin-top: 34px;
     margin-bottom: 30px - 14px;
@@ -376,6 +396,9 @@ body.monogram-page-shipping-information{
     table{
       width: 100%;
       table-layout: fixed;
+      @media only screen and (max-width: 991px) {
+        table-layout: auto;
+      }
 
       thead{
         tr{
@@ -403,6 +426,13 @@ body.monogram-page-shipping-information{
             }
             &:last-child{
               padding-right: 6px;
+            }
+
+            @media only screen and (max-width: 991px) {
+              // white-space: normal;
+              &:first-child {
+                padding-left: 0px;
+              }
             }
 
           }
@@ -456,6 +486,13 @@ body.monogram-page-shipping-information{
               padding-right: 21px;
             }
 
+            @media only screen and (max-width: 991px) {
+              // white-space: normal;
+              &:first-child{
+                padding-left: 0px;
+              }
+            }
+
           }
           &.color {
             td {
@@ -507,9 +544,16 @@ body.monogram-page-shipping-information{
   padding-left: 60px;
   padding-right: 60px;
 
+  @media only screen and (max-width: 1024px) {
+    padding-left: 45px;
+    padding-right: 40px;
+  }
+
 
   position: relative;
   display: block;
+
+
 
   /*
   &:after{
@@ -540,6 +584,9 @@ body.monogram-page-shipping-information{
     table{
       width: 100%;
       table-layout: fixed;
+      @media only screen and (max-width: 991px) {
+        table-layout: auto;
+      }
 
       thead{
         tr{
@@ -573,6 +620,10 @@ body.monogram-page-shipping-information{
               padding-right: 6px;
             }
 
+            @media only screen and (max-width: 991px) {
+              // white-space: normal;
+            }
+
           }
         }
       }
@@ -594,6 +645,9 @@ body.monogram-page-shipping-information{
 
             &:nth-of-type(2) {
               white-space: nowrap;
+              @media only screen and (max-width: 991px) {
+                // white-space: normal;
+              }
             }
             &:nth-of-type(3) {
               text-align: center;
@@ -627,7 +681,11 @@ body.monogram-page-shipping-information{
             }
             &:last-child{
               padding-right: 24px;
-            }            
+            }  
+
+            @media only screen and (max-width: 991px) {
+              // white-space: normal;
+            }          
 
           }
 
