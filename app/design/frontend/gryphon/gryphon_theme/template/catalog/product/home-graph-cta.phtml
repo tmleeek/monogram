@@ -1,6 +1,14 @@
+<div id="successmsg" style="color:greenyellow;margin-top:10px;"></div>
+<div id="ajax_loadermsg" style="color:greenyellow;margin-top:10px;display:none">Processing...Please wait.</div>
 <div class="cta-container">
 <?php if(Mage::getSingleton('customer/session')->isLoggedIn()): ?>
-  <a href="javascript:void(0);" class="square-cta square-cta-01">Save tea layering</a>
+  <a href="javascript:void(0);" id="savedlayering" class="square-cta square-cta-01">Save tea layering</a>
+  
+  <?php
+	$customer = Mage::getSingleton('customer/session')->getCustomer();    
+    $cemail = $customer->getEmail();
+	$cid = $customer->getId();	
+  ?>  
 <?php else: ?>
   <?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
   <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta square-cta-01">Visit tea store</a>
@@ -8,3 +16,42 @@
   <a href="javascript:void(0);" class="add-both-to-cart square-cta square-cta-02">add both to cart</a>
   <a href="#selection" class="square-cta square-cta-03">choose another layering</a>
 </div>
+<?php
+
+//$_Pdetails = Mage::getModel('catalog/product')->loadByAttribute('sku','earl-grey-neroli');
+?>
+<div style="display:none">
+<?php 
+//echo $_Pdetails->getName();echo '<br>';
+//echo $_Pdetails->getDescription();echo '<br>';
+//echo $_Pdetails->getPrice();echo '<br>';
+//echo $_Pdetails->getProductUrl();echo '<br>';
+//echo $_Pdetails->getId();
+//echo '<br>';
+?>
+</div>
+<script type="text/javascript">
+    jQuery(function () {
+        jQuery("#savedlayering").click(function(){
+			var pidvalue1 = jQuery("#graph-column-01 .layerteaclass").attr('id');
+			var pidvalue2 = jQuery("#graph-column-02 .layerteaclass").attr('id');
+			//alert(pidvalue1);alert(pidvalue2);
+			jQuery("#successmsg").hide();
+			jQuery("#ajax_loadermsg").show();		
+			var cid = '<?php echo $cid ?>';
+			var pid = pidvalue1+'|||'+pidvalue2;
+			var dataString = 'cid='+ cid + '&pid='+ pid;
+            jQuery.ajax({
+				type: "POST",
+				data: dataString,
+                url: "<?php echo Mage::getUrl('savelayering/index/ajax'); ?>"
+            }).done(function(result) { 
+				jQuery("#ajax_loadermsg").hide();
+				jQuery("#successmsg").show();
+				jQuery("#successmsg").html(''+result+'');				
+				//alert(result);
+            });
+        });
+    });
+
+</script>

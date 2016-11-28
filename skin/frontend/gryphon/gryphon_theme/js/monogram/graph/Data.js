@@ -19,8 +19,6 @@ monogram.graph.Data = function(data_obj_param) {
 
   this.data_id                = this.data_object["id"];
   this.data_name              = this.data_object["name"];
-  this.data_url              = this.data_object["url"];
-
   this.data_html_name         = this.data_object["html-name"];
   this.data_type              = this.data_object["type"];
   this.data_color             = this.data_object["color"];
@@ -77,8 +75,8 @@ monogram.graph.Data = function(data_obj_param) {
 
 
   this.graph_section_data_obj = {
-    'id': this.data_id,
     'htmlname': this.data_html_name,
+	'dataid': this.data_id,
     'description': this.data_description,
     'teatype': this.data_type, 
     'temperature': this.data_steeping_temperature,

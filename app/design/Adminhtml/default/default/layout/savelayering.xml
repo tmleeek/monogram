@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_customer_edit>
+        <reference name="customer_edit_tabs">
+            <action method="addTab">
+                <name>custom_savelayering_tab</name>
+                <block>savelayering/adminhtml_customer_tab</block>
+            </action>
+        </reference>
+    </adminhtml_customer_edit>
+	<savelayering_adminhtml_savelayering_index>
+        <reference name="content">
+            <block type="savelayering/adminhtml_savelayering" name="savelayering" />
+        </reference>
+    </savelayering_adminhtml_savelayering_index>
+</layout>

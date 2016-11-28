@@ -1,0 +1,78 @@
+<div id="monogram-page-account-reward-points-container">
+
+  <div class="my-account reward-page">
+      <div class="page-title">
+          <h1><?php echo $this->__('Saved Layering') ?></h1>
+          <hr class="small">
+      </div>
+
+      <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+      <?php $collection = $this->getCollection(); ?>
+      <?php if($collection->getSize()): ?>
+          <?php //echo $this->getPagerHtml() ?>
+
+          <div class="visible-md-block visible-lg-block">
+				<div id="successmsg" style="color:greenyellow;margin-top:10px;"></div>
+				<div id="ajax_loadermsg" style="color:greenyellow;margin-top:10px;display:none">Processing...Please wait.</div>
+              <div class="table-responsive">
+                  <table cellspacing="0" class="data-table linearize-table" id="reward-points-table">
+                      <thead>
+                          <tr>
+                              <th><?php echo $this->__('Date') ?></th>
+                              <th><?php echo $this->__('Layering Product') ?></th>
+                              <th><?php echo $this->__('Action') ?></th>                              
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <?php $_odd = ''; ?>
+                          <?php foreach ($collection as $obj): ?>
+                              <?php $pointData = $obj->getData(); ?>
+                              <tr class="">
+                                  <td data-theme-label="<?php echo $this->__('Date') ?>">
+                                      <?php $newDate = date("d-m-Y", strtotime($pointData['created_time'])); echo $newDate; ?>
+                                  </td>
+									<td data-theme-label="<?php echo $this->__('Layering Product') ?>">
+									<?php 
+									$pids = explode(',',$pointData['products_id']);
+									$_product1 = Mage::getModel('catalog/product')->load($pids[0]);
+									$pname1 = $_product1->getName();
+									$_product2 = Mage::getModel('catalog/product')->load($pids[1]);
+									$pname2 = $_product2->getName();
+									echo $pname1 .' + '. $pname2 ?></td>
+									<td data-theme-label="<?php echo $this->__('Action') ?>">
+									<a href="<?php echo Mage::getUrl('?show=true#selection'); ?>">SEE LAYERING</a> | 
+									<a href="javascript:;" id="addbothincart" onclick="savebothproducts('<?php echo $pointData['products_id']; ?>')">ADD TO CART</a>
+									</td>
+                              </tr>
+                          <?php endforeach; ?>
+                      </tbody>
+                  </table>
+              </div>              
+          </div>          
+          <?php echo $this->getPagerHtml() ?>
+      <?php else: ?>
+          <p><?php echo $this->__('You don\'t have any saved layering products.'); ?></p>
+      <?php endif ?>
+  </div>
+</div> 
+<script type="text/javascript">
+	function savebothproducts(pids){		
+			jQuery("#successmsg").hide();
+			jQuery("#ajax_loadermsg").show();					
+			var dataString = 'productids='+ pids;
+            jQuery.ajax({
+				type: "POST",
+				data: dataString,
+                url: "<?php echo Mage::getUrl('savelayering/index/addproduct'); ?>"
+            }).done(function(result) { 
+				jQuery("#ajax_loadermsg").hide();
+				jQuery("#successmsg").show();
+				jQuery("#successmsg").html(''+result+'');	
+				location.reload();
+				//alert(result);
+            });
+	}
+
+ 
+
+</script>
