@@ -15628,6 +15628,26 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
   filter: alpha(opacity=70);
 }
+#monogram-page-account-reward-points-container .table-responsive table tbody tr td p.product-name {
+  text-transform: uppercase;
+  font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+#monogram-page-account-reward-points-container .table-responsive table tbody tr td p.product-name span sup {
+  font-size: 9px;
+}
+#monogram-page-account-reward-points-container .table-responsive table tbody tr td a.savelayering-cta,
+#monogram-page-account-reward-points-container .table-responsive table tbody tr td span.savelayering-cta-divider {
+  font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
 #monogram-page-account-reward-points-container .table-responsive table tbody tr td:first-child {
   padding-left: 24px;
   text-align: left;
