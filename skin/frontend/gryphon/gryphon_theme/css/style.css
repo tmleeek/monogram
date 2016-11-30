@@ -8206,6 +8206,26 @@ input:-webkit-autofill {
   .monogram-combination-graph {
     overflow: hidden;
   }
+  .monogram-single-graph .graph-svg,
+  .monogram-combination-graph .graph-svg {
+    width: 380px;
+    height: 380px;
+  }
+  .monogram-single-graph .graph-svg svg,
+  .monogram-combination-graph .graph-svg svg {
+    width: 380px;
+    height: 380px;
+  }
+  .monogram-single-graph .graph-overlay,
+  .monogram-combination-graph .graph-overlay {
+    width: 380px;
+    height: 380px;
+  }
+  .monogram-single-graph .graph-name-overlay,
+  .monogram-combination-graph .graph-name-overlay {
+    width: 380px;
+    height: 380px;
+  }
 }
 @media (max-width: 767px) {
   .monogram-single-graph,
@@ -12292,6 +12312,11 @@ body.tea-layering-detail-page {
   letter-spacing: 0.05em;
   padding-left: 10px;
 }
+@media only screen and (max-width: 991px) {
+  #account-creation-section-1 label {
+    padding-left: 0px;
+  }
+}
 #account-creation-section-1 input.input-class {
   width: 100%;
 }
@@ -12311,10 +12336,25 @@ body.tea-layering-detail-page {
 #account-creation-section-1 .inputs .row:last-child {
   margin-bottom: 0px;
 }
+@media only screen and (max-width: 991px) {
+  #account-creation-section-1 .inputs .row .v-align {
+    display: block;
+  }
+}
 #account-creation-section-1 .create-account-btn {
   display: block;
   width: 192px;
   margin-left: auto;
+}
+@media only screen and (max-width: 991px) {
+  #account-creation-section-1 .create-account-btn {
+    margin-left: 0px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #account-creation-section-1 .create-account-btn {
+    width: 100%;
+  }
 }
 #account-creation-section-1 .dropdown:nth-of-type(1) {
   width: 30.3%;
@@ -12322,8 +12362,26 @@ body.tea-layering-detail-page {
 #account-creation-section-1 .dropdown:nth-of-type(2) {
   width: 34.3%;
 }
+@media only screen and (max-width: 991px) {
+  #account-creation-section-1 .dropdown:nth-of-type(2) {
+    width: 36.3%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #account-creation-section-1 .dropdown:nth-of-type(2) {
+    width: 35.3%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  #account-creation-section-1 .dropdown:nth-of-type(2) {
+    width: 34.3%;
+  }
+}
 #account-creation-section-1 .dropdown:nth-of-type(3) {
   width: 32.3%;
+}
+#account-creation-section-1 .gender-input-container {
+  display: inline-block;
 }
 #account-creation-section-1 .validation-advice {
   margin: 0;
