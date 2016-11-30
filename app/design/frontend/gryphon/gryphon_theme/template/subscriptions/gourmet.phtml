@@ -7,8 +7,8 @@
       <div class="col-md-8">
 
         <div id="monogram-subscription-title">
-          <h1>monogram subscription</h1>
-          <p>A convenient way to save money and time, our subscription service allows you to enjoy a variety of teas at discounted prices, and have them helpfully delivered to your door every month.</p>
+          <h1>Monogram Discovery Box</h1>
+          <p>Indulge in the art of tea blending every month with 4 unique experiential choices of our Monogram tea specially curated for you, unveiling varied possibilities with each flavor pairing.</p>
         </div>
 
       </div>
@@ -32,10 +32,123 @@
 
         <div id="monogram-subscription-content-column-01">
 
-          <div id="monogram-subscription-content-image">
+          <div id="monogram-subscription-content-image-01">
             <div class="manic-image-container">
               <!-- <img src="" data-image-desktop="assets/images/monogram_subscription/subscription-content.jpg"> -->
               <img src="" data-image-desktop="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) ?>frontend/gryphon/gryphon_theme/images/content/monogram_subscription/subscription-content.jpg">
+            </div>
+          </div>
+  
+          <div id="monogram-subscription-content-copy-01" class="subscription-form subscription">
+            <div id="monogram-subscription-content-reason-container">
+
+              <div class="row">
+                <div class="col-md-12">
+                  <h3>International Plans</h3>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-4">
+
+                  <div class="monogram-subscription-content-reason">
+                    <h4>Tea Variant</h4>
+                    <p>Comes in 4 tea flavors of 4 sachets per flavor (16 sachets in total) accompanied with Tasting Notes</p>
+                  </div>
+                  
+                </div>
+                <div class="col-md-4">
+
+                  <div class="monogram-subscription-content-reason">
+                    <h4>Receive</h4>
+                    <p>16 sachets per month</p>
+                  </div>
+                  
+                </div>
+                <div class="col-md-4">
+
+                  <div class="monogram-subscription-content-reason">
+                    <h4>Cut-off & Delivery Date</h4>
+                    <p>Order or any changes to be made by 17th of the month, order will be sent out on 23rd of the month</p>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>period</th>
+                    <th>price</th>                    
+                    <th>per sachet</th>
+                    <th>links</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <?php
+                  $_helper = $this->helper('catalog/output'); 
+                  $artisanSingaporeIntCollection = Mage::getModel('subscriptions/subscriptions')->getGourmetInternationalSubscriptions(); 
+                  // echo count($artisanSingaporeIntCollection->getData());exit;                
+                  $cnt = 1;
+                  foreach($artisanSingaporeIntCollection->getData() as $productsingint):
+                    $_productIdInt = $productsingint['entity_id'];
+                    $_productsingpurint = Mage::getModel('catalog/product')->load($_productIdInt);
+                    
+                    $nameStart = substr($_helper->productAttribute($_productsingpurint, $_productsingpurint->getName() , 'name'), 0,2);
+                    $monthtext = ' Months';
+                    if($cnt == 1)
+                    {
+                      $monthtext = ' Month';
+                  
+                      $equivalent = ($_productsingpurint->getPrice()/16);
+                      $discount_percentage = '7%';
+                    }else if($cnt == 2)
+                    {                   
+                      $equivalent = ($_productsingpurint->getPrice()/48);
+                      $discount_percentage = '14%';
+                    }else if($cnt == 3)
+                    {                   
+                      $equivalent = ($_productsingpurint->getPrice()/96);
+                      $discount_percentage = '18%';
+                    }else
+                    {                   
+                      $equivalent = ($_productsingpurint->getPrice()/192);
+                      $discount_percentage = '20%';
+                    }                    
+                  ?>
+                    <tr>
+                    <?php if(count($artisanSingaporeIntCollection->getData()) == $cnt){
+                      ?>
+                      <td><?php echo $nameStart.$monthtext ?><!--<br><span>SGP Subscription</span>--></td>
+                      <?php 
+                    }else{
+                      ?>
+                      <td><?php echo $nameStart.$monthtext ?><!--<br><span>SGP Subscription</span>--></td>
+                      <?php 
+                    }
+                    ?>
+                      <td><?php echo Mage::helper('core')->currency($_productsingpurint->getPrice(),true,false); ?></td>
+                      <!-- <td><?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per month</td> -->
+                      <td><?php echo Mage::helper('core')->currency($equivalent,true,false); ?></td>
+                      <td><a class="arrow-cta add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpurint) ?>">Add to Cart<span class='ajax_loader_product' style='display:none'><img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/></span></a><span class="error-msg"></span></td>
+                    </tr>
+                  
+                     <?php 
+                   $cnt++;
+                   endforeach; ?>
+                </tbody>
+              </table>
+            </div> <!-- .table-responsive -->
+
+
+
+            <div class="cta-container">
+              <a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais" class="square-cta">layering recommendation</a>
+              <?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
+              <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta">visit tea store</a>
             </div>
           </div>
 
@@ -55,24 +168,22 @@
 
         <div id="monogram-subscription-content-column-02">
 
-          <div id="monogram-subscription-content-copy" class="subscription-form subscription">
+          <div id="monogram-subscription-content-copy-02" class="subscription-form subscription">
 
             <div id="monogram-subscription-content-reason-container">
+
+              <div class="row">
+                <div class="col-md-12">
+                  <h3>Singapore Plans</h3>
+                </div>
+              </div>
 
               <div class="row">
                 <div class="col-md-4">
 
                   <div class="monogram-subscription-content-reason">
-                    <h4>Discover</h4>
-                    <p>A choice of two curated box sets</p>
-                  </div>
-                  
-                </div>
-                <div class="col-md-4">
-
-                  <div class="monogram-subscription-content-reason">
-                    <h4>Pick</h4>
-                    <p>A plan for 1, 3, 6 or 12 months</p>
+                    <h4>Tea Variant</h4>
+                    <p>Comes in 4 tea flavors of 4 sachets per flavor (16 sachets in total) accompanied with Tasting Notes</p>
                   </div>
                   
                 </div>
@@ -80,89 +191,20 @@
 
                   <div class="monogram-subscription-content-reason">
                     <h4>Receive</h4>
-                    <p>Selection of favourite teas at your door</p>
+                    <p>16 sachets per month</p>
+                  </div>
+                  
+                </div>
+                <div class="col-md-4">
+
+                  <div class="monogram-subscription-content-reason">
+                    <h4>Cut-off & Delivery Date</h4>
+                    <p>Order or any changes to be made by 17th of the month, order will be sent out on 23rd of the month</p>
                   </div>
                   
                 </div>
               </div>
             </div>
-
-
-            <!--
-            <div class="table-responsive">
-              <table>
-                <thead>
-                  <tr>
-                    <th>period</th>
-                    <th>price</th>
-                    <th>discount</th>
-                    <th>links</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr>
-                    <td>
-                      <p>1 Month</p>
-                    </td>
-                    <td>
-                      <p>$28.46</p>
-                    </td>
-                    <td>
-                      <p>7%</p>
-                    </td>
-                    <td>
-                      <a href="#" class="arrow-cta">Add to cart</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>3 Months</p>
-                    </td>
-                    <td>
-                      <p>$78.95</p>
-                    </td>
-                    <td>
-                      <p>14%</p>
-                    </td>
-                    <td>
-                      <a href="#" class="arrow-cta">Add to cart</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>6 Months</p>
-                    </td>
-                    <td>
-                      <p>$150.55</p>
-                    </td>
-                    <td>
-                      <p>18%</p>
-                    </td>
-                    <td>
-                      <a href="#" class="arrow-cta">Add to cart</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>12 Months</p>
-                    </td>
-                    <td>
-                      <p>$293.76</p>
-                    </td>
-                    <td>
-                      <p>20%</p>
-                    </td>
-                    <td>
-                      <a href="#" class="arrow-cta">Add to cart</a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div> 
-            -->
-
-
 
             <div class="table-responsive">
             	<table class="table">
@@ -170,8 +212,7 @@
                   <tr>
                     <th>period</th>
                     <th>price</th>                    
-                    <!-- <th>equivalent</th> -->
-                    <th>discount</th>
+                    <th>per sachet</th>
                     <th>links</th>
                   </tr>
                 </thead>
@@ -194,19 +235,19 @@
                       // $monthtext = ' MONTH';
 											$monthtext = ' Month';
 									
-											$equivalent = ($_productsingpur->getPrice()/1);
+											$equivalent = ($_productsingpur->getPrice()/16);
                       $discount_percentage = '7%';
 										}else if($cnt == 2)
 										{										
-											$equivalent = ($_productsingpur->getPrice()/3);
+											$equivalent = ($_productsingpur->getPrice()/48);
                       $discount_percentage = '14%';
 										}else if($cnt == 3)
 										{										
-											$equivalent = ($_productsingpur->getPrice()/6);
+											$equivalent = ($_productsingpur->getPrice()/96);
                       $discount_percentage = '18%';
 										}else
 										{										
-											$equivalent = ($_productsingpur->getPrice()/12);
+											$equivalent = ($_productsingpur->getPrice()/192);
                       $discount_percentage = '20%';
 										}
 										
@@ -224,7 +265,7 @@
 										?>
 								          	<td><?php echo Mage::helper('core')->currency($_productsingpur->getPrice(),true,false); ?></td>
 								          	<!-- <td><?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per month</td> -->
-                            <td><?php echo $discount_percentage; ?></td>
+                            <td><?php echo Mage::helper('core')->currency($equivalent,true,false); ?></td>
 								          	<td><a class="arrow-cta add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpur) ?>">Add to Cart<span class='ajax_loader_product' style='display:none'><img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/></span></a><span class="error-msg"></span></td>
 								        </tr>
 									
@@ -243,7 +284,23 @@
               <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta">visit tea store</a>
             </div>
 
-          </div> <!-- #monogram-subscription-content-copy -->
+          </div> <!-- #monogram-subscription-content-copy-02 -->
+
+          <div id="monogram-subscription-content-copy-03">
+              <div class="row">
+                <div class="col-md-12">
+                    <p>Customers who sign-up for a 1 year subscription can get a 10% discount off on all other online purchases throughout the subscription period.</p>
+                    <p>Not applicable with other special promotions or discounts. (Same as GTC)</p>
+                </div>
+              </div>
+          </div> <!-- #monogram-subscription-content-copy-03 -->
+
+          <div id="monogram-subscription-content-image-02">
+            <div class="manic-image-container">
+              <!-- <img src="" data-image-desktop="assets/images/monogram_subscription/subscription-content.jpg"> -->
+              <img src="" data-image-desktop="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) ?>frontend/gryphon/gryphon_theme/images/content/monogram_subscription/subscription-content.jpg">
+            </div>
+          </div>
 
         </div> <!-- #monogram-subscription-content-column-02 -->
 
@@ -325,7 +382,7 @@
 			console.log(non_subscription_in_the_cart);
 
 			if(non_subscription_in_the_cart==1) {					
-				jQuery(this).next('span.error-msg').html('This subscription plan cannot be purchased with other items in the cart. Please check out first before making any other purchases.');
+				alert('This subscription plan cannot be purchased with other items in the cart. Please check out first before making any other purchases.');
 			}else {
 				// setLocation(AddToCartUrl);
 				jQuery(this).find('.ajax_loader_product').show();

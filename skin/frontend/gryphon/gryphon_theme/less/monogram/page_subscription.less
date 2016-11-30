@@ -88,19 +88,29 @@ body.monogram-subscription-page{
 }
 
 
-#monogram-subscription-content-image{
+#monogram-subscription-content-image-01{
   //height: 600px;
-  height: 621px;
+  height: 421px;
   .manic-image-container{
     //height: 600px;
-    height: 621px;
+    height: 421px;
+  }
+}
+
+#monogram-subscription-content-image-02{
+  //height: 600px;
+  height: 216px;
+  .manic-image-container{
+    //height: 600px;
+    height: 216px;
   }
 }
 
 
-#monogram-subscription-content-copy{
+#monogram-subscription-content-copy-01, #monogram-subscription-content-copy-02{
   //height: 600px;
-  height: 621px;
+  // height: 621px;
+  height: 720px;
   color: @off-white;
 
   padding-top: 79px;
@@ -108,6 +118,17 @@ body.monogram-subscription-page{
   #monogram-subscription-content-reason-container{
     
     margin-bottom: 54px;  
+
+    h3 {
+      .subheader-font;
+      font-size: 16px;
+      line-height: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      text-align: center;
+      margin-top: -40px;
+      margin-bottom: 30px;
+    }
 
     .monogram-subscription-content-reason{
       text-align: center;
@@ -125,11 +146,11 @@ body.monogram-subscription-page{
         .body-font;
         // font-size: 14px;
         font-size: 13px;
-        line-height: 22px;
+        line-height: 18px;
         letter-spacing: 0em;
 
         padding: 0 15px;
-        margin: 0 15%;
+        // margin: 0 15%;
       }
     }
 
@@ -213,6 +234,11 @@ body.monogram-subscription-page{
               right: -20px;
               top: 2px;
             }
+            .error-msg {
+              position: absolute;
+              // right: -20px;
+              // top: 2px;
+            }
           }
           &:first-child{
             td{
@@ -249,3 +275,30 @@ body.monogram-subscription-page{
   }
 }
 
+#monogram-subscription-content-copy-01 {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+#monogram-subscription-content-copy-03 {
+  margin: 0 -60px;
+  background-color: @off-white;
+  color: @footer-brown;
+  padding: 60px;
+  p {
+    padding-bottom: 20px;    
+    &:last-child {
+      padding-bottom: 0px;
+    }
+  }
+}
+
+#monogram-subscription-content-image-02 {
+  margin: 0 -60px;
+  color: @footer-brown;
+
+  img {
+    width: 100%!important;
+    height: auto!important;
+  }
+}

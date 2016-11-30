@@ -12318,7 +12318,8 @@ body.tea-layering-detail-page {
   }
 }
 #monogram-service-section-1 .container-fluid {
-  padding: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 #monogram-service-section-1 .container-fluid .col-md-6 {
   padding: 0px;
@@ -12401,6 +12402,10 @@ body.tea-layering-detail-page {
     margin-left: -10px;
     margin-right: -10px;
   }
+}
+#monogram-service-section-1 #monogram-service-col-2 .monogram-service-copy {
+  float: none;
+  margin: 0 auto;
 }
 #monogram-service-section-1 #monogram-service-col-2 #monogram-service-text-container-2 {
   background-color: #928d9b;
@@ -12604,6 +12609,7 @@ body.billing-shipping-page {
   }
 }
 #page-shopping-cart-breadcrumb a {
+  margin-bottom: 29px;
   font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -15930,24 +15936,47 @@ body.monogram-subscription-page {
   background: #8d919a;
   padding: 0 60px;
 }
-#monogram-subscription-content-image {
-  height: 621px;
+#monogram-subscription-content-image-01 {
+  height: 421px;
 }
-#monogram-subscription-content-image .manic-image-container {
-  height: 621px;
+#monogram-subscription-content-image-01 .manic-image-container {
+  height: 421px;
 }
-#monogram-subscription-content-copy {
-  height: 621px;
+#monogram-subscription-content-image-02 {
+  height: 216px;
+}
+#monogram-subscription-content-image-02 .manic-image-container {
+  height: 216px;
+}
+#monogram-subscription-content-copy-01,
+#monogram-subscription-content-copy-02 {
+  height: 720px;
   color: #f1efee;
   padding-top: 79px;
 }
-#monogram-subscription-content-copy #monogram-subscription-content-reason-container {
+#monogram-subscription-content-copy-01 #monogram-subscription-content-reason-container,
+#monogram-subscription-content-copy-02 #monogram-subscription-content-reason-container {
   margin-bottom: 54px;
 }
-#monogram-subscription-content-copy #monogram-subscription-content-reason-container .monogram-subscription-content-reason {
+#monogram-subscription-content-copy-01 #monogram-subscription-content-reason-container h3,
+#monogram-subscription-content-copy-02 #monogram-subscription-content-reason-container h3 {
+  font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin-top: -40px;
+  margin-bottom: 30px;
+}
+#monogram-subscription-content-copy-01 #monogram-subscription-content-reason-container .monogram-subscription-content-reason,
+#monogram-subscription-content-copy-02 #monogram-subscription-content-reason-container .monogram-subscription-content-reason {
   text-align: center;
 }
-#monogram-subscription-content-copy #monogram-subscription-content-reason-container .monogram-subscription-content-reason h4 {
+#monogram-subscription-content-copy-01 #monogram-subscription-content-reason-container .monogram-subscription-content-reason h4,
+#monogram-subscription-content-copy-02 #monogram-subscription-content-reason-container .monogram-subscription-content-reason h4 {
   font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -15957,26 +15986,29 @@ body.monogram-subscription-page {
   text-transform: uppercase;
   margin-bottom: 11px;
 }
-#monogram-subscription-content-copy #monogram-subscription-content-reason-container .monogram-subscription-content-reason p {
+#monogram-subscription-content-copy-01 #monogram-subscription-content-reason-container .monogram-subscription-content-reason p,
+#monogram-subscription-content-copy-02 #monogram-subscription-content-reason-container .monogram-subscription-content-reason p {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
-  line-height: 22px;
+  line-height: 18px;
   letter-spacing: 0em;
   padding: 0 15px;
-  margin: 0 15%;
 }
-#monogram-subscription-content-copy .table-responsive {
+#monogram-subscription-content-copy-01 .table-responsive,
+#monogram-subscription-content-copy-02 .table-responsive {
   width: 100%;
   border-top: 1px solid #ffffff;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
-#monogram-subscription-content-copy .table-responsive table {
+#monogram-subscription-content-copy-01 .table-responsive table,
+#monogram-subscription-content-copy-02 .table-responsive table {
   width: 100%;
   table-layout: fixed;
 }
-#monogram-subscription-content-copy .table-responsive table thead tr th {
+#monogram-subscription-content-copy-01 .table-responsive table thead tr th,
+#monogram-subscription-content-copy-02 .table-responsive table thead tr th {
   font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -15991,14 +16023,17 @@ body.monogram-subscription-page {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-#monogram-subscription-content-copy .table-responsive table thead tr th:first-child {
+#monogram-subscription-content-copy-01 .table-responsive table thead tr th:first-child,
+#monogram-subscription-content-copy-02 .table-responsive table thead tr th:first-child {
   padding-left: 24px;
   text-align: left;
 }
-#monogram-subscription-content-copy .table-responsive table thead tr th:last-child {
+#monogram-subscription-content-copy-01 .table-responsive table thead tr th:last-child,
+#monogram-subscription-content-copy-02 .table-responsive table thead tr th:last-child {
   padding-right: 24px;
 }
-#monogram-subscription-content-copy .table-responsive table tbody tr td {
+#monogram-subscription-content-copy-01 .table-responsive table tbody tr td,
+#monogram-subscription-content-copy-02 .table-responsive table tbody tr td {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
@@ -16010,30 +16045,64 @@ body.monogram-subscription-page {
   padding-bottom: 25px;
   border: none;
 }
-#monogram-subscription-content-copy .table-responsive table tbody tr td:first-child {
+#monogram-subscription-content-copy-01 .table-responsive table tbody tr td:first-child,
+#monogram-subscription-content-copy-02 .table-responsive table tbody tr td:first-child {
   padding-left: 24px;
   text-align: left;
 }
-#monogram-subscription-content-copy .table-responsive table tbody tr td .ajax_loader_product {
+#monogram-subscription-content-copy-01 .table-responsive table tbody tr td .ajax_loader_product,
+#monogram-subscription-content-copy-02 .table-responsive table tbody tr td .ajax_loader_product {
   position: absolute;
   right: -20px;
   top: 2px;
 }
-#monogram-subscription-content-copy .table-responsive table tbody tr:first-child td {
+#monogram-subscription-content-copy-01 .table-responsive table tbody tr td .error-msg,
+#monogram-subscription-content-copy-02 .table-responsive table tbody tr td .error-msg {
+  position: absolute;
+}
+#monogram-subscription-content-copy-01 .table-responsive table tbody tr:first-child td,
+#monogram-subscription-content-copy-02 .table-responsive table tbody tr:first-child td {
   padding-top: 25px;
 }
-#monogram-subscription-content-copy .table-responsive table tbody tr:last-child td {
+#monogram-subscription-content-copy-01 .table-responsive table tbody tr:last-child td,
+#monogram-subscription-content-copy-02 .table-responsive table tbody tr:last-child td {
   border-bottom: 1px solid #ffffff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   padding-bottom: 18px;
 }
-#monogram-subscription-content-copy .cta-container {
+#monogram-subscription-content-copy-01 .cta-container,
+#monogram-subscription-content-copy-02 .cta-container {
   text-align: center;
   font-size: 0;
   padding-top: 46px;
 }
-#monogram-subscription-content-copy .cta-container .square-cta {
+#monogram-subscription-content-copy-01 .cta-container .square-cta,
+#monogram-subscription-content-copy-02 .cta-container .square-cta {
   margin: 0 13px;
+}
+#monogram-subscription-content-copy-01 {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+#monogram-subscription-content-copy-03 {
+  margin: 0 -60px;
+  background-color: #f1efee;
+  color: #6b615b;
+  padding: 60px;
+}
+#monogram-subscription-content-copy-03 p {
+  padding-bottom: 20px;
+}
+#monogram-subscription-content-copy-03 p:last-child {
+  padding-bottom: 0px;
+}
+#monogram-subscription-content-image-02 {
+  margin: 0 -60px;
+  color: #6b615b;
+}
+#monogram-subscription-content-image-02 img {
+  width: 100%!important;
+  height: auto!important;
 }
 html.monogram-page-faq,
 body.monogram-page-faq {
@@ -16769,7 +16838,7 @@ body.monogram-page-shipping-information {
 #monogram-page-shipping-info-content-04 {
   background: #827773;
   padding-top: 47px;
-  padding-bottom: 88px;
+  padding-bottom: 68px;
   padding-left: 60px;
   padding-right: 60px;
   position: relative;
