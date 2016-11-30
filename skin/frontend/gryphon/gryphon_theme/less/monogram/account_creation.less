@@ -1,9 +1,14 @@
 .account-creation-page {
-  overflow: visible;
+  overflow-y: visible;
+  overflow-x: hidden;
 }
 
 #account-creation-section-1 {
   padding-top: 70px;
+  @media only screen and (max-width: 991px) {
+    padding-top: 0px;
+  }
+
   h1 {
     text-align: left;
     text-transform: uppercase;
@@ -14,10 +19,14 @@
     text-align: left;
     color: @off-white;
     margin-bottom: 60px;
+    @media only screen and (max-width: 480px) {
+      margin-bottom: 30px;
+    }
   }
 
   .container-fluid {
-    padding-left: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .account-creation-content-container {
@@ -27,6 +36,30 @@
       height: 786px;
       // height: 486px;
       background-size: cover;
+      margin-left: -10px;
+      @media only screen and (max-width: 991px) {
+        height: 386px;
+        margin-left: 0px;
+      }
+    }
+
+    #account-creation-col-1 {
+      @media only screen and (max-width: 991px) {
+        display: block;
+        padding: 0px;
+      }
+    }
+
+    #account-creation-col-2 {
+      padding-left: 100px;
+      padding-right: 120px;
+      @media only screen and (max-width: 1024px) {
+        padding-left: 50px;
+        padding-right: 70px;
+      }
+      @media only screen and (max-width: 991px) {
+        padding: 50px 20px;
+      }
     }
   }
 

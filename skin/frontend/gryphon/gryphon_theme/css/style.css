@@ -11997,10 +11997,16 @@ body.tea-layering-detail-page {
   color: #ffffff;
 }
 .account-login-page {
-  overflow: visible;
+  overflow-y: visible;
+  overflow-x: hidden;
 }
 #account-login-section-1 {
   padding-top: 70px;
+}
+@media only screen and (max-width: 991px) {
+  #account-login-section-1 {
+    padding-top: 0px;
+  }
 }
 #account-login-section-1 h1 {
   text-align: left;
@@ -12013,17 +12019,55 @@ body.tea-layering-detail-page {
   color: #f1efee;
   margin-bottom: 60px;
 }
+@media only screen and (max-width: 480px) {
+  #account-login-section-1 p {
+    margin-bottom: 30px;
+  }
+}
 #account-login-section-1 .container-fluid {
-  padding-left: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 #account-login-section-1 .account-login-content-container #account-login-img-content {
   background: url('../images/login/login-bg.png') no-repeat;
   width: 100%;
   height: 786px;
   background-size: cover;
+  margin-left: -10px;
+}
+@media only screen and (max-width: 991px) {
+  #account-login-section-1 .account-login-content-container #account-login-img-content {
+    height: 386px;
+    margin-left: 0px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #account-login-section-1 .account-login-content-container #account-login-col-1 {
+    display: block;
+    padding: 0px;
+  }
+}
+#account-login-section-1 .account-login-content-container #account-login-col-2 {
+  padding-left: 90px;
+  padding-right: 50px;
+}
+@media only screen and (max-width: 1024px) {
+  #account-login-section-1 .account-login-content-container #account-login-col-2 {
+    padding-left: 50px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #account-login-section-1 .account-login-content-container #account-login-col-2 {
+    padding: 50px 20px;
+  }
 }
 #account-login-section-1 .inputs {
   margin-bottom: 80px;
+}
+@media only screen and (max-width: 991px) {
+  #account-login-section-1 .inputs {
+    margin-bottom: 40px;
+  }
 }
 #account-login-section-1 .inputs .row {
   margin-bottom: 15px;
@@ -12041,14 +12085,38 @@ body.tea-layering-detail-page {
 #account-login-section-1 .inputs input.username-input {
   width: 276px;
 }
+@media only screen and (max-width: 991px) {
+  #account-login-section-1 .inputs input.username-input {
+    width: 100%;
+  }
+}
 #account-login-section-1 .inputs input.password-input {
   width: 203px;
   margin-right: 10px;
+}
+@media only screen and (max-width: 991px) {
+  #account-login-section-1 .inputs input.password-input {
+    width: 100%;
+  }
+}
+#account-login-section-1 .inputs input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #756b66 inset;
+}
+@media only screen and (max-width: 991px) {
+  #account-login-section-1 .inputs .sign-in-btn {
+    margin-top: 20px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #account-login-section-1 .inputs .sign-in-btn {
+    width: 100%;
+  }
 }
 #account-login-section-1 .inputs .forget-password {
   margin-top: 7px;
   margin-left: 7px;
   display: block;
+  width: 100%;
 }
 #account-login-section-1 .inputs .login-label-container label {
   padding-left: 68px;
@@ -12059,12 +12127,39 @@ body.tea-layering-detail-page {
   margin-top: 8px;
   padding-left: 10px;
 }
+@media only screen and (max-width: 480px) {
+  #account-login-section-1 .inputs .v-align {
+    display: block;
+    float: left;
+  }
+}
 #account-login-section-1 .login-button-container {
   display: inline-block;
   vertical-align: middle;
 }
 #account-login-section-1 .login-button-container:nth-of-type(1) {
   width: 37%;
+}
+@media only screen and (max-width: 1024px) {
+  #account-login-section-1 .login-button-container:nth-of-type(1) {
+    width: 42%;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #account-login-section-1 .login-button-container:nth-of-type(1) {
+    width: 24%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #account-login-section-1 .login-button-container:nth-of-type(1) {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #account-login-section-1 .login-button-container {
+    width: 100%;
+    text-align: center;
+  }
 }
 #account-login-section-1 .login-button-container a,
 #account-login-section-1 .login-button-container button {
@@ -12092,6 +12187,11 @@ body.tea-layering-detail-page {
   text-align: center;
   margin-top: -7px;
 }
+@media only screen and (max-width: 480px) {
+  #account-login-section-1 span.login-button-seperator {
+    width: 100%;
+  }
+}
 #account-login-section-1 input[type=checkbox] {
   visibility: hidden;
 }
@@ -12112,10 +12212,16 @@ body.tea-layering-detail-page {
   position: absolute;
 }
 .account-creation-page {
-  overflow: visible;
+  overflow-y: visible;
+  overflow-x: hidden;
 }
 #account-creation-section-1 {
   padding-top: 70px;
+}
+@media only screen and (max-width: 991px) {
+  #account-creation-section-1 {
+    padding-top: 0px;
+  }
 }
 #account-creation-section-1 h1 {
   text-align: left;
@@ -12128,14 +12234,48 @@ body.tea-layering-detail-page {
   color: #f1efee;
   margin-bottom: 60px;
 }
+@media only screen and (max-width: 480px) {
+  #account-creation-section-1 p {
+    margin-bottom: 30px;
+  }
+}
 #account-creation-section-1 .container-fluid {
-  padding-left: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 #account-creation-section-1 .account-creation-content-container #account-creation-img-content {
   background: url('../images/login/login-bg.png') no-repeat;
   width: 100%;
   height: 786px;
   background-size: cover;
+  margin-left: -10px;
+}
+@media only screen and (max-width: 991px) {
+  #account-creation-section-1 .account-creation-content-container #account-creation-img-content {
+    height: 386px;
+    margin-left: 0px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #account-creation-section-1 .account-creation-content-container #account-creation-col-1 {
+    display: block;
+    padding: 0px;
+  }
+}
+#account-creation-section-1 .account-creation-content-container #account-creation-col-2 {
+  padding-left: 100px;
+  padding-right: 120px;
+}
+@media only screen and (max-width: 1024px) {
+  #account-creation-section-1 .account-creation-content-container #account-creation-col-2 {
+    padding-left: 50px;
+    padding-right: 70px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #account-creation-section-1 .account-creation-content-container #account-creation-col-2 {
+    padding: 50px 20px;
+  }
 }
 #account-creation-section-1 .h-align {
   margin: 0 auto;

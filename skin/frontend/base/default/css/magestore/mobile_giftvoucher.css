@@ -505,7 +505,7 @@ li.giftvoucher-discount-code strong{float:none;}
         float:left;
         margin-left:0px !important;
     }
-    .button{padding:5px !important;}
+    // .button{padding:5px !important;}
     .giftvoucher-grid-search-item{width:auto !important;}
     .balance .view-detail{background:#3399cc !important; }
     .balance .view-detail.button:hover{background:#2e8ab8 !important;}
@@ -547,7 +547,7 @@ li.giftvoucher-discount-code strong{float:none;}
         float:left; 
         margin-left:0px !important;
     }
-    .button{padding:4px !important;}
+    // .button{padding:4px !important;}
     .giftvoucher-grid-search-item{width:auto !important;} 
     #history_grid th .giftvoucher-grid-detail{ 
         margin-left:150px !important;
@@ -565,7 +565,7 @@ li.giftvoucher-discount-code strong{float:none;}
     /* My account */
     .balance .button{float:none !important; width:185px !important;}
     .giftvoucher-search-button{text-align:left !important;}
-    .button{padding:5px !important;}
+    // .button{padding:5px !important;}
     #history_grid th .giftvoucher-grid-detail{margin-left:115px !important;}
     #history_grid .giftvoucher-grid-search .giftvoucher-grid-search-item select{width:50px !important;}
 

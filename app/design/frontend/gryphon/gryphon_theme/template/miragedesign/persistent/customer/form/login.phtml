@@ -37,10 +37,10 @@
     
     <div class="container-fluid">
         <div class="row account-login-content-container">
-            <div class="col-md-6 v-align">
+            <div id="account-login-col-1" class="col-md-6 v-align">
             <div id="account-login-img-content"></div>
         </div><!--
-        --><div class="col-md-5 col-md-offset-1 v-align">
+        --><div id="account-login-col-2" class="col-md-6 v-align">
                 <h1>Member Login</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean iaculis, tellus a efficitur pellente, nibh arcu ultrices mi, ac commodo erat erat sit amet eros. Morbi rutrum arcu.</p>
 
@@ -76,27 +76,27 @@
                             <div class="col-md-12">          
                               <div class="inputs">
                                 <div class="row">
-                                    <div class="col-md-3 v-align">
+                                    <div class="col-md-3 col-sm-12 col-xs-12 v-align">
                                         <label for="email" class="for-input required"><?php echo $this->__('Email Address') ?></label>
                                     </div><!--
-                                      --><div class="col-md-6 v-align">
+                                      --><div class="col-md-9 col-sm-12 col-xs-12 v-align">
                                         <input type="text" autocapitalize="off" autocorrect="off" spellcheck="false" name="login[username]" value="<?php echo $this->escapeHtml($this->getUsername()) ?>" id="email" class="username-input input-class required-entry validate-email" title="<?php echo $this->__('Email Address') ?>" />
                                     </div>
                                 </div>
                                 <div class="row">
-                                  <div class="col-md-3 v-align">
+                                  <div class="col-md-3 col-sm-12 col-xs-12 v-align">
                                     <label for="pass" class="for-input required"><?php echo $this->__('Password') ?></label>
                                   </div><!--
-                                  --><div class="col-md-7 v-align">
+                                  --><div class="col-md-9 col-sm-12 col-xs-12 v-align">
                                     <input type="password" name="login[password]" class="password-input input-class required-entry validate-password" id="pass" title="<?php echo $this->__('Password') ?>" />
                                     <button type="submit" class="button sign-in-btn square-cta" title="<?php echo $this->__('Login') ?>" name="send" id="send2"><span><span><?php echo $this->__('Sign In') ?></span></span></button>
                                   </div>
                                 </div>
                                 <div class="row">
-                                  <div class="col-md-3 col-md-offset-3 v-align">
+                                  <div class="col-lg-3 col-lg-offset-3 col-md-4 col-md-offset-3 v-align">
                                     <?php echo $this->getChildHtml('persistent.remember.me'); ?>
                                   </div><!--
-                                    --><div class="col-md-6 v-align">
+                                    --><div class="col-lg-5 col-md-5 v-align">
                                       <a href="<?php echo $this->getForgotPasswordUrl() ?>" class="f-left forgot-password forget-password for-input"><?php echo $this->__('Forgot Your Password?') ?></a>
                                     </div>
                                 </div>
@@ -110,7 +110,7 @@
                               </div>
                               <span class="login-button-seperator">Or</span>
                               <div class="login-button-container">
-                                <a title="<?php echo $this->__('Create A Monogram Account') ?>" class="button sign-up-btn square-cta" href="<?php echo Mage::helper('persistent')->getCreateAccountUrl($this->getCreateAccountUrl()) ?>"><span><span><?php echo $this->__('Create A Monogram Account') ?></span></span></a>
+                                <a title="<?php echo $this->__('Create A Monogram Account') ?>" class=" sign-up-btn square-cta" href="<?php echo Mage::helper('persistent')->getCreateAccountUrl($this->getCreateAccountUrl()) ?>"><span><span><?php echo $this->__('Create A Monogram Account') ?></span></span></a>
                               </div>
                             </div>
                         </div>
