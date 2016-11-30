@@ -473,6 +473,22 @@ monogram.component.GraphSectionMobile.prototype.display_combination_index = func
 
 
 
+
+      var a_num = '' + (this.main_index + 1);
+      var b_num = '' + (this.sub_index + 1);
+      var a_total = '' + (this.main_array.length);
+      var b_total = '' + (this.sub_array[this.main_index].length);
+
+      a_num = a_num.length == 1 ? '0' + a_num : a_num;
+      b_num = b_num.length == 1 ? '0' + b_num : b_num;
+      a_total = a_total.length == 1 ? '0' + a_total : a_total;
+      b_total = b_total.length == 1 ? '0' + b_total : b_total;
+
+      $j('#tea-layering-detail-copy-section .graph-selection-title .number').html(b_num + ' / ' + b_total);
+      
+
+      
+
       /*
 
 
