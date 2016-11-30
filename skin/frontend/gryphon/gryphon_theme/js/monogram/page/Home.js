@@ -727,10 +727,16 @@ monogram.page.Home.prototype.scroll_to_target = function(str_param, str_param_2,
     // MOBILE DISPLAY
     if (str_param == 'intro') {
       this.display_mobile_intro_section();
+      this.scroll_to(0);
+
     } else if (str_param == 'selection') {
       this.display_mobile_selection_section();
+      this.scroll_to(0);
+
     } else if (str_param == 'graph') {
       this.display_mobile_graph_section();
+      this.scroll_to(0);
+      
     }
 
   } else {

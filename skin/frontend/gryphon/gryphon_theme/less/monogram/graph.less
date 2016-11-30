@@ -37,12 +37,34 @@
 
 
 @media only screen and (max-width: 991px) {
-  .monogram-single-graph, .monogram-combination-graph{
+  .monogram-single-graph, 
+  .monogram-combination-graph{
     overflow: hidden;
+
+    .graph-svg{
+      width: 380px;
+      height: 380px;
+
+      svg{
+        width: 380px;
+        height: 380px;
+      }
+    }
+    .graph-overlay{
+      width: 380px;
+      height: 380px;
+    }
+    .graph-name-overlay{
+      width: 380px;
+      height: 380px;
+    }
+
   }
 }
 @media (max-width: 767px) {
-  .monogram-single-graph, .monogram-combination-graph{
+  .monogram-single-graph, 
+  .monogram-combination-graph{
+
     overflow: hidden;
   }
 }
