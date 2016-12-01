@@ -75,7 +75,7 @@ endif;
                 <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
                 <input type="hidden" name="related_product" id="related-products-field" value="" />
                 <div id="product-detail-img-info-container" class="row">
-                    <div class="col-md-4 col-sm-12 col-xs-12 v-align">
+                    <div class="<?php if ($isGiftcardType) : ?>col-md-6<?php else: ?>col-md-4<?php endif; ?> col-sm-12 col-xs-12 v-align">
                         <?php if ($isGiftcardType) : ?>
                         <div class="gift-card-img">
                         <?php elseif($_product->getTypeId() == 'tin'): ?>
@@ -86,13 +86,15 @@ endif;
                             <?php echo $this->getChildHtml('media') ?>
                         </div>
                     </div><!--
-                    --><div class="col-md-4 col-sm-12 col-xs-12 v-align">
+                    --><div class="test <?php if ($isGiftcardType) : ?>col-md-6 <?php else: ?>col-md-4<?php endif; ?> col-sm-12 col-xs-12 v-align">
                         <?php if ($isGiftcardType || $_product->getTypeId() == 'tin') : ?>
                         <div class="gift-card-content">                        
                         <?php else: ?>
                         <div class="product-content product-info">
                         <?php endif; ?>
+                            <?php if (!$isGiftcardType) :?>
                             <h5>Tasting notes</h5>
+                            <?php endif; ?>
                             <?php if ($this->canEmailToFriend()): ?>
                                 <p class="email-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a></p>
                             <?php endif; ?>

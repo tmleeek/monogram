@@ -140,12 +140,10 @@ endif;
         <label for="gift_quantity"><?php echo $this->__('QUANTITY*') ?></label>
 
         <div class="quantity-container" id="gift_quantity_container">
-            <div class="minus-button minus"></div>
-            <input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" class="short qty" value="<?php echo max($this->getProductDefaultQty() * 1, 1) ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
-            <!-- <input type="text" name="gift_quantity" id="gift_quantity" class="short" value="1"> -->
-            <div class="plus-button plus"></div>
-        </div>
-        <span class="orange"></span>
+            <div class="minus-button minus"></div><!--
+            --><input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" class="short qty" value="<?php echo max($this->getProductDefaultQty() * 1, 1) ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" /><!--            
+            --><div class="plus-button plus"></div>
+        </div>        
     </div>
 
     <?php echo $this->getChildHtml('giftcard.product.selecttemplate') ?>
@@ -369,7 +367,6 @@ endif;
                     <div class="col-md-4 col-sm-4 col-xs-4">
                         <div class="dropdown date-dropdown">
                             <select name="registration_date_year" id="registration_date_year">
-                                <option value="2015">2015</option>
                                 <option value="2016">2016</option>
                                 <option value="2017">2017</option>
                                 <option value="2018">2018</option>
@@ -471,26 +468,62 @@ endif;
     <?php $_productImageUrl = urlencode(trim($this->helper('catalog/image')->init($_product, 'image')))?>
     <?php $_productUrl = urlencode(trim($_product->getProductUrl()))?>
 
-    <div class="each-input">
-        <label>Share With</label>
+    <div class="each-input social-media-share">
+        <label>Share With</label>   
         <ul class="social-sharing">
-            <li><a href="https://instagram.com/gryphontea/" target="_blank" class="instagram"></a></li>
-            <li>
-                <a href="http://pinterest.com/pin/create/button/?url=<?php echo $_productUrl; ?>&media=<?php echo $_productImageUrl; ?>&description=<?php echo $_productName; ?>" class="pintrest" target="_blank"></a>
-            </li>
+            <?php //if ($this->canEmailToFriend()): ?>
+                <!-- <li><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>" class="link-email-friend" title="<?php echo $this->__('Email to a Friend') ?>"><?php echo $this->__('Email to a Friend') ?></a></li> -->
+            <?php //endif; ?>
 
-            <!--
+            <?php $_helper = $this->helper('catalog/output'); ?>
+            <?php $_productName = urlencode(trim($_helper->productAttribute($_product, $_product->getName(), 'name')))?>
+            <?php $_productImageUrl = urlencode(trim($this->helper('catalog/image')->init($_product, 'image')))?>
+            <?php $_productUrl = urlencode(trim($_product->getProductUrl()))?>
+            <!-- <li><a href="#" class="instagram"></a></li> -->
             <li>
-                <a href="<?php echo 'http://twitter.com/home?status=' . $_productName . '+' . $_productUrl; ?>" target="_blank" title="<?php echo $this->__('Share on Twitter') ?>" class="twitter" target="_blank"></a>
+                <!-- <a href="http://pinterest.com/pin/create/button/?url=<?php echo $_productUrl; ?>&media=<?php echo $_productImageUrl; ?>&description=<?php echo $_productName; ?>" class="pintrest" target="_blank"></a> -->
+                <a href="http://pinterest.com/pin/create/button/?url=<?php echo $_productUrl; ?>&media=<?php echo $_productImageUrl; ?>&description=<?php echo $_productName; ?>" class="fa fa-pinterest" target="_blank"></a>
             </li>
-            -->
+            <li>        
+                <a href="<?php echo 'https://twitter.com/share?url=' . $_productUrl . '&text=' . $_productName; ?>" target="_blank" title="<?php echo $this->__('Share on Twitter') ?>" class="fa fa-twitter" target="_blank"></a>
+            </li>
             <li>
-                <?php $_u = 'p[url]=' . $_productUrl . '&p[images][0]=' . $_productImageUrl . '&p[title]=' . $_productName . '&p[summary]=' . urlencode(trim($_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description'))); ?>
-                <a href="<?php echo 'http://www.facebook.com/sharer.php?s=100&' . $_u; ?>" target="_blank" title="<?php echo $this->__('Share on Facebook') ?>" class="facebook">
+                <?php $_u = 'p[url]=' . $_productUrl . '&p[images][0]=' . $_productImageUrl . '&p[title]=' . $_productName . '&p[summary]=' . urlencode(trim($_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description'))); ?>        
+                <a href="<?php echo Mage::helper('core/url')->getCurrentUrl(); ?>" target="_blank" title="<?php echo $this->__('Share on Facebook') ?>" class="fa fa-facebook">
                 </a>
-            </li>
-            
+            </li>    
         </ul>
+        <script>
+            jQuery('.fa-facebook').on('click', function(e){
+                e.preventDefault();
+                var share_url = jQuery(this).attr('href');
+                FB.ui({
+                    display: 'popup',
+                    method: 'share',
+                    href: share_url,
+                }, function(response){});
+            });
+
+            function PopupCenter(pageURL, title,w,h) {
+                var left = (screen.width/2)-(w/2);
+                var top = (screen.height/2)-(h/2);
+                var targetWin = window.open (pageURL, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+                return targetWin;
+            } 
+
+            jQuery(document).ready(function($){
+                $('.fa-twitter').on('click', function(e){
+                    e.preventDefault();
+                    var share_url = $(this).attr('href');
+                    PopupCenter(share_url,'', 500, 500);
+                });
+                $('.fa-pintrest').on('click', function(e){
+                    e.preventDefault();
+                    var share_url = $(this).attr('href');
+                    PopupCenter(share_url,'', 500, 500);
+                });
+            });    
+        </script>
     </div>
 
 </div>
@@ -507,16 +540,4 @@ endif;
     send_friend.checked = true;
     sendFriend(send_friend);
 //]]>
-</script>
-<script>
-    jQuery(document).ready(function($){
-        // gift card specific
-        $('#amount_dropdown').on('change', function(e){
-            if($(this).val()) {
-                var points = Math.ceil($(this).val()) + 10;
-                $('.orange').html('<span id="j2t-pts">'+points+'</span> reward points');
-            }
-        });  
-        $('.orange').html($('.j2t-loyalty-points').html());      
-    });
 </script>
