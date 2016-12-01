@@ -27,8 +27,61 @@
 
 
 
+<div id="monogram-page-account-mobile-header" class="visible-sm visible-xs">
+  <h4>membership service</h4>
+  <h2>My Account</h2>
+</div>
 
-<div id="monogram-page-account-details-dashboard-header">
+
+<div id="monogram-page-account-mobile-page-title" class="visible-sm visible-xs">
+  <h1><?php echo $this->escapeHtml($this->getCustomer()->getName()) ?></h1>
+  <p><a href="mailto:<?php echo $this->escapeHtml($this->getCustomer()->getEmail()) ?>" class="email"><?php echo $this->escapeHtml($this->getCustomer()->getEmail()) ?></a></p>
+
+  <?php if (Mage::helper('customer')->isLoggedIn() ): ?>
+    <div class="cta-container">
+      <a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>" class="square-cta">Log Out</a>
+    </div>
+  <?php endif; ?>
+</div>
+
+
+
+<div id="monogram-page-account-details-dashboard-header-mobile" class="visible-sm visible-xs">
+  <div class="row">
+    <div class="col-xs-6"></div>
+    <div class="col-xs-6">
+
+      <div class="monogram-page-account-details-dashboard-header-item">
+        <div class="monogram-page-account-details-dashboard-header-icon rebates-version"></div>
+        <h4>rebates</h4>
+        <?php 
+        $store = Mage::app()->getStore();
+        $currency = Mage::app()->getStore()->getCurrentCurrency();
+
+        $store_id = Mage::app()->getStore()->getId();
+        $customerId = Mage::getModel('customer/session')->getCustomerId();
+        if (Mage::getStoreConfig('rewardpoints/default/flatstats', $store_id)){
+            $reward_flat_model = Mage::getModel('rewardpoints/flatstats');
+            $current_point = $reward_flat_model->collectPointsCurrent($customerId, $store_id)+0;
+        } else {
+          $reward_model = Mage::getModel('rewardpoints/stats');
+          $current_point = $reward_model->getPointsCurrent($customerId, $store_id)+0;
+        }                
+        ?>
+        <p class="value"><?php echo $currency->format($store->convertPrice($current_point)); ?></p>
+        <a href="<?php echo $this->getUrl('rewardpoints/index/points') ?>" class="arrow-cta">see valid date</a>
+      </div> <!-- .monogram-page-account-details-dashboard-header-item -->
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div id="monogram-page-account-details-dashboard-header" class="visible-md visible-lg">
   <div class="row">
     <div class="col-md-8">
       <div class="monogram-page-account-details-dashboard-header-item first-version">
@@ -60,6 +113,9 @@
         <div class="monogram-page-account-details-dashboard-header-icon rebates-version"></div>
         <h4>rebates</h4>
         <?php 
+        $store = Mage::app()->getStore();
+        $currency = Mage::app()->getStore()->getCurrentCurrency();
+
         $store_id = Mage::app()->getStore()->getId();
         $customerId = Mage::getModel('customer/session')->getCustomerId();
         if (Mage::getStoreConfig('rewardpoints/default/flatstats', $store_id)){

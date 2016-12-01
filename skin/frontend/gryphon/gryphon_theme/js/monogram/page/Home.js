@@ -487,6 +487,41 @@ monogram.page.Home.prototype.create_graph_mobile = function(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+//    _____ _____  __
+//   |  ___|_ _\ \/ /
+//   | |_   | | \  /
+//   |  _|  | | /  \
+//   |_|   |___/_/\_\
+//
+
+
+monogram.page.Home.prototype.hide_preloader = function() {
+
+  monogram.page.Home.superClass_.hide_preloader.call(this);
+
+  if (manic.IS_MOBILE == true) {
+
+    // only for home page mobile (fix for snapping thingy)
+    this.initial_scroll_to_target();
+    
+
+  }
+
+};
+
+
+
 //    __  __  ___  ____ ___ _     _____   ____ ___ ____  ____  _        _ __   __
 //   |  \/  |/ _ \| __ )_ _| |   | ____| |  _ \_ _/ ___||  _ \| |      / \\ \ / /
 //   | |\/| | | | |  _ \| || |   |  _|   | | | | |\___ \| |_) | |     / _ \\ V /
