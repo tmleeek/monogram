@@ -1,21 +1,225 @@
-html.monogram-page-account-details{
 
-}
+
+//    _        _ __   _____  _   _ _____
+//   | |      / \\ \ / / _ \| | | |_   _|
+//   | |     / _ \\ V / | | | | | | | |
+//   | |___ / ___ \| || |_| | |_| | | |
+//   |_____/_/   \_\_| \___/ \___/  |_|
+//
+
 body.monogram-page-account-details{
 
 }
 
 
-
 // HIDE THE SIDEBAR ON MOBILE
 @media only screen and (max-width: 991px) {
   body.monogram-page-account-details{
-    #content-wrapper .col-right.sidebar{
-      display: none;
+
+    #content-wrapper{
+      .col-right.sidebar{
+        display: none;
+      }
+      .col-main{
+        padding-top: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        padding-bottom: 80px;
+
+        min-height: 0 !important;
+        margin-left: 0px;
+      }
     }
-  }
+
+    
+  } // body.monogram-page-account-details
 }
+
+
+
+.mobile-body-font{
+
+  .body-font;
+  font-size: 12px;
+  line-height: 19px;
+
+}
+
+
+
+//    _   _ _____    _    ____  _____ ____
+//   | | | | ____|  / \  |  _ \| ____|  _ \
+//   | |_| |  _|   / _ \ | | | |  _| | |_) |
+//   |  _  | |___ / ___ \| |_| | |___|  _ <
+//   |_| |_|_____/_/   \_\____/|_____|_| \_\
+//
+
 
 #monogram-page-account-mobile-header{
   background: @off-white;
+
+  margin-left: -10px;
+  margin-right: -10px;
+
+  padding-left: 10px;
+  padding-right: 10px;
+
+  padding-top: 17px;
+  padding-bottom: 11px;
+
+  position: relative;
+
+  // color: @brown;
+  color: @dark-brown;
+
+  h4{
+    font-size: 10px;
+    line-height: 14px;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
+    margin-bottom: 1px;
+  }
+
+  h2{
+    font-size: 13px;
+    line-height: 22px;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+
+
+
+  
+
+
+}
+
+
+
+//     ____ ___  __  __ __  __  ___  _   _
+//    / ___/ _ \|  \/  |  \/  |/ _ \| \ | |
+//   | |  | | | | |\/| | |\/| | | | |  \| |
+//   | |__| |_| | |  | | |  | | |_| | |\  |
+//    \____\___/|_|  |_|_|  |_|\___/|_| \_|
+//
+
+
+@media only screen and (max-width: 991px) {
+  body.monogram-page-account-details #content-wrapper .col-main{
+
+    // TODO 
+    .pager{
+    } // .pager
+    
+
+
+    .mobile-body-font;
+    
+    .each-input{
+      margin-bottom: 25px;
+
+      h2{
+        display: block;
+        width: auto;
+      }
+      p{
+        display: block;
+        width: auto;
+
+        .mobile-body-font;
+
+        a{
+
+          .mobile-body-font;
+
+        }
+
+      }
+
+      label{
+
+      }
+
+    }
+
+
+
+  }
+}
+
+
+//    ____    _    ____  _   _ ____   ___    _    ____  ____
+//   |  _ \  / \  / ___|| | | | __ ) / _ \  / \  |  _ \|  _ \
+//   | | | |/ _ \ \___ \| |_| |  _ \| | | |/ _ \ | |_) | | | |
+//   | |_| / ___ \ ___) |  _  | |_) | |_| / ___ \|  _ <| |_| |
+//   |____/_/   \_\____/|_| |_|____/ \___/_/   \_\_| \_\____/
+//
+
+
+
+
+#monogram-page-account-mobile-page-title{
+  border-bottom: 1px solid #cccccc;
+
+  margin-left: -10px;
+  margin-right: -10px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  background: @account-green;
+
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  position: relative;
+
+
+  h1{
+    .header-font;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    margin-bottom: 2px;
+  }
+  
+  p{
+    font-size: 13px;
+    line-height: 19px;
+  }
+
+
+  .cta-container{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-align: right;
+
+    .square-cta{
+
+    }
+  }
+
+} // #monogram-page-account-mobile-page-title
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 991px) {
+  body.monogram-page-account-details{
+    .dashboard.first-content{
+      
+      padding-top: 40px;
+    }
+  }
 }
