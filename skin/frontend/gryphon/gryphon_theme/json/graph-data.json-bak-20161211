@@ -1,7 +1,6 @@
 [
   {
     "id": "uji-sencha",
-    "product-id": "1001",
     "name": "Uji Sencha",
     "html-name": "<span style='color: #acc6c9;'>uji</span> <span style='color: #bdc8c4;'>sencha</span>",
     "url": "http://www.monogramtea.com/uji-sencha-1006.html",
@@ -87,7 +86,6 @@
 
   {
     "id": "cherry-japonais",
-    "product-id": "297",
     "name": "Cherry Japonais",
     "html-name": "<span style='color: #edbec9;'>cherry</span> <span style='color: #eccdce;'>japonais</span>",
     "url": "http://www.monogramtea.com/cherry-japonais.html",
@@ -184,7 +182,6 @@
 
   {
     "id": "jasmine-silk-pearls",
-    "product-id": "488",
     "name": "Jasmine Silk Pearls",
     "html-name": "<span style='color: #bbdce5;'>jasmine</span> <span style='color: #a3b1c8;'>silk pearls</span>",
     "url": "http://www.monogramtea.com/jasmine-silk-pearls.html",
@@ -254,7 +251,6 @@
 
   {
     "id": "milky-oolong",
-    "product-id": "450",
     "name": "Milky Oolong",
     "html-name": "<span style='color: #e3c19e;'>milky</span> <span style='color: #d8d2c4;'>oolong</span>",
     "url": "http://www.monogramtea.com/milky-oolong.html",
@@ -322,7 +318,6 @@
 
   {
     "id": "lapsang-florale",
-    "product-id": "356",
     "name": "Lapsang Florale",
     "html-name": "<span style='color: #b8b8dd;'>lapsang</span> <span style='color: #c7b4e2;'>florale <sup>tm</sup></span>",
     "url": "http://www.monogramtea.com/lapsang-florale.html",
@@ -420,7 +415,6 @@
 
   {
     "id": "kashmere",
-    "product-id": "440",
     "name": "Kashmere",
     "html-name": "<span style='color: #f1a693;'>kashmere <sup>tm</sup></span>",
     "url": "http://www.monogramtea.com/kashmere.html",
@@ -530,7 +524,6 @@
 
   {
     "id": "earl-grey-neroli",
-    "product-id": "519",
     "name": "Earl Grey Neroli",
     "html-name": "<span style='color: #c0cdd5;'>earl grey</span> <span style='color: #d8d1ca;'>neroli</span>",
     "url": "http://www.monogramtea.com/earl-grey-neroli.html",
@@ -628,7 +621,6 @@
 
   {
     "id": "morning-english",
-    "product-id": "496",
     "name": "Morning English",
     "html-name": "<span style='color: #f6c65b;'>morning</span> <span style='color: #fed298;'>english <sup>tm</sup></span>",
     "url": "http://www.monogramtea.com/morning-english.html",
@@ -718,7 +710,6 @@
 
   {
     "id": "rose-of-ariana",
-    "product-id": "997",
     "name": "Rose of Ariana",
     "html-name": "<span style='color: #ff8189;'>rose</span> <span style='color: #fd92a3;'>of ariana <sup>tm</sup></span>",
     "url": "http://www.monogramtea.com/rose-of-ariana.html",
@@ -801,7 +792,6 @@
 
   {
     "id": "shiso-mint",
-    "product-id": "1000",
     "name": "Shiso Mint",
     "html-name": "<span style='color: #c7c89b;'>shiso</span> <span style='color: #bcc4b9;'>mint</span>",
     "url": "http://www.monogramtea.com/shiso-mint.html",
@@ -877,7 +867,6 @@
 
   {
     "id": "saffronais",
-    "product-id": "999",
     "name": "Saffronais",
     "html-name": "<span style='color: #ffaa61;'>saffronais <sup>tm</sup></span>",
     "url": "http://www.monogramtea.com/saffronais.html",
@@ -976,7 +965,6 @@
 
   {
     "id": "provencal-herbs",
-    "product-id": "998",
     "name": "Provencal Herbs",
     "html-name": "<span style='color: #c2cb7f;'>provencial</span> <span style='color: #d5d755;'>herbs</span>",
     "url": "http://www.monogramtea.com/provencal-herbs.html",
