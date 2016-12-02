@@ -18,6 +18,9 @@ monogram.graph.Data = function(data_obj_param) {
   // parse the data
 
   this.data_id                = this.data_object["id"];
+
+  this.data_product_id        = this.data_object["product-id"];
+
   this.data_name              = this.data_object["name"];
   this.data_url               = this.data_object["url"];
 

@@ -120,7 +120,9 @@ monogram.graph.SingleGraph = function(options, element) {
   }, this.paper);
 
 
-  this.graph_item = new monogram.graph.RaphaelGraphItem({}, this.paper);
+  this.graph_item = new monogram.graph.RaphaelGraphItem({
+    'scale_factor': this.scale_factor
+  }, this.paper);
 
   
   

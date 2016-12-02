@@ -8,7 +8,18 @@ $_productCollection = Mage::getModel('catalog/category')->load(92)
 $_helper = $this->helper('catalog/output');   
 $count = 1;
 ?>
-<article id="tea-matrix-section-1">
+
+
+<!--
+   ____  _____ ____  _  _______ ___  ____
+  |  _ \| ____/ ___|| |/ /_   _/ _ \|  _ \
+  | | | |  _| \___ \| ' /  | || | | | |_) |
+  | |_| | |___ ___) | . \  | || |_| |  __/
+  |____/|_____|____/|_|\_\ |_| \___/|_|
+
+-->
+
+<article id="tea-matrix-section-1" class="visible-md visible-lg">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-2">
@@ -16,7 +27,7 @@ $count = 1;
           <?php foreach ($_productCollection as $key => $_product):            
               $product_name = $_product->getName();
           ?>
-          <li id="page-indicator-<?php echo $count; ?>" data-menuanchor="<?php echo $count; ?>" class="<?php echo ($count==1) ? 'active' : ''; ?> page-indicator"><a href="#<?php echo $count; ?>" class="anchor" id="anchor-<?php echo $count; ?>"><?php echo ($_product->getData('product_name_in_color')) ? $_product->getData('product_name_in_color') : $product_name ; ?></a></li>          
+          <li id="page-indicator-<?php echo $count; ?>" data-menuanchor="<?php echo $count; ?>" class="<?php echo ($count==1) ? 'active' : ''; ?> page-indicator"><a href="#<?php echo $count; ?>" class="anchor" id="anchor-<?php echo $count; ?>"><?php echo ($_product->getData('product_name_in_color')) ? $_product->getData('product_name_in_color') : $product_name ; ?></a></li>
           <?php $count++; ?>
           <?php endforeach; ?>
         </ul>  
@@ -109,7 +120,7 @@ $count = 1;
   </div>
 </footer>
 <script>
-  $j(document).ready(function($){    
+  $j(document).ready(function($){
 
     $(".page-indicator").each(function(index, el){
       $(el).find("span").each(function(i, sel){
@@ -337,3 +348,376 @@ $count = 1;
 
   });
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+   __  __  ___  ____ ___ _     _____
+  |  \/  |/ _ \| __ )_ _| |   | ____|
+  | |\/| | | | |  _ \| || |   |  _|
+  | |  | | |_| | |_) | || |___| |___
+  |_|  |_|\___/|____/___|_____|_____|
+
+-->
+
+
+
+
+
+<article id="tea-layering-detail-graph-section" class="visible-sm visible-xs">
+
+  <div id="tea-matrix-combination-graph-mobile" class="monogram-combination-graph" data-id="cherry-japonais">
+    <div class="graph-svg"></div>                
+    <div class="graph-name-overlay">
+      <div class="graph-name-item floral-version"></div>
+      <div class="graph-name-item creamy-version"></div>
+      <div class="graph-name-item marine-version"></div>
+      <div class="graph-name-item mineral-version"></div>
+      <div class="graph-name-item citrus-version"></div>
+      <div class="graph-name-item fruity-version"></div>
+      <div class="graph-name-item sweet-version"></div>
+      <div class="graph-name-item wood-version"></div>
+      <div class="graph-name-item herbaceous-version"></div>
+    </div>
+    <div class="graph-overlay"></div>
+  </div>
+
+
+  <!--
+  <div id="tea-layering-graph-mobile" class="monogram-combination-graph">
+    <div class="graph-svg"></div>                
+    <div class="graph-name-overlay">
+      <div class="graph-name-item floral-version"></div>
+      <div class="graph-name-item creamy-version"></div>
+      <div class="graph-name-item marine-version"></div>
+      <div class="graph-name-item mineral-version"></div>
+      <div class="graph-name-item citrus-version"></div>
+      <div class="graph-name-item fruity-version"></div>
+      <div class="graph-name-item sweet-version"></div>
+      <div class="graph-name-item wood-version"></div>
+      <div class="graph-name-item herbaceous-version"></div>
+    </div>
+    <div class="graph-overlay"></div>
+  </div>
+  -->
+
+</article>
+
+
+
+
+
+
+
+<!--
+    ____ ___  ______   __
+   / ___/ _ \|  _ \ \ / /
+  | |  | | | | |_) \ V /
+  | |__| |_| |  __/ | |
+   \____\___/|_|    |_|
+
+ -->
+
+
+<article id="tea-layering-detail-copy-section" class="visible-sm visible-xs animate-in">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+
+        <script type="text/javascript">
+
+          var arr = $j('.graph-selection-tea-mobile-item');
+          var item = null;
+
+          for (var i = 0, l=arr.length; i < l; i++) {
+            item = $j(arr[i]);
+            console.log(item.find('h2').html())
+            console.log(item.attr('data-product-id'))
+          }
+
+        </script>
+
+
+        <div class="graph-selection-tea-mobile">
+
+          <?php 
+            $count = 1;
+            $custom_extra_class = '';
+            foreach ($_productCollection as $key => $_product):
+                $product_name = $_product->getName();
+
+                $custom_extra_class = '';
+                if($count==1) {
+                  $custom_extra_class = ' visible-version';
+                }
+
+          ?>
+
+            <div class="graph-selection-tea-mobile-item <?php echo $custom_extra_class; ?>" data-product-id="<?php echo $_product->getId(); ?>">
+
+              <div class="graph-selection-name">
+                <h2><?php echo ($_product->getData('product_name_in_color')) ? $_product->getData('product_name_in_color') : $product_name ; ?></h2>
+              </div>
+
+              <div class="tea-copy-content">
+                <p><?php echo $_product->getDescription(); ?></p>
+              </div>
+
+              <div class="tea-custom-matrix-content-mobile">
+                <hr>
+                  <?php echo $_product->getData('tea_matrix_content'); ?>
+                <hr>
+              </div> <!-- .tea-custom-matrix-content-mobile -->
+
+              <div class="tea-custom-suggestion-content-mobile">
+                <h4>layering suggestion</h4>
+
+                <?php 
+                $object = Mage::getModel('catalog/product');
+                $upsell_product = $_product->getUpSellProductCollection()->addAttributeToSort('position', Varien_Db_Select::SQL_ASC)->addStoreFilter();
+                  //if result is not empty then get  upsell product detail using foreach loop      
+                  foreach($upsell_product as $_upsell):
+                    //get detail of single upsell prdocut using upsell product id
+                    $upsp = $object->load($_upsell->getId());        
+                  ?>    
+                  
+                  <h2><?php echo $upsp->getData('product_name_in_color') ?></h2>
+                <?php endforeach; ?>
+
+              </div> <!-- .tea-custom-suggestion-content-mobile -->
+
+
+
+              <div class="cta-container">
+                <a href="<?php echo $_product->getProductUrl() ?>" class="square-cta tea-matrix-content-animate">View Product</a>
+                <a href="<?php echo $this->getAddToCartUrl($_product) ?>" class="square-cta tea-matrix-content-animate tea-matrix-add-to-cart">add to cart</a>
+
+                <div class="cta-notification-contianer">
+                  <span id='ajax_loader_product' style='display:none'><img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/></span>
+                  <span class="ajax_msg_product italic"></span>
+                </div>
+              </div>
+
+
+
+            </div> <!-- .graph-selection-tea-mobile-item -->
+
+
+
+          <?php 
+              $count++;
+            endforeach; 
+          ?>
+
+
+
+          
+
+          
+
+
+          <div id="page-tea-layering-detail-next-arrow"></div>
+          <div id="page-tea-layering-detail-prev-arrow"></div>
+
+        </div> <!-- graph-selection-tea-mobile -->
+
+
+
+
+        <!--
+        <div class="button-container button-container-01">
+          <a href="javascript:void(0);" class="square-cta square-cta-01">save layering</a>
+          <a href="#selection" class="square-cta square-cta-02">choose another layering</a>
+        </div>
+
+        <div class="button-container button-container-02">
+          <a href="" class="square-cta square-cta-03" id="tea-layering-detail-copy-tea-detail-01-cta">see earl grey neroli</a>
+          <a href="" class="square-cta square-cta-04"  id="tea-layering-detail-copy-tea-detail-02-cta">see shiso mint</a>
+        </div>
+        -->
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+   _____ ___   ___ _____ _____ ____
+  |  ___/ _ \ / _ \_   _| ____|  _ \
+  | |_ | | | | | | || | |  _| | |_) |
+  |  _|| |_| | |_| || | | |___|  _ <
+  |_|   \___/ \___/ |_| |_____|_| \_\
+
+-->
+
+
+<footer id="tea-layering-detail-footer-mobile-fixed" class="visible-sm visible-xs">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+
+        <div class="page-tea-layering-detail-select-hidden-container">
+          
+          <div class="select-display">
+            <span class="fa fa-th"></span><h4>Choose Other Tea</h4>
+          </div>
+
+          <select id="page-tea-layering-detail-select-hidden-01">
+            <option value="0">Cherry Japonais</option>
+            <option value="1">Uji Sencha</option>
+            <option value="2">Jasmine Silk Pearls</option>
+            <option value="3">Milky Oolong</option>
+            <option value="4">Lapsang Florale</option>
+            <option value="5">Kashmere</option>
+            <option value="6">Earl Grey Neroli</option>
+            <option value="7">Morning English</option>
+            <option value="8">Provencal Herbs</option>
+            <option value="9">Saffronais</option>
+            <option value="10">Rose of Ariana</option>
+            <option value="11">Shiso Mint</option>
+          </select>
+        </div>
+                
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
+
+<div id="tea-layering-detail-footer-mobile-spacer" class="visible-sm visible-xs">
+  <div class="step-01"></div>
+  <div class="step-02"></div>
+  <div class="step-03"></div>
+  <div class="step-04"></div>
+  <div class="step-05"></div>
+  <div class="step-06"></div>
+</div>
+
+
+<footer id="tea-layering-detail-footer-mobile" class="visible-sm visible-xs">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+
+        <div class="page-tea-layering-detail-select-hidden-container">
+          
+          <div class="select-display">
+            <span class="fa fa-th"></span><h4>Choose Other Tea</h4>
+          </div>
+          <select id="page-tea-layering-detail-select-hidden-02">
+            <option value="0">Cherry Japonais</option>
+            <option value="1">Uji Sencha</option>
+            <option value="2">Jasmine Silk Pearls</option>
+            <option value="3">Milky Oolong</option>
+            <option value="4">Lapsang Florale</option>
+            <option value="5">Kashmere</option>
+            <option value="6">Earl Grey Neroli</option>
+            <option value="7">Morning English</option>
+            <option value="8">Provencal Herbs</option>
+            <option value="9">Saffronais</option>
+            <option value="10">Rose of Ariana</option>
+            <option value="11">Shiso Mint</option>
+          </select>
+        </div>
+                
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
+
+
+<!--
+   __  __  ___  ____ ___ _     _____   _____ ___   ___ _____ _____ ____
+  |  \/  |/ _ \| __ )_ _| |   | ____| |  ___/ _ \ / _ \_   _| ____|  _ \
+  | |\/| | | | |  _ \| || |   |  _|   | |_ | | | | | | || | |  _| | |_) |
+  | |  | | |_| | |_) | || |___| |___  |  _|| |_| | |_| || | | |___|  _ <
+  |_|  |_|\___/|____/___|_____|_____| |_|   \___/ \___/ |_| |_____|_| \_\
+
+-->
+
+<!-- not sure why it's not available in the home page... -->
+
+<footer id="mobile-footer" class="visible-sm visible-xs">
+
+  <div id="mobile-footer-copy-section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+
+
+            
+          <div id="mobile-footer-copy">
+            <h4>Newsletter</h4>
+            <p>Get the latest news, product, announcments, promotions, and more!</p>
+          </div> <!-- mobile-footer-copy -->
+
+          <form id="mobile-newsletter-subscribe-form" class="simple-form-check">
+            <div class="form-group">
+              <input type="text" class="required only-email" placeholder="Enter Your Email Address">
+              <input type="submit">
+            </div>
+          </form>
+
+          <div id="mobile-footer-links">
+            <ul>
+              <li><a href="<?php echo $this->getUrl('privacy-policy'); ?>">Privacy Policy</a></li>
+              <li><a href="<?php echo $this->getUrl('terms-and-conditions'); ?>">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+
+
+    </div>
+  </div> <!-- mobile-footer-copy-section -->
+
+  <div id="mobile-footer-copyright-section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+
+          <div id="mobile-footer-copyright">
+            <a href="<?php echo $this->getUrl('') ?>" id="mobile-footer-logo"></a>
+            <h4>Monogram by Gryphon Tea Company</h4>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div> <!-- mobile-footer-copywrite-section -->
+
+</footer>
