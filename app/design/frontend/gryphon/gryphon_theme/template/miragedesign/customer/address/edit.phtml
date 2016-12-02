@@ -36,6 +36,20 @@ $creating_or_editing_address_type = Mage::app()->getRequest()->getParam('address
 if(empty($creating_or_editing_address_type)) $creating_or_editing_address_type = 'billing';
 ?>
 
+
+<div id="monogram-page-account-mobile-header" class="visible-sm visible-xs">
+  <h4>Basic Information</h4>
+  <h2>Address Book</h2>
+</div>
+
+<div id="monogram-page-account-mobile-page-title" class="visible-sm visible-xs">
+    <?php if($this->getTitle()=="Add New Address"): ?>
+        <h1><?php echo ($creating_or_editing_address_type=='billing') ? "Add New Billing Address" : "Add New Shipping Address" ?></h1>
+    <?php else: ?>
+        <h1><?php echo ($creating_or_editing_address_type=='billing') ? "Edit Billing Address" : "Edit Shipping Address" ?></h1>
+    <?php endif; ?>
+</div>
+
 <div id="monogram-page-account-details-address-edit-container">
 
     <div class="first-content">
@@ -261,15 +275,19 @@ if(empty($creating_or_editing_address_type)) $creating_or_editing_address_type =
 
 
 
-                        <div class="space60"></div>
+                        <div class="space60 visible-md visible-lg"></div>
+                        <hr class="visible-sm visible-xs">
+                        <div class="space30 visible-sm visible-xs"></div>
+
+                        <p class="required visible-sm visible-xs"><?php echo $this->__('* Required Fields') ?></p>
                         <!-- <hr class="dotted"/> -->
                         <div class="buttons-set row">
-                            <div class="col-md-6">
-                                <p class="required"><?php echo $this->__('* Required Fields') ?></p>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <p class="required visible-md visible-lg"><?php echo $this->__('* Required Fields') ?></p>
                                 <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
 
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
                                 <!-- <a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><button class="cta"><span><span><?php echo $this->__('Back') ?></span></span></button></a> -->
                                 <!-- <button data-action="save-customer-address" type="submit" title="<?php echo $this->__('Save Address') ?>" class="button cta save-btn"><span><span><?php echo $this->__('Save Address') ?></span></span></button> -->
 
