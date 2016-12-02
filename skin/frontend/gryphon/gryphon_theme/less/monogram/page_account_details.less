@@ -1190,6 +1190,13 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
       table tbody tr td{
 
+        &:first-child{
+          padding-left: 10px;
+        }
+        &:last-child{
+          padding-right: 10px;
+        }
+
       }
     }
 
@@ -1265,11 +1272,21 @@ body.monogram-page-account-details #content-wrapper .col-main{
   .form-list .additional-address {   
       margin-top: 0px !important;
   }
-
-
-
-
 }
+
+@media only screen and (max-width: 991px) {
+  #monogram-page-account-details-address-edit-container{
+
+    .page-title{
+      display: none !important;
+    }
+
+    .account-details-content{
+      padding-top: 36px;
+    }
+  }
+}
+
 
 
 

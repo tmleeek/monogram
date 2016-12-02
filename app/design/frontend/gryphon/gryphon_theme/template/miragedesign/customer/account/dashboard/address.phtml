@@ -31,6 +31,9 @@ $shippingAddress = $this->getCustomer()->getPrimaryShippingAddress();
 $shippingCountryName = ($shippingAddress) ? Mage::getModel('directory/country')->load($shippingAddress->getCountryId())->getName() : '';
 $additionalAddresses = $this->getCustomer()->getAdditionalAddresses();
 ?>
+
+
+
 <div class="billing-and-shipping">
     <div class="image-text-content">
         <div class="row">
