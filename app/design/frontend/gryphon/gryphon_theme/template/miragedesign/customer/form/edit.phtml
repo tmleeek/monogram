@@ -34,6 +34,13 @@ $street = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->get
 $telephone = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->getTelephone() : '';
 ?>
 
+
+
+<div id="monogram-page-account-mobile-page-title" class="visible-sm visible-xs">
+  <h1><?php echo $this->__('Edit Account Information') ?></h1>
+</div>
+
+
 <div id="monogram-page-account-dashboard-edit-container">
     <div class="first-content">
         <div class="account-details-saved">
@@ -44,7 +51,7 @@ $telephone = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->
                 <div class="account-details-content">
                     <form action="<?php echo $this->getUrl('customer/account/editPost') ?>" method="post" id="form-validate" autocomplete="off">
                     <div class="row">
-                        <div class="page-title col-md-12">
+                        <div class="page-title col-md-12 visible-md visible-lg">
                             <h1><?php echo $this->__('Edit Account Information') ?></h1>
                             <hr class="small" />
                         </div>
@@ -231,7 +238,7 @@ $telephone = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->
 
 
                     <!-- <hr class="dotted"> -->
-                    <div class="space60"></div>
+                    <div class="space60 visible-md visible-lg"></div>
 
                     <div class="row">
                         <div class="col-md-6">
