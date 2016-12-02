@@ -12699,15 +12699,24 @@ body.product-gift-card #tea-product-detail-section-3 {
 #tea-product-detail-section-1 #product-detail-img-info-container .product-img .slick-next,
 #tea-product-detail-section-1 #product-detail-img-info-container .product-img .slick-prev {
   top: 50%;
+  margin-top: 0px;
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .product-img .slick-next:before,
+#tea-product-detail-section-1 #product-detail-img-info-container .product-img .slick-prev:before {
   font-family: FontAwesome;
   color: #ffffff;
+  font-size: 12px;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .product-img .slick-next {
-  right: 10%;
+  right: 10px;
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .product-img .slick-next:before {
   content: "\f054";
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .product-img .slick-prev {
-  left: 10%;
+  left: 10px;
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .product-img .slick-prev:before {
   content: "\f053";
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .product-info {
@@ -16553,6 +16562,12 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   #monogram-page-account-details-other-shipping-address-container .table-responsive {
     margin-bottom: 0;
   }
+  #monogram-page-account-details-other-shipping-address-container .table-responsive table tbody tr td:first-child {
+    padding-left: 10px;
+  }
+  #monogram-page-account-details-other-shipping-address-container .table-responsive table tbody tr td:last-child {
+    padding-right: 10px;
+  }
 }
 .monogram-page-account-details-other-shipping-address-item {
   padding-top: 10px;
@@ -16598,6 +16613,14 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
 }
 #monogram-page-account-details-address-edit-container .form-list .additional-address {
   margin-top: 0px !important;
+}
+@media only screen and (max-width: 991px) {
+  #monogram-page-account-details-address-edit-container .page-title {
+    display: none !important;
+  }
+  #monogram-page-account-details-address-edit-container .account-details-content {
+    padding-top: 36px;
+  }
 }
 #monogram-page-account-details-order-history .order-history {
   padding: 0;
@@ -17526,6 +17549,23 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
     font-size: 12px;
     line-height: 19px;
   }
+  body.monogram-page-account-details #content-wrapper .col-main .each-input .v-align {
+    display: block;
+  }
+  body.monogram-page-account-details #content-wrapper .col-main .each-input .v-align:nth-of-type(1) {
+    width: auto!important;
+  }
+  body.monogram-page-account-details #content-wrapper .col-main .each-input .v-align:nth-of-type(2) {
+    width: auto!important;
+  }
+  body.monogram-page-account-details #content-wrapper .col-main .each-input .v-align label {
+    width: auto!important;
+    display: block;
+  }
+  body.monogram-page-account-details #content-wrapper .col-main .each-input .v-align .input-box {
+    width: auto!important;
+    display: block;
+  }
   body.monogram-page-account-details #content-wrapper .col-main .each-input {
     margin-bottom: 17px;
   }
@@ -17577,6 +17617,12 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   }
   body.monogram-page-account-details #content-wrapper .col-main .edit-button-container {
     padding-top: 18px;
+  }
+  body.monogram-page-account-details #content-wrapper .col-main .back-link {
+    padding-top: 18px;
+  }
+  body.monogram-page-account-details #content-wrapper .col-main .save-btn {
+    border: 1px solid #e1e1e1;
   }
 }
 #monogram-page-account-mobile-page-title {

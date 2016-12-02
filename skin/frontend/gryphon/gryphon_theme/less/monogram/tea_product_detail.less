@@ -655,16 +655,24 @@ body.product-gift-card {
       }
       .slick-next, .slick-prev {
         top: 50%;
-        font-family: FontAwesome;
-        color: @white;        
+        margin-top: 0px;
+        &:before {
+          font-family: FontAwesome;
+          color: @white;  
+          font-size: 12px;      
+        }      
       }
       .slick-next {
-        right: 10%;
-        content: "\f054";
+        right: 10px;
+        &:before {          
+          content: "\f054";
+        }
       }
       .slick-prev {
-        left: 10%;
-        content: "\f053";
+        left: 10px;
+        &:before {          
+          content: "\f053";
+        }
       }
     }
     .product-info {
