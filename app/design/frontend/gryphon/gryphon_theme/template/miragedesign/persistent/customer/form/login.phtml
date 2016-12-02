@@ -44,6 +44,8 @@
                 <h1>Member Login</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean iaculis, tellus a efficitur pellente, nibh arcu ultrices mi, ac commodo erat erat sit amet eros. Morbi rutrum arcu.</p>
 
+                <?php echo $this->getMessagesBlock()->toHtml() ?>
+
                 <div class="account-login<?php if (!$this->helper('customer')->isRegistrationAllowed()) echo ' login-only' ?>">
                     <form action="<?php echo $this->getUrl("trader/customer_account/") ?>loginpost/" method="post" id="login-form" class="scaffold-form login-form">
                         <?php echo $this->getBlockHtml('formkey'); ?>

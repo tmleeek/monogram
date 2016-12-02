@@ -10340,7 +10340,7 @@ body.tea-layering-detail-page {
     height: auto;
   }
   .sumome-scrollbox-popup {
-    // display: none !important;
+    display: none !important;
   }
 }
 #home-mobile-landing-section {
@@ -11284,6 +11284,757 @@ body.tea-layering-detail-page {
   position: absolute;
   right: 75px;
   bottom: 3px;
+}
+.custom-tea-matrix-mobile-body-font {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  font-size: 11.5px;
+  line-height: 18px;
+  letter-spacing: 0.03em;
+}
+.custom-tea-matrix-mobile-subheader-font {
+  font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 18px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 991px) {
+  body.cms-tea-matrix #tea-layering-detail-graph-section {
+    position: relative;
+  }
+  body.cms-tea-matrix #tea-layering-detail-graph-section #tea-matrix-combination-graph-mobile {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -190px;
+  }
+}
+.graph-selection-tea-mobile-item {
+  display: none;
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  font-size: 11.5px;
+  line-height: 18px;
+  letter-spacing: 0.03em;
+}
+.graph-selection-tea-mobile-item.visible-version {
+  display: block;
+}
+.graph-selection-tea-mobile-item .cta-container {
+  font-size: 0;
+  text-align: center;
+}
+.graph-selection-tea-mobile-item .cta-container .square-cta {
+  margin: 0 5px;
+}
+.tea-custom-matrix-content-mobile {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  font-size: 11.5px;
+  line-height: 18px;
+  letter-spacing: 0.03em;
+  margin-top: 32px;
+  padding-bottom: 34px;
+}
+.tea-custom-matrix-content-mobile hr {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.tea-custom-matrix-content-mobile ul {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.tea-custom-matrix-content-mobile ul li {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  font-size: 11.5px;
+  line-height: 18px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin-bottom: 4px;
+}
+.tea-custom-matrix-content-mobile ul li:last-child {
+  margin-bottom: 0px;
+}
+.tea-custom-matrix-content-mobile ul li span {
+  width: 40%;
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+  text-align: left;
+}
+.tea-custom-matrix-content-mobile ul li span:nth-child(1) {
+  font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 18px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.tea-custom-suggestion-content-mobile {
+  padding-bottom: 34px;
+}
+.tea-custom-suggestion-content-mobile h4 {
+  font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 18px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.tea-custom-suggestion-content-mobile h2 {
+  font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.tea-custom-suggestion-content-mobile h2 sup {
+  font-size: 7px;
+  line-height: 13px;
+  position: relative;
+  top: -4px;
+  left: 3px;
+}
+.page-tea-layering-detail-select-hidden-container {
+  width: 100%;
+  height: 30px;
+  position: relative;
+}
+.page-tea-layering-detail-select-hidden-container .select-display {
+  text-align: center;
+}
+.page-tea-layering-detail-select-hidden-container .select-display .fa {
+  font-size: 16px;
+  line-height: 30px;
+  color: #f1efee;
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+  margin-right: 7px;
+}
+.page-tea-layering-detail-select-hidden-container .select-display h4 {
+  font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #f1efee;
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+}
+.page-tea-layering-detail-select-hidden-container select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  filter: alpha(opacity=0);
+}
+@media only screen and (max-width: 991px) {
+  body.cms-tea-matrix #tea-layering-detail-copy-section .graph-selection-name h2 {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.305s !important;
+    -moz-animation-delay: 0.305s !important;
+    -ms-animation-delay: 0.305s !important;
+    -o-animation-delay: 0.305s !important;
+    animation-delay: 0.305s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .tea-custom-matrix-content-mobile hr {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: plainFadeOut 0.3s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: plainFadeOut 0.3s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.245s !important;
+    -moz-animation-delay: 0.245s !important;
+    -ms-animation-delay: 0.245s !important;
+    -o-animation-delay: 0.245s !important;
+    animation-delay: 0.245s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .tea-custom-matrix-content-mobile ul li:nth-child(1) {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.785s !important;
+    -moz-animation-delay: 0.785s !important;
+    -ms-animation-delay: 0.785s !important;
+    -o-animation-delay: 0.785s !important;
+    animation-delay: 0.785s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .tea-custom-matrix-content-mobile ul li:nth-child(2) {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.725s !important;
+    -moz-animation-delay: 0.725s !important;
+    -ms-animation-delay: 0.725s !important;
+    -o-animation-delay: 0.725s !important;
+    animation-delay: 0.725s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .tea-custom-matrix-content-mobile ul li:nth-child(3) {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.665s !important;
+    -moz-animation-delay: 0.665s !important;
+    -ms-animation-delay: 0.665s !important;
+    -o-animation-delay: 0.665s !important;
+    animation-delay: 0.665s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .tea-custom-matrix-content-mobile ul li:nth-child(4) {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.605s !important;
+    -moz-animation-delay: 0.605s !important;
+    -ms-animation-delay: 0.605s !important;
+    -o-animation-delay: 0.605s !important;
+    animation-delay: 0.605s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .tea-custom-matrix-content-mobile ul li:nth-child(5) {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.545s !important;
+    -moz-animation-delay: 0.545s !important;
+    -ms-animation-delay: 0.545s !important;
+    -o-animation-delay: 0.545s !important;
+    animation-delay: 0.545s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .tea-custom-matrix-content-mobile ul li:nth-child(6) {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.485s !important;
+    -moz-animation-delay: 0.485s !important;
+    -ms-animation-delay: 0.485s !important;
+    -o-animation-delay: 0.485s !important;
+    animation-delay: 0.485s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .tea-custom-matrix-content-mobile ul li:nth-child(7) {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.425s !important;
+    -moz-animation-delay: 0.425s !important;
+    -ms-animation-delay: 0.425s !important;
+    -o-animation-delay: 0.425s !important;
+    animation-delay: 0.425s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .tea-custom-matrix-content-mobile ul li:nth-child(8) {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.365s !important;
+    -moz-animation-delay: 0.365s !important;
+    -ms-animation-delay: 0.365s !important;
+    -o-animation-delay: 0.365s !important;
+    animation-delay: 0.365s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .tea-custom-matrix-content-mobile ul li:nth-child(9) {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.305s !important;
+    -moz-animation-delay: 0.305s !important;
+    -ms-animation-delay: 0.305s !important;
+    -o-animation-delay: 0.305s !important;
+    animation-delay: 0.305s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .tea-custom-matrix-content-mobile ul li:nth-child(10) {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.245s !important;
+    -moz-animation-delay: 0.245s !important;
+    -ms-animation-delay: 0.245s !important;
+    -o-animation-delay: 0.245s !important;
+    animation-delay: 0.245s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .tea-custom-matrix-content-mobile ul li:nth-child(11) {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.185s !important;
+    -moz-animation-delay: 0.185s !important;
+    -ms-animation-delay: 0.185s !important;
+    -o-animation-delay: 0.185s !important;
+    animation-delay: 0.185s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .tea-custom-matrix-content-mobile ul li:nth-child(12) {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.125s !important;
+    -moz-animation-delay: 0.125s !important;
+    -ms-animation-delay: 0.125s !important;
+    -o-animation-delay: 0.125s !important;
+    animation-delay: 0.125s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .tea-custom-suggestion-content-mobile h4 {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.425s !important;
+    -moz-animation-delay: 0.425s !important;
+    -ms-animation-delay: 0.425s !important;
+    -o-animation-delay: 0.425s !important;
+    animation-delay: 0.425s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .tea-custom-suggestion-content-mobile h2:nth-child(1) {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.365s !important;
+    -moz-animation-delay: 0.365s !important;
+    -ms-animation-delay: 0.365s !important;
+    -o-animation-delay: 0.365s !important;
+    animation-delay: 0.365s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .tea-custom-suggestion-content-mobile h2:nth-child(2) {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.305s !important;
+    -moz-animation-delay: 0.305s !important;
+    -ms-animation-delay: 0.305s !important;
+    -o-animation-delay: 0.305s !important;
+    animation-delay: 0.305s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .tea-custom-suggestion-content-mobile h2:nth-child(3) {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.245s !important;
+    -moz-animation-delay: 0.245s !important;
+    -ms-animation-delay: 0.245s !important;
+    -o-animation-delay: 0.245s !important;
+    animation-delay: 0.245s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .tea-custom-suggestion-content-mobile h2:nth-child(4) {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.185s !important;
+    -moz-animation-delay: 0.185s !important;
+    -ms-animation-delay: 0.185s !important;
+    -o-animation-delay: 0.185s !important;
+    animation-delay: 0.185s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .tea-custom-suggestion-content-mobile h2:nth-child(5) {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.125s !important;
+    -moz-animation-delay: 0.125s !important;
+    -ms-animation-delay: 0.125s !important;
+    -o-animation-delay: 0.125s !important;
+    animation-delay: 0.125s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .tea-custom-suggestion-content-mobile h2:nth-child(6) {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.065s !important;
+    -moz-animation-delay: 0.065s !important;
+    -ms-animation-delay: 0.065s !important;
+    -o-animation-delay: 0.065s !important;
+    animation-delay: 0.065s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .tea-custom-suggestion-content-mobile h2:nth-child(7) {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.005s !important;
+    -moz-animation-delay: 0.005s !important;
+    -ms-animation-delay: 0.005s !important;
+    -o-animation-delay: 0.005s !important;
+    animation-delay: 0.005s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .cta-container .square-cta:nth-child(1) {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: leftFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: leftFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.065s !important;
+    -moz-animation-delay: 0.065s !important;
+    -ms-animation-delay: 0.065s !important;
+    -o-animation-delay: 0.065s !important;
+    animation-delay: 0.065s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section .cta-container .square-cta:nth-child(2) {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    filter: alpha(opacity=0);
+    -webkit-animation: rightFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: rightFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.065s !important;
+    -moz-animation-delay: 0.065s !important;
+    -ms-animation-delay: 0.065s !important;
+    -o-animation-delay: 0.065s !important;
+    animation-delay: 0.065s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .graph-selection-name h2 {
+    -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.005s !important;
+    -moz-animation-delay: 0.005s !important;
+    -ms-animation-delay: 0.005s !important;
+    -o-animation-delay: 0.005s !important;
+    animation-delay: 0.005s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .tea-custom-matrix-content-mobile hr {
+    -webkit-animation: plainFadeIn 0.3s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: plainFadeIn 0.3s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.305s !important;
+    -moz-animation-delay: 0.305s !important;
+    -ms-animation-delay: 0.305s !important;
+    -o-animation-delay: 0.305s !important;
+    animation-delay: 0.305s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .tea-custom-matrix-content-mobile ul li:nth-child(1) {
+    -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.125s !important;
+    -moz-animation-delay: 0.125s !important;
+    -ms-animation-delay: 0.125s !important;
+    -o-animation-delay: 0.125s !important;
+    animation-delay: 0.125s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .tea-custom-matrix-content-mobile ul li:nth-child(2) {
+    -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.185s !important;
+    -moz-animation-delay: 0.185s !important;
+    -ms-animation-delay: 0.185s !important;
+    -o-animation-delay: 0.185s !important;
+    animation-delay: 0.185s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .tea-custom-matrix-content-mobile ul li:nth-child(3) {
+    -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.245s !important;
+    -moz-animation-delay: 0.245s !important;
+    -ms-animation-delay: 0.245s !important;
+    -o-animation-delay: 0.245s !important;
+    animation-delay: 0.245s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .tea-custom-matrix-content-mobile ul li:nth-child(4) {
+    -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.305s !important;
+    -moz-animation-delay: 0.305s !important;
+    -ms-animation-delay: 0.305s !important;
+    -o-animation-delay: 0.305s !important;
+    animation-delay: 0.305s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .tea-custom-matrix-content-mobile ul li:nth-child(5) {
+    -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.365s !important;
+    -moz-animation-delay: 0.365s !important;
+    -ms-animation-delay: 0.365s !important;
+    -o-animation-delay: 0.365s !important;
+    animation-delay: 0.365s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .tea-custom-matrix-content-mobile ul li:nth-child(6) {
+    -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.425s !important;
+    -moz-animation-delay: 0.425s !important;
+    -ms-animation-delay: 0.425s !important;
+    -o-animation-delay: 0.425s !important;
+    animation-delay: 0.425s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .tea-custom-matrix-content-mobile ul li:nth-child(7) {
+    -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.485s !important;
+    -moz-animation-delay: 0.485s !important;
+    -ms-animation-delay: 0.485s !important;
+    -o-animation-delay: 0.485s !important;
+    animation-delay: 0.485s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .tea-custom-matrix-content-mobile ul li:nth-child(8) {
+    -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.545s !important;
+    -moz-animation-delay: 0.545s !important;
+    -ms-animation-delay: 0.545s !important;
+    -o-animation-delay: 0.545s !important;
+    animation-delay: 0.545s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .tea-custom-matrix-content-mobile ul li:nth-child(9) {
+    -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.605s !important;
+    -moz-animation-delay: 0.605s !important;
+    -ms-animation-delay: 0.605s !important;
+    -o-animation-delay: 0.605s !important;
+    animation-delay: 0.605s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .tea-custom-matrix-content-mobile ul li:nth-child(10) {
+    -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.665s !important;
+    -moz-animation-delay: 0.665s !important;
+    -ms-animation-delay: 0.665s !important;
+    -o-animation-delay: 0.665s !important;
+    animation-delay: 0.665s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .tea-custom-matrix-content-mobile ul li:nth-child(11) {
+    -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.725s !important;
+    -moz-animation-delay: 0.725s !important;
+    -ms-animation-delay: 0.725s !important;
+    -o-animation-delay: 0.725s !important;
+    animation-delay: 0.725s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .tea-custom-matrix-content-mobile ul li:nth-child(12) {
+    -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.785s !important;
+    -moz-animation-delay: 0.785s !important;
+    -ms-animation-delay: 0.785s !important;
+    -o-animation-delay: 0.785s !important;
+    animation-delay: 0.785s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .tea-custom-suggestion-content-mobile h4 {
+    -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.185s !important;
+    -moz-animation-delay: 0.185s !important;
+    -ms-animation-delay: 0.185s !important;
+    -o-animation-delay: 0.185s !important;
+    animation-delay: 0.185s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .tea-custom-suggestion-content-mobile h2:nth-child(1) {
+    -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.245s !important;
+    -moz-animation-delay: 0.245s !important;
+    -ms-animation-delay: 0.245s !important;
+    -o-animation-delay: 0.245s !important;
+    animation-delay: 0.245s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .tea-custom-suggestion-content-mobile h2:nth-child(2) {
+    -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.305s !important;
+    -moz-animation-delay: 0.305s !important;
+    -ms-animation-delay: 0.305s !important;
+    -o-animation-delay: 0.305s !important;
+    animation-delay: 0.305s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .tea-custom-suggestion-content-mobile h2:nth-child(3) {
+    -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.365s !important;
+    -moz-animation-delay: 0.365s !important;
+    -ms-animation-delay: 0.365s !important;
+    -o-animation-delay: 0.365s !important;
+    animation-delay: 0.365s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .tea-custom-suggestion-content-mobile h2:nth-child(4) {
+    -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.425s !important;
+    -moz-animation-delay: 0.425s !important;
+    -ms-animation-delay: 0.425s !important;
+    -o-animation-delay: 0.425s !important;
+    animation-delay: 0.425s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .tea-custom-suggestion-content-mobile h2:nth-child(5) {
+    -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.485s !important;
+    -moz-animation-delay: 0.485s !important;
+    -ms-animation-delay: 0.485s !important;
+    -o-animation-delay: 0.485s !important;
+    animation-delay: 0.485s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .tea-custom-suggestion-content-mobile h2:nth-child(6) {
+    -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.545s !important;
+    -moz-animation-delay: 0.545s !important;
+    -ms-animation-delay: 0.545s !important;
+    -o-animation-delay: 0.545s !important;
+    animation-delay: 0.545s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .tea-custom-suggestion-content-mobile h2:nth-child(7) {
+    -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.605s !important;
+    -moz-animation-delay: 0.605s !important;
+    -ms-animation-delay: 0.605s !important;
+    -o-animation-delay: 0.605s !important;
+    animation-delay: 0.605s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .cta-container .square-cta:nth-child(1) {
+    -webkit-animation: leftFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: leftFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.305s !important;
+    -moz-animation-delay: 0.305s !important;
+    -ms-animation-delay: 0.305s !important;
+    -o-animation-delay: 0.305s !important;
+    animation-delay: 0.305s !important;
+  }
+  body.cms-tea-matrix #tea-layering-detail-copy-section.animate-in .cta-container .square-cta:nth-child(2) {
+    -webkit-animation: rightFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    animation: rightFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-animation-delay: 0.305s !important;
+    -moz-animation-delay: 0.305s !important;
+    -ms-animation-delay: 0.305s !important;
+    -o-animation-delay: 0.305s !important;
+    animation-delay: 0.305s !important;
+  }
 }
 .tea-store-page,
 .category-store {
@@ -12616,6 +13367,10 @@ body.product-gift-card #tea-product-detail-section-3 {
   #account-login-section-1 p {
     margin-bottom: 30px;
   }
+}
+#account-login-section-1 .messages {
+  border: none;
+  margin-bottom: 20px;
 }
 #account-login-section-1 .container-fluid {
   padding-left: 10px;
@@ -15345,6 +16100,7 @@ body.monogram-page-account-details #content-wrapper .col-main .each-input input[
   color: #f1efee;
   background: transparent;
   padding-left: 0px;
+  width: 100%;
 }
 body.monogram-page-account-details #content-wrapper .col-main .each-input .intl-tel-input .phone_no_input {
   display: inline-block;

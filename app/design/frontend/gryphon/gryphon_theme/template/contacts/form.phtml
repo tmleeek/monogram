@@ -44,7 +44,7 @@
                 <label for="first_name" class="for-input">*<?php echo Mage::helper('contacts')->__('First Name') ?></label>
               </div><!--
               --><div class="col-md-6 v-align">
-                <input name="first_name" id="first_name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="" class="input-class" type="text" />
+                <input name="first_name" id="first_name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="" class="input-class required-entry" type="text" />
                 <input name="name" id="name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserName()) ?>" class="input-text required-entry" type="hidden" />
               </div>
             </div>
@@ -78,7 +78,7 @@
               </div><!--
               --><div class="col-md-6 v-align">
                 <div class="dropdown">
-                  <select name="role_within_organization" id="role_within_organization">
+                  <select name="role_within_organization" id="role_within_organization" class="required-entry">
                       <option value="">Choose the type</option>
                       <option value="General Enquiry">General Enquiry</option>
                       <option value="Online Order Enquiry">Online Order Enquiry</option>
@@ -117,7 +117,7 @@
           $(".phone_no_input, .mobile_no_input").intlTelInput({
             defaultCountry: 'sg',
             nationalMode: false,
-            autoHideDialCode: false,
+            autoHideDialCode: true,
             autoPlaceholder: false
           });
 

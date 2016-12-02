@@ -105,7 +105,10 @@
                                     foreach($productCollection as $product) {
                                         $product_id = $product->getId();
                                         $_product = Mage::getModel('catalog/product')->load($product_id);
-                                        echo '<option value="'.$_product->getName().'">'.$_product->getName().'</option>';
+                                        $product_name = strtolower($_product->getName());
+                                        if( !in_array($product_name, $selection_product_name_arr) ):
+                                            echo '<option value="'.$_product->getName().'">'.$_product->getName().'</option>';
+                                        endif;
                                     }
                                     ?>
                                 </select>
