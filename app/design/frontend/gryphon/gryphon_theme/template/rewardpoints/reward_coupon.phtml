@@ -82,7 +82,7 @@
             <div class="discount-codes box discount" id="rewardFormArea">
                 <!-- <h2><?php echo $this->__('Reward points'); ?></h2> -->
                 <?php echo $this->getIllustrationImage()?>
-                <div class="rewards_point_cart">
+                <div class="rewards_point_cart point1">
                     <?php if (!$this->isCouponPointsRemoved()): ?>
                         <?php                                     
                         $pts = round(Mage::helper('directory')->currencyConvert($pts, $baseCurrencyCode, $currentCurrencyCode));
@@ -111,11 +111,14 @@
                         <fieldset>
                             <!-- <h2><?php echo $this->__('Reward points'); ?></h2> -->
                             <?php echo $this->getIllustrationImage()?>
-                            <div class="rewards_point_cart">
+                            <div class="rewards_point_cart point2">
                                 <?php if (!$this->isCouponPointsRemoved()): ?>
                                     <?php                                     
                                     $pts = round(Mage::helper('directory')->currencyConvert($pts, $baseCurrencyCode, $currentCurrencyCode));
                                     $symbol = Mage::app()->getLocale()->currency(Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol();
+                                    if(empty($symbol) && Mage::app()->getStore()->getCurrentCurrencyCode() == 'MYR') {
+                                        $symbol = Mage::app()->getStore()->getCurrentCurrencyCode();
+                                    }
                                     ?>
                                     <?php echo $this->__("This shopping cart is worth %s in rebates", $symbol.$pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
                                 <?php else:?>
@@ -259,7 +262,7 @@
                         <fieldset>
                             <!-- <h2><?php echo $this->__('Reward points'); ?></h2> -->
                             <?php echo $this->getIllustrationImage()?>
-                            <div class="rewards_point_cart">
+                            <div class="rewards_point_cart point3">
                                 <?php if (!$this->isCouponPointsRemoved()): ?>
                                     <?php                                     
                                     $pts = round(Mage::helper('directory')->currencyConvert($pts, $baseCurrencyCode, $currentCurrencyCode));
@@ -324,7 +327,7 @@
 <div class="discount-codes box discount" id="rewardFormArea">
     <h2><?php echo $this->__('Reward points'); ?></h2>
     <?php echo $this->getIllustrationImage()?>
-    <div class="rewards_point_cart">
+    <div class="rewards_point_cart point4">
         <?php if (!$this->isCouponPointsRemoved()): ?>
             <?php echo $this->__("This shopping cart is worth %s in rebate(s)", $pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
         <?php else:?>
