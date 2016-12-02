@@ -18,6 +18,21 @@
  */
  ?>
 
+
+
+<div id="monogram-page-account-mobile-header" class="visible-sm visible-xs">
+  <h4>membership service</h4>
+  <h2>Friend Referral</h2>
+</div>
+
+<!-- 
+<div id="monogram-page-account-mobile-page-title" class="visible-sm visible-xs">
+  <h1><?php echo $this->__('REFERRAL') ?></h1>
+</div>
+-->
+
+
+
 <div id="monogram-page-account-details-refer-friends-container">
 
   <div class="my-account">
@@ -173,6 +188,9 @@
                         <button class="form-button button cta send" type="submit"><span><span><?php echo $this->__('Send') ?></span></span></button>
                         <span id='ajax_loader_referral'><img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/></span>
                         <span class="ajax_msg_referral italic"></span>
+
+                        <br class="visible-sm visible-xs">
+
                         <a id="j2t-add-line" href="javascript:j2t_add_line();" title="<?php echo $this->__('Add new line') ?>">Add More</a>            
                     </div>
                   </div>            

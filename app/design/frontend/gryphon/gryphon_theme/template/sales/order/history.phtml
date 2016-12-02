@@ -25,6 +25,12 @@
  */
 ?>
 
+<div id="monogram-page-account-mobile-header" class="visible-sm visible-xs">
+  <h4>membership service</h4>
+  <h2>order history</h2>
+</div>
+
+
 
 <div id="monogram-page-account-details-order-history">
   
@@ -77,22 +83,22 @@
 
 
       <div class="row custom-order-content-header">
-        <div class="col-md-1">
+        <div class="col-md-1 visible-md visible-lg">
           <p>status</p>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 col-sm-4 col-xs-4">
           <p>order no.</p>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 col-sm-4 col-xs-4">
           <p>date</p>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-5 visible-md visible-lg">
           <p class="product-header">product</p>
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1 visible-md visible-lg">
           <p>qty</p>
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1 col-sm-4 col-xs-4">
           <p>sub total</p>
         </div>
       </div> <!-- custom-order-content-header -->
@@ -109,13 +115,13 @@
                 <div class="col-md-12">
                   <div class="single-order-item" data-id="145000652">
                     <div class="row order-details">
-                      <div class="col-md-1">
+                      <div class="col-md-1 visible-md visible-lg">
                         <?php echo $_order->getStatusLabel(); ?>
                       </div>
-                      <div class="col-md-2 order-no">
+                      <div class="col-md-2  col-sm-4 col-xs-4 order-no">
                         <p class="order_no"><a href="<?php echo $this->getViewUrl($_order); ?>"><?php echo $_order->getRealOrderId() ?></a></p>
                       </div>
-                      <div class="col-md-2 order-date">
+                      <div class="col-md-2  col-sm-4 col-xs-4 order-date">
                         <p class="date"><?php echo $this->formatDate($_order->getCreatedAtStoreDate()) ?></p>
                       </div>
 
@@ -139,15 +145,19 @@
                         } // endforeach
                       ?>
 
-                      <div class="col-md-5">
+                      <div class="col-md-5 visible-md visible-lg">
                         <p><?php echo $_items_name_total; ?></p>
                       </div>
-                      <div class="col-md-1 order-qty">
+                      <div class="col-md-1 order-qty visible-md visible-lg">
                         <p><?php echo $_items_quantity_total; ?></p>
                       </div>
-                      <div class="col-md-1 order-subtotal">
+                      <div class="col-md-1 col-sm-4 col-xs-4 order-subtotal">
                         <p class="sub_total price"><span class="price"><?php echo $_order->formatPrice($_order->getSubtotal()) ?></span></p>
                       </div>
+
+
+                      <a href="<?php echo $this->getViewUrl($_order); ?>" class="single-order-item-mobile-link visible-sm visible-xs"></a>
+
                     </div>
                   </div>
                 </div>
@@ -403,7 +413,9 @@
       -->
 
 
-      <div class="space60"></div>
+      <div class="space60 visible-md visible-lg"></div>
+      <div class="space20 visible-sm visible-xs"></div>
+
       <div id="mobile-order-history-bottom-part">
           <?php echo $this->getPagerHtml(); ?>
       </div>
