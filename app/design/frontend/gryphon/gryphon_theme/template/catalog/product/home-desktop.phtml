@@ -1,0 +1,87 @@
+<?php 
+    $subscription_in_the_cart = 0;
+    $allskus = array("SGP-ART-1M", "SGP-ART-3M", "SGP-ART-6M", "SGP-ART-12M", "SGP-GUR-1M", "SGP-GUR-3M", "SGP-GUR-6M", "SGP-GUR-12M","INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
+    $quote = Mage::getSingleton('checkout/session')->getQuote();
+    foreach ($quote->getAllVisibleItems() as $item) {
+        $itemsku = $item->getProduct()->getData('sku');        
+        if(in_array($itemsku, $allskus)) {
+            $subscription_in_the_cart = 1;
+        }
+    }
+
+    $gift_in_the_cart = 0;
+    $giftsku = array("testGiftCard2");
+    foreach ($quote->getAllVisibleItems() as $item) {
+        $itemsku = $item->getProduct()->getData('sku');        
+        if(in_array($itemsku, $giftsku)) {
+            $gift_in_the_cart = 1;
+        }   
+    }
+?>
+<script type="text/javascript">
+ $j(document).ready(function($) {
+     function do_update() {
+                  $.ajax({
+                      url: '/discovertea/index/cartpreview',
+                      dataType: 'json',
+                      type : 'get',
+                      success: function(data){
+
+                          // update product count in cart
+                          $("#desktop-header-cart").find(".count").text("("+data.cart_qty+")");
+                    
+                      }
+                  });                     
+     }
+
+     var subscription_in_the_cart = <?php echo $subscription_in_the_cart; ?>;
+     var gift_in_the_cart = <?php echo $gift_in_the_cart; ?>;
+
+     $(".graph-selection").on("click", ".add-to-cart", function(e){
+       e.preventDefault();
+      var eid = $(this).attr("data-id");
+      var add_to_cart_url = $("#add-to-cart-"+eid).attr("href");              
+
+      if(subscription_in_the_cart == 1) {
+          alert("This item cannot be purchased with a subscription plan in the cart. Please check out first before making any other purchases.")
+      } else if(gift_in_the_cart == 1) {
+          alert("This item cannot be purchased with a gift card in the cart. Please check out first before making any other purchases.")
+      } else {
+          $.get( add_to_cart_url, function( data ) {
+           do_update();
+          });
+          alert("Added to cart.")
+      }  
+     });
+
+    $(".add-both-to-cart").on("click", function(e){
+       e.preventDefault();
+       var eid = $("#graph-selction-a").find(".add-to-cart").attr("data-id");
+       var add_to_cart_url = $("#add-to-cart-"+eid).attr("href");      
+
+       if(subscription_in_the_cart == 1) {
+            alert("This item cannot be purchased with a subscription plan in the cart. Please check out first before making any other purchases.")
+        } else if(gift_in_the_cart == 1) {
+            alert("This item cannot be purchased with a gift card in the cart. Please check out first before making any other purchases.")
+        } else {  
+         $.get( add_to_cart_url, function( data ) {
+           do_update();
+         });
+         alert("Added to cart.")
+       }
+       
+       var eid = $("#graph-selction-b").find(".add-to-cart").attr("data-id");
+       var add_to_cart_url = $("#add-to-cart-"+eid).attr("href"); 
+       if(subscription_in_the_cart == 1) {
+            alert("This item cannot be purchased with a subscription plan in the cart. Please check out first before making any other purchases.")
+        } else if(gift_in_the_cart == 1) {
+            alert("This item cannot be purchased with a gift card in the cart. Please check out first before making any other purchases.")
+        } else {        
+         $.get( add_to_cart_url, function( data ) {
+           do_update();
+         });
+        }
+    });
+     
+ });
+</script>

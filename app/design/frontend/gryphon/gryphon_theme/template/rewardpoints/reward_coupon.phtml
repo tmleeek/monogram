@@ -31,6 +31,14 @@
         }
     }
 
+    $gift_in_the_cart = false;
+    $giftsku = array("testGiftCard2");
+    foreach ($cartItems as $item) {        
+        if(in_array($item->getSku(), $giftsku)) {
+            $gift_in_the_cart = true;
+        }   
+    }
+
 	$groupId = Mage::getSingleton('customer/session')->getCustomerGroupId(); //Get Customers Group ID
 	$groupname = Mage::getModel('customer/group')->load($groupId)->getCustomerGroupCode();
 	if($groupname !='Trader-Temp' && $groupname!='Trader-Regular' && $groupname!='Trader-Priority' && $groupname!='Trader-Premium' && $subscription == false)
@@ -139,6 +147,7 @@
                                 <!-- <p><?php echo $this->__('You have %d reward point(s) available.', $point_details['customer_points']); ?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($point_details['customer_points']);?></p> -->
                                 <?php if($this->isUsable() && $this->getCustomerPoints() > 0) : ?>
                                 <?php if ($point_details['step_apply']):?>
+
                                     <?php if (!$this->useSlider()):?>
                                     <select name="points_to_be_used" id="coupon_code_points_qty" class="input-text">
                                         <?php echo $this->pointsToAddOptions($point_details['customer_points'], $point_details['step']);?>
@@ -230,6 +239,7 @@
 
 
                                 <?php else:?>
+                                    <?php if($gift_in_the_cart == false): ?>
                                     <label for="coupon_code">REDEEM REBATE</label>
                                     <div class="input-box">
                                         <input <?php if($point_details['full_use']):?>type="text"<?php else:?>type="text"<?php endif;?> value=""  name="points_to_be_used" class="input-text" />
@@ -239,14 +249,17 @@
                                         ?>
                                         <p class="used-points-msg">Rebate balance: <?php echo $balance; ?></p>
                                     </div>
+                                    <?php endif; ?>
                                 <?php endif;?>
                                 <?php if($this->getCustomerPoints() > 0) : ?>
-                                <!-- <div class="buttons-set"> -->
+                                
+                                    <?php if($gift_in_the_cart == false): ?>
                                     <button class="form-button-alt button cta apply" value="<?php echo $this->__('Apply Points') ?>" onclick="discountFormPoints2.submit(false)" type="button">
                                         <span><span><?php echo $this->__('Apply') ?></span></span>
                                     </button>
                                     <span class="points">Accumulated Points : <?php echo $point_details['max_use'];?></span>
-                                <!-- </div> -->
+                                    <?php endif; ?>
+
                                 <?php endif;?>
                                 <?php elseif($this->getCustomerPoints() > 0): ?>
                                     <p><?php echo $this->__('You must have at least %s point(s) to apply points.', $this->getMinimumBalance()); ?></p>
@@ -294,14 +307,16 @@
                             $points_currently_used = round($points_currently_used, 2);
                             ?>                            
                             <?php endif;?>
-                            <!-- <div class="buttons-set"> -->
-                                <label for="coupon_code">REDEEM REBATE</label>
-                                <div class="input-box test">
-                                    <input <?php if($point_details['full_use']):?>type="text"<?php else:?>type="text"<?php endif;?> value="<?php echo $points_currently_used; ?>"  name="points_to_be_used" class="input-text" />
-                                    <p class="used-points-msg">Rebate balance: <?php echo $balance; ?></p>
-                                </div>
-                                <button class="form-button-alt button cta apply" type="button" onclick="discountFormPoints2.submit(false)" value="<?php echo $this->__('Remove Points') ?>"><span><span><?php echo $this->__('Remove') ?></span></span></button>
-                            <!-- </div> -->
+                            
+                                <?php if($gift_in_the_cart == false): ?>
+                                    <label for="coupon_code">REDEEM REBATE</label>
+                                    <div class="input-box test">
+                                        <input <?php if($point_details['full_use']):?>type="text"<?php else:?>type="text"<?php endif;?> value="<?php echo $points_currently_used; ?>"  name="points_to_be_used" class="input-text" />
+                                        <p class="used-points-msg">Rebate balance: <?php echo $balance; ?></p>
+                                    </div>
+                                    <button class="form-button-alt button cta apply" type="button" onclick="discountFormPoints2.submit(false)" value="<?php echo $this->__('Remove Points') ?>"><span><span><?php echo $this->__('Remove') ?></span></span></button>
+                                <?php endif; ?>
+                            
                             <?php if ($points_currently_used > 0):?>
                                 <?php $left_over = $point_details['max_use'] - $points_currently_used; ?>
                             <?php endif;?>

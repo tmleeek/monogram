@@ -63,12 +63,43 @@
           <p><?php echo $this->__('You don\'t have any saved layering products.'); ?></p>
       <?php endif ?>
   </div>
-</div> 
+</div>
+<?php 
+    $subscription_in_the_cart = 0;
+    $allskus = array("SGP-ART-1M", "SGP-ART-3M", "SGP-ART-6M", "SGP-ART-12M", "SGP-GUR-1M", "SGP-GUR-3M", "SGP-GUR-6M", "SGP-GUR-12M","INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
+    $quote = Mage::getSingleton('checkout/session')->getQuote();
+    foreach ($quote->getAllVisibleItems() as $item) {
+        $itemsku = $item->getProduct()->getData('sku');        
+        if(in_array($itemsku, $allskus)) {
+            $subscription_in_the_cart = 1;
+        }
+    }
+
+    $gift_in_the_cart = 0;
+    $giftsku = array("testGiftCard2");
+    foreach ($quote->getAllVisibleItems() as $item) {
+        $itemsku = $item->getProduct()->getData('sku');        
+        if(in_array($itemsku, $giftsku)) {
+            $gift_in_the_cart = 1;
+        }   
+    }
+?>
 <script type="text/javascript">
-	function savebothproducts(pids){		
-			jQuery("#successmsg").hide();
-			jQuery("#ajax_loadermsg").show();					
+	function savebothproducts(pids){					
 			var dataString = 'productids='+ pids;
+
+      var subscription_in_the_cart = <?php echo $subscription_in_the_cart; ?>;
+      var gift_in_the_cart = <?php echo $gift_in_the_cart; ?>;
+
+      if(subscription_in_the_cart == 1) {
+          alert("This item cannot be purchased with a subscription plan in the cart. Please check out first before making any other purchases.")
+      } else if(gift_in_the_cart == 1) {
+          alert("This item cannot be purchased with a gift card in the cart. Please check out first before making any other purchases.")
+      } else {
+
+        jQuery("#successmsg").hide();
+        jQuery("#ajax_loadermsg").show();         
+            
             jQuery.ajax({
 				type: "POST",
 				data: dataString,
@@ -80,6 +111,8 @@
 				location.reload();
 				//alert(result);
             });
+
+      }
 	}
 
  

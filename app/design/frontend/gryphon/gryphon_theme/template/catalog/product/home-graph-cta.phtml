@@ -36,8 +36,8 @@
 			var pidvalue1 = jQuery("#graph-column-01 .layerteaclass").attr('id');
 			var pidvalue2 = jQuery("#graph-column-02 .layerteaclass").attr('id');
 			//alert(pidvalue1);alert(pidvalue2);
-			jQuery("#successmsg").hide();
-			jQuery("#ajax_loadermsg").show();		
+			// jQuery("#successmsg").hide();
+			// jQuery("#ajax_loadermsg").show();		
 			var cid = '<?php echo $cid ?>';
 			var pid = pidvalue1+'|||'+pidvalue2;
 			var dataString = 'cid='+ cid + '&pid='+ pid;
@@ -47,9 +47,9 @@
                 url: "<?php echo Mage::getUrl('savelayering/index/ajax'); ?>"
             }).done(function(result) { 
 				jQuery("#ajax_loadermsg").hide();
-				jQuery("#successmsg").show();
-				jQuery("#successmsg").html(''+result+'');				
-				//alert(result);
+				// jQuery("#successmsg").show();
+				// jQuery("#successmsg").html(''+result+'');				
+				alert(result);
             });
         });
     });
