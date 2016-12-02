@@ -1348,7 +1348,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
   }
 
 
-  .custom-order-content-header{
+  .custom-order-content-header,
+  .order-headers{
 
     border-top: 1px solid @white;
     border-top: 1px solid fade(@white, 50%);
@@ -1363,7 +1364,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
     padding-bottom: 8px;
 
 
-    p{
+    p,
+    h2{
       // .subheader-font;
       .header-font;
       font-size: 10px;
@@ -1384,7 +1386,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
 
 
-  .each-order{
+  .each-order,
+  .each-product{
     padding-top: 25px;
     padding-bottom: 24px;
 
@@ -1438,6 +1441,75 @@ body.monogram-page-account-details #content-wrapper .col-main{
   
 } // #monogram-page-account-details-order-history
 
+
+
+
+
+
+body.sales-order-view{
+  #monogram-page-account-details-order-history{
+
+
+    .order-info,
+    .each-billing-detail{
+      margin-bottom: 16px;
+      
+      h2{
+        .header-font;
+        font-size: 10px;
+        line-height: 20px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: @white;
+      }
+    }
+
+    .row.extra-content-headers{
+      padding-top: 29px;
+
+
+      .view-detail{
+        .square-cta;
+        color: @off-white !important;
+        .fa{
+          display: none;
+        }
+      } // .view-detail
+
+
+    }
+    .order-additional.order-gift-message{
+      padding-top: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid @border-grey;
+
+      h2{
+        .header-font;
+        font-size: 10px;
+        line-height: 20px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: @white;
+      }
+
+      .gift-message{
+        .body-font;
+        font-size: 13px;
+        line-height: 20px;
+        color: @white;
+
+        strong{
+          .body-font;
+          font-size: 13px;
+          line-height: 20px;
+          color: @white;  
+        }
+
+      }
+    }
+
+  }
+}
 
 
 
