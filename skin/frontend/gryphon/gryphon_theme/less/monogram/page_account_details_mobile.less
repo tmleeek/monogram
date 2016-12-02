@@ -120,12 +120,21 @@ body.monogram-page-account-details{
 
     .mobile-body-font;
     
+
+
+
     .each-input{
-      margin-bottom: 25px;
+      margin-bottom: 17px;
 
       h2{
         display: block;
         width: auto;
+
+        margin-bottom: 4px;
+
+      }
+      .checkbox-label{
+        padding-left: 16px;
       }
       p{
         display: block;
@@ -142,9 +151,43 @@ body.monogram-page-account-details{
       }
 
       label{
+        display: block;
+        width: auto;
+      }
+      .input-box{
+        display: block;
+        width: auto;
+      }
+
+
+
+
+      .dropdown{
+        // display: block;
+        width: auto;
+
+        &.dropdown-dob{
+          width: 33.3%;
+          width: -moz-calc(~"33.3% - 7px");
+          width: -webkit-calc(~"33.3% - 7px");
+          width: -o-calc(~"33.3% - 7px");
+          width: calc(~"33.3% - 7px");
+        }
 
       }
 
+
+      .gender-input{
+        display: block;
+        width: auto;
+      }
+
+
+
+    } // each-input
+
+    .edit-button-container{
+      padding-top: 37px - 19px;
     }
 
 
@@ -164,17 +207,19 @@ body.monogram-page-account-details{
 
 
 #monogram-page-account-mobile-page-title{
-  border-bottom: 1px solid #cccccc;
+  
 
   margin-left: -10px;
   margin-right: -10px;
   padding-left: 10px;
   padding-right: 10px;
 
+  padding-top: 38px;
+  padding-bottom: 36px;
+
   background: @account-green;
 
-  padding-top: 40px;
-  padding-bottom: 40px;
+  // border-bottom: 1px solid #cccccc;
 
   position: relative;
 
@@ -186,19 +231,23 @@ body.monogram-page-account-details{
     letter-spacing: 0.08em;
     text-transform: uppercase;
 
-    margin-bottom: 2px;
+    margin-bottom: -1px;
   }
   
   p{
     font-size: 13px;
     line-height: 19px;
+
+    a{
+      color: @off-white !important;
+    }
   }
 
 
   .cta-container{
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 38px + 5px;
+    right: 14px;
     text-align: right;
 
     .square-cta{
@@ -209,7 +258,21 @@ body.monogram-page-account-details{
 } // #monogram-page-account-mobile-page-title
 
 
+#monogram-page-account-details-dashboard-header-mobile{
+  margin-left: -10px;
+  margin-right: -10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  
+  padding-top: 30px;
+  padding-bottom: 18px;
 
+  background: @account-green;
+
+  border-top: 1px solid #cccccc;
+
+  position: relative;
+}
 
 
 
@@ -218,8 +281,109 @@ body.monogram-page-account-details{
 @media only screen and (max-width: 991px) {
   body.monogram-page-account-details{
     .dashboard.first-content{
-      
-      padding-top: 40px;
+      padding-top: 36px;
+
+
+      .account-details-saved-content{
+        padding-bottom: 12px;
+        border-bottom: 1px solid @border-grey;
+      }
     }
+  }
+}
+
+
+
+//    _____ ____ _____ ___
+//   | ____|  _ \_   _|_ _|
+//   |  _| | | | || |  | |
+//   | |___| |_| || |  | |
+//   |_____|____/ |_| |___|
+//
+
+@media only screen and (max-width: 991px) {
+  #monogram-page-account-dashboard-edit-container{
+    padding-top: 36px;
+
+    .save-btn{
+      border: 1px solid @border-grey !important;
+    }
+  }
+}
+
+
+
+
+
+//       _    ____  ____  ____  _____ ____ ____
+//      / \  |  _ \|  _ \|  _ \| ____/ ___/ ___|
+//     / _ \ | | | | | | | |_) |  _| \___ \___ \
+//    / ___ \| |_| | |_| |  _ <| |___ ___) |__) |
+//   /_/   \_\____/|____/|_| \_\_____|____/____/
+//
+
+
+@media only screen and (max-width: 991px) {
+  #monogram-page-account-details-address-header{
+    
+
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    padding-top: 33px;
+    padding-bottom: 36px;
+    margin-bottom: 0px;
+
+
+    h1{
+      .header-font;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .cta-container{
+      padding-top: 0px;
+      text-align: right;
+
+      .square-cta{
+        line-height: 30px;
+        margin-bottom: 10px;
+        margin-right: 0;
+      }
+
+    }
+
+    .each-billing-detail,
+    .each-shipping-detail{
+
+    }
+
+
+
+
+    .billing-and-shipping .billing-address{
+
+      padding-right: 10px;
+      border-bottom: 1px solid @border-grey;
+
+      padding-bottom: 16px;
+
+      &:after{
+        display: none;
+      }
+    }
+
+    .billing-and-shipping .shipping-address{
+      padding-left: 10px;
+
+      padding-top: 36px;
+
+    }
+
+
   }
 }
