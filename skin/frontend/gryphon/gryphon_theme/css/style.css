@@ -17549,6 +17549,12 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
     font-size: 12px;
     line-height: 19px;
   }
+  body.monogram-page-account-details #content-wrapper .col-main .pager .pages {
+    margin-left: -20px;
+  }
+  body.monogram-page-account-details #content-wrapper .col-main .pager .pages ol li {
+    margin-left: 6px;
+  }
   body.monogram-page-account-details #content-wrapper .col-main .each-input .v-align {
     display: block;
   }
@@ -17623,6 +17629,9 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   }
   body.monogram-page-account-details #content-wrapper .col-main .save-btn {
     border: 1px solid #e1e1e1;
+  }
+  body.monogram-page-account-details #content-wrapper .col-main .table-responsive {
+    border: none;
   }
 }
 #monogram-page-account-mobile-page-title {
@@ -17725,6 +17734,108 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   #monogram-page-account-details-address-header .billing-and-shipping .shipping-address {
     padding-left: 10px;
     padding-top: 36px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #monogram-page-account-details-order-history {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 39px;
+    /*
+    #mobile-order-history-top-part{
+      display: none !important;
+    }
+    */
+  }
+  #monogram-page-account-details-order-history .page-title {
+    display: none !important;
+  }
+  #monogram-page-account-details-order-history .custom-order-content-header {
+    padding-top: 11px;
+    padding-bottom: 7px;
+  }
+  #monogram-page-account-details-order-history .each-order {
+    padding-top: 16px;
+    padding-bottom: 12px;
+    position: relative;
+  }
+  #monogram-page-account-details-order-history .each-order .single-order-item-mobile-link {
+    line-height: 20px;
+    display: block;
+    text-align: center;
+    position: absolute;
+    top: -1px;
+    right: 4px;
+    width: 20px;
+    height: 20px;
+    color: #f1efee;
+  }
+  #monogram-page-account-details-order-history .each-order .single-order-item-mobile-link:after {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f105";
+    font-size: 15px;
+    line-height: 20px;
+  }
+  #monogram-page-account-details-order-history .each-order p {
+    font-size: 11px;
+  }
+  #monogram-page-account-details-order-history .order-history-heading {
+    display: none;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #monogram-page-account-details-refer-friends-container {
+    padding-top: 36px;
+  }
+  #monogram-page-account-details-refer-friends-container .referral-container .page-title {
+    display: none !important;
+  }
+  #monogram-page-account-details-refer-friends-container .refer-friend-form #clone-form .form-list {
+    display: block;
+  }
+  #monogram-page-account-details-refer-friends-container .refer-friend-form .button-set {
+    display: block;
+    margin-bottom: 36px;
+    border-bottom: 1px solid #e1e1e1;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    text-align: right;
+  }
+  #monogram-page-account-details-refer-friends-container .refer-friend-form .button-set button,
+  #monogram-page-account-details-refer-friends-container .refer-friend-form .button-set a {
+    line-height: 30px;
+    display: inline-block;
+    vertical-align: top;
+    *display: inline;
+    zoom: 1;
+  }
+  #monogram-page-account-details-refer-friends-container .refer-friend-form .j2t-rewardpoints-referral .field label {
+    display: block;
+    width: auto;
+  }
+  #monogram-page-account-details-refer-friends-container .refer-friend-form .j2t-rewardpoints-referral .field input[type=text] {
+    display: block;
+    width: 100%;
+  }
+  #monogram-page-account-details-refer-friends-container .page-title.invite-friends h1 {
+    font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  #monogram-page-account-details-refer-friends-container .referral-table {
+    border-top: 1px solid #e1e1e1;
+  }
+  #monogram-page-account-reward-points-container .table-responsive {
+    border-top: 1px solid #e1e1e1 !important;
   }
 }
 html.monogram-subscription-page,
