@@ -43,14 +43,14 @@
       var add_to_cart_url = $("#add-to-cart-"+eid).attr("href");              
 
       if(subscription_in_the_cart == 1) {
-          alert("This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.")
+          alert("This product cannot be purchased with other items in the cart. Please check out first before making this purchase.")
       } else if(gift_in_the_cart == 1) {
-          alert("This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.")
+          alert("This product cannot be purchased with other items in the cart. Please check out first before making this purchase.")
       } else {
           $.get( add_to_cart_url, function( data ) {
            do_update();
           });
-          alert("Added to cart.")
+          // alert("Added to cart.")
       }  
      });
 
@@ -60,22 +60,22 @@
        var add_to_cart_url = $("#add-to-cart-"+eid).attr("href");      
 
        if(subscription_in_the_cart == 1) {
-            alert("This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.")
+            alert("This product cannot be purchased with other items in the cart. Please check out first before making this purchase.")
         } else if(gift_in_the_cart == 1) {
-            alert("This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.")
+            alert("This product cannot be purchased with other items in the cart. Please check out first before making this purchase.")
         } else {  
          $.get( add_to_cart_url, function( data ) {
            do_update();
          });
-         alert("Added to cart.")
+         // alert("Added to cart.")
        }
        
        var eid = $("#graph-selction-b").find(".add-to-cart").attr("data-id");
        var add_to_cart_url = $("#add-to-cart-"+eid).attr("href"); 
        if(subscription_in_the_cart == 1) {
-            alert("This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.")
+            alert("This product cannot be purchased with other items in the cart. Please check out first before making this purchase.")
         } else if(gift_in_the_cart == 1) {
-            alert("This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.")
+            alert("This product cannot be purchased with other items in the cart. Please check out first before making this purchase.")
         } else {        
          $.get( add_to_cart_url, function( data ) {
            do_update();

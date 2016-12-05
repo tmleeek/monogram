@@ -342,13 +342,13 @@ endif;
                         var cart_count = <?php echo Mage::helper('checkout/cart')->getItemsCount(); ?>                     
 
                         if(subscription_in_the_cart==1) {                                
-                            jQuery('span.ajax_msg_product').html('This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.').show();
+                            jQuery('span.ajax_msg_product').html('This product cannot be purchased with other items in the cart. Please check out first before making this purchase.').show();
                             jQuery('#ajax_loader_product').hide();
                         } else if(gift_in_the_cart==1 && product_id != 907) {
-                            jQuery('span.ajax_msg_product').html('This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.').show();
+                            jQuery('span.ajax_msg_product').html('This product cannot be purchased with other items in the cart. Please check out first before making this purchase.').show();
                             jQuery('#ajax_loader_product').hide();                        
                         } else if(product_id == 907 && gift_in_the_cart==0 && cart_count > 0) {
-                            jQuery('span.ajax_msg_product').html('This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.').show();
+                            jQuery('span.ajax_msg_product').html('This product cannot be purchased with other items in the cart. Please check out first before making this purchase.').show();
                             jQuery('#ajax_loader_product').hide();                        
                         }else {
                             try {

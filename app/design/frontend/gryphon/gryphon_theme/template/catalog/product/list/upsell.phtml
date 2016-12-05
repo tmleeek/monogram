@@ -136,14 +136,14 @@ $j(document).ready(function(){
       var add_to_cart_url = $j(".suggestion-add-to-cart").attr("href");
 
       if(subscription_in_the_cart == 1) {
-          alert("This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.")
+          alert("This product cannot be purchased with other items in the cart. Please check out first before making this purchase.")
       } else if(gift_in_the_cart == 1) {
-          alert("This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.")
+          alert("This product cannot be purchased with other items in the cart. Please check out first before making this purchase.")
       } else {
           $j.get( add_to_cart_url, function( data ) {
            do_update();
           });
-          alert("Added to cart.")
+          // alert("Added to cart.")
       }  
     });
 });

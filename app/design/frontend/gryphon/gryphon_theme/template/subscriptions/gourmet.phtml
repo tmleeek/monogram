@@ -382,18 +382,18 @@
 			console.log(non_subscription_in_the_cart);
 
 			if(non_subscription_in_the_cart==1) {					
-				alert('This subscription plan cannot be purchased with other items in the cart. Please check out first before making any other purchases.');
+				alert('This product cannot be purchased with other items in the cart. Please check out first before making this purchase.');
 			}else {
 				// setLocation(AddToCartUrl);
 				jQuery(this).find('.ajax_loader_product').show();
 				var el = this;
 				jQuery.get(AddToCartUrl, function( data ) {		
 					if(data=='Sorry, you either purchase  Singapore OR International Subscription not both.') {
-						alert(data);
+						alert('Sorry, you can only purchase the Singapore or International Subscription at one time, not both.');
 						jQuery(el).find('.ajax_loader_product').hide();
 					}else {
 						do_update();
-				  		jQuery(el).find('.ajax_loader_product').hide();	  	
+			  		jQuery(el).find('.ajax_loader_product').hide();	  	
 					}						  	
 				});
 			}				

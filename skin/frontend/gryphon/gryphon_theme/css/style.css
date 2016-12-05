@@ -10419,6 +10419,16 @@ body.tea-layering-detail-page {
   top: 0;
   left: 50%;
   margin-left: -190px;
+  width: 380px;
+  height: 380px;
+}
+#tea-layering-detail-graph-section #tea-layering-graph-mobile .graph-name-overlay {
+  /* transform */
+  -webkit-transform: scale(0.6333);
+  -moz-transform: scale(0.6333);
+  -o-transform: scale(0.6333);
+  -ms-transform: scale(0.6333);
+  transform: scale(0.6333);
 }
 #home-mobile-landing-graph-bottom {
   text-align: center;
@@ -12130,6 +12140,9 @@ body.product-gift-card #tea-product-detail-section-2,
 body.product-gift-card #tea-product-detail-section-3 {
   display: none;
 }
+body.product-gift-card .container-fluid {
+  padding: 0px;
+}
 .catalog-product-view .messages {
   display: none;
 }
@@ -12148,7 +12161,7 @@ body.product-gift-card #tea-product-detail-section-3 {
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img {
   display: inline-block;
-  width: 53%;
+  width: 92%;
   height: 700px;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .giftcard-product-media {
@@ -12354,7 +12367,7 @@ body.product-gift-card #tea-product-detail-section-3 {
   display: inline-block;
   vertical-align: top;
   padding-top: 15px;
-  padding-bottom: 50px;
+  padding-bottom: 70px;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .product-options-bottom .regular-price {
   display: none;
@@ -12890,7 +12903,7 @@ body.product-gift-card #tea-product-detail-section-3 {
   right: 0px;
   background-color: rgba(236, 205, 206, 0.5);
 }
-#tea-product-detail-section-1 #product-detail-img-info-container .suggestion-container.e-gift-card-suggestion-bg {
+#tea-product-detail-section-1 #product-detail-img-info-container .suggestion-container.monogram-e-gift-card-suggestion-bg {
   display: none;
 }
 @media only screen and (max-width: 991px) {

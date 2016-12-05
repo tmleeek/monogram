@@ -40,7 +40,7 @@ $product_type = $_item->getProductType();
                 <p class="product-title">
                     <?php if ($this->hasProductUrl()):?>
                         <a href="<?php echo $this->getProductUrl() ?>"><?php echo $this->escapeHtml($this->getProductName()) ?></a>
-                        <?php if ($_options = $this->getOptionList()):?>
+                        <?php if ($_options = $this->getOptionList() && $product_type != 'giftvoucher'):?>
                         <a href="#" class="view-tin-details ">view details <i class="fa fa-chevron-down"></i></a>
                         <?php endif; ?>
                     <?php else: ?>
@@ -64,7 +64,7 @@ $product_type = $_item->getProductType();
                     </span>
                 </p>
             </div>
-            <?php if ($_options = $this->getOptionList()):?>
+            <?php if ($_options = $this->getOptionList() && $product_type != 'giftvoucher'):?>
                 <ul class="item-options <?php if($product_type=='tin'): ?>tin<?php endif; ?>">
                     <?php foreach ($_options as $_option) : ?>
                         <?php $_formatedOptionValue = $this->getFormatedOptionValue($_option) ?>                        
