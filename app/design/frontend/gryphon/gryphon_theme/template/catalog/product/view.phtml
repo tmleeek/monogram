@@ -102,6 +102,7 @@ endif;
                         <div class="product-content product-info">
                         <?php endif; ?>
                             <?php if (!$isGiftcardType) :?>
+                            <h3><?php echo ($_product->getData('product_name_in_color')) ? $_product->getData('product_name_in_color') : $_product->getName() ?></h3>
                             <h5>Tasting notes</h5>
                             <?php endif; ?>
                             <?php if ($this->canEmailToFriend()): ?>
@@ -341,10 +342,10 @@ endif;
                         var cart_count = <?php echo Mage::helper('checkout/cart')->getItemsCount(); ?>                     
 
                         if(subscription_in_the_cart==1) {                                
-                            jQuery('span.ajax_msg_product').html('This item cannot be purchased with a subscription plan in the cart. Please check out first before making any other purchases.').show();
+                            jQuery('span.ajax_msg_product').html('This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.').show();
                             jQuery('#ajax_loader_product').hide();
                         } else if(gift_in_the_cart==1 && product_id != 907) {
-                            jQuery('span.ajax_msg_product').html('This item cannot be purchased with a gift card in the cart. Please check out first before making any other purchases.').show();
+                            jQuery('span.ajax_msg_product').html('This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.').show();
                             jQuery('#ajax_loader_product').hide();                        
                         } else if(product_id == 907 && gift_in_the_cart==0 && cart_count > 0) {
                             jQuery('span.ajax_msg_product').html('This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.').show();

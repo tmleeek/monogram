@@ -46,14 +46,33 @@
                     <img src="<?php echo $this->helper('catalog/image')->init($upsp, 'thumbnail')->backgroundColor(array(0, 0, 0))->constrainOnly(false)->keepAspectRatio(true)->keepFrame(true)->resize(140, 104) ?>" alt="<?php echo $this->escapeHtml($upsp->getName()) ?>" />
                 </a>
                 <ul>
-                    <li><a href="<?php echo $upsp->getProductUrl() ?>" class="view-details">View Details <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                    <!-- <li><a href="<?php echo $add_to_cart_url; ?>">Add To Cart <i class="fa fa-angle-right" aria-hidden="true"></i></a></li> -->
+                    <li><a href="<?php echo $upsp->getProductUrl() ?>" class="view-details"><?php echo $upsp->getName() ?></a></li>
+                    <li><a href="<?php echo $add_to_cart_url; ?>" class="suggestion-add-to-cart">Add To Cart <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
                 </ul>                        
             </li>
         <?php endforeach; ?>
     </ul>
 </div>
+<?php 
+    $subscription_in_the_cart = 0;
+    $allskus = array("SGP-ART-1M", "SGP-ART-3M", "SGP-ART-6M", "SGP-ART-12M", "SGP-GUR-1M", "SGP-GUR-3M", "SGP-GUR-6M", "SGP-GUR-12M","INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
+    $quote = Mage::getSingleton('checkout/session')->getQuote();
+    foreach ($quote->getAllVisibleItems() as $item) {
+        $itemsku = $item->getProduct()->getData('sku');        
+        if(in_array($itemsku, $allskus)) {
+            $subscription_in_the_cart = 1;
+        }
+    }
 
+    $gift_in_the_cart = 0;
+    $giftsku = array("testGiftCard2");
+    foreach ($quote->getAllVisibleItems() as $item) {
+        $itemsku = $item->getProduct()->getData('sku');        
+        if(in_array($itemsku, $giftsku)) {
+            $gift_in_the_cart = 1;
+        }   
+    }
+?>
 <script>
 $j(document).ready(function(){
     $j('.suggestion-list').slick({
@@ -95,6 +114,37 @@ $j(document).ready(function(){
         // settings: "unslick"
         // instead of a settings object
       ]
+    });
+
+    function do_update() {
+      $j.ajax({
+          url: '/discovertea/index/cartpreview',
+          dataType: 'json',
+          type : 'get',
+          success: function(data){
+            // update product count in cart
+            $j("#desktop-header-cart").find(".count").text("("+data.cart_qty+")");        
+          }
+      });                     
+    }
+
+    var subscription_in_the_cart = <?php echo $subscription_in_the_cart; ?>;
+    var gift_in_the_cart = <?php echo $gift_in_the_cart; ?>;
+
+    $j('.suggestion-add-to-cart').on("click", function(e){
+      e.preventDefault();
+      var add_to_cart_url = $j(".suggestion-add-to-cart").attr("href");
+
+      if(subscription_in_the_cart == 1) {
+          alert("This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.")
+      } else if(gift_in_the_cart == 1) {
+          alert("This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.")
+      } else {
+          $j.get( add_to_cart_url, function( data ) {
+           do_update();
+          });
+          alert("Added to cart.")
+      }  
     });
 });
 </script>

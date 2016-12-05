@@ -43,9 +43,9 @@
       var add_to_cart_url = $("#add-to-cart-"+eid).attr("href");              
 
       if(subscription_in_the_cart == 1) {
-          alert("This item cannot be purchased with a subscription plan in the cart. Please check out first before making any other purchases.")
+          alert("This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.")
       } else if(gift_in_the_cart == 1) {
-          alert("This item cannot be purchased with a gift card in the cart. Please check out first before making any other purchases.")
+          alert("This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.")
       } else {
           $.get( add_to_cart_url, function( data ) {
            do_update();
@@ -60,9 +60,9 @@
        var add_to_cart_url = $("#add-to-cart-"+eid).attr("href");      
 
        if(subscription_in_the_cart == 1) {
-            alert("This item cannot be purchased with a subscription plan in the cart. Please check out first before making any other purchases.")
+            alert("This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.")
         } else if(gift_in_the_cart == 1) {
-            alert("This item cannot be purchased with a gift card in the cart. Please check out first before making any other purchases.")
+            alert("This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.")
         } else {  
          $.get( add_to_cart_url, function( data ) {
            do_update();
@@ -73,9 +73,9 @@
        var eid = $("#graph-selction-b").find(".add-to-cart").attr("data-id");
        var add_to_cart_url = $("#add-to-cart-"+eid).attr("href"); 
        if(subscription_in_the_cart == 1) {
-            alert("This item cannot be purchased with a subscription plan in the cart. Please check out first before making any other purchases.")
+            alert("This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.")
         } else if(gift_in_the_cart == 1) {
-            alert("This item cannot be purchased with a gift card in the cart. Please check out first before making any other purchases.")
+            alert("This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.")
         } else {        
          $.get( add_to_cart_url, function( data ) {
            do_update();
