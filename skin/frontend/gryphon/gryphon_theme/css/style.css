@@ -10412,7 +10412,10 @@ body.tea-layering-detail-page {
   }
 }
 #tea-layering-detail-graph-section {
+  width: 100%;
+  height: 330px;
   position: relative;
+  overflow: hidden;
 }
 #tea-layering-detail-graph-section #tea-layering-graph-mobile {
   position: absolute;
@@ -10429,6 +10432,12 @@ body.tea-layering-detail-page {
   -o-transform: scale(0.6333);
   -ms-transform: scale(0.6333);
   transform: scale(0.6333);
+}
+@media (max-width: 767px) {
+  #tea-layering-detail-graph-section {
+    height: 330px;
+    overflow: hidden;
+  }
 }
 #home-mobile-landing-graph-bottom {
   text-align: center;
@@ -10496,8 +10505,10 @@ body.tea-layering-detail-page {
   margin-right: 5px;
 }
 #home-mobile-landing-graph-container {
+  width: 100%;
   height: 330px;
   position: relative;
+  overflow: hidden;
 }
 #home-mobile-landing-graph-container #home-mobile-landing-combination-graph {
   position: absolute;
@@ -12140,7 +12151,7 @@ body.product-gift-card #tea-product-detail-section-2,
 body.product-gift-card #tea-product-detail-section-3 {
   display: none;
 }
-body.product-gift-card .container-fluid {
+body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   padding: 0px;
 }
 .catalog-product-view .messages {
@@ -12162,7 +12173,7 @@ body.product-gift-card .container-fluid {
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img {
   display: inline-block;
   width: 92%;
-  height: 700px;
+  height: 874px;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .giftcard-product-media {
   float: none!important;
@@ -12172,7 +12183,7 @@ body.product-gift-card .container-fluid {
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter {
   display: table;
   width: 100%;
-  height: 700px;
+  height: 874px;
   float: none!important;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 {
@@ -17968,6 +17979,14 @@ body.sales-order-view #monogram-page-account-details-order-history .order-additi
   }
   body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers .view-detail .fa {
     display: none;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #monogram-page-account-giftcard-container .customer-account-giftcard > .page-title {
+    display: none !important;
+  }
+  #monogram-page-account-giftcard-container .giftvoucher-grid-title {
+    display: block !important;
   }
 }
 @media only screen and (max-width: 991px) {
