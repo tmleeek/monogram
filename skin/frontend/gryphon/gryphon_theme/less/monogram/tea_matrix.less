@@ -2,11 +2,88 @@
   background: rgba(123, 112, 107, 0.8);
 }
 
+#page-indicator {
+  // position: absolute;
+  // top: 102px; 
+  // z-index: 2;
+
+  position: fixed;
+  width: 150px;
+  top: 50%;
+  left: 60px;
+  // margin-top: -460px / 2;
+  transform: translate(0%, -50%);
+
+  .transform-origin(0,50%);
+
+
+  li {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+    a {
+      text-transform: uppercase;
+      .header-font;
+      font-size: 11px;
+      line-height: 10px;
+      letter-spacing: 0.05em;  
+      color: @off-white; 
+      .opacity(.3);
+      sup {
+        font-size: 7px;
+      }       
+    }
+    &.active {
+      a {          
+        .opacity(1);
+      }        
+    }
+  }    
+}
+
+
+#tea-matrix-content-section-1,
+#tea-matrix-content-section-2,
+#tea-matrix-content-section-3,
+#tea-matrix-content-section-4,
+#tea-matrix-content-section-5,
+#tea-matrix-content-section-6,
+#tea-matrix-content-section-7,
+#tea-matrix-content-section-8,
+#tea-matrix-content-section-9,
+#tea-matrix-content-section-10,
+#tea-matrix-content-section-11,
+#tea-matrix-content-section-12,
+#tea-matrix-content-section-13,
+#tea-matrix-content-section-14,
+#tea-matrix-content-section-15{
+  
+  position: fixed;
+  width: 320px;
+  top: 50%;
+  right: 60px;
+  transform: translate(0%, -50%);
+
+  .transform-origin(100%,50%);
+
+  pointer-events: none;
+
+  background: transparent;
+}
+
+
+
 #tea-matrix-section-1 {
+
+  /*
   #page-indicator {
     position: absolute;
     top: 102px; 
     z-index: 2;   
+
+
+
     li {
       margin-bottom: 20px;
       &:last-child {
@@ -31,19 +108,39 @@
       }
     }    
   }
+  */
 
+
+  /*
   .monogram-combination-graph {
     left: -50px;
     top: -100px;
     z-index: 2;
   }
+  */
+ 
+
 
   #tea-matrix-content {
+
+    #tea-matrix-combination-graph-container-another-one{
+      margin-left: -100px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    #tea-matrix-combination-graph{
+    }
+
     .section {
+
+      /*
       position: absolute;
       top: 99px;
       left: 0;
       width: 100%;
+      */
             
       h3 {
         text-transform: uppercase;
@@ -92,8 +189,10 @@
       }     
 
       &.active-section {
+        z-index: 9999;
+        pointer-events: auto;
+
         .col-md-4 {
-          z-index: 9999;
         }        
       }   
       
@@ -123,7 +222,8 @@
       }
 
       .tea-matrix-content-text-cta {
-        padding-right: 90px;        
+        // padding-right: 90px;
+        
         a.square-cta {
           margin-right: 15px;          
         }
@@ -154,9 +254,83 @@
 }
 
 
+//    ____  _____ ____  ____   ___  _   _ ____ _____     _______
+//   |  _ \| ____/ ___||  _ \ / _ \| \ | / ___|_ _\ \   / / ____|
+//   | |_) |  _| \___ \| |_) | | | |  \| \___ \| | \ \ / /|  _|
+//   |  _ <| |___ ___) |  __/| |_| | |\  |___) | |  \ V / | |___
+//   |_| \_\_____|____/|_|    \___/|_| \_|____/___|  \_/  |_____|
+//
+
+@media only screen and (max-height: 800px) {
+  #page-indicator {
+    li{
+      margin-bottom: 15px;
+    }
+  }
+}
+@media only screen and (max-height: 700px) {
+  #page-indicator {
+    li{
+      margin-bottom: 10px;
+    }
+  }
+}
 
 
 
+
+@media only screen and (max-height: 700px) {
+  #tea-matrix-content-section-1,
+  #tea-matrix-content-section-2,
+  #tea-matrix-content-section-3,
+  #tea-matrix-content-section-4,
+  #tea-matrix-content-section-5,
+  #tea-matrix-content-section-6,
+  #tea-matrix-content-section-7,
+  #tea-matrix-content-section-8,
+  #tea-matrix-content-section-9,
+  #tea-matrix-content-section-10,
+  #tea-matrix-content-section-11,
+  #tea-matrix-content-section-12,
+  #tea-matrix-content-section-13,
+  #tea-matrix-content-section-14,
+  #tea-matrix-content-section-15{
+    .tea-matrix-content-text-cta{
+      ul li{
+        padding-bottom: 2px !important;
+      }
+      .suggestions{
+        margin-bottom: 28px !important;
+      }
+    }
+  }
+}
+@media only screen and (max-height: 600px) {
+  #tea-matrix-content-section-1,
+  #tea-matrix-content-section-2,
+  #tea-matrix-content-section-3,
+  #tea-matrix-content-section-4,
+  #tea-matrix-content-section-5,
+  #tea-matrix-content-section-6,
+  #tea-matrix-content-section-7,
+  #tea-matrix-content-section-8,
+  #tea-matrix-content-section-9,
+  #tea-matrix-content-section-10,
+  #tea-matrix-content-section-11,
+  #tea-matrix-content-section-12,
+  #tea-matrix-content-section-13,
+  #tea-matrix-content-section-14,
+  #tea-matrix-content-section-15{
+    .tea-matrix-content-text-cta{
+      ul li{
+        padding-bottom: 0px !important;
+      }
+      .suggestions{
+        margin-bottom: 12px !important;
+      }
+    }
+  }
+}
 
 
 //    __  __  ___  ____ ___ _     _____

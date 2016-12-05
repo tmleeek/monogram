@@ -19,18 +19,33 @@ $count = 1;
 
 -->
 
+
+
+
+
 <article id="tea-matrix-section-1" class="visible-md visible-lg">
+
+  <ul id="page-indicator">
+    <?php foreach ($_productCollection as $key => $_product):            
+        $product_name = $_product->getName();
+    ?>
+    <li id="page-indicator-<?php echo $count; ?>" data-menuanchor="<?php echo $count; ?>" class="<?php echo ($count==1) ? 'active' : ''; ?> page-indicator"><a href="#<?php echo $count; ?>" class="anchor" id="anchor-<?php echo $count; ?>"><?php echo ($_product->getData('product_name_in_color')) ? $_product->getData('product_name_in_color') : $product_name ; ?></a></li>
+    <?php $count++; ?>
+    <?php endforeach; ?>
+  </ul>
+
+
+
+
+
+
+
+
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-2">
-        <ul id="page-indicator">
-          <?php foreach ($_productCollection as $key => $_product):            
-              $product_name = $_product->getName();
-          ?>
-          <li id="page-indicator-<?php echo $count; ?>" data-menuanchor="<?php echo $count; ?>" class="<?php echo ($count==1) ? 'active' : ''; ?> page-indicator"><a href="#<?php echo $count; ?>" class="anchor" id="anchor-<?php echo $count; ?>"><?php echo ($_product->getData('product_name_in_color')) ? $_product->getData('product_name_in_color') : $product_name ; ?></a></li>
-          <?php $count++; ?>
-          <?php endforeach; ?>
-        </ul>  
+          
       </div>
     </div>  
   </div>     
@@ -39,34 +54,36 @@ $count = 1;
       <div id="monograph-graph-data" 
         data-graph-data-url="/skin/frontend/gryphon/gryphon_theme/json/graph-data.json">
       </div>
-      
-      <?php 
-      $count = 1;
-      foreach ($_productCollection as $key => $_product):            
-          $product_name = $_product->getName();
-      ?>
-      <div id="tea-matrix-content-section-<?php echo $count; ?>" class="section">
-        <div class="container-fluid">
-          <div class="col-md-6 col-md-offset-2">
-          <?php if($count==1): ?>             
-              <div id="tea-matrix-combination-graph" class="monogram-combination-graph" data-id="cherry-japonais">
-                <div class="graph-svg"></div>                
-                <div class="graph-name-overlay">
-                  <div class="graph-name-item floral-version"></div>
-                  <div class="graph-name-item creamy-version"></div>
-                  <div class="graph-name-item marine-version"></div>
-                  <div class="graph-name-item mineral-version"></div>
-                  <div class="graph-name-item citrus-version"></div>
-                  <div class="graph-name-item fruity-version"></div>
-                  <div class="graph-name-item sweet-version"></div>
-                  <div class="graph-name-item wood-version"></div>
-                  <div class="graph-name-item herbaceous-version"></div>
-                </div>
-                <div class="graph-overlay"></div>
-              </div>
-          <?php endif; ?>
+
+      <div id="tea-matrix-combination-graph-container-another-one">
+        <div id="tea-matrix-combination-graph" class="monogram-combination-graph" data-id="cherry-japonais">
+          <div class="graph-svg"></div>                
+          <div class="graph-name-overlay">
+            <div class="graph-name-item floral-version"></div>
+            <div class="graph-name-item creamy-version"></div>
+            <div class="graph-name-item marine-version"></div>
+            <div class="graph-name-item mineral-version"></div>
+            <div class="graph-name-item citrus-version"></div>
+            <div class="graph-name-item fruity-version"></div>
+            <div class="graph-name-item sweet-version"></div>
+            <div class="graph-name-item wood-version"></div>
+            <div class="graph-name-item herbaceous-version"></div>
           </div>
-          <div class="col-md-4">
+          <div class="graph-overlay"></div>
+        </div>
+      </div>
+
+
+      <div id="tea-matrix-content-section-container-container">
+        <?php 
+        $count = 1;
+        foreach ($_productCollection as $key => $_product):            
+            $product_name = $_product->getName();
+        ?>
+
+
+        
+          <div id="tea-matrix-content-section-<?php echo $count; ?>" class="section">
             <div class="tea-matrix-content-text-cta">
               <h3 class="tea-matrix-content-animate"><?php echo ($_product->getData('product_name_in_color')) ? $_product->getData('product_name_in_color') : $product_name ; ?></h3>
               <p class="tea-matrix-content-animate"><?php echo $_product->getDescription(); ?></p>
@@ -88,19 +105,27 @@ $count = 1;
                 <div class="suggestion tea-matrix-content-animate"><?php echo $upsp->getData('product_name_in_color') ?></div>
                 <?php endforeach; ?>
               </div>
-  
+
               <a href="<?php echo $_product->getProductUrl() ?>" class="square-cta tea-matrix-content-animate">View Product</a>
               <a href="<?php echo $this->getAddToCartUrl($_product) ?>" class="square-cta tea-matrix-content-animate tea-matrix-add-to-cart">add to cart</a>
               <span id='ajax_loader_product' style='display:none'><img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/></span>
               <span class="ajax_msg_product italic"></span>
-            </div>
+            </div> <!-- .tea-matrix-content-text-cta -->
+
           </div>
-        </div>
-      </div>
-        <?php $count++; ?>
-      <?php endforeach; ?>      
+        
+
+
+
+          <?php $count++; ?>
+        <?php endforeach; ?>
+      </div> <!-- #tea-matrix-content-section-container-container -->
+
   </div>
 </article>
+
+
+
 <footer id="desktop-footer" class="visible-md visible-lg" style="position: absolute;bottom: 0;width: 100%;background-color: #6b615b;">
   <div id="desktop-footer-logo-tnc-container">
     <div class="container-fluid">
@@ -304,15 +329,16 @@ $count = 1;
     });
 
     $("#page-indicator .anchor").on("click", function(e){
-
+      e.preventDefault();
+      e.stopPropagation();
 
       // if(animating == false) {
         animating = true;
 
-        var currentIndex = $(".active-section").index();
+        var currentIndex = $(".active-section").index() + 1;
         console.log('currentIndex:'+currentIndex)
         activeSection = currentIndex;
-        console.log('current: '+activeSection)        
+        //console.log('current: '+activeSection)        
         currentSection = $(this).parent().data('menuanchor');
         console.log('destination: '+currentSection)
         hideSection(activeSection, currentSection);
