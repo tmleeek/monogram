@@ -12225,9 +12225,9 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext,
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext {
   position: absolute;
-  top: 265px;
-  left: 76px;
-  width: 300px;
+  top: 290px;
+  left: 5px;
+  width: 440px;
   height: 420px;
   text-align: center;
   color: #ffffff;
@@ -12264,7 +12264,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   line-height: 16px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  margin-bottom: -1px;
+  margin-bottom: 12px;
 }
 @media all and (max-width: 990px) {
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-title,
@@ -12279,7 +12279,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   line-height: 60px;
   letter-spacing: 0.05em;
   color: #fecd94;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 @media all and (max-width: 990px) {
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-amount,
@@ -12291,11 +12291,15 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-copy,
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-copy {
-  font-size: 11px;
-  line-height: 18px;
-  letter-spacing: 0.05em;
+  font-size: 14px;
+  line-height: 22px;
+  color: #ffffff;
   height: 113px;
   margin-bottom: 29px;
+  word-wrap: break-word;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 40px;
 }
 @media all and (max-width: 990px) {
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-copy,
@@ -12316,7 +12320,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   line-height: 20px;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  margin-bottom: -2px;
+  margin-bottom: 15px;
 }
 @media all and (max-width: 990px) {
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-code-title,
@@ -12417,6 +12421,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs {
   margin-top: 15px;
   position: relative;
+  overflow: visible!important;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs .each-input {
   position: relative;

@@ -101,9 +101,9 @@ body.product-gift-card {
 
             .gifttext{
               position: absolute;
-              top: 265px;
-              left: 80px - 4px;
-              width: 300px;
+              top: 290px;
+              left: 5px;
+              width: 440px;
               height: 420px;
               text-align: center;
               color: @white;
@@ -142,7 +142,7 @@ body.product-gift-card {
                 letter-spacing: 0.3em;
                 text-transform: uppercase;
 
-                margin-bottom: -1px;
+                margin-bottom: 12px;
                 @media all and (max-width: 990px) {
                   font-size: 10px;
                   line-height: 14px;
@@ -154,7 +154,7 @@ body.product-gift-card {
                 letter-spacing: 0.05em;
                 color: #fecd94;
 
-                margin-bottom: 25px;
+                margin-bottom: 20px;
                 @media all and (max-width: 990px) {
                   font-size: 25px;
                   line-height: 25px;
@@ -162,12 +162,17 @@ body.product-gift-card {
                 }
               }
               .gifttext-copy{
-                font-size: 11px;
-                line-height: 18px;
-                letter-spacing: 0.05em;
+                font-size: 14px;
+                line-height: 22px;
+                // letter-spacing: 0.05em;
+                color: @white;
 
                 height: 113px;
                 margin-bottom: 29px;
+                word-wrap: break-word;
+                width: 80%;
+                margin: 0 auto;
+                margin-bottom: 40px;
                 @media all and (max-width: 990px) {
                   min-height: 55px;
                   width: 210px;
@@ -183,7 +188,7 @@ body.product-gift-card {
                 text-transform: uppercase;
                 letter-spacing: 0.16em;
 
-                margin-bottom: -2px;
+                margin-bottom: 15px;
                 @media all and (max-width: 990px) {
                   font-size: 6px;
                   line-height: 11px;
@@ -320,6 +325,7 @@ body.product-gift-card {
       .inputs {
         margin-top: 15px;
         position: relative;
+        overflow: visible!important;
 
         .each-input {
           position: relative;
