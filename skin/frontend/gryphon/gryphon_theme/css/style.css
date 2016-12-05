@@ -12172,9 +12172,10 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img {
   display: inline-block;
-  width: 92%;
-  height: 874px;
+  width: 100%;
+  height: 100%;
   background-color: #999089;
+  margin-bottom: -6px;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .giftcard-product-media {
   float: none!important;
@@ -17987,7 +17988,55 @@ body.sales-order-view #monogram-page-account-details-order-history .order-additi
     display: none !important;
   }
   #monogram-page-account-giftcard-container .giftvoucher-grid-title {
-    display: block !important;
+    display: table-row !important;
+  }
+  #monogram-page-account-giftcard-container .data-table td .giftvoucher-grid-detail {
+    width: auto !important;
+    margin-left: 0px !important;
+  }
+  #monogram-page-account-giftcard-container .table-responsive {
+    border-top: 1px solid #e1e1e1 !important;
+    margin-top: -3px;
+  }
+  #monogram-page-account-giftcard-container .table-responsive table thead tr th {
+    padding-top: 11px;
+    padding-bottom: 7px;
+  }
+  #monogram-page-account-giftcard-container .table-responsive table thead tr th:first-child {
+    padding-left: 10px;
+  }
+  #monogram-page-account-giftcard-container .table-responsive table thead tr th:last-child {
+    padding-right: 10px;
+  }
+  #monogram-page-account-giftcard-container .table-responsive table tbody tr td {
+    padding-top: 15px;
+    padding-bottom: 11px;
+    font-size: 11px;
+  }
+  #monogram-page-account-giftcard-container .table-responsive table tbody tr td:first-child {
+    padding-left: 10px;
+  }
+  #monogram-page-account-giftcard-container .table-responsive table tbody tr td:last-child {
+    padding-right: 10px;
+  }
+  #monogram-page-account-giftcard-container .table-responsive table tbody tr td a {
+    font-size: 11px;
+  }
+  #monogram-page-account-giftcard-container .table-responsive table tbody tr td .giftvoucher-grid-detail {
+    font-size: 11px;
+  }
+  #monogram-page-account-giftcard-container .table-responsive table tbody tr td .giftvoucher-grid-detail p {
+    font-size: 11px;
+  }
+  #monogram-page-account-giftcard-container .table-responsive table tbody tr td .giftvoucher-grid-detail a {
+    font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #f1efee !important;
   }
 }
 @media only screen and (max-width: 991px) {
