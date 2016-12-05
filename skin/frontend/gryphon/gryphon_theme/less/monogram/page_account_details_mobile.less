@@ -511,6 +511,7 @@ body.monogram-page-account-details{
 
       p{
         font-size: 11px;
+        line-height: 15px;
       }
     }
 
@@ -537,6 +538,12 @@ body.monogram-page-account-details{
       .order-items{
         margin-top: -38px;
       }
+
+      .each-order{
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+
 
       .row.extra-content-headers{
         padding-top: 16px;
@@ -698,10 +705,13 @@ body.monogram-page-account-details{
       // font-size: 0;
       padding-top: 28px;
       padding-bottom: 6px;
-      border-bottom: 1px solid @border-grey;
+      // border-bottom: 1px solid @border-grey;
+      
+      border-bottom: none !important;
       margin-bottom: 27px;
 
-      
+
+
       color: @white;
       a{
         color: @white;
@@ -713,12 +723,18 @@ body.monogram-page-account-details{
       }
 
       .fields{
-        margin-bottom: 25px !important;
+        // margin-bottom: 25px !important;
+        margin-bottom: 20px !important;
 
         // .display-inline-block;
         // width: 33.33%;
         
         .custom-field{
+          width: auto !important;
+          margin-bottom: 2px !important;
+        }
+        .custom-field-right{
+          width: auto !important;
           margin-bottom: 2px !important;
         }
         
@@ -752,6 +768,150 @@ body.monogram-page-account-details{
 
 
 
+    #mobile-custom-giftcard-view-table{
+
+      table-layout: fixed;
+      width: 100%;
+      // margin-top: 60px;
+      
+      table{
+        border-top: 1px solid @border-grey !important;
+      }
+
+
+
+
+      thead{
+        tr{
+          th{
+            .subheader-font;
+            font-size: 10px;
+            line-height: 20px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: @white;
+
+            text-align: center;
+
+            border-bottom: 1px solid @white !important;
+            border-bottom: 1px solid fade(@white, 50%) !important;
+
+            padding-top: 11px;
+            padding-bottom: 7px;
+
+            &:first-child{
+              padding-left: 10px;
+              text-align: left;
+            }
+            &:last-child{
+              padding-right: 10px;
+            }
+
+          }
+        }
+      }
+      tbody{
+        tr{
+          td{
+            .body-font;
+            font-size: 12px;
+            line-height: 20px;
+            color: @white;
+
+            text-align: center;
+
+            padding-top: 9px + 15px;
+            padding-bottom: 4px + 13px;
+
+            border-bottom: 1px solid @white !important;
+            border-bottom: 1px solid fade(@white, 50%) !important;      // this gets removed because of '.balance'
+
+            a{
+              .body-font;
+              font-size: 12px;
+              line-height: 20px;
+              color: @white;
+
+              &:focus,
+              &:hover{
+                .opacity(0.7);
+              }
+            }
+
+            .giftvoucher-grid-title-hidden{
+              display: none;
+            }
+
+            &:first-child{
+              padding-left: 24px;
+              text-align: left;
+            }
+            &:last-child{
+              padding-right: 24px;
+            }
+
+
+            &.action{
+              a{
+                .subheader-font;
+                font-size: 10px;
+                line-height: 20px;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+
+                padding-left: 2px;
+                padding-right: 2px;
+              }
+            }
+
+
+            // override here
+            padding-top: 15px;
+            padding-bottom: 11px;
+
+            &:first-child{
+              padding-left: 10px;
+            }
+            &:last-child{
+              padding-right: 10px;
+            }
+
+
+            font-size: 11px;
+            a{
+              font-size: 11px;
+            }
+
+            .giftvoucher-grid-detail{
+              font-size: 11px;
+
+              p{
+                font-size: 11px;
+              }
+
+              a{
+                .subheader-font;
+                font-size: 10px;
+                line-height: 14px;
+
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+
+                color: @off-white !important;
+              }
+            }
+
+
+
+
+
+
+          }
+        }
+      }
+
+    }
+
 
   } // #monogram-page-account-giftcard-detail-container
 
@@ -762,6 +922,16 @@ body.monogram-page-account-details{
 
 
 
+
+
+@media only screen and (max-width: 991px) {
+  body.giftvoucher-index-addredeem{
+    #content-wrapper .col-main .back-link{
+      margin-top: -45px;
+    }
+  }
+
+}
 
 
 
