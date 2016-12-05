@@ -12331,9 +12331,10 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-disclaimer,
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-disclaimer {
-  font-size: 12px;
-  line-height: 15px;
-  color: #d98d54;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0.015em;
+  color: #ffffff;
 }
 @media all and (max-width: 990px) {
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-disclaimer,
