@@ -649,13 +649,6 @@ monogram.page.Home.prototype.update_page_layout = function() {
   // var target_zoom = target_height / 600;
   var target_zoom = target_height / 600;
 
-
-  /*
-  $j('#combination-graph-04').css({
-    'zoom': target_zoom
-  });
-  */
-  
   $j('#graph-section-combination-graph').css({
     'zoom': target_zoom
   });
@@ -667,42 +660,17 @@ monogram.page.Home.prototype.update_page_layout = function() {
   
   var mobile_target_zoom = 0.6333;
   var mobile_target_height = (mobile_target_zoom * 600);
-  /*
-  $j('#tea-layering-detail-graph-section').css({
-   'height': mobile_target_height + 'px'
-  });
-  */
+  
 
+  // moved to css
   /*
   $j('#home-mobile-landing-combination-graph').css({
-   'height': mobile_target_height + 'px'
+    'width': mobile_target_height + 'px',
+    'height': mobile_target_height + 'px'
   });
   */
   
-
-  /*
-  $j('#home-mobile-landing-combination-graph, #home-mobile-landing-combination-graph .graph-name-overlay, #home-mobile-landing-combination-graph .graph-svg, #home-mobile-landing-combination-graph .graph-overlay').css({
-    'width': mobile_target_height + 'px',
-    'height': mobile_target_height + 'px'
-  });
-  */
-
-  $j('#home-mobile-landing-combination-graph').css({
-    'width': mobile_target_height + 'px',
-    'height': mobile_target_height + 'px'
-  });
-
-  /*
-  $j('#home-mobile-landing-combination-graph .graph-overlay').css({
-    'zoom': mobile_target_zoom
-  });
-  $j('#home-mobile-landing-combination-graph .graph-name-overlay').css({
-    'zoom': mobile_target_zoom
-  });
-  */
-
-  //TweenMax.to($j('#home-mobile-landing-combination-graph .graph-overlay'), 0 , {scaleX: mobile_target_zoom, scaleY:mobile_target_zoom});
-  TweenMax.to($j('#home-mobile-landing-combination-graph .graph-name-overlay'), 0 , {scaleX: mobile_target_zoom, scaleY:mobile_target_zoom});
+  // TweenMax.to($j('#home-mobile-landing-combination-graph .graph-name-overlay'), 0 , {scaleX: mobile_target_zoom, scaleY:mobile_target_zoom});
   
   
   
@@ -711,12 +679,6 @@ monogram.page.Home.prototype.update_page_layout = function() {
 
   /////////////////////
   
-  /*
-  $j('#tea-layering-graph-mobile').css({
-    'zoom': target_zoom
-  });
-  */
-
   $j('#tea-layering-graph-mobile').css({
     'width': mobile_target_height + 'px',
     'height': mobile_target_height + 'px'
