@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -3246,9 +3247,6 @@ body.vjs-full-window {
 .vjs-no-js a:visited {
   color: #F4A460;
 }
-/* -----------------------------------------------------------------------------
-The original source of this file lives at
-https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
 /* Slider */
 .slick-slider {
   position: relative;
@@ -3335,7 +3333,6 @@ https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
 .slick-arrow.slick-hidden {
   display: none;
 }
-@charset "UTF-8";
 /* Slider */
 .slick-loading .slick-list {
   background: #ffffff url('ajax-loader.gif') center center no-repeat;
@@ -3391,7 +3388,7 @@ https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
   font-family: "slick";
   font-size: 20px;
   line-height: 1;
-  color: #ffffff;
+  color: white;
   opacity: 0.75;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -3477,13 +3474,13 @@ https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
   font-size: 6px;
   line-height: 20px;
   text-align: center;
-  color: #000000;
+  color: black;
   opacity: 0.25;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 .slick-dots li.slick-active button:before {
-  color: #000000;
+  color: black;
   opacity: 0.75;
 }
 .container-fluid {
@@ -17629,20 +17626,6 @@ body.sales-order-view #monogram-page-account-details-order-history .order-additi
   padding-left: 24px;
   text-align: left;
 }
-/*
-@media only screen and (max-width: 1199px) and (min-width: 992px) {
-  #monogram-page-account-details-refer-friends-container{
-    .refer-friend-form .j2t-rewardpoints-referral .field{
-      label{
-        width: 120px;
-      }
-      input[type=text]{
-        width: 130px;
-      }
-    }
-  }
-}
-*/
 @media only screen and (max-width: 991px) {
   body.monogram-page-account-details #content-wrapper .col-right.sidebar {
     display: none;
@@ -18030,6 +18013,173 @@ body.sales-order-view #monogram-page-account-details-order-history .order-additi
     font-size: 11px;
   }
   #monogram-page-account-giftcard-container .table-responsive table tbody tr td .giftvoucher-grid-detail a {
+    font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #f1efee !important;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #monogram-page-account-giftcard-detail-container .page-title {
+    display: none !important;
+  }
+  #monogram-page-account-giftcard-detail-container .form-list {
+    padding-top: 28px;
+    padding-bottom: 6px;
+    border-bottom: none !important;
+    margin-bottom: 27px;
+    color: #ffffff;
+  }
+  #monogram-page-account-giftcard-detail-container .form-list a {
+    color: #ffffff;
+  }
+  #monogram-page-account-giftcard-detail-container .form-list a:focus,
+  #monogram-page-account-giftcard-detail-container .form-list a:hover {
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+    -webkit-opacity: 0.7;
+    opacity: 0.7;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+    filter: alpha(opacity=70);
+  }
+  #monogram-page-account-giftcard-detail-container .form-list .fields {
+    margin-bottom: 25px !important;
+    margin-bottom: 45px !important;
+  }
+  #monogram-page-account-giftcard-detail-container .form-list .fields .custom-field {
+    margin-bottom: 2px !important;
+  }
+  #monogram-page-account-giftcard-detail-container .form-list .fields .custom-field,
+  #monogram-page-account-giftcard-detail-container .form-list .fields .custom-field p {
+    font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  #monogram-page-account-giftcard-detail-container .form-list .fields .custom-field a,
+  #monogram-page-account-giftcard-detail-container .form-list .fields .custom-field p a {
+    font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  #monogram-page-account-giftcard-detail-container .form-list .fields .custom-field-right,
+  #monogram-page-account-giftcard-detail-container .form-list .fields .custom-field-right p {
+    font-size: 11px;
+  }
+  #monogram-page-account-giftcard-detail-container .form-list .fields .custom-field-right a,
+  #monogram-page-account-giftcard-detail-container .form-list .fields .custom-field-right p a {
+    font-size: 11px;
+  }
+  #monogram-page-account-giftcard-detail-container #mobile-custom-giftcard-view-table {
+    table-layout: fixed;
+    width: 100%;
+  }
+  #monogram-page-account-giftcard-detail-container #mobile-custom-giftcard-view-table table {
+    border-top: 1px solid #e1e1e1 !important;
+  }
+  #monogram-page-account-giftcard-detail-container #mobile-custom-giftcard-view-table thead tr th {
+    font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-align: center;
+    border-bottom: 1px solid #ffffff !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+    padding-top: 11px;
+    padding-bottom: 7px;
+  }
+  #monogram-page-account-giftcard-detail-container #mobile-custom-giftcard-view-table thead tr th:first-child {
+    padding-left: 10px;
+    text-align: left;
+  }
+  #monogram-page-account-giftcard-detail-container #mobile-custom-giftcard-view-table thead tr th:last-child {
+    padding-right: 10px;
+  }
+  #monogram-page-account-giftcard-detail-container #mobile-custom-giftcard-view-table tbody tr td {
+    font-family: 'Domine', "Times New Roman", Times, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 24px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid #ffffff !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+    padding-top: 15px;
+    padding-bottom: 11px;
+    font-size: 11px;
+  }
+  #monogram-page-account-giftcard-detail-container #mobile-custom-giftcard-view-table tbody tr td a {
+    font-family: 'Domine', "Times New Roman", Times, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    color: #ffffff;
+  }
+  #monogram-page-account-giftcard-detail-container #mobile-custom-giftcard-view-table tbody tr td a:focus,
+  #monogram-page-account-giftcard-detail-container #mobile-custom-giftcard-view-table tbody tr td a:hover {
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+    -webkit-opacity: 0.7;
+    opacity: 0.7;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+    filter: alpha(opacity=70);
+  }
+  #monogram-page-account-giftcard-detail-container #mobile-custom-giftcard-view-table tbody tr td .giftvoucher-grid-title-hidden {
+    display: none;
+  }
+  #monogram-page-account-giftcard-detail-container #mobile-custom-giftcard-view-table tbody tr td:first-child {
+    padding-left: 24px;
+    text-align: left;
+  }
+  #monogram-page-account-giftcard-detail-container #mobile-custom-giftcard-view-table tbody tr td:last-child {
+    padding-right: 24px;
+  }
+  #monogram-page-account-giftcard-detail-container #mobile-custom-giftcard-view-table tbody tr td.action a {
+    font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  #monogram-page-account-giftcard-detail-container #mobile-custom-giftcard-view-table tbody tr td:first-child {
+    padding-left: 10px;
+  }
+  #monogram-page-account-giftcard-detail-container #mobile-custom-giftcard-view-table tbody tr td:last-child {
+    padding-right: 10px;
+  }
+  #monogram-page-account-giftcard-detail-container #mobile-custom-giftcard-view-table tbody tr td a {
+    font-size: 11px;
+  }
+  #monogram-page-account-giftcard-detail-container #mobile-custom-giftcard-view-table tbody tr td .giftvoucher-grid-detail {
+    font-size: 11px;
+  }
+  #monogram-page-account-giftcard-detail-container #mobile-custom-giftcard-view-table tbody tr td .giftvoucher-grid-detail p {
+    font-size: 11px;
+  }
+  #monogram-page-account-giftcard-detail-container #mobile-custom-giftcard-view-table tbody tr td .giftvoucher-grid-detail a {
     font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -19379,11 +19529,3 @@ body.monogram-page-privacy-policy {
   top: 0px;
   left: -1px;
 }
-/*
-@import "monogram/page_experience.less";
-@import "monogram/page_experience_detail.less";
-@import "monogram/page_packages.less";
-@import "monogram/page_packages_popup.less";
-@import "monogram/page_contact.less";
-@import "monogram/page_contact_form.less";
-*/
