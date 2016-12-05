@@ -668,25 +668,20 @@ monogram.page.Home.prototype.update_page_layout = function() {
     'width': mobile_target_height + 'px',
     'height': mobile_target_height + 'px'
   });
-  */
-  
-  // TweenMax.to($j('#home-mobile-landing-combination-graph .graph-name-overlay'), 0 , {scaleX: mobile_target_zoom, scaleY:mobile_target_zoom});
   
   
+  TweenMax.to($j('#home-mobile-landing-combination-graph .graph-name-overlay'), 0 , {scaleX: mobile_target_zoom, scaleY:mobile_target_zoom});
   
-
-
-
   /////////////////////
   
   $j('#tea-layering-graph-mobile').css({
     'width': mobile_target_height + 'px',
     'height': mobile_target_height + 'px'
   });
-  //TweenMax.to($j('#tea-layering-graph-mobile .graph-overlay'), 0 , {scaleX: mobile_target_zoom, scaleY:mobile_target_zoom});
+
   TweenMax.to($j('#tea-layering-graph-mobile .graph-name-overlay'), 0 , {scaleX: mobile_target_zoom, scaleY:mobile_target_zoom});
 
-
+  */
 
 
    
