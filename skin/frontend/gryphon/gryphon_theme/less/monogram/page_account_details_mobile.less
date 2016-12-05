@@ -462,17 +462,26 @@ body.monogram-page-account-details{
       display: none !important;
     }
 
+
+
+
     /*
     #mobile-order-history-top-part{
       display: none !important;
     }
     */
 
-    .custom-order-content-header{
+    .custom-order-content-header,
+    .order-headers{
       padding-top: 9px + 2px;
       padding-bottom: 8px - 1px;
+
+      h2{
+        white-space: nowrap;
+      }
     }
-    .each-order{
+    .each-order,
+    .each-product{
       padding-top: 16px;
       padding-bottom: 12px;
 
@@ -510,11 +519,46 @@ body.monogram-page-account-details{
       display: none;
     }
 
-    
+
+
+
+    .order-items{
+
+    }
+
+
 
   } // #monogram-page-account-details-order-history
-}
 
+
+
+  body.sales-order-view{
+    #monogram-page-account-details-order-history{
+      .order-items{
+        margin-top: -38px;
+      }
+
+      .row.extra-content-headers{
+        padding-top: 16px;
+        padding-bottom: 7px;
+
+
+        .view-detail{
+          .square-cta;
+          color: @off-white !important;
+          margin-bottom: 22px;
+
+          .fa{
+            display: none;
+          }
+        } // .view-detail
+
+
+      }
+    }
+  }
+
+}
 
 
 
