@@ -12308,10 +12308,14 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-code-title,
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-code-title {
-  font-size: 11px;
-  line-height: 22px;
+  font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #fecd94;
+  font-size: 12px;
+  line-height: 20px;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.16em;
   margin-bottom: -2px;
 }
 @media all and (max-width: 990px) {
@@ -12323,19 +12327,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-code,
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-code {
-  font-size: 15px;
-  line-height: 22px;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin-bottom: 32px;
-}
-@media all and (max-width: 990px) {
-  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-code,
-  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-code {
-    font-size: 8px;
-    line-height: 11px;
-    margin-bottom: 16px;
-  }
+  display: inline-block;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-disclaimer,
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-disclaimer {
