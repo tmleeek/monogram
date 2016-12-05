@@ -683,7 +683,7 @@ monogram.page.Home.prototype.update_page_layout = function() {
 
   */
 
-
+  
    
   
   if( manic.IS_MOBILE == true || manic.IS_TABLET_PORTRAIT == true){

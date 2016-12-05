@@ -377,7 +377,7 @@
                                                 <?php $type = isset($column['type']) ? $column['type'] : '' ?>
                                                 <?php switch ($type): case 'action': ?>
                                                         <?php $action = $column['action'] ?>
-                                                        <a href="<?php echo $this->getUrl($action['url'], array($action['name'] => $row->getData($action['field']))) ?>" title="<?php echo $action['label'] ?>"><?php echo $action['label'] ?></a>
+                                                        <a href="<?php echo $this->getUrl($action['url'], array($action['name'] => $row->getData($action['field']))) ?>" title="<?php echo $action['label'] ?>" class="square-cta"><?php echo $action['label'] ?></a>
                                                         <?php
                                                         break;
                                                     case 'options':
