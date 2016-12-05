@@ -12174,6 +12174,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   display: inline-block;
   width: 92%;
   height: 874px;
+  background-color: #999089;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .giftcard-product-media {
   float: none!important;
@@ -12222,7 +12223,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext,
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext {
   position: absolute;
-  top: 155px;
+  top: 265px;
   left: 76px;
   width: 300px;
   height: 420px;
