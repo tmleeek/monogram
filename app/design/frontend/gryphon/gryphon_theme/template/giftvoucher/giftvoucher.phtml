@@ -5,10 +5,26 @@
 ?>
 
 
+<div id="monogram-page-account-mobile-header" class="visible-sm visible-xs">
+  <h4>membership service</h4>
+  <h2>gift card / store credit</h2>
+</div>
+
+<div id="monogram-page-account-mobile-page-title" class="visible-sm visible-xs">
+  <h1>store credit</h1>
+    <div class="cta-container">
+        <a href="javascript:void(0);" onclick="setLocation('<?php echo $this->getUrl('giftvoucher/index/addredeem') ?>')" class="square-cta">Add Gift Card</a>
+    </div>
+</div>
+
+
+
 <div id="monogram-page-account-giftcard-container">
 
+
+
     <div class="customer-account-giftcard gift-cards">
-        <div class="page-title">
+        <div class="page-title visible-md visible-lg">
             <h1><?php echo $this->__('Gift cards') ?></h1>
             <hr class="small">
 
