@@ -12243,9 +12243,8 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-intro,
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-intro {
-  font-size: 16px;
-  line-height: 21px;
-  letter-spacing: -0.02em;
+  font-size: 15px;
+  line-height: 24px;
   height: 73px;
 }
 @media all and (max-width: 990px) {
@@ -12256,21 +12255,13 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
     height: 42px;
   }
 }
-#tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-intro .dear,
-#tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-intro .dear {
-  font-size: 20px;
-  margin-bottom: 4px;
-}
-@media all and (max-width: 990px) {
-  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-intro .dear,
-  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-intro .dear {
-    font-size: 10px;
-  }
-}
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-title,
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-title {
-  font-size: 20px;
-  line-height: 28px;
+  font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   margin-bottom: -1px;
@@ -12284,9 +12275,10 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-amount,
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-amount {
-  font-size: 50px;
-  line-height: 50px;
-  letter-spacing: 0.01em;
+  font-size: 60px;
+  line-height: 60px;
+  letter-spacing: 0.05em;
+  color: #fecd94;
   margin-bottom: 25px;
 }
 @media all and (max-width: 990px) {
@@ -18038,6 +18030,64 @@ body.sales-order-view #monogram-page-account-details-order-history .order-additi
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: #f1efee !important;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #monogram-page-account-giftcard-detail-container .page-title {
+    display: none !important;
+  }
+  #monogram-page-account-giftcard-detail-container .form-list {
+    padding-top: 28px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #e1e1e1;
+    margin-bottom: 27px;
+    color: #ffffff;
+  }
+  #monogram-page-account-giftcard-detail-container .form-list a {
+    color: #ffffff;
+  }
+  #monogram-page-account-giftcard-detail-container .form-list a:focus,
+  #monogram-page-account-giftcard-detail-container .form-list a:hover {
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+    -webkit-opacity: 0.7;
+    opacity: 0.7;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+    filter: alpha(opacity=70);
+  }
+  #monogram-page-account-giftcard-detail-container .form-list .fields {
+    margin-bottom: 25px !important;
+  }
+  #monogram-page-account-giftcard-detail-container .form-list .fields .custom-field {
+    margin-bottom: 2px !important;
+  }
+  #monogram-page-account-giftcard-detail-container .form-list .fields .custom-field,
+  #monogram-page-account-giftcard-detail-container .form-list .fields .custom-field p {
+    font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  #monogram-page-account-giftcard-detail-container .form-list .fields .custom-field a,
+  #monogram-page-account-giftcard-detail-container .form-list .fields .custom-field p a {
+    font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  #monogram-page-account-giftcard-detail-container .form-list .fields .custom-field-right,
+  #monogram-page-account-giftcard-detail-container .form-list .fields .custom-field-right p {
+    font-size: 11px;
+  }
+  #monogram-page-account-giftcard-detail-container .form-list .fields .custom-field-right a,
+  #monogram-page-account-giftcard-detail-container .form-list .fields .custom-field-right p a {
+    font-size: 11px;
   }
 }
 @media only screen and (max-width: 991px) {
