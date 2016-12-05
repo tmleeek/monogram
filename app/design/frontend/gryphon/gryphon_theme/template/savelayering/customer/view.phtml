@@ -92,9 +92,9 @@
       var gift_in_the_cart = <?php echo $gift_in_the_cart; ?>;
 
       if(subscription_in_the_cart == 1) {
-          alert("This item cannot be purchased with a subscription plan in the cart. Please check out first before making any other purchases.")
+          alert("This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.")
       } else if(gift_in_the_cart == 1) {
-          alert("This item cannot be purchased with a gift card in the cart. Please check out first before making any other purchases.")
+          alert("This item cannot be purchased with other items in the cart. Please check out first before making any other purchases.")
       } else {
 
         jQuery("#successmsg").hide();

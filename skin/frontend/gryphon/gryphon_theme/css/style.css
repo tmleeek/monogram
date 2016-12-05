@@ -10494,6 +10494,16 @@ body.tea-layering-detail-page {
   top: 0;
   left: 50%;
   margin-left: -190px;
+  width: 380px;
+  height: 380px;
+}
+#home-mobile-landing-graph-container #home-mobile-landing-combination-graph .graph-name-overlay {
+  /* transform */
+  -webkit-transform: scale(0.6333);
+  -moz-transform: scale(0.6333);
+  -o-transform: scale(0.6333);
+  -ms-transform: scale(0.6333);
+  transform: scale(0.6333);
 }
 #home-mobile-landing-popular-subsection {
   padding-top: 72px;
@@ -12370,9 +12380,9 @@ body.product-gift-card #tea-product-detail-section-3 {
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .ajax_msg_product {
   position: absolute;
-  top: 0px;
-  width: 100%;
-  right: -210px;
+  top: 27px;
+  width: 300px;
+  right: -200px;
   color: white;
   text-align: left;
 }
