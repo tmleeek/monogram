@@ -679,24 +679,83 @@ body.monogram-page-account-details{
 
 
 
+//     ____ ___ _____ _____ ____    _    ____  ____    _____ ____ ___ _____
+//    / ___|_ _|  ___|_   _/ ___|  / \  |  _ \|  _ \  | ____|  _ \_ _|_   _|
+//   | |  _ | || |_    | || |     / _ \ | |_) | | | | |  _| | | | | |  | |
+//   | |_| || ||  _|   | || |___ / ___ \|  _ <| |_| | | |___| |_| | |  | |
+//    \____|___|_|     |_| \____/_/   \_\_| \_\____/  |_____|____/___| |_|
+//
+
+
+@media only screen and (max-width: 991px) {
+
+  #monogram-page-account-giftcard-detail-container{
+    .page-title{
+      display: none !important;
+    }
+
+    .form-list{
+      // font-size: 0;
+      padding-top: 28px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid @border-grey;
+      margin-bottom: 27px;
+
+      
+      color: @white;
+      a{
+        color: @white;
+
+        &:focus,
+        &:hover{
+          .opacity(0.7);
+        }
+      }
+
+      .fields{
+        margin-bottom: 25px !important;
+
+        // .display-inline-block;
+        // width: 33.33%;
+        
+        .custom-field{
+          margin-bottom: 2px !important;
+        }
+        
+        .custom-field,
+        .custom-field p{
+          .subheader-font;
+          font-size: 10px;
+          line-height: 14px;
+
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          a{
+            .subheader-font;
+            font-size: 10px;
+            line-height: 14px;
+
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+          }
+        }
+        .custom-field-right,
+        .custom-field-right p{
+          font-size: 11px;
+
+          a{
+            font-size: 11px;
+          }
+        }
+      }
+    } // .form-list
 
 
 
 
+  } // #monogram-page-account-giftcard-detail-container
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+} // media
 
 
 
