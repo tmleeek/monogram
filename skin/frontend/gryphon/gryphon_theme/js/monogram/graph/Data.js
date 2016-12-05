@@ -82,7 +82,8 @@ monogram.graph.Data = function(data_obj_param) {
 
   this.graph_section_data_obj = {
     'htmlname': this.data_html_name,
-	'dataid': this.data_id,
+    'dataid': this.data_id,
+	  'id': this.data_id,
     'description': this.data_description,
     'teatype': this.data_type, 
     'temperature': this.data_steeping_temperature,

@@ -102,7 +102,7 @@
               <p>Fresh approach to a unique blend of mint and bergamot. An alluring experience that promises more adventure to come.</p>
 
               <div class="cta-container">
-                <a href="javascript:void(0);" class="square-cta">buy both teas</a>
+                <a href="javascript:void(0);" id="home-mobile-buy-both-teas-cta" class="square-cta">buy both teas</a>
                 <a href="#selection" class="square-cta">see more layering</a>
               </div>
             </div>
@@ -110,36 +110,54 @@
         </div> <!-- #home-mobile-landing-graph-subsection -->
 
 
-
+        
         <div id="home-mobile-landing-popular-subsection">
           <div id="home-mobile-landing-popular-title">
-            <h4>popular tea layering</h4>
+            <h4>Featured Teas</h4>
           </div>
 
-
-
           <div id="home-mobile-landing-popular-item-container" class="row">
+          <?php 
+          $_productCollection = Mage::getModel('catalog/category')->load(8)
+                       ->getProductCollection()
+                       ->addAttributeToSelect('*')
+                       ->addAttributeToFilter('status', 1) // enabled
+                       ->addAttributeToFilter('visibility', 4) //visibility in catalog,search
+                       ->addAttributeToSort('position', Varien_Data_Collection::SORT_ORDER_ASC);
+          ?>
+          <?php foreach ($_productCollection as $key => $_product):    
+              $_imgSize = 160;
+              $_imgSize2x = 320;
+              $categoryIds = $_product->getCategoryIds();               
+          ?>          
+
+            
             <div class="col-xs-6">
 
-              <a href="javascript:void(0);" class="home-mobile-landing-popular-item">
+              <a href="<?php echo $_product->getProductUrl() ?>" class="home-mobile-landing-popular-item">
                 <div class="home-mobile-landing-popular-item-image">
-                  <img src="http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/images/products_svg/cherry-japonais.svg" class="parent" alt="">                              
-                  <img src="http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/images/products_svg/provencal-herbs.svg" class="overlay" alt="">
+                  <img id="product-collection-image-<?php echo $_product->getId(); ?>" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize($_imgSize, 120); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="img"/>
                 </div>
                 <div class="home-mobile-landing-popular-item-copy">
 
                   <div class="home-mobile-landing-popular-item-title">
-                    <h2><span style="color:#c0cdd5">Earl Grey</span> <span style="color:#d8d1ca">Neroli</span></h2>
-                    <div class="plus-sign">+</div>
-                    <h2><span style="color:#c7c89b">Shiso</span> <span style="color:#bcc4b9">Mint</span></h2>
+                    <?php if(!empty($_product->getData('product_name_in_color'))): ?>
+                    <h2><?php echo $_product->getData('product_name_in_color') ?></h2>
+                    <?php else: ?>
+                    <h2><?php echo $_product->getName(); ?></h2>
+                    <?php endif; ?>                    
                   </div>
-                  <h6>by monogram</h6>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada massa...</p>
+                  <p><?php echo $_product->getShortDescription(); ?></p>
                 </div>
               </a>
               
             </div>
-            <div class="col-xs-6">
+
+            <?php $count++; ?>
+          <?php endforeach; ?>        
+
+
+            <!-- <div class="col-xs-6">
 
               <a href="javascript:void(0);" class="home-mobile-landing-popular-item">
                 <div class="home-mobile-landing-popular-item-image">
@@ -159,7 +177,7 @@
                 </div>
               </a>
 
-            </div>
+            </div> -->
 
           </div> <!-- #home-mobile-landing-popular-item -->
 
@@ -242,6 +260,17 @@
       <?php $count++; ?>
       <?php endforeach; ?>        
   </div> <!-- #home-tea-item-container -->
+
+
+  <script>
+    $j(document).ready(function($){
+      $('#home-mobile-buy-both-teas-cta').on('click', function(e){
+        e.preventDefault();
+        $('#add-to-cart-shiso-mint').trigger('click');
+        $('#add-to-cart-earl-grey-neroli').trigger('click');
+      });
+    });
+  </script>
 
   <!--
   <script>
@@ -392,7 +421,12 @@
 
 
         <div class="button-container button-container-01">
-          <a href="javascript:void(0);" class="square-cta square-cta-01">save layering</a>
+          <?php if(Mage::getSingleton('customer/session')->isLoggedIn()): ?>
+          <a href="javascript:void(0);" id="home-mobile-save-layering" class="square-cta square-cta-01">save layering</a>
+          <?php else: ?>
+          <?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
+          <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta square-cta-01">visit tea store</a>
+          <?php endif; ?>
           <a href="#selection" class="square-cta square-cta-02">choose another layering</a>
         </div>
 
@@ -526,11 +560,13 @@
           </div> <!-- mobile-footer-copy -->
 
           <form id="mobile-newsletter-subscribe-form" class="simple-form-check">
-            <div class="form-group">
-              <input type="text" class="required only-email" placeholder="Enter Your Email Address">
-              <input type="submit">
-            </div>
-          </form>
+              <div class="form-group">
+                <input type="text" name="subscribe_email" class="subscribe_email required only-email" placeholder="Enter Your Email Address">
+                <input type="submit" class="subscribe_newsletter">
+                <span class='newsletter_ajax_loader' style='display:none'><img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/></span>
+              </div>
+              <span class="ajax_msg italic"></span>
+            </form>
 
           <div id="mobile-footer-links">
             <ul>
@@ -563,3 +599,61 @@
   </div> <!-- mobile-footer-copywrite-section -->
 
 </footer>
+<script>
+    jQuery(document).ready(function($){
+      $('.subscribe_email').keypress(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13') 
+          $('.subscribe_newsletter').trigger('click');
+      });
+      $('.subscribe_newsletter').click(function(e){
+        e.preventDefault();        
+        var subscribe_email = $(this).prev('.subscribe_email').val();
+
+        console.log(subscribe_email);
+
+        $('.newsletter_ajax_loader').show();
+
+        var request = $.ajax({
+            url: "<?php echo $this->getUrl('discovertea/index/subscribe', array('_secure'=>true)) ?>",
+            method: "POST",
+            data: { subscribe_email : subscribe_email },
+            dataType: "html"
+        });
+         
+        request.done(function( msg ) {
+          var message = JSON.parse(msg);
+          console.log(message);
+          $('.newsletter_ajax_loader').hide();
+          if(message.error_messages)
+            $('span.ajax_msg').html('<p>'+message.error_messages+'</p>').show().delay(5000).fadeOut();              
+            else
+            $('span.ajax_msg').html('<p>Successfully subscribed to newsletter</p>').show().delay(5000).fadeOut();
+        });
+      });
+
+      $('#home-mobile-save-layering').click(function(e){
+        e.preventDefault();
+        var pidvalue1 = jQuery(".graph-selection-tea-mobile .graph-selection-name #graph-selection-name-01").attr('data-id');
+        var pidvalue2 = jQuery(".graph-selection-tea-mobile .graph-selection-name #graph-selection-name-01").attr('data-id');
+        //alert(pidvalue1);alert(pidvalue2);
+        // jQuery("#successmsg").hide();
+        // jQuery("#ajax_loadermsg").show();    
+        console.log(pidvalue1)
+        console.log(pidvalue2)
+        var cid = '<?php echo $cid ?>';
+        var pid = pidvalue1+'|||'+pidvalue2;
+        var dataString = 'cid='+ cid + '&pid='+ pid;
+              jQuery.ajax({
+                  type: "POST",
+                  data: dataString,
+                  url: "<?php echo Mage::getUrl('savelayering/index/ajax'); ?>"
+              }).done(function(result) { 
+                // jQuery("#ajax_loadermsg").hide();
+                // jQuery("#successmsg").show();
+                // jQuery("#successmsg").html(''+result+'');        
+                alert(result);
+              });
+      });
+    });
+  </script>

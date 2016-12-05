@@ -5847,7 +5847,8 @@ p {
   height: auto;
   overflow: scroll;
 }
-.mobile-menu-open #content-wrapper {
+.mobile-menu-open #content-wrapper,
+.mobile-menu-open #page-wrapper-content {
   display: none;
 }
 .mobile-menu-open #mobile-footer {
@@ -10552,7 +10553,7 @@ body.tea-layering-detail-page {
 }
 .home-mobile-landing-popular-item .home-mobile-landing-popular-item-image {
   width: 160px;
-  height: 160px;
+  height: 120px;
   position: relative;
   margin: 0 auto;
 }
@@ -10561,11 +10562,12 @@ body.tea-layering-detail-page {
   top: 0;
   left: 0;
   width: 160px;
-  height: 160px;
+  height: 120px;
 }
 .home-mobile-landing-popular-item .home-mobile-landing-popular-item-title {
   text-align: center;
-  margin-bottom: 14px;
+  margin-bottom: 5px;
+  margin-top: 20px;
   line-height: 14px;
 }
 .home-mobile-landing-popular-item .home-mobile-landing-popular-item-title h2 {
@@ -16857,6 +16859,154 @@ body.sales-order-view #monogram-page-account-details-order-history .order-additi
   line-height: 20px;
   color: #ffffff;
 }
+body.sales-order-view #monogram-page-account-details-order-history .custom-custom-custom-row {
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+body.sales-order-view #monogram-page-account-details-order-history .custom-custom-custom-row h2 {
+  font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+body.sales-order-view #monogram-page-account-details-order-history .each-billing-detail,
+body.sales-order-view #monogram-page-account-details-order-history .each-shipping-detail {
+  margin-bottom: 15px;
+}
+body.sales-order-view #monogram-page-account-details-order-history .each-billing-detail h2,
+body.sales-order-view #monogram-page-account-details-order-history .each-shipping-detail h2 {
+  font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  margin-bottom: -1px;
+  margin-top: 0px;
+}
+body.sales-order-view #monogram-page-account-details-order-history .each-billing-detail p,
+body.sales-order-view #monogram-page-account-details-order-history .each-shipping-detail p {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff;
+}
+body.sales-order-view #monogram-page-account-details-order-history .billing-and-shipping .billing-address {
+  margin-top: 0px !important;
+  padding-right: 35px;
+  position: relative;
+}
+body.sales-order-view #monogram-page-account-details-order-history .billing-and-shipping .billing-address:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 50px;
+  width: 0;
+  border-left: 1px solid #ffffff;
+}
+body.sales-order-view #monogram-page-account-details-order-history .billing-and-shipping .shipping-address {
+  margin-top: 0px !important;
+  padding-left: 35px;
+}
+body.sales-order-view #monogram-page-account-details-order-history .each-order {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+body.sales-order-view #monogram-page-account-details-order-history .each-details {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 15px;
+  color: #ffffff;
+}
+body.sales-order-view #monogram-page-account-details-order-history .each-details p {
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 15px;
+  color: #ffffff;
+}
+body.sales-order-view #monogram-page-account-details-order-history .each-details h2 {
+  font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+body.sales-order-view #monogram-page-account-details-order-history .each-details span {
+  font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-left: 20px;
+}
+body.sales-order-view #monogram-page-account-details-order-history .each-details .align-to-total {
+  text-align: right;
+}
+body.sales-order-view #monogram-page-account-details-order-history .row.extra-content {
+  *zoom: 1;
+}
+body.sales-order-view #monogram-page-account-details-order-history .row.extra-content:before,
+body.sales-order-view #monogram-page-account-details-order-history .row.extra-content:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+body.sales-order-view #monogram-page-account-details-order-history .row.extra-content:after {
+  clear: both;
+}
+body.sales-order-view #monogram-page-account-details-order-history .row.extra-content .square-cta {
+  float: right;
+  margin-right: -10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers {
+  padding-top: 66px;
+  padding-bottom: 7px;
+  *zoom: 1;
+}
+body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers:before,
+body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers:after {
+  clear: both;
+}
+body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers .view-detail-mobile-container {
+  text-align: right;
+}
+body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers .square-cta {
+  margin-right: -10px;
+}
+body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers .view-detail {
+  margin-right: -10px;
+  color: #f1efee !important;
+  margin-bottom: 22px;
+}
+body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers .view-detail .fa {
+  display: none;
+}
 #monogram-page-account-giftcard-container .customer-account-giftcard > .page-title {
   *zoom: 1;
   background: #989779;
@@ -17896,8 +18046,8 @@ body.sales-order-view #monogram-page-account-details-order-history .order-additi
   }
   #monogram-page-account-details-order-history .each-order,
   #monogram-page-account-details-order-history .each-product {
-    padding-top: 16px;
-    padding-bottom: 12px;
+    padding-top: 19px;
+    padding-bottom: 15px;
     position: relative;
   }
   #monogram-page-account-details-order-history .each-order .single-order-item-mobile-link,
@@ -17939,40 +18089,88 @@ body.sales-order-view #monogram-page-account-details-order-history .order-additi
     padding-top: 0px;
     padding-bottom: 0px;
   }
-  body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers {
-    padding-top: 16px;
-    padding-bottom: 7px;
+  body.sales-order-view #monogram-page-account-details-order-history .each-details {
+    font-family: 'Domine', "Times New Roman", Times, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 15px;
+    color: #ffffff;
   }
-  body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers .view-detail {
-    font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
+  body.sales-order-view #monogram-page-account-details-order-history .each-details p {
+    font-family: 'Domine', "Times New Roman", Times, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 15px;
+    color: #ffffff;
+  }
+  body.sales-order-view #monogram-page-account-details-order-history .each-details h2 {
+    font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 10px;
-    line-height: 25px;
+    line-height: 15px;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    background: none;
-    display: inline-block;
-    vertical-align: top;
-    *display: inline;
-    zoom: 1;
-    height: 25px;
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    padding-left: 9px;
-    padding-right: 9px;
-    background: transparent;
-    -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-    -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-    -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-    color: #f1efee !important;
-    margin-bottom: 22px;
   }
-  body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers .view-detail:focus,
-  body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers .view-detail:hover {
-    color: rgba(241, 239, 238, 0.5);
-    border: 1px solid rgba(241, 239, 238, 0.5) !important;
+  body.sales-order-view #monogram-page-account-details-order-history .each-details span {
+    font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-left: 20px;
+  }
+  body.sales-order-view #monogram-page-account-details-order-history .each-details .align-to-total {
+    text-align: right;
+  }
+  body.sales-order-view #monogram-page-account-details-order-history .row.extra-content {
+    *zoom: 1;
+  }
+  body.sales-order-view #monogram-page-account-details-order-history .row.extra-content:before,
+  body.sales-order-view #monogram-page-account-details-order-history .row.extra-content:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  body.sales-order-view #monogram-page-account-details-order-history .row.extra-content:after {
+    clear: both;
+  }
+  body.sales-order-view #monogram-page-account-details-order-history .row.extra-content .square-cta {
+    float: right;
+    margin-right: -10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers {
+    padding-top: 66px;
+    padding-bottom: 7px;
+    *zoom: 1;
+  }
+  body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers:before,
+  body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers:after {
+    clear: both;
+  }
+  body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers .view-detail-mobile-container {
+    text-align: right;
+  }
+  body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers .square-cta {
+    margin-right: -10px;
+  }
+  body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers .view-detail {
+    margin-right: -10px;
+    color: #f1efee !important;
+    margin-bottom: 42px;
+    z-index: 2000;
+    position: relative;
   }
   body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers .view-detail .fa {
     display: none;

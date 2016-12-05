@@ -681,8 +681,8 @@ monogram.component.GraphSectionMobile.prototype.delayed_display_combination_inde
   $j('#tea-layering-detail-copy-tea-detail-01-cta').attr('href',target_url_01).html(target_name_01);
   $j('#tea-layering-detail-copy-tea-detail-02-cta').attr('href',target_url_02).html(target_name_02);
 
-
-
+  $j('#tea-layering-detail-copy-section .graph-selection-tea-mobile #graph-selection-name-01').attr('data-id', this.main_data_item.data_id);
+  $j('#tea-layering-detail-copy-section .graph-selection-tea-mobile #graph-selection-name-02').attr('data-id', this.sub_data_item.data_id);
 
 };
 
