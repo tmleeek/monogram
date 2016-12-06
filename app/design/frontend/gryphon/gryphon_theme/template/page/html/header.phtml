@@ -263,7 +263,10 @@ $quoteData= $quote->getData();
 <script type="text/javascript">
 	$j(document).ready(function($) {
 		$("#mobile-header").find("#mobile-header-menu-btn").on("click", function(e){
-			e.preventDefault();			
+			e.preventDefault();	
+      $("html, body").animate({
+          scrollTop: 0
+      }, 600);
 			$('html').toggleClass("mobile-menu-open");
 		});
 
