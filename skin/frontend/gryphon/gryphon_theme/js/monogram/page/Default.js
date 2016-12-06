@@ -485,6 +485,27 @@ monogram.page.Default.prototype.update_page_layout = function() {
   } // if mobile
 
 
+  
+  if(manic.IS_MOBILE == false && this.is_tea_matrix == true) {
+
+    var target_height = $j(window).height() - 123 + 100;        // 100 is the extra height of the top and bottom of the graph that is removed?
+    var target_zoom = target_height / 600;
+    var target_margin_top = -1 * 80 * target_zoom;        // 103 = top space of the 600x600 graph
+
+    var target_margin_left = -1 * 103 * target_zoom;
+
+    $j('#tea-matrix-section-1 #tea-matrix-content #tea-matrix-combination-graph').css({
+      'zoom': target_zoom,
+      // 'margin-left': target_margin_left + 'px'
+      // 'margin-top': target_margin_top + 'px'
+      // 'margin-bottom': target_margin_top + 'px'
+    });
+
+    // #tea-matrix-combination-graph-container-another-one
+
+  } // if
+
+
 };
 
 
