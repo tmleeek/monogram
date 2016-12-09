@@ -25,138 +25,132 @@
  */
 ?>
 <article id="contact-section-1">
-  <div class="desktop-header-spacer" style="height: 70px;"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+  <div class="container-fluid">
+    <div class="row contact-content-container">
+      <div id="contact-col-1" class="col-md-6 v-align">
+          <div id="contact-img-content"></div>
+      </div><!--
+      --><div id="contact-col-2" class="col-md-6 v-align">  
         <h1>contact us</h1>
         <p>Send us an email should you have any inquiries or would like to share your tea experience. Your feedback matters a lot to us.</p>
 
         <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
-      </div>
-    </div>
-    <form action="<?php echo $this->getUrl('contacts/index/post') ?>" id="contact-us-form" method="post">
-      <div class="row">
-        <div class="col-md-5 col-md-offset-3">
-          <div class="inputs">
-            <div class="row">
-              <div class="col-md-5 col-md-offset-1 contact-label-container v-align">
-                <label for="first_name" class="for-input">*<?php echo Mage::helper('contacts')->__('First Name') ?></label>
-              </div><!--
-              --><div class="col-md-6 v-align">
-                <input name="first_name" id="first_name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="" class="input-class required-entry" type="text" />
-                <input name="name" id="name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserName()) ?>" class="input-text required-entry" type="hidden" />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-5 col-md-offset-1 contact-label-container v-align">
-                <label for="last_name" class="for-input">*<?php echo Mage::helper('contacts')->__('Last Name') ?></label>
-              </div><!--
-              --><div class="col-md-6 v-align">
-                <input name="last_name" id="last_name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="" class="input-text input-class required-entry" type="text" />        
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-5 col-md-offset-1 contact-label-container v-align">
-                <label for="email" class="for-input">*<?php echo Mage::helper('contacts')->__('Email Address') ?></label>
-              </div><!--
-              --><div class="col-md-6 v-align">
-                <input name="email" id="email" title="<?php echo Mage::helper('contacts')->__('Email') ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserEmail()) ?>" class="input-text input-class required-entry validate-email" type="text" />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-5 col-md-offset-1 contact-label-container v-align">
-                <label for="phone_no" class="for-input">*<?php echo Mage::helper('contacts')->__('Phone Number') ?></label>
-              </div><!--
-              --><div class="col-md-6 v-align">                
-                <input name="telephone" id="telephone" title="<?php echo Mage::helper('contacts')->__('Telephone') ?>" value="" class="required-entry input-text input-class phone_no_input" type="text" />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-5 col-md-offset-1 contact-label-container v-align">
-                <label for="type_of_enquiry" class="for-input">*<?php echo Mage::helper('contacts')->__('Type of Enquiry') ?></label>
-              </div><!--
-              --><div class="col-md-6 v-align">
-                <div class="dropdown">
-                  <select name="role_within_organization" id="role_within_organization" class="required-entry">
-                      <option value="">Choose the type</option>
-                      <option value="General Enquiry">General Enquiry</option>
-                      <option value="Online Order Enquiry">Online Order Enquiry</option>
-                      <option value="Business Enquiry">Business Enquiry</option>
-                      <option value="Media Enquiry">Media Enquiry</option>
-                  </select>
+
+        <form action="<?php echo $this->getUrl('contacts/index/post') ?>" id="contact-us-form" method="post">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="inputs">
+                <div class="row">
+                  <div class="col-md-5 contact-label-container v-align">
+                    <label for="first_name" class="for-input">*<?php echo Mage::helper('contacts')->__('First Name') ?></label>
+                  </div><!--
+                  --><div class="col-md-6 v-align">
+                    <input name="first_name" id="first_name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="" class="input-class required-entry" type="text" />
+                    <input name="name" id="name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserName()) ?>" class="input-text required-entry" type="hidden" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5 contact-label-container v-align">
+                    <label for="last_name" class="for-input">*<?php echo Mage::helper('contacts')->__('Last Name') ?></label>
+                  </div><!--
+                  --><div class="col-md-6 v-align">
+                    <input name="last_name" id="last_name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="" class="input-text input-class required-entry" type="text" />        
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5 contact-label-container v-align">
+                    <label for="email" class="for-input">*<?php echo Mage::helper('contacts')->__('Email Address') ?></label>
+                  </div><!--
+                  --><div class="col-md-6 v-align">
+                    <input name="email" id="email" title="<?php echo Mage::helper('contacts')->__('Email') ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserEmail()) ?>" class="input-text input-class required-entry validate-email" type="text" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5 contact-label-container v-align">
+                    <label for="phone_no" class="for-input">*<?php echo Mage::helper('contacts')->__('Phone Number') ?></label>
+                  </div><!--
+                  --><div class="col-md-6 v-align">                
+                    <input name="telephone" id="telephone" title="<?php echo Mage::helper('contacts')->__('Telephone') ?>" value="" class="required-entry input-text input-class phone_no_input" type="text" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5 contact-label-container v-align">
+                    <label for="type_of_enquiry" class="for-input">*<?php echo Mage::helper('contacts')->__('Type of Enquiry') ?></label>
+                  </div><!--
+                  --><div class="col-md-6 v-align">
+                    <div class="dropdown">
+                      <select name="role_within_organization" id="role_within_organization" class="required-entry">
+                          <option value="">Choose the type</option>
+                          <option value="General Enquiry">General Enquiry</option>
+                          <option value="Online Order Enquiry">Online Order Enquiry</option>
+                          <option value="Business Enquiry">Business Enquiry</option>
+                          <option value="Media Enquiry">Media Enquiry</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5 contact-label-container">
+                    <label for="message" class="for-input">*<?php echo Mage::helper('contacts')->__('Message') ?></label>
+                  </div><!--
+                  --><div class="col-md-6">
+                    <textarea style="resize: vertical;" name="comment" id="comment" cols="30" rows="10" placeholder="Write your message here." title="<?php echo Mage::helper('contacts')->__('Message') ?>" class="required-entry input-text"></textarea>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-5 col-md-offset-1 contact-label-container">
-                <label for="message" class="for-input">*<?php echo Mage::helper('contacts')->__('Message') ?></label>
-              </div><!--
-              --><div class="col-md-6">
-                <textarea style="resize: vertical;" name="comment" id="comment" cols="30" rows="10" placeholder="Write your message here." title="<?php echo Mage::helper('contacts')->__('Message') ?>" class="required-entry input-text"></textarea>
-              </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 col-md-offset-5">
+              <input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
+              <button type="submit" class="cta square-cta" id="contact-us-send-btn" title="<?php echo Mage::helper('contacts')->__('Submit') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Send Message To Monogram') ?></span></span></button>
             </div>
           </div>
-        </div>
+        </form>
+        <script type="text/javascript">
+        //<![CDATA[
+            var contactForm = new VarienForm('contact-us-form', true);
+        //]]>
+        </script>
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+              $(".phone_no_input, .mobile_no_input").intlTelInput({
+                defaultCountry: 'sg',
+                nationalMode: false,
+                autoHideDialCode: true,
+                autoPlaceholder: false
+              });
+
+              $('#first_name').on('change', function(e){
+                $('#name').val($(this).val() + ' ' + $('#last_name').val());
+              });
+
+              $('#last_name').on('change', function(e){
+                $('#name').val($('#first_name').val() + ' ' + $(this).val());
+              });
+
+              // var $phone_no = $("input[name='phone_no']");
+              // var $phone_no_2 = $("input[name='phone_no_2']");
+              // var $telephone = $("#telephone");
+              // $phone_no.on('change', function() {
+              //       var finalNo = $(this).val() + ' ' + $phone_no_2.val();
+              //       $telephone.val(finalNo);
+              // });
+
+              // $phone_no_2.keyup(function() {
+              //       var finalNo = $phone_no.val() + ' ' + $(this).val();
+              //       $telephone.val(finalNo);
+              // });
+
+              // $phone_no_2.on('change', function() {
+              //       var finalNo = $phone_no.val() + ' ' + $(this).val();
+              //       $telephone.val(finalNo);
+              // });
+
+            });
+        </script>
       </div>
-
-      <div class="row">
-        <div class="col-md-4 col-md-offset-5">
-          <input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
-          <button type="submit" class="cta square-cta" id="contact-us-send-btn" title="<?php echo Mage::helper('contacts')->__('Submit') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Send Message To Monogram') ?></span></span></button>
-        </div>
-      </div>
-    </form>
-    <script type="text/javascript">
-    //<![CDATA[
-        var contactForm = new VarienForm('contact-us-form', true);
-    //]]>
-    </script>
-    <script type="text/javascript">
-        jQuery(document).ready(function($) {
-          $(".phone_no_input, .mobile_no_input").intlTelInput({
-            defaultCountry: 'sg',
-            nationalMode: false,
-            autoHideDialCode: true,
-            autoPlaceholder: false
-          });
-
-          $('#first_name').on('change', function(e){
-            $('#name').val($(this).val() + ' ' + $('#last_name').val());
-          });
-
-          $('#last_name').on('change', function(e){
-            $('#name').val($('#first_name').val() + ' ' + $(this).val());
-          });
-
-          // var $phone_no = $("input[name='phone_no']");
-          // var $phone_no_2 = $("input[name='phone_no_2']");
-          // var $telephone = $("#telephone");
-          // $phone_no.on('change', function() {
-          //       var finalNo = $(this).val() + ' ' + $phone_no_2.val();
-          //       $telephone.val(finalNo);
-          // });
-
-          // $phone_no_2.keyup(function() {
-          //       var finalNo = $phone_no.val() + ' ' + $(this).val();
-          //       $telephone.val(finalNo);
-          // });
-
-          // $phone_no_2.on('change', function() {
-          //       var finalNo = $phone_no.val() + ' ' + $(this).val();
-          //       $telephone.val(finalNo);
-          // });
-
-        });
-    </script>
-  </div>
-  <div class="desktop-header-spacer" style="height: 120px;"></div>
-</article>
-<div id="content-wrapper" class="contact-us">
-  <div class="main-content">
-    <div class="image-text-content container">
-        <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>   
-        
     </div>
   </div>
-</div>
+</article>

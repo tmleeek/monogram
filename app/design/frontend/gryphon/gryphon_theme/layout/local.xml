@@ -40,7 +40,7 @@ One page checkout main layout
             <action method="addItem"><type>skin_js</type><name>js/plugins/intlTelInput.min.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/plugins/lib/libphonenumber/build/utils.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/plugins/jquery.blockUI.js</name></action>
-            <action method="setForcedTitle"><title>Monogram Tea - Check Out</title></action>                     
+            <action method="setForcedTitle"><title>Check Out - Monogram Tea</title></action>                     
         </reference>
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>
@@ -77,7 +77,7 @@ One page checkout main layout
         <reference name="head">            
             <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/no-banner.js</name></action>
-            <action method="setForcedTitle"><title>Monogram Tea - Order Success</title></action>                     
+            <action method="setForcedTitle"><title>Order Success - Monogram Tea</title></action>                     
         </reference>
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>
@@ -148,7 +148,7 @@ One page checkout main layout
 
     <customer_account_index>
         <reference name="head">            
-            <action method="setForcedTitle"><title>Monogram Tea - My Account</title></action>            
+            <action method="setForcedTitle"><title>My Account - Monogram Tea</title></action>            
             <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
         </reference>
         <reference name="root">
@@ -171,7 +171,7 @@ One page checkout main layout
     -->
     <customer_account_login>
         <reference name="head">
-            <action method="setForcedTitle"><title>Monogram Tea - Customer Login</title></action>            
+            <action method="setForcedTitle"><title>Customer Login - Monogram Tea</title></action>            
             <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
         </reference>
         <reference name="root">
@@ -191,7 +191,7 @@ One page checkout main layout
     -->
     <customer_account_forgotpassword>        
         <reference name="head">
-            <action method="setForcedTitle"><title>Monogram Tea - Forgot Password</title></action>            
+            <action method="setForcedTitle"><title>Forgot Password - Monogram Tea</title></action>            
         </reference>
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>            
@@ -231,7 +231,7 @@ One page checkout main layout
             <action method="addItem"><type>skin_js</type><name>js/miragedesign/regionupdater.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/miragedesign/telephone.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
-            <action method="setForcedTitle"><title>Monogram Tea - Account Information</title></action>            
+            <action method="setForcedTitle"><title>Account Information - Monogram Tea</title></action>            
         </reference>
         <reference name="my.account.wrapper">
             <action method="unsetChildren"></action>
@@ -245,7 +245,7 @@ One page checkout main layout
         <reference name="head">
             <action method="addItem"><type>skin_js</type><name>js/miragedesign/regionupdater.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
-            <action method="setForcedTitle"><title>Monogram Tea - Edit Address</title></action>                     
+            <action method="setForcedTitle"><title>Edit Address - Monogram Tea</title></action>                     
         </reference>
         <reference name="customer_address_edit">
             <action method="setTemplate"><template>miragedesign/customer/address/edit.phtml</template></action>
@@ -266,7 +266,7 @@ One page checkout main layout
 
     <sales_order_history>
         <reference name="head">
-            <action method="setForcedTitle"><title>Monogram Tea - My Orders</title></action>            
+            <action method="setForcedTitle"><title>My Orders - Monogram Tea</title></action>            
             <action method="addItem"><type>skin_js</type><name>js/plugins/gryphon/jquery.gryphon-mobile-account-order-history.js</name></action>            
         </reference>
         <reference name="customer.account.link.back">
@@ -276,7 +276,7 @@ One page checkout main layout
 
     <customer_address_index>
         <reference name="head">   
-            <action method="setForcedTitle"><title>Monogram Tea - Address Book</title></action>                     
+            <action method="setForcedTitle"><title>Address Book - Monogram Tea</title></action>                     
             <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
         </reference>
         <reference name="address_book">
@@ -286,7 +286,7 @@ One page checkout main layout
 
     <checkout_cart_index>
         <reference name="head">
-            <action method="setForcedTitle"><title>Monogram Tea - Shopping Cart</title></action>                     
+            <action method="setForcedTitle"><title>Shopping Cart - Monogram Tea</title></action>                     
             <action method="addItem"><type>skin_js</type><name>js/miragedesign/cart.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
         </reference>

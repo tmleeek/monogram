@@ -41,6 +41,11 @@
       li {
         display: inline-block;
         margin-right: 8px;
+        a {
+          i {
+            font-size: 15px;
+          }
+        }
       }
     }
 
@@ -268,7 +273,14 @@
     .footer-mobile-logo-small;
 
     .display-inline-block;
-    margin-right: 5px;
+    // margin-right: 5px;
+
+    @media all and (max-width: 320px) {
+      vertical-align: middle;
+      margin-right: 5px;
+      background-size: contain;
+      margin-top: 0px;
+    }    
   }
   h4{
     .subheader-font-2;
@@ -279,6 +291,11 @@
     color: @off-white;
 
     .display-inline-block;
+
+    @media all and (max-width: 320px) {
+      font-size: 9px;
+      vertical-align: middle;
+    }
   }
   
 }

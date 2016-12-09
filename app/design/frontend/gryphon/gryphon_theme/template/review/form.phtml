@@ -131,14 +131,15 @@
                 <div class="row">
                     <div class="col-md-5"><label for="">layering comments</label></div>
                     <div class="col-md-7 review-input">
-                        <textarea maxlength="150" name="detail" id="review_field" cols="30" rows="10" class="required-entry" placeholder="<?php echo $this->__('Write the comments about this tea here.'); ?>"><?php echo $this->escapeHtml($data->getDetail()) ?></textarea>
-                        <span class="validation"></span>
+                        <textarea maxlength="150" name="detail" id="review_field" cols="30" rows="10" class="required-entry" placeholder="<?php echo $this->__('Write the comments about this tea here.'); ?>"><?php echo $this->escapeHtml($data->getDetail()) ?></textarea>                        
                         <p><span id="chars">150</span> characters remaining</p>
+                        <span class="validation"></span>
                         <!-- <textarea name="layering_comments" id="" cols="30" rows="10"></textarea> -->
-                        
-                        <button type="submit" title="<?php echo $this->__('Submit Review') ?>" class="button cta rate-btn square-cta submit-review"><span><span><?php echo $this->__('Submit Review') ?></span></span></button>
-                        <span id='ajax_loader_review'><img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/></span>
-                        <span class="ajax_msg_review italic"></span>
+                        <div class="submit-btn-container">
+                            <button type="submit" title="<?php echo $this->__('Submit Review') ?>" class="button cta rate-btn square-cta submit-review"><span><span><?php echo $this->__('Submit Review') ?></span></span></button>
+                            <span id='ajax_loader_review'><img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/></span>
+                            <span class="ajax_msg_review italic"></span>
+                        </div>
                         <!-- <a href="#" class="square-cta submit-review">Submit Review</a> -->
                     </div>
                 </div>
@@ -210,7 +211,7 @@
             }
 
             if($j('#review_field').val()=="") {
-                $j('#review_field').next('.validation').html("<p>This is a required field.</p>");
+                $j('#review_field').next().next('.validation').html("<p>This is a required field.</p>");
                 valid = false;
             }
 

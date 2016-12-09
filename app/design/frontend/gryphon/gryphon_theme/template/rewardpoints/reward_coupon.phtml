@@ -243,13 +243,8 @@
                                     <label for="coupon_code">REDEEM REBATE</label>
                                     <div class="input-box">
                                         <input <?php if($point_details['full_use']):?>type="text"<?php else:?>type="text"<?php endif;?> value=""  name="points_to_be_used" class="input-text" />
-                                        <?php 
-                                        $balance = $point_details['customer_points']; 
-                                        $balance = Mage::helper('core')->currency($balance, true, false);
-                                        ?>
-                                        <p class="used-points-msg">Rebate balance: <?php echo $balance; ?></p>
-                                    </div>
-                                    <?php endif; ?>
+                                    </div>                                    
+                                    <?php endif; ?>                                    
                                 <?php endif;?>
                                 <?php if($this->getCustomerPoints() > 0) : ?>
                                 
@@ -261,6 +256,11 @@
                                     <?php endif; ?>
 
                                 <?php endif;?>
+                                <?php 
+                                $balance = $point_details['customer_points']; 
+                                $balance = Mage::helper('core')->currency($balance, true, false);
+                                ?>   
+                                <p class="used-points-msg">Rebate balance: <?php echo $balance; ?></p>
                                 <?php elseif($this->getCustomerPoints() > 0): ?>
                                     <p><?php echo $this->__('You must have at least %s point(s) to apply points.', $this->getMinimumBalance()); ?></p>
                                 <?php endif; ?>
@@ -311,10 +311,10 @@
                                 <?php if($gift_in_the_cart == false): ?>
                                     <label for="coupon_code">REDEEM REBATE</label>
                                     <div class="input-box test">
-                                        <input <?php if($point_details['full_use']):?>type="text"<?php else:?>type="text"<?php endif;?> value="<?php echo $points_currently_used; ?>"  name="points_to_be_used" class="input-text" />
-                                        <p class="used-points-msg">Rebate balance: <?php echo $balance; ?></p>
-                                    </div>
-                                    <button class="form-button-alt button cta apply" type="button" onclick="discountFormPoints2.submit(false)" value="<?php echo $this->__('Remove Points') ?>"><span><span><?php echo $this->__('Remove') ?></span></span></button>
+                                        <input <?php if($point_details['full_use']):?>type="text"<?php else:?>type="text"<?php endif;?> value="<?php echo $points_currently_used; ?>"  name="points_to_be_used" class="input-text" />                                        
+                                    </div>                                    
+                                    <button class="form-button-alt button cta apply" type="button" onclick="discountFormPoints2.submit(false)" value="<?php echo $this->__('Remove') ?>"><span><span><?php echo $this->__('Cancel') ?></span></span></button>
+                                    <p class="used-points-msg">Rebate balance: <?php echo $balance; ?></p>
                                 <?php endif; ?>
                             
                             <?php if ($points_currently_used > 0):?>
@@ -376,7 +376,7 @@
         
         <?php if ($this->canShowRemoveLink() && $points_currently_used > 0):?>
                 var points_text = "<?php echo str_replace('"', '\"', $this->__('%s points used', $points_currently_used));?>";
-                var reward_link_cart = '<span id="link_j2t_rewards"> <a href="javascript:$(\'discountFormPoints2\').submit();" title="<?php echo Mage::helper('rewardpoints')->__('Remove Points').'"><img src="'.Mage::getDesign()->getSkinUrl('images/j2t_delete.gif').'" alt="'.Mage::helper('rewardpoints')->__('Remove Points').'" /></a></span>'; ?>';
+                var reward_link_cart = '<span id="link_j2t_rewards"> <a href="javascript:$(\'discountFormPoints2\').submit();" title="<?php echo Mage::helper('rewardpoints')->__('Remove').'"><img src="'.Mage::getDesign()->getSkinUrl('images/j2t_delete.gif').'" alt="'.Mage::helper('rewardpoints')->__('Remove').'" /></a></span>'; ?>';
                 $$(".totals-rewards").each(function (el){
                     el.innerHTML = el.innerHTML.replace(points_text, points_text+reward_link_cart);
                 });
@@ -384,7 +384,7 @@
         
         
         /*if ($('link_j2t_rewards')){
-            var reward_link_cart = ' <a href="javascript:$(\'discountFormPoints2\').submit();" title="<?php echo Mage::helper('rewardpoints')->__('Remove Points').'"><img src="'.Mage::getDesign()->getSkinUrl('images/j2t_delete.gif').'" alt="'.Mage::helper('rewardpoints')->__('Remove Points').'" /></a>'; ?>';
+            var reward_link_cart = ' <a href="javascript:$(\'discountFormPoints2\').submit();" title="<?php echo Mage::helper('rewardpoints')->__('Remove').'"><img src="'.Mage::getDesign()->getSkinUrl('images/j2t_delete.gif').'" alt="'.Mage::helper('rewardpoints')->__('Remove').'" /></a>'; ?>';
             //alert(reward_link_cart);
             $('link_j2t_rewards').innerHTML = reward_link_cart;
         }*/

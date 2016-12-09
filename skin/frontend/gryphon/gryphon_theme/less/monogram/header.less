@@ -263,8 +263,8 @@
   padding-top: 20px;
   .display-inline-block;
 
-  visibility: hidden;
-  .opacity(0);
+  // visibility: hidden;
+  // .opacity(0);
   
 
   ul.main-nav {
@@ -287,6 +287,9 @@
         letter-spacing: 0.08em;
         color: @white;
         text-transform: uppercase;
+        &.has-submenu {
+          cursor: default;
+        }
       }
 
       &:hover {
@@ -309,6 +312,12 @@
         width: 245px;
         li {
           display: block;
+        }
+      }
+
+      &:nth-of-type(3) {
+        ul.sub-nav {
+          padding-right: 35px;
         }
       }
     }

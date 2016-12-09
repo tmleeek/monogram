@@ -24,9 +24,9 @@
 	          </ul>
 	        </div>
 	        <div class="col-md-2">
-	          <h5>Order Information</h5>
+	          <h5>Support</h5>
 	          <ul>
-	            <li><a href="<?php echo $this->getUrl('customer/account/create/') ?>">Account Registration</a></li>
+	            <!-- <li><a href="<?php echo $this->getUrl('customer/account/create/') ?>">Account Registration</a></li> -->
 	            <li><a href="<?php echo $this->getUrl('faq'); ?>">Frequently Asked Questions</a></li>
 	            <li><a href="<?php echo $this->getUrl('shipping-info'); ?>">Shipping Information</a></li>
 	            <li><a href="http://www.trackntrace.com.sg/">Track Order</a></li>
@@ -79,12 +79,12 @@
  	</footer>
 	<script>
 		jQuery(document).ready(function($){
-			$('.subscribe_email').keypress(function(event){
+			$('#footer-newsletter-input').find('.subscribe_email').keypress(function(event){
 				var keycode = (event.keyCode ? event.keyCode : event.which);
 				if(keycode == '13') 
 					$('.subscribe_newsletter').trigger('click');
 			});
-			$('.subscribe_newsletter').click(function(e){
+			$('#footer-newsletter-input').find('.subscribe_newsletter').click(function(e){
         e.preventDefault();        
 				var subscribe_email = $(this).prev('.subscribe_email').val();
 

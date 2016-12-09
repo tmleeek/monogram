@@ -252,6 +252,9 @@ monogram.page.Home.prototype.display_graph_section = function(){
       
       this.graph_section.display_combination_index(0,0);
 
+
+
+
     } else if ( goog.isDefAndNotNull(this.page_hash_02) == true && 
                 goog.isDefAndNotNull(this.page_hash_03) == false) {
 
@@ -264,13 +267,15 @@ monogram.page.Home.prototype.display_graph_section = function(){
         var current_url           = window.location.href;
         var twitter_share_url     = 'https://twitter.com/share?url=' + encodeURIComponent(current_url) + 
                                     '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + this.page_hash_02);
-        var facebook_share_url    = 'http://www.facebook.com/sharer.php?u=' + encodeURIComponent(current_url);
+        var facebook_share_url    = current_url;
+
+        var main_product_name = this.graph_section.main_data_item.data_name;
+        var sub_product_name = this.graph_section.sub_data_item.data_name;        
                 
         $j('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
         $j('#graph-social-icons ul li a.fa-facebook').attr('href', facebook_share_url);
-
-
-
+        $j('#graph-social-icons ul li a.fa-facebook').data('main_product_name', main_product_name);
+        $j('#graph-social-icons ul li a.fa-facebook').data('sub_product_name', sub_product_name);
 
       } else {
         this.graph_section.display_combination_index(0,0);
@@ -285,7 +290,7 @@ monogram.page.Home.prototype.display_graph_section = function(){
       var current_url           = window.location.href;
       var twitter_share_url     = 'https://twitter.com/share?url=' + encodeURIComponent(current_url) + 
                                   '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + this.page_hash_02);
-      var facebook_share_url    = 'http://www.facebook.com/sharer.php?u=' + encodeURIComponent(current_url);
+      var facebook_share_url    = encodeURIComponent(current_url);
               
       $j('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
       $j('#graph-social-icons ul li a.fa-facebook').attr('href', facebook_share_url);

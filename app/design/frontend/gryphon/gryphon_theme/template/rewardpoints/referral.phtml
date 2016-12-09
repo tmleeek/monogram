@@ -38,7 +38,7 @@
   <div class="my-account">
       <div class="referral-container">
           <div class="page-title">
-              <h1><?php echo $this->__('REFERRAL') ?></h1>
+              <h1><?php echo $this->__('FRIEND REFERRAL') ?></h1>
               <hr class="small">
           </div>
           <?php if($this->getReferrerRegistrationPoints()):?>
@@ -239,8 +239,7 @@
                         data: data
                       }).done(function( msg ) {
 
-                          var messages = $j('.messages', $j.parseHTML(msg))
-
+                          var messages = $j('.messages', $j.parseHTML(msg));
                           
                           $j('span.ajax_msg_referral').html('<p>'+$(messages).find('span').html()+'</p>').show().delay(5000).fadeOut();
                           $j('#ajax_loader_referral').hide();

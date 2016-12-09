@@ -373,7 +373,7 @@
             <?php $i = 1; foreach($_pAddsses as $_address): ?>
                 <?php $shippingCountryName = Mage::getModel('directory/country')->load($_address->getCountryId())->getName(); ?>
                 <tr>
-                    <td><p class="billing_address_no"><?php echo $this->__('SHIPPING ADDRESS %s', $i); ?></p></td>
+                    <td><p class="billing_address_no"><?php echo $this->__('ADDRESS %s', $i); ?></p></td>
                     <td>
                         <p class="billing_address">
                             <?php echo implode(' ', array(implode(' ', $_address->getStreet()), $_address->getCity(), $shippingCountryName, $_address->getPostcode())); ?>
