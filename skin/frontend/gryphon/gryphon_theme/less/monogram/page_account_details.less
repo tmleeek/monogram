@@ -85,6 +85,10 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar{
   padding-left: 40px;
   padding-right: 40px;
 
+  @media all and (max-width: 1024px) {
+    padding-left: 20px;
+  }
+
 
 
   hr{
@@ -1137,6 +1141,10 @@ body.monogram-page-account-details #content-wrapper .col-main{
     table{
       width: 100%;
 
+      @media all and (max-width: 991px) {
+        table-layout: fixed;
+      }    
+
       tbody{
         tr{
 
@@ -1195,6 +1203,7 @@ body.monogram-page-account-details #content-wrapper .col-main{
         }
         &:last-child{
           padding-right: 10px;
+          width: auto!important;
         }
 
       }

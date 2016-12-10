@@ -478,7 +478,11 @@ body.monogram-page-account-details{
 
       h2{
         white-space: nowrap;
-      }
+        text-align: left;
+        &.align-center {
+          text-align: center;
+        }
+      } 
     }
     .each-order,
     .each-product{
@@ -486,6 +490,12 @@ body.monogram-page-account-details{
       padding-bottom: 15px;
 
       position: relative;
+
+      border: none;
+
+      &:last-child {
+        border-bottom: 1px solid fade(@white, 50%);
+      }
 
 
       .single-order-item-mobile-link{
@@ -512,6 +522,13 @@ body.monogram-page-account-details{
       p{
         font-size: 11px;
         line-height: 15px;
+        text-align: left;
+
+
+
+        &.order_no, &.date, &.qty, &.price {
+          text-align: center;
+        }
 
       }
     }
@@ -558,6 +575,10 @@ body.monogram-page-account-details{
           font-size: 11px;
           line-height: 15px;
           color: @white;
+          &.price {
+            text-align: right;
+            padding-right: 17px;
+          }
         }
         h2{
           .subheader-font;
@@ -575,7 +596,14 @@ body.monogram-page-account-details{
           letter-spacing: 0.08em;
           text-transform: uppercase;
 
-          padding-left: 20px;
+          padding-left: 0px;
+        }
+
+        span.price {
+          .body-font;
+          font-size: 11px;
+          line-height: 15px;
+          color: @white;
         }
 
         .align-to-total{
@@ -591,20 +619,34 @@ body.monogram-page-account-details{
 
 
         .square-cta{
-          float: right;
+          float: left;
           margin-right: -10px;
           margin-top: 20px;
           margin-bottom: 20px;
-
+          display: none;
         }
+
+        .expanded.open {
+          display: block!important;          
+        }
+        
+        .each-details {
+          padding-bottom: 30px; 
+          &:last-child {
+            border-top: 1px solid fade(@white, 50%);
+            padding-top: 30px;
+          }
+        }
+
       }
       .row.extra-content-headers{
-        padding-top: 66px;
-        padding-bottom: 7px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         .add-clearfix;
 
         .view-detail-mobile-container{
           text-align: right;
+          display: none;
         }
 
 
@@ -684,7 +726,7 @@ body.monogram-page-account-details{
                 padding-left: 10px;
               }
               &:last-child{
-                padding-right: 10px;
+                padding-right: 10px;                
               }
 
             }

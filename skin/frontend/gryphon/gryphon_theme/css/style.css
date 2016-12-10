@@ -6140,6 +6140,11 @@ p {
 #mobile-footer {
   position: relative;
 }
+#mobile-footer.fix-footer-space {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
 #mobile-footer-copy-section {
   background: #6b615b;
   color: #f1efee;
@@ -15948,6 +15953,11 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar {
   padding-left: 40px;
   padding-right: 40px;
 }
+@media all and (max-width: 1024px) {
+  body.monogram-page-account-details #content-wrapper .col-right.sidebar {
+    padding-left: 20px;
+  }
+}
 body.monogram-page-account-details #content-wrapper .col-right.sidebar hr {
   -moz-opacity: 0.4;
   -khtml-opacity: 0.4;
@@ -16882,6 +16892,11 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
 #monogram-page-account-details-other-shipping-address-container .table-responsive table {
   width: 100%;
 }
+@media all and (max-width: 991px) {
+  #monogram-page-account-details-other-shipping-address-container .table-responsive table {
+    table-layout: fixed;
+  }
+}
 #monogram-page-account-details-other-shipping-address-container .table-responsive table tbody tr td {
   padding-top: 10px;
   padding-bottom: 7px;
@@ -16968,6 +16983,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   }
   #monogram-page-account-details-other-shipping-address-container .table-responsive table tbody tr td:last-child {
     padding-right: 10px;
+    width: auto!important;
   }
 }
 .monogram-page-account-details-other-shipping-address-item {
@@ -18421,12 +18437,22 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
   #monogram-page-account-details-order-history .custom-order-content-header h2,
   #monogram-page-account-details-order-history .order-headers h2 {
     white-space: nowrap;
+    text-align: left;
+  }
+  #monogram-page-account-details-order-history .custom-order-content-header h2.align-center,
+  #monogram-page-account-details-order-history .order-headers h2.align-center {
+    text-align: center;
   }
   #monogram-page-account-details-order-history .each-order,
   #monogram-page-account-details-order-history .each-product {
     padding-top: 19px;
     padding-bottom: 15px;
     position: relative;
+    border: none;
+  }
+  #monogram-page-account-details-order-history .each-order:last-child,
+  #monogram-page-account-details-order-history .each-product:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   }
   #monogram-page-account-details-order-history .each-order .single-order-item-mobile-link,
   #monogram-page-account-details-order-history .each-product .single-order-item-mobile-link {
@@ -18456,6 +18482,17 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
   #monogram-page-account-details-order-history .each-product p {
     font-size: 11px;
     line-height: 15px;
+    text-align: left;
+  }
+  #monogram-page-account-details-order-history .each-order p.order_no,
+  #monogram-page-account-details-order-history .each-product p.order_no,
+  #monogram-page-account-details-order-history .each-order p.date,
+  #monogram-page-account-details-order-history .each-product p.date,
+  #monogram-page-account-details-order-history .each-order p.qty,
+  #monogram-page-account-details-order-history .each-product p.qty,
+  #monogram-page-account-details-order-history .each-order p.price,
+  #monogram-page-account-details-order-history .each-product p.price {
+    text-align: center;
   }
   #monogram-page-account-details-order-history .order-history-heading {
     display: none;
@@ -18483,6 +18520,10 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
     line-height: 15px;
     color: #ffffff;
   }
+  body.sales-order-view #monogram-page-account-details-order-history .each-details p.price {
+    text-align: right;
+    padding-right: 17px;
+  }
   body.sales-order-view #monogram-page-account-details-order-history .each-details h2 {
     font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
     font-style: normal;
@@ -18500,7 +18541,15 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
     line-height: 15px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    padding-left: 20px;
+    padding-left: 0px;
+  }
+  body.sales-order-view #monogram-page-account-details-order-history .each-details span.price {
+    font-family: 'Domine', "Times New Roman", Times, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 15px;
+    color: #ffffff;
   }
   body.sales-order-view #monogram-page-account-details-order-history .each-details .align-to-total {
     text-align: right;
@@ -18518,14 +18567,25 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
     clear: both;
   }
   body.sales-order-view #monogram-page-account-details-order-history .row.extra-content .square-cta {
-    float: right;
+    float: left;
     margin-right: -10px;
     margin-top: 20px;
     margin-bottom: 20px;
+    display: none;
+  }
+  body.sales-order-view #monogram-page-account-details-order-history .row.extra-content .expanded.open {
+    display: block!important;
+  }
+  body.sales-order-view #monogram-page-account-details-order-history .row.extra-content .each-details {
+    padding-bottom: 30px;
+  }
+  body.sales-order-view #monogram-page-account-details-order-history .row.extra-content .each-details:last-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    padding-top: 30px;
   }
   body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers {
-    padding-top: 66px;
-    padding-bottom: 7px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     *zoom: 1;
   }
   body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers:before,
@@ -18539,6 +18599,7 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
   }
   body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers .view-detail-mobile-container {
     text-align: right;
+    display: none;
   }
   body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers .square-cta {
     margin-right: -10px;
