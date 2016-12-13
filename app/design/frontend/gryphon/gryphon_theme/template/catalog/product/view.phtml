@@ -43,6 +43,25 @@
     line-height: 39px;
     text-align: left;
 }
+#tea-product-detail-section-1 #product-detail-img-info-container .product-info {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.grouped-items .row{
+	padding: 0 !important;
+	margin-bottom:5px !important;
+}
+.grouped-items .italic{
+		color:white !important;
+}
+.grouped-items .col-xs-4{
+	padding-left:28px !important;
+}
+.grouped-items .fa{
+	display:none;
+}
 </style>
 <?php $_helper = $this->helper('catalog/output'); ?>
 <?php $_product = $this->getProduct(); ?>
@@ -123,8 +142,24 @@ endif;
                                         <div class="col-md-6 col-sm-6 col-xs-6 product-info-col-1">
                                             <h5><?php echo $this->__('Price'); ?></h5>
                                             <?php if (!$isGiftcardType) :?> 
+											<?php 
+												if( $_product->getTypeId() == 'grouped' ){
+													$aProductIds = $_product->getTypeInstance()->getChildrenIds($_product->getId());
+													$prices = array();
+													foreach ($aProductIds as $ids) {
+														foreach ($ids as $id) {
+															$aProduct = Mage::getModel('catalog/product')->load($id);
+															$prices[] = $aProduct->getPriceModel()->getPrice($aProduct);
+														}
+													}
+
+													krsort($prices);
+													$_product->setPrice(array_shift($prices));
+												}
+											?>
                                                 <span><?php echo $this->getPriceHtml($_product); ?></span>
                                                 <?php echo $this->getChildHtml('bundle_prices') ?>
+												
                                             <?php endif; ?>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6 product-info-col-2">
@@ -186,7 +221,10 @@ endif;
                                 <?php endif; ?>
                             <?php endif; ?>
                             
-                            <div class="row">                                
+                            <div class="row">
+								<!-- To call group product -->
+								<?php echo $this->getChildHtml('product_type_availability'); ?>
+								
                                 <?php echo $this->getChildHtml('other');?>
 
                                 <?php if( $_product->getTypeId() == 'tin' ): ?>
