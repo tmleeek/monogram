@@ -115,9 +115,17 @@
                               <div class="login-button-container">
                                 <a class="sign-in-facebook square-cta"><i class="fa fa-facebook"></i> Sign In with Facebook</a>
                               </div>
-                              <span class="login-button-seperator">Or</span>
+                              <span class="login-button-seperator">Or</span>                              
+                            </div>
+                        </div>
+						<div class="row">
+                            <div class="col-md-12">                             
                               <div class="login-button-container">
                                 <a title="<?php echo $this->__('Create A Monogram Account') ?>" class=" sign-up-btn square-cta" href="<?php echo Mage::helper('persistent')->getCreateAccountUrl($this->getCreateAccountUrl()) ?>"><span><span><?php echo $this->__('Create A Monogram Account') ?></span></span></a>
+                              </div>
+							  <span class="login-button-seperator">Or</span>
+                              <div class="login-button-container">
+                                <a title="<?php echo $this->__('Create a Trader Account') ?>" class=" sign-up-btn square-cta" href="<?php echo $this->getUrl('trader') ?>"><span><span><?php echo $this->__('Create a Trader Account') ?></span></span></a>
                               </div>
                             </div>
                         </div>

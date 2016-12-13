@@ -56,8 +56,12 @@ if($isSubscriptionProduct == false)
                 <?php if (in_array($code, $allowedShippingMethods)) : ?>
                     <?php $_sole = $_sole && count($_rates) == 1; foreach ($_rates as $_rate): ?>
                         <?php 
-						$session = Mage::getSingleton('checkout/session');
-						$traderselfcollect = $session->getData('traderselfcollect');
+						//$session = Mage::getSingleton('checkout/session');
+						//$traderselfcollect = $session->getData('traderselfcollect');
+						$curlpath = basename($_SERVER['HTTP_REFERER']);			
+						$parts = parse_url($curlpath);
+						parse_str($parts['query'], $query);	
+						$traderselfcollect = $query['tsc']['tsc'];						
 						if($traderselfcollect == 1 || $traderselfcollect == '1'){
 							$_rate->setPrice(0);
 						}
@@ -123,8 +127,8 @@ if($isSubscriptionProduct == false)
                               </div>                    
                     <?php endforeach; ?>
                 <?php else: ?>
-                <div><?php echo $this->escapeHtml($this->getCarrierName($code)) ?></div>
-                <div>
+                <div <?php if($this->getCarrierName($code) == 'Free Shipping'){ echo 'class="no-display"';} ?> ><?php echo $this->escapeHtml($this->getCarrierName($code)) ?></div>
+                <div <?php if($this->getCarrierName($code) == 'Free Shipping'){ echo 'class="no-display"';} ?>>
                     <ul>
                     <?php $_sole = $_sole && count($_rates) == 1; foreach ($_rates as $_rate): ?>
                         <?php $shippingCodePrice[] = "'".$_rate->getCode()."':".(float)$_rate->getPrice(); ?>

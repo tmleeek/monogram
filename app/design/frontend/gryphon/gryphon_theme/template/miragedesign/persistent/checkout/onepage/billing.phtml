@@ -453,12 +453,18 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
 			//$sessiontemp = Mage::getSingleton('checkout/session');
 			//$tradselfcollect = $sessiontemp->getData('traderselfcollect');
 			
-			$oCheckoutnew = Mage::getSingleton( 'checkout/session' );
+			/*$oCheckoutnew = Mage::getSingleton( 'checkout/session' );
 			$oQuotenew = $oCheckoutnew->getQuote();
-			$tradselfcollect = $oQuotenew->getTraderselfcollect();
+			$tradselfcollect = $oQuotenew->getTraderselfcollect();*/
 			
-			$tradselfcollect = Mage::app()->getRequest()->getParam('tsc');
+			//$tradselfcollect = Mage::app()->getRequest()->getParam('tsc');
 			
+			$curlpath = basename($_SERVER['REQUEST_URI']);			
+			$parts = parse_url($curlpath);
+			parse_str($parts['query'], $query);	
+			$tradselfcollect = $query['tsc']['tsc'];
+			Mage::log($curlpath, null, 'kkkkk.log');
+			Mage::log($query['tsc']['tsc'], null, 'kkkkk.log');
 			?>
 			<?php if(($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium')&&($countryId=='SG' || $countryId=='sg')): ?>
 				<div class="row selfcollect">
@@ -761,6 +767,8 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
             }else {
                 $j('#page-shopping-cart-billing-container').find('.save-in-address-book').hide();
             }
+			var countryIDdd = '<?= Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress()->getData('country_id') ?>';
+			jQuery('.selfcollect')[countryIDdd == 'SG' ? 'show' : 'hide']();
         });
 
         $j('#shipping-address-select').on("change", function(){
@@ -769,6 +777,8 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
             }else {
                 $j('#page-shopping-cart-shipping-container').find('.save-in-address-book').hide();
             }
+			var countryIDdd = '<?= Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress()->getData('country_id') ?>';
+			jQuery('.selfcollect')[countryIDdd == 'SG' ? 'show' : 'hide']();
         });
                 
     //]]>
@@ -780,25 +790,19 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
 		var tsr = jQuery("#"+iddd).val();
 		//alert(tsr);alert(iddd);
 		if(tsr == 1){
-		<?php $oCheckout = Mage::getSingleton( 'checkout/session' );
-			$oQuote = $oCheckout->getQuote();
-			$oQuote->setTraderselfcollect(1);
-			?>
+			jQuery("#s_method_freeshipping_freeshipping").attr('checked', true);
 		}else{
-		<?php $oCheckout = Mage::getSingleton( 'checkout/session' );
-			$oQuote = $oCheckout->getQuote();
-			$oQuote->setTraderselfcollect(0);
-			?>
+		
 		}
 		jQuery("#"+iddd).attr('checked', true);
 		
 		//window.location.href = window.location.href + "?tsc="+tsr;
-		billing.save();		
-		location.reload();
+		//billing.save();		
+		//location.reload();
 		$uurl = window.location.href.split('?')[0];
 		window.location.href = $uurl + "?tsc="+tsr;
 	
-	}  
+	}  	
     </script>
     </div>
 </div>
