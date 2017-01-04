@@ -169,7 +169,24 @@ $orderStoreDate = $this->formatDate($_order->getCreatedAtStoreDate(), 'medium', 
         <fieldset>
             <address><?php echo $_order->getShippingAddress()->getFormated(true) ?></address>
         </fieldset>
-    </div>
+    </div>	
+</div>
+<div class="box-right">
+    <!--Shipping Address-->
+    <div class="entry-edit">
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-shipping-address"><?php echo Mage::helper('sales')->__('Trader Self Collect') ?></h4>
+		</div>
+        <fieldset>
+            <strong>Self Collect : </strong><span class="price">
+			<?php if($_order->getTraderselfcollect() == 1 || $_order->getTraderselfcollect() == '1'){ ?>
+            <strong><?php echo 'Yes'; ?></strong>
+			<?php } else{ ?>
+			<strong><?php echo 'No'; ?></strong>
+			<?php } ?>
+			</span>
+        </fieldset>
+    </div>	
 </div>
 <div class="clear"></div>
 <?php endif; ?>

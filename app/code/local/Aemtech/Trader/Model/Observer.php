@@ -273,5 +273,55 @@ class Aemtech_Trader_Model_Observer {
 
         //Mage::log(print_r("Post Save Customer Is Activated::" . $postsaveIsActive, true));
     }
+	
+	public function saveTraderSelfCollect($observer) 
+	{
+		$event = $observer->getEvent();
+		$order = $event->getOrder();
+		
+		$fieldVal = Mage::app()->getFrontController()->getRequest()->getParams();
+		$traderselfcollect = 0;
+		$session = Mage::getSingleton('checkout/session');
+		$traderselfcollect = $session->getData('traderselfcollect');
+		
+		if($traderselfcollect == ''){
+			$traderselfcollect = isset($fieldVal['traderselfcollect'])?$fieldVal['traderselfcollect']:0;
+		}
+		
+		if($traderselfcollect != ""){
+            $order->setTraderselfcollect($traderselfcollect);
+			if($traderselfcollect == 1 || $traderselfcollect == '1'){
+				$order->setShippingAmount(0);
+				$order->setBaseShippingAmount(0);
+			}			
+        }
+		
+	}
+	public function saveTraderSelfCollectToQuote($observer) 
+	{
+		$event = $observer->getEvent();
+		$quote = $event->getQuote();
+		$request = $event->getRequest();
+
+		$traderselfcollect = $request->getPost('traderselfcollect', false);
+		if($traderselfcollect == 1 || $traderselfcollect == '1'){
+			$address = $quote->getShippingAddress();  
+			// Apply the Free Shipping		
+			$address->setFreeShipping(true);
+			$address->setShippingMethod('freeshipping_freeshipping');		
+		}
+		
+		$session = Mage::getSingleton('checkout/session');
+		$session->setData('traderselfcollect', $traderselfcollect);
+		
+	}
+	
+	public function setTraderFreeShipping($observer) 
+	{
+		/*$event = $observer->getEvent();
+		$quote = $event->getQuote();
+		$address = $quote->getShippingAddress();
+		$address->setFreeShipping(true);*/
+	}
 
 }

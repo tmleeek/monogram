@@ -8,6 +8,31 @@
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 ?>
+<style>
+.selfcollect {
+    font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+    letter-spacing: 0.08em;
+    color: #f1efee !important;
+    text-transform: uppercase;
+    white-space: nowrap;
+    display: block;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    padding-top: 11px;
+    padding-bottom: 13px;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-top: 24px;
+}
+.selfcollect input {
+vertical-align:bottom;
+margin-left:10px;
+}
+</style>
 <?php
 function isMobile()  
 {  
@@ -414,6 +439,42 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                 </div>
             </div>
             <input type="hidden" name="md_shipping_method" id="md_shipping_method" value="" />
+			<?php 
+			$checkout = Mage::getSingleton('checkout/session')->getQuote();
+			$billAddress = $checkout->getShippingAddress();
+			$countryId = $billAddress->getData('country_id');
+			$groupname = '';
+			if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+				$customerData = Mage::getSingleton('customer/session')->getCustomer();
+				$customerGroupId = $customerData->getGroupId();
+				$groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();  
+			} 
+			$tradselfcollect = 0;
+			//$sessiontemp = Mage::getSingleton('checkout/session');
+			//$tradselfcollect = $sessiontemp->getData('traderselfcollect');
+			
+			/*$oCheckoutnew = Mage::getSingleton( 'checkout/session' );
+			$oQuotenew = $oCheckoutnew->getQuote();
+			$tradselfcollect = $oQuotenew->getTraderselfcollect();*/
+			
+			//$tradselfcollect = Mage::app()->getRequest()->getParam('tsc');
+			
+			$curlpath = basename($_SERVER['REQUEST_URI']);			
+			$parts = parse_url($curlpath);
+			parse_str($parts['query'], $query);	
+			$tradselfcollect = $query['tsc']['tsc'];
+			Mage::log($curlpath, null, 'kkkkk.log');
+			Mage::log($query['tsc']['tsc'], null, 'kkkkk.log');
+			?>
+			<?php if(($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium')&&($countryId=='SG' || $countryId=='sg')): ?>
+				<div class="row selfcollect">
+					<div class="col-md-6">
+						<label for="billing:traderselfcollect"><?php echo $this->__('Self Collect:') ?></label>
+							<input type="radio" onclick="traderselfcollectyesno('traderselfcollectyes','traderselfcollectno');" id="traderselfcollectno" name="traderselfcollect" value="0" <?php if($tradselfcollect != 1 && $tradselfcollect != '1'){echo 'checked';} ?> />No
+							<input type="radio" onclick="traderselfcollectyesno('traderselfcollectno','traderselfcollectyes');" id="traderselfcollectyes" name="traderselfcollect" value="1" <?php if($tradselfcollect ==1 || $tradselfcollect == '1'){echo 'checked';} ?> />Yes					 
+					</div>
+				</div></br>
+			 <?php endif; ?>
         </form>        
     </div><!-- #page-shopping-cart-billing-shipping-container -->
     <div id="page-shopping-cart-billing-shipping-delivery-information">
@@ -496,8 +557,10 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
             <?php endif; ?>
             <a class="square-cta" href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>" id="yes">Sign Into Your Account</a>            
         </div> 
+		
     <script>
-        jQuery(document).ready(function($){         
+
+        jQuery(document).ready(function($){       
 
             <?php if(!$this->isCustomerLoggedIn()): ?>
                 <?php if($isiPad): ?>
@@ -704,6 +767,8 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
             }else {
                 $j('#page-shopping-cart-billing-container').find('.save-in-address-book').hide();
             }
+			var countryIDdd = '<?= Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress()->getData('country_id') ?>';
+			jQuery('.selfcollect')[countryIDdd == 'SG' ? 'show' : 'hide']();
         });
 
         $j('#shipping-address-select').on("change", function(){
@@ -712,9 +777,32 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
             }else {
                 $j('#page-shopping-cart-shipping-container').find('.save-in-address-book').hide();
             }
+			var countryIDdd = '<?= Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress()->getData('country_id') ?>';
+			jQuery('.selfcollect')[countryIDdd == 'SG' ? 'show' : 'hide']();
         });
                 
     //]]>
+	
+	function traderselfcollectyesno(idd,iddd){
+		//alert(idd);
+		jQuery("#"+idd).removeAttr('checked');
+		
+		var tsr = jQuery("#"+iddd).val();
+		//alert(tsr);alert(iddd);
+		if(tsr == 1){
+			jQuery("#s_method_freeshipping_freeshipping").attr('checked', true);
+		}else{
+		
+		}
+		jQuery("#"+iddd).attr('checked', true);
+		
+		//window.location.href = window.location.href + "?tsc="+tsr;
+		//billing.save();		
+		//location.reload();
+		$uurl = window.location.href.split('?')[0];
+		window.location.href = $uurl + "?tsc="+tsr;
+	
+	}  	
     </script>
     </div>
 </div>

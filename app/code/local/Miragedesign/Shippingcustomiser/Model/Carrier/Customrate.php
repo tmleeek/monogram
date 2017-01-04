@@ -113,8 +113,38 @@ class Miragedesign_Shippingcustomiser_Model_Carrier_Customrate
 					$freeShipping = true;
 				}
 				$ShippingCharge = $this->getConfigData('flatrate_shipping');
-			}           
+			}    
+				
+			$traderselfcollect = 0;
+			$session = Mage::getSingleton('checkout/session');
+			$traderselfcollect = $session->getData('traderselfcollect');
+			//Mage::log('traderselfcollect='.$traderselfcollect, null, 'pglog.log');
+			
+			//$traderselfcollect = Mage::app()->getRequest()->getParam('tsc');
+			$curlpath = basename($_SERVER['HTTP_REFERER']);
+			
+			$parts = parse_url($curlpath);
+			parse_str($parts['query'], $query);			
 
+			Mage::log('curlpath=', null, 'pglogtwo.log');
+			Mage::log($query['tsc']['tsc'], null, 'pglogtwo.log');
+			
+			
+			$traderselfcollect = $query['tsc']['tsc'];
+			
+			//Mage::log('traderselfcollect='.$traderselfcollect, null, 'pglogtwo.log');
+			
+			if($traderselfcollect == 1 || $traderselfcollect == '1'){
+				$freeShipping = true;
+			}
+			
+			/*$oCheckout = Mage::getSingleton( 'checkout/session' );
+			$oQuote = $oCheckout->getQuote();
+			$oooooqtraColl = $oQuote->getTraderselfcollect();
+			Mage::log('oooooqtraColl='.$oooooqtraColl, null, 'pglog.log');
+			if($oooooqtraColl == 1){
+				$freeShipping = true;
+			}*/
             if ($freeShipping) {
                 $method->setCarrier($this->_code);
                 $method->setCarrierTitle($this->getConfigData('title'));
