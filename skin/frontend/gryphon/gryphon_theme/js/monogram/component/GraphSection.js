@@ -566,7 +566,7 @@ monogram.component.GraphSection.prototype.delayed_display_combination_index = fu
 
     var target_bg = this.hexToRgb(this.main_data_item.data_color);
     // var target_bg_str = 'rgba(' + target_bg.r + ', ' + target_bg.g + ', ' + target_bg.b + ', 0.7)'
-    var target_bg_str = 'rgba(' + target_bg.r + ', ' + target_bg.g + ', ' + target_bg.b + ', 0.6)'
+    var target_bg_str = 'rgba(' + target_bg.r + ', ' + target_bg.g + ', ' + target_bg.b + ', 0.5)'
 
     TweenMax.to($j('#graph-selction-a .graph-selection-content'), 0.5, {
       backgroundColor: target_bg_str,
@@ -596,7 +596,7 @@ monogram.component.GraphSection.prototype.delayed_display_combination_index = fu
 
     target_bg = this.hexToRgb(this.sub_data_item.data_color);
     // target_bg_str = 'rgba(' + target_bg.r + ', ' + target_bg.g + ', ' + target_bg.b + ', 0.7)'
-    target_bg_str = 'rgba(' + target_bg.r + ', ' + target_bg.g + ', ' + target_bg.b + ', 0.6)'
+    target_bg_str = 'rgba(' + target_bg.r + ', ' + target_bg.g + ', ' + target_bg.b + ', 0.5)'
 
     TweenMax.to($j('#graph-selction-b .graph-selection-content'), 0.5, {
       backgroundColor: target_bg_str,

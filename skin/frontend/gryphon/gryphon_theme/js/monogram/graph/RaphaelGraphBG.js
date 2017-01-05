@@ -141,7 +141,7 @@ monogram.graph.RaphaelGraphBG.prototype.create_circles = function() {
       // opacity: 1, 
       /// opacity: 0.7, 
       
-      opacity: 0.4, 
+      opacity: 0.1,
 
       "stroke-width":1,
       "stroke-dasharray":". ",

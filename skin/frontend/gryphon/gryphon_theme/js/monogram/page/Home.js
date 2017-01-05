@@ -650,12 +650,12 @@ monogram.page.Home.prototype.update_page_layout = function() {
 
   var space_extra = 600 - 768;
   // var target_height = $j(window).height() - space_extra - 351 - 31;
-  var target_height = $j(window).height() - space_extra - 201 - 31;
+  var target_height = $j(window).height() - space_extra - 211 - 31;
 
 
   if ($j(window).width() <=  1200) {
-    target_height -= 120;
-    target_height -= 50;
+    target_height -= 110;
+    target_height -= 30;
   }
 
 
