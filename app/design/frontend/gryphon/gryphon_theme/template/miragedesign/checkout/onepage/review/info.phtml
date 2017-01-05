@@ -214,6 +214,8 @@ function isMobile()
         </div>
     </div>
 
+    <div id="copy-page-shopping-cart-sidebar-address"></div>
+
     <div id="page-shopping-cart-cta-container" class="page-review-cta-container">
         <div class="action-container">            
             <div class="we-accept we-are-here hidden-xs">                
@@ -330,15 +332,31 @@ function isMobile()
               //   col_3.append(table_row.find('.last-image-text-container'));
 
               //   console.log('row!');
-              // }
-
-              var copyHtml = $("#page-shopping-cart-sidebar-address").html();
-              $("#page-shopping-cart-sidebar-address").hide();
-              $( ".page-review-cta-container" ).before('<div id="copy-page-shopping-cart-sidebar-address">'+copyHtml+'</div>');
-
+              // }              
 
             });
-          </script>
-          <?php endif; ?>
+        </script>
+        <?php endif; ?>
+
+        <script>
+        jQuery(document).ready(function($) {
+          function copybillingandshippingfromsidebarformobile() {
+            var copyHtml = $("#page-shopping-cart-sidebar-address").html();
+            $("#page-shopping-cart-sidebar-address").hide();
+            $( "#copy-page-shopping-cart-sidebar-address" ).html(copyHtml);            
+          }
+
+          $(window).resize(function() {
+             if ($(window).width() <= 991) {
+                copybillingandshippingfromsidebarformobile();
+             }else {
+                $( "#copy-page-shopping-cart-sidebar-address" ).html("");            
+             }
+          });
+          if ($(window).width() <= 991) {
+            copybillingandshippingfromsidebarformobile();
+          }
+        });
+        </script>
     </div>
 </div><!-- #page-shopping-cart-content -->

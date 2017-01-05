@@ -63,7 +63,7 @@ $quoteData= $quote->getData();
 							<li><a href="<?php echo Mage::getUrl('giftvoucher/index/index'); ?>">gift card</a></li>
 							<li><a href="<?php echo Mage::getUrl('rewardpoints/index/points/'); ?>">rebate history</a></li>
 							<li><a href="<?php echo Mage::getUrl('rewardpoints/index/referral/'); ?>">friend referral</a></li>
-							<li><a href="<?php echo Mage::getUrl('admin_savelayering/customer/view/'); ?>">save layering</a></li>
+							<li><a href="<?php echo Mage::getUrl('admin_savelayering/customer/view/'); ?>">saved layering</a></li>
 						<?php endif; ?>
 						<li><a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>">log out</a></li>
 					</ul>
@@ -81,7 +81,7 @@ $quoteData= $quote->getData();
 				<div class="mobile-submenu-header">About Monogram</div>
 				<ul>					
 					<li><a href="<?php echo $this->getUrl('experience'); ?>">Experience Monogram</a></li>
-          <li><a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais">Layering Suggestions</a></li>
+          <li><a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais">Layering Suggestion</a></li>
           <li><a href="<?php echo $this->getUrl('tea-layering'); ?>">Tea Layering</a></li>	            
           <li><a href="<?php echo $this->getUrl('tea-matrix'); ?>">Tea Matrix</a></li>
           <!-- <li><a href="<?php echo $this->getUrl('monolog'); ?>">Monolog</a></li>					 -->
@@ -93,7 +93,7 @@ $quoteData= $quote->getData();
 				<?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
 				<ul>
           <li><a href="<?php echo $store_category->getUrl(); ?>">Tea Store</a></li>
-          <!-- <li><a href="<?php echo $this->getUrl('subscription'); ?>">Subscription</a></li> -->
+          <li><a href="<?php echo $this->getUrl('subscription'); ?>">Subscription</a></li>
           <li><a href="<?php echo $this->getUrl('monogram-service'); ?>">Monogram Services</a></li>	
         </ul>
 			</div>
@@ -132,7 +132,7 @@ $quoteData= $quote->getData();
 		              <p>Get the latest news, product, announcments, promotions, and more!</p>
 		            </div> <!-- mobile-footer-copy -->
 
-		            <form id="mobile-newsletter-subscribe-form" class="simple-form-check">
+		            <form id="mobile-newsletter-subscribe-form" class="header-mobile-subscribe-form simple-form-check">
 		              <div class="form-group">
 		                <input type="text" name="subscribe_email" class="subscribe_email required only-email" placeholder="Enter Your Email Address">
                 		<input type="submit" class="subscribe_newsletter">
@@ -175,6 +175,45 @@ $quoteData= $quote->getData();
 		
 	</div>
 </header>
+
+<script>
+    jQuery(document).ready(function($){
+      $('.header-mobile-subscribe-form').find('.subscribe_email').keypress(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13') 
+          $('.header-mobile-subscribe-form').find('.subscribe_newsletter').trigger('click');
+      });
+      $('.header-mobile-subscribe-form').find('.subscribe_newsletter').click(function(e){
+        e.preventDefault();        
+        var subscribe_email = $(this).prev('.subscribe_email').val();
+
+        console.log(subscribe_email);
+
+        if(subscribe_email!=="" && subscribe_email!=="Enter Your Email Address") {
+
+          $('.newsletter_ajax_loader').show();
+
+          var request = $.ajax({
+              url: "<?php echo $this->getUrl('discovertea/index/subscribe', array('_secure'=>true)) ?>",
+              method: "POST",
+              data: { subscribe_email : subscribe_email },
+              dataType: "html"
+          });
+           
+          request.done(function( msg ) {
+            var message = JSON.parse(msg);
+            console.log(message);
+            $('.newsletter_ajax_loader').hide();
+            if(message.error_messages)
+              $('span.ajax_msg').html('<p>'+message.error_messages+'</p>').show().delay(5000).fadeOut();              
+              else
+              $('span.ajax_msg').html('<p>Successfully subscribed to newsletter</p>').show().delay(5000).fadeOut();
+          });
+
+        }
+      });      
+    });
+  </script>
 
 <header id="desktop-header" class="hidden-sm hidden-xs">
   <div class="container-fluid">

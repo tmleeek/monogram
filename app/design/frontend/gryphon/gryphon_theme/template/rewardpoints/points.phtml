@@ -84,7 +84,7 @@
                           <tr>
                               <?php ?><th><?php echo $this->__('Description') ?></th><?php ?>
                               <th><?php echo $this->__('Points added') ?></th>
-                              <th><?php echo $this->__('Points used') ?></th>
+                              <th><?php echo $this->__('Valid Until') ?></th>
                           </tr>
                       </thead>
                       <tbody>
@@ -96,7 +96,7 @@
                                       <?php echo $this->getTypeOfPoint($_point);?>
                                   </td>
                                   <td data-theme-label="<?php echo $this->__('Points added') ?>"><?php echo $_point->getPoints_current() ?></td>
-                                  <td data-theme-label="<?php echo $this->__('Points used') ?>"><?php echo $_point->getPoints_spent() ?></td>
+                                  <td data-theme-label="<?php echo $this->__('Valid until') ?>"><?php if ($_point->getDate_end() != ""): echo $this->formatDate($_point->getDate_end(), 'short'); endif; ?></td>
                               </tr>
                           <?php endforeach; ?>
                       </tbody>

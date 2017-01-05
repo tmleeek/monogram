@@ -102,7 +102,7 @@
               <p>Fresh approach to a unique blend of mint and bergamot. An alluring experience that promises more adventure to come.</p>
 
               <div class="cta-container">
-                <a href="javascript:void(0);" id="home-mobile-buy-both-teas-cta" class="square-cta">buy both teas</a>
+                <a href="javascript:void(0);" id="home-mobile-buy-both-teas-cta" class="home-mobile-buy-both-teas-cta square-cta">buy both teas</a>
                 <a href="#selection" class="square-cta">see more layering</a>
               </div>
             </div>
@@ -264,10 +264,23 @@
 
   <script>
     $j(document).ready(function($){
-      $('#home-mobile-buy-both-teas-cta').on('click', function(e){
+      $('.home-mobile-buy-both-teas-cta').on('click', function(e){
         e.preventDefault();
         $('#add-to-cart-shiso-mint').trigger('click');
         $('#add-to-cart-earl-grey-neroli').trigger('click');
+
+        alert('Added to cart');
+      });
+
+      $('.home-mobile-buy-both-teas-cta-2').on('click', function(e){
+        e.preventDefault();
+        var main_tea = $('.graph-selection-tea-mobile').find("#graph-selection-name-01").data("id");
+        var sub_tea = $('.graph-selection-tea-mobile').find("#graph-selection-name-02").data("id");
+        
+        $('#add-to-cart-'+main_tea).trigger('click');
+        $('#add-to-cart-'+sub_tea).trigger('click');
+
+        alert('Added to cart');
       });
     });
   </script>
@@ -427,7 +440,7 @@
           <?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
           <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta square-cta-01">visit tea store</a>
           <?php endif; ?>
-          <a href="#selection" class="square-cta square-cta-02">choose another layering</a>
+          <a href="javascript:void(0);" class="home-mobile-buy-both-teas-cta-2 square-cta square-cta-02">buy both tea</a>
         </div>
 
         <div class="button-container button-container-02">
@@ -559,7 +572,7 @@
             <p>Get the latest news, product, announcments, promotions, and more!</p>
           </div> <!-- mobile-footer-copy -->
 
-          <form id="mobile-newsletter-subscribe-form" class="simple-form-check">
+          <form id="mobile-newsletter-subscribe-form" class="home-page-mobile-subscribe-form simple-form-check">
               <div class="form-group">
                 <input type="text" name="subscribe_email" class="subscribe_email required only-email" placeholder="Enter Your Email Address">
                 <input type="submit" class="subscribe_newsletter">
@@ -601,35 +614,35 @@
 </footer>
 <script>
     jQuery(document).ready(function($){
-      $('.subscribe_email').keypress(function(event){
+      $('.home-page-mobile-subscribe-form').find('.subscribe_email').keypress(function(event){
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13') 
-          $('.subscribe_newsletter').trigger('click');
+          $('.home-page-mobile-subscribe-form').find('.subscribe_newsletter').trigger('click');
       });
-      $('.subscribe_newsletter').click(function(e){
+      $('.home-page-mobile-subscribe-form').find('.subscribe_newsletter').click(function(e){
         e.preventDefault();        
         var subscribe_email = $(this).prev('.subscribe_email').val();
 
-        console.log(subscribe_email);
+        if(subscribe_email!=="" && subscribe_email!=="Enter Your Email Address") {
+          $('.newsletter_ajax_loader').show();
 
-        $('.newsletter_ajax_loader').show();
-
-        var request = $.ajax({
-            url: "<?php echo $this->getUrl('discovertea/index/subscribe', array('_secure'=>true)) ?>",
-            method: "POST",
-            data: { subscribe_email : subscribe_email },
-            dataType: "html"
-        });
-         
-        request.done(function( msg ) {
-          var message = JSON.parse(msg);
-          console.log(message);
-          $('.newsletter_ajax_loader').hide();
-          if(message.error_messages)
-            $('span.ajax_msg').html('<p>'+message.error_messages+'</p>').show().delay(5000).fadeOut();              
-            else
-            $('span.ajax_msg').html('<p>Successfully subscribed to newsletter</p>').show().delay(5000).fadeOut();
-        });
+          var request = $.ajax({
+              url: "<?php echo $this->getUrl('discovertea/index/subscribe', array('_secure'=>true)) ?>",
+              method: "POST",
+              data: { subscribe_email : subscribe_email },
+              dataType: "html"
+          });
+           
+          request.done(function( msg ) {
+            var message = JSON.parse(msg);
+            console.log(message);
+            $('.newsletter_ajax_loader').hide();
+            if(message.error_messages)
+              $('span.ajax_msg').html('<p>'+message.error_messages+'</p>').show().delay(5000).fadeOut();              
+              else
+              $('span.ajax_msg').html('<p>Successfully subscribed to newsletter</p>').show().delay(5000).fadeOut();
+          });
+        }        
       });
 
       $('#home-mobile-save-layering').click(function(e){

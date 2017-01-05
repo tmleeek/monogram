@@ -91,6 +91,13 @@ body.billing-shipping-page{
     position: absolute;
     top: -50px;
     width: 97%;
+    @media only screen and (max-width: 991px) {
+      position: static!important;
+      width: 100%;
+      margin-bottom: 20px;
+      margin-top: -10px;
+    }
+
   }
 }
 
@@ -229,26 +236,28 @@ body.billing-shipping-page{
         height: 33px;
         input {
           padding-top: 5px;
+          width: 100%;
         }
       }
 
       @media only screen and (max-width: 320px) {
         width: 72%;
-      }
+      }      
 
-      p{
-        .body-font;
-        font-size: 10px;
-        line-height: 24px;
-        color: @off-white;
-      }
+    }
 
-
+    p.used-points-msg {
+      .body-font;
+      font-size: 10px;
+      line-height: 24px;
+      color: @off-white;
     }
 
     button.apply {
       @media only screen and (max-width: 480px) {
         width: 20%;
+        height: 30px;
+        display: inline-block;
       }
     }
 
@@ -266,6 +275,11 @@ body.billing-shipping-page{
       .display-inline-block;
       width: 160px;
       position: relative;
+
+      @media only screen and (max-width: 480px) {
+        width: 73%;
+        height: 33px;
+      }
 
       select{
         width: 100%;
@@ -311,7 +325,8 @@ body.billing-shipping-page{
     .button{
       .square-cta;
       height: auto;
-      line-height: 20px;
+      line-height: 15px;
+      padding-top: 5px;
       background: transparent;
       .display-inline-block;
 
@@ -543,6 +558,12 @@ body.billing-shipping-page{
 
     tbody{
       font-size: 0;
+
+      border-bottom: 1px solid fade(#cccccc, 20%);
+
+      @media all and (max-width: 480px) {
+        border: none;
+      }
       
       tr{ //ITEM START
         border-top: none;
@@ -810,8 +831,7 @@ body.billing-shipping-page{
 
       } //ITEM END
       
-
-      border-bottom: 1px solid fade(#cccccc, 20%);
+      
     } // tbody
 
 
@@ -849,22 +869,29 @@ body.billing-shipping-page{
   padding-top: 10px;
   padding-bottom: 5px;
 
+  @media only screen and (max-width: 480px) {
+    border: none;
+  }
+
   .row {
     @media only screen and (max-width: 480px) {
       margin: 0px;
       .col-md-6 {
         &:nth-of-type(1) {
-          border-bottom: 1px solid fade(#cccccc, 20%);
-          padding: 0px 0px 10px;
+          border-top: 1px solid fade(#cccccc, 20%);
+          padding: 10px 0px 10px;
         }
         &:nth-of-type(2) {
           padding: 8px 0px;
+          border-top: 1px solid fade(#cccccc, 20%);
+          border-bottom: 1px solid fade(#cccccc, 20%);
           a {
             padding-left: 0px!important;
           }
         }
         #update-shopping-cart {
           float: none;
+          line-height: 30px;
         }
       }
     }
@@ -957,11 +984,12 @@ body.billing-shipping-page{
   }
 
   @media only screen and (max-width: 991px) {
-    padding-left: 24px;
+    padding-left: 24px;    
   }
 
   @media only screen and (max-width: 480px) {
     padding-left: 0px;
+    padding-top: 30px;
   }
 
   
@@ -1093,7 +1121,13 @@ body.billing-shipping-page{
 
     .value{
       padding-right: 60px;
+      @media only screen and (max-width: 1024px) {
+        padding-right: 0px;
+      }
       @media only screen and (max-width: 991px) {
+        padding-right: 45px;
+      }
+      @media only screen and (max-width: 480px) {
         padding-right: 10px;
       }
 
@@ -1135,7 +1169,7 @@ body.billing-shipping-page{
 #page-shopping-cart-billing-container{
   // margin-right: 45px;
   margin-right: 25px;
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 991px) {
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 80px;
@@ -1144,7 +1178,7 @@ body.billing-shipping-page{
 #page-shopping-cart-shipping-container{
   // margin-left: 45px;
   margin-left: 25px;
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 991px) {
     margin-left: 0px;
     margin-right: 0px;
   }
@@ -1217,6 +1251,12 @@ body.billing-shipping-page{
       top: 0px;
       left: 0px;
       width: 100%;
+      
+      @media only screen and (max-width: 991px) {
+        &:after {
+          top: 0px!important;
+        }
+      }      
 
       select{
         background: transparent;
@@ -1231,11 +1271,14 @@ body.billing-shipping-page{
   .billing-shipping-checkbox-separator{
     margin-top: 30px;
     margin-bottom: 15px;
+    @media only screen and (max-width: 991px) {
+      display: none;
+    }
   }
 
   .each-input{
     padding-left: 24px;
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 991px) {
       padding-left: 0px;
       .input-box {
         width: 100%;
@@ -1318,13 +1361,15 @@ body.billing-shipping-page{
   .btn-checkout{
     .square-cta;
     height: auto;
-    line-height: 20px;
+    line-height: 15px;
     background: transparent;
     .display-inline-block;
+    padding-top: 5px;
     @media only screen and (max-width: 480px) {
       width: 100%;
       background-color: @footer-brown;
       border: none;
+      height: 35px;
     }
   }
 
@@ -1378,7 +1423,7 @@ body.billing-shipping-page{
   padding-bottom: 10px;
 
   @media only screen and (max-width: 991px) {
-    padding-top: 80px;
+    padding-top: 30px;
   }
 
   h2{

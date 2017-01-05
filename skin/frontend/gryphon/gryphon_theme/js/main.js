@@ -698,11 +698,23 @@ var initialLoad = true;
         $('#graph-social-icons').on("click", "a.fa-facebook", function(e){
             e.preventDefault();
             var share_url = $(this).attr("href");
+            var main_product_name = $(this).data("main_product_name");
+            var sub_product_name = $(this).data("sub_product_name");
+            var combine_desc = $j('#graph-section-center-copy p').html();
+
+            var main_product_img_name = main_product_name.replace(/\s+/g, '-').toLowerCase();
+
             FB.ui({
-                display: 'popup',
+                // display: 'popup',
                 method: 'share',
                 href: share_url,
+                title: main_product_name + ' + ' + sub_product_name,  // The same than name in feed method
+                picture: 'http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/images/products_svg/'+main_product_img_name+'.jpg',
+                caption: 'Monogram Tea',
+                description: combine_desc,
             }, function(response){});
+
+
         });
 
         function PopupCenter(pageURL, title,w,h) {

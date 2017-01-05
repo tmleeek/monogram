@@ -11,15 +11,13 @@
       <?php if($collection->getSize()): ?>
           <?php //echo $this->getPagerHtml() ?>
 
-          <div class="visible-md-block visible-lg-block">
-				<div id="successmsg" style="color:greenyellow;margin-top:10px;"></div>
-				<div id="ajax_loadermsg" style="color:greenyellow;margin-top:10px;display:none">Processing...Please wait.</div>
+          <div class="visible-md-block visible-lg-block">				
               <div class="table-responsive">
                   <table cellspacing="0" class="data-table linearize-table" id="reward-points-table">
                       <thead>
                           <tr>
                               <th><?php echo $this->__('Date') ?></th>
-                              <th><?php echo $this->__('Layering Product') ?></th>
+                              <th><?php echo $this->__('Layering Suggestions') ?></th>
                               <th><?php echo $this->__('Action') ?></th>                              
                           </tr>
                       </thead>
@@ -50,7 +48,9 @@
 									echo $_product1->getData('product_name_in_color') .' + '. $_product2->getData('product_name_in_color'); ?></p></td>
 									<td data-theme-label="<?php echo $this->__('Action') ?>">
 									<a class="savelayering-cta" href="/#graph/<?php echo $pname1_to_file_name; ?>/<?php echo $pname2_to_file_name; ?>">SEE LAYERING</a><span class="savelayering-cta-divider"> | </span> 
-									<a class="savelayering-cta" href="javascript:;" id="addbothincart" onclick="savebothproducts('<?php echo $pointData['products_id']; ?>')">ADD TO CART</a>
+									<a class="savelayering-cta" href="javascript:;" id="addbothincart" onclick="savebothproducts('<?php echo $pointData['products_id']; ?>', this)">ADD TO CART</a>
+                  <div class="successmsg"></div>
+                  <div class="ajax_loadermsg"><img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/></div>
 									</td>
                               </tr>
                           <?php endforeach; ?>
@@ -85,7 +85,8 @@
     }
 ?>
 <script type="text/javascript">
-	function savebothproducts(pids){					
+	function savebothproducts(pids, that){					
+
 			var dataString = 'productids='+ pids;
 
       var subscription_in_the_cart = <?php echo $subscription_in_the_cart; ?>;
@@ -97,24 +98,24 @@
           alert("This product cannot be purchased with other items in the cart. Please check out first before making this purchase.")
       } else {
 
-        jQuery("#successmsg").hide();
-        jQuery("#ajax_loadermsg").show();         
+        jQuery(that).parent().find(".successmsg").hide();
+        jQuery(that).parent().find(".ajax_loadermsg").show();         
             
             jQuery.ajax({
 				type: "POST",
 				data: dataString,
                 url: "<?php echo Mage::getUrl('savelayering/index/addproduct'); ?>"
             }).done(function(result) { 
-				jQuery("#ajax_loadermsg").hide();
-				jQuery("#successmsg").show();
-				jQuery("#successmsg").html(''+result+'');	
-				location.reload();
+
+              console.log(jQuery(that).parent());
+
+				jQuery(that).parent().find(".ajax_loadermsg").hide();
+				jQuery(that).parent().find(".successmsg").show();
+				jQuery(that).parent().find(".successmsg").html("Added to cart").delay(5000).fadeOut();	
+				// location.reload();
 				//alert(result);
             });
 
       }
 	}
-
- 
-
 </script>

@@ -55,7 +55,18 @@ if($isSubscriptionProduct == false)
             <?php $_sole = count($_shippingRateGroups) == 1; foreach ($_shippingRateGroups as $code => $_rates): ?>
                 <?php if (in_array($code, $allowedShippingMethods)) : ?>
                     <?php $_sole = $_sole && count($_rates) == 1; foreach ($_rates as $_rate): ?>
-                        <?php //print_r($_rate->getData()); exit(); ?>
+                        <?php 
+						//$session = Mage::getSingleton('checkout/session');
+						//$traderselfcollect = $session->getData('traderselfcollect');
+						$curlpath = basename($_SERVER['HTTP_REFERER']);			
+						$parts = parse_url($curlpath);
+						parse_str($parts['query'], $query);	
+						$traderselfcollect = $query['tsc']['tsc'];						
+						if($traderselfcollect == 1 || $traderselfcollect == '1'){
+							$_rate->setPrice(0);
+						}
+						
+						//print_r($_rate->getData()); exit(); ?>
                         <?php
                             $shippingAddress = Mage::getModel('sales/quote_address')->load($_rate->getAddressId());
                             $shippingCountryName = ($shippingAddress) ? Mage::getModel('directory/country')->load($shippingAddress->getCountryId())->getName() : '';
@@ -116,8 +127,8 @@ if($isSubscriptionProduct == false)
                               </div>                    
                     <?php endforeach; ?>
                 <?php else: ?>
-                <div><?php echo $this->escapeHtml($this->getCarrierName($code)) ?></div>
-                <div>
+                <div <?php if($this->getCarrierName($code) == 'Free Shipping'){ echo 'class="no-display"';} ?> ><?php echo $this->escapeHtml($this->getCarrierName($code)) ?></div>
+                <div <?php if($this->getCarrierName($code) == 'Free Shipping'){ echo 'class="no-display"';} ?>>
                     <ul>
                     <?php $_sole = $_sole && count($_rates) == 1; foreach ($_rates as $_rate): ?>
                         <?php $shippingCodePrice[] = "'".$_rate->getCode()."':".(float)$_rate->getPrice(); ?>

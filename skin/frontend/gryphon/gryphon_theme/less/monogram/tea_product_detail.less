@@ -28,6 +28,7 @@ body.product-gift-card {
 }
 
 #tea-product-detail-section-1 {
+  overflow: hidden;
   #messages_product_view {
     position: absolute;
     width: 60%;
@@ -279,31 +280,34 @@ body.product-gift-card {
       }
 
 
-      .italic {
-        // .minion-pro-italic;
-        font-size: 13.5px;
-        line-height: 22px;
+      .italic {        
+        font-size: 12.5px;
+        line-height: 18px;
       }
       #ajax_loader_product {
+        display: inline-block;
+        margin-top: 4px;
         img {
-          width: 15px;
-          position: absolute;
-          top: 5px;
-          right: -10px;
+          width: 15px;        
         }        
       }
       .ajax_msg_product {
-        position: absolute;
-        top: 27px;
+        // position: absolute;
+        // top: 0;
+        // width: 260px;
+        // right: 50px;
+        margin-top: 5px;
         width: 300px;
-        right: -200px;
+        display: block;
         color: white;
         text-align: left;
-      }
+        .body-font;
+      }      
       .validation-advice {
         margin-left: 140px;
         float: none!important;
         clear: both!important;
+        position: absolute;
       }
 
       p.j2t-loyalty-points {
@@ -377,12 +381,7 @@ body.product-gift-card {
                 }
               }
             }
-          }
-          
-
-          .dropdown {
-            width: 260px;
-          }
+          }        
 
           input[type="text"], input[type="password"], select, textarea {
             font-size: 11px; 
@@ -456,7 +455,7 @@ body.product-gift-card {
           }
 
           .col-md-4 {
-            padding: 0px;
+            // padding: 0px;
           }
           
 
@@ -605,8 +604,8 @@ body.product-gift-card {
             width: 281px;
             display: inline-block;
             vertical-align: top;
-            margin-left: 10px;
-            padding-right: 35px;
+            // margin-left: 10px;
+            // padding-right: 35px;
 
             .dropdown{
               width: 100%;
@@ -660,16 +659,27 @@ body.product-gift-card {
 
       #calendar-day_to_send {
         display: none;
+      }      
+      .product-info-col-2 {
+        width: 100%;
+        margin-left: 137px;
+        .add-to-cart-buttons {
+          text-align: left!important;
+          position: relative;
+        }
       }
     }
     .product-img {
+      width: 90%;
       @media only screen and (max-width: 991px) {
+        width: 100%;
         margin-top: -100px; // when actual product comes in may be not needed
         margin-bottom: -100px; // when actual product comes in may be not needed
       }
       @media only screen and (max-width: 480px) {
         margin-top: -60px;
       }
+      
       .slick-next, .slick-prev {
         top: 50%;
         margin-top: 0px;
@@ -698,16 +708,15 @@ body.product-gift-card {
       padding-left: 45px;
       padding-right: 45px;
       @media only screen and (max-width: 1024px) {
-        padding-right: 0px;        
+        padding-right: 0px!important;        
       }
       @media only screen and (max-width: 991px) {
-        padding-top: 40px;
-        padding-left: 0px;
-        padding-bottom: 20px;
+        padding-top: 40px!important;
+        padding-left: 0px!important;
+        padding-bottom: 20px!important;
       }
       @media only screen and (max-width: 480px) {
-        padding-top: 60px;
-        padding-bottom: 10px;
+        padding: 60px 0 10px 0!important;
       }
       h3 {
         text-transform: uppercase;
@@ -752,14 +761,21 @@ body.product-gift-card {
         position: absolute;
         top: 52px;
         width: 130%;
-        left: 31px;
+        left: 0px;
         text-align: left;
         @media only screen and (max-width: 992px) {
-          right: 118px;
+          // right: 118px;
+          position: static;
+          display: block;
+          margin-top: 10px;
+          width: 100%;
         }
       }
       .row {
         margin-bottom: 28px;
+      }
+      .availability {
+        display: none;
       }
 
       .product-info-col-2 {
@@ -768,7 +784,8 @@ body.product-gift-card {
           padding-left: 0px;
         }
         .add-to-cart-buttons {
-          text-align: right;
+          text-align: left;
+          position: relative;
         }
       }
 
@@ -821,12 +838,13 @@ body.product-gift-card {
         font-size: 10px;
         line-height: 16px;
         .body-font;      
+        display: inline-block;
+        vertical-align: middle
       }
       .plus {
         background: url(../images/icons/plus.png) no-repeat center;
         width: 10px;
         height: 10px; 
-        display: inline-block;
         display: inline-block;
         border: 1px solid @off-white;
         padding: 11px;
@@ -843,16 +861,17 @@ body.product-gift-card {
       }
 
       #add-to-cart {
-        margin-top: 17px;
+        margin-top: 20px;
         background: none;
+        line-height: 27px;
       }
 
       #ajax_loader_product {
         img {
           width: 15px;
           position: absolute;
-          top: 22px;
-          right: -10px;
+          top: 25px;
+          // right: -10px;
         }        
       }
 
@@ -877,12 +896,12 @@ body.product-gift-card {
         margin-left: -10px;
       }
       @media only screen and (max-width: 480px) {
-        width: 105%;
+        width: 106%;
         margin-left: -10px;
         margin-right: -10px;
       }
       @media only screen and (max-width: 320px) {
-        width: 106%;
+        width: 107%;
       }
     }
     .earl-grey-neroli-suggestion-bg {
@@ -970,6 +989,9 @@ body.product-gift-card {
           &:before {               
             content: "\f053";
           }
+          @media only screen and (max-width: 375px) {
+            left: -10px;
+          }
           @media only screen and (max-width: 320px) {
             left: -10px;
           }
@@ -978,6 +1000,9 @@ body.product-gift-card {
           right: 0px; 
           &:before {          
             content: "\f054";
+          }
+          @media only screen and (max-width: 375px) {
+            right: -10px;
           }
           @media only screen and (max-width: 320px) {
             right: -10px;
@@ -1099,7 +1124,7 @@ body.product-gift-card {
           left: -10%;
         }  
         @media only screen and (max-width: 320px) {
-          left: -30%;
+          left: 15%;
         }                
       }
       &.overlay {   
@@ -1112,7 +1137,7 @@ body.product-gift-card {
           left: 0%;
         }   
         @media only screen and (max-width: 320px) {
-          left: -20%;
+          left: 15%;
         }     
       }
     }
@@ -1124,7 +1149,7 @@ body.product-gift-card {
       &:before {               
         content: "\f053";
       }
-      @media only screen and (max-width: 320px) {
+      @media only screen and (max-width: 375px) {
         left: -10px;
       }
     }
@@ -1133,7 +1158,7 @@ body.product-gift-card {
       &:before {          
         content: "\f054";
       }
-      @media only screen and (max-width: 320px) {
+      @media only screen and (max-width: 375px) {
         right: -10px;
       }
     }
@@ -1293,22 +1318,24 @@ body.product-gift-card {
   p {
     color: @white;
   }
-  .submit-review {
+  .submit-btn-container {
+    position: relative;
     margin-top: 40px;
-    float: right;
+    text-align: right;
   }
   .review-input {
     position: relative;
     #ajax_loader_review {
       position: absolute;
-      right: -15px;
+      right: 110px;
       bottom: -2px;
       display: none;
+
     }
     .ajax_msg_review {
       position: absolute;
-      right: -60px;
-      bottom: 0;
+      right: 40px;
+      bottom: -22px;
     }
   }
   

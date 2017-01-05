@@ -3,7 +3,7 @@
 }
 
 #contact-section-1 {
-  padding-top: 100px;
+  padding-top: 40px;
   h1 {
     text-align: center;
     text-transform: uppercase;
@@ -14,6 +14,51 @@
     text-align: center;
     color: @off-white;
     margin-bottom: 60px;
+  }
+
+  #messages_product_view {
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 60px;
+  }
+
+  .container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .contact-content-container {    
+    #contact-img-content {
+      background: url('../images/login/login-bg.png') no-repeat;
+      width: 100%;
+      height: 786px;
+      // height: 486px;
+      background-size: cover;
+      margin-left: -10px;
+      @media only screen and (max-width: 991px) {
+        height: 386px;
+        margin-left: 0px;
+      }
+    }
+
+    #contact-col-1 {
+      @media only screen and (max-width: 991px) {
+        display: block;
+        padding: 0px;
+      }
+    }
+
+    #contact-col-2 {
+      padding-left: 40px;
+      padding-right: 50px;
+      @media only screen and (max-width: 1024px) {
+        padding-left: 50px; 
+      }
+      @media only screen and (max-width: 991px) {
+        padding: 50px 20px;
+      }
+    }
   }
 
   .inputs {

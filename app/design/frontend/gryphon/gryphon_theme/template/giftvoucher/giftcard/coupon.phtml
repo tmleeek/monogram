@@ -4,6 +4,16 @@
  */
 ?>
 
+<?php 
+$groupname = '';
+if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+    $customerData = Mage::getSingleton('customer/session')->getCustomer();
+    $customerGroupId = $customerData->getGroupId();
+    $groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();  
+} 
+?>
+<?php if($groupname!='Trader-Temp' && $groupname!='Trader-Regular' && $groupname!='Trader-Priority' && $groupname!='Trader-Premium'): ?>
+
 <?php // echo $this->getCouponHtml() ?>
 <?php $store_Id = Mage::app()->getStore()->getId(); ?>
 <?php if ( Mage::helper('giftvoucher')->getGeneralConfig('active', $store_Id) && Mage::helper('giftvoucher')->getInterfaceCheckoutConfig('show_gift_card', $store_Id)): ?>
@@ -308,4 +318,5 @@
     
 //]]>
 </script>
+<?php endif; ?>
 <?php endif; ?>

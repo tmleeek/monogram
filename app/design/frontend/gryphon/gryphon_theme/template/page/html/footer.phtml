@@ -24,9 +24,9 @@
 	          </ul>
 	        </div>
 	        <div class="col-md-2">
-	          <h5>Order Information</h5>
+	          <h5>Support</h5>
 	          <ul>
-	            <li><a href="<?php echo $this->getUrl('customer/account/create/') ?>">Account Registration</a></li>
+	            <!-- <li><a href="<?php echo $this->getUrl('customer/account/create/') ?>">Account Registration</a></li> -->
 	            <li><a href="<?php echo $this->getUrl('faq'); ?>">Frequently Asked Questions</a></li>
 	            <li><a href="<?php echo $this->getUrl('shipping-info'); ?>">Shipping Information</a></li>
 	            <li><a href="http://www.trackntrace.com.sg/">Track Order</a></li>
@@ -37,13 +37,14 @@
 	            <h5>Follow Us</h5>
 	            <ul class="social-media-icons">
 	              <li><a href="https://www.pinterest.com/monogramtea" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+                <li><a href="https://www.twitter.com/monogramtea" target="_blank"><i class="fa fa-twitter"></i></a></li>
 	              <li><a href="https://www.facebook.com/monogramtea" target="_blank"><i class="fa fa-facebook"></i></a></li>
 	              <li><a href="https://instagram.com/monogram_tea" target="_blank"><i class="fa fa-instagram"></i></a></li>
 	            </ul>
 
 	            <h5>Contact Us</h5>
 	            <a href="mailto:bespoke@monogramtea.com">bespoke@monogramtea.com</a>
-	            <a href="tel:6567792948" class="telephone">+65 67792948</a>
+	            <a href="#" class="telephone">+65 67792948</a>
 	          </div>
 	        </div>
 	        <div class="col-md-3 col-md-offset-1">
@@ -79,35 +80,39 @@
  	</footer>
 	<script>
 		jQuery(document).ready(function($){
-			$('.subscribe_email').keypress(function(event){
+			$('#footer-newsletter-input').find('.subscribe_email').keypress(function(event){
 				var keycode = (event.keyCode ? event.keyCode : event.which);
 				if(keycode == '13') 
-					$('.subscribe_newsletter').trigger('click');
+					$('#footer-newsletter-input').find('.subscribe_newsletter').trigger('click');
 			});
-			$('.subscribe_newsletter').click(function(e){
+			$('#footer-newsletter-input').find('.subscribe_newsletter').click(function(e){
         e.preventDefault();        
 				var subscribe_email = $(this).prev('.subscribe_email').val();
 
         console.log(subscribe_email);
 
-				$('.newsletter_ajax_loader').show();
+        if(subscribe_email!=="" && subscribe_email!=="Enter Your Email Address") {
 
-				var request = $.ajax({
-				  	url: "<?php echo $this->getUrl('discovertea/index/subscribe', array('_secure'=>true)) ?>",
-				  	method: "POST",
-				  	data: { subscribe_email : subscribe_email },
-				  	dataType: "html"
-				});
-				 
-				request.done(function( msg ) {
-					var message = JSON.parse(msg);
-					console.log(message);
-					$('.newsletter_ajax_loader').hide();
-					if(message.error_messages)
-						$('span.ajax_msg').html('<p>'+message.error_messages+'</p>').show().delay(5000).fadeOut();				  		
-				  	else
-						$('span.ajax_msg').html('<p>Successfully subscribed to newsletter</p>').show().delay(5000).fadeOut();
-				});
+  				$('.newsletter_ajax_loader').show();
+
+  				var request = $.ajax({
+  				  	url: "<?php echo $this->getUrl('discovertea/index/subscribe', array('_secure'=>true)) ?>",
+  				  	method: "POST",
+  				  	data: { subscribe_email : subscribe_email },
+  				  	dataType: "html"
+  				});
+  				 
+  				request.done(function( msg ) {
+  					var message = JSON.parse(msg);
+  					console.log(message);
+  					$('.newsletter_ajax_loader').hide();
+  					if(message.error_messages)
+  						$('span.ajax_msg').html('<p>'+message.error_messages+'</p>').show().delay(5000).fadeOut();				  		
+  				  	else
+  						$('span.ajax_msg').html('<p>Successfully subscribed to newsletter</p>').show().delay(5000).fadeOut();
+  				});
+
+        }
 			});
 		});
 	</script>

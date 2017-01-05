@@ -228,15 +228,15 @@ endif;
 </p>
 <div class="giftvoucher-receiver" id="giftvoucher-receiver" style="<?php if (!$_formData->getSendFriend()) echo 'display:none;' ?>">
     <div class="each-input">
-        <label for="customer_name"><?php echo $this->__('Sender name (optional):') ?></label>
-        <input type="text" class="input-text" name="customer_name" id="customer_name" value="<?php echo $_formData->getCustomerName() ?>" onchange="changeSenderName(this);" onkeyup="changeSenderName(this);" maxlength="30"/>
+        <label for="customer_name"><?php echo $this->__('Sender name') ?>*</label>
+        <input type="text" class="input-text required-entry" name="customer_name" id="customer_name" value="<?php echo $_formData->getCustomerName() ?>" onchange="changeSenderName(this);" onkeyup="changeSenderName(this);" maxlength="30"/>
     </div>
     <div class="each-input">
-        <label for="recipient_name"><?php echo $this->__('Recipient name:') ?></label>
+        <label for="recipient_name"><?php echo $this->__('Recipient name') ?>*</label>
         <input type="text" class="input-text required-entry" name="recipient_name" id="recipient_name" value="<?php echo $_formData->getRecipientName() ?>"  onchange="changeReceiverName(this);" onkeyup="changeReceiverName(this);" maxlength="30"/>
     </div>
     <div class="each-input">
-        <label class = "recipient_email" for="recipient_email"><?php echo $this->__('Recipient email:') ?></label>
+        <label class = "recipient_email" for="recipient_email"><?php echo $this->__('Recipient email') ?>*</label>
         <input type="text" class="input-text required-entry validate-email validate-same-email" name="recipient_email" id="recipient_email" value="<?php echo $_formData->getRecipientEmail() ?>" />
     </div>
     <?php //if ($this->enableCustomMessage()):   ?>
@@ -306,7 +306,7 @@ endif;
     <?php if ($this->enableScheduleSend()): ?>
         <?php echo $this->getLayout()->createBlock('core/html_calendar')->setTemplate('page/js/calendar.phtml')->toHtml() ?>
         <div class="each-input giftcard-date-box">
-            <label for="day_to_send"><?php echo $this->__('Day to send') ?></label>            
+            <label for="day_to_send"><?php echo $this->__('Day to send') ?>*</label>            
             <div class="dropdown-container">
                 <div class="row">
                     <div class="col-md-4 col-sm-4 col-xs-4">

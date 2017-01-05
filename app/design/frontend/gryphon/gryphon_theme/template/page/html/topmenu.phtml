@@ -127,7 +127,7 @@
    </nav> -->
         <ul class="main-nav">
           <li>
-          	<a href="javascript:void(0);">About</a>
+          	<a href="javascript:void(0);" class="has-submenu">About</a>
           	<ul class="sub-nav">
           		<li><a href="<?php echo $this->getUrl('experience'); ?>">Experience Monogram</a></li>
 	            <li><a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais">Layering Suggestions</a></li>
@@ -137,11 +137,19 @@
           	</ul>
           </li>
           <li>
-          	<a href="javascript:void(0);">Shop</a>
+          	<a href="javascript:void(0);" class="has-submenu">Shop</a>
           	<ul class="sub-nav">
           		<li><a href="<?php echo $store_category->getUrl(); ?>">Tea Store</a></li>
-	            <!-- <li><a href="<?php echo $this->getUrl('subscription'); ?>">Subscription</a></li> -->
+	            <li><a href="<?php echo $this->getUrl('subscription'); ?>">Subscription</a></li>
 	            <li><a href="<?php echo $this->getUrl('monogram-service'); ?>">Monogram Services</a></li>	
+          	</ul>
+          </li>
+          <li>
+          	<a href="javascript:void(0);" class="has-submenu">Support</a>
+          	<ul class="sub-nav">
+          		<li><a href="<?php echo $this->getUrl('faq'); ?>">FAQ</a></li>
+	            <li><a href="<?php echo $this->getUrl('shipping-info'); ?>">Shipping Information</a></li>
+	            <li><a href="http://www.trackntrace.com.sg/">Track Order</a></li>
           	</ul>
           </li>
           <!-- <li><a href="<?php echo $this->getUrl('monolog');?>">Monolog</a></li> -->

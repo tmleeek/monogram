@@ -353,7 +353,8 @@
             <thead>
                 <tr class="giftvoucher-grid-title">
                     <th>Gift Card Code</th>
-                    <th>Action</th>
+                    <th>Amount</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -366,7 +367,9 @@
                         <tr <?php if (($row->getCustomerCheckId() == $customer->getId() || $row->getCustomerEmail() == $customer->getEmail() ) && $row->getRecipientName()) { ?> class="gift-voucher-sent-friend" <?php } ?>>
                             <?php foreach ($columns as $id => $column): ?>
 
-                                <?php if( $column['header'] == 'Gift Card Code' || $column['header'] == 'Action'): ?>
+                                <?php //echo $column['header']; ?>
+
+                                <?php if( $column['header'] == 'Gift Card Code' || $column['header'] == 'Balance' || $column['header'] == 'Status'): ?>
                                     
                                     <td>
                                         <span class="giftvoucher-grid-title-hidden"><?php echo $column['header'] ?></span>

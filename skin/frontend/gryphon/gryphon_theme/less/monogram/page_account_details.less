@@ -85,6 +85,10 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar{
   padding-left: 40px;
   padding-right: 40px;
 
+  @media all and (max-width: 1024px) {
+    padding-left: 20px;
+  }
+
 
 
   hr{
@@ -690,6 +694,9 @@ body.monogram-page-account-details #content-wrapper .col-main{
       .display-inline-block;
       width: 50%;
       padding-top: 0px !important;
+      &.no-padding {
+        padding-left: 0px;
+      }
 
       p{
         .body-font;
@@ -708,7 +715,7 @@ body.monogram-page-account-details #content-wrapper .col-main{
       .add-input-class-font;
       background: transparent;
       padding-left: 0px;
-      width: 100%;
+      width: 95%;
     }
 
 
@@ -717,7 +724,7 @@ body.monogram-page-account-details #content-wrapper .col-main{
       .phone_no_input{
         .display-inline-block;
         // width: 75px;
-        padding-left: 40px;
+        padding-left: 50px;
       }
       #phone_no_2{
         .display-inline-block;
@@ -1137,6 +1144,10 @@ body.monogram-page-account-details #content-wrapper .col-main{
     table{
       width: 100%;
 
+      @media all and (max-width: 991px) {
+        table-layout: fixed;
+      }    
+
       tbody{
         tr{
 
@@ -1195,6 +1206,7 @@ body.monogram-page-account-details #content-wrapper .col-main{
         }
         &:last-child{
           padding-right: 10px;
+          width: auto!important;
         }
 
       }
@@ -2274,6 +2286,8 @@ body.sales-order-view{
             border-bottom: 1px solid @white;
             border-bottom: 1px solid fade(@white, 50%);
 
+            position: relative;
+
             a{
               .body-font;
               font-size: 12px;
@@ -2308,6 +2322,19 @@ body.sales-order-view{
             &:first-child{
               padding-left: 24px;
               text-align: left;
+            }
+
+            .ajax_loadermsg {
+              position: absolute;
+              right: 50px;
+              top: 26px;
+              display: none;
+            }
+
+            .successmsg {
+              position: absolute;
+              right: 70px;
+              top: 40px;
             }
 
 

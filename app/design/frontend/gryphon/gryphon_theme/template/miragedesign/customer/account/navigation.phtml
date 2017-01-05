@@ -98,6 +98,8 @@
       var target_height = $(window).height() - $('footer#desktop-footer').height();
       var content_height = $('#content-wrapper .col-main').outerHeight();
 
+      if(target_height < 500) target_height = 500;
+
       $('#content-wrapper .col-right.sidebar').css({
         'min-height': target_height + 'px',
         'height': content_height + 'px'

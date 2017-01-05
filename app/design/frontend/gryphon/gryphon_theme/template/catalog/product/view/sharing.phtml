@@ -34,9 +34,11 @@
 
     <?php $_helper = $this->helper('catalog/output'); ?>
     <?php $_productName = urlencode(trim($_helper->productAttribute($_product, $_product->getName(), 'name')))?>
-    <?php $_productImageUrl = urlencode(trim($this->helper('catalog/image')->init($_product, 'image')))?>
-    <?php $_productUrl = urlencode(trim($_product->getProductUrl()))?>
-    <!-- <li><a href="#" class="instagram"></a></li> -->
+    <?php 
+    $_productImageUrl = urlencode(trim($this->helper('catalog/image')->init($_product, 'image')));
+    $_productImageUrl_Raw = $this->helper('catalog/image')->init($_product, 'image');
+    ?>
+    <?php $_productUrl = urlencode(trim($_product->getProductUrl()))?>    
     <li>
         <!-- <a href="http://pinterest.com/pin/create/button/?url=<?php echo $_productUrl; ?>&media=<?php echo $_productImageUrl; ?>&description=<?php echo $_productName; ?>" class="pintrest" target="_blank"></a> -->
         <a href="http://pinterest.com/pin/create/button/?url=<?php echo $_productUrl; ?>&media=<?php echo $_productImageUrl; ?>&description=<?php echo $_productName; ?>" class="fa fa-pinterest" target="_blank"></a>
@@ -60,6 +62,7 @@
             display: 'popup',
             method: 'share',
             href: share_url,
+            picture: '<?php echo $_productImageUrl_Raw; ?>'
         }, function(response){});
     });
 
