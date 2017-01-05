@@ -624,7 +624,8 @@ monogram.page.Home.prototype.update_page_layout = function() {
 
 
   // TEMP GRAPH UPDATE START
-  
+    
+  /*
   var target_height = $j(window).height() - 90;
   console.log('target_height: ' + target_height);
 
@@ -638,6 +639,7 @@ monogram.page.Home.prototype.update_page_layout = function() {
   $j('#graph-center-column-container').css({
     'height': target_height + 'px'
   });
+  */
 
 
 
@@ -650,16 +652,19 @@ monogram.page.Home.prototype.update_page_layout = function() {
   var target_zoom = target_height / 600;
 
   $j('#graph-section-combination-graph').css({
-    'zoom': target_zoom
+    'zoom': target_zoom,
+    'width': target_height + 'px',
+    'height': target_height + 'px'
   });
 
 
 
 
 
-  
+  /*
   var mobile_target_zoom = 0.6333;
   var mobile_target_height = (mobile_target_zoom * 600);
+  */
   
 
   // moved to css
