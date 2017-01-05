@@ -119,16 +119,17 @@
       </div>
     </div> -->
     <div class="col-md-4">
-      <div class="monogram-page-account-details-dashboard-header-item" data-value="rebates">
-	  <?php			
-			$groupname = '';
-			if(Mage::getSingleton('customer/session')->isLoggedIn()) {
-				$customerData = Mage::getSingleton('customer/session')->getCustomer();
-				$customerGroupId = $customerData->getGroupId();
-				$groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();  
-			} 	
-			if(($groupname!='Trader-Temp' && $groupname!='Trader-Regular' && $groupname!='Trader-Priority' && $groupname=='Trader-Premium')):
-	  ?>
+      <?php     
+        $groupname = '';
+        if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+          $customerData = Mage::getSingleton('customer/session')->getCustomer();
+          $customerGroupId = $customerData->getGroupId();
+          $groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();  
+        }   
+        // echo $groupname;
+        if($groupname!='Trader-Temp' && $groupname!='Trader-Regular' && $groupname!='Trader-Priority' && $groupname!='Trader-Premium'):
+      ?>
+      <div class="monogram-page-account-details-dashboard-header-item" data-value="rebates">	  
         <div class="monogram-page-account-details-dashboard-header-icon rebates-version"></div>
         <h4>rebates</h4>
         <?php 
@@ -146,9 +147,9 @@
         }                
         ?>
         <p class="value"><?php echo $currency->format($store->convertPrice($current_point)); ?></p>
-        <a href="<?php echo $this->getUrl('rewardpoints/index/points') ?>" class="arrow-cta">see valid date</a>
-		<?php endif; ?>
+        <a href="<?php echo $this->getUrl('rewardpoints/index/points') ?>" class="arrow-cta">see valid date</a>		  
       </div>
+      <?php endif; ?>
     </div>
     <!--<div class="col-md-3">
       <div class="monogram-page-account-details-dashboard-header-item" data-value="gift-card">

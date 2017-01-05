@@ -48,32 +48,7 @@
 
                 <div class="account-login<?php if (!$this->helper('customer')->isRegistrationAllowed()) echo ' login-only' ?>">
                     <form action="<?php echo $this->getUrl("trader/customer_account/") ?>loginpost/" method="post" id="login-form" class="scaffold-form login-form">
-                        <?php echo $this->getBlockHtml('formkey'); ?>
-                        <!--<div class="col-md-6 first-col">
-                            <h1><?php if ($this->helper('customer')->isRegistrationAllowed()): ?>
-                                    <?php echo $this->__('Login or Create an Account') ?>
-                                <?php else: ?>
-                                    <?php echo $this->__('Login'); ?>
-                                <?php endif; ?></h1>
-                            <hr class="small">                        
-                            <?php if ($this->helper('customer')->isRegistrationAllowed()): ?>
-                                <div class="content">
-                                    <h2><?php echo $this->__('New Here?') ?></h2>
-                                    <p><?php echo $this->__('Registration is free and easy!') ?></p>
-                                    <ul class="benefits">
-                                        <li><?php echo $this->__('Faster checkout') ?></li>
-                                        <li><?php echo $this->__('Save multiple shipping addresses') ?></li>
-                                        <li><?php echo $this->__('View and track orders and more') ?></li>
-                                    </ul>
-                                </div>
-                                <div class=" ctas"> 
-                                    <a title="<?php echo $this->__('Create an Account') ?>" class="button sign-up-btn cta" href="<?php echo Mage::helper('persistent')->getCreateAccountUrl($this->getCreateAccountUrl()) ?>"><span><span><?php echo $this->__('Create an Account') ?></span></span></a>
-                                    <span class="or">or</span> 
-                                    <a title="<?php echo $this->__('Create a Trader Account') ?>" class="button sign-up-btn cta" href="<?php echo $this->getUrl('trader') ?>"><span><span><?php echo $this->__('Create a Trader Account') ?></span></span></a>
-
-                                </div>
-                            <?php endif; ?>
-                        </div>-->
+                        <?php echo $this->getBlockHtml('formkey'); ?>                        
                         <div class="row">
                             <div class="col-md-12">          
                               <div class="inputs">
@@ -115,16 +90,15 @@
                               <div class="login-button-container">
                                 <a class="sign-in-facebook square-cta"><i class="fa fa-facebook"></i> Sign In with Facebook</a>
                               </div>
-                              <span class="login-button-seperator">Or</span>                              
+                              <span class="login-button-seperator">Or</span>
+                              <div class="login-button-container">
+                                <a title="<?php echo $this->__('Create A Monogram Account') ?>" class=" sign-up-btn square-cta" href="<?php echo Mage::helper('persistent')->getCreateAccountUrl($this->getCreateAccountUrl()) ?>"><span><span><?php echo $this->__('Create A Monogram Account') ?></span></span></a>
+                              </div>                              
                             </div>
                         </div>
 						<div class="row">
-                            <div class="col-md-12">                             
-                              <div class="login-button-container">
-                                <a title="<?php echo $this->__('Create A Monogram Account') ?>" class=" sign-up-btn square-cta" href="<?php echo Mage::helper('persistent')->getCreateAccountUrl($this->getCreateAccountUrl()) ?>"><span><span><?php echo $this->__('Create A Monogram Account') ?></span></span></a>
-                              </div>
-							  <span class="login-button-seperator">Or</span>
-                              <div class="login-button-container">
+                            <div class="col-md-10">                              						
+                              <div class="login-button-container" style="width: 100%;text-align: center;">
                                 <a title="<?php echo $this->__('Create a Trader Account') ?>" class=" sign-up-btn square-cta" href="<?php echo $this->getUrl('trader') ?>"><span><span><?php echo $this->__('Create a Trader Account') ?></span></span></a>
                               </div>
                             </div>

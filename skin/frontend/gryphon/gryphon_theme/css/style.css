@@ -13815,7 +13815,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   vertical-align: middle;
 }
 #account-login-section-1 .login-button-container:nth-of-type(1) {
-  width: 37%;
+  width: 37.5%;
 }
 @media only screen and (max-width: 1024px) {
   #account-login-section-1 .login-button-container:nth-of-type(1) {
@@ -14581,6 +14581,7 @@ body.billing-shipping-page {
 #page-shopping-cart-sidebar-address,
 #copy-page-shopping-cart-sidebar-address {
   padding-top: 34px;
+  padding-bottom: 64px;
 }
 #page-shopping-cart-sidebar-address .billing-info,
 #copy-page-shopping-cart-sidebar-address .billing-info {

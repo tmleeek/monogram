@@ -130,7 +130,7 @@ function isMobile()
                                 <th width="10%" colspan="<?php echo $colspan ?>" class="a-center hidden-xs"><h2><?php echo $this->__('Unit Price') ?></h2></th>
                                 <th width="10%" rowspan="<?php echo $rowspan ?>" class="a-center"><h2><?php echo $this->__('Quantity') ?></h2></th>
                                 <th colspan="<?php echo $colspan ?>" class="a-center hidden-xs"><h2><?php echo $this->__('Subtotal') ?></h2></th>
-                                <th rowspan="<?php echo $rowspan ?>" class="a-center hidden-xs">&nbsp;</th>
+                                <th rowspan="<?php echo $rowspan ?>" class="a-center hidden-xs" style="width: 1px;">&nbsp;</th>
                             </tr>
                             <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
                                 <tr>
@@ -224,6 +224,7 @@ function isMobile()
                     <li><i class="fa fa-cc-visa"></i></li>
                     <li><i class="fa fa-cc-amex"></i></li>
                     <li><i class="fa fa-cc-mastercard"></i></li>
+                    <li><i class="fa fa-cc-paypal"></i></li>
                 </ul>
             </div>
             <?php echo $this->getChildHtml('button') ?>
@@ -237,6 +238,7 @@ function isMobile()
                     <li><i class="fa fa-cc-visa"></i></li>
                     <li><i class="fa fa-cc-amex"></i></li>
                     <li><i class="fa fa-cc-mastercard"></i></li>
+                    <li><i class="fa fa-cc-paypal"></i></li>
                 </ul>
             </div>
         </div>       
