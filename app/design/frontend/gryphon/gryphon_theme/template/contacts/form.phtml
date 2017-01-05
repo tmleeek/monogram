@@ -116,10 +116,11 @@
         <script type="text/javascript">
             jQuery(document).ready(function($) {
               $(".phone_no_input, .mobile_no_input").intlTelInput({
-                defaultCountry: 'sg',
+                initialCountry: 'sg',
                 nationalMode: false,
                 autoHideDialCode: true,
-                autoPlaceholder: false
+                autoPlaceholder: false,
+                preferredCountries: []
               });
 
               $('#first_name').on('change', function(e){

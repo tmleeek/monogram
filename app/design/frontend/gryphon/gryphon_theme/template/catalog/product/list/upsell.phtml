@@ -33,6 +33,10 @@
     $product_id = $this->getProduct()->getId();    
     $_product = $object->load($product_id);
     $upsell_product = $_product->getUpSellProductCollection()->addAttributeToSort('position', Varien_Db_Select::SQL_ASC)->addStoreFilter(); 
+
+
+    $main_product_name = strtolower(str_replace(" ", "-", $_product->getName()));
+
     $count = count($upsell_product);
     ?>
     <ul class="suggestion-list all-products <?php if($count > 3): ?>two-column <?php echo $count; ?><?php endif; ?>">
@@ -40,10 +44,17 @@
         <?php foreach($upsell_product as $_upsell): ?>
             <?php 
             $upsp = $object->load($_upsell->getId());
-            $add_to_cart_url = Mage::helper('checkout/cart')->getAddUrl($upsp); ?>
+            $add_to_cart_url = Mage::helper('checkout/cart')->getAddUrl($upsp);
+            $upsp_name = strtolower(str_replace(" ", "-", $upsp->getName()));
+            $base_url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB);
+            ?>
             <li class="each-product">
-                <a href="<?php echo $upsp->getProductUrl() ?>" title="<?php echo $this->escapeHtml($upsp->getName()) ?>" class="product-image img-responsive">
-                    <img src="<?php echo $this->helper('catalog/image')->init($upsp, 'thumbnail')->backgroundColor(array(0, 0, 0))->constrainOnly(false)->keepAspectRatio(true)->keepFrame(true)->resize(140, 104) ?>" alt="<?php echo $this->escapeHtml($upsp->getName()) ?>" />
+                <a href="<?php echo $upsp->getProductUrl() ?>" data-graph-link="<?php echo $base_url . '#graph/'.$main_product_name.'/'.$upsp_name; ?>" title="<?php echo $this->escapeHtml($upsp->getName()) ?>" class="product-image img-responsive">
+                    <img class="actual-product-image" src="<?php echo $this->helper('catalog/image')->init($upsp, 'thumbnail')->backgroundColor(array(0, 0, 0))->constrainOnly(false)->keepAspectRatio(true)->keepFrame(true)->resize(140, 104) ?>" alt="<?php echo $this->escapeHtml($upsp->getName()) ?>" />
+                    <div class="graph-combination-hover-img">
+                      <div class="graph-img-1" style="background-image: url(<?php echo $this->getSkinUrl('images/products_svg/'.$upsp_name.'.svg'); ?>)"></div>
+                      <div class="graph-img-2" style="background-image: url(<?php echo $this->getSkinUrl('images/products_svg/'.$main_product_name.'.svg'); ?>)"></div>
+                    </div>
                 </a>
                 <ul>
                     <li><a href="<?php echo $upsp->getProductUrl() ?>" class="view-details"><?php echo $upsp->getName() ?></a></li>
@@ -153,6 +164,8 @@ $j(document).ready(function(){
           // alert("Added to cart.")
       }  
     });
+
+    $j('.graph-combination-hover-img')
 });
 </script>
 
