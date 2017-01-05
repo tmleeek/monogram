@@ -18,7 +18,7 @@ class Aemtech_Trader_Customer_AccountController extends Mage_Customer_AccountCon
     /**
      * Login post action
      */
-    public function loginPostAction() {
+    public function loginPostAction() {        
 
         if (!$this->_validateFormKey()) {
             $this->_redirect('*/*/');

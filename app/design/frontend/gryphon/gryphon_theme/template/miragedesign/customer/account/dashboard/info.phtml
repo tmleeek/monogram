@@ -113,7 +113,7 @@ if(Mage::getSingleton('customer/session')->isLoggedIn()) {
             </div>
 
             <div class="each-input hidden-xs">
-                <h2><?php echo $this->__('phone no.'); ?></h2>
+                <h2><?php echo $this->__('telephone'); ?></h2>
                 <p>
                     <?php if ($billingAddress) :?>
                         <?php echo $billingAddress->getTelephone(); ?>
@@ -125,7 +125,7 @@ if(Mage::getSingleton('customer/session')->isLoggedIn()) {
         </div>
         <div class="visible-xs-block col-xs-6">
             <div class="each-input">
-                <h2><?php echo $this->__('phone no.'); ?></h2>
+                <h2><?php echo $this->__('telephone'); ?></h2>
                 <p>
                     <?php if ($billingAddress) :?>
                         <?php echo $billingAddress->getTelephone(); ?>
