@@ -94,7 +94,8 @@ html{
     width: 600px;
     height: 600px;
     // margin-top: -300px + 70px;
-    margin-top: -355px;
+    /// margin-top: -355px;
+    margin-top: -390px;
     margin-left: -300px;
 
     #graph-section-combination-graph-margin{
@@ -123,14 +124,14 @@ html{
 
 #graph-selction-a{
   position: fixed;
-  top: 50%;
+  top: 45%;
   left: 60px;
   margin-top: 100px;
   transform: translate(0, -50%);
 }
 #graph-selction-b{
   position: fixed;
-  top: 50%;
+  top: 45%;
   right: 60px;
   margin-top: 100px;
   transform: translate(0, -50%);
@@ -184,14 +185,29 @@ html{
 
 
 
+
+
+
 @media only screen and (max-width: 1180px) {
+
+  #graph-selction-a{
+    left: 40px;
+  }
+  #graph-selction-b{
+    right: 40px;
+  }
 
   #graph-section-center-copy {
     padding-left: 30px;
     padding-right: 30px;
 
     p{
-      width: auto;
+      width: auto !important;
+    }
+
+    .cta-container{
+      margin-left: -40px;
+      margin-right: -40px;
     }
   }
   #graph-social-icons-v2-container {
@@ -201,12 +217,26 @@ html{
 }
 
 @media only screen and (max-width: 1024px) {
+  #graph-selction-a{
+    left: 20px;
+  }
+  #graph-selction-b{
+    right: 20px;
+  }
+
+
 
   #graph-section-center-copy {
     padding-left: 50px;
     padding-right: 50px;
+
     p{
-      width: auto;
+      width: auto !important;
+    }
+
+    .cta-container{
+      margin-left: -60px;
+      margin-right: -60px;
     }
   }
   #graph-social-icons-v2-container {
@@ -469,7 +499,8 @@ html{
     // .header-font;
     .header-font-02;
     // font-size: 16px;
-    font-size: 15px;
+    /// font-size: 15px;
+    font-size: 14px;
 
     line-height: 20px;
     text-transform: uppercase;
@@ -500,8 +531,10 @@ html{
   .tea-copy-content{
     .body-font;
     // font-size: 12px;
+    /// font-size: 11px;
+    //// font-size: 11.5px;
     font-size: 11px;
-    font-size: 11.5px;
+
     //line-height: 19px;
     line-height: 18px;
     letter-spacing: 0.03em;
@@ -509,8 +542,10 @@ html{
     p{
       .body-font;
       // font-size: 12px;
+      /// font-size: 11px;
+      //// font-size: 11.5px;
       font-size: 11px;
-      font-size: 11.5px;
+
       //line-height: 19px;
       line-height: 18px;
       letter-spacing: 0.03em;
@@ -522,6 +557,10 @@ html{
   }
   .tea-detail{
     margin-bottom: 14px;
+
+    p{
+      font-size: 11px;
+    }
   }
 
   .square-cta{
@@ -776,12 +815,15 @@ html{
   h2{
     .header-font-02;
     // font-size: 14px;
-    font-size: 16px;
+    /// font-size: 16px;
+    font-size: 15px;
+
     line-height: 20px;
     text-transform: uppercase;
     letter-spacing: 0.12em;
 
-    margin-bottom: 8px;
+    // margin-bottom: 8px;
+    margin-bottom: 3px;
 
     sup{
       .header-font;
@@ -820,7 +862,10 @@ html{
   .cta-container{
     font-size: 0px;
     // padding-top: 24px;
-    padding-top: 30px;
+    
+    // padding-top: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 
     .square-cta{
       margin-left: 10px;
@@ -836,6 +881,12 @@ html{
 
 
 #graph-section-center-copy{
+  #graph-social-icons-v2{
+    .opacity(0);
+    .text-fade-out;
+    .dd8;
+  }
+
   h2{
     .opacity(0);
     .text-fade-out;
@@ -866,29 +917,35 @@ html{
 }
 
 #graph-section-center-copy.animate-in{
-  h2{
+  #graph-social-icons-v2{
     .text-fade-in;
     .dd1;
   }
+  h2{
+    .text-fade-in;
+    .dd2;
+  }
   p{
     .text-fade-in;
-    .dd3;
+    .dd4;
   }
   .square-cta-01{
     .left-fade-in;
-    .dd6;
+    .dd7;
   }
   .square-cta-02{
     //.text-fade-in;
     //.left-fade-in;
     .alpha-in;
-    .dd6;
+    .dd8;
   }
   .square-cta-03{
     .right-fade-in;
-    .dd6;
+    .dd8;
   }
 }
+
+
 
 
 

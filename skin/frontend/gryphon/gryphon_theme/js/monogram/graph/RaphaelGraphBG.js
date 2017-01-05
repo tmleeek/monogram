@@ -139,7 +139,10 @@ monogram.graph.RaphaelGraphBG.prototype.create_circles = function() {
     circle_shape.attr({
       stroke: "#f1efee", 
       // opacity: 1, 
-      opacity: 0.7, 
+      /// opacity: 0.7, 
+      
+      opacity: 0.4, 
+
       "stroke-width":1,
       "stroke-dasharray":". ",
     });
