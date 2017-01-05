@@ -16536,6 +16536,9 @@ body.monogram-page-account-details #content-wrapper .col-main .each-input .input
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+body.monogram-page-account-details #content-wrapper .col-main .each-input .input-box.no-padding {
+  padding-left: 0px;
+}
 body.monogram-page-account-details #content-wrapper .col-main .each-input .input-box p {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
@@ -16573,7 +16576,7 @@ body.monogram-page-account-details #content-wrapper .col-main .each-input .intl-
   vertical-align: top;
   *display: inline;
   zoom: 1;
-  padding-left: 40px;
+  padding-left: 50px;
 }
 body.monogram-page-account-details #content-wrapper .col-main .each-input .intl-tel-input #phone_no_2 {
   display: inline-block;

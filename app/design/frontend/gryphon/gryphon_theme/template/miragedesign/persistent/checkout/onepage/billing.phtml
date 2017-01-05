@@ -622,104 +622,68 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                 }); 
             <?php endif; ?>        
 
-            function setAllPhoneFaxInputs($telephone, $phone_no, $phone_no_2, type) {
-                $phone_no.intlTelInput({
-                    defaultCountry: 'sg',
-                    nationalMode: false,
-                    autoHideDialCode: false,
-                    autoPlaceholder: false                
-                  });
-                $telephone.intlTelInput();
-
-                $phone_no.on('change', function() {
-                    var finalNo = $(this).val() + $phone_no_2.val();
-                    $telephone.val(finalNo);
-                });
-
-                $phone_no_2.keyup(function() {
-                    var finalNo = $phone_no.val() + $(this).val();
-                    $telephone.val(finalNo);
-                });
-
-                $phone_no_2.on('change', function() {
-                    var finalNo = $phone_no.val() + $(this).val();
-                    $telephone.val(finalNo);
-                });
-
-                // setting up value to inputs
-                var countryCode = $telephone.intlTelInput("getSelectedCountryData").dialCode;
-                $phone_no.intlTelInput("setNumber", countryCode);
-
-                var current_number = $telephone.intlTelInput("getNumber");
-                var current_number_without_country_code = current_number.replace('+'+countryCode, '');        
-                $phone_no_2.val(current_number_without_country_code);
-
-                <?php if(!$this->getAddress()->getTelephone()): ?>
-                    jQuery("#billing_phone_no").intlTelInput("selectCountry", 'sg');           
-                    jQuery("#shipping_phone_no").intlTelInput("selectCountry", 'sg');           
-                <?php endif; ?>
-
-                <?php if(!$this->getAddress()->getFax()): ?>
-                    jQuery("#billing_fax_no").intlTelInput("selectCountry", 'sg');           
-                    jQuery("#shipping_fax_no").intlTelInput("selectCountry", 'sg');           
-                <?php endif; ?>
-            }
-
-            var $billing_phone_no = $("#billing_phone_no");
-            var $billing_phone_no_2 = $("#billing_phone_no_2");
+            
             var $billing_telephone = $('input[name="billing[telephone]"]');
-
-            // setAllPhoneFaxInputs($billing_telephone, $billing_phone_no, $billing_phone_no_2, 'billing_phone');
-
             $billing_telephone.intlTelInput({
-                defaultCountry: 'sg',
+                initialCountry: 'sg',
                 nationalMode: false,
                 autoHideDialCode: true,
-                autoPlaceholder: false  
+                autoPlaceholder: false,
+                preferredCountries: []  
             });
-
-
-            var $shipping_phone_no = $("#shipping_phone_no");
-            var $shipping_phone_no_2 = $("#shipping_phone_no_2");
+            
             var $shipping_telephone = $('input[name="shipping[telephone]"]');
-
             $shipping_telephone.intlTelInput({
-                defaultCountry: 'sg',
+                initialCountry: 'sg',
                 nationalMode: false,
                 autoHideDialCode: true,
-                autoPlaceholder: false  
+                autoPlaceholder: false,
+                preferredCountries: []  
             });
 
-            // setAllPhoneFaxInputs($shipping_telephone, $shipping_phone_no, $shipping_phone_no_2, 'shipping_phone');
-
-            var $billing_fax_no = $("#billing_fax_no");
-            var $billing_fax_no_2 = $("#billing_fax_no_2");
             var $billing_fax = $('input[name="billing[fax]"]');
-
             $billing_fax.intlTelInput({
-                defaultCountry: 'sg',
+                initialCountry: 'sg',
                 nationalMode: false,
                 autoHideDialCode: true,
-                autoPlaceholder: false  
+                autoPlaceholder: false,
+                preferredCountries: []  
             });
-            // setAllPhoneFaxInputs($billing_fax, $billing_fax_no, $billing_fax_no_2, 'billing_fax');
 
-            var $shipping_fax_no = $("#shipping_fax_no");
-            var $shipping_fax_no_2 = $("#shipping_fax_no_2");
             var $shipping_fax = $('input[name="shipping[fax]"]');
-
             $shipping_fax.intlTelInput({
-                defaultCountry: 'sg',
+                initialCountry: 'sg',
                 nationalMode: false,
                 autoHideDialCode: true,
-                autoPlaceholder: false  
-            });
-            // setAllPhoneFaxInputs($shipping_fax, $shipping_fax_no, $shipping_fax_no_2, 'shipping_fax');
+                autoPlaceholder: false,
+                preferredCountries: []  
+            });            
 
             $('select[name="billing[country_id]"]').on('change', function(e){
                 e.preventDefault();
+
                 if(document.getElementById('shipping:same_as_billing').checked)
                     shipping.setSameAsBilling(true);
+
+                var country = $(this).val();
+                console.log(country);
+
+                console.log($billing_telephone)
+
+                $billing_telephone.intlTelInput("setCountry", "gb");
+                $billing_fax.intlTelInput("setCountry", "gb");
+
+            });
+
+            $('select[name="shipping[country_id]"]').on('change', function(e){
+                e.preventDefault();
+
+                var country = $(this).val();
+                console.log(country);
+
+                $shipping_telephone.intlTelInput("setCountry", country);
+                $shipping_fax.intlTelInput("setCountry", country);
+
             });
             
         });
