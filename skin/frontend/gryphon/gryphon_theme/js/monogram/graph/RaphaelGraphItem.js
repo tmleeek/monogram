@@ -275,7 +275,8 @@ monogram.graph.RaphaelGraphItem.prototype.create_graph = function(){
   // change graph color instant
   
   TweenMax.to(this.graph_shape, 0.0, {raphael:{
-    fill: this.graph_data.data_color
+    // fill: this.graph_data.data_color
+    fill: 'r#fff-#000'
   }});
 
 };

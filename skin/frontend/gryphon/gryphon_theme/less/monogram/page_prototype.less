@@ -78,6 +78,71 @@ html{
 
 
 
+//    _   _ _______        __
+//   | \ | | ____\ \      / /
+//   |  \| |  _|  \ \ /\ / /
+//   | |\  | |___  \ V  V /
+//   |_| \_|_____|  \_/\_/
+//
+
+#graph-section {
+
+  #graph-section-combination-graph-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    margin-top: -300px + 70px;
+    margin-left: -300px;
+
+    #graph-section-combination-graph{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 600px;
+      height: 600px;
+
+      zoom: 1;
+      .scale(1);
+      .transform-origin(50%, 50%);
+    }
+  }
+
+} // #graph-section
+
+
+#graph-selction-a{
+  position: fixed;
+  top: 50%;
+  left: 60px;
+  margin-top: 70px;
+  transform: translate(0, -50%);
+}
+#graph-selction-b{
+  position: fixed;
+  top: 50%;
+  right: 60px;
+  margin-top: 70px;
+  transform: translate(0, -50%);
+}
+
+#graph-section-center-copy-container{
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -156,6 +221,7 @@ html{
 .graph-selection{
   
 
+  /*
   .graph-selection-title{
     text-align: center;
     min-height: 60px;
@@ -172,6 +238,8 @@ html{
       text-transform: uppercase;
     }
   }
+  */
+  
   .graph-selection-content{
 
     position: relative;
@@ -623,7 +691,7 @@ html{
 
 
   // margin-top: -27px;
-  margin-top: -10px;
+  // margin-top: -10px;     // removed jan 05
 
 
   h2{

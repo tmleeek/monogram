@@ -453,6 +453,11 @@ monogram.component.GraphSection.prototype.display_combination_index = function(m
 
       
 
+
+
+      // not needed anymore
+      
+      /*
       var a_num = '' + (this.main_index + 1);
       var b_num = '' + (this.sub_index + 1);
       var a_total = '' + (this.main_array.length);
@@ -465,6 +470,14 @@ monogram.component.GraphSection.prototype.display_combination_index = function(m
 
       $j('#graph-selction-a .graph-selection-title .number').html(a_num + ' / ' + a_total);
       $j('#graph-selction-b .graph-selection-title .number').html(b_num + ' / ' + b_total);
+      */
+
+
+
+
+
+
+
 
       var target_bg = this.hexToRgb('#766c67');
       console.log(target_bg);
