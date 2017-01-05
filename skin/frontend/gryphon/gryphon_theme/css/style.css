@@ -6024,6 +6024,12 @@ p {
 #desktop-footer #desktop-footer-ctas-container .footer-follow-us-section {
   padding-left: 30px;
 }
+#desktop-footer #desktop-footer-ctas-container .footer-follow-us-section .telephone {
+  cursor: default;
+}
+#desktop-footer #desktop-footer-ctas-container .footer-follow-us-section .telephone:hover {
+  color: #f1efee !important;
+}
 #desktop-footer #desktop-footer-ctas-container #footer-newsletter-input {
   position: relative;
 }
@@ -8061,6 +8067,7 @@ textarea {
 }
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #756b66 inset;
+  color: #f1efee;
 }
 .add-input-class-styling {
   background-color: #756b66;
@@ -12366,6 +12373,9 @@ body.tea-layering-detail-page {
   display: inline-block;
   color: #f1efee;
 }
+#tea-store-section-1 .tea-store-product-info span.price .price-to {
+  display: none;
+}
 .tea-product-detail-page {
   overflow: visible;
 }
@@ -12614,8 +12624,8 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   text-align: right;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .italic {
-  font-size: 13.5px;
-  line-height: 22px;
+  font-size: 12.5px;
+  line-height: 18px;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content #ajax_loader_product {
   display: inline-block;

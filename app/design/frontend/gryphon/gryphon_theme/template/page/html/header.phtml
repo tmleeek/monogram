@@ -181,7 +181,7 @@ $quoteData= $quote->getData();
       $('.header-mobile-subscribe-form').find('.subscribe_email').keypress(function(event){
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13') 
-          $('.subscribe_newsletter').trigger('click');
+          $('.header-mobile-subscribe-form').find('.subscribe_newsletter').trigger('click');
       });
       $('.header-mobile-subscribe-form').find('.subscribe_newsletter').click(function(e){
         e.preventDefault();        
@@ -189,24 +189,28 @@ $quoteData= $quote->getData();
 
         console.log(subscribe_email);
 
-        $('.newsletter_ajax_loader').show();
+        if(subscribe_email!=="" && subscribe_email!=="Enter Your Email Address") {
 
-        var request = $.ajax({
-            url: "<?php echo $this->getUrl('discovertea/index/subscribe', array('_secure'=>true)) ?>",
-            method: "POST",
-            data: { subscribe_email : subscribe_email },
-            dataType: "html"
-        });
-         
-        request.done(function( msg ) {
-          var message = JSON.parse(msg);
-          console.log(message);
-          $('.newsletter_ajax_loader').hide();
-          if(message.error_messages)
-            $('span.ajax_msg').html('<p>'+message.error_messages+'</p>').show().delay(5000).fadeOut();              
-            else
-            $('span.ajax_msg').html('<p>Successfully subscribed to newsletter</p>').show().delay(5000).fadeOut();
-        });
+          $('.newsletter_ajax_loader').show();
+
+          var request = $.ajax({
+              url: "<?php echo $this->getUrl('discovertea/index/subscribe', array('_secure'=>true)) ?>",
+              method: "POST",
+              data: { subscribe_email : subscribe_email },
+              dataType: "html"
+          });
+           
+          request.done(function( msg ) {
+            var message = JSON.parse(msg);
+            console.log(message);
+            $('.newsletter_ajax_loader').hide();
+            if(message.error_messages)
+              $('span.ajax_msg').html('<p>'+message.error_messages+'</p>').show().delay(5000).fadeOut();              
+              else
+              $('span.ajax_msg').html('<p>Successfully subscribed to newsletter</p>').show().delay(5000).fadeOut();
+          });
+
+        }
       });      
     });
   </script>
