@@ -10,7 +10,11 @@
   position: fixed;
   width: 150px;
   top: 50%;
-  left: 60px;
+
+  // left: 60px;
+  left: 7%;
+
+
   // margin-top: -460px / 2;
   transform: translate(0%, -50%);
 
@@ -43,6 +47,27 @@
 }
 
 
+
+
+@media only screen and (max-width: 1330px) {
+  #page-indicator {
+    left: 60px;
+  }
+}
+@media only screen and (max-width: 1180px) {
+  #page-indicator {
+    left: 40px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  #page-indicator {
+    left: 20px;
+  }
+}
+
+
+
 #tea-matrix-content-section-1,
 #tea-matrix-content-section-2,
 #tea-matrix-content-section-3,
@@ -62,7 +87,10 @@
   position: fixed;
   width: 320px;
   top: 50%;
-  right: 60px;
+
+  // right: 60px;
+  right: 7%;
+
   transform: translate(0%, -50%);
 
   .transform-origin(100%,50%);
@@ -70,6 +98,29 @@
   pointer-events: none;
 
   background: transparent;
+}
+
+
+
+@media only screen and (max-width: 1330px) {
+
+  #tea-matrix-content-section-1, #tea-matrix-content-section-2, #tea-matrix-content-section-3, #tea-matrix-content-section-4, #tea-matrix-content-section-5, #tea-matrix-content-section-6,
+  #tea-matrix-content-section-7, #tea-matrix-content-section-8, #tea-matrix-content-section-9, #tea-matrix-content-section-10, #tea-matrix-content-section-11, #tea-matrix-content-section-12, #tea-matrix-content-section-13, #tea-matrix-content-section-14, #tea-matrix-content-section-15{
+    left: 60px;
+  }
+}
+@media only screen and (max-width: 1180px) {
+  #tea-matrix-content-section-1, #tea-matrix-content-section-2, #tea-matrix-content-section-3, #tea-matrix-content-section-4, #tea-matrix-content-section-5, #tea-matrix-content-section-6,
+  #tea-matrix-content-section-7, #tea-matrix-content-section-8, #tea-matrix-content-section-9, #tea-matrix-content-section-10, #tea-matrix-content-section-11, #tea-matrix-content-section-12, #tea-matrix-content-section-13, #tea-matrix-content-section-14, #tea-matrix-content-section-15{
+    left: 40px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  #tea-matrix-content-section-1, #tea-matrix-content-section-2, #tea-matrix-content-section-3, #tea-matrix-content-section-4, #tea-matrix-content-section-5, #tea-matrix-content-section-6,
+  #tea-matrix-content-section-7, #tea-matrix-content-section-8, #tea-matrix-content-section-9, #tea-matrix-content-section-10, #tea-matrix-content-section-11, #tea-matrix-content-section-12, #tea-matrix-content-section-13, #tea-matrix-content-section-14, #tea-matrix-content-section-15{
+    left: 20px;
+  }
 }
 
 

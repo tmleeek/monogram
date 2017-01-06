@@ -235,7 +235,8 @@ monogram.page.Home.prototype.display_graph_section = function(){
 
   this.intro_section.removeClass('slide-animate-in');
   this.tea_selection_section.removeClass('slide-animate-in');
-  this.graph_section_element.addClass('slide-animate-in');
+  
+  // this.graph_section_element.addClass('slide-animate-in');   // moved
 
 
   
@@ -266,10 +267,10 @@ monogram.page.Home.prototype.display_graph_section = function(){
     this.has_displayed_guide = true;
     TweenMax.killTweensOf($('#graph-desktop-guide-container'));
 
-    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:1, delay: 2});
-    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:0, delay: 3.5});
+    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:1, delay: 0});
+    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:0, delay: 1.5});
 
-    TweenMax.delayedCall(4, this.display_graph_section_delayed_a_little_before, [], this);    // IMPORTANT
+    TweenMax.delayedCall(2, this.display_graph_section_delayed_a_little_before, [], this);    // IMPORTANT
 
   } else {
 
@@ -287,6 +288,8 @@ monogram.page.Home.prototype.display_graph_section = function(){
 // for that additional delay they wanted..
 monogram.page.Home.prototype.display_graph_section_delayed_a_little_before = function(){
   TweenMax.delayedCall(1, this.display_graph_section_delayed, [], this);
+
+  this.graph_section_element.addClass('slide-animate-in');    // this was moved.
 
   if(this.graph_section != null){
     this.graph_section.enable_graph();
