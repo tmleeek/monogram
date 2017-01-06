@@ -21,18 +21,11 @@ $count = 1;
 
 
 
-
+<style id="graph-zooming-style"></style>
 
 <article id="tea-matrix-section-1" class="visible-md visible-lg">
 
-  <ul id="page-indicator">
-    <?php foreach ($_productCollection as $key => $_product):            
-        $product_name = $_product->getName();
-    ?>
-    <li id="page-indicator-<?php echo $count; ?>" data-menuanchor="<?php echo $count; ?>" class="<?php echo ($count==1) ? 'active' : ''; ?> page-indicator"><a href="#<?php echo $count; ?>" class="anchor" id="anchor-<?php echo $count; ?>"><?php echo ($_product->getData('product_name_in_color')) ? $_product->getData('product_name_in_color') : $product_name ; ?></a></li>
-    <?php $count++; ?>
-    <?php endforeach; ?>
-  </ul>
+  
 
 
 
@@ -50,29 +43,6 @@ $count = 1;
     </div>  
   </div>     
   <div id="tea-matrix-content">
-
-      <div id="monograph-graph-data" 
-        data-graph-data-url="/skin/frontend/gryphon/gryphon_theme/json/graph-data.json">
-      </div>
-
-      <div id="tea-matrix-combination-graph-container-another-one">
-        <div id="tea-matrix-combination-graph" class="monogram-combination-graph" data-id="cherry-japonais">
-          <div class="graph-svg"></div>                
-          <div class="graph-name-overlay">
-            <div class="graph-name-item floral-version"></div>
-            <div class="graph-name-item creamy-version"></div>
-            <div class="graph-name-item marine-version"></div>
-            <div class="graph-name-item mineral-version"></div>
-            <div class="graph-name-item citrus-version"></div>
-            <div class="graph-name-item fruity-version"></div>
-            <div class="graph-name-item sweet-version"></div>
-            <div class="graph-name-item wood-version"></div>
-            <div class="graph-name-item herbaceous-version"></div>
-          </div>
-          <div class="graph-overlay"></div>
-        </div>
-      </div>
-
 
       <div id="tea-matrix-content-section-container-container">
         <?php 
@@ -121,7 +91,46 @@ $count = 1;
         <?php endforeach; ?>
       </div> <!-- #tea-matrix-content-section-container-container -->
 
+
+
+      <div id="monograph-graph-data" 
+        data-graph-data-url="/skin/frontend/gryphon/gryphon_theme/json/graph-data.json">
+      </div>
+
+      <div id="tea-matrix-combination-graph-container-another-one">
+        <div id="tea-matrix-combination-graph" class="monogram-combination-graph" data-id="cherry-japonais">
+          <div class="graph-svg"></div>                
+          <div class="graph-name-overlay">
+            <div class="graph-name-item floral-version"></div>
+            <div class="graph-name-item creamy-version"></div>
+            <div class="graph-name-item marine-version"></div>
+            <div class="graph-name-item mineral-version"></div>
+            <div class="graph-name-item citrus-version"></div>
+            <div class="graph-name-item fruity-version"></div>
+            <div class="graph-name-item sweet-version"></div>
+            <div class="graph-name-item wood-version"></div>
+            <div class="graph-name-item herbaceous-version"></div>
+          </div>
+          <div class="graph-overlay"></div>
+        </div>
+      </div>
+
+
+      
+
   </div>
+
+
+  <ul id="page-indicator">
+    <?php $count = 1; ?>
+    <?php foreach ($_productCollection as $key => $_product):            
+        $product_name = $_product->getName();
+    ?>
+    <li id="page-indicator-<?php echo $count; ?>" data-menuanchor="<?php echo $count; ?>" class="<?php echo ($count==1) ? 'active' : ''; ?> page-indicator"><a href="#<?php echo $count; ?>" class="anchor" id="anchor-<?php echo $count; ?>"><?php echo ($_product->getData('product_name_in_color')) ? $_product->getData('product_name_in_color') : $product_name ; ?></a></li>
+    <?php $count++; ?>
+    <?php endforeach; ?>
+  </ul>
+
 </article>
 
 

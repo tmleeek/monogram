@@ -539,7 +539,7 @@ manic.ui.Mouse.prototype.on_document_mousemove_mobile = function(event) {
       this.mousedown_map_y + this.mousemove_y
     );
     
-    this.update_layout(true);
+    // this.update_layout(true);
     
   }
 };

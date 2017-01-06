@@ -722,6 +722,11 @@ monogram.page.Home.prototype.update_page_layout = function() {
     target_height -= 30;
   }
   */
+ 
+
+  if (manic.IS_ACTUAL_TABLET == true && manic.IS_TABLET_LANDSCAPE == true) {
+    target_height *= 0.8;
+  }
 
 
 
@@ -736,9 +741,10 @@ monogram.page.Home.prototype.update_page_layout = function() {
     'zoom': target_zoom,
   });
 
-  
+
+
   $j('#graph-zooming-style').empty();
-  $j('#graph-zooming-style').html('.graph-svg-circle .graph-svg-circle-text{ zoom: ' + target_inverse_zoom + ' }');
+  $j('#graph-zooming-style').html('.graph-svg-circle .graph-svg-circle-text { zoom: ' + target_inverse_zoom + ' }');
   
 
 
