@@ -730,11 +730,17 @@ monogram.page.Home.prototype.update_page_layout = function() {
 
   // var target_zoom = target_height / 600;
   var target_zoom = target_height / 600;
+  var target_inverse_zoom = 600 / target_height;
 
   $j('#graph-section-combination-graph').css({
     'zoom': target_zoom,
-    
   });
+
+  
+  $j('#graph-zooming-style').empty();
+  $j('#graph-zooming-style').html('.graph-svg-circle .graph-svg-circle-text{ zoom: ' + target_inverse_zoom + ' }');
+  
+
 
   $j('#graph-section-combination-graph-margin').css({
     'height': target_height + 'px',
