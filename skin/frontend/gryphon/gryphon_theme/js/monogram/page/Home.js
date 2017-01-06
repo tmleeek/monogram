@@ -271,11 +271,21 @@ monogram.page.Home.prototype.display_graph_section = function(){
 
         var main_product_name = this.graph_section.main_data_item.data_name;
         var sub_product_name = this.graph_section.sub_data_item.data_name;        
-                
+
+        /*
         $j('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
         $j('#graph-social-icons ul li a.fa-facebook').attr('href', facebook_share_url);
         $j('#graph-social-icons ul li a.fa-facebook').data('main_product_name', main_product_name);
         $j('#graph-social-icons ul li a.fa-facebook').data('sub_product_name', sub_product_name);
+        */
+
+        $j('.home-customized-share-button a.fa-twitter').attr('href', twitter_share_url);
+        $j('.home-customized-share-button a.fa-facebook').attr('href', facebook_share_url);
+        $j('.home-customized-share-button a.fa-facebook').data('main_product_name', main_product_name);
+        $j('.home-customized-share-button a.fa-facebook').data('sub_product_name', sub_product_name);
+
+
+        
 
       } else {
         this.graph_section.display_combination_index(0,0);
@@ -292,8 +302,13 @@ monogram.page.Home.prototype.display_graph_section = function(){
                                   '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + this.page_hash_02);
       var facebook_share_url    = encodeURIComponent(current_url);
               
+      /*
       $j('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
       $j('#graph-social-icons ul li a.fa-facebook').attr('href', facebook_share_url);
+      */
+
+      $j('.home-customized-share-button a.fa-twitter').attr('href', twitter_share_url);
+      $j('.home-customized-share-button a.fa-facebook').attr('href', facebook_share_url);
 
     }
     
@@ -650,13 +665,15 @@ monogram.page.Home.prototype.update_page_layout = function() {
 
   var space_extra = 600 - 768;
   // var target_height = $j(window).height() - space_extra - 351 - 31;
-  var target_height = $j(window).height() - space_extra - 211 - 31;
+  /// var target_height = $j(window).height() - space_extra - 211 - 31;
+  var target_height = $j(window).height() - space_extra - 191 - 31;
 
-
+  /*
   if ($j(window).width() <=  1200) {
     target_height -= 110;
     target_height -= 30;
   }
+  */
 
 
 
@@ -678,7 +695,7 @@ monogram.page.Home.prototype.update_page_layout = function() {
     'margin-top': offset + 'px'
   });
 
-
+  
 
 
 
