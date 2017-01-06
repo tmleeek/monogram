@@ -165,7 +165,11 @@ $j(document).ready(function(){
       }  
     });
 
-    $j('.graph-combination-hover-img')
+    $j('.product-image').on("mouseover", function(e){
+      var graph_url = $j(this).data('graph-link');
+      console.log(graph_url);
+      $j(this).attr('href', graph_url);
+    });
 });
 </script>
 

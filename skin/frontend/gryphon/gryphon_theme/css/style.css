@@ -8488,8 +8488,13 @@ html * {
   left: 50%;
   width: 600px;
   height: 600px;
-  margin-top: -230px;
+  margin-top: -380px;
   margin-left: -300px;
+}
+#graph-section #graph-section-combination-graph-container #graph-section-combination-graph-margin {
+  position: relative;
+  width: 600px;
+  height: 600px;
 }
 #graph-section #graph-section-combination-graph-container #graph-section-combination-graph {
   position: absolute;
@@ -8497,32 +8502,28 @@ html * {
   left: 0;
   width: 600px;
   height: 600px;
-  zoom: 1;
-  /* transform */
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -o-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  -webkit-transform-origin: 50% 50%;
-  -moz-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  -o-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
 }
 #graph-selction-a {
   position: fixed;
-  top: 50%;
+  top: 45%;
   left: 60px;
-  margin-top: 70px;
-  transform: translate(0, -50%);
 }
 #graph-selction-b {
   position: fixed;
-  top: 50%;
+  top: 45%;
   right: 60px;
-  margin-top: 70px;
+}
+#graph-selction-a,
+#graph-selction-b {
+  width: 260px !important;
+  margin-top: 90px;
   transform: translate(0, -50%);
+}
+#graph-selction-a .graph-selection-content,
+#graph-selction-b .graph-selection-content,
+#graph-selction-a .graph-selection-content .graph-selection-tea,
+#graph-selction-b .graph-selection-content .graph-selection-tea {
+  width: 260px !important;
 }
 #graph-section-center-copy-container {
   position: fixed;
@@ -8531,6 +8532,7 @@ html * {
 }
 #graph-social-icons-v2-container {
   text-align: center;
+  margin-bottom: 8px;
 }
 #graph-social-icons-v2 {
   display: inline-block;
@@ -8571,6 +8573,52 @@ html * {
   opacity: 0.6;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
   filter: alpha(opacity=60);
+}
+@media only screen and (max-width: 1180px) {
+  #graph-selction-a {
+    left: 40px;
+  }
+  #graph-selction-b {
+    right: 40px;
+  }
+  #graph-section-center-copy {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  #graph-section-center-copy p {
+    width: auto !important;
+  }
+  #graph-section-center-copy .cta-container {
+    margin-left: -40px;
+    margin-right: -40px;
+  }
+  #graph-social-icons-v2-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #graph-selction-a {
+    left: 20px;
+  }
+  #graph-selction-b {
+    right: 20px;
+  }
+  #graph-section-center-copy {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  #graph-section-center-copy p {
+    width: auto !important;
+  }
+  #graph-section-center-copy .cta-container {
+    margin-left: -60px;
+    margin-right: -60px;
+  }
+  #graph-social-icons-v2-container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 }
 #graph-column-01-container,
 #graph-column-02-container {
@@ -8766,7 +8814,7 @@ html * {
   font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 20px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -8796,7 +8844,6 @@ html * {
   font-style: normal;
   font-weight: normal;
   font-size: 11px;
-  font-size: 11.5px;
   line-height: 18px;
   letter-spacing: 0.03em;
 }
@@ -8805,7 +8852,6 @@ html * {
   font-style: normal;
   font-weight: normal;
   font-size: 11px;
-  font-size: 11.5px;
   line-height: 18px;
   letter-spacing: 0.03em;
 }
@@ -8814,6 +8860,9 @@ html * {
 }
 .graph-selection-tea .tea-detail {
   margin-bottom: 14px;
+}
+.graph-selection-tea .tea-detail p {
+  font-size: 11px;
 }
 .graph-selection-tea .square-cta {
   margin-top: 5px;
@@ -9090,11 +9139,11 @@ html * {
   font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 20px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  margin-bottom: 8px;
+  margin-bottom: 3px;
 }
 #graph-section-center-copy h2 sup {
   font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
@@ -9119,11 +9168,27 @@ html * {
 }
 #graph-section-center-copy .cta-container {
   font-size: 0px;
-  padding-top: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 #graph-section-center-copy .cta-container .square-cta {
   margin-left: 10px;
   margin-right: 10px;
+}
+#graph-section-center-copy #graph-social-icons-v2 {
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  filter: alpha(opacity=0);
+  -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+  animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+  -webkit-animation-delay: 0.425s !important;
+  -moz-animation-delay: 0.425s !important;
+  -ms-animation-delay: 0.425s !important;
+  -o-animation-delay: 0.425s !important;
+  animation-delay: 0.425s !important;
 }
 #graph-section-center-copy h2 {
   -moz-opacity: 0;
@@ -9200,7 +9265,7 @@ html * {
   -o-animation-delay: 0.005s !important;
   animation-delay: 0.005s !important;
 }
-#graph-section-center-copy.animate-in h2 {
+#graph-section-center-copy.animate-in #graph-social-icons-v2 {
   -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
   animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
   -webkit-animation-delay: 0.005s !important;
@@ -9209,41 +9274,50 @@ html * {
   -o-animation-delay: 0.005s !important;
   animation-delay: 0.005s !important;
 }
+#graph-section-center-copy.animate-in h2 {
+  -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+  animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+  -webkit-animation-delay: 0.065s !important;
+  -moz-animation-delay: 0.065s !important;
+  -ms-animation-delay: 0.065s !important;
+  -o-animation-delay: 0.065s !important;
+  animation-delay: 0.065s !important;
+}
 #graph-section-center-copy.animate-in p {
   -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
   animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
-  -webkit-animation-delay: 0.125s !important;
-  -moz-animation-delay: 0.125s !important;
-  -ms-animation-delay: 0.125s !important;
-  -o-animation-delay: 0.125s !important;
-  animation-delay: 0.125s !important;
+  -webkit-animation-delay: 0.185s !important;
+  -moz-animation-delay: 0.185s !important;
+  -ms-animation-delay: 0.185s !important;
+  -o-animation-delay: 0.185s !important;
+  animation-delay: 0.185s !important;
 }
 #graph-section-center-copy.animate-in .square-cta-01 {
   -webkit-animation: leftFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
   animation: leftFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
-  -webkit-animation-delay: 0.305s !important;
-  -moz-animation-delay: 0.305s !important;
-  -ms-animation-delay: 0.305s !important;
-  -o-animation-delay: 0.305s !important;
-  animation-delay: 0.305s !important;
+  -webkit-animation-delay: 0.365s !important;
+  -moz-animation-delay: 0.365s !important;
+  -ms-animation-delay: 0.365s !important;
+  -o-animation-delay: 0.365s !important;
+  animation-delay: 0.365s !important;
 }
 #graph-section-center-copy.animate-in .square-cta-02 {
   -webkit-animation: plainAlphaIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
   animation: plainAlphaIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
-  -webkit-animation-delay: 0.305s !important;
-  -moz-animation-delay: 0.305s !important;
-  -ms-animation-delay: 0.305s !important;
-  -o-animation-delay: 0.305s !important;
-  animation-delay: 0.305s !important;
+  -webkit-animation-delay: 0.425s !important;
+  -moz-animation-delay: 0.425s !important;
+  -ms-animation-delay: 0.425s !important;
+  -o-animation-delay: 0.425s !important;
+  animation-delay: 0.425s !important;
 }
 #graph-section-center-copy.animate-in .square-cta-03 {
   -webkit-animation: rightFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
   animation: rightFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
-  -webkit-animation-delay: 0.305s !important;
-  -moz-animation-delay: 0.305s !important;
-  -ms-animation-delay: 0.305s !important;
-  -o-animation-delay: 0.305s !important;
-  animation-delay: 0.305s !important;
+  -webkit-animation-delay: 0.425s !important;
+  -moz-animation-delay: 0.425s !important;
+  -ms-animation-delay: 0.425s !important;
+  -o-animation-delay: 0.425s !important;
+  animation-delay: 0.425s !important;
 }
 #graph-desktop-guide-container {
   position: absolute;
@@ -15371,6 +15445,10 @@ body.billing-shipping-page {
   width: 80px;
   height: 23px;
   border: 1px solid #f1efee;
+}
+#page-shopping-cart-item-container table tbody tr .product-qty.INT,
+#page-shopping-cart-item-container table tbody tr .product-qty.SGP {
+  border: none;
 }
 @media only screen and (max-width: 480px) {
   #page-shopping-cart-item-container table tbody tr .product-qty {

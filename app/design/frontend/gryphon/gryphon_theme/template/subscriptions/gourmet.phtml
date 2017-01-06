@@ -391,7 +391,10 @@
 					if(data=='Sorry, you either purchase  Singapore OR International Subscription not both.') {
 						alert('Sorry, you can only purchase the Singapore or International Subscription at one time, not both.');
 						jQuery(el).find('.ajax_loader_product').hide();
-					}else {
+					}else if(data=='Sorry, you can purchase one subscription plan at a time.') {
+            alert('Sorry, you can purchase one subscription plan at a time.');
+            jQuery(el).find('.ajax_loader_product').hide();
+          }else {
 						do_update();
 			  		jQuery(el).find('.ajax_loader_product').hide();	  	
 					}						  	
