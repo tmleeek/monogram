@@ -92,7 +92,7 @@ $quoteData= $quote->getData();
 				<div class="mobile-submenu-header">Shop</div>
 				<?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
 				<ul>
-          <li><a href="<?php echo $store_category->getUrl(); ?>">Tea Store</a></li>
+          <li><a href="<?php echo $store_category->getUrl(); ?>">Tea Bar</a></li>
           <li><a href="<?php echo $this->getUrl('subscription'); ?>">Subscription</a></li>
           <li><a href="<?php echo $this->getUrl('monogram-service'); ?>">Monogram Services</a></li>	
         </ul>
@@ -280,13 +280,17 @@ $quoteData= $quote->getData();
 								<li><a href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>" class="text">Join/Log in</a></li>
 								<?php endif; ?>            
 		            <li><a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="text">Cart <span class="count">(<?php echo (!empty($count)) ? $count : 0; ?>)</span></a></li>
-		            <li><a href="#" class="menu-opener fa fa-bars" id="desktop-header-menu-btn"></a></li>
+
+                <!-- removed jan 06 -->
+		            <!-- <li><a href="#" class="menu-opener fa fa-bars" id="desktop-header-menu-btn"></a></li> -->
 		          </ul>
 		        <?php else: ?>
 		        	<ul>
 		        		<li><a href="<?php echo $this->getUrl('shipping-info') ?>" class="text">Shipping Information</a></li>
 		        		<li><a href="<?php echo $this->getUrl('faq') ?>" class="text">FAQ</a></li>
-		        		<li><a href="#" class="menu-opener fa fa-bars" id="desktop-header-menu-btn"></a></li>
+                
+		        		<!-- removed jan 06 -->
+                <!-- <li><a href="#" class="menu-opener fa fa-bars" id="desktop-header-menu-btn"></a></li> -->
 		        	</ul>
 						<?php endif; ?>
 					?>

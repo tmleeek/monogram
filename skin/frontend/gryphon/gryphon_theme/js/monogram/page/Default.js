@@ -95,7 +95,7 @@ monogram.page.Default.EVENT_02 = '';
 monogram.page.Default.prototype.init = function() {
   monogram.page.Default.superClass_.init.call(this);
 
-  window.onbeforeunload = function(){ window.scrollTo(0,0); }     // from zaw's main.js
+  // window.onbeforeunload = function(){ window.scrollTo(0,0); }     // from zaw's main.js
 
   this.create_desktop_header();
 
@@ -489,7 +489,15 @@ monogram.page.Default.prototype.update_page_layout = function() {
   if(manic.IS_MOBILE == false && this.is_tea_matrix == true) {
 
     var target_height = $j(window).height() - 123 + 100;        // 100 is the extra height of the top and bottom of the graph that is removed?
+
+
+    if (manic.IS_ACTUAL_TABLET == true && manic.IS_TABLET_LANDSCAPE == true) {
+      target_height *= 0.8;
+    }
+      
     var target_zoom = target_height / 600;
+    var target_inverted_zoom = 600 /  target_height;
+
     var target_margin_top = -1 * 80 * target_zoom;        // 103 = top space of the 600x600 graph
 
     var target_margin_left = -1 * 103 * target_zoom;
@@ -500,6 +508,13 @@ monogram.page.Default.prototype.update_page_layout = function() {
       // 'margin-top': target_margin_top + 'px'
       // 'margin-bottom': target_margin_top + 'px'
     });
+
+
+    $j('#graph-zooming-style').empty();
+    $j('#graph-zooming-style').html('.graph-svg-circle .graph-svg-circle-text { zoom: ' + target_inverted_zoom + ' }');
+    
+
+
 
     // #tea-matrix-combination-graph-container-another-one
 

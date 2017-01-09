@@ -18,7 +18,7 @@
 	          <h5>Shop</h5>
 	          <?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
 	          <ul>
-	            <li><a href="<?php echo $store_category->getUrl(); ?>">Tea Store</a></li>
+	            <li><a href="<?php echo $store_category->getUrl(); ?>">Tea Bar</a></li>
 	            <li><a href="<?php echo $this->getUrl('subscription'); ?>">Subscription</a></li>
 	            <li><a href="<?php echo $this->getUrl('monogram-service'); ?>">Monogram Services</a></li>	
 	          </ul>
@@ -44,7 +44,7 @@
 
 	            <h5>Contact Us</h5>
 	            <a href="mailto:bespoke@monogramtea.com">bespoke@monogramtea.com</a>
-	            <a href="#" class="telephone">+65 67792948</a>
+	            <a href="javascript:void(0);" class="telephone">+65 67792948</a>
 	          </div>
 	        </div>
 	        <div class="col-md-3 col-md-offset-1">

@@ -34,6 +34,9 @@ monogram.page.Home = function(options, element) {
   this.tea_selection_section =  $j("#home-tea-selection-section");
   this.graph_section_element =          $j("#home-graph-section");
 
+  this.desktop_header = $j('#desktop-header .container-fluid');
+  TweenMax.to(this.desktop_header, 0.0, {autoAlpha:0});
+
   /**
    * @type {manic.ui.Mouse}
    */
@@ -129,7 +132,12 @@ monogram.page.Home.prototype.init = function() {
     $j('#graph-desktop-guide-container').click(function(event){
       TweenMax.killTweensOf($('#graph-desktop-guide-container'));
       TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:0});
-    });
+
+      TweenMax.killDelayedCallsTo(this.display_graph_section_delayed_a_little_before);
+      this.display_graph_section_delayed_a_little_before();
+
+
+    }.bind(this));
 
   }
 
@@ -152,6 +160,8 @@ monogram.page.Home.prototype.init = function() {
 monogram.page.Home.prototype.display_intro_section = function(){
   console.log('display_intro_section');
 
+  TweenMax.to(this.desktop_header, 0.5, {autoAlpha:0});   // this is new
+
   this.intro_section.addClass('slide-animate-in');
   this.tea_selection_section.removeClass('slide-animate-in');
   this.graph_section_element.removeClass('slide-animate-in');
@@ -164,6 +174,7 @@ monogram.page.Home.prototype.display_intro_section = function(){
   TweenMax.delayedCall(1, this.display_intro_section_delayed, [], this);
   TweenMax.killDelayedCallsTo(this.display_selection_section_delayed);
   TweenMax.killDelayedCallsTo(this.display_graph_section_delayed);
+  TweenMax.killDelayedCallsTo(this.display_graph_section_delayed_a_little_before);
 
   TweenMax.to(this.intro_section,0.5,           {autoAlpha:1});
   TweenMax.to(this.tea_selection_section,0.5,   {autoAlpha:0});
@@ -183,6 +194,9 @@ monogram.page.Home.prototype.display_intro_section_delayed = function(){
 monogram.page.Home.prototype.display_selection_section = function(){
   console.log('display_selection_section');
 
+  TweenMax.to(this.desktop_header, 0.5, {autoAlpha:1});   // this is new
+  
+
   this.intro_section.removeClass('slide-animate-in');
   this.tea_selection_section.addClass('slide-animate-in');
   this.graph_section_element.removeClass('slide-animate-in');
@@ -196,6 +210,7 @@ monogram.page.Home.prototype.display_selection_section = function(){
   TweenMax.delayedCall(1, this.display_selection_section_delayed, [], this);
   TweenMax.killDelayedCallsTo(this.display_intro_section_delayed);
   TweenMax.killDelayedCallsTo(this.display_graph_section_delayed);
+  TweenMax.killDelayedCallsTo(this.display_graph_section_delayed_a_little_before);
 
   TweenMax.to(this.intro_section,0.5,           {autoAlpha:0});
   TweenMax.to(this.tea_selection_section,0.5,   {autoAlpha:1});
@@ -211,21 +226,20 @@ monogram.page.Home.prototype.display_selection_section_delayed = function(){
 
 
 
+
+
 monogram.page.Home.prototype.display_graph_section = function(){
   console.log('display_graph_section');
 
+  TweenMax.to(this.desktop_header, 0.5, {autoAlpha:1});   // this is new
+
   this.intro_section.removeClass('slide-animate-in');
   this.tea_selection_section.removeClass('slide-animate-in');
-  this.graph_section_element.addClass('slide-animate-in');
+  
+  // this.graph_section_element.addClass('slide-animate-in');   // moved
 
 
-  if (this.has_displayed_guide == false) {
-    this.has_displayed_guide = true;
-    TweenMax.killTweensOf($('#graph-desktop-guide-container'));
-
-    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:1, delay: 2});
-    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:0, delay: 3.5});
-  }
+  
   
   
 
@@ -234,15 +248,48 @@ monogram.page.Home.prototype.display_graph_section = function(){
   //this.graph_section_element.removeClass('animate-in');  
   
   // 0.5 waiting time & 0.5 half of slide transition
-  TweenMax.delayedCall(1, this.display_graph_section_delayed, [], this);
+  /////  TweenMax.delayedCall(1, this.display_graph_section_delayed, [], this);       // this is new
   TweenMax.killDelayedCallsTo(this.display_selection_section_delayed);
   TweenMax.killDelayedCallsTo(this.display_intro_section_delayed);
+  TweenMax.killDelayedCallsTo(this.display_graph_section_delayed_a_little_before);
+
 
 
   TweenMax.to(this.intro_section,0.5,           {autoAlpha:0});
   TweenMax.to(this.tea_selection_section,0.5,   {autoAlpha:0});
   TweenMax.to(this.graph_section_element,0.5,           {autoAlpha:1});
 
+
+
+  // display guide or display actual content
+
+  if (this.has_displayed_guide == false) {
+    this.has_displayed_guide = true;
+    TweenMax.killTweensOf($('#graph-desktop-guide-container'));
+
+    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:1, delay: 0});
+    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:0, delay: 1.5});
+
+    TweenMax.delayedCall(2, this.display_graph_section_delayed_a_little_before, [], this);    // IMPORTANT
+
+  } else {
+
+
+    this.display_graph_section_delayed_a_little_before(); // IMPORTANT
+  }
+  
+
+
+  
+
+};
+
+
+// for that additional delay they wanted..
+monogram.page.Home.prototype.display_graph_section_delayed_a_little_before = function(){
+  TweenMax.delayedCall(1, this.display_graph_section_delayed, [], this);
+
+  this.graph_section_element.addClass('slide-animate-in');    // this was moved.
 
   if(this.graph_section != null){
     this.graph_section.enable_graph();
@@ -314,8 +361,9 @@ monogram.page.Home.prototype.display_graph_section = function(){
     
 
   }
-
 };
+
+
 monogram.page.Home.prototype.display_graph_section_delayed = function(){
   this.graph_section_element.addClass('animate-in');
 
@@ -674,6 +722,11 @@ monogram.page.Home.prototype.update_page_layout = function() {
     target_height -= 30;
   }
   */
+ 
+
+  if (manic.IS_ACTUAL_TABLET == true && manic.IS_TABLET_LANDSCAPE == true) {
+    target_height *= 0.8;
+  }
 
 
 
@@ -682,11 +735,18 @@ monogram.page.Home.prototype.update_page_layout = function() {
 
   // var target_zoom = target_height / 600;
   var target_zoom = target_height / 600;
+  var target_inverse_zoom = 600 / target_height;
 
   $j('#graph-section-combination-graph').css({
     'zoom': target_zoom,
-    
   });
+
+
+
+  $j('#graph-zooming-style').empty();
+  $j('#graph-zooming-style').html('.graph-svg-circle .graph-svg-circle-text { zoom: ' + target_inverse_zoom + ' }');
+  
+
 
   $j('#graph-section-combination-graph-margin').css({
     'height': target_height + 'px',
