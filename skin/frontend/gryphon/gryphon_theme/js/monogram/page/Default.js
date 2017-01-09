@@ -130,6 +130,30 @@ monogram.page.Default.prototype.init = function() {
 
 
 
+
+  // CREATE PINNING SIDEBAR FOR FAQ
+  
+  if (manic.IS_MOBILE == false && $j('#monogram-page-faq-sidebar').length != 0) {
+
+    this.faq_sidebar_scene = new ScrollMagic.Scene({
+      'triggerHook': 0.0,
+      'offset': -1 * 70,                                                       // 70 = desktop header height
+      'triggerElement': '#monogram-page-faq-content-section',
+      // 'duration': target_duration,
+      reverse: true
+    });
+
+    this.faq_sidebar_scene.setPin('#monogram-page-faq-sidebar');
+    this.faq_sidebar_scene.addTo(this.controller);
+      
+  }
+  
+
+
+
+
+
+
   // only if it's mobile
 
   if (manic.IS_MOBILE == true) {

@@ -10,15 +10,24 @@
   }
 
   h1 {
+    .header-font-02;
+    font-size: 26px;
+    line-height: 30px;
+
     text-align: left;
     text-transform: uppercase;
     color: @off-white;
-    margin-bottom: 35px;
+    
+    // margin-bottom: 35px;
+    margin-bottom: 15px;
   }
   p {
     text-align: left;
-    color: @off-white;
-    margin-bottom: 60px;
+    // color: @off-white;
+    color: @white;
+    // margin-bottom: 60px;
+    margin-bottom: 30px;
+
     @media only screen and (max-width: 480px) {
       margin-bottom: 30px;
     }
@@ -28,6 +37,20 @@
     padding-left: 10px;
     padding-right: 10px;
   }
+
+
+  input.input-class{
+    height: 30px;
+    font-size: 12px;
+    color: @white;
+  }
+  .dropdown select{
+    height: 30px;
+    font-size: 11.5px;
+    padding-left: 15px;
+    color: @white;
+  }
+
 
   .account-creation-content-container {
     #account-creation-img-content {
@@ -74,18 +97,30 @@
   }
 
   label {
-      color: @off-white;
+      // color: @off-white;
+      color: @white;
 
       text-transform: uppercase;
-      .brandon-grotesque-regular;
+      // .brandon-grotesque-regular;
+      .header-font;
+
       font-size: 10px;
       line-height: 10px;
       letter-spacing: 0.05em;    
-      padding-left: 10px;      
+
+      // padding-left: 10px;      
+      padding-left: 0px;
+
       @media only screen and (max-width: 991px) {
         padding-left: 0px;
       }
     }
+
+  label[for=gender],
+  label[for=is_subscribed]{
+    padding-left: 6px;
+    color: @off-white !important;
+  }
 
   input.input-class {
     width: 100%;

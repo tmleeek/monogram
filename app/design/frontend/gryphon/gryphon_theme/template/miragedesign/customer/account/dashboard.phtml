@@ -37,11 +37,14 @@
   <h1><?php echo $this->escapeHtml($this->getCustomer()->getName()) ?></h1>
   <p><a href="mailto:<?php echo $this->escapeHtml($this->getCustomer()->getEmail()) ?>" class="email"><?php echo $this->escapeHtml($this->getCustomer()->getEmail()) ?></a></p>
 
-  <?php if (Mage::helper('customer')->isLoggedIn() ): ?>
-    <div class="cta-container">
+  <div class="cta-container">
+    <?php if (Mage::helper('customer')->isLoggedIn() ): ?>
       <a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>" class="square-cta">Log Out</a>
-    </div>
-  <?php endif; ?>
+      <a href="<?php echo $this->getUrl('customer/account/edit') ?>" class="edit square-cta">Edit</a>
+    <?php endif; ?>
+  </div>
+
+
 </div>
 
 
@@ -101,6 +104,7 @@
         <div class="cta-container">
           <?php if (Mage::helper('customer')->isLoggedIn() ): ?>
             <a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>" class="square-cta">Log Out</a>
+            <a href="<?php echo $this->getUrl('customer/account/edit') ?>" class="edit square-cta">Edit</a>
           <?php endif; ?>
         </div>
       </div>
