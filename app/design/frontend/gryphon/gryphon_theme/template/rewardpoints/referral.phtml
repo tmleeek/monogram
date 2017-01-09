@@ -210,10 +210,11 @@
                       form_list_ul_clone.down("#name-"+elmt_id_j2t).value = "";
                       form_list_ul_clone.down("#email-"+elmt_id_j2t).value = "";
 
-                      var del_img = new Element('img', {src: '<?php echo $this->getSkinUrl('images/j2t_minus_one.png') ?>'})
+                      var del_img = new Element('a', {class: 'square-cta', style: 'margin-top: 10px;'})
                       form_list_ul_clone.down(".j2t-rewardpoints-email").insert({
                           bottom: del_img
                       });
+                      $j(del_img).html('Cancel');
                       del_img.observe('click', function(event) {
                           Event.element(event).up("ul").remove();
                       });

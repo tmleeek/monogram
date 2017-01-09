@@ -8501,36 +8501,6 @@ html body {
   width: 100%;
   height: 100%;
 }
-html * {
-  -webkit-touch-callout: none;
-  /* iOS Safari */
-  -webkit-user-select: none;
-  /* Chrome/Safari/Opera */
-  -khtml-user-select: none;
-  /* Konqueror */
-  -moz-user-select: none;
-  /* Firefox */
-  -ms-user-select: none;
-  /* Internet Explorer/Edge */
-  user-select: none;
-  /* Non-prefixed version, currently */
-}
-@media only screen and (max-width: 1024px) {
-  html * {
-    -webkit-touch-callout: inherit;
-    /* iOS Safari */
-    -webkit-user-select: inherit;
-    /* Chrome/Safari/Opera */
-    -khtml-user-select: inherit;
-    /* Konqueror */
-    -moz-user-select: inherit;
-    /* Firefox */
-    -ms-user-select: inherit;
-    /* Internet Explorer/Edge */
-    user-select: inherit;
-    /* Non-prefixed version, currently */
-  }
-}
 #graph-section {
   position: absolute;
   top: 0;
@@ -10387,7 +10357,7 @@ body.tea-layering-detail-page {
   bottom: 5.5%;
   left: 3.3%;
   right: 3.3%;
-  padding: 8% 8%;
+  padding: 8% 8% 4%;
 }
 .home-tea-item h2 {
   font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
@@ -11605,7 +11575,7 @@ body.is-tablet.is-tablet-landscape .home-tea-item .cta-container .arrow-cta {
   line-height: 22px;
   letter-spacing: 0em;
   text-align: center;
-  color: #f1efee;
+  color: #ffffff;
   width: 80%;
   margin: 0 auto;
 }
@@ -12010,7 +11980,7 @@ body.is-tablet.is-tablet-landscape .home-tea-item .cta-container .arrow-cta {
   margin-right: 5px;
 }
 #tea-matrix-section-1 #tea-matrix-content .section .suggestions div.suggestion span {
-  font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
+  font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 11px;
@@ -12884,6 +12854,9 @@ body.is-tablet.is-tablet-landscape .home-tea-item .cta-container .arrow-cta {
 .category-store {
   overflow: visible;
 }
+#tea-store-section-1 {
+  padding-bottom: 25px;
+}
 #tea-store-section-1 .container-fluid {
   padding: 0 40px;
 }
@@ -12946,16 +12919,16 @@ body.is-tablet.is-tablet-landscape .home-tea-item .cta-container .arrow-cta {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   display: block;
-  color: #f1efee;
+  color: #ffffff;
 }
 #tea-store-section-1 .tea-store-product-info span.price {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 11px;
-  letter-spacing: 0.02em;
+  font-size: 12.5px;
+  letter-spacing: 0.08em;
   display: inline-block;
-  color: #f1efee;
+  color: #ffffff;
 }
 #tea-store-section-1 .tea-store-product-info span.price .price-to {
   display: none;
@@ -14117,7 +14090,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   text-align: center;
   text-transform: uppercase;
   padding-bottom: 45px;
-  font-size: 16px;
+  font-size: 15px;
   letter-spacing: 0.08em;
 }
 @media only screen and (max-width: 991px) {
@@ -14181,7 +14154,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   text-align: center;
   text-transform: uppercase;
   padding-bottom: 45px;
-  font-size: 16px;
+  font-size: 15px;
   letter-spacing: 0.08em;
 }
 @media only screen and (max-width: 991px) {
@@ -14708,7 +14681,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   font-style: normal;
   font-weight: 400;
   font-size: 26px;
-  line-height: 30px;
+  line-height: 32px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 18px;
@@ -19026,6 +18999,22 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
   right: 14px;
   text-align: right;
 }
+@media all and (max-width: 991px) {
+  #monogram-page-account-mobile-page-title .cta-container {
+    position: static;
+    text-align: left;
+    margin-top: 15px;
+  }
+}
+@media all and (max-width: 480px) {
+  #monogram-page-account-mobile-page-title .cta-container {
+    position: absolute;
+    top: 43px;
+    right: 14px;
+    text-align: right;
+    margin-top: 0px;
+  }
+}
 #monogram-page-account-details-dashboard-header-mobile {
   margin-left: -10px;
   margin-right: -10px;
@@ -19080,7 +19069,7 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
   }
   #monogram-page-account-details-address-header .cta-container {
     padding-top: 0px;
-    text-align: right;
+    text-align: left;
   }
   #monogram-page-account-details-address-header .cta-container .square-cta {
     line-height: 30px;
@@ -19334,7 +19323,8 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
     padding-left: 10px;
   }
   #monogram-page-account-giftcard-container .table-responsive table tbody tr td:last-child {
-    padding-right: 10px;
+    padding-right: 20px;
+    text-align: right;
   }
   #monogram-page-account-giftcard-container .table-responsive table tbody tr td a {
     font-size: 11px;
@@ -19366,6 +19356,7 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
     border-bottom: none !important;
     margin-bottom: 27px;
     color: #ffffff;
+    width: 100%;
   }
   #monogram-page-account-giftcard-detail-container .form-list a {
     color: #ffffff;
@@ -19424,6 +19415,7 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
   }
   #monogram-page-account-giftcard-detail-container #mobile-custom-giftcard-view-table table {
     border-top: 1px solid #e1e1e1 !important;
+    width: 100%;
   }
   #monogram-page-account-giftcard-detail-container #mobile-custom-giftcard-view-table thead tr th {
     font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
@@ -19548,7 +19540,8 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
     border-bottom: 1px solid #e1e1e1;
     padding-top: 18px;
     padding-bottom: 18px;
-    text-align: right;
+    text-align: left;
+    padding-left: 0px;
   }
   #monogram-page-account-details-refer-friends-container .refer-friend-form .button-set button,
   #monogram-page-account-details-refer-friends-container .refer-friend-form .button-set a {

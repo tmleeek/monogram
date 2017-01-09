@@ -11,7 +11,7 @@
       <?php if($collection->getSize()): ?>
           <?php //echo $this->getPagerHtml() ?>
 
-          <div class="visible-md-block visible-lg-block">				
+          <div class="">				
               <div class="table-responsive">
                   <table cellspacing="0" class="data-table linearize-table" id="reward-points-table">
                       <thead>
@@ -29,29 +29,29 @@
                                   <td data-theme-label="<?php echo $this->__('Date') ?>">
                                       <?php $newDate = date("d-m-Y", strtotime($pointData['created_time'])); echo $newDate; ?>
                                   </td>
-									<td data-theme-label="<?php echo $this->__('Layering Product') ?>">
-                  <p class="product-name">
-									<?php 
-									$pids = explode(',',$pointData['products_id']);
-									$_product1 = Mage::getModel('catalog/product')->load($pids[0]);
-                  $pname1 = $_product1->getName();
-									$pname1 = $_product1->getName();                  
-									$_product2 = Mage::getModel('catalog/product')->load($pids[1]);
-									$pname2 = $_product2->getName();
+                									<td data-theme-label="<?php echo $this->__('Layering Product') ?>">
+                                  <p class="product-name">
+                									<?php 
+                									$pids = explode(',',$pointData['products_id']);
+                									$_product1 = Mage::getModel('catalog/product')->load($pids[0]);
+                                  $pname1 = $_product1->getName();
+                									$pname1 = $_product1->getName();                  
+                									$_product2 = Mage::getModel('catalog/product')->load($pids[1]);
+                									$pname2 = $_product2->getName();
 
-                  $pname1_to_file_name = strtolower($pname1);
-                  $pname1_to_file_name = str_replace(" ", "-", $pname1_to_file_name);
+                                  $pname1_to_file_name = strtolower($pname1);
+                                  $pname1_to_file_name = str_replace(" ", "-", $pname1_to_file_name);
 
-                  $pname2_to_file_name = strtolower($pname2);
-                  $pname2_to_file_name = str_replace(" ", "-", $pname2_to_file_name);
+                                  $pname2_to_file_name = strtolower($pname2);
+                                  $pname2_to_file_name = str_replace(" ", "-", $pname2_to_file_name);
 
-									echo $_product1->getData('product_name_in_color') .' + '. $_product2->getData('product_name_in_color'); ?></p></td>
-									<td data-theme-label="<?php echo $this->__('Action') ?>">
-									<a class="savelayering-cta" href="/#graph/<?php echo $pname1_to_file_name; ?>/<?php echo $pname2_to_file_name; ?>">SEE LAYERING</a><span class="savelayering-cta-divider"> | </span> 
-									<a class="savelayering-cta" href="javascript:;" id="addbothincart" onclick="savebothproducts('<?php echo $pointData['products_id']; ?>', this)">ADD TO CART</a>
-                  <div class="successmsg"></div>
-                  <div class="ajax_loadermsg"><img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/></div>
-									</td>
+                									echo $_product1->getData('product_name_in_color') .' + '. $_product2->getData('product_name_in_color'); ?></p></td>
+                									<td data-theme-label="<?php echo $this->__('Action') ?>">
+                									<a class="savelayering-cta" href="/#graph/<?php echo $pname1_to_file_name; ?>/<?php echo $pname2_to_file_name; ?>">SEE LAYERING</a><span class="savelayering-cta-divider"> | </span> 
+                									<a class="savelayering-cta" href="javascript:;" id="addbothincart" onclick="savebothproducts('<?php echo $pointData['products_id']; ?>', this)">ADD TO CART</a>
+                                  <div class="successmsg"></div>
+                                  <div class="ajax_loadermsg"><img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/></div>
+                									</td>
                               </tr>
                           <?php endforeach; ?>
                       </tbody>

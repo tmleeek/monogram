@@ -295,6 +295,20 @@ body.monogram-page-account-details{
     right: 14px;
     text-align: right;
 
+    @media all and (max-width: 991px) {
+      position: static;
+      text-align: left;
+      margin-top: 15px;
+    }
+
+    @media all and (max-width: 480px) {
+      position: absolute;
+      top: 38px + 5px;
+      right: 14px;
+      text-align: right;
+      margin-top: 0px;
+    }
+
     .square-cta{
 
     }
@@ -395,7 +409,7 @@ body.monogram-page-account-details{
 
     .cta-container{
       padding-top: 0px;
-      text-align: right;
+      text-align: left;
 
       .square-cta{
         line-height: 30px;
@@ -746,7 +760,8 @@ body.monogram-page-account-details{
                 padding-left: 10px;
               }
               &:last-child{
-                padding-right: 10px;
+                padding-right: 20px;
+                text-align: right;
               }
 
 
@@ -824,6 +839,7 @@ body.monogram-page-account-details{
 
 
       color: @white;
+      width: 100%;
       a{
         color: @white;
 
@@ -887,6 +903,7 @@ body.monogram-page-account-details{
       
       table{
         border-top: 1px solid @border-grey !important;
+        width: 100%;
       }
 
 
@@ -1082,7 +1099,8 @@ body.monogram-page-account-details{
         padding-top: 18px;
         padding-bottom: 18px;
 
-        text-align: right;
+        text-align: left;
+        padding-left: 0px;
 
         button, a{
           line-height: 30px;

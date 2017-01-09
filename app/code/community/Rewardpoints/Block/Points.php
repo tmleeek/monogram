@@ -155,7 +155,7 @@ class Rewardpoints_Block_Points extends Mage_Core_Block_Template
             }
             //$toHtml .= '<div class="j2t-in-title">'.$this->__('Gift').'</div>';
         } else {
-            $toHtml .= '<div class="j2t-in-title">'.$this->__('Order: %s', $order_id).'</div>';
+            $toHtml .= '<div class="j2t-in-title">'.$this->__('Order No: %s', $order_id).'</div>';
             $order = Mage::getModel('sales/order')->loadByIncrementId($order_id);
             $toHtml .= '<div class="j2t-in-txt">'.$this->__('Order state: %s',$this->__($order->getData($status_field))).'</div>';
         }

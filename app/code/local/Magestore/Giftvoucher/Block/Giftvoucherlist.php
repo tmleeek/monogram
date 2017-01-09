@@ -129,21 +129,21 @@ class Magestore_Giftvoucher_Block_Giftvoucherlist extends Mage_Core_Block_Templa
         $removeurl = $this->getUrl('giftvoucher/index/remove', array('id' => $row->getId()));
         $redeemurl = $this->getUrl('giftvoucher/index/redeem', array('giftvouchercode' => $row->getGiftCode()));
 
-        $action = '<a href="' . $this->getUrl('*/*/view', array('id' => $row->getId())) . '">' . $this->__('View') . '</a>';
+        $action = '<a href="' . $this->getUrl('*/*/view', array('id' => $row->getId())) . '"><i class="fa fa-chevron-right"></i></a>';
         // can print gift voucher when status is not used
         if ($row->getStatus() < Magestore_Giftvoucher_Model_Status::STATUS_DISABLED) {
             //Hai.Tran
-            $action .= '<span class="print"> | <a href="javascript:void(0);" onclick="window.open(\'' . $this->getUrl('*/*/print', array('id' => $row->getId())) . '\',\'newWindow\', \'width=1000,height=700,resizable=yes,scrollbars=yes\')" >' . $this->__('Print') . '</a></span>';
+            // $action .= '<span class="print"> | <a href="javascript:void(0);" onclick="window.open(\'' . $this->getUrl('*/*/print', array('id' => $row->getId())) . '\',\'newWindow\', \'width=1000,height=700,resizable=yes,scrollbars=yes\')" >' . $this->__('Print') . '</a></span>';
             if ($row->getRecipientName() && $row->getRecipientEmail() && ($row->getCustomerId() == Mage::getSingleton('customer/session')->getCustomerId() || $row->getCustomerEmail() == Mage::getSingleton('customer/session')->getCustomer()->getEmail())
             ) {
-                $action .= '<span class="email"> | <a href="' . $this->getUrl('*/*/email', array('id' => $row->getId())) . '">' . $this->__('Email') . '</a></span>';
+                // $action .= '<span class="email"> | <a href="' . $this->getUrl('*/*/email', array('id' => $row->getId())) . '">' . $this->__('Email') . '</a></span>';
             }
         }
         // 
         $avaiable = Mage::helper('giftvoucher')->canUseCode(Mage::getModel('giftvoucher/giftvoucher')->load($row->getVoucherId()));
         if (Mage::helper('giftvoucher')->getGeneralConfig('enablecredit') && $avaiable) {
             if ($row->getStatus() == Magestore_Giftvoucher_Model_Status::STATUS_ACTIVE || ($row->getStatus() == Magestore_Giftvoucher_Model_Status::STATUS_USED && $row->getBalance() > 0)) {
-                $action .=' | <a href="javascript:void(0);" onclick="redeem' . $row->getId() . '()">' . $this->__('Redeem') . '</a>';
+                // $action .=' | <a href="javascript:void(0);" onclick="redeem' . $row->getId() . '()">' . $this->__('Redeem') . '</a>';
                 $action .='<script type="text/javascript">
                     //<![CDATA[
                         function redeem' . $row->getId() . '(){
@@ -155,7 +155,7 @@ class Magestore_Giftvoucher_Block_Giftvoucherlist extends Mage_Core_Block_Templa
                 </script>';
             }
         }
-        $action .=' | <a href="javascript:void(0);" onclick="remove' . $row->getId() . '()">' . $this->__('Remove') . '</a>';
+        // $action .=' | <a href="javascript:void(0);" onclick="remove' . $row->getId() . '()">' . $this->__('Remove') . '</a>';
         $action .='<script type="text/javascript">
                     //<![CDATA[
                         function remove' . $row->getId() . '(){
