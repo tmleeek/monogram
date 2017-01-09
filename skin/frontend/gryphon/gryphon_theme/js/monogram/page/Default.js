@@ -95,7 +95,7 @@ monogram.page.Default.EVENT_02 = '';
 monogram.page.Default.prototype.init = function() {
   monogram.page.Default.superClass_.init.call(this);
 
-  window.onbeforeunload = function(){ window.scrollTo(0,0); }     // from zaw's main.js
+  // window.onbeforeunload = function(){ window.scrollTo(0,0); }     // from zaw's main.js
 
   this.create_desktop_header();
 
