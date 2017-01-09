@@ -66,21 +66,21 @@
                     <script type="text/javascript">decorateTable('product-review-table')</script>
                 </div>
             <?php endif; ?>
-            <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1">
+            <div class="col-md-5 col-md-offset-1">
                 <div class="row">              
                   <div class="col-md-5"><label for="">The Product</label></div>                  
                   <?php $product_id = Mage::registry('current_product')->getId();
                         $product = Mage::getModel('catalog/product')->load($product_id);
                         $_helper = $this->helper('catalog/output');
                   ?>
-                  <div class="col-md-6"><?php if(!empty($product->getData('product_name_in_color'))): ?> <h3><?php echo $product->getData('product_name_in_color'); ?></h3> <?php else: ?> <h3><?php echo $_helper->productAttribute($product, $product->getName() , 'name'); ?></h3> <?php endif; ?></div>
+                  <div class="col-md-7"><?php if(!empty($product->getData('product_name_in_color'))): ?> <h3><?php echo $product->getData('product_name_in_color'); ?></h3> <?php else: ?> <h3><?php echo $_helper->productAttribute($product, $product->getName() , 'name'); ?></h3> <?php endif; ?></div>
                 </div>
                 <?php $selection_product_name_arr = ['black tea selection', 'herbal tea selection', 'green tea & oolong selection', 'tea tasting assortment']; ?>
                 <?php $product_name = strtolower($product->getName()); ?>
                 <?php if( !in_array($product_name, $selection_product_name_arr) ): ?>
                     <div class="row">
                         <div class="col-md-5"><label for="">Layering Tea</label></div>
-                        <div class="col-md-6">
+                        <div class="col-md-7">
                             <div class="dropdown">
                                 <input type="hidden" name="title" id="summary_field" class="input-text required-entry" placeholder="<?php echo $this->__('Summary of Your Review') ?>" value="<?php echo $this->escapeHtml($data->getTitle()) ?>" />
                                 <select name="layering_tea" class="layering-tea">
@@ -121,14 +121,14 @@
                 <?php endif; ?>
                 <div class="row">
                   <div class="col-md-5"><label for="">Nickname</label></div>
-                  <div class="col-md-6">
+                  <div class="col-md-7">
                     <input type="text" name="nickname" id="nickname_field" class="input-text required-entry" placeholder="<?php echo $this->__('Nickname') ?>" value="<?php echo $this->escapeHtml($data->getNickname()) ?>" />
                     <span class="validation"></span>
                    </div>
                 </div>
                 <div class="row">
                   <div class="col-md-5"><label for="">Email</label></div>
-                  <div class="col-md-6">
+                  <div class="col-md-7">
                     <input type="text" name="email" id="email_field" class="input-text required-entry" placeholder="<?php echo $this->__('Email') ?>" value="<?php echo $this->escapeHtml($data->getEmail()) ?>" />
                     <span class="validation"></span>
                    </div>
@@ -136,7 +136,7 @@
             </div>
             <div class="col-lg-5 col-md-5">
                 <div class="row">
-                    <div class="col-md-5"><label for="">layering comments</label></div>
+                    <div class="col-md-4 col-md-offset-1"><label for="">layering comments</label></div>
                     <div class="col-md-7 review-input">
                         <textarea maxlength="150" name="detail" id="review_field" cols="30" rows="10" class="required-entry" placeholder="<?php echo $this->__('Write the comments about this tea here.'); ?>"><?php echo $this->escapeHtml($data->getDetail()) ?></textarea>                        
                         <p><span id="chars">150</span> characters remaining</p>
