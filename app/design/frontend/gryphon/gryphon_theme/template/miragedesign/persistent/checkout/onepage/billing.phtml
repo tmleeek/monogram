@@ -530,7 +530,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                     <a class="cta back-btn" href="<?php echo $this->getUrl('store.html'); ?>"><i class="fa fa-chevron-left"></i> <?php echo $this->__('go back to continue shopping') ?></a>
                 </div>
                 <div class="col-md-4 col-md-offset-4">
-                    <button type="button" title="<?php echo $this->__('Continue') ?>" class="button continue cta" onclick="billing.save();"><span><span><?php echo $this->__('Continue') ?></span></span></button>
+                    <button type="button" id="continue-to-checkout" title="<?php echo $this->__('Continue') ?>" class="button continue cta"><span><span><?php echo $this->__('Continue') ?></span></span></button>
                     <span class="please-wait" id="billing-please-wait" style="display:none;">
                         <img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/>
                         <!-- <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" alt="<?php echo $this->__('Loading next step...') ?>" title="<?php echo $this->__('Loading next step...') ?>" class="v-middle" /> --> <?php //echo $this->__('Loading next step...') ?>
@@ -563,63 +563,150 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
         jQuery(document).ready(function($){       
 
             <?php if(!$this->isCustomerLoggedIn()): ?>
-                <?php if($isiPad): ?>
-                    $.blockUI({ 
-                        message: $('#question'),             
-                        css: { 
-                            padding:        '10px', 
-                            margin:         0,
-                            width:          '50.02%',
-                            height:         '280px',
-                            top:            '35%',
-                            left:           '26%',                        
-                            textAlign:      'center', 
-                            color:          '#f1efee', 
-                            border:         '10px', 
-                            backgroundColor:'#7b706b',
-                            cursor:         'wait',                        
-                        },
-                    });
-                <?php elseif(isMobile()!==true): ?>
-                    $.blockUI({ 
-                        message: $('#question'),             
-                        css: { 
-                            padding:        '10px', 
-                            margin:         0, 
-                            width:          '28%', 
-                            height:         '280px', 
-                            top:            '35%',
-                            left:           '39%',                
-                            textAlign:      'center', 
-                            color:          '#f1efee', 
-                            border:         '10px', 
-                            backgroundColor:'#7b706b',
-                            cursor:         'wait' 
-                        },
-                    });
-                <?php else: ?>
-                    $.blockUI({ 
-                        message: $('#question'),             
-                        css: { 
-                            padding:        '10px', 
-                            margin:         0, 
-                            width:          '90%', 
-                            height:         '280px', 
-                            top:            '27%',
-                            left:           '5%',                
-                            textAlign:      'center', 
-                            color:          '#f1efee', 
-                            border:         '10px', 
-                            backgroundColor:'#7b706b',
-                            cursor:         'wait' 
-                        },
-                    });    
-                <?php endif; ?>
+
+                if(typeof(Storage) !== "undefined") {                    
+
+                    if(localStorage.getItem("inputValue") === null) {                                
+
+                        <?php if($isiPad): ?>
+                            $.blockUI({ 
+                                message: $('#question'),             
+                                css: { 
+                                    padding:        '10px', 
+                                    margin:         0,
+                                    width:          '50.02%',
+                                    height:         '280px',
+                                    top:            '35%',
+                                    left:           '26%',                        
+                                    textAlign:      'center', 
+                                    color:          '#f1efee', 
+                                    border:         '10px', 
+                                    backgroundColor:'#7b706b',
+                                    cursor:         'wait',                        
+                                },
+                            });
+                        <?php elseif(isMobile()!==true): ?>
+                            $.blockUI({ 
+                                message: $('#question'),             
+                                css: { 
+                                    padding:        '10px', 
+                                    margin:         0, 
+                                    width:          '28%', 
+                                    height:         '280px', 
+                                    top:            '35%',
+                                    left:           '39%',                
+                                    textAlign:      'center', 
+                                    color:          '#f1efee', 
+                                    border:         '10px', 
+                                    backgroundColor:'#7b706b',
+                                    cursor:         'wait' 
+                                },
+                            });
+                        <?php else: ?>
+                            $.blockUI({ 
+                                message: $('#question'),             
+                                css: { 
+                                    padding:        '10px', 
+                                    margin:         0, 
+                                    width:          '90%', 
+                                    height:         '280px', 
+                                    top:            '27%',
+                                    left:           '5%',                
+                                    textAlign:      'center', 
+                                    color:          '#f1efee', 
+                                    border:         '10px', 
+                                    backgroundColor:'#7b706b',
+                                    cursor:         'wait' 
+                                },
+                            });                    
+                        <?php endif; ?>
+
+                    } else {
+
+                        var storedValue = JSON.parse(localStorage.getItem( 'inputValue' ));
+
+                        console.log(storedValue);
+
+                        $.each(storedValue, function(key, value){
+
+                            if(key=="billing[country_id]" || key=="shipping[country_id]")
+                                $("select[name='"+key+"']").val(value);     
+                            else if(key=="shipping[same_as_billing]") {
+                                $("input[name='"+key+"']").val(1);
+                                if(value==1) {                   
+                                    console.log(value);               
+                                    console.log('heererer');               
+                                    $(".same-as-billing-checkbox").attr('checked', true);
+                                }                                
+                            }
+                            else 
+                                $("input[name='"+key+"']").val(value);
+                        });
+                    }
+
+                } else {
+
+                    <?php if($isiPad): ?>
+                        $.blockUI({ 
+                            message: $('#question'),             
+                            css: { 
+                                padding:        '10px', 
+                                margin:         0,
+                                width:          '50.02%',
+                                height:         '280px',
+                                top:            '35%',
+                                left:           '26%',                        
+                                textAlign:      'center', 
+                                color:          '#f1efee', 
+                                border:         '10px', 
+                                backgroundColor:'#7b706b',
+                                cursor:         'wait',                        
+                            },
+                        });
+                    <?php elseif(isMobile()!==true): ?>
+                        $.blockUI({ 
+                            message: $('#question'),             
+                            css: { 
+                                padding:        '10px', 
+                                margin:         0, 
+                                width:          '28%', 
+                                height:         '280px', 
+                                top:            '35%',
+                                left:           '39%',                
+                                textAlign:      'center', 
+                                color:          '#f1efee', 
+                                border:         '10px', 
+                                backgroundColor:'#7b706b',
+                                cursor:         'wait' 
+                            },
+                        });
+                    <?php else: ?>
+                        $.blockUI({ 
+                            message: $('#question'),             
+                            css: { 
+                                padding:        '10px', 
+                                margin:         0, 
+                                width:          '90%', 
+                                height:         '280px', 
+                                top:            '27%',
+                                left:           '5%',                
+                                textAlign:      'center', 
+                                color:          '#f1efee', 
+                                border:         '10px', 
+                                backgroundColor:'#7b706b',
+                                cursor:         'wait' 
+                            },
+                        });                    
+                    <?php endif; ?>
+
+                }
+
                 $('#no').click(function(e) {
                     e.preventDefault();
                     $.unblockUI(); 
                     return false; 
-                }); 
+                });
+
             <?php endif; ?>        
 
             
@@ -627,7 +714,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
             $billing_telephone.intlTelInput({
                 initialCountry: 'sg',
                 nationalMode: false,
-                autoHideDialCode: true,
+                autoHideDialCode: false,
                 autoPlaceholder: false,
                 preferredCountries: []  
             });
@@ -636,7 +723,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
             $shipping_telephone.intlTelInput({
                 initialCountry: 'sg',
                 nationalMode: false,
-                autoHideDialCode: true,
+                autoHideDialCode: false,
                 autoPlaceholder: false,
                 preferredCountries: []  
             });
@@ -645,7 +732,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
             $billing_fax.intlTelInput({
                 initialCountry: 'sg',
                 nationalMode: false,
-                autoHideDialCode: true,
+                autoHideDialCode: false,
                 autoPlaceholder: false,
                 preferredCountries: []  
             });
@@ -654,7 +741,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
             $shipping_fax.intlTelInput({
                 initialCountry: 'sg',
                 nationalMode: false,
-                autoHideDialCode: true,
+                autoHideDialCode: false,
                 autoPlaceholder: false,
                 preferredCountries: []  
             });            
@@ -666,12 +753,9 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                     shipping.setSameAsBilling(true);
 
                 var country = $(this).val();
-                console.log(country);
 
-                console.log($billing_telephone)
-
-                $billing_telephone.intlTelInput("setCountry", "gb");
-                $billing_fax.intlTelInput("setCountry", "gb");
+                $billing_telephone.intlTelInput("setCountry", country);
+                $billing_fax.intlTelInput("setCountry", country);
 
             });
 
@@ -679,11 +763,55 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                 e.preventDefault();
 
                 var country = $(this).val();
-                console.log(country);
 
                 $shipping_telephone.intlTelInput("setCountry", country);
                 $shipping_fax.intlTelInput("setCountry", country);
 
+            });
+
+            $("#continue-to-checkout").on("click", function(e){
+                e.preventDefault();
+
+                if (typeof(Storage) !== "undefined") {
+                    var $inputs = $("#billing-new-address-form").find("input, select");
+                    var $shipping_inputs = $("#shipping-new-address-form").find("input, select");
+                    var inputValue = {};
+
+                    $inputs.each(function(){
+                        var value = $(this).val();
+                        var name = $(this).attr('name');
+
+                        if(name=="shipping[same_as_billing]") {
+                            console.log($(this).is(':checked'))
+                            if($(this).is(':checked')===false) {
+                                value = 'no';
+                            }else value = 1;
+                        }
+                        
+                        if(value!="") {
+                            inputValue[name] = value;
+                        }                                            
+                    });
+
+                    $shipping_inputs.each(function(){
+                        var value = $(this).val();
+                        var name = $(this).attr('name');
+                        
+                        if(value!="") {
+                            inputValue[name] = value;
+                        }                                            
+                    });
+
+                    console.log( inputValue );
+
+                    localStorage.removeItem('inputValue');
+                    localStorage.setItem( 'inputValue', JSON.stringify(inputValue) );
+                    var storedValue = JSON.parse(localStorage.getItem( 'inputValue' ));
+
+                    console.log(storedValue);
+                }
+
+                billing.save();                
             });
             
         });

@@ -1040,6 +1040,8 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
         
         $discount_amount = $this->processMathValueCart(($points_to_be_used/$points_to_get_money), null, !$apply_math);
 
+        Mage::getSingleton('checkout/session')->addSuccess($this->__('Rebate was applied.'));
+
         return $discount_amount;
     }
 

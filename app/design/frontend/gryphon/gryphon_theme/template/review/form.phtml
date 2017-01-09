@@ -204,6 +204,12 @@
             return pattern.test(emailAddress);
         };
 
+        $j("#review-form").find("input, textarea").on("keyup", function(e){
+            if($j(this).val()!=="") {
+                $j(this).parent().find('.validation').html("");
+            }
+        });
+
         $j(".submit-review").on("click", function(e){
             e.preventDefault();
 
