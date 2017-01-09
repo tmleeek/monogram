@@ -16726,6 +16726,11 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar strong {
   padding-top: 4px;
   padding-bottom: 12px;
 }
+@media all and (max-width: 991px) {
+  .monogram-page-account-details-dashboard-header-item {
+    text-align: left;
+  }
+}
 .monogram-page-account-details-dashboard-header-item a {
   color: #ffffff;
 }
@@ -16761,6 +16766,11 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar strong {
   width: 40px;
   height: 40px;
   margin: 0 auto;
+}
+@media all and (max-width: 991px) {
+  .monogram-page-account-details-dashboard-header-item .monogram-page-account-details-dashboard-header-icon {
+    margin-left: 0px;
+  }
 }
 .monogram-page-account-details-dashboard-header-item .monogram-page-account-details-dashboard-header-icon.store-version {
   display: block;
@@ -19027,6 +19037,11 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
   border-top: 1px solid #cccccc;
   position: relative;
 }
+@media all and (max-width: 991px) {
+  #monogram-page-account-details-dashboard-header-mobile {
+    padding-top: 10px;
+  }
+}
 @media only screen and (max-width: 991px) {
   body.monogram-page-account-details .dashboard.first-content {
     padding-top: 36px;
@@ -19620,6 +19635,12 @@ body.monogram-subscription-page {
   background: #8d919a;
   padding: 0 60px;
 }
+@media all and (max-width: 480px) {
+  #monogram-subscription-content-column-02 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
 #monogram-subscription-content-image-01 {
   height: 421px;
 }
@@ -19632,6 +19653,16 @@ body.monogram-subscription-page {
 #monogram-subscription-content-image-02 .manic-image-container {
   height: 216px;
 }
+@media all and (max-width: 480px) {
+  #monogram-subscription-content-image-02 {
+    height: 210px;
+  }
+}
+@media all and (max-width: 320px) {
+  #monogram-subscription-content-image-02 {
+    height: 200px;
+  }
+}
 #monogram-subscription-content-copy-01,
 #monogram-subscription-content-copy-02 {
   height: 720px;
@@ -19642,6 +19673,18 @@ body.monogram-subscription-page {
   #monogram-subscription-content-copy-01,
   #monogram-subscription-content-copy-02 {
     height: 790px;
+  }
+}
+@media all and (max-width: 480px) {
+  #monogram-subscription-content-copy-01,
+  #monogram-subscription-content-copy-02 {
+    padding-top: 100px;
+  }
+}
+@media all and (max-width: 320px) {
+  #monogram-subscription-content-copy-01,
+  #monogram-subscription-content-copy-02 {
+    height: 850px;
   }
 }
 #monogram-subscription-content-copy-01 #monogram-subscription-content-reason-container,
@@ -19707,7 +19750,12 @@ body.monogram-subscription-page {
 #monogram-subscription-content-copy-01 .table-responsive table,
 #monogram-subscription-content-copy-02 .table-responsive table {
   width: 100%;
-  table-layout: fixed;
+}
+@media all and (max-width: 991px) {
+  #monogram-subscription-content-copy-01 .table-responsive table,
+  #monogram-subscription-content-copy-02 .table-responsive table {
+    table-layout: auto;
+  }
 }
 #monogram-subscription-content-copy-01 .table-responsive table thead tr th,
 #monogram-subscription-content-copy-02 .table-responsive table thead tr th {
@@ -19797,6 +19845,12 @@ body.monogram-subscription-page {
 #monogram-subscription-content-copy-01 {
   padding-left: 60px;
   padding-right: 60px;
+}
+@media all and (max-width: 480px) {
+  #monogram-subscription-content-copy-01 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 #monogram-subscription-content-copy-03 {
   margin: 0 -60px;

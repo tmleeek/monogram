@@ -88,7 +88,10 @@ body.monogram-subscription-page{
   background: #8d919a;
 
   padding: 0 60px;
-
+  @media all and (max-width: 480px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 
 }
 
@@ -109,6 +112,12 @@ body.monogram-subscription-page{
     //height: 600px;
     height: 216px;
   }
+  @media all and (max-width: 480px) {
+    height: 210px;
+  }
+  @media all and (max-width: 320px) {
+    height: 200px;
+  }
 }
 
 
@@ -122,6 +131,14 @@ body.monogram-subscription-page{
 
   @media all and (max-width: 991px) {
     height: 790px;
+  }
+
+  @media all and (max-width: 480px) {
+    padding-top: 100px;
+  }
+
+  @media all and (max-width: 320px) {
+    height: 850px;
   }
 
   #monogram-subscription-content-reason-container{
@@ -183,7 +200,10 @@ body.monogram-subscription-page{
 
     table{
       width: 100%;
-      table-layout: fixed;
+      // table-layout: fixed;
+      @media all and (max-width: 991px) {
+        table-layout: auto;
+      }
 
       thead{
         tr{
@@ -303,6 +323,11 @@ body.monogram-subscription-page{
 #monogram-subscription-content-copy-01 {
   padding-left: 60px;
   padding-right: 60px;
+
+  @media all and (max-width: 480px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 #monogram-subscription-content-copy-03 {

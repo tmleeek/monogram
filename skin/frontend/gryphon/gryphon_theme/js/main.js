@@ -29,7 +29,7 @@ var initialLoad = true;
 
 
         setTimeout(function(){
-            $('html').animate({scrollTop:0}, 1);
+            // $('html').animate({scrollTop:0}, 1);
             $('html').addClass('load-complete');
             console.log('back to top')
         }, 100);
