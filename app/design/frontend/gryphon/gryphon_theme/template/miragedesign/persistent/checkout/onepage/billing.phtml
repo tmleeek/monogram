@@ -88,7 +88,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                                 <ul class="form-list">
                                 <?php if ($this->customerHasAddresses()): ?>
                                     <li class="wide each-input dropdown-address">
-                                        <label for="billing-address-select"><?php echo $this->__('Select a billing address') ?></label>
+                                        <label for="billing-address-select"><?php echo $this->__('Select your billing address') ?></label>
                                         <div class="input-box dropdown">
                                             <?php //echo $this->getAddressesHtmlSelect('billing') ?>                            
                                             <div id="custAddress">
@@ -294,7 +294,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                         <ul class="form-list">
                         <?php if ($this->customerHasAddresses()): ?>
                            <li class="wide each-input dropdown-address">
-                               <label for="shipping-address-select"><?php echo $this->__('Select a shipping address') ?></label>
+                               <label for="shipping-address-select"><?php echo $this->__('Select your shipping address') ?></label>
                                <div class="input-box dropdown">
                                    <?php //echo $this->getAddressesHtmlSelect('shipping') ?>
                                    <div id="custAddress">

@@ -8125,7 +8125,7 @@ input:-webkit-autofill {
   display: block;
   width: 65px;
   height: 65px;
-  background: transparent url("../images/logo/header-desktop-logo.svg") center center no-repeat;
+  background: transparent url("../images/logo/preloader-animated.svg") center center no-repeat;
   background-size: 65px 65px;
   -webkit-background-size: 65px 65px;
   position: absolute;
@@ -8135,6 +8135,59 @@ input:-webkit-autofill {
   margin-left: -32.5px;
 }
 #page-preloader #page-preloader-monogram-name {
+  margin-left: -56px;
+  display: block;
+  width: 111px;
+  height: 16px;
+  background: transparent url("../images/logo/monogram-name.svg") center center no-repeat;
+  background-size: 111px 16px;
+  -webkit-background-size: 111px 16px;
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 10px;
+}
+#page-preloader-static {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 200000;
+  -webkit-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+  overflow: hidden;
+}
+#page-preloader-static:before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #7b706b;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+#page-preloader-static:after {
+  content: '';
+  display: block;
+  width: 65px;
+  height: 65px;
+  background: transparent url("../images/logo/header-desktop-logo.svg") center center no-repeat;
+  background-size: 65px 65px;
+  -webkit-background-size: 65px 65px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-top: -32.5px;
+  margin-left: -32.5px;
+}
+#page-preloader-static #page-preloader-monogram-name {
   margin-left: -56px;
   display: block;
   width: 111px;
@@ -8434,7 +8487,6 @@ input:-webkit-autofill {
   transform: translate(-50%, -50%);
   height: 24px;
   padding: 7px 15px;
-  padding: 7.5px 15px;
 }
 .graph-svg-circle:focus .graph-svg-circle-text,
 .graph-svg-circle:hover .graph-svg-circle-text {
@@ -10479,6 +10531,20 @@ body.tea-layering-detail-page {
     margin-right: 0px;
   }
 }
+body.is-tablet.is-tablet-landscape .home-tea-item .cta-container {
+  -moz-opacity: 1 !important;
+  -khtml-opacity: 1 !important;
+  -webkit-opacity: 1 !important;
+  opacity: 1 !important;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+  filter: alpha(opacity=100);
+  left: 15px;
+  right: 15px;
+}
+body.is-tablet.is-tablet-landscape .home-tea-item .cta-container .arrow-cta {
+  font-size: 9px;
+  line-height: 12px;
+}
 #home-tea-selection-section {
   position: absolute;
   top: 0;
@@ -11280,11 +11346,11 @@ body.tea-layering-detail-page {
   }
   40% {
     /* transform */
-    -webkit-transform: translate3d(0, 5px, 0);
-    -moz-transform: translate3d(0, 5px, 0);
-    -o-transform: translate3d(0, 5px, 0);
-    -ms-transform: translate3d(0, 5px, 0);
-    transform: translate3d(0, 5px, 0);
+    -webkit-transform: translate3d(0, -5px, 0);
+    -moz-transform: translate3d(0, -5px, 0);
+    -o-transform: translate3d(0, -5px, 0);
+    -ms-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
   }
   100% {
     /* transform */
@@ -11306,11 +11372,11 @@ body.tea-layering-detail-page {
   }
   40% {
     /* transform */
-    -webkit-transform: translate3d(0, 5px, 0);
-    -moz-transform: translate3d(0, 5px, 0);
-    -o-transform: translate3d(0, 5px, 0);
-    -ms-transform: translate3d(0, 5px, 0);
-    transform: translate3d(0, 5px, 0);
+    -webkit-transform: translate3d(0, -5px, 0);
+    -moz-transform: translate3d(0, -5px, 0);
+    -o-transform: translate3d(0, -5px, 0);
+    -ms-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
   }
   100% {
     /* transform */
@@ -11406,6 +11472,106 @@ body.tea-layering-detail-page {
   -ms-animation-delay: 0.5s !important;
   -o-animation-delay: 0.5s !important;
   animation-delay: 0.5s !important;
+}
+#home-graph-section #graph-section-combination-graph-margin {
+  -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+  animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+  -webkit-animation-delay: 0.32s !important;
+  -moz-animation-delay: 0.32s !important;
+  -ms-animation-delay: 0.32s !important;
+  -o-animation-delay: 0.32s !important;
+  animation-delay: 0.32s !important;
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  filter: alpha(opacity=0);
+}
+#home-graph-section #graph-section-center-copy-container {
+  -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+  animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+  -webkit-animation-delay: 0.24s !important;
+  -moz-animation-delay: 0.24s !important;
+  -ms-animation-delay: 0.24s !important;
+  -o-animation-delay: 0.24s !important;
+  animation-delay: 0.24s !important;
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  filter: alpha(opacity=0);
+}
+#home-graph-section #graph-selction-a .graph-selection-content,
+#home-graph-section #graph-selction-b .graph-selection-content {
+  -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+  animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+  -webkit-animation-delay: 0.16s !important;
+  -moz-animation-delay: 0.16s !important;
+  -ms-animation-delay: 0.16s !important;
+  -o-animation-delay: 0.16s !important;
+  animation-delay: 0.16s !important;
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  filter: alpha(opacity=0);
+}
+#home-graph-section #graph-selction-a .graph-selection-instructions,
+#home-graph-section #graph-selction-b .graph-selection-instructions {
+  -webkit-animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+  animation: textFadeOut 0.2s both cubic-bezier(0.7, 0, 0.3, 1);
+  -webkit-animation-delay: 0.12s !important;
+  -moz-animation-delay: 0.12s !important;
+  -ms-animation-delay: 0.12s !important;
+  -o-animation-delay: 0.12s !important;
+  animation-delay: 0.12s !important;
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  filter: alpha(opacity=0);
+}
+#home-graph-section.slide-animate-in #graph-section-combination-graph-margin {
+  -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+  animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+  -webkit-animation-delay: 0.005s !important;
+  -moz-animation-delay: 0.005s !important;
+  -ms-animation-delay: 0.005s !important;
+  -o-animation-delay: 0.005s !important;
+  animation-delay: 0.005s !important;
+}
+#home-graph-section.slide-animate-in #graph-section-center-copy-container {
+  -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+  animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+  -webkit-animation-delay: 0.125s !important;
+  -moz-animation-delay: 0.125s !important;
+  -ms-animation-delay: 0.125s !important;
+  -o-animation-delay: 0.125s !important;
+  animation-delay: 0.125s !important;
+}
+#home-graph-section.slide-animate-in #graph-selction-a .graph-selection-content,
+#home-graph-section.slide-animate-in #graph-selction-b .graph-selection-content {
+  -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+  animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+  -webkit-animation-delay: 0.245s !important;
+  -moz-animation-delay: 0.245s !important;
+  -ms-animation-delay: 0.245s !important;
+  -o-animation-delay: 0.245s !important;
+  animation-delay: 0.245s !important;
+}
+#home-graph-section.slide-animate-in #graph-selction-a .graph-selection-instructions,
+#home-graph-section.slide-animate-in #graph-selction-b .graph-selection-instructions {
+  -webkit-animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+  animation: textFadeIn 0.4s both cubic-bezier(0.7, 0, 0.3, 1);
+  -webkit-animation-delay: 0.305s !important;
+  -moz-animation-delay: 0.305s !important;
+  -ms-animation-delay: 0.305s !important;
+  -o-animation-delay: 0.305s !important;
+  animation-delay: 0.305s !important;
 }
 .tea-layering-page {
   overflow: visible;
@@ -11568,7 +11734,7 @@ body.tea-layering-detail-page {
   position: fixed;
   width: 150px;
   top: 50%;
-  left: 60px;
+  left: 7%;
   transform: translate(0%, -50%);
   -webkit-transform-origin: 0 50%;
   -moz-transform-origin: 0 50%;
@@ -11584,12 +11750,13 @@ body.tea-layering-detail-page {
 }
 #page-indicator li a {
   text-transform: uppercase;
-  font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
+  font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 11px;
-  line-height: 10px;
-  letter-spacing: 0.05em;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
   color: #f1efee;
   -moz-opacity: 0.3;
   -khtml-opacity: 0.3;
@@ -11609,6 +11776,21 @@ body.tea-layering-detail-page {
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
   filter: alpha(opacity=100);
 }
+@media only screen and (max-width: 1330px) {
+  #page-indicator {
+    left: 60px;
+  }
+}
+@media only screen and (max-width: 1180px) {
+  #page-indicator {
+    left: 40px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #page-indicator {
+    left: 20px;
+  }
+}
 #tea-matrix-content-section-1,
 #tea-matrix-content-section-2,
 #tea-matrix-content-section-3,
@@ -11627,7 +11809,7 @@ body.tea-layering-detail-page {
   position: fixed;
   width: 320px;
   top: 50%;
-  right: 60px;
+  right: 7%;
   transform: translate(0%, -50%);
   -webkit-transform-origin: 100% 50%;
   -moz-transform-origin: 100% 50%;
@@ -11636,6 +11818,63 @@ body.tea-layering-detail-page {
   transform-origin: 100% 50%;
   pointer-events: none;
   background: transparent;
+}
+@media only screen and (max-width: 1330px) {
+  #tea-matrix-content-section-1,
+  #tea-matrix-content-section-2,
+  #tea-matrix-content-section-3,
+  #tea-matrix-content-section-4,
+  #tea-matrix-content-section-5,
+  #tea-matrix-content-section-6,
+  #tea-matrix-content-section-7,
+  #tea-matrix-content-section-8,
+  #tea-matrix-content-section-9,
+  #tea-matrix-content-section-10,
+  #tea-matrix-content-section-11,
+  #tea-matrix-content-section-12,
+  #tea-matrix-content-section-13,
+  #tea-matrix-content-section-14,
+  #tea-matrix-content-section-15 {
+    right: 60px;
+  }
+}
+@media only screen and (max-width: 1180px) {
+  #tea-matrix-content-section-1,
+  #tea-matrix-content-section-2,
+  #tea-matrix-content-section-3,
+  #tea-matrix-content-section-4,
+  #tea-matrix-content-section-5,
+  #tea-matrix-content-section-6,
+  #tea-matrix-content-section-7,
+  #tea-matrix-content-section-8,
+  #tea-matrix-content-section-9,
+  #tea-matrix-content-section-10,
+  #tea-matrix-content-section-11,
+  #tea-matrix-content-section-12,
+  #tea-matrix-content-section-13,
+  #tea-matrix-content-section-14,
+  #tea-matrix-content-section-15 {
+    right: 40px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #tea-matrix-content-section-1,
+  #tea-matrix-content-section-2,
+  #tea-matrix-content-section-3,
+  #tea-matrix-content-section-4,
+  #tea-matrix-content-section-5,
+  #tea-matrix-content-section-6,
+  #tea-matrix-content-section-7,
+  #tea-matrix-content-section-8,
+  #tea-matrix-content-section-9,
+  #tea-matrix-content-section-10,
+  #tea-matrix-content-section-11,
+  #tea-matrix-content-section-12,
+  #tea-matrix-content-section-13,
+  #tea-matrix-content-section-14,
+  #tea-matrix-content-section-15 {
+    right: 20px;
+  }
 }
 #tea-matrix-section-1 {
   /*
@@ -11697,14 +11936,25 @@ body.tea-layering-detail-page {
 #tea-matrix-section-1 #tea-matrix-content .section h3 {
   text-transform: uppercase;
   padding-bottom: 10px;
+  font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  white-space: nowrap;
+  margin-bottom: 1px;
 }
 #tea-matrix-section-1 #tea-matrix-content .section h3 sup {
   font-size: 9px;
 }
 #tea-matrix-section-1 #tea-matrix-content .section p {
-  color: #f1efee;
-  font-size: 10px;
-  line-height: 16px;
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 18px;
+  letter-spacing: 0.03em;
+  color: #ffffff;
 }
 #tea-matrix-section-1 #tea-matrix-content .section hr.top {
   border-top: 1px solid rgba(241, 239, 238, 0.5);
@@ -11724,7 +11974,7 @@ body.tea-layering-detail-page {
 }
 #tea-matrix-section-1 #tea-matrix-content .section ul li span {
   display: inline-block;
-  color: #f1efee;
+  color: #ffffff;
 }
 #tea-matrix-section-1 #tea-matrix-content .section ul li span:nth-of-type(1) {
   width: 130px;
@@ -11757,6 +12007,7 @@ body.tea-layering-detail-page {
 }
 #tea-matrix-section-1 #tea-matrix-content .section .suggestions div.suggestion {
   display: inline-block;
+  margin-right: 5px;
 }
 #tea-matrix-section-1 #tea-matrix-content .section .suggestions div.suggestion span {
   font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
@@ -14457,14 +14708,14 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   font-style: normal;
   font-weight: 400;
   font-size: 26px;
-  line-height: 32px;
+  line-height: 30px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 18px;
 }
 #monogram-experience-section-1 #monogram-experience-heading-text p {
   text-align: center;
-  color: #f1efee;
+  color: #ffffff;
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
@@ -15612,6 +15863,11 @@ body.billing-shipping-page {
     margin-top: 22px;
   }
 }
+@media only screen and (max-width: 320px) {
+  #page-shopping-cart-item-container table tbody tr .product-qty {
+    margin-top: 11px;
+  }
+}
 #page-shopping-cart-item-container table tbody tr .product-qty a.minus {
   display: block;
   width: 20px;
@@ -16141,7 +16397,7 @@ body.billing-shipping-page {
 @media only screen and (max-width: 991px) {
   #page-shopping-cart-cta-container {
     padding-top: 43px;
-    padding-bottom: 200px;
+    padding-bottom: 50px;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -19323,6 +19579,12 @@ body.monogram-subscription-page {
   padding-top: 73px;
   padding-bottom: 73px;
 }
+@media all and (max-width: 991px) {
+  #monogram-subscription-title-section {
+    padding-top: 0px;
+    padding-bottom: 30px;
+  }
+}
 #monogram-subscription-title-section {
   text-align: center;
   color: #f1efee;
@@ -19376,9 +19638,21 @@ body.monogram-subscription-page {
   color: #f1efee;
   padding-top: 79px;
 }
+@media all and (max-width: 991px) {
+  #monogram-subscription-content-copy-01,
+  #monogram-subscription-content-copy-02 {
+    height: 790px;
+  }
+}
 #monogram-subscription-content-copy-01 #monogram-subscription-content-reason-container,
 #monogram-subscription-content-copy-02 #monogram-subscription-content-reason-container {
   margin-bottom: 54px;
+}
+@media all and (max-width: 991px) {
+  #monogram-subscription-content-copy-01 #monogram-subscription-content-reason-container,
+  #monogram-subscription-content-copy-02 #monogram-subscription-content-reason-container {
+    margin-bottom: 15px;
+  }
 }
 #monogram-subscription-content-copy-01 #monogram-subscription-content-reason-container h3,
 #monogram-subscription-content-copy-02 #monogram-subscription-content-reason-container h3 {
@@ -19396,6 +19670,12 @@ body.monogram-subscription-page {
 #monogram-subscription-content-copy-01 #monogram-subscription-content-reason-container .monogram-subscription-content-reason,
 #monogram-subscription-content-copy-02 #monogram-subscription-content-reason-container .monogram-subscription-content-reason {
   text-align: center;
+}
+@media all and (max-width: 991px) {
+  #monogram-subscription-content-copy-01 #monogram-subscription-content-reason-container .monogram-subscription-content-reason,
+  #monogram-subscription-content-copy-02 #monogram-subscription-content-reason-container .monogram-subscription-content-reason {
+    margin-bottom: 30px;
+  }
 }
 #monogram-subscription-content-copy-01 #monogram-subscription-content-reason-container .monogram-subscription-content-reason h4,
 #monogram-subscription-content-copy-02 #monogram-subscription-content-reason-container .monogram-subscription-content-reason h4 {
@@ -19498,9 +19778,21 @@ body.monogram-subscription-page {
   font-size: 0;
   padding-top: 46px;
 }
+@media all and (max-width: 991px) {
+  #monogram-subscription-content-copy-01 .cta-container,
+  #monogram-subscription-content-copy-02 .cta-container {
+    padding-top: 15px;
+  }
+}
 #monogram-subscription-content-copy-01 .cta-container .square-cta,
 #monogram-subscription-content-copy-02 .cta-container .square-cta {
   margin: 0 13px;
+}
+@media all and (max-width: 480px) {
+  #monogram-subscription-content-copy-01 .cta-container .square-cta,
+  #monogram-subscription-content-copy-02 .cta-container .square-cta {
+    margin-bottom: 15px;
+  }
 }
 #monogram-subscription-content-copy-01 {
   padding-left: 60px;
