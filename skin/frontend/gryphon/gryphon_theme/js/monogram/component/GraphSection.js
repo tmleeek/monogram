@@ -167,6 +167,13 @@ monogram.component.GraphSection.ON_GRAPH_SECTION_READY = 'on_graph_section_ready
  * @const
  * @type {string}
  */
+monogram.component.GraphSection.ON_ITEM_SELECTED = 'on_item_selected';
+
+/**
+ * GraphSection Event Constant
+ * @const
+ * @type {string}
+ */
 monogram.component.GraphSection.EVENT_02 = '';
 
 
@@ -637,6 +644,8 @@ monogram.component.GraphSection.prototype.delayed_display_combination_index = fu
   
 
 
+  this.dispatchEvent(new goog.events.Event(monogram.component.GraphSection.ON_ITEM_SELECTED));
+  
 };
 
 
