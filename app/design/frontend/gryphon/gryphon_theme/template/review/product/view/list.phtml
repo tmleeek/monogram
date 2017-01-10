@@ -50,7 +50,7 @@
                                   <img src="<?php echo $this->getSkinUrl('images/products_svg/'.$tea_name.'.svg') ?>" class="parent" alt="">                              
                                   <img src="<?php echo $this->getSkinUrl('images/products_svg/'.$overlay_tea_name.'.svg') ?>" class="overlay" alt="">              
                                 <?php else: ?>         
-                                  <img class="<?php echo $file_name; ?>" src="<?php echo $this->helper('catalog/image')->init($product, 'small_image')->resize(123, 146); ?>" alt="">
+                                  <img class="<?php echo $file_name; ?>" src="<?php echo $this->helper('catalog/image')->init($product, 'small_image')->keepAspectRatio(true)->keepFrame(false)->resize(143, 176); ?>" alt="">
                                 <?php endif; ?>
                               </div>
                               <?php $selection_product_name_arr = ['black tea selection', 'herbal tea selection', 'green tea & oolong selection', 'tea tasting assortment']; ?>

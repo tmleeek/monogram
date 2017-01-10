@@ -348,6 +348,9 @@ monogram.page.Home.prototype.display_graph_section_delayed_a_little_before = fun
       var twitter_share_url     = 'https://twitter.com/share?url=' + encodeURIComponent(current_url) + 
                                   '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + this.page_hash_02);
       var facebook_share_url    = encodeURIComponent(current_url);
+
+      var main_product_name = this.graph_section.main_data_item.data_name;
+      var sub_product_name = this.graph_section.sub_data_item.data_name;        
               
       /*
       $j('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
@@ -356,6 +359,8 @@ monogram.page.Home.prototype.display_graph_section_delayed_a_little_before = fun
 
       $j('.home-customized-share-button a.fa-twitter').attr('href', twitter_share_url);
       $j('.home-customized-share-button a.fa-facebook').attr('href', facebook_share_url);
+      $j('.home-customized-share-button a.fa-facebook').data('main_product_name', main_product_name);
+      $j('.home-customized-share-button a.fa-facebook').data('sub_product_name', sub_product_name);
 
     }
     

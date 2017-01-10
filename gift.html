@@ -1,0 +1,192 @@
+<!--@subject A gift card from {{htmlescape var=$sendername}} @-->
+<!--@vars
+{"htmlescape var=$name":"Recipient Name",
+"htmlescape var=$sendername":"Sender name",
+"var code":"Gift Card Code",
+"var balance":"Gift Card Balance",
+"var status":"Status",
+"var status":"Status",
+"htmlescape var=$message":"Message",
+"var secure_key":"Secure Key"}
+@-->
+
+<!--@styles
+@-->
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Domine);
+  
+  @font-face {
+    font-family: 'BrandonGrotesqueWeb-Bold';
+    src: url('http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/fonts/email-fonts/brandon_bld.eot'); /* IE9 Compat Modes */
+    src: url('http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/fonts/email-fonts/brandon_bld.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/fonts/email-fonts/brandon_bld.woff2') format('woff2'), /* Super Modern Browsers */
+         url('http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/fonts/email-fonts/brandon_bld.woff') format('woff'), /* Pretty Modern Browsers */
+         url('http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/fonts/email-fonts/brandon_bld.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/fonts/email-fonts/brandon_bld.svg#svgFontName') format('svg'); /* Legacy iOS */
+  }
+
+  @font-face {
+    font-family: 'BrandonGrotesqueWeb-Black';
+    src: url('http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/fonts/email-fonts/brandon_blk.eot'); /* IE9 Compat Modes */
+    src: url('http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/fonts/email-fonts/brandon_blk.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/fonts/email-fonts/brandon_blk.woff2') format('woff2'), /* Super Modern Browsers */
+         url('http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/fonts/email-fonts/brandon_blk.woff') format('woff'), /* Pretty Modern Browsers */
+         url('http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/fonts/email-fonts/brandon_blk.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/fonts/email-fonts/brandon_blk.svg#svgFontName') format('svg'); /* Legacy iOS */
+  }
+  
+  @font-face {
+    font-family: 'BrandonGrotesqueWeb-Medium';
+    src: url('http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/fonts/email-fonts/brandon_med.eot'); /* IE9 Compat Modes */
+    src: url('http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/fonts/email-fonts/brandon_med.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/fonts/email-fonts/brandon_med.woff2') format('woff2'), /* Super Modern Browsers */
+         url('http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/fonts/email-fonts/brandon_med.woff') format('woff'), /* Pretty Modern Browsers */
+         url('http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/fonts/email-fonts/brandon_med.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/fonts/email-fonts/brandon_med.svg#svgFontName') format('svg'); /* Legacy iOS */
+  }           
+
+  /* CLIENT-SPECIFIC STYLES */
+  *{
+    -webkit-font-smoothing : antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
+  .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
+  .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} /* Force Hotmail to display normal line spacing */
+  body, table, td, a{-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+  table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+  img{-ms-interpolation-mode:bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+
+  /* RESET STYLES */
+  body{margin:0; padding:0;}
+  img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
+  table{border-collapse:collapse !important;}
+  body{height:100% !important; margin:0; padding:0; width:100% !important;}
+
+  /* iOS BLUE LINKS */
+  .appleBody a {color:#68440a; text-decoration: none;}
+  .appleFooter a {color:#999999; text-decoration: none;}
+
+  /* MOBILE STYLES */
+  @media screen and (max-width: 525px) {
+
+      /* ALLOWS FOR FLUID TABLES */
+      table[class="wrapper"]{
+        width:100% !important;
+      }
+
+      /* ADJUSTS LAYOUT OF LOGO IMAGE */
+      td[class="logo"]{
+        text-align: left;
+        padding: 20px 0 20px 0 !important;
+      }
+
+      td[class="logo"] img{
+        margin:0 auto!important;
+      }
+
+      /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+      td[class="mobile-hide"]{
+        display:none;}
+
+      img[class="mobile-hide"]{
+        display: none !important;
+      }
+
+      img[class="img-max"]{
+        max-width: 100% !important;
+        width: 100% !important;
+        height:auto !important;
+      }
+
+      /* FULL-WIDTH TABLES */
+      table[class="responsive-table"]{
+        width:100%!important;
+      }
+
+      /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */
+      td[class="padding"]{
+        padding: 10px 5% 15px 5% !important;
+      }
+
+      td[class="padding-copy"]{
+        padding: 10px 5% 10px 5% !important;
+        text-align: center;
+      }
+
+      td[class="padding-meta"]{
+        padding: 30px 5% 0px 5% !important;
+        text-align: center;
+      }
+
+      td[class="no-pad"]{
+        padding: 0 0 20px 0 !important;
+      }
+
+      td[class="no-padding"]{
+        padding: 0 !important;
+      }
+
+      td[class="section-padding"]{
+        /*padding: 50px 15px 50px 15px !important;*/
+        padding: 10px 15px 50px 15px !important;
+      }
+
+      td[class="section-padding-bottom-image"]{
+        padding: 50px 15px 0 15px !important;
+      }
+
+      /* ADJUST BUTTONS ON MOBILE */
+      td[class="mobile-wrapper"]{
+          padding: 10px 5% 15px 5% !important;
+      }
+
+      table[class="mobile-button-container"]{
+          margin:0 auto;
+          width:100% !important;
+      }
+
+      a[class="mobile-button"]{
+          /*width:80% !important;
+          padding: 15px !important;
+          border: 0 !important;
+          font-size: 16px !important;*/
+          padding: 10px!important;
+      }
+
+  }
+</style>
+
+<!-- ONE COLUMN SECTION -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#ffffff" align="center" style="padding: 0px 15px 70px 15px;" class="section-padding">
+            <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
+                <tr>
+                    <td>
+                        <!-- HERO IMAGE -->
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">  
+                            <tr>
+                                <td align="center">
+                                    <div class="gift-card-img" style="display: inline-block; width: 100%; min-height: 700px; position: relative; background: url('http://www.monogramtea.com/media/giftvoucher/template/images/product-gift-card-01-bg.png') top center / 465px 750px no-repeat;">                                        
+                                        <div class="gifttext" style="width: 410px; height: 630px;  text-align: left;  color: #7b706b;">
+                                            <p class="gifttext-intro" style="font-family: 'BrandonGrotesqueWeb-Black', Tahoma, Helvetica, Arial, sans-serif;  font-size: 14px; line-height: 20px;  letter-spacing: 0.05em; text-transform: uppercase;  margin-top: 120px; margin-bottom: 0px;color: #7b706b;">Dear ,  a special gift for you. <br>(from {{htmlescape var=$sendername}})</p>                                            
+                                            <p class="gifttext-copy" style="font-family: 'Domine', 'Times New Roman', Times, serif;  font-size: 11px;  line-height: 18px;  letter-spacing: 0.05em;  height: 90px; text-decoration: none;color: #7b706b;    margin-bottom: 0px;margin-top: 5px;">{{htmlescape var=$message}}</p>                                            
+                                            <p class="gifttext-code-title" style="font-family: 'BrandonGrotesqueWeb-Bold', 'Arial Black', Gadget, sans-serif;  font-size: 10px;  line-height: 20px;  text-transform: uppercase;  letter-spacing: 0.08em;  margin-bottom: -2px;color: #7b706b;">gift card code</p>
+                                            <p class="gifttext-code" style="font-family: 'BrandonGrotesqueWeb-Black', 'Arial Black', Gadget, sans-serif; font-size: 14px; line-height: 20px; text-transform: uppercase; letter-spacing: 0.08em; margin: 0px;color: #7b706b;">{{var code}}</p>
+                                            <p class="gifttext-amount" style="font-family: 'BrandonGrotesqueWeb-Black', Tahoma, Helvetica, Arial, sans-serif;  font-size: 50px;  line-height: 50px;  letter-spacing: 0.01em;  margin-bottom: 25px; margin-top: 0px;color: #7b706b;"><span class="gifttext-amount-number">{{var balance}}</span></p>
+                                            <p class="gifttext-disclaimer" style="font-family: 'Domine', 'Times New Roman', Times, serif;  font-size: 11px;  line-height: 18px; letter-spacing: 0.015em;  color: #fff; margin-top: 330px;">
+                                              Converting to cash is not allowed.
+                                              You can use the gift card code or redeem it to pay for your order at <a href="{{store url=""}}" style="text-decoration:none;color: #fff;">{{var store.getFrontendName()}}</a>.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>                            
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

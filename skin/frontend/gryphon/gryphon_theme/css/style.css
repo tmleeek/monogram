@@ -4798,7 +4798,7 @@ html.overflow-visible-version {
 }
 html,
 body {
-  background: #7b706b;
+  background: rgba(123, 112, 107, 0.85);
 }
 .is-mac * {
   -webkit-font-smoothing: antialiased;
@@ -5848,6 +5848,9 @@ p {
   overflow: scroll;
 }
 .mobile-menu-open #content-wrapper {
+  display: none;
+}
+.mobile-menu-open article {
   display: none;
 }
 .mobile-menu-open #mobile-footer {
@@ -8499,7 +8502,6 @@ html {
 }
 html body {
   width: 100%;
-  height: 100%;
 }
 #graph-section {
   position: absolute;
@@ -9861,6 +9863,9 @@ body.tea-layering-detail-page {
   vertical-align: top;
   *display: inline;
   zoom: 1;
+}
+.graph-selection-tea-mobile .graph-selection-name h2 sup {
+  font-size: 11px;
 }
 .graph-selection-tea-mobile .graph-selection-name .plus-sign {
   font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
@@ -11548,7 +11553,7 @@ body.is-tablet.is-tablet-landscape .home-tea-item .cta-container .arrow-cta {
   background: #7b706b;
 }
 #desktop-header {
-  background: #827773;
+  background: #7b706b;
   height: 70px;
 }
 #tea-layering-section-1 #monogram-tea-layering-title {
@@ -11613,6 +11618,9 @@ body.is-tablet.is-tablet-landscape .home-tea-item .cta-container .arrow-cta {
   padding: 0px 40px;
 }
 #tea-layering-section-1 #tea-layering-table .tea-layering-table-contents .tea-layering-table-text h3 {
+  font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
   text-transform: uppercase;
   font-size: 15px;
 }
@@ -11921,8 +11929,8 @@ body.is-tablet.is-tablet-landscape .home-tea-item .cta-container .arrow-cta {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 11px;
-  line-height: 18px;
+  font-size: 12.5px;
+  line-height: 20px;
   letter-spacing: 0.03em;
   color: #ffffff;
 }
@@ -11954,12 +11962,14 @@ body.is-tablet.is-tablet-landscape .home-tea-item .cta-container .arrow-cta {
   font-weight: 400;
   font-size: 10px;
   letter-spacing: 0.08em;
+  line-height: 20px;
 }
 #tea-matrix-section-1 #tea-matrix-content .section ul li span:nth-of-type(2) {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 10px;
+  font-size: 12.6px;
+  line-height: 20px;
 }
 #tea-matrix-section-1 #tea-matrix-content .section.active-section {
   z-index: 9999;
@@ -11983,8 +11993,8 @@ body.is-tablet.is-tablet-landscape .home-tea-item .cta-container .arrow-cta {
   font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 11px;
-  line-height: 11px;
+  font-size: 13px;
+  line-height: 18px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -12985,16 +12995,27 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   height: 874px;
   float: none!important;
 }
+@media all and (max-width: 480px) {
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter {
+    height: 100%;
+  }
+}
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 {
   display: table-cell;
   vertical-align: middle;
   position: static!important;
   height: 100%!important;
-  background-size: 494px 600px;
+  background-size: 465px 750px;
 }
 @media all and (max-width: 990px) {
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 {
     background-size: auto auto;
+    background-position: 50% 50%;
+  }
+}
+@media all and (max-width: 480px) {
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 {
+    background-size: 90%;
     background-position: 50% 50%;
   }
 }
@@ -13003,13 +13024,29 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   display: block;
   margin: 0 auto;
   position: relative;
-  width: 450px;
-  height: 620px;
+  width: 465px;
+  height: 750px;
+  margin-top: 62px;
 }
-@media all and (max-width: 990px) {
+@media all and (max-width: 480px) {
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01,
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 {
     width: 100%;
+    height: 670px;
+  }
+}
+@media all and (max-width: 380px) {
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01,
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 {
+    width: 100%;
+    height: 580px;
+  }
+}
+@media all and (max-width: 320px) {
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01,
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 {
+    width: 100%;
+    height: 490px;
   }
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 img,
@@ -13021,29 +13058,51 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext,
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext {
   position: absolute;
-  top: 290px;
-  left: 5px;
-  width: 440px;
-  height: 420px;
-  text-align: center;
-  color: #ffffff;
+  top: 110px;
+  left: 30px;
+  height: 620px;
+  width: 100%;
+  text-align: left;
+  color: #7b706b !important;
 }
-@media all and (max-width: 990px) {
+@media all and (max-width: 480px) {
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext,
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext {
-    left: 5px;
+    top: 100px;
+    left: 45px;
+    height: 480px;
+  }
+}
+@media all and (max-width: 380px) {
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext,
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext {
+    top: 80px;
+    left: 40px;
+    height: 430px;
     width: 100%;
-    height: auto;
-    top: 40%;
+  }
+}
+@media all and (max-width: 320px) {
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext,
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext {
+    top: 60px;
+    left: 35px;
+    height: 370px;
+    width: 100%;
   }
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-intro,
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-intro {
-  font-size: 15px;
-  line-height: 24px;
-  height: 73px;
+  font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  height: 45px;
 }
-@media all and (max-width: 990px) {
+@media all and (max-width: 480px) {
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-intro,
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-intro {
     font-size: 8px;
@@ -13062,7 +13121,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   text-transform: uppercase;
   margin-bottom: 12px;
 }
-@media all and (max-width: 990px) {
+@media all and (max-width: 480px) {
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-title,
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-title {
     font-size: 10px;
@@ -13074,10 +13133,10 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   font-size: 60px;
   line-height: 60px;
   letter-spacing: 0.05em;
-  color: #fecd94;
+  color: #7b706b;
   margin-bottom: 20px;
 }
-@media all and (max-width: 990px) {
+@media all and (max-width: 480px) {
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-amount,
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-amount {
     font-size: 25px;
@@ -13087,17 +13146,19 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-copy,
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-copy {
-  font-size: 14px;
-  line-height: 22px;
-  color: #ffffff;
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: #7b706b;
   height: 113px;
   margin-bottom: 29px;
   word-wrap: break-word;
-  width: 80%;
-  margin: 0 auto;
-  margin-bottom: 40px;
+  width: 95%;
+  margin-bottom: 0px;
 }
-@media all and (max-width: 990px) {
+@media all and (max-width: 480px) {
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-copy,
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-copy {
     min-height: 55px;
@@ -13111,14 +13172,14 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  color: #fecd94;
-  font-size: 12px;
+  color: #7b706b;
+  font-size: 10px;
   line-height: 20px;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  margin-bottom: 15px;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
 }
-@media all and (max-width: 990px) {
+@media all and (max-width: 480px) {
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-code-title,
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-code-title {
     font-size: 6px;
@@ -13128,20 +13189,38 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-code,
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-code {
   display: inline-block;
+  font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #7b706b;
+  font-size: 12px;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-disclaimer,
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-disclaimer {
-  font-size: 13px;
-  line-height: 20px;
+  font-family: 'Domine', "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 18px;
   letter-spacing: 0.015em;
   color: #ffffff;
+  position: absolute;
+  bottom: 0px;
 }
-@media all and (max-width: 990px) {
+@media all and (max-width: 480px) {
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-disclaimer,
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-disclaimer {
-    width: 185px;
-    text-align: center;
-    margin: 0 auto;
+    font-size: 10px;
+  }
+}
+@media all and (max-width: 380px) {
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-disclaimer,
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-disclaimer {
+    font-size: 10px;
+    width: 70%;
   }
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .white,
@@ -13167,6 +13246,18 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   vertical-align: top;
   padding-top: 15px;
   padding-bottom: 70px;
+}
+@media all and (max-width: 1024px) {
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content {
+    padding-left: 30px;
+  }
+}
+@media all and (max-width: 480px) {
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+  }
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .product-options-bottom .regular-price {
   display: none;
@@ -13262,6 +13353,11 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs .each-input ul.social-sharing {
   display: inline-block;
 }
+@media all and (max-width: 480px) {
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs .each-input ul.social-sharing {
+    display: block;
+  }
+}
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs .each-input ul.social-sharing li {
   display: inline-block;
   margin-right: 5px;
@@ -13284,8 +13380,26 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   background-color: #756b66;
   color: #ffffff;
 }
+@media all and (max-width: 480px) {
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs .each-input input[type="text"],
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs .each-input input[type="password"],
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs .each-input select,
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs .each-input textarea {
+    width: 100%!important;
+  }
+}
+@media all and (max-width: 480px) {
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs .each-input #giftcard-template-show-images {
+    display: block !important;
+  }
+}
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs .each-input .quantity-container {
   display: inline-block;
+}
+@media all and (max-width: 480px) {
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs .each-input .quantity-container {
+    width: 100%;
+  }
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs .each-input .quantity-container input.qty {
   background: none;
@@ -13332,9 +13446,10 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs .each-input .dropdown {
   margin-right: 10px;
 }
-@media all and (max-width: 470px) {
+@media all and (max-width: 480px) {
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs .each-input .dropdown {
     margin-right: 0px;
+    width: 100%;
   }
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs .each-input .dropdown:nth-of-type(3) {
@@ -13363,6 +13478,11 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs .each-input textarea + span:before {
     width: auto!important;
     margin-right: 0px!important;
+  }
+}
+@media all and (max-width: 480px) {
+  #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs .each-input textarea + span {
+    margin-left: 0px;
   }
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs .each-input #message_characters_remaining {
@@ -13490,9 +13610,9 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs .each-input .dropdown-container input[type="text"] {
   width: 100%;
 }
-@media all and (max-width: 470px) {
+@media all and (max-width: 480px) {
   #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs .each-input .dropdown-container {
-    width: 238px;
+    width: 100%;
   }
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-content .inputs .each-input p {
@@ -13530,6 +13650,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 #tea-product-detail-section-1 #product-detail-img-info-container .product-img .slick-next,
 #tea-product-detail-section-1 #product-detail-img-info-container .product-img .slick-prev {
   top: 50%;
+  z-index: 999;
   margin-top: 0px;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .product-img .slick-next:before,
@@ -13574,6 +13695,9 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   }
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .product-info h3 {
+  font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
   text-transform: uppercase;
   padding-bottom: 20px;
 }
@@ -13593,13 +13717,13 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 #tea-product-detail-section-1 #product-detail-img-info-container .product-info p {
   color: #ffffff;
   font-size: 12.5px;
-  line-height: 16px;
+  line-height: 20px;
   margin-bottom: 24px;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .product-info span {
   color: #ffffff;
   font-size: 12.5px;
-  line-height: 16px;
+  line-height: 20px;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .product-info .ajax_msg_product {
   position: absolute;
@@ -13702,7 +13826,11 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 #tea-product-detail-section-1 #product-detail-img-info-container .product-info #add-to-cart {
   margin-top: 20px;
   background: none;
-  line-height: 27px;
+  line-height: 25px;
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .product-info #add-to-cart span {
+  font-size: 10px;
+  line-height: 25px;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .product-info #ajax_loader_product img {
   width: 15px;
@@ -14005,7 +14133,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   margin: 0 auto;
   display: block;
   padding-bottom: 30px;
-  height: 180px;
+  height: 140px;
 }
 #tea-product-detail-section-2 img {
   margin: 0 auto;
@@ -14298,15 +14426,20 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   }
 }
 #account-login-section-1 h1 {
+  font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
   text-align: left;
   text-transform: uppercase;
   color: #f1efee;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
 }
 #account-login-section-1 p {
   text-align: left;
-  color: #f1efee;
-  margin-bottom: 60px;
+  color: #ffffff;
+  margin-bottom: 30px;
 }
 @media only screen and (max-width: 480px) {
   #account-login-section-1 p {
@@ -14320,6 +14453,21 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 }
 #account-login-section-1 .messages li.success-msg {
   padding: 0px;
+}
+#account-login-section-1 input.input-class {
+  height: 30px;
+  font-size: 12px;
+  color: #ffffff;
+}
+#account-login-section-1 .dropdown select {
+  height: 30px;
+  font-size: 11.5px;
+  padding-left: 15px;
+  color: #ffffff;
+}
+#account-login-section-1 .sign-in-btn.square-cta {
+  height: 30px;
+  line-height: 30px;
 }
 #account-login-section-1 .container-fluid {
   padding-left: 10px;
@@ -14372,7 +14520,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 #account-login-section-1 .inputs .for-input {
   color: #f1efee;
   text-transform: uppercase;
-  font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+  font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -14421,8 +14569,8 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 #account-login-section-1 .inputs label.remember_me {
   display: inline-block;
   vertical-align: top;
-  margin-top: 8px;
-  padding-left: 10px;
+  margin-top: 6px;
+  padding-left: 6px;
 }
 @media only screen and (max-width: 480px) {
   #account-login-section-1 .inputs .v-align {
@@ -14520,15 +14668,20 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   }
 }
 #account-creation-section-1 h1 {
+  font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
   text-align: left;
   text-transform: uppercase;
   color: #f1efee;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
 }
 #account-creation-section-1 p {
   text-align: left;
-  color: #f1efee;
-  margin-bottom: 60px;
+  color: #ffffff;
+  margin-bottom: 30px;
 }
 @media only screen and (max-width: 480px) {
   #account-creation-section-1 p {
@@ -14538,6 +14691,17 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 #account-creation-section-1 .container-fluid {
   padding-left: 10px;
   padding-right: 10px;
+}
+#account-creation-section-1 input.input-class {
+  height: 30px;
+  font-size: 12px;
+  color: #ffffff;
+}
+#account-creation-section-1 .dropdown select {
+  height: 30px;
+  font-size: 11.5px;
+  padding-left: 15px;
+  color: #ffffff;
 }
 #account-creation-section-1 .account-creation-content-container #account-creation-img-content {
   background: url('../images/login/login-bg.png') no-repeat;
@@ -14582,20 +14746,25 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   float: none;
 }
 #account-creation-section-1 label {
-  color: #f1efee;
+  color: #ffffff;
   text-transform: uppercase;
-  font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+  font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
   line-height: 10px;
   letter-spacing: 0.05em;
-  padding-left: 10px;
+  padding-left: 0px;
 }
 @media only screen and (max-width: 991px) {
   #account-creation-section-1 label {
     padding-left: 0px;
   }
+}
+#account-creation-section-1 label[for=gender],
+#account-creation-section-1 label[for=is_subscribed] {
+  padding-left: 6px;
+  color: #f1efee !important;
 }
 #account-creation-section-1 input.input-class {
   width: 100%;
@@ -15510,7 +15679,7 @@ body.billing-shipping-page {
   vertical-align: top;
   *display: inline;
   zoom: 1;
-  margin-left: 20px;
+  margin-left: 19px;
   float: right;
 }
 #page-shopping-cart-content .each-input .button:focus,
@@ -16673,7 +16842,7 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar strong {
   margin-right: -50px;
   padding-left: 80px;
   padding-right: 50px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 #monogram-page-account-details-dashboard-header h1 {
   font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
@@ -16685,7 +16854,7 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar strong {
   text-transform: uppercase;
 }
 #monogram-page-account-details-dashboard-header h4 {
-  font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+  font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -17089,7 +17258,7 @@ body.monogram-page-account-details #content-wrapper .col-main .each-input.messag
   margin-bottom: 9px;
 }
 body.monogram-page-account-details #content-wrapper .col-main .each-input h2 {
-  font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+  font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;

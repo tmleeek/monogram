@@ -50,7 +50,7 @@
             ?>
             <li class="each-product">
                 <a href="<?php echo $upsp->getProductUrl() ?>" data-graph-link="<?php echo $base_url . '#graph/'.$main_product_name.'/'.$upsp_name; ?>" title="<?php echo $this->escapeHtml($upsp->getName()) ?>" class="product-image img-responsive">
-                    <img class="actual-product-image" src="<?php echo $this->helper('catalog/image')->init($upsp, 'thumbnail')->backgroundColor(array(0, 0, 0))->constrainOnly(false)->keepAspectRatio(true)->keepFrame(true)->resize(140, 104) ?>" alt="<?php echo $this->escapeHtml($upsp->getName()) ?>" />
+                    <img class="actual-product-image" src="<?php echo $this->helper('catalog/image')->init($upsp, 'thumbnail')->backgroundColor(array(0, 0, 0))->constrainOnly(false)->keepAspectRatio(true)->keepFrame(false)->resize(140, 104) ?>" alt="<?php echo $this->escapeHtml($upsp->getName()) ?>" />
                     <div class="graph-combination-hover-img">
                       <div class="graph-img-1" style="background-image: url(<?php echo $this->getSkinUrl('images/products_svg/'.$upsp_name.'.svg'); ?>)"></div>
                       <div class="graph-img-2" style="background-image: url(<?php echo $this->getSkinUrl('images/products_svg/'.$main_product_name.'.svg'); ?>)"></div>

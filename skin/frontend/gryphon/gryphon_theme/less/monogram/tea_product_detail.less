@@ -67,16 +67,25 @@ body.product-gift-card {
         height: 874px;
         float: none!important;
 
+        @media all and (max-width: 480px) {
+          height: 100%;
+        }
+
         .vcenter2{
           display: table-cell;
           vertical-align: middle;
           position: static!important;
           height: 100%!important;
           // background-size: 448px 617px;
-          background-size: 494px 600px;
+          background-size: 465px 750px;
 
           @media all and (max-width: 990px) {
             background-size: auto auto;
+            background-position: 50% 50%;
+          }
+
+          @media all and (max-width: 480px) {
+            background-size: 90%;
             background-position: 50% 50%;
           }
 
@@ -86,11 +95,21 @@ body.product-gift-card {
             margin: 0 auto;
             position: relative;
 
-            width: 450px;
-            height: 620px;
+            width: 465px;
+            height: 750px;
+            margin-top: 62px;
 
-            @media all and (max-width: 990px) {
+            @media all and (max-width: 480px) {
               width: 100%;
+              height: 670px;
+            }
+            @media all and (max-width: 380px) {
+              width: 100%;
+              height: 580px;
+            }
+            @media all and (max-width: 320px) {
+              width: 100%;
+              height: 490px;
             }
 
             img{
@@ -101,28 +120,41 @@ body.product-gift-card {
 
             .gifttext{
               position: absolute;
-              top: 290px;
-              left: 5px;
-              width: 440px;
-              height: 420px;
-              text-align: center;
-              color: @white;
+              top: 110px;
+              left: 30px;
+              height: 620px;
+              width: 100%;
+              text-align: left;
+              color: @dark-brown!important;
 
-              @media all and (max-width: 990px) {
-                left: 5px;
-                width: 100%;
-                height: auto;
-                top: 40%; 
+              @media all and (max-width: 480px) {
+                top: 100px;
+                left: 45px;
+                height: 480px;
               }
 
-              
+              @media all and (max-width: 380px) {
+                top: 80px;
+                left: 40px;
+                height: 430px;
+                width: 100%;
+              }
+              @media all and (max-width: 320px) {
+                top: 60px;
+                left: 35px;
+                height: 370px;
+                width: 100%;
+              }
 
               .gifttext-intro{
-                font-size: 15px;
-                line-height: 24px;                
+                .header-font-02;
+                font-size: 14px;
+                line-height: 20px;                
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
 
-                height: 65px + 8px;
-                @media all and (max-width: 990px) {
+                height: 45px;
+                @media all and (max-width: 480px) {
                   font-size: 8px;
                   line-height: 10px;                  
                   height: 42px;
@@ -143,7 +175,7 @@ body.product-gift-card {
                 text-transform: uppercase;
 
                 margin-bottom: 12px;
-                @media all and (max-width: 990px) {
+                @media all and (max-width: 480px) {
                   font-size: 10px;
                   line-height: 14px;
                 }
@@ -152,28 +184,28 @@ body.product-gift-card {
                 font-size: 60px;
                 line-height: 60px;
                 letter-spacing: 0.05em;
-                color: #fecd94;
+                color: @dark-brown;
 
                 margin-bottom: 20px;
-                @media all and (max-width: 990px) {
+                @media all and (max-width: 480px) {
                   font-size: 25px;
                   line-height: 25px;
                   margin-bottom: 5px;
                 }
               }
               .gifttext-copy{
-                font-size: 14px;
-                line-height: 22px;
-                // letter-spacing: 0.05em;
-                color: @white;
+                .body-font;
+                font-size: 12px;
+                line-height: 20px;
+                color: @dark-brown;
 
                 height: 113px;
                 margin-bottom: 29px;
                 word-wrap: break-word;
-                width: 80%;
-                margin: 0 auto;
-                margin-bottom: 40px;
-                @media all and (max-width: 990px) {
+                width: 95%;
+                // margin: 0 auto;
+                margin-bottom: 0px;
+                @media all and (max-width: 480px) {
                   min-height: 55px;
                   width: 210px;
                   margin: 0 auto;
@@ -182,26 +214,25 @@ body.product-gift-card {
               }
               .gifttext-code-title{
                 .header-font;
-                color: #fecd94;
-                font-size: 12px;
+                color: @dark-brown;
+                font-size: 10px;
                 line-height: 20px;
                 text-transform: uppercase;
-                letter-spacing: 0.16em;
-
-                margin-bottom: 15px;
-                @media all and (max-width: 990px) {
+                letter-spacing: 0.08em;
+                margin-bottom: 10px;
+                @media all and (max-width: 480px) {
                   font-size: 6px;
                   line-height: 11px;
                 }
               }
               .gifttext-code{
                 display: inline-block;
-                // .header-font;
-                // color: #fecd94;
-                // font-size: 12px;
-                // line-height: 20px;
-                // text-transform: uppercase;
-                // letter-spacing: 0.16em;
+                .header-font-02;
+                color: @dark-brown;
+                font-size: 12px;
+                line-height: 20px;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
 
                 // margin-bottom: 32px;
                 // @media all and (max-width: 990px) {
@@ -211,15 +242,20 @@ body.product-gift-card {
                 // }
               }
               .gifttext-disclaimer{
-                // .minion-pro-semibold-italic;
-                font-size: 13px;
-                line-height: 20px;
+                .body-font;
+                font-size: 11px;
+                line-height: 18px;
                 letter-spacing: 0.015em;
                 color: @white;
-                @media all and (max-width: 990px) {
-                  width: 185px;
-                  text-align: center;
-                  margin: 0 auto;
+                position: absolute;
+                bottom: 0px;
+
+                @media all and (max-width: 480px) {
+                  font-size: 10px;
+                }
+                @media all and (max-width: 380px) {
+                  font-size: 10px;
+                  width: 70%;
                 }
               }
             }
@@ -258,6 +294,16 @@ body.product-gift-card {
       vertical-align: top;
       padding-top: 15px;  
       padding-bottom: 70px;  
+
+      @media all and (max-width: 1024px) {
+        padding-left: 30px;
+      }
+
+      @media all and (max-width: 480px) {
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+      }
 
       .product-options-bottom {
         .regular-price {
@@ -371,6 +417,9 @@ body.product-gift-card {
         
           ul.social-sharing {  
             display: inline-block;      
+            @media all and (max-width: 480px) {
+              display: block;
+            }
             li {
               display: inline-block;
               margin-right: 5px;
@@ -394,9 +443,20 @@ body.product-gift-card {
             vertical-align: top;     
             background-color: #756b66;   
             color: @white;    
+            @media all and (max-width: 480px) {
+              width: 100%!important;
+            }
+          }
+          @media all and (max-width: 480px) {
+            #giftcard-template-show-images {
+              display: block!important
+            }
           }
           .quantity-container {
             display: inline-block;
+            @media all and (max-width: 480px) {
+              width: 100%;
+            }
             input.qty {
               background: none;
               border: 1px solid @off-white;
@@ -446,8 +506,9 @@ body.product-gift-card {
 
           .dropdown {
             margin-right: 10px;
-            @media all and (max-width: 470px) {
+            @media all and (max-width: 480px) {
               margin-right: 0px;
+              width: 100%;
             }
             &:nth-of-type(3) {
               margin-right: 0px;
@@ -487,6 +548,10 @@ body.product-gift-card {
             letter-spacing: 0.02em;
             margin-left: -10px;
             margin-top: 5px;
+
+            @media all and (max-width: 480px) {
+              margin-left: 0px;
+            }
           }
 
           #message_characters_remaining {
@@ -641,8 +706,8 @@ body.product-gift-card {
               width: 100%;
             }
 
-            @media all and (max-width: 470px) {
-              width: 238px;
+            @media all and (max-width: 480px) {
+              width: 100%;
             }
 
           }
@@ -682,6 +747,7 @@ body.product-gift-card {
       
       .slick-next, .slick-prev {
         top: 50%;
+        z-index: 999;
         margin-top: 0px;
         &:before {
           font-family: FontAwesome;
@@ -1161,7 +1227,7 @@ body.product-gift-card {
         margin: 0 auto;
         display: block;
         padding-bottom: 30px;
-        height: 180px;   
+        height: 140px;   
       }
     }
     img {
