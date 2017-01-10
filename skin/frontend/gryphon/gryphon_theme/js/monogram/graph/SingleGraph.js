@@ -213,6 +213,12 @@ monogram.graph.SingleGraph.prototype.set_data = function(graph_data_param) {
     target_opacity = 0.3 + ( 0.7 * (graph_flavor_score[i] / 20) * 1.8 );
     target_opacity = target_opacity > 1 ? 1 : target_opacity;
 
+    if (graph_flavor_score[i] == 0) {
+      target_opacity = 0.3;
+    } else {
+      target_opacity = 1.0;
+    }
+
     
     TweenMax.killTweensOf(item);
     TweenMax.to(item, 0.5, {opacity:target_opacity});
