@@ -268,9 +268,10 @@ monogram.page.Home.prototype.display_graph_section = function(){
     TweenMax.killTweensOf($('#graph-desktop-guide-container'));
 
     TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:1, delay: 0});
-    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:0, delay: 1.5});
+    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:0, delay: 1.5 + 2});
 
-    TweenMax.delayedCall(2, this.display_graph_section_delayed_a_little_before, [], this);    // IMPORTANT
+    // TweenMax.delayedCall(2, this.display_graph_section_delayed_a_little_before, [], this);    // IMPORTANT
+    TweenMax.delayedCall(2 + 2, this.display_graph_section_delayed_a_little_before, [], this);    // IMPORTANT
 
   } else {
 
@@ -310,7 +311,7 @@ monogram.page.Home.prototype.display_graph_section_delayed_a_little_before = fun
       if(target_main_index != -1){
         this.graph_section.display_combination_index(target_main_index,0);
 
-
+        /*
         var current_url           = window.location.href;
         var twitter_share_url     = 'https://twitter.com/share?url=' + encodeURIComponent(current_url) + 
                                     '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + this.page_hash_02);
@@ -319,18 +320,11 @@ monogram.page.Home.prototype.display_graph_section_delayed_a_little_before = fun
         var main_product_name = this.graph_section.main_data_item.data_name;
         var sub_product_name = this.graph_section.sub_data_item.data_name;        
 
-        /*
-        $j('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
-        $j('#graph-social-icons ul li a.fa-facebook').attr('href', facebook_share_url);
-        $j('#graph-social-icons ul li a.fa-facebook').data('main_product_name', main_product_name);
-        $j('#graph-social-icons ul li a.fa-facebook').data('sub_product_name', sub_product_name);
-        */
-
         $j('.home-customized-share-button a.fa-twitter').attr('href', twitter_share_url);
         $j('.home-customized-share-button a.fa-facebook').attr('href', facebook_share_url);
         $j('.home-customized-share-button a.fa-facebook').data('main_product_name', main_product_name);
         $j('.home-customized-share-button a.fa-facebook').data('sub_product_name', sub_product_name);
-
+        */
 
         
 
@@ -344,6 +338,7 @@ monogram.page.Home.prototype.display_graph_section_delayed_a_little_before = fun
       this.graph_section.display_combination(this.page_hash_02, this.page_hash_03);
 
 
+      /*
       var current_url           = window.location.href;
       var twitter_share_url     = 'https://twitter.com/share?url=' + encodeURIComponent(current_url) + 
                                   '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + this.page_hash_02);
@@ -351,16 +346,12 @@ monogram.page.Home.prototype.display_graph_section_delayed_a_little_before = fun
 
       var main_product_name = this.graph_section.main_data_item.data_name;
       var sub_product_name = this.graph_section.sub_data_item.data_name;        
-              
-      /*
-      $j('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
-      $j('#graph-social-icons ul li a.fa-facebook').attr('href', facebook_share_url);
-      */
-
+      
       $j('.home-customized-share-button a.fa-twitter').attr('href', twitter_share_url);
       $j('.home-customized-share-button a.fa-facebook').attr('href', facebook_share_url);
       $j('.home-customized-share-button a.fa-facebook').data('main_product_name', main_product_name);
       $j('.home-customized-share-button a.fa-facebook').data('sub_product_name', sub_product_name);
+      */
 
     }
     
@@ -461,6 +452,10 @@ monogram.page.Home.prototype.create_graph = function() {
 
   if ($j('#graph-section').length != 0) {
     this.graph_section = new monogram.component.GraphSection({}, $j('#graph-section'));
+
+    goog.events.listen(this.graph_section, monogram.component.GraphSection.ON_ITEM_SELECTED, this.on_graph_section_item_selected.bind(this));
+    
+    
   }
 
   
@@ -903,6 +898,46 @@ monogram.page.Home.prototype.on_scroll_to_no_target = function(){
 //
 
 
+
+/**
+ * @param  {object} event
+ */
+monogram.page.Home.prototype.on_graph_section_item_selected = function(event) {
+
+  console.log('on_graph_section_item_selected');
+  console.log('main item: ' + this.graph_section.main_data_item.data_id);
+  console.log('sub item: ' + this.graph_section.sub_data_item.data_id);
+
+  var main_name = this.graph_section.main_data_item.data_name;
+  var sub_name = this.graph_section.sub_data_item.data_name;
+
+  var main_id = this.graph_section.main_data_item.data_id;
+  var sub_id = this.graph_section.sub_data_item.data_id;
+
+  var image = 'http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/images/layered_images/'+main_id+'-with-'+sub_id+'.jpg';
+  var combine_desc = $j('#graph-section-center-copy p').html();
+
+  var current_url = 'http://www.monogramtea.com/#graph/' + main_id + '/' + sub_id;
+  // var current_url           = window.location.href;
+  
+  var twitter_share_url     = 'https://twitter.com/share?url=' + encodeURIComponent(current_url) + 
+                              '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + main_id + ',' + sub_id);
+
+  var facebook_share_url    = encodeURIComponent(current_url);      // current url = facebook share url (sharing functionality in main.js)
+
+
+  var pinterest_share_url = '//pinterest.com/pin/create%2Fbutton/?url=' + encodeURIComponent(current_url) + '&media=' + encodeURIComponent(image) + '&description=' + encodeURIComponent(combine_desc);
+
+    
+  $j('.home-customized-share-button a.fa-pinterest').attr('href', pinterest_share_url);
+  
+  $j('.home-customized-share-button a.fa-twitter').attr('href', twitter_share_url);
+  $j('.home-customized-share-button a.fa-facebook').attr('href', facebook_share_url);
+  $j('.home-customized-share-button a.fa-facebook').data('main_product_name', main_name);
+  $j('.home-customized-share-button a.fa-facebook').data('sub_product_name', sub_name);
+  
+
+};
 
 //    _   _ _____ ___ _
 //   | | | |_   _|_ _| |
