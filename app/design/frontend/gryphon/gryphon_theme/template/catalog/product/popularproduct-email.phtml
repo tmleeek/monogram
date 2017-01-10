@@ -20,7 +20,7 @@
                 <td style="padding: 20px 0 20px 0;">
                   <table cellpadding="0" cellspacing="0" border="0" width="100%">
                     <tr>
-                      <td align="center" style="padding: 15px 0 0 0; font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; color: #333333; font-size: 12px;"><a href="<?php echo $_product->getProductUrl() ?>"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(180, 150); ?>" width="180" height="150" border="0" class="img-max" alt="tea <?php echo $i ?>"></a></td>
+                      <td align="center" style="padding: 15px 0 0 0; font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; color: #333333; font-size: 12px;"><a href="<?php echo $_product->getProductUrl() ?>"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepframe(false)->resize(180, 150); ?>" width="180" height="150" border="0" class="img-max" alt="tea <?php echo $i ?>"></a></td>
                     </tr>
                     <tr>
                       <td align="center" style="width: 180px;display: block;margin: 0 auto;">

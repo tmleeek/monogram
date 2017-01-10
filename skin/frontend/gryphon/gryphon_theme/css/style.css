@@ -11855,6 +11855,13 @@ body.is-tablet.is-tablet-landscape .home-tea-item .cta-container .arrow-cta {
   }
 }
 #tea-matrix-section-1 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+#tea-matrix-section-1 {
   /*
   #page-indicator {
     position: absolute;
@@ -11931,7 +11938,6 @@ body.is-tablet.is-tablet-landscape .home-tea-item .cta-container .arrow-cta {
   font-weight: normal;
   font-size: 12.5px;
   line-height: 20px;
-  letter-spacing: 0.03em;
   color: #ffffff;
 }
 #tea-matrix-section-1 #tea-matrix-content .section hr.top {
