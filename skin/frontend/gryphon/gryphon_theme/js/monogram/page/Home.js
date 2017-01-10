@@ -820,7 +820,7 @@ monogram.page.Home.prototype.update_page_layout = function() {
  */
 monogram.page.Home.prototype.scroll_to_target = function(str_param, str_param_2, str_param_3) {
   monogram.page.Home.superClass_.scroll_to_target.call(this, str_param, str_param_2, str_param_3);
-
+  
 
   if (manic.IS_MOBILE == true) {
 

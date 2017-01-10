@@ -168,6 +168,26 @@ monogram.page.Default.prototype.init = function() {
   }
 
 
+  if($j('#tea-matrix-section-1').length != 0){
+
+    this.tea_matrix_mouse = new manic.ui.Mouse({}, $j('#tea-matrix-section-1'));
+    goog.events.listen(this.tea_matrix_mouse, manic.ui.Mouse.SWIPE_UP, function(){
+      this.body.trigger('tea-matrix-mouse-down');
+    }.bind(this));
+    goog.events.listen(this.tea_matrix_mouse, manic.ui.Mouse.SCROLL_DOWN, function(){
+      this.body.trigger('tea-matrix-mouse-down');
+    }.bind(this));
+    
+    goog.events.listen(this.tea_matrix_mouse, manic.ui.Mouse.SWIPE_DOWN, function(){
+      this.body.trigger('tea-matrix-mouse-up');
+    }.bind(this));
+    goog.events.listen(this.tea_matrix_mouse, manic.ui.Mouse.SCROLL_UP, function(){
+      this.body.trigger('tea-matrix-mouse-up');
+    }.bind(this));
+
+
+  }
+  
 
 
   if (manic.IS_MOBILE == true && this.is_tea_matrix == true) {

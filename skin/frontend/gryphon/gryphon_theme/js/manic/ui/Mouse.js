@@ -55,6 +55,16 @@ manic.ui.Mouse = function(options, element) {
   this.document_element = $j(document);
 
 
+  this.mouse_scroll_array = [
+    {x:0,y:0, time: new Date()},
+    {x:0,y:0, time: new Date()},
+    {x:0,y:0, time: new Date()},
+    {x:0,y:0, time: new Date()},
+    {x:0,y:0, time: new Date()}
+  ];
+
+
+
 
 
   if(manic.IS_ACTUAL_MOBILE == false) {
@@ -92,7 +102,8 @@ goog.inherits(manic.ui.Mouse, goog.events.EventTarget);
  * @const {object}
  */
 manic.ui.Mouse.DEFAULT = {
-  'update_delay': 0.8,
+  'update_delay': 0.5,
+  // 'update_delay': 1.8,
   'exception_array': []
 };
 
@@ -190,6 +201,7 @@ manic.ui.Mouse.prototype.public_method_02 = function() {};
 manic.ui.Mouse.prototype.public_method_03 = function() {};
 manic.ui.Mouse.prototype.update = function() {
   this.is_updating = true;
+  // TweenMax.killDelayedCallsTo(this.on_update_complete);
   TweenMax.delayedCall(this.update_delay, this.on_update_complete, [], this);
 };
 manic.ui.Mouse.prototype.on_update_complete = function() {
@@ -424,31 +436,68 @@ manic.ui.Mouse.prototype.on_mousewheel = function(event) {
   console.log('is_updating: ' + this.is_updating);
 
 
+  var mouse_object = this.normalizeWheel(event);
+  var xxx = mouse_object.spinX;
+  var yyy = mouse_object.spinY;
+
+
+
+  var current_time = new Date();
+
+  this.mouse_scroll_array[0] = this.mouse_scroll_array[1]
+  this.mouse_scroll_array[1] = this.mouse_scroll_array[2]
+  this.mouse_scroll_array[2] = this.mouse_scroll_array[3]
+  this.mouse_scroll_array[3] = this.mouse_scroll_array[4]
+  this.mouse_scroll_array[4] = {
+    x: xxx,
+    y: yyy,
+    time: new Date()
+  };
+
+  var total_xxx = 0;
+  var total_yyy = 0;
+
+  for (var i = 0, l=this.mouse_scroll_array.length; i < l; i++) {
+
+    if(this.mouse_scroll_array[i].time > current_time - 800){
+      total_xxx += this.mouse_scroll_array[i].x;
+      total_yyy += this.mouse_scroll_array[i].y;
+    }
+  }
+  
+
+  console.log('xxx: ' + xxx);
+  console.log('yyy: ' + yyy);
+  
+  console.log('total_xxx: ' + total_xxx);
+  console.log('total_yyy: ' + total_yyy);
+
+
 
   // https://github.com/jquery/jquery-mousewheel/tree/4.0.x
 
   if (this.is_updating == false) {
 
-    var xxx = event['deltaX'] * event['deltaFactor'];
-    var yyy = event['deltaY'] * event['deltaFactor'];
 
-    console.log('xxx: ' + xxx);
-    console.log('yyy: ' + yyy);
+    //var xxx = event['deltaX'] * event['deltaFactor'];
+    //var yyy = event['deltaY'] * event['deltaFactor'];
 
 
-    if (xxx >= 100) {
+
+
+    if (total_xxx >= 3) {
       this.update();
       this.dispatchEvent(new goog.events.Event(manic.ui.Mouse.SCROLL_LEFT));
       return;
 
-    } else if (xxx <= -100) {
+    } else if (total_xxx <= -3) {
       this.update();
       this.dispatchEvent(new goog.events.Event(manic.ui.Mouse.SCROLL_RIGHT));
       return;
     }
 
 
-    if( yyy >= 100 ) {
+    if( total_yyy >= 3 ) {
       /*
       var target_zoom = this.zoom_factor + 0.2;
       target_zoom = Math.round(target_zoom * 10) / 10;
@@ -462,7 +511,7 @@ manic.ui.Mouse.prototype.on_mousewheel = function(event) {
       return;
 
 
-    } else if( yyy <= -100 ){
+    } else if( total_yyy <= -3 ){
       //this.set_zoom(this.zoom_factor - 0.2);
       /*
       var target_zoom = this.zoom_factor - 0.2;
@@ -480,6 +529,65 @@ manic.ui.Mouse.prototype.on_mousewheel = function(event) {
 
   }
 
+};
+
+
+
+
+
+
+// http://stackoverflow.com/questions/5527601/normalizing-mousewheel-speed-across-browsers
+
+/**
+ * event handler
+ * @param  {object} event
+ */
+manic.ui.Mouse.prototype.normalizeWheel = function(event){
+
+  // Reasonable defaults
+  var PIXEL_STEP  = 10;
+  var LINE_HEIGHT = 40;
+  var PAGE_HEIGHT = 800;
+
+  var sX = 0, sY = 0,       // spinX, spinY
+      pX = 0, pY = 0;       // pixelX, pixelY
+
+  // Legacy
+  if ('detail'      in event) { sY = event.detail; }
+  if ('wheelDelta'  in event) { sY = -event.wheelDelta / 120; }
+  if ('wheelDeltaY' in event) { sY = -event.wheelDeltaY / 120; }
+  if ('wheelDeltaX' in event) { sX = -event.wheelDeltaX / 120; }
+
+  // side scrolling on FF with DOMMouseScroll
+  if ( 'axis' in event && event.axis === event.HORIZONTAL_AXIS ) {
+    sX = sY;
+    sY = 0;
+  }
+
+  pX = sX * PIXEL_STEP;
+  pY = sY * PIXEL_STEP;
+
+  if ('deltaY' in event) { pY = event.deltaY; }
+  if ('deltaX' in event) { pX = event.deltaX; }
+
+  if ((pX || pY) && event.deltaMode) {
+    if (event.deltaMode == 1) {          // delta in LINE units
+      pX *= LINE_HEIGHT;
+      pY *= LINE_HEIGHT;
+    } else {                             // delta in PAGE units
+      pX *= PAGE_HEIGHT;
+      pY *= PAGE_HEIGHT;
+    }
+  }
+
+  // Fall-back if spin cannot be determined
+  if (pX && !sX) { sX = (pX < 1) ? -1 : 1; }
+  if (pY && !sY) { sY = (pY < 1) ? -1 : 1; }
+
+  return { spinX  : sX,
+           spinY  : sY,
+           pixelX : pX,
+           pixelY : pY };
 };
 
 
