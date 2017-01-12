@@ -923,7 +923,7 @@ monogram.page.Home.prototype.on_graph_section_item_selected = function(event) {
   var twitter_share_url     = 'https://twitter.com/share?url=' + encodeURIComponent(current_url) + 
                               '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + main_id + ',' + sub_id);
 
-  var facebook_share_url    = encodeURIComponent(current_url);      // current url = facebook share url (sharing functionality in main.js)
+  var facebook_share_url    = current_url      // current url = facebook share url (sharing functionality in main.js)
 
 
   var pinterest_share_url = '//pinterest.com/pin/create%2Fbutton/?url=' + encodeURIComponent(current_url) + '&media=' + encodeURIComponent(image) + '&description=' + encodeURIComponent(combine_desc);
