@@ -39,7 +39,7 @@
             </div>
           </div>
   
-          <div id="monogram-subscription-content-copy-01" class="subscription-form subscription">
+          <div id="monogram-subscription-content-copy-01" class="hidden-xs subscription-form subscription">
             <div id="monogram-subscription-content-reason-container">
 
               <div class="row">
@@ -152,6 +152,124 @@
             </div>
           </div>
 
+          <div id="monogram-subscription-content-copy-02" class="visible-xs subscription-form subscription">
+
+            <div id="monogram-subscription-content-reason-container">
+
+              <div class="row">
+                <div class="col-md-12">
+                  <h3>Singapore Plans</h3>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-4">
+
+                  <div class="monogram-subscription-content-reason">
+                    <h4>Tea Variant</h4>
+                    <p>Comes in 4 tea flavours and accompanied with Tasting Notes</p>
+                  </div>
+                  
+                </div>
+                <div class="col-md-4">
+
+                  <div class="monogram-subscription-content-reason">
+                    <h4>Receive</h4>
+                    <p>A total of 16 sachets per month (4 tea flavours x 4 sachets per flavour)</p>
+                  </div>
+                  
+                </div>
+                <div class="col-md-4">
+
+                  <div class="monogram-subscription-content-reason">
+                    <h4>Cut-off & Delivery Date</h4>
+                    <p>Order or any changes to be made by 17th of the month, order will be sent out on 23rd of the month</p>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>period</th>
+                    <th>price</th>                    
+                    <th>per sachet</th>
+                    <th>links</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <?php
+                  $_helper = $this->helper('catalog/output'); 
+                  $artisanSingaporeCollection = Mage::getModel('subscriptions/subscriptions')->getGourmetSingaporeSubscriptions();  
+                  //echo count($artisanSingaporeCollection->getData());exit;                
+                  $cnt = 1;
+                  foreach($artisanSingaporeCollection->getData() as $productsing):
+                    $_productId = $productsing['entity_id'];
+                    $_productsingpur = Mage::getModel('catalog/product')->load($_productId);
+                    
+                    $nameStart = substr($_helper->productAttribute($_productsingpur, $_productsingpur->getName() , 'name'), 0,2);
+                    // $monthtext = ' MONTHS';
+                    $monthtext = ' Months';
+                    if($cnt == 1)
+                    {
+                      // $monthtext = ' MONTH';
+                      $monthtext = ' Month';
+                  
+                      $equivalent = ($_productsingpur->getPrice()/16);
+                      $discount_percentage = '7%';
+                    }else if($cnt == 2)
+                    {                   
+                      $equivalent = ($_productsingpur->getPrice()/48);
+                      $discount_percentage = '14%';
+                    }else if($cnt == 3)
+                    {                   
+                      $equivalent = ($_productsingpur->getPrice()/96);
+                      $discount_percentage = '18%';
+                    }else
+                    {                   
+                      $equivalent = ($_productsingpur->getPrice()/192);
+                      $discount_percentage = '20%';
+                    }
+                    
+                  ?>
+                        <tr>
+                    <?php if(count($artisanSingaporeCollection->getData()) == $cnt){
+                      ?>
+                      <td><?php echo $nameStart.$monthtext ?><!--<br><span>SGP Subscription</span>--></td>
+                      <?php 
+                    }else{
+                      ?>
+                      <td><?php echo $nameStart.$monthtext ?><!--<br><span>SGP Subscription</span>--></td>
+                      <?php 
+                    }
+                    ?>
+                            <td><?php echo Mage::helper('core')->currency($_productsingpur->getPrice(),true,false); ?></td>
+                            <!-- <td><?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per month</td> -->
+                            <td><?php echo Mage::helper('core')->currency($equivalent,true,false); ?></td>
+                            <td><a class="arrow-cta add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpur) ?>">Add to Cart<span class='ajax_loader_product' style='display:none'><img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/></span></a><span class="error-msg"></span></td>
+                        </tr>
+                  
+                     <?php 
+                   $cnt++;
+                   endforeach; ?>
+                </tbody>
+              </table>
+            </div> <!-- .table-responsive -->
+
+
+
+            <div class="cta-container">
+              <a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais" class="square-cta">layering recommendation</a>
+              <?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
+              <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta">visit tea bar</a>
+            </div>
+
+          </div> <!-- #monogram-subscription-content-copy-02 -->
+
         </div> <!-- #monogram-subscription-content-column-01 -->
 
       </div>
@@ -168,7 +286,120 @@
 
         <div id="monogram-subscription-content-column-02">
 
-          <div id="monogram-subscription-content-copy-02" class="subscription-form subscription">
+          <div id="monogram-subscription-content-copy-01" class="visible-xs subscription-form subscription">
+            <div id="monogram-subscription-content-reason-container">
+
+              <div class="row">
+                <div class="col-md-12">
+                  <h3>International Plans</h3>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-4">
+
+                  <div class="monogram-subscription-content-reason">
+                    <h4>Tea Variant</h4>
+                    <p>Comes in 4 tea flavours and accompanied with Tasting Notes</p>
+                  </div>
+                  
+                </div>
+                <div class="col-md-4">
+
+                  <div class="monogram-subscription-content-reason">
+                    <h4>Receive</h4>
+                    <p>A total of 16 sachets per month (4 tea flavours x 4 sachets per flavour)</p>
+                  </div>
+                  
+                </div>
+                <div class="col-md-4">
+
+                  <div class="monogram-subscription-content-reason">
+                    <h4>Cut-off & Delivery Date</h4>
+                    <p>Order or any changes to be made by 17th of the month, order will be sent out on 23rd of the month</p>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>period</th>
+                    <th>price</th>                    
+                    <th>per sachet</th>
+                    <th>links</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <?php
+                  $_helper = $this->helper('catalog/output'); 
+                  $artisanSingaporeIntCollection = Mage::getModel('subscriptions/subscriptions')->getGourmetInternationalSubscriptions(); 
+                  // echo count($artisanSingaporeIntCollection->getData());exit;                
+                  $cnt = 1;
+                  foreach($artisanSingaporeIntCollection->getData() as $productsingint):
+                    $_productIdInt = $productsingint['entity_id'];
+                    $_productsingpurint = Mage::getModel('catalog/product')->load($_productIdInt);
+                    
+                    $nameStart = substr($_helper->productAttribute($_productsingpurint, $_productsingpurint->getName() , 'name'), 0,2);
+                    $monthtext = ' Months';
+                    if($cnt == 1)
+                    {
+                      $monthtext = ' Month';
+                  
+                      $equivalent = ($_productsingpurint->getPrice()/16);
+                      $discount_percentage = '7%';
+                    }else if($cnt == 2)
+                    {                   
+                      $equivalent = ($_productsingpurint->getPrice()/48);
+                      $discount_percentage = '14%';
+                    }else if($cnt == 3)
+                    {                   
+                      $equivalent = ($_productsingpurint->getPrice()/96);
+                      $discount_percentage = '18%';
+                    }else
+                    {                   
+                      $equivalent = ($_productsingpurint->getPrice()/192);
+                      $discount_percentage = '20%';
+                    }                    
+                  ?>
+                    <tr>
+                    <?php if(count($artisanSingaporeIntCollection->getData()) == $cnt){
+                      ?>
+                      <td><?php echo $nameStart.$monthtext ?><!--<br><span>SGP Subscription</span>--></td>
+                      <?php 
+                    }else{
+                      ?>
+                      <td><?php echo $nameStart.$monthtext ?><!--<br><span>SGP Subscription</span>--></td>
+                      <?php 
+                    }
+                    ?>
+                      <td><?php echo Mage::helper('core')->currency($_productsingpurint->getPrice(),true,false); ?></td>
+                      <!-- <td><?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per month</td> -->
+                      <td><?php echo Mage::helper('core')->currency($equivalent,true,false); ?></td>
+                      <td><a class="arrow-cta add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpurint) ?>">Add to Cart<span class='ajax_loader_product' style='display:none'><img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/></span></a><span class="error-msg"></span></td>
+                    </tr>
+                  
+                     <?php 
+                   $cnt++;
+                   endforeach; ?>
+                </tbody>
+              </table>
+            </div> <!-- .table-responsive -->
+
+
+
+            <div class="cta-container">
+              <a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais" class="square-cta">layering recommendation</a>
+              <?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
+              <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta">visit tea bar</a>
+            </div>
+          </div>
+
+          <div id="monogram-subscription-content-copy-02" class="hidden-xs subscription-form subscription">
 
             <div id="monogram-subscription-content-reason-container">
 

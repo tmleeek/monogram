@@ -199,18 +199,33 @@ if($session->isLoggedIn()) {
                     </div> <!-- #page-shopping-cart-item-container -->
 
                     <div id="page-shopping-cart-in-between-container">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="row hidden-xs">
+                            <div class="col-md-6 col-sm-6">
                                 <div class="in-between-reward-points">
                                     <!-- Update from JS -->
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="col-md-6 col-sm-6">
                                 <div class="each-details-container">
                                     <div class="each-details">
                                         <!--  -->
                                         <a href="javascript:void(0);" id="update-shopping-cart" class="button btn-update arrow-cta"><span><i class="fa fa-refresh"></i> <?php echo $this->__('Update Shopping Cart'); ?></span></a>
                                     </div>
+                                </div>
+                            </div>                            
+                        </div>
+                        <div class="row visible-xs">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="each-details-container">
+                                    <div class="each-details">
+                                        <!--  -->
+                                        <a href="javascript:void(0);" id="update-shopping-cart" class="button btn-update arrow-cta"><span><i class="fa fa-refresh"></i> <?php echo $this->__('Update Shopping Cart'); ?></span></a>
+                                    </div>
+                                </div>
+                            </div>                                                        
+                            <div class="col-md-6 col-sm-6">
+                                <div class="in-between-reward-points">
+                                    <!-- Update from JS -->
                                 </div>
                             </div>                            
                         </div>

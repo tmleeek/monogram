@@ -712,6 +712,12 @@ body.billing-shipping-page{
               vertical-align: middle;
               width: 50%;
             }
+
+            @media only screen and (max-width: 320px) {
+              .display-inline-block;
+              vertical-align: middle;
+              width: 45%;
+            }
   
 
             .product-title{
@@ -881,11 +887,12 @@ body.billing-shipping-page{
 
 #page-shopping-cart-in-between-container{
   border-bottom: 1px solid fade(#cccccc, 20%);
-  padding-top: 10px;
+  padding-top: 5px;
   padding-bottom: 5px;
 
   @media only screen and (max-width: 480px) {
-    border: none;
+    border-bottom: 0px;
+    border-top: 1px solid fade(#cccccc, 20%);
   }
 
   .row {
@@ -893,7 +900,7 @@ body.billing-shipping-page{
       margin: 0px;
       .col-md-6 {
         &:nth-of-type(1) {
-          border-top: 1px solid fade(#cccccc, 20%);
+          // border-top: 1px solid fade(#cccccc, 20%);
           padding: 10px 0px 10px;
         }
         &:nth-of-type(2) {
@@ -1517,7 +1524,7 @@ body.billing-shipping-page{
 @media only screen and (max-width: 480px) {
   #checkout-step-review {
     #page-shopping-cart-in-between-container {
-      border: 0px;
+      border-bottom: 0px;
       .col-md-6 {
         border: none;
         &:nth-of-type(2) {
