@@ -4798,7 +4798,7 @@ html.overflow-visible-version {
 }
 html,
 body {
-  background: rgba(123, 112, 107, 0.85);
+  background: #867c78;
 }
 .is-mac * {
   -webkit-font-smoothing: antialiased;
@@ -8142,7 +8142,7 @@ input:-webkit-autofill {
   content: "";
   display: block;
   position: absolute;
-  background: #7b706b;
+  background: #867c78;
   top: 0;
   left: 0;
   width: 100%;
@@ -8546,7 +8546,7 @@ html body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #7b706b;
+  background: #867c78;
   color: #f1efee;
 }
 #graph-section #graph-section-combination-graph {
@@ -8882,7 +8882,7 @@ html body {
   position: relative;
   height: 385px;
   width: 280px;
-  background: #94999b;
+  background: #6b6360;
 }
 .graph-selection .graph-selection-content:before {
   content: "";
@@ -8892,7 +8892,7 @@ html body {
   left: 8px;
   right: 8px;
   bottom: 8px;
-  background: #716762;
+  background: #867c78;
 }
 .graph-selection .graph-selection-content .graph-selection-tea {
   position: relative;
@@ -9549,8 +9549,7 @@ html body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #6b615b;
-  background: rgba(107, 97, 91, 0.9);
+  background: #867c78;
   visibility: hidden;
   -moz-opacity: 0;
   -khtml-opacity: 0;
@@ -10258,6 +10257,7 @@ body.tea-layering-detail-page {
   width: 100%;
   height: 100%;
   background: #7b706b;
+  background: #867c78;
   color: #f1efee;
 }
 #home-intro-section #home-intro-logo {
@@ -10385,7 +10385,7 @@ body.tea-layering-detail-page {
 		left: 12px;
 		right: 12px;
     */
-  background: #7b706b;
+  background: #867c78;
   text-align: left;
   /*
 		padding-top: 39px;
@@ -11653,7 +11653,7 @@ body.is-tablet.is-tablet-landscape .home-tea-item .cta-container .arrow-cta {
   padding-bottom: 30px;
 }
 #tea-layering-section-1 #tea-layering-table .tea-layering-table-contents .tea-layering-table-text {
-  padding: 0px 40px;
+  padding: 0px 0px 0px 40px;
 }
 #tea-layering-section-1 #tea-layering-table .tea-layering-table-contents .tea-layering-table-text h3 {
   font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
@@ -11771,7 +11771,7 @@ body.is-tablet.is-tablet-landscape .home-tea-item .cta-container .arrow-cta {
   font-weight: 400;
   font-size: 13px;
   line-height: 20px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   white-space: nowrap;
   color: #f1efee;
   -moz-opacity: 0.3;
@@ -13738,7 +13738,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 }
 @media only screen and (max-width: 991px) {
   #tea-product-detail-section-1 #product-detail-img-info-container .product-info {
-    padding-top: 40px!important;
+    padding-top: 90px!important;
     padding-left: 0px!important;
     padding-bottom: 20px!important;
   }
@@ -14337,6 +14337,10 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   width: 85%;
   margin: 0 auto;
 }
+#tea-product-detail-section-2 p.write-review {
+  width: 100%;
+  text-align: left;
+}
 #tea-product-detail-section-3 {
   padding-top: 80px;
   padding-bottom: 80px;
@@ -14522,6 +14526,8 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 #account-login-section-1 p {
   text-align: left;
   color: #ffffff;
+  font-size: 12.5px;
+  line-height: 20px;
   margin-bottom: 30px;
 }
 @media only screen and (max-width: 480px) {
@@ -15088,7 +15094,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   color: #ffffff;
 }
 #monogram-service-section-1 #monogram-service-col-1 #monogram-service-img-content {
-  background: url(../images/monogram_service/monogram-service-content-1.jpg) no-repeat;
+  background: url(../images/monogram_service/monogram-service-content-1-v2.jpg) no-repeat;
   height: 560px;
   width: 100%;
   background-size: cover;
@@ -15205,17 +15211,29 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   }
 }
 #contact-section-1 h1 {
-  text-align: center;
+  font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
+  text-align: left;
   text-transform: uppercase;
   color: #f1efee;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
+  padding-left: 68px;
 }
 #contact-section-1 p {
-  text-align: center;
+  text-align: left;
   color: #f1efee;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   font-size: 12.5px;
   line-height: 20px;
+  padding-left: 68px;
+}
+@media only screen and (max-width: 480px) {
+  #contact-section-1 p {
+    margin-bottom: 30px;
+  }
 }
 @media all and (max-width: 480px) {
   #contact-section-1 .v-align {
@@ -16894,6 +16912,7 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar .block.bl
 body.monogram-page-account-details #content-wrapper .col-main {
   padding-top: 70px;
   margin-left: 80px;
+  background: #867c78;
   padding-left: 80px;
   padding-right: 50px;
 }
@@ -19952,6 +19971,7 @@ body.monogram-subscription-page {
   display: none;
 }
 #monogram-subscription-title-section {
+  background: #867c78;
   padding-top: 73px;
   padding-bottom: 73px;
 }
@@ -20313,7 +20333,7 @@ body.monogram-page-faq {
 }
 @media only screen and (max-width: 991px) {
   #monogram-page-faq-content-section {
-    background: #7b706b;
+    background: #867c78;
   }
   #monogram-page-faq-content-section .container-fluid {
     padding-left: 20px;
@@ -20410,7 +20430,7 @@ body.monogram-page-faq {
 }
 #monogram-page-faq-content {
   color: #ffffff;
-  background: #7b706b;
+  background: #867c78;
   padding-left: 70px;
   padding-right: 70px;
   padding-top: 56px;
@@ -20632,7 +20652,7 @@ body.monogram-page-shipping-information {
   display: none;
 }
 #monogram-page-shipping-info-title-section {
-  background: #6d615d;
+  background: #867c78;
   padding-top: 73px;
   padding-bottom: 73px;
 }
@@ -21002,7 +21022,7 @@ body.monogram-page-shipping-information {
   }
 }
 #monogram-page-shipping-info-content-04 {
-  background: #827773;
+  background: #867c78;
   padding-top: 47px;
   padding-bottom: 68px;
   padding-left: 60px;
