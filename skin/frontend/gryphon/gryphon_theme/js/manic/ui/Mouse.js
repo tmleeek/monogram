@@ -102,8 +102,12 @@ goog.inherits(manic.ui.Mouse, goog.events.EventTarget);
  * @const {object}
  */
 manic.ui.Mouse.DEFAULT = {
-  'update_delay': 0.5,
+
   // 'update_delay': 1.8,
+  /// 'update_delay': 0.5,
+  
+  'update_delay': 1.4,
+
   'exception_array': []
 };
 
@@ -608,7 +612,7 @@ manic.ui.Mouse.prototype.normalizeWheel = function(event){
 manic.ui.Mouse.prototype.on_mousedown_mobile = function(event) {
 
   if(this.is_updating == false) {
-    event.preventDefault();
+    // event.preventDefault();
 
     // http://stackoverflow.com/questions/1360818/how-to-measure-the-milliseconds-between-mousedown-and-mouseup
     this.mousedown_time = new Date(); //time in milliseconds
