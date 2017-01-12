@@ -299,6 +299,14 @@
   transform-origin:         @x @y;
 }
 
+.transform-origin-important (@x:center, @y:center) {
+  -webkit-transform-origin: @x @y !important;
+  -moz-transform-origin:    @x @y !important;
+  -ms-transform-origin:     @x @y !important;
+  -o-transform-origin:      @x @y !important;
+  transform-origin:         @x @y !important;
+}
+
 
 .optimize_canvas() {
   display: block;

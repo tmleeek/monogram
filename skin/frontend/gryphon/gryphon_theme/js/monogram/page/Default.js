@@ -195,6 +195,13 @@ monogram.page.Default.prototype.init = function() {
   }
 
 
+  if (manic.IS_MOBILE == false && this.is_tea_matrix == true) {
+    $j('html').removeClass('overflow-visible-version');
+  }
+
+  
+
+
   console.log('monogram.page.Default: init');
 };
 
@@ -546,17 +553,20 @@ monogram.page.Default.prototype.update_page_layout = function() {
 
     var target_margin_left = -1 * 103 * target_zoom;
 
+    /*
     $j('#tea-matrix-section-1 #tea-matrix-content #tea-matrix-combination-graph').css({
       'zoom': target_zoom,
       // 'margin-left': target_margin_left + 'px'
       // 'margin-top': target_margin_top + 'px'
       // 'margin-bottom': target_margin_top + 'px'
     });
+    */
+    TweenMax.to($j('#tea-matrix-section-1 #tea-matrix-content #tea-matrix-combination-graph'), 0, {scaleX: target_zoom, scaleY: target_zoom});
 
 
     $j('#graph-zooming-style').empty();
-    $j('#graph-zooming-style').html('.graph-svg-circle .graph-svg-circle-text { zoom: ' + target_inverted_zoom + ' }');
-    
+    // $j('#graph-zooming-style').html('.graph-svg-circle .graph-svg-circle-text { zoom: ' + target_inverted_zoom + ' }');
+    $j('#graph-zooming-style').html('.graph-svg-circle .graph-svg-circle-text { transform: scaleX(' + target_inverted_zoom + ') scaleY(' + target_inverted_zoom + ') translate(-50%, -50%)}');
 
 
 

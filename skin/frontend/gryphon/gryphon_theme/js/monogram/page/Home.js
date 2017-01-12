@@ -519,17 +519,39 @@ monogram.page.Home.prototype.create_graph_mobile = function(){
 
     console.log('monogram.graph.CombinationDataLoader.ON_COMBINED_GRAPH_DATA_LOAD_COMPLETE');
 
+    var random_main_sub_desc = this.combination_data_loader.get_randomized_ids();
+
+
+
+
+    
+    
+    
+    
+
+
+
+
     // this.combination_graph.set_data
     
     /**
      * @type {monogram.graph.Data}
      */
-    var graph_data_01 = this.combination_data_loader.get_data_by_id('earl-grey-neroli');
+    var graph_data_01 = this.combination_data_loader.get_data_by_id(random_main_sub_desc.main_id);   //var graph_data_01 = this.combination_data_loader.get_data_by_id('earl-grey-neroli');
 
     /**
      * @type {monogram.graph.Data}
      */
-    var graph_data_02 = this.combination_data_loader.get_data_by_id('shiso-mint');
+    var graph_data_02 = this.combination_data_loader.get_data_by_id(random_main_sub_desc.sub_id);  //var graph_data_02 = this.combination_data_loader.get_data_by_id('shiso-mint');
+
+
+
+    $j('#home-mobile-landing-graph-bottom #graph-selection-name-01').html('<h2>' + graph_data_01.data_html_name + '</h2>');
+    $j('#home-mobile-landing-graph-bottom #graph-selection-name-02').html('<div class="plus-sign">+</div><h2>' + graph_data_02.data_html_name + '</h2>');
+    $j('#home-mobile-landing-graph-bottom p').html(random_main_sub_desc.desc);
+    
+    
+
     
     this.combination_graph.set_data_01(graph_data_01);
     this.combination_graph.set_data_02(graph_data_02);
@@ -749,7 +771,7 @@ monogram.page.Home.prototype.update_page_layout = function() {
 
   $j('#graph-zooming-style').empty();
   // $j('#graph-zooming-style').html('.graph-svg-circle .graph-svg-circle-text { zoom: ' + target_inverse_zoom + ' }');
-  $j('#graph-zooming-style').html('.graph-svg-circle .graph-svg-circle-text { transform: scaleX(' + target_inverse_zoom + ') skewY(' + target_inverse_zoom + ')}');
+  $j('#graph-zooming-style').html('.graph-svg-circle .graph-svg-circle-text { transform: scaleX(' + target_inverse_zoom + ') scaleY(' + target_inverse_zoom + ') translate(-50%, -50%)}');
   
 
   $j('#graph-section-combination-graph-margin').css({

@@ -148,6 +148,29 @@ monogram.graph.CombinationDataLoader.prototype.get_combined_data_by_ids = functi
 };
 
 
+
+/**
+ * @return {object} main_id & sub_id
+ */
+monogram.graph.CombinationDataLoader.prototype.get_randomized_ids = function() {
+
+
+  var random_combined_data_index = Math.floor(Math.random() * this.original_combined_data_array.length);
+  var random_combined_data = this.original_combined_data_array[random_combined_data_index];
+
+  var randomized_main_id = random_combined_data['tea-01'];
+  var randomized_sub_id = random_combined_data['tea-02'];
+  var randomized_description = random_combined_data['description'];
+
+  var return_object = {
+    main_id: randomized_main_id,
+    sub_id: randomized_sub_id,
+    desc: randomized_description
+  };
+  return return_object;
+};
+
+
 //    _______     _______ _   _ _____ ____
 //   | ____\ \   / / ____| \ | |_   _/ ___|
 //   |  _|  \ \ / /|  _| |  \| | | | \___ \
