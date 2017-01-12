@@ -740,7 +740,7 @@ body.product-gift-card {
       width: 90%;
       @media only screen and (max-width: 991px) {
         width: 100%;
-        margin-top: -100px; // when actual product comes in may be not needed
+        margin-top: -20px; // when actual product comes in may be not needed
         margin-bottom: -100px; // when actual product comes in may be not needed
       }
       @media only screen and (max-width: 480px) {
@@ -1376,8 +1376,10 @@ body.product-gift-card {
       width: 85%;
       margin: 0 auto;
       &.write-review {
-        width: 100%;
-        text-align: left;
+        @media all and (max-width: 991px) {
+          width: 100%;
+          text-align: left;
+        }        
       }
     }
 }

@@ -13692,7 +13692,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 @media only screen and (max-width: 991px) {
   #tea-product-detail-section-1 #product-detail-img-info-container .product-img {
     width: 100%;
-    margin-top: -100px;
+    margin-top: -20px;
     margin-bottom: -100px;
   }
 }
@@ -14337,9 +14337,11 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   width: 85%;
   margin: 0 auto;
 }
-#tea-product-detail-section-2 p.write-review {
-  width: 100%;
-  text-align: left;
+@media all and (max-width: 991px) {
+  #tea-product-detail-section-2 p.write-review {
+    width: 100%;
+    text-align: left;
+  }
 }
 #tea-product-detail-section-3 {
   padding-top: 80px;
