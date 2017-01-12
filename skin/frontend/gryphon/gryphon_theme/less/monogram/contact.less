@@ -12,18 +12,36 @@
     padding-top: 0px;
   }
   h1 {
-    text-align: center;
+    .header-font-02;
+    font-size: 26px;
+    line-height: 30px;
+    text-align: left;
+
+    // text-align: center;
     text-transform: uppercase;
     color: @off-white;
-    margin-bottom: 35px;
+
+    // margin-bottom: 35px;
+    margin-bottom: 15px;
+
+    padding-left: 68px;
   }
   p {
-    text-align: center;
+    // text-align: center;
+    text-align: left;
+
     color: @off-white;
-    margin-bottom: 60px;
+    // margin-bottom: 60px;
+    margin-bottom: 30px;
 
     font-size: 12.5px;
     line-height: 20px;
+
+    padding-left: 68px;
+
+    @media only screen and (max-width: 480px) {
+      margin-bottom: 30px;
+    }
   }
 
   .v-align {
