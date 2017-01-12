@@ -268,10 +268,10 @@ monogram.page.Home.prototype.display_graph_section = function(){
     TweenMax.killTweensOf($('#graph-desktop-guide-container'));
 
     TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:1, delay: 0});
-    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:0, delay: 1.5 + 2});
+    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:0, delay: 1.5 + 4});
 
     // TweenMax.delayedCall(2, this.display_graph_section_delayed_a_little_before, [], this);    // IMPORTANT
-    TweenMax.delayedCall(2 + 2, this.display_graph_section_delayed_a_little_before, [], this);    // IMPORTANT
+    TweenMax.delayedCall(2 + 4, this.display_graph_section_delayed_a_little_before, [], this);    // IMPORTANT
 
   } else {
 
@@ -737,16 +737,20 @@ monogram.page.Home.prototype.update_page_layout = function() {
   var target_zoom = target_height / 600;
   var target_inverse_zoom = 600 / target_height;
 
+  // replaced zoom with css transform
+  /*
   $j('#graph-section-combination-graph').css({
     'zoom': target_zoom,
   });
+  */
+  TweenMax.to($j('#graph-section-combination-graph'), 0, {scaleX: target_zoom, scaleY: target_zoom});
 
 
 
   $j('#graph-zooming-style').empty();
-  $j('#graph-zooming-style').html('.graph-svg-circle .graph-svg-circle-text { zoom: ' + target_inverse_zoom + ' }');
+  // $j('#graph-zooming-style').html('.graph-svg-circle .graph-svg-circle-text { zoom: ' + target_inverse_zoom + ' }');
+  $j('#graph-zooming-style').html('.graph-svg-circle .graph-svg-circle-text { transform: scaleX(' + target_inverse_zoom + ') skewY(' + target_inverse_zoom + ')}');
   
-
 
   $j('#graph-section-combination-graph-margin').css({
     'height': target_height + 'px',
