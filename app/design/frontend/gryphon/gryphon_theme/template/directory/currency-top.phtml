@@ -10,10 +10,12 @@
 	    <?php endforeach; ?>
 	    </select>
     </div>
-    <ul class="currency-select all-dropdown">
-    	<?php foreach ($this->getCurrencies() as $_code => $_name): ?>
-    		<li><a href="#" id="<?php echo $_code ?>"><?php echo $_code ?> - <?php echo $_name ?></a></li>
-    	<?php endforeach; ?>
-    </ul>
+    <div class="currency-dropdown-container">
+      <ul class="currency-select all-dropdown">
+      	<?php foreach ($this->getCurrencies() as $_code => $_name): ?>
+      		<li><a href="#" id="<?php echo $_code ?>"><?php echo $_code ?> - <?php echo $_name ?></a></li>
+      	<?php endforeach; ?>
+      </ul>
+    </div>
 </div>
 <?php endif; ?>

@@ -155,6 +155,7 @@ $j(document).ready(function(){
           success: function(data){
             // update product count in cart
             $j("#desktop-header-cart").find(".count").text("("+data.cart_qty+")");    
+            $j("#mobile-header-cart-btn-container").find(".count").text(data.cart_qty);    
 
             $j("#desktop-header-cart").find(".cart-count-update").removeClass('fadeOutDown').addClass('fadeInUp');    
           }

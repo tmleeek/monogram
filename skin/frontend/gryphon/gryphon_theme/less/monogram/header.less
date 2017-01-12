@@ -417,8 +417,10 @@
   .currency-form {
     display: none;
   }
-  ul {
+  .currency-dropdown-container {
     display: none;
+  }
+  ul {    
     background-color: rgba(130, 119, 115, 0.9);
     padding: 25px 35px;
     text-align: left;
@@ -482,6 +484,7 @@
 #mobile-header-menu-btn-container{
   text-align: left;
   padding-top: 5px;
+  position: relative;
 }
 
 #mobile-header-cart-btn-container{
@@ -506,6 +509,24 @@
   &:focus,
   &:hover{
     .opacity(0.6);
+  }
+
+  .counter {    
+    background-color: @off-white;
+    .round(15px);
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 10px;
+    right: -3px;
+    span {
+      color: @dark-brown;
+      font-size: 10px;
+      display: table-cell;
+      text-align: center;
+      line-height: 15px;
+      width: 15px;
+    }
   }
 }
 
@@ -611,10 +632,11 @@
             a{
               text-align: left;
               .header-font;
-              font-size: 10px;
-              line-height: 24px;
+              font-size: 13px;
+              line-height: 34px;
               color: @white;
               letter-spacing: 0.05em;
+              text-transform: uppercase;
             }
           }
         }

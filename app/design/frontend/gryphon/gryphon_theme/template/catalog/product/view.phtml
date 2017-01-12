@@ -323,6 +323,7 @@ endif;
 
                             // update product count in cart
                             jQuery("#desktop-header-cart").find(".count").text("("+data.cart_qty+")");
+                            jQuery("#mobile-header-cart-btn-container").find(".count").text(data.cart_qty);
 
                             jQuery("#desktop-header-cart").find(".cart-count-update").removeClass('fadeOutDown').addClass('fadeInUp');
 

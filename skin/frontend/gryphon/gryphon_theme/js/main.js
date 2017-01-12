@@ -655,19 +655,19 @@ var initialLoad = true;
 
         // header menus
         $('#desktop-header-cart .currency').on( "clickoutside", function(e){    
-            $('.currency-select').hide();
+            $('.currency-dropdown-container').hide();
         });
 
         $('#desktop-header-cart .currency').on('click', function(e) {
             e.preventDefault();
-            $('.currency-select').toggle();
+            $('.currency-dropdown-container').toggle();
             $('.search-select').hide();
             $('.account-select').hide();
             $('.cart-preview-select').hide();
         });
 
         $('.cta-list .search').on('click', function() {
-            $('.currency-select').hide();
+            $('.currency-dropdown-container').hide();
             $('.account-select').hide();
             $('.cart-preview-select').hide();
             $('.search-select').toggle();
@@ -676,14 +676,14 @@ var initialLoad = true;
         
         $('.cta-list .account').on('click', function() {
             $('.search-select').hide();
-            $('.currency-select').hide();
+            $('.currency-dropdown-container').hide();
             $('.cart-preview-select').hide();
             $('.account-select').toggle();
         });
 
         $('.cta-list .cart').on('click', function() {
             $('.search-select').hide();
-            $('.currency-select').hide();
+            $('.currency-dropdown-container').hide();
             $('.account-select').hide();
             $('.cart-preview-select').toggle();
         });

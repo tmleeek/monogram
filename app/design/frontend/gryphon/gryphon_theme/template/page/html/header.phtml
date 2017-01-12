@@ -25,7 +25,9 @@ $quoteData= $quote->getData();
 
         <div id="mobile-header-cart-btn-container">
         	<a href="<?php echo $this->getUrl('checkout/cart'); ?>">
-          	<div id="mobile-header-cart-btn" class="fa fa-shopping-cart"></div>
+          	<div id="mobile-header-cart-btn" class="fa fa-shopping-cart">
+              <div class="counter"><span class="count"><?php echo (!empty($count)) ? $count : 0; ?></span></div>
+            </div>            
           </a>
         </div>
 
@@ -77,11 +79,24 @@ $quoteData= $quote->getData();
 				<?php endif; ?>				
 			</div>
 
+      <div id="mobile-currency">
+
+        <div id="mobile-currency-header">
+          <?php $currency_code_02 = Mage::app()->getStore()->getCurrentCurrencyCode(); ?>
+          <p>Currency: <?php echo $currency_code_02; ?></p> 
+          <div id="mobile-currency-expand-button"></div>
+        </div>              
+
+        <div id="mobile-currency-expand-container">
+        </div>
+        
+      </div> <!-- mobile-currency -->
+
 			<div class="mobile-submenu">
 				<div class="mobile-submenu-header">About Monogram</div>
 				<ul>					
 					<li><a href="<?php echo $this->getUrl('experience'); ?>">Experience Monogram</a></li>
-          <li><a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais">Layering Suggestion</a></li>
+          <li><a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais">Layering Suggestions</a></li>
           <li><a href="<?php echo $this->getUrl('tea-layering'); ?>">Tea Layering</a></li>	            
           <li><a href="<?php echo $this->getUrl('tea-matrix'); ?>">Tea Matrix</a></li>
           <!-- <li><a href="<?php echo $this->getUrl('monolog'); ?>">Monolog</a></li>					 -->
@@ -99,14 +114,20 @@ $quoteData= $quote->getData();
 			</div>
 
 			<div class="mobile-submenu">
-				<div class="mobile-submenu-header">Order Information</div>
-				<ul>
-          <li><a href="<?php echo $this->getUrl('customer/account/create/') ?>">Account Registration</a></li>
+				<div class="mobile-submenu-header">Support</div>
+				<ul>          
           <li><a href="<?php echo $this->getUrl('faq'); ?>">Frequently Asked Questions</a></li>
           <li><a href="<?php echo $this->getUrl('shipping-info'); ?>">Shipping Information</a></li>
           <li><a href="http://www.trackntrace.com.sg/">Track Order</a></li>
         </ul>
 			</div>
+
+      <div class="mobile-submenu">
+        <div class="mobile-submenu-header">Contact</div>
+        <ul>          
+          <li><a href="<?php echo $this->getUrl('contact'); ?>">Contact</a></li>          
+        </ul>
+      </div>
 
 			<div class="mobile-submenu">
 				<div class="mobile-submenu-header">
@@ -312,6 +333,47 @@ $quoteData= $quote->getData();
       }, 600);
 			$('html').toggleClass("mobile-menu-open");
 		});
+
+    var currency_open_state = "close";
+    var $currency_expand_container = $('#mobile-currency-expand-container');
+    var $currency_expand_button = $('#mobile-currency-expand-button');
+    var $currency_expand_header = $('#mobile-currency-header');
+
+    function open_currency() {
+      if(currency_open_state != "open"){
+        currency_open_state = "open";        
+        $currency_expand_container.stop(0).slideDown(500);
+        $currency_expand_button.addClass('expanded');
+      }
+    }
+
+    function close_currency() {
+      if(currency_open_state != "close"){
+        currency_open_state = "close";
+        $currency_expand_container.stop(0).slideUp(500);
+        $currency_expand_button.removeClass('expanded');
+      }
+    }
+
+    var new_currency_dropdown = $('#desktop-header .currency-switcher .currency-select.all-dropdown').clone();
+    $currency_expand_container.append(new_currency_dropdown);    
+
+    $currency_expand_header.on('click', function(e){
+      e.preventDefault();      
+
+      if(currency_open_state == "close"){
+        open_currency();
+      } else {
+        close_currency();
+      }
+    });
+
+    $currency_expand_container.find('.currency-select li a').on('click', function(e){
+        e.preventDefault();            
+        var currencyCode = $(this).attr('id');
+        console.log(currencyCode);
+        $("#select-currency option:contains(" + currencyCode + ")").attr('selected', 'selected').trigger("change");           
+    });
 
 	});
 </script>
