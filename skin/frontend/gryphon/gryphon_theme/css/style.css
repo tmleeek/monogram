@@ -8502,7 +8502,7 @@ input:-webkit-autofill {
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
-  line-height: 10px;
+  line-height: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #ffffff;
@@ -8520,6 +8520,11 @@ input:-webkit-autofill {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
   height: 24px;
   padding: 7px 15px;
 }
@@ -10925,6 +10930,10 @@ body.is-tablet.is-tablet-landscape .home-tea-item .cta-container .arrow-cta {
   *display: inline;
   zoom: 1;
 }
+#home-mobile-landing-graph-bottom .default-copy h2 sup {
+  font-size: 9px;
+  top: -1em;
+}
 #home-mobile-landing-graph-bottom .default-copy .plus-sign {
   font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
   font-style: normal;
@@ -11774,6 +11783,7 @@ body.is-tablet.is-tablet-landscape .home-tea-item .cta-container .arrow-cta {
 }
 #page-indicator li a sup {
   font-size: 7px;
+  top: -1em;
 }
 #page-indicator li.active a {
   -moz-opacity: 1;
@@ -11939,6 +11949,13 @@ body.is-tablet.is-tablet-landscape .home-tea-item .cta-container .arrow-cta {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+#tea-matrix-section-1 #tea-matrix-content #tea-matrix-combination-graph {
+  -webkit-transform-origin: 50% 50% !important;
+  -moz-transform-origin: 50% 50% !important;
+  -ms-transform-origin: 50% 50% !important;
+  -o-transform-origin: 50% 50% !important;
+  transform-origin: 50% 50% !important;
+}
 #tea-matrix-section-1 #tea-matrix-content .section {
   /*
       position: absolute;
@@ -11960,6 +11977,7 @@ body.is-tablet.is-tablet-landscape .home-tea-item .cta-container .arrow-cta {
 }
 #tea-matrix-section-1 #tea-matrix-content .section h3 sup {
   font-size: 9px;
+  top: -1em;
 }
 #tea-matrix-section-1 #tea-matrix-content .section p {
   font-family: 'Domine', "Times New Roman", Times, serif;
@@ -12035,6 +12053,7 @@ body.is-tablet.is-tablet-landscape .home-tea-item .cta-container .arrow-cta {
 }
 #tea-matrix-section-1 #tea-matrix-content .section .suggestions div.suggestion span sup {
   font-size: 6px;
+  top: -1em;
 }
 #tea-matrix-section-1 #tea-matrix-content .section .tea-matrix-content-text-cta a.square-cta {
   margin-right: 15px;
@@ -15174,8 +15193,16 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 .contact-page {
   overflow: visible;
 }
+.page-title {
+  display: none;
+}
 #contact-section-1 {
   padding-top: 40px;
+}
+@media all and (max-width: 991px) {
+  #contact-section-1 {
+    padding-top: 0px;
+  }
 }
 #contact-section-1 h1 {
   text-align: center;
@@ -15189,6 +15216,13 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   margin-bottom: 60px;
   font-size: 12.5px;
   line-height: 20px;
+}
+@media all and (max-width: 480px) {
+  #contact-section-1 .v-align {
+    vertical-align: inherit;
+    float: inherit;
+    display: inherit;
+  }
 }
 #contact-section-1 #messages_product_view {
   width: 60%;
@@ -15260,10 +15294,25 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 #contact-section-1 .inputs input.input-class {
   width: 236px;
 }
+@media all and (max-width: 480px) {
+  #contact-section-1 .inputs input.input-class {
+    width: 100%;
+  }
+}
+@media all and (max-width: 480px) {
+  #contact-section-1 .inputs .intl-tel-input {
+    width: 100%;
+  }
+}
 #contact-section-1 .inputs .dropdown {
   display: inline-block;
   width: 236px;
   position: relative;
+}
+@media all and (max-width: 480px) {
+  #contact-section-1 .inputs .dropdown {
+    width: 100%;
+  }
 }
 #contact-section-1 .inputs .dropdown select {
   -moz-appearance: none;
@@ -15313,6 +15362,11 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   max-height: 200px;
   padding-top: 8px;
 }
+@media all and (max-width: 480px) {
+  #contact-section-1 .inputs textarea {
+    width: 100%;
+  }
+}
 #contact-section-1 .inputs textarea::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   font-family: 'Domine', "Times New Roman", Times, serif;
@@ -15347,6 +15401,11 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 }
 #contact-section-1 .inputs .contact-label-container label {
   padding-left: 68px;
+}
+@media all and (max-width: 480px) {
+  #contact-section-1 .inputs .contact-label-container label {
+    padding-left: 0px;
+  }
 }
 html.shopping-cart-page,
 body.shopping-cart-page {
@@ -19932,6 +19991,12 @@ body.monogram-subscription-page {
 #monogram-subscription-content-column-01 {
   margin-right: -10px;
 }
+@media all and (max-width: 480px) {
+  #monogram-subscription-content-column-01 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
 #monogram-subscription-content-column-02 {
   margin-left: -10px;
   background: #8d919a;
@@ -19948,6 +20013,12 @@ body.monogram-subscription-page {
 }
 #monogram-subscription-content-image-01 .manic-image-container {
   height: 421px;
+}
+@media all and (max-width: 480px) {
+  #monogram-subscription-content-image-01 {
+    margin-left: -30px;
+    margin-right: -30px;
+  }
 }
 #monogram-subscription-content-image-02 {
   height: 216px;
@@ -19981,6 +20052,12 @@ body.monogram-subscription-page {
   #monogram-subscription-content-copy-01,
   #monogram-subscription-content-copy-02 {
     padding-top: 100px;
+  }
+}
+@media all and (max-width: 375px) {
+  #monogram-subscription-content-copy-01,
+  #monogram-subscription-content-copy-02 {
+    padding-top: 80px;
   }
 }
 @media all and (max-width: 320px) {
@@ -20150,8 +20227,8 @@ body.monogram-subscription-page {
 }
 @media all and (max-width: 480px) {
   #monogram-subscription-content-copy-01 {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 #monogram-subscription-content-copy-03 {
@@ -20171,6 +20248,11 @@ body.monogram-subscription-page {
 #monogram-subscription-content-image-02 {
   margin: 0 -60px;
   color: #6b615b;
+}
+@media all and (max-width: 480px) {
+  #monogram-subscription-content-image-02 {
+    display: none;
+  }
 }
 #monogram-subscription-content-image-02 img {
   width: 100%!important;

@@ -8,13 +8,13 @@
 }
 @media only screen and (max-width: 991px) {
   .container-fluid {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 body.is-tablet .container-fluid {
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .img-responsive,
 .thumbnail > img,
