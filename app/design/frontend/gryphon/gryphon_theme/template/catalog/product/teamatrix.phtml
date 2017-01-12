@@ -390,6 +390,9 @@ $count = 1;
     });    
 
     function do_update($el) {
+
+      $("#desktop-header-cart").find(".cart-count-update").removeClass('fadeInUp').addClass('fadeOutDown');
+
       $.ajax({
           url: '/discovertea/index/cartpreview',
           dataType: 'json',
@@ -398,6 +401,8 @@ $count = 1;
             $el.parent().find('span.ajax_msg_product').html('Added to cart!').show().delay(5000).fadeOut();
             $("#desktop-header-cart").find(".count").text("("+data.cart_qty+")");
             $el.parent().find('#ajax_loader_product').hide();
+
+            $("#desktop-header-cart").find(".cart-count-update").removeClass('fadeOutDown').addClass('fadeInUp');
           }
       });                     
     }

@@ -51,7 +51,7 @@ body.monogram-page-account-details{
 
     margin-left: 80px;
 
-    background: #827773;
+    // background: #827773;
     // 
     // 
     padding-left: 10px + 70px;
@@ -178,7 +178,8 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar{
 
 
 #monogram-page-account-details-dashboard-header{
-  background: @account-green;
+  // background: @account-green;
+  background: rgba(204, 213, 97, 0.4);
 
   padding-top: 38px;
   padding-bottom: 41px;
@@ -959,7 +960,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
   .page-title{
 
 
-    background: @account-green;
+    // background: @account-green;
+    background: rgba(204, 213, 97, 0.4);
 
     padding-top: 38px + 20px;
     padding-bottom: 41px + 17px;
@@ -1019,7 +1021,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
 
 #monogram-page-account-details-address-header{
-  background: @account-green;
+  // background: @account-green;
+  background: rgba(204, 213, 97, 0.4);
 
   padding-top: 38px + 22px;
   padding-bottom: 41px;
@@ -1280,7 +1283,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
   .page-title{
 
 
-    background: @account-green;
+    // background: @account-green;
+    background: rgba(204, 213, 97, 0.4);
 
     padding-top: 38px + 20px;
     padding-bottom: 41px + 17px;
@@ -1358,7 +1362,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
   .page-title{
 
 
-    background: @account-green;
+    // background: @account-green;
+    background: rgba(204, 213, 97, 0.4);
 
     padding-top: 38px + 20px;
     padding-bottom: 41px + 17px;
@@ -1429,6 +1434,11 @@ body.monogram-page-account-details #content-wrapper .col-main{
       &.product-header{
         text-align: left;
       }
+
+      &.product {
+        text-align: left;
+        padding-left: 30px;
+      }
     }
 
 
@@ -1438,17 +1448,24 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
   .each-order,
   .each-product{
-    padding-top: 25px;
-    padding-bottom: 24px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 
-    border-bottom: 1px solid @white;
-    border-bottom: 1px solid fade(@white, 50%);
+    &:last-child, &:first-child {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    // border-bottom: 1px solid @white;
+    // border-bottom: 1px solid fade(@white, 50%);
+    border: none;
 
     p{
       .body-font;
       // font-size: 12px;
       font-size: 12.5px;
       line-height: 20px;
+      text-align: center;
 
       a{
         color: @off-white;
@@ -1458,9 +1475,20 @@ body.monogram-page-account-details #content-wrapper .col-main{
           .opacity(0.7);
         }
       }
+      &.product {
+        text-align: left;
+        padding-left: 30px;
+      }
+      &.price {
+        padding-left: 50px;
+      }
+      &.qty {
+        padding-left: 30px;
+      }
     }
 
     .order-details{
+      border-bottom: 1px solid fade(@white, 50%);
       .order-no{
         text-align: center;
       }
@@ -1472,6 +1500,12 @@ body.monogram-page-account-details #content-wrapper .col-main{
       }
       .order-subtotal{
         text-align: center;
+      }
+    }
+
+    .single-order-item {
+      .order-details {
+        padding-bottom: 20px;
       }
     }
   }
@@ -1675,12 +1709,18 @@ body.sales-order-view{
       .body-font;
       font-size: 11px;
       line-height: 15px;
-      color: @white;
+      color: @white;  
+      margin-bottom: 15px;   
+
+      &:last-child {
+        border-top: 1px solid fade(@white, 50%);
+        padding-top: 20px;
+      } 
 
       p{
         .body-font;
-        font-size: 11px;
-        line-height: 15px;
+        font-size: 12.5px;
+        line-height: 20px;
         color: @white;
       }
       h2{
@@ -1693,13 +1733,13 @@ body.sales-order-view{
       }
 
       span{
-        .subheader-font;
-        font-size: 10px;
-        line-height: 15px;
-        letter-spacing: 0.08em;
+        // .subheader-font;
+        // font-size: 10px;
+        // line-height: 15px;
+        // letter-spacing: 0.08em;
         text-transform: uppercase;
 
-        padding-left: 20px;
+        // padding-left: 20px;
       }
 
       .align-to-total{
@@ -1710,6 +1750,7 @@ body.sales-order-view{
 
 
     .row.extra-content{
+      padding-top: 20px;
       .add-clearfix;
 
       .square-cta{
@@ -1777,7 +1818,8 @@ body.sales-order-view{
     .add-clearfix;
 
 
-    background: @account-green;
+    // background: @account-green;
+    background: rgba(204, 213, 97, 0.4);
 
     padding-top: 38px + 20px;
 
@@ -2005,7 +2047,8 @@ body.sales-order-view{
     .add-clearfix;
 
 
-    background: @account-green;
+    // background: @account-green;
+    background: rgba(204, 213, 97, 0.4);
 
     padding-top: 38px + 20px;
     padding-bottom: 41px + 17px;
@@ -2224,7 +2267,8 @@ body.sales-order-view{
   .page-title{
 
 
-    background: @account-green;
+    // background: @account-green;
+    background: rgba(204, 213, 97, 0.4);
 
     padding-top: 38px + 20px;
     padding-bottom: 41px + 17px;
@@ -2452,7 +2496,8 @@ body.sales-order-view{
   .referral-container .page-title{
 
 
-    background: @account-green;
+    // background: @account-green;
+    background: rgba(204, 213, 97, 0.4);
 
     padding-top: 38px + 20px;
     padding-bottom: 41px + 17px;
@@ -2526,8 +2571,8 @@ body.sales-order-view{
         .square-cta;
         width: 80px;
 
-        height: auto;
-        line-height: 20px;
+        // height: auto;
+        // line-height: 20px;
         background: transparent;
         // .display-inline-block;
         display: block;

@@ -53,7 +53,7 @@
 
                   <div class="monogram-subscription-content-reason">
                     <h4>Tea Variant</h4>
-                    <p>Comes in 4 tea flavors of 4 sachets per flavor (16 sachets in total) accompanied with Tasting Notes</p>
+                    <p>Comes in 4 tea flavours and accompanied with Tasting Notes</p>
                   </div>
                   
                 </div>
@@ -61,7 +61,7 @@
 
                   <div class="monogram-subscription-content-reason">
                     <h4>Receive</h4>
-                    <p>16 sachets per month</p>
+                    <p>A total of 16 sachets per month (4 tea flavours x 4 sachets per flavour)</p>
                   </div>
                   
                 </div>
@@ -148,7 +148,7 @@
             <div class="cta-container">
               <a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais" class="square-cta">layering recommendation</a>
               <?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
-              <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta">visit tea store</a>
+              <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta">visit tea bar</a>
             </div>
           </div>
 
@@ -183,7 +183,7 @@
 
                   <div class="monogram-subscription-content-reason">
                     <h4>Tea Variant</h4>
-                    <p>Comes in 4 tea flavors of 4 sachets per flavor (16 sachets in total) accompanied with Tasting Notes</p>
+                    <p>Comes in 4 tea flavours and accompanied with Tasting Notes</p>
                   </div>
                   
                 </div>
@@ -191,7 +191,7 @@
 
                   <div class="monogram-subscription-content-reason">
                     <h4>Receive</h4>
-                    <p>16 sachets per month</p>
+                    <p>A total of 16 sachets per month (4 tea flavours x 4 sachets per flavour)</p>
                   </div>
                   
                 </div>
@@ -281,7 +281,7 @@
             <div class="cta-container">
               <a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais" class="square-cta">layering recommendation</a>
               <?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
-              <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta">visit tea store</a>
+              <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta">visit tea bar</a>
             </div>
 
           </div> <!-- #monogram-subscription-content-copy-02 -->
@@ -290,7 +290,7 @@
               <div class="row">
                 <div class="col-md-12">
                     <p>Customers who sign-up for a 1 year subscription can get a 10% discount off on all other online purchases throughout the subscription period.</p>
-                    <p>Not applicable with other special promotions or discounts. (Same as GTC)</p>
+                    <p>Not applicable with other special promotions or discounts.</p>
                 </div>
               </div>
           </div> <!-- #monogram-subscription-content-copy-03 -->
@@ -336,6 +336,9 @@
 	  jQuery('body').addClass('monogram-subscription-page');
 
     function do_update() {
+
+        jQuery("#desktop-header-cart").find(".cart-count-update").removeClass('fadeInUp').addClass('fadeOutDown');
+
         jQuery.ajax({
             url: '<?php echo $this->getUrl("discovertea/index/cartpreview"); ?>',
             dataType: 'json',
@@ -343,6 +346,8 @@
             success: function(data){
 
                 jQuery("#desktop-header-cart").find(".count").text("("+data.cart_qty+")");
+
+                jQuery("#desktop-header-cart").find(".cart-count-update").removeClass('fadeOutDown').addClass('fadeInUp');    
 
                 // jQuery('.cart-preview-content').html('');
                 // jQuery.each(data.cart_items, function(key,value){

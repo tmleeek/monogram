@@ -8739,8 +8739,8 @@ html body {
   vertical-align: top;
   *display: inline;
   zoom: 1;
-  margin-left: 16px;
-  margin-right: 16px;
+  margin-left: 10px;
+  margin-right: 10px;
   padding-top: 3px;
 }
 .home-customized-share-button ul li .fa {
@@ -9017,7 +9017,6 @@ html body {
   font-weight: normal;
   font-size: 11px;
   line-height: 18px;
-  letter-spacing: 0.03em;
 }
 .graph-selection-tea .tea-copy-content {
   margin-bottom: 13px;
@@ -9323,7 +9322,7 @@ html body {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
   letter-spacing: 0;
   width: 450px;
@@ -12920,6 +12919,9 @@ body.is-tablet.is-tablet-landscape .home-tea-item .cta-container .arrow-cta {
   display: block;
 }
 #tea-store-section-1 .tea-store-product-info h3 {
+  font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
   text-transform: uppercase;
   padding-bottom: 10px;
   color: #fed298;
@@ -13136,10 +13138,9 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-amount,
 #tea-product-detail-section-1 #product-detail-img-info-container .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-amount {
-  font-size: 60px;
-  line-height: 60px;
-  letter-spacing: 0.05em;
-  color: #7b706b;
+  font-size: 45px;
+  line-height: 30px;
+  letter-spacing: 0.01em;
   margin-bottom: 20px;
 }
 @media all and (max-width: 480px) {
@@ -13157,7 +13158,6 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   font-weight: normal;
   font-size: 12px;
   line-height: 20px;
-  color: #7b706b;
   height: 113px;
   margin-bottom: 29px;
   word-wrap: break-word;
@@ -13178,7 +13178,6 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  color: #7b706b;
   font-size: 10px;
   line-height: 20px;
   text-transform: uppercase;
@@ -13198,7 +13197,6 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  color: #7b706b;
   font-size: 12px;
   line-height: 20px;
   text-transform: uppercase;
@@ -13650,7 +13648,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 }
 @media only screen and (max-width: 480px) {
   #tea-product-detail-section-1 #product-detail-img-info-container .product-img {
-    margin-top: -60px;
+    margin-top: -10px;
   }
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .product-img .slick-next,
@@ -13697,7 +13695,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 }
 @media only screen and (max-width: 480px) {
   #tea-product-detail-section-1 #product-detail-img-info-container .product-info {
-    padding: 60px 0 10px 0!important;
+    padding: 100px 0 10px 0!important;
   }
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .product-info h3 {
@@ -13851,7 +13849,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   width: 30%;
   padding: 0px;
   right: 0px;
-  background-color: rgba(236, 205, 206, 0.5);
+  background-color: rgba(236, 205, 206, 0.3);
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .suggestion-container.monogram-e-gift-card-suggestion-bg {
   display: none;
@@ -13877,52 +13875,52 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   }
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .earl-grey-neroli-suggestion-bg {
-  background-color: rgba(179, 197, 205, 0.5);
+  background-color: rgba(179, 197, 205, 0.3);
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .cherry-japonais-suggestion-bg {
-  background-color: rgba(236, 205, 206, 0.5);
+  background-color: rgba(236, 205, 206, 0.3);
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .black-tea-selection-suggestion-bg {
-  background-color: rgba(197, 180, 227, 0.5);
+  background-color: rgba(197, 180, 227, 0.3);
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .green-tea-and-oolong-selection-suggestion-bg {
-  background-color: rgba(171, 199, 202, 0.5);
+  background-color: rgba(171, 199, 202, 0.3);
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .herbal-tea-selection-suggestion-bg {
-  background-color: rgba(186, 197, 185, 0.5);
+  background-color: rgba(186, 197, 185, 0.3);
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .jasmine-silk-pearls-suggestion-bg {
-  background-color: rgba(163, 177, 200, 0.5);
+  background-color: rgba(163, 177, 200, 0.3);
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .kashmere-suggestion-bg {
-  background-color: rgba(241, 166, 147, 0.5);
+  background-color: rgba(241, 166, 147, 0.3);
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .lapsang-florale-suggestion-bg {
-  background-color: rgba(199, 180, 226, 0.5);
+  background-color: rgba(199, 180, 226, 0.3);
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .milky-oolong-suggestion-bg {
-  background-color: rgba(216, 210, 196, 0.5);
+  background-color: rgba(216, 210, 196, 0.3);
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .morning-english-suggestion-bg {
-  background-color: rgba(254, 210, 152, 0.5);
+  background-color: rgba(254, 210, 152, 0.3);
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .provencal-herbs-suggestion-bg {
-  background-color: rgba(213, 215, 85, 0.5);
+  background-color: rgba(213, 215, 85, 0.3);
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .rose-of-ariana-suggestion-bg {
-  background-color: rgba(253, 146, 163, 0.5);
+  background-color: rgba(253, 146, 163, 0.3);
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .saffronais-suggestion-bg {
-  background-color: rgba(255, 170, 97, 0.5);
+  background-color: rgba(255, 170, 97, 0.3);
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .shiso-mint-suggestion-bg {
-  background-color: rgba(188, 196, 185, 0.5);
+  background-color: rgba(188, 196, 185, 0.3);
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .tea-tasting-assortment-suggestion-bg {
-  background-color: rgba(235, 194, 131, 0.5);
+  background-color: rgba(235, 194, 131, 0.3);
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .uji-sencha-suggestion-bg {
-  background-color: rgba(189, 200, 196, 0.5);
+  background-color: rgba(189, 200, 196, 0.3);
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .suggestion {
   padding-top: 80px;
@@ -13952,7 +13950,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   }
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .suggestion ul.suggestion-list > li {
-  margin-bottom: 15px;
+  margin-bottom: 35px;
 }
 @media only screen and (max-width: 991px) {
   #tea-product-detail-section-1 #product-detail-img-info-container .suggestion ul.suggestion-list > li:last-child {
@@ -14012,11 +14010,11 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   text-align: center;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .suggestion ul li a {
-  font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
+  font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 10px;
-  line-height: 10px;
+  font-size: 13px;
+  line-height: 13px;
   padding-bottom: 7px;
   color: #ffffff;
   text-transform: uppercase;
@@ -14077,7 +14075,7 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   position: relative;
   height: 140px;
   width: 140px;
-  margin-top: -130px;
+  margin-top: -140px;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .suggestion ul li a.product-image .graph-combination-hover-img .graph-img-1,
 #tea-product-detail-section-1 #product-detail-img-info-container .suggestion ul li a.product-image .graph-combination-hover-img .graph-img-2 {
@@ -14086,6 +14084,24 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   position: absolute;
   top: 0px;
   left: 0px;
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .suggestion ul li a.product-image.no-hover img.actual-product-image {
+  visibility: visible!important;
+  -moz-opacity: 1 !important;
+  -khtml-opacity: 1 !important;
+  -webkit-opacity: 1 !important;
+  opacity: 1 !important;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100) !important;
+  filter: alpha(opacity=100) !important;
+  /* transition */
+  -webkit-transition: 0.5s !important;
+  -moz-transition: 0.5s !important;
+  -o-transition: 0.5s !important;
+  transition: 0.5s !important;
+  -webkit-transition: all 0.5s ease-out 0s !important;
+  -moz-transition: all 0.5s ease-out 0s !important;
+  -o-transition: all 0.5s ease-out 0s !important;
+  transition: all 0.5s ease-out 0s !important;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .suggestion ul li a.product-image:hover .actual-product-image {
   visibility: hidden;
@@ -14104,6 +14120,13 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   opacity: 1;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
   filter: alpha(opacity=100);
+}
+#tea-product-detail-section-1 #product-detail-img-info-container .suggestion ul li .suggestion-add-to-cart {
+  font-family: 'BrandonGrotesqueWeb-Bold', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.0em;
 }
 #tea-product-detail-section-1 #product-detail-img-info-container .suggestion ul.two-column li.each-product {
   width: 45%;
@@ -14234,12 +14257,16 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   }
 }
 #tea-product-detail-section-2 h3 {
+  font-family: 'BrandonGrotesqueWeb-Black', "Arial Black", Gadget, sans-serif;
+  font-style: normal;
+  font-weight: 400;
   text-transform: uppercase;
   text-align: center;
   color: #6b615b;
   font-size: 12px;
   line-height: 16px;
   padding-bottom: 10px;
+  padding-top: 20px;
 }
 #tea-product-detail-section-2 h3 sup {
   font-size: 9px;
@@ -14254,8 +14281,8 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
 #tea-product-detail-section-2 p {
   text-align: center;
   color: #6b615b;
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 12.5px;
+  line-height: 20px;
   margin-bottom: 24px;
   width: 85%;
   margin: 0 auto;
@@ -14929,7 +14956,8 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   float: none;
 }
 #monogram-experience-section-1 #monogram-experience-content-container #monogram-experience-text-content p {
-  font-size: 13px;
+  font-size: 12.5px;
+  line-height: 20px;
   color: #ffffff;
 }
 #monogram-experience-section-1 #monogram-experience-content-container #monogram-experience-text-content p:nth-of-type(1) {
@@ -15004,7 +15032,8 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   text-transform: uppercase;
 }
 #monogram-service-section-1 .monogram-service-text-container p {
-  font-size: 13px;
+  font-size: 12.5px;
+  line-height: 20px;
   text-align: left;
   color: #ffffff;
 }
@@ -15032,6 +15061,8 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   }
 }
 #monogram-service-section-1 #monogram-service-col-1 #monogram-service-text-container-1 p {
+  font-size: 12.5px;
+  line-height: 20px;
   padding-bottom: 20px;
 }
 #monogram-service-section-1 #monogram-service-col-1 #monogram-service-text-container-1 ul {
@@ -15088,6 +15119,8 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   }
 }
 #monogram-service-section-1 #monogram-service-col-2 #monogram-service-text-container-3 p {
+  font-size: 12.5px;
+  line-height: 20px;
   color: #6b615b;
   padding-bottom: 20px;
 }
@@ -15123,6 +15156,8 @@ body.product-gift-card #tea-product-detail-section-1 .container-fluid {
   text-align: center;
   color: #f1efee;
   margin-bottom: 60px;
+  font-size: 12.5px;
+  line-height: 20px;
 }
 #contact-section-1 #messages_product_view {
   width: 60%;
@@ -15426,7 +15461,7 @@ body.billing-shipping-page {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
 }
 #page-shopping-cart-sidebar-address .billing-info .address-details p.title,
@@ -15529,7 +15564,7 @@ body.billing-shipping-page {
   vertical-align: top;
   *display: inline;
   zoom: 1;
-  width: 160px;
+  width: 170px;
 }
 #page-shopping-cart-content .each-input .input-box:focus {
   border: none;
@@ -15602,7 +15637,7 @@ body.billing-shipping-page {
   vertical-align: top;
   *display: inline;
   zoom: 1;
-  width: 160px;
+  width: 170px;
   position: relative;
 }
 #page-shopping-cart-content .each-input .dropdown:focus {
@@ -15769,7 +15804,7 @@ body.billing-shipping-page {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #f1efee;
 }
@@ -15777,7 +15812,7 @@ body.billing-shipping-page {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #f1efee;
 }
@@ -15883,7 +15918,7 @@ body.billing-shipping-page {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 11px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #f1efee !important;
   letter-spacing: 0.04em;
@@ -15892,7 +15927,7 @@ body.billing-shipping-page {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 11px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #f1efee !important;
   letter-spacing: 0.04em;
@@ -15960,7 +15995,7 @@ body.billing-shipping-page {
   }
 }
 #page-shopping-cart-item-container table tbody tr .image-text-container p {
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
 }
 @media only screen and (max-width: 480px) {
@@ -16160,7 +16195,7 @@ body.billing-shipping-page {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #f1efee;
   letter-spacing: 0.08em;
@@ -16210,7 +16245,7 @@ body.billing-shipping-page {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
 }
 #page-shopping-cart-discount-code-container {
@@ -16358,7 +16393,7 @@ body.billing-shipping-page {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
 }
 #page-shopping-cart-total-container .each-details.grand-total {
@@ -16366,6 +16401,12 @@ body.billing-shipping-page {
   padding-top: 24px;
   margin-top: 21px;
   margin-bottom: 0px;
+}
+#page-shopping-cart-billing-shipping-container .each-input .input-box {
+  width: 200px;
+}
+#page-shopping-cart-billing-shipping-container .each-input .dropdown {
+  width: 200px;
 }
 #page-shopping-cart-billing-container {
   margin-right: 25px;
@@ -16431,7 +16472,7 @@ body.billing-shipping-page {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   letter-spacing: 0em;
   text-transform: none;
@@ -16682,7 +16723,7 @@ body.billing-shipping-page {
   padding-right: 24px;
 }
 #page-shopping-cart-billing-shipping-delivery-information-02 p {
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   margin-bottom: 20px;
 }
@@ -16753,7 +16794,6 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar .block.bl
 body.monogram-page-account-details #content-wrapper .col-main {
   padding-top: 70px;
   margin-left: 80px;
-  background: #827773;
   padding-left: 80px;
   padding-right: 50px;
 }
@@ -16835,13 +16875,13 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar strong {
   color: #989779 !important;
 }
 #monogram-page-account-details-dashboard-header {
-  background: #989779;
+  background: rgba(204, 213, 97, 0.4);
   padding-top: 38px;
   padding-bottom: 41px;
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
   margin-left: -80px;
@@ -16890,6 +16930,10 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar strong {
   opacity: 0.7;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
   filter: alpha(opacity=70);
+}
+.monogram-page-account-details-dashboard-header-item p {
+  font-size: 12.5px;
+  line-height: 20px;
 }
 .monogram-page-account-details-dashboard-header-item:before {
   content: '';
@@ -16946,6 +16990,7 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar strong {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
+  font-size: 12.5px;
   font-size: 20px;
   line-height: 24px;
   margin-bottom: 16px;
@@ -16973,6 +17018,10 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar strong {
     line-height: 20px;
     margin-bottom: 22px;
   }
+}
+body.monogram-page-account-details #content-wrapper .col-main p {
+  font-size: 12.5px;
+  line-height: 20px;
 }
 body.monogram-page-account-details #content-wrapper .col-main .pager {
   padding-top: 19px;
@@ -17232,7 +17281,7 @@ body.monogram-page-account-details #content-wrapper .col-main {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #f1efee;
   padding-bottom: 100px;
@@ -17281,7 +17330,7 @@ body.monogram-page-account-details #content-wrapper .col-main .each-input p {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   display: inline-block;
   vertical-align: top;
@@ -17293,7 +17342,7 @@ body.monogram-page-account-details #content-wrapper .col-main .each-input p a {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #f1efee;
 }
@@ -17545,13 +17594,13 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   margin-left: 10px;
 }
 #monogram-page-account-dashboard-edit-container .page-title {
-  background: #989779;
+  background: rgba(204, 213, 97, 0.4);
   padding-top: 58px;
   padding-bottom: 58px;
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
   margin-left: -70px;
@@ -17581,13 +17630,13 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   }
 }
 #monogram-page-account-details-address-header {
-  background: #989779;
+  background: rgba(204, 213, 97, 0.4);
   padding-top: 60px;
   padding-bottom: 41px;
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
   margin-left: -80px;
@@ -17654,7 +17703,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
 }
@@ -17681,7 +17730,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
 }
@@ -17699,7 +17748,7 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
 }
@@ -17826,13 +17875,13 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   padding-right: 24px;
 }
 #monogram-page-account-details-address-edit-container .page-title {
-  background: #989779;
+  background: rgba(204, 213, 97, 0.4);
   padding-top: 58px;
   padding-bottom: 58px;
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
   margin-left: -70px;
@@ -17871,13 +17920,13 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   padding: 0;
 }
 #monogram-page-account-details-order-history .page-title {
-  background: #989779;
+  background: rgba(204, 213, 97, 0.4);
   padding-top: 58px;
   padding-bottom: 58px;
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
   margin-left: -70px;
@@ -17933,20 +17982,34 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
 #monogram-page-account-details-order-history .order-headers h2.product-header {
   text-align: left;
 }
+#monogram-page-account-details-order-history .custom-order-content-header p.product,
+#monogram-page-account-details-order-history .order-headers p.product,
+#monogram-page-account-details-order-history .custom-order-content-header h2.product,
+#monogram-page-account-details-order-history .order-headers h2.product {
+  text-align: left;
+  padding-left: 30px;
+}
 #monogram-page-account-details-order-history .each-order,
 #monogram-page-account-details-order-history .each-product {
-  padding-top: 25px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid #ffffff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: none;
+}
+#monogram-page-account-details-order-history .each-order:last-child,
+#monogram-page-account-details-order-history .each-product:last-child,
+#monogram-page-account-details-order-history .each-order:first-child,
+#monogram-page-account-details-order-history .each-product:first-child {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 #monogram-page-account-details-order-history .each-order p,
 #monogram-page-account-details-order-history .each-product p {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
+  text-align: center;
 }
 #monogram-page-account-details-order-history .each-order p a,
 #monogram-page-account-details-order-history .each-product p a {
@@ -17963,6 +18026,23 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
   filter: alpha(opacity=70);
 }
+#monogram-page-account-details-order-history .each-order p.product,
+#monogram-page-account-details-order-history .each-product p.product {
+  text-align: left;
+  padding-left: 30px;
+}
+#monogram-page-account-details-order-history .each-order p.price,
+#monogram-page-account-details-order-history .each-product p.price {
+  padding-left: 50px;
+}
+#monogram-page-account-details-order-history .each-order p.qty,
+#monogram-page-account-details-order-history .each-product p.qty {
+  padding-left: 30px;
+}
+#monogram-page-account-details-order-history .each-order .order-details,
+#monogram-page-account-details-order-history .each-product .order-details {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
 #monogram-page-account-details-order-history .each-order .order-details .order-no,
 #monogram-page-account-details-order-history .each-product .order-details .order-no {
   text-align: center;
@@ -17978,6 +18058,10 @@ body.monogram-page-account-details #content-wrapper .col-main .edit-button-conta
 #monogram-page-account-details-order-history .each-order .order-details .order-subtotal,
 #monogram-page-account-details-order-history .each-product .order-details .order-subtotal {
   text-align: center;
+}
+#monogram-page-account-details-order-history .each-order .single-order-item .order-details,
+#monogram-page-account-details-order-history .each-product .single-order-item .order-details {
+  padding-bottom: 20px;
 }
 #monogram-page-account-details-order-history .pager {
   margin-left: -10px !important;
@@ -18054,7 +18138,7 @@ body.sales-order-view #monogram-page-account-details-order-history .order-additi
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
 }
@@ -18062,7 +18146,7 @@ body.sales-order-view #monogram-page-account-details-order-history .order-additi
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
 }
@@ -18103,7 +18187,7 @@ body.sales-order-view #monogram-page-account-details-order-history .each-shippin
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
 }
@@ -18137,13 +18221,18 @@ body.sales-order-view #monogram-page-account-details-order-history .each-details
   font-size: 11px;
   line-height: 15px;
   color: #ffffff;
+  margin-bottom: 15px;
+}
+body.sales-order-view #monogram-page-account-details-order-history .each-details:last-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  padding-top: 20px;
 }
 body.sales-order-view #monogram-page-account-details-order-history .each-details p {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 11px;
-  line-height: 15px;
+  font-size: 12.5px;
+  line-height: 20px;
   color: #ffffff;
 }
 body.sales-order-view #monogram-page-account-details-order-history .each-details h2 {
@@ -18156,19 +18245,13 @@ body.sales-order-view #monogram-page-account-details-order-history .each-details
   text-transform: uppercase;
 }
 body.sales-order-view #monogram-page-account-details-order-history .each-details span {
-  font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 15px;
-  letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding-left: 20px;
 }
 body.sales-order-view #monogram-page-account-details-order-history .each-details .align-to-total {
   text-align: right;
 }
 body.sales-order-view #monogram-page-account-details-order-history .row.extra-content {
+  padding-top: 20px;
   *zoom: 1;
 }
 body.sales-order-view #monogram-page-account-details-order-history .row.extra-content:before,
@@ -18214,15 +18297,19 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
 body.sales-order-view #monogram-page-account-details-order-history .row.extra-content-headers .view-detail .fa {
   display: none;
 }
+#monogram-page-account-giftcard-container p {
+  font-size: 12.5px;
+  line-height: 20px;
+}
 #monogram-page-account-giftcard-container .customer-account-giftcard > .page-title {
   *zoom: 1;
-  background: #989779;
+  background: rgba(204, 213, 97, 0.4);
   padding-top: 58px;
   padding-bottom: 53px;
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
   margin-left: -80px;
@@ -18301,12 +18388,17 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
   display: none;
 }
 #monogram-page-account-giftcard-container .customer-account-giftcard .balance p {
-  font-family: 'BrandonGrotesqueWeb-Medium', "Arial Black", Gadget, sans-serif;
+  /*
+      .subheader-font;
+      font-size: 10px;
+      line-height: 20px;
+      letter-spacing: 0.08em;
+      */
+  font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: 10px;
+  font-weight: normal;
+  font-size: 12.5px;
   line-height: 20px;
-  letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 5px;
 }
@@ -18354,7 +18446,7 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
   text-align: center;
@@ -18367,7 +18459,7 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
 }
@@ -18426,13 +18518,13 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
 }
 #monogram-page-account-giftcard-detail-container .page-title {
   *zoom: 1;
-  background: #989779;
+  background: rgba(204, 213, 97, 0.4);
   padding-top: 58px;
   padding-bottom: 58px;
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
   margin-left: -80px;
@@ -18535,7 +18627,7 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   letter-spacing: 0;
   text-transform: none;
@@ -18573,7 +18665,7 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
   text-align: center;
@@ -18586,7 +18678,7 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
 }
@@ -18621,13 +18713,13 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
   padding-right: 2px;
 }
 #monogram-page-account-reward-points-container .page-title {
-  background: #989779;
+  background: rgba(204, 213, 97, 0.4);
   padding-top: 58px;
   padding-bottom: 58px;
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
   margin-left: -80px;
@@ -18710,7 +18802,7 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
   text-align: center;
@@ -18724,7 +18816,7 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
 }
@@ -18786,14 +18878,18 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
 #monogram-page-account-details-refer-friends-container .page-title hr {
   display: none;
 }
+#monogram-page-account-details-refer-friends-container p {
+  font-size: 12.5px;
+  line-height: 20px;
+}
 #monogram-page-account-details-refer-friends-container .referral-container .page-title {
-  background: #989779;
+  background: rgba(204, 213, 97, 0.4);
   padding-top: 58px;
   padding-bottom: 58px;
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
   margin-left: -80px;
@@ -18873,8 +18969,6 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
   transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   padding-top: 0px;
   width: 80px;
-  height: auto;
-  line-height: 20px;
   background: transparent;
   display: block;
   margin-bottom: 20px;
@@ -18977,7 +19071,7 @@ body.sales-order-view #monogram-page-account-details-order-history .row.extra-co
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
   text-align: center;
@@ -19904,8 +19998,8 @@ body.monogram-subscription-page {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 12.5px;
+  line-height: 20px;
   letter-spacing: 0em;
   padding: 0 15px;
 }
@@ -19955,7 +20049,7 @@ body.monogram-subscription-page {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
   text-align: center;
@@ -20027,6 +20121,8 @@ body.monogram-subscription-page {
   padding: 60px;
 }
 #monogram-subscription-content-copy-03 p {
+  font-size: 12.5px;
+  line-height: 20px;
   padding-bottom: 20px;
 }
 #monogram-subscription-content-copy-03 p:last-child {
@@ -20281,7 +20377,7 @@ body.monogram-page-faq {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   letter-spacing: 0em;
 }
@@ -20289,7 +20385,7 @@ body.monogram-page-faq {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   letter-spacing: 0em;
 }
@@ -20317,7 +20413,7 @@ body.monogram-page-faq {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   letter-spacing: 0em;
   color: #f1efee;
@@ -20351,7 +20447,7 @@ body.monogram-page-faq {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   letter-spacing: 0em;
   color: #f1efee;
@@ -20472,7 +20568,7 @@ body.monogram-page-shipping-information {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   letter-spacing: 0em;
   color: #ffffff;
@@ -20481,7 +20577,7 @@ body.monogram-page-shipping-information {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   letter-spacing: 0em;
 }
@@ -20497,7 +20593,7 @@ body.monogram-page-shipping-information {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 18px;
   letter-spacing: 0em;
   color: #ffffff;
@@ -20708,7 +20804,7 @@ body.monogram-page-shipping-information {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #7b706b;
   padding-top: 16px;
@@ -20727,11 +20823,15 @@ body.monogram-page-shipping-information {
   position: relative;
   top: -6px;
 }
+#monogram-page-shipping-info-content-03 .table-responsive table tbody tr td p {
+  font-size: 12.5px;
+  line-height: 20px;
+}
 #monogram-page-shipping-info-content-03 .table-responsive table tbody tr td a {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
   color: #ffffff;
 }
@@ -20896,6 +20996,10 @@ body.monogram-page-shipping-information {
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
   filter: alpha(opacity=70);
 }
+#monogram-page-shipping-info-content-04 .table-responsive table tbody tr td p {
+  font-size: 12.5px;
+  line-height: 20px;
+}
 #monogram-page-shipping-info-content-04 .table-responsive table tbody tr td:first-child {
   padding-left: 24px;
   text-align: left;
@@ -21008,7 +21112,7 @@ body.monogram-page-privacy-policy {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   letter-spacing: 0em;
   color: #ffffff;
@@ -21017,7 +21121,7 @@ body.monogram-page-privacy-policy {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   letter-spacing: 0em;
 }
@@ -21029,7 +21133,7 @@ body.monogram-page-privacy-policy {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 18px;
   letter-spacing: 0em;
   color: #ffffff;
@@ -21094,7 +21198,7 @@ body.monogram-page-privacy-policy {
   font-family: 'Domine', "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   letter-spacing: 0em;
   color: #f1efee;

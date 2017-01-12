@@ -108,6 +108,7 @@
                 <action method="addItem"><type>skin_css</type><name>css/style.css</name></action>
                  <!-- <action method="addItem"><type>skin_css</type><name>css/vendors/bootstrap/bootstrap.min.css</name><params/></action> -->
                  <!-- <action method="addItem"><type>skin_css</type><name>css/vendors/bootstrap/bootstrap-theme.min.css</name></action> -->
+                 <action method="addItem"><type>skin_css</type><name>css/animate.css</name></action>
                  <action method="addItem"><type>skin_css</type><name>js/plugins/fancybox/jquery.fancybox.css</name></action>
                  <action method="addItem"><type>skin_css</type><name>css/plugins/slick-theme.css</name></action>
                  <action method="addItem"><type>skin_css</type><name>css/plugins/slick.css</name></action>

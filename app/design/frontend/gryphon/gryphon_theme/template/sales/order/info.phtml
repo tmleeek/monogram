@@ -30,8 +30,26 @@
   <h2>order history</h2>
 </div>
 
-
 <?php 
+    $subscription_in_the_cart = 0;
+    $allskus = array("SGP-ART-1M", "SGP-ART-3M", "SGP-ART-6M", "SGP-ART-12M", "SGP-GUR-1M", "SGP-GUR-3M", "SGP-GUR-6M", "SGP-GUR-12M","INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
+    $quote = Mage::getSingleton('checkout/session')->getQuote();
+    foreach ($quote->getAllVisibleItems() as $item) {
+        $itemsku = $item->getProduct()->getData('sku');        
+        if(in_array($itemsku, $allskus)) {
+            $subscription_in_the_cart = 1;
+        }
+    }
+
+    $gift_in_the_cart = 0;
+    $giftsku = array("testGiftCard2");
+    foreach ($quote->getAllVisibleItems() as $item) {
+        $itemsku = $item->getProduct()->getData('sku');        
+        if(in_array($itemsku, $giftsku)) {
+            $gift_in_the_cart = 1;
+        }   
+    }
+
     $_order = $this->getOrder();
 ?>
 
@@ -55,14 +73,17 @@
             <?php echo $this->getMessagesBlock()->toHtml() ?>
             <div class="row order-history-heading">
                 <div class="page-title col-md-12">
-                    <h1><?php echo $this->__('Order #%s - %s', $_order->getRealOrderId(), $_order->getStatusLabel()) ?></h1>
-                    <hr class="small" />
+                    <h1><?php echo $this->__('Order #%s - %s', $_order->getRealOrderId(), $_order->getStatusLabel()) ?></h1>                    
+                    <div class="space10"></div>
+                    <div class="cta-container">                        
+                        <a href="<?php echo $this->helper('checkoutcustomiser')->getReorderUrl($_order) ?>" class="square-cta reorder"><?php echo $this->__('Reorder All'); ?></a>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 hidden-xs hidden-sm">
                     <?php echo $this->getStatusHistoryRssUrl($_order) ?>
-                    <div class="order-info">
+                    <!-- <div class="order-info">
                         <h2><?php echo $this->__('About This Order:') ?></h2>
                         <div>
                             <?php $_links = $this->getLinks(); ?>
@@ -77,11 +98,10 @@
                             </div>
                             <script type="text/javascript">decorateGeneric($('order-info-tabs').select('LI'),['first','last']);</script>
                         </div>
-                    </div>
-                    <p class="order-date"><?php echo $this->__('Order Date: %s', $this->formatDate($_order->getCreatedAtStoreDate(), 'long')) ?></p>
+                    </div> -->                    
                     
 
-                    <div class="row custom-custom-custom-row">
+                    <!-- <div class="row custom-custom-custom-row">
                         <div class="col-md-6">
 
                             <div class="billing-address">
@@ -185,7 +205,7 @@
                             
 
                         </div>
-                    </div>
+                    </div> -->
 
 
 
@@ -196,3 +216,20 @@
 
 
 </div> <!-- #monogram-page-account-details-order-history -->
+<script>
+    $j('.reorder').on("click", function(e){
+        e.preventDefault();
+
+        var subscription_in_the_cart = <?php echo $subscription_in_the_cart; ?>;
+        var gift_in_the_cart = <?php echo $gift_in_the_cart; ?>;
+        var cart_count = <?php echo Mage::helper('checkout/cart')->getItemsCount(); ?>
+
+        if(subscription_in_the_cart==1) {                                
+            alert('This product cannot be purchased with other items in the cart. Please check out first before making this purchase.');
+        } else if(gift_in_the_cart==1) {
+            alert('This product cannot be purchased with other items in the cart. Please check out first before making this purchase.');
+        } else {
+            window.location.href = $j(this).attr('href');
+        }
+    });
+</script>

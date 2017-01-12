@@ -162,6 +162,9 @@ if ($this->getChild('after')) {
 <script>
 $j(document).ready(function($){
     function do_update() {
+
+        $j("#desktop-header-cart").find(".cart-count-update").removeClass('fadeInUp').addClass('fadeOutDown');
+
         $.ajax({
             url: '/discovertea/index/cartpreview',
             dataType: 'json',
@@ -170,6 +173,8 @@ $j(document).ready(function($){
 
                 // update product count in cart
                 $j("#desktop-header-cart").find(".count").text("("+data.cart_qty+")");
+
+                $j("#desktop-header-cart").find(".cart-count-update").removeClass('fadeOutDown').addClass('fadeInUp');
           
             }
         });                     

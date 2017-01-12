@@ -63,6 +63,7 @@
 	display:none;
 }
 </style>
+
 <?php $_helper = $this->helper('catalog/output'); ?>
 <?php $_product = $this->getProduct(); ?>
 <?php
@@ -311,6 +312,9 @@ endif;
             //<![CDATA[
 
                 function do_update() {
+
+                    jQuery("#desktop-header-cart").find(".cart-count-update").removeClass('fadeInUp').addClass('fadeOutDown');
+
                     jQuery.ajax({
                         url: '<?php echo $this->getUrl("discovertea/index/cartpreview"); ?>',
                         dataType: 'json',
@@ -320,6 +324,8 @@ endif;
                             // update product count in cart
                             jQuery("#desktop-header-cart").find(".count").text("("+data.cart_qty+")");
 
+                            jQuery("#desktop-header-cart").find(".cart-count-update").removeClass('fadeOutDown').addClass('fadeInUp');
+
                             jQuery('.cart-preview-content').html('');
                             jQuery.each(data.cart_items, function(key,value){
 
@@ -328,7 +334,7 @@ endif;
                                 jQuery('.cart-summary').find('.total-items-count').html(data.cart_qty);
                                 jQuery('.cart-summary').find('.sub-total-amount').html(data.cart_total);
 
-                            });
+                            });                            
 
                             jQuery('.cart-header').show();
                             jQuery('.cart-summary').show();
@@ -345,6 +351,8 @@ endif;
                             jQuery('.cart-summary-data').find('.price').html(data.cart_total);
                             jQuery('.cart-summary-data').find('.count').html(data.cart_qty);
                             jQuery('.cart-summary-data span').html('<span class="price">'+data.cart_total+'</span> (<span class="count">'+data.cart_qty+'</span>)');
+
+                            jQuery('.')
                         }
                     });                     
                 }
