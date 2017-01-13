@@ -145,6 +145,9 @@ body.monogram-page-shipping-information{
     ul{
       padding-top: 18px;
       padding-bottom: 18px;
+      @media all and (max-width: 991px) {
+        padding-bottom: 0px;
+      }
 
       li{
         .body-font;
@@ -430,14 +433,7 @@ body.monogram-page-shipping-information{
             }
             &:last-child{
               padding-right: 6px;
-            }
-
-            @media only screen and (max-width: 991px) {
-              // white-space: normal;
-              &:first-child {
-                padding-left: 0px;
-              }
-            }
+            }            
 
           }
         }
@@ -495,14 +491,7 @@ body.monogram-page-shipping-information{
             }
             &:last-child{
               padding-right: 21px;
-            }
-
-            @media only screen and (max-width: 991px) {
-              // white-space: normal;
-              &:first-child{
-                padding-left: 0px;
-              }
-            }
+            }            
 
           }
           &.color {
