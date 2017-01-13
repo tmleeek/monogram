@@ -210,6 +210,8 @@ monogram.component.GraphSectionMobile.EVENT_02 = '';
 
 monogram.component.GraphSectionMobile.prototype.create_data_array = function(){
 
+  // IMPORTANT
+  this.combination_graph.create_gradient(this.combination_data_loader.graph_data_array);
 
   /**
    * @type {monogram.graph.Data}

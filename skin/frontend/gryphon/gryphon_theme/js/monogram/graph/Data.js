@@ -34,6 +34,14 @@ monogram.graph.Data = function(data_obj_param) {
   this.data_flavor_complexity         = this.data_object["flavor-complexity"];       // this is optional, and not used
 
 
+
+  // this.data_gradient_image    = this.data_object["gradient-image"];       // not used anymore
+  // this.data_lighter_color     = this.data_object["lighter-color"];
+  
+  this.gradient_color_01      = this.data_object["gradient-color-01"];
+  this.gradient_color_02      = this.data_object["gradient-color-02"];
+
+
   this.calculated_flavor_score_array = {
     'floral': 0,
     'creamy': 0,

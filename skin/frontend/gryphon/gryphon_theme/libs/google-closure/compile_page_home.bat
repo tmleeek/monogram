@@ -1,10 +1,10 @@
 java -jar "compiler.jar" ^
-  --js=..\js\manic\**.js ^
-  --js=..\js\sagewest\**.js ^
+  --js=..\..\js\manic\**.js ^
+  --js=..\..\js\monogram\**.js ^
   --js=closure-library\**.js ^
   --only_closure_dependencies ^
   --compilation_level WHITESPACE_ONLY ^
-  --closure_entry_point=sagewest.page.Home ^
+  --closure_entry_point=monogram.page.Home ^
   --externs=closure-externs\jquery-1.9.js ^
   --externs=closure-externs\html5.js ^
   --externs=closure-externs\window.js ^
@@ -14,6 +14,4 @@ java -jar "compiler.jar" ^
   --externs=closure-externs\scrollmagic.js ^
   --externs=closure-externs\new_fullpage.js ^
   --externs=closure-externs\others.js ^
-  --create_source_map=page-home.min.map ^
-  --source_map_format=V3 ^
-  --js_output_file=..\..\bin\js\page-home.min.js
+  --js_output_file=..\..\js\page-home.min.js

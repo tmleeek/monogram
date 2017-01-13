@@ -189,6 +189,10 @@ monogram.component.GraphSection.EVENT_02 = '';
 monogram.component.GraphSection.prototype.create_data_array = function(){
 
 
+  // IMPORTANT
+  this.combination_graph.create_gradient(this.combination_data_loader.graph_data_array);
+
+
   /**
    * @type {monogram.graph.Data}
    */
@@ -664,6 +668,7 @@ monogram.component.GraphSection.prototype.on_combined_data_loader_load_complete 
   
 
   this.create_data_array();
+
 
   // this.display_combination('earl-grey-neroli', 'shiso-mint');
 

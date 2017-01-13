@@ -57,6 +57,10 @@ monogram.graph.RaphaelGraphItem = function(options, paper) {
 
   this.graph_shape = null;
 
+
+  this.gradient_shape = null;
+
+
   //    ___ _   _ ___ _____
   //   |_ _| \ | |_ _|_   _|
   //    | ||  \| || |  | |
@@ -65,7 +69,19 @@ monogram.graph.RaphaelGraphItem = function(options, paper) {
   //
 
 
-  this.graph_shape = this.paper.path().attr({stroke: "none", fill: '#ffffff', opacity: 0.6});
+  this.graph_shape = this.paper.path().attr({
+    stroke: "none", fill: '#ffffff', opacity: 0.6
+  });
+
+
+  
+  /*
+  this.gradient_shape = this.paper.circle(this.center_x, this.center_y, 200).attr({
+    stroke: "none", 
+    fill: 'r#d7f9fc-#AAC6C9'
+  })
+  */
+
 
   this.draw_empty_graph();
 
@@ -274,10 +290,31 @@ monogram.graph.RaphaelGraphItem.prototype.create_graph = function(){
 
   // change graph color instant
     
-  
+  /*
   TweenMax.to(this.graph_shape, 0.0, {raphael:{
     fill: this.graph_data.data_color
   }});
+  */
+
+  
+  /*
+  this.graph_shape.attr({
+    // fill: "url('skin/frontend/gryphon/gryphon_theme/images/graph_gradient/test.jpg')"
+    // fill: "url('" + this.graph_data.data_gradient_image + "')"
+    // fill: "url('" + 'skin/frontend/gryphon/gryphon_theme/images/graph_gradient/grid.jpg' + "')"
+    // fill: "url('#" + this.graph_data.data_id + '-gradient-fill' + "')"
+  });
+  */
+ 
+
+  var target_svg_fill = "url('#" + this.graph_data.data_id + "-gradient-fill')";
+
+  this.graph_shape.node.setAttribute('fill', target_svg_fill);
+
+
+  
+  
+  
   
 
   /*
@@ -476,7 +513,7 @@ monogram.graph.RaphaelGraphItem.prototype.animate_in = function(delay_param){
   TweenMax.to(this.graph_shape, 1, {raphael: {opacity: 0.6}, ease: Quad.easeOut, delay:delay_param});
 
   // circle
-    
+  
   var circle_element = null;
   for (var i = 0, l=this.circle_array.length; i < l; i++) {
     circle_element = this.circle_array[i];

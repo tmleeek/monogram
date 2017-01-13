@@ -6,6 +6,9 @@
     "html-name": "<span style='color: #acc6c9;'>uji</span> <span style='color: #bdc8c4;'>sencha</span>",
     "url": "http://www.monogramtea.com/uji-sencha-1006.html",
     "type": "Green Tea",
+    
+    "gradient-color-01": "#bdc8c4", 
+    "gradient-color-02": "#acc6c9",
 
     "color": "#AAC6C9",
     "color-02": "#677f80",
@@ -92,6 +95,9 @@
     "html-name": "<span style='color: #edbec9;'>cherry</span> <span style='color: #eccdce;'>japonais</span>",
     "url": "http://www.monogramtea.com/cherry-japonais.html",
     "type": "Green Tea",
+    
+    "gradient-color-01": "#eccdce", 
+    "gradient-color-02": "#edbec9",
 
     "color": "#ECBEC9",
     "color-02": "#ad7580",
@@ -189,6 +195,9 @@
     "html-name": "<span style='color: #bbdce5;'>jasmine</span> <span style='color: #a3b1c8;'>silk pearls</span>",
     "url": "http://www.monogramtea.com/jasmine-silk-pearls.html",
     "type": "Green Tea",
+    
+    "gradient-color-01": "#bbdce5", 
+    "gradient-color-02": "#a3b1c8",
 
     "color": "#97AAC0",
     "color-02": "#556276",
@@ -259,6 +268,9 @@
     "html-name": "<span style='color: #e3c19e;'>milky</span> <span style='color: #d8d2c4;'>oolong</span>",
     "url": "http://www.monogramtea.com/milky-oolong.html",
     "type": "Oolong Tea",
+    
+    "gradient-color-01": "#d8d2c4", 
+    "gradient-color-02": "#e3c19e",
 
     "color": "#CEC9BB",
     "color-02": "#8b8273",
@@ -327,6 +339,9 @@
     "html-name": "<span style='color: #b8b8dd;'>lapsang</span> <span style='color: #c7b4e2;'>florale<sup>tm</sup></span>",
     "url": "http://www.monogramtea.com/lapsang-florale.html",
     "type": "Black Tea",
+    
+    "gradient-color-01": "#c7b4e2", 
+    "gradient-color-02": "#b8b8dd",
 
     "color": "#BAA9D2",
     "color-02": "#74608a",
@@ -425,6 +440,9 @@
     "html-name": "<span style='color: #f1a693;'>kashmere<sup>tm</sup></span>",
     "url": "http://www.monogramtea.com/kashmere.html",
     "type": "Black Tea",
+    
+    "gradient-color-01": "#f0c0b5", 
+    "gradient-color-02": "#f1a693",
 
     "color": "#F1A18E",
     "color-02": "#b25748",
@@ -535,6 +553,9 @@
     "html-name": "<span style='color: #c0cdd5;'>earl grey</span> <span style='color: #d8d1ca;'>neroli</span>",
     "url": "http://www.monogramtea.com/earl-grey-neroli.html",
     "type": "Black Tea",
+    
+    "gradient-color-01": "#d8d1ca", 
+    "gradient-color-02": "#c0cdd5",
 
     "color": "#B3C5CD",
     "color-02": "#6f7e85",
@@ -633,6 +654,9 @@
     "html-name": "<span style='color: #f6c65b;'>morning</span> <span style='color: #fed298;'>english<sup>tm</sup></span>",
     "url": "http://www.monogramtea.com/morning-english.html",
     "type": "Black Tea",
+    
+    "gradient-color-01": "#fed298", 
+    "gradient-color-02": "#f6c65b",
 
     "color": "#FECD94",
     "color-02": "#c58650",
@@ -723,6 +747,9 @@
     "html-name": "<span style='color: #ff8189;'>rose</span> <span style='color: #fd92a3;'>of ariana<sup>tm</sup></span>",
     "url": "http://www.monogramtea.com/rose-of-ariana.html",
     "type": "Herbal Tisane",
+    
+    "gradient-color-01": "#fd92a3", 
+    "gradient-color-02": "#ff8189",
 
     "color": "#F48D9F",
     "color-02": "#b64356",
@@ -806,6 +833,9 @@
     "html-name": "<span style='color: #c7c89b;'>shiso</span> <span style='color: #bcc4b9;'>mint</span>",
     "url": "http://www.monogramtea.com/shiso-mint.html",
     "type": "Herbal Tisane",
+    
+    "gradient-color-01": "#c7c89b", 
+    "gradient-color-02": "#bcc4b9",
 
     "color": "#B0BCB2",
     "color-02": "#6c7469",
@@ -882,6 +912,9 @@
     "html-name": "<span style='color: #ffaa61;'>saffronais<sup>tm</sup></span>",
     "url": "http://www.monogramtea.com/saffronais.html",
     "type": "Herbal Tisane",
+    
+    "gradient-color-01": "#f3bf9b", 
+    "gradient-color-02": "#ffaa61",
 
     "color": "#F9A467",
     "color-02": "#bc5a2c",
@@ -981,6 +1014,9 @@
     "html-name": "<span style='color: #c2cb7f;'>provencial</span> <span style='color: #d5d755;'>herbs</span>",
     "url": "http://www.monogramtea.com/provencal-herbs.html",
     "type": "Herbal Tisane",
+    
+    "gradient-color-01": "#d5d755", 
+    "gradient-color-02": "#c2cb7f",
 
     "color": "#B8C783",
     "color-02": "#738142",
@@ -1048,5 +1084,6 @@
     "steeping-temperature": "lesstb"
 
   }
+
 
 ]

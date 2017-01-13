@@ -519,6 +519,13 @@ monogram.page.Home.prototype.create_graph_mobile = function(){
 
     console.log('monogram.graph.CombinationDataLoader.ON_COMBINED_GRAPH_DATA_LOAD_COMPLETE');
 
+
+    // IMPORTANT
+    this.combination_graph.create_gradient(this.combination_data_loader.graph_data_array);
+
+    
+
+
     var random_main_sub_desc = this.combination_data_loader.get_randomized_ids();
 
 

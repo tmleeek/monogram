@@ -108,8 +108,6 @@ monogram.graph.CombinationGraph = function(options, element) {
     'scale_factor': this.scale_factor
   }, this.paper);
 
-
-
   console.log('init');
 };
 goog.inherits(monogram.graph.CombinationGraph, goog.events.EventTarget);
@@ -241,7 +239,76 @@ monogram.graph.CombinationGraph.prototype.update_label_opacity = function() {
 };
 
 
-monogram.graph.CombinationGraph.prototype.public_method_04 = function() {};
+
+/**
+ * @param  {Array.<monogram.graph.Data>} array_param [description]
+ */
+monogram.graph.CombinationGraph.prototype.create_gradient = function(array_param) {
+
+
+  var definition = document.createElementNS('http://www.w3.org/2000/svg','defs');
+
+  console.log('create_gradient !this is important! 1');
+  console.log('create_gradient !this is important! 2');
+  // console.log(array_param);
+
+  /**
+   * @type {monogram.graph.Data}
+   */
+  var data = null;
+
+  var radial_gradient, stop_01, stop_02, stop_03 = null;
+  var target_id = '';
+
+  for (var i = 0, l=array_param.length; i < l; i++) {
+    data = array_param[i];
+
+    target_id = data.data_id + '-gradient-fill';
+    
+    radial_gradient = document.createElementNS('http://www.w3.org/2000/svg','radialGradient');
+    radial_gradient.setAttribute('id', target_id);
+    radial_gradient.setAttribute('gradientUnits', 'userSpaceOnUse');
+    radial_gradient.setAttribute('cx', '' + (300 * this.scale_factor));
+    radial_gradient.setAttribute('cy', '' + (300 * this.scale_factor));
+
+     
+    // radial_gradient.setAttribute('r', '300');
+    // radial_gradient.setAttribute('r', '150');
+    // radial_gradient.setAttribute('r', '300');
+    radial_gradient.setAttribute('r', '' + (270 * this.scale_factor));
+
+    radial_gradient.setAttribute('fx', '' + (300 * this.scale_factor));
+    radial_gradient.setAttribute('fy', '' + (300 * this.scale_factor));
+    
+    stop_01 = document.createElementNS('http://www.w3.org/2000/svg','stop');
+    stop_01.setAttribute('offset', '0%');
+    // stop_01.setAttribute('stop-color', data.data_lighter_color);
+    stop_01.setAttribute('stop-color', data.gradient_color_01);
+
+    stop_02 = document.createElementNS('http://www.w3.org/2000/svg','stop');
+    //stop_02.setAttribute('offset', '100%');
+    // stop_02.setAttribute('stop-color', data.data_color);
+    stop_02.setAttribute('offset', '80%');
+    stop_02.setAttribute('stop-color', data.gradient_color_02);
+
+    stop_03 = document.createElementNS('http://www.w3.org/2000/svg','stop');
+    stop_03.setAttribute('offset', '100%');
+    stop_03.setAttribute('stop-color', data.data_color_02);
+    
+    radial_gradient.appendChild(stop_01);
+    radial_gradient.appendChild(stop_02);
+    radial_gradient.appendChild(stop_03);
+
+
+    
+
+    definition.appendChild(radial_gradient);
+
+  }
+
+  this.svg_element.find('svg').append(definition);
+
+};
 monogram.graph.CombinationGraph.prototype.public_method_05 = function() {};
 monogram.graph.CombinationGraph.prototype.public_method_06 = function() {};
 
