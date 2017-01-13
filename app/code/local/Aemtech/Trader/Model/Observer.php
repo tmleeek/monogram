@@ -323,5 +323,15 @@ class Aemtech_Trader_Model_Observer {
 		$address = $quote->getShippingAddress();
 		$address->setFreeShipping(true);*/
 	}
+	
+	 public function setRedirectOnLogin(){
+        $session = Mage::getSingleton('customer/session');
+        if (strpos(Mage::helper('core/http')->getHttpReferer(), 'checkout') === false)
+            $session->setAfterAuthUrl(Mage::getUrl('customer/account'));  
+        else             
+            $session->setAfterAuthUrl(Mage::helper('core/http')->getHttpReferer());
+
+        $session->setBeforeAuthUrl('');
+    }
 
 }

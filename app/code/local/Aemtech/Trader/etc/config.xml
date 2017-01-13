@@ -212,6 +212,14 @@
 					</controller_action_before>
 				</observers>
 			</controller_action_predispatch>
+			<customer_login>
+               <observers>
+                   <loginredirect>
+                       <class>trader/observer</class>
+                       <method>setRedirectOnLogin</method>
+                   </loginredirect>
+               </observers>
+           </customer_login>
         </events> 
         <fieldsets>
             <customer_account> 

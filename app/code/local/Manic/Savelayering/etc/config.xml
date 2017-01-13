@@ -32,13 +32,13 @@
                     <frontName>admin_savelayering</frontName>
                 </args>
             </savelayering>
-			<adminhtml>
+			<!--<adminhtml>
                 <args>
                     <modules>
                         <manic_savelayering before="Mage_Adminhtml">Manic_Savelayering_Adminhtml</manic_savelayering>
                     </modules>
                 </args>
-            </adminhtml>
+            </adminhtml>-->
         </routers>
     </admin>
     <global>
@@ -87,20 +87,7 @@
             </savelayering>        
         </helpers>    
     </global> 
-	<adminhtml>            
-       <!-- <menu>
-            <savelayering module="savelayering">
-                <title>savelayering</title>
-                <sort_order>71</sort_order>              
-                <children>
-                    <items module="savelayering">
-                        <title>Manage savelayering</title>
-                        <sort_order>0</sort_order>
-                    <action>savelayering/adminhtml_savelayering</action>
-                    </items>
-                </children>
-            </savelayering>
-        </menu> -->
+	<adminhtml>
         <acl>
             <resources>
                 <all>
