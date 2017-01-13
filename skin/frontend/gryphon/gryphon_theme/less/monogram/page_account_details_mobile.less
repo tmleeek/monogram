@@ -25,7 +25,7 @@ body.monogram-page-account-details{
         padding-left: 10px;
         padding-right: 10px;
 
-        padding-bottom: 80px;
+        padding-bottom: 0px;
 
         min-height: 0 !important;
         margin-left: 0px;
@@ -262,7 +262,8 @@ body.monogram-page-account-details{
   padding-top: 38px;
   padding-bottom: 36px;
 
-  background: @account-green;
+  // background: @account-green;
+  background: rgba(204, 213, 97, 0.4);
 
   // border-bottom: 1px solid #cccccc;
 
@@ -329,7 +330,8 @@ body.monogram-page-account-details{
   }
   padding-bottom: 18px;
 
-  background: @account-green;
+  // background: @account-green;
+  background: rgba(204, 213, 97, 0.4);
 
   border-top: 1px solid #cccccc;
 
@@ -732,6 +734,8 @@ body.monogram-page-account-details{
       margin-top: -3px;
 
       table{
+
+        table-layout: auto;
 
         thead{
           tr{
@@ -1145,8 +1149,18 @@ body.monogram-page-account-details{
 
   #monogram-page-account-reward-points-container{
 
+    padding-top: 36px;
+
+    .page-title{
+      display: none!important;
+    }
+
     .table-responsive{
       border-top: 1px solid @border-grey !important;
+
+      table.saved-layering {
+        table-layout: auto;
+      }
     }
     
   }

@@ -32,33 +32,36 @@
             <div class="img-container">
                 <?php if ($this->hasProductUrl()):?><a href="<?php echo $this->getProductUrl() ?>" title="<?php echo $this->escapeHtml($this->getProductName()) ?>" class="product-image"><?php endif;?><img src="<?php echo $this->getProductThumbnail()->resize(90); ?>" width="90" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" /><?php if ($this->hasProductUrl()):?></a><?php endif;?>
             </div>
-            <h3 class="product-name"><?php echo $this->escapeHtml($this->getProductName()) ?></h3>
-            <?php if ($_options = $this->getOptionList()):?>
-            <ul class="item-options <?php if($product_type=='tin'): ?>show<?php endif; ?>">
-                <?php foreach ($_options as $_option) : ?>
-                <?php $_formatedOptionValue = $this->getFormatedOptionValue($_option) ?>                
-                <li><?php echo $this->escapeHtml($_option['label']) ?>
-                    <span<?php if (isset($_formatedOptionValue['full_view'])): ?> class="truncated"<?php endif; ?>><?php echo $_formatedOptionValue['value'] ?></span>
-                    <?php if (isset($_formatedOptionValue['full_view'])): ?>
-                    <span class="truncated_full_value">
-                        <ul class="item-options">
-                            <li><?php echo $this->escapeHtml($_option['label']) ?></li>
-                            <li><?php echo $_formatedOptionValue['full_view'] ?></li>
-                        </ul>
-                    </span>
-                    <?php endif; ?>
-                </li>
-                <?php endforeach; ?>
-            </ul>
-            <?php endif;?>
-            <?php if ($addtInfoBlock = $this->getProductAdditionalInformationBlock()):?>
-                <?php echo $addtInfoBlock->setItem($_item)->toHtml() ?>
-            <?php endif;?>
+            <div class="product-title-container">
+                <h3 class="product-name"><?php echo $this->escapeHtml($this->getProductName()) ?></h3>
+                <?php if ($_options = $this->getOptionList()):?>
+                <ul class="item-options <?php if($product_type=='tin'): ?>show<?php endif; ?>">
+                    <?php foreach ($_options as $_option) : ?>
+                    <?php $_formatedOptionValue = $this->getFormatedOptionValue($_option) ?>                
+                    <li><?php echo $this->escapeHtml($_option['label']) ?>
+                        <span<?php if (isset($_formatedOptionValue['full_view'])): ?> class="truncated"<?php endif; ?>><?php echo $_formatedOptionValue['value'] ?></span>
+                        <?php if (isset($_formatedOptionValue['full_view'])): ?>
+                        <span class="truncated_full_value">
+                            <ul class="item-options">
+                                <li><?php echo $this->escapeHtml($_option['label']) ?></li>
+                                <li><?php echo $_formatedOptionValue['full_view'] ?></li>
+                            </ul>
+                        </span>
+                        <?php endif; ?>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+                <?php endif;?>
+
+                <?php if ($addtInfoBlock = $this->getProductAdditionalInformationBlock()):?>
+                    <?php echo $addtInfoBlock->setItem($_item)->toHtml() ?>
+                <?php endif;?>
+            </div>
         </div>
     </td>
     <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
     <?php $_labelAppend = $this->helper('tax')->displayCartBothPrices() ? ' ' . $this->__('(Excl. Tax)') : ''; ?>
-    <td class="a-right" data-rwd-label="<?php echo $this->__('Price') . $_labelAppend ?>">
+    <td class="a-right hidden-xs" data-rwd-label="<?php echo $this->__('Price') . $_labelAppend ?>">
         <?php if (Mage::helper('weee')->typeOfDisplay($_item, array(1, 4), 'sales') && $_item->getWeeeTaxAppliedAmount()): ?>
             <span class="cart-tax-total" onclick="taxToggle('eunit-item-tax-details<?php echo $_item->getId(); ?>', this, 'cart-tax-total-expanded');">
         <?php else: ?>
@@ -155,7 +158,7 @@
     <!-- sub total starts here -->
     <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
     <?php $_labelAppend = $this->helper('tax')->displayCartBothPrices() ? ' ' . $this->__('(Excl. Tax)') : ''; ?>
-    <td class="a-right" data-rwd-label="<?php echo $this->__('Subtotal') . $_labelAppend ?>">
+    <td class="a-right hidden-xs" data-rwd-label="<?php echo $this->__('Subtotal') . $_labelAppend ?>">
         <?php if (Mage::helper('weee')->typeOfDisplay($_item, array(1, 4), 'sales') && $_item->getWeeeTaxAppliedAmount()): ?>
             <span class="cart-tax-total" onclick="taxToggle('esubtotal-item-tax-details<?php echo $_item->getId(); ?>', this, 'cart-tax-total-expanded');">
         <?php else: ?>
