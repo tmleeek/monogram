@@ -324,7 +324,7 @@
     "id": "lapsang-florale",
     "product-id": "356",
     "name": "Lapsang Florale",
-    "html-name": "<span style='color: #b8b8dd;'>lapsang</span> <span style='color: #c7b4e2;'>florale <sup>tm</sup></span>",
+    "html-name": "<span style='color: #b8b8dd;'>lapsang</span> <span style='color: #c7b4e2;'>florale<sup>tm</sup></span>",
     "url": "http://www.monogramtea.com/lapsang-florale.html",
     "type": "Black Tea",
 
@@ -422,7 +422,7 @@
     "id": "kashmere",
     "product-id": "440",
     "name": "Kashmere",
-    "html-name": "<span style='color: #f1a693;'>kashmere <sup>tm</sup></span>",
+    "html-name": "<span style='color: #f1a693;'>kashmere<sup>tm</sup></span>",
     "url": "http://www.monogramtea.com/kashmere.html",
     "type": "Black Tea",
 
@@ -630,7 +630,7 @@
     "id": "morning-english",
     "product-id": "496",
     "name": "Morning English",
-    "html-name": "<span style='color: #f6c65b;'>morning</span> <span style='color: #fed298;'>english <sup>tm</sup></span>",
+    "html-name": "<span style='color: #f6c65b;'>morning</span> <span style='color: #fed298;'>english<sup>tm</sup></span>",
     "url": "http://www.monogramtea.com/morning-english.html",
     "type": "Black Tea",
 
@@ -720,7 +720,7 @@
     "id": "rose-of-ariana",
     "product-id": "997",
     "name": "Rose of Ariana",
-    "html-name": "<span style='color: #ff8189;'>rose</span> <span style='color: #fd92a3;'>of ariana <sup>tm</sup></span>",
+    "html-name": "<span style='color: #ff8189;'>rose</span> <span style='color: #fd92a3;'>of ariana<sup>tm</sup></span>",
     "url": "http://www.monogramtea.com/rose-of-ariana.html",
     "type": "Herbal Tisane",
 
@@ -879,7 +879,7 @@
     "id": "saffronais",
     "product-id": "999",
     "name": "Saffronais",
-    "html-name": "<span style='color: #ffaa61;'>saffronais <sup>tm</sup></span>",
+    "html-name": "<span style='color: #ffaa61;'>saffronais<sup>tm</sup></span>",
     "url": "http://www.monogramtea.com/saffronais.html",
     "type": "Herbal Tisane",
 

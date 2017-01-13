@@ -171,7 +171,7 @@
                             <!-- <th colspan="2"><?php echo $column['header'] ?></th> -->
                         <?php endif; ?>
                         
-                    <?php endforeach ?>
+                    <?php endforeach ?>                    
                 </tr>
                 <?php if ($this->getData('add_searchable_row')): ?>
                     <!-- <tr class="giftvoucher-grid-search">
@@ -316,7 +316,7 @@
                                 <?php else: ?>
                                     <!-- <td class="<?php echo $id; ?>"></td> -->
                                 <?php endif; ?>
-                            <?php endforeach ?>
+                            <?php endforeach ?>                            
                         </tr>
                     <?php endforeach ?>
                 <?php else: ?>
@@ -355,6 +355,7 @@
                     <th>Gift Card Code</th>
                     <th>Amount</th>
                     <th>Status</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -369,7 +370,7 @@
 
                                 <?php //echo $column['header']; ?>
 
-                                <?php if( $column['header'] == 'Gift Card Code' || $column['header'] == 'Balance' || $column['header'] == 'Status'): ?>
+                                <?php if( $column['header'] == 'Action' || $column['header'] == 'Gift Card Code' || $column['header'] == 'Balance' || $column['header'] == 'Status'): ?>
                                     
                                     <td>
                                         <span class="giftvoucher-grid-title-hidden"><?php echo $column['header'] ?></span>
@@ -423,7 +424,7 @@
                                     </td>
                                 <?php endif; ?>
 
-                            <?php endforeach ?>
+                            <?php endforeach ?>                            
                         </tr>
                     <?php endforeach ?>
                 <?php else: ?>
@@ -448,3 +449,5 @@
 
 
 <?php echo $this->getPagerHtml() ?>
+
+<div class="space100"></div>

@@ -67,16 +67,25 @@ body.product-gift-card {
         height: 874px;
         float: none!important;
 
+        @media all and (max-width: 480px) {
+          height: 100%;
+        }
+
         .vcenter2{
           display: table-cell;
           vertical-align: middle;
           position: static!important;
           height: 100%!important;
           // background-size: 448px 617px;
-          background-size: 494px 600px;
+          background-size: 465px 750px;
 
           @media all and (max-width: 990px) {
             background-size: auto auto;
+            background-position: 50% 50%;
+          }
+
+          @media all and (max-width: 480px) {
+            background-size: 90%;
             background-position: 50% 50%;
           }
 
@@ -86,11 +95,21 @@ body.product-gift-card {
             margin: 0 auto;
             position: relative;
 
-            width: 450px;
-            height: 620px;
+            width: 465px;
+            height: 750px;
+            margin-top: 62px;
 
-            @media all and (max-width: 990px) {
+            @media all and (max-width: 480px) {
               width: 100%;
+              height: 670px;
+            }
+            @media all and (max-width: 380px) {
+              width: 100%;
+              height: 580px;
+            }
+            @media all and (max-width: 320px) {
+              width: 100%;
+              height: 490px;
             }
 
             img{
@@ -101,31 +120,44 @@ body.product-gift-card {
 
             .gifttext{
               position: absolute;
-              top: 290px;
-              left: 5px;
-              width: 440px;
-              height: 420px;
-              text-align: center;
-              color: @white;
+              top: 110px;
+              left: 30px;
+              height: 620px;
+              width: 100%;
+              text-align: left;
+              color: @dark-brown!important;
 
-              @media all and (max-width: 990px) {
-                left: 5px;
-                width: 100%;
-                height: auto;
-                top: 40%; 
+              @media all and (max-width: 480px) {
+                top: 100px;
+                left: 45px;
+                height: 480px;
               }
 
-              
+              @media all and (max-width: 380px) {
+                top: 80px;
+                left: 40px;
+                height: 430px;
+                width: 100%;
+              }
+              @media all and (max-width: 320px) {
+                top: 60px;
+                left: 35px;
+                height: 370px;
+                width: 100%;
+              }
 
               .gifttext-intro{
-                font-size: 15px;
-                line-height: 24px;                
+                .header-font-02;
+                font-size: 14px;
+                line-height: 20px;                
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
 
-                height: 65px + 8px;
-                @media all and (max-width: 990px) {
+                height: 45px;
+                @media all and (max-width: 480px) {
                   font-size: 8px;
                   line-height: 10px;                  
-                  height: 42px;
+                  height: 30px;
                 }
                 // .dear {
                 //   font-size: 20px;
@@ -143,65 +175,65 @@ body.product-gift-card {
                 text-transform: uppercase;
 
                 margin-bottom: 12px;
-                @media all and (max-width: 990px) {
+                @media all and (max-width: 480px) {
                   font-size: 10px;
                   line-height: 14px;
                 }
               }
               .gifttext-amount{
-                font-size: 60px;
-                line-height: 60px;
-                letter-spacing: 0.05em;
-                color: #fecd94;
+                font-size: 45px;
+                line-height: 30px;
+                letter-spacing: 0.01em;
+                // color: @dark-brown;
 
                 margin-bottom: 20px;
-                @media all and (max-width: 990px) {
+                @media all and (max-width: 480px) {
                   font-size: 25px;
                   line-height: 25px;
                   margin-bottom: 5px;
                 }
               }
               .gifttext-copy{
-                font-size: 14px;
-                line-height: 22px;
-                // letter-spacing: 0.05em;
-                color: @white;
+                .body-font;
+                font-size: 12px;
+                line-height: 20px;
+                // color: @dark-brown;
 
                 height: 113px;
                 margin-bottom: 29px;
                 word-wrap: break-word;
-                width: 80%;
-                margin: 0 auto;
-                margin-bottom: 40px;
-                @media all and (max-width: 990px) {
+                width: 95%;
+                // margin: 0 auto;
+                margin-bottom: 0px;
+                @media all and (max-width: 480px) {
                   min-height: 55px;
-                  width: 210px;
-                  margin: 0 auto;
+                  width: 80%;
+                  // margin: 0 auto;
                   height: auto;
+                  margin-bottom: 10px;
                 }
               }
               .gifttext-code-title{
                 .header-font;
-                color: #fecd94;
-                font-size: 12px;
+                // color: @dark-brown;
+                font-size: 10px;
                 line-height: 20px;
                 text-transform: uppercase;
-                letter-spacing: 0.16em;
-
-                margin-bottom: 15px;
-                @media all and (max-width: 990px) {
+                letter-spacing: 0.08em;
+                margin-bottom: 10px;
+                @media all and (max-width: 480px) {
                   font-size: 6px;
                   line-height: 11px;
                 }
               }
               .gifttext-code{
                 display: inline-block;
-                // .header-font;
-                // color: #fecd94;
-                // font-size: 12px;
-                // line-height: 20px;
-                // text-transform: uppercase;
-                // letter-spacing: 0.16em;
+                .header-font-02;
+                // color: @dark-brown;
+                font-size: 12px;
+                line-height: 20px;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
 
                 // margin-bottom: 32px;
                 // @media all and (max-width: 990px) {
@@ -211,15 +243,21 @@ body.product-gift-card {
                 // }
               }
               .gifttext-disclaimer{
-                // .minion-pro-semibold-italic;
-                font-size: 13px;
-                line-height: 20px;
+                .body-font;
+                font-size: 11px;
+                line-height: 18px;
                 letter-spacing: 0.015em;
                 color: @white;
-                @media all and (max-width: 990px) {
-                  width: 185px;
-                  text-align: center;
-                  margin: 0 auto;
+                position: absolute;
+                bottom: 0px;
+
+                @media all and (max-width: 480px) {
+                  font-size: 10px;
+                  display: none;
+                }
+                @media all and (max-width: 380px) {
+                  font-size: 10px;
+                  width: 70%;
                 }
               }
             }
@@ -259,6 +297,16 @@ body.product-gift-card {
       padding-top: 15px;  
       padding-bottom: 70px;  
 
+      @media all and (max-width: 1024px) {
+        padding-left: 30px;
+      }
+
+      @media all and (max-width: 480px) {
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+      }
+
       .product-options-bottom {
         .regular-price {
           display: none;
@@ -280,10 +328,9 @@ body.product-gift-card {
       }
 
 
-      .italic {
-        // .minion-pro-italic;
-        font-size: 13.5px;
-        line-height: 22px;
+      .italic {        
+        font-size: 12.5px;
+        line-height: 18px;
       }
       #ajax_loader_product {
         display: inline-block;
@@ -372,6 +419,9 @@ body.product-gift-card {
         
           ul.social-sharing {  
             display: inline-block;      
+            @media all and (max-width: 480px) {
+              display: block;
+            }
             li {
               display: inline-block;
               margin-right: 5px;
@@ -395,9 +445,20 @@ body.product-gift-card {
             vertical-align: top;     
             background-color: #756b66;   
             color: @white;    
+            @media all and (max-width: 480px) {
+              width: 100%!important;
+            }
+          }
+          @media all and (max-width: 480px) {
+            #giftcard-template-show-images {
+              display: block!important
+            }
           }
           .quantity-container {
             display: inline-block;
+            @media all and (max-width: 480px) {
+              width: 100%;
+            }
             input.qty {
               background: none;
               border: 1px solid @off-white;
@@ -447,8 +508,9 @@ body.product-gift-card {
 
           .dropdown {
             margin-right: 10px;
-            @media all and (max-width: 470px) {
+            @media all and (max-width: 480px) {
               margin-right: 0px;
+              width: 100%;
             }
             &:nth-of-type(3) {
               margin-right: 0px;
@@ -488,6 +550,10 @@ body.product-gift-card {
             letter-spacing: 0.02em;
             margin-left: -10px;
             margin-top: 5px;
+
+            @media all and (max-width: 480px) {
+              margin-left: 0px;
+            }
           }
 
           #message_characters_remaining {
@@ -642,8 +708,8 @@ body.product-gift-card {
               width: 100%;
             }
 
-            @media all and (max-width: 470px) {
-              width: 238px;
+            @media all and (max-width: 480px) {
+              width: 100%;
             }
 
           }
@@ -674,15 +740,16 @@ body.product-gift-card {
       width: 90%;
       @media only screen and (max-width: 991px) {
         width: 100%;
-        margin-top: -100px; // when actual product comes in may be not needed
+        margin-top: -20px; // when actual product comes in may be not needed
         margin-bottom: -100px; // when actual product comes in may be not needed
       }
       @media only screen and (max-width: 480px) {
-        margin-top: -60px;
+        margin-top: -10px;
       }
       
       .slick-next, .slick-prev {
         top: 50%;
+        z-index: 999;
         margin-top: 0px;
         &:before {
           font-family: FontAwesome;
@@ -712,14 +779,16 @@ body.product-gift-card {
         padding-right: 0px!important;        
       }
       @media only screen and (max-width: 991px) {
-        padding-top: 40px!important;
+        padding-top: 90px!important;
         padding-left: 0px!important;
-        padding-bottom: 20px!important;
+        padding-bottom: 20px!important; 
       }
       @media only screen and (max-width: 480px) {
-        padding: 60px 0 10px 0!important;
+        padding: 100px 0 10px 0!important;
       }
+
       h3 {
+        .header-font-02;
         text-transform: uppercase;
         padding-bottom: 20px;
         span {
@@ -743,16 +812,26 @@ body.product-gift-card {
         // font-size: 10px;
         // line-height: 16px;
         color: @white;
+
+        // font-size: 12.5px;
+        // line-height: 16px;
+
         font-size: 12.5px;
-        line-height: 16px;
+        line-height: 20px;
+
         margin-bottom: 24px;
       }
       span {
         //color: @off-white;
         //font-size: 10px;
         color: @white;
+
+        // font-size: 12.5px;
+        // line-height: 16px;
+        
         font-size: 12.5px;
-        line-height: 16px;
+        line-height: 20px;
+
       }
       .ajax_msg_product {
         // position: absolute;
@@ -864,7 +943,13 @@ body.product-gift-card {
       #add-to-cart {
         margin-top: 20px;
         background: none;
-        line-height: 27px;
+        // line-height: 27px;
+        line-height: 25px;
+
+        span{
+          font-size: 10px;
+          line-height: 25px;
+        }
       }
 
       #ajax_loader_product {
@@ -889,7 +974,7 @@ body.product-gift-card {
       width: 30%;
       padding: 0px;
       right: 0px;
-      background-color: rgba(236, 205, 206, 0.5);
+      background-color: rgba(236, 205, 206, 0.3);
       @media only screen and (max-width: 991px) {
         position: static;
         width: 102%;
@@ -906,52 +991,52 @@ body.product-gift-card {
       }
     }
     .earl-grey-neroli-suggestion-bg {
-      background-color: rgba(179, 197, 205, 0.5);
+      background-color: rgba(179, 197, 205, 0.3);
     }
     .cherry-japonais-suggestion-bg {
-      background-color: rgba(236, 205, 206, 0.5);
+      background-color: rgba(236, 205, 206, 0.3);
     }
     .black-tea-selection-suggestion-bg {
-      background-color: rgba(197, 180, 227, 0.5);
+      background-color: rgba(197, 180, 227, 0.3);
     }
     .green-tea-and-oolong-selection-suggestion-bg {
-      background-color: rgba(171 ,199 ,202, 0.5);
+      background-color: rgba(171 ,199 ,202, 0.3);
     }
     .herbal-tea-selection-suggestion-bg {
-      background-color: rgba(186, 197, 185, 0.5);
+      background-color: rgba(186, 197, 185, 0.3);
     }
     .jasmine-silk-pearls-suggestion-bg {        
-      background-color: rgba(163, 177, 200, 0.5);
+      background-color: rgba(163, 177, 200, 0.3);
     }
     .kashmere-suggestion-bg {        
-      background-color: rgba(241, 166, 147, 0.5);
+      background-color: rgba(241, 166, 147, 0.3);
     }
     .lapsang-florale-suggestion-bg {        
-      background-color: rgba(199, 180, 226, 0.5);
+      background-color: rgba(199, 180, 226, 0.3);
     }
     .milky-oolong-suggestion-bg {        
-      background-color: rgba(216, 210, 196, 0.5);
+      background-color: rgba(216, 210, 196, 0.3);
     }
     .morning-english-suggestion-bg {        
-      background-color: rgba(254, 210, 152, 0.5);
+      background-color: rgba(254, 210, 152, 0.3);
     }
     .provencal-herbs-suggestion-bg {        
-      background-color: rgba(213, 215, 85, 0.5);
+      background-color: rgba(213, 215, 85, 0.3);
     }
     .rose-of-ariana-suggestion-bg {        
-      background-color: rgba(253, 146, 163, 0.5);
+      background-color: rgba(253, 146, 163, 0.3);
     }
     .saffronais-suggestion-bg {        
-      background-color: rgba(255, 170, 97, 0.5);
+      background-color: rgba(255, 170, 97, 0.3);
     }
     .shiso-mint-suggestion-bg {        
-      background-color: rgba(188, 196, 185, 0.5);
+      background-color: rgba(188, 196, 185, 0.3);
     }
     .tea-tasting-assortment-suggestion-bg {        
-      background-color: rgba(235, 194, 131, 0.5);
+      background-color: rgba(235, 194, 131, 0.3);
     }
     .uji-sencha-suggestion-bg {        
-      background-color: rgba(189, 200, 196, 0.5);
+      background-color: rgba(189, 200, 196, 0.3);
     }
 
     .suggestion {
@@ -978,7 +1063,9 @@ body.product-gift-card {
           padding-top: 20px;
         } 
         > li {
-          margin-bottom: 15px;
+          // margin-bottom: 15px;
+          margin-bottom: 35px;
+
           &:last-child {
             @media only screen and (max-width: 991px) {
               margin-bottom: 0px;
@@ -1029,20 +1116,22 @@ body.product-gift-card {
         text-align: center;
         li {
           a {
-            .header-font;
-            font-size: 10px;
-            line-height: 10px;
+            // .header-font;
+            .header-font-02;
+            // font-size: 10px;
+            font-size: 13px;
+            line-height: 13px;
             padding-bottom: 7px;
             // color: @off-white;
             color: @white;
             text-transform: uppercase;
             letter-spacing: 0.08em;
             
-            &.suggestion-add-to-cart {
-              @media only screen and (max-width: 991px) {
-                display: none;
-              }
-            }
+            // &.suggestion-add-to-cart {
+            //   @media only screen and (max-width: 991px) {
+            //     display: none;
+            //   }
+            // }
 
             // display: inline-block;
             i {
@@ -1050,16 +1139,65 @@ body.product-gift-card {
               padding-left: 3px;
             }
             &:hover {
-              color: fade(@off-white, 50%);
+              color: fade(@off-white, 50%);              
             }
             &.product-image {
               padding-bottom: 0px;
+              position: relative;
               img {
                 @media only screen and (max-width: 991px) {
                   margin: 0 auto;
                 }
+                &.actual-product-image {
+                  visibility: visible;
+                  .opacity(1);
+                  .transition(0.5s);
+                }
+              }
+              .graph-combination-hover-img {
+                  visibility: hidden;
+                  .opacity(0);
+                  .transition(0.5s);
+                  margin: 0 auto;
+                  position: relative;
+                  height: 140px;
+                  width: 140px;
+                  margin-top: -140px;
+                  .graph-img-1, .graph-img-2 {
+                    width: 140px;
+                    height: 140px;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                  }                  
+              }
+              &.no-hover {
+                img {
+                  &.actual-product-image {
+                    visibility: visible!important;
+                    .opacity(1)!important;
+                    .transition(0.5s)!important;
+                  }
+                }
+              }
+              &:hover {
+                .actual-product-image {
+                  visibility: hidden;
+                  .opacity(0);
+                  // position: absolute;
+                }
+                .graph-combination-hover-img {                  
+                  visibility: visible;
+                  .opacity(1);
+                }
               }
             }
+          }
+          .suggestion-add-to-cart{
+            .header-font;
+            font-size: 10px;
+            letter-spacing: 0.0em;
+
           }
         }
         &.two-column {
@@ -1110,7 +1248,7 @@ body.product-gift-card {
         margin: 0 auto;
         display: block;
         padding-bottom: 30px;
-        height: 180px;   
+        height: 140px;   
       }
     }
     img {
@@ -1184,7 +1322,11 @@ body.product-gift-card {
       text-transform: uppercase;
       padding-bottom: 45px;
 
-      font-size: 16px;
+      // font-size: 16px;
+      font-size: 15px;
+
+      
+
       letter-spacing: 0.08em;
       @media only screen and (max-width: 991px) {
         text-align: left;
@@ -1193,6 +1335,9 @@ body.product-gift-card {
     }
 
     h3 {
+
+
+      .header-font-02;
       text-transform: uppercase;
       text-align: center;
       color: @footer-brown;
@@ -1201,6 +1346,7 @@ body.product-gift-card {
       line-height: 16px;
 
       padding-bottom: 10px;
+      padding-top: 20px;
       sup {
         font-size: 9px;
       }
@@ -1218,12 +1364,23 @@ body.product-gift-card {
       color: @footer-brown;
       // font-size: 10px;
       // line-height: 16px;
-      font-size: 12px;
-      line-height: 18px;
+      
+      /// font-size: 12px;
+      /// line-height: 18px;
+      
+      font-size: 12.5px;
+      line-height: 20px;
+
       margin-bottom: 24px;
       // width: 150px;
       width: 85%;
       margin: 0 auto;
+      &.write-review {
+        @media all and (max-width: 991px) {
+          width: 100%;
+          text-align: left;
+        }        
+      }
     }
 }
 
@@ -1251,7 +1408,8 @@ body.product-gift-card {
     text-transform: uppercase;
     padding-bottom: 45px;
 
-    font-size: 16px;
+    // font-size: 16px;
+    font-size: 15px;
     letter-spacing: 0.08em;
     @media only screen and (max-width: 991px) {
       text-align: left;

@@ -69,12 +69,12 @@
 
 @-webkit-keyframes downArrowAnimation {
   0% { .transform( translate3d(0,0,0) ); }
-  40% { .transform( translate3d(0,5px,0) ); }
+  40% { .transform( translate3d(0,-5px,0) ); }
   100% { .transform( translate3d(0,0,0) ); }
 }
 @keyframes downArrowAnimation {
   0% { .transform( translate3d(0,0,0) ); }
-  40% { .transform( translate3d(0,5px,0) ); }
+  40% { .transform( translate3d(0,-5px,0) ); }
   100% { .transform( translate3d(0,0,0) ); }
 }
 
@@ -232,6 +232,63 @@
 //   | |_| |  _ <  / ___ \|  __/|  _  |  / ___ \| |\  || || |  | |/ ___ \| | | |___   | || |\  |
 //    \____|_| \_\/_/   \_\_|   |_| |_| /_/   \_\_| \_|___|_|  |_/_/   \_\_| |_____| |___|_| \_|
 //
+
+
+#home-graph-section{
+
+
+  #graph-section-combination-graph-margin{
+    .text-fade-out;
+    .ddd8;
+    .opacity(0);
+  }
+
+  #graph-section-center-copy-container{
+    .text-fade-out;
+    .ddd6;
+    .opacity(0);
+  }
+  #graph-selction-a,
+  #graph-selction-b{
+    .graph-selection-content{
+      .text-fade-out;
+      .ddd4;
+      .opacity(0);
+    }
+    .graph-selection-instructions{
+      .text-fade-out;
+      .ddd3;
+      .opacity(0);
+    }
+  }
+
+
+}
+
+
+#home-graph-section.slide-animate-in{
+
+  #graph-section-combination-graph-margin{
+    .text-fade-in;
+    .dd1;
+  }
+  
+  #graph-section-center-copy-container{
+    .text-fade-in;
+    .dd3;
+  }
+  #graph-selction-a,
+  #graph-selction-b{
+    .graph-selection-content{
+      .text-fade-in;
+      .dd5;
+    }
+    .graph-selection-instructions{
+      .text-fade-in;
+      .dd6;
+    }
+  }
+}
 
 //     ____ ____      _    ____  _   _      _    _   _ ___ __  __    _  _____ _____    ___  _   _ _____
 //    / ___|  _ \    / \  |  _ \| | | |    / \  | \ | |_ _|  \/  |  / \|_   _| ____|  / _ \| | | |_   _|

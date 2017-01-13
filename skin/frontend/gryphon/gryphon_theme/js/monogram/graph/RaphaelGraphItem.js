@@ -273,10 +273,24 @@ monogram.graph.RaphaelGraphItem.prototype.create_graph = function(){
   
 
   // change graph color instant
+    
   
   TweenMax.to(this.graph_shape, 0.0, {raphael:{
     fill: this.graph_data.data_color
   }});
+  
+
+  /*
+  var target_color_str = '90-' + this.graph_data.data_color + '-' + this.graph_data.data_color_02
+  
+  // this.graph_shape.attr({fill: '90-#fff-#000'});
+  // this.graph_shape.attr({fill: 'r#fff-#000'});    // this doesn't work
+
+  this.graph_shape.attr({
+    fill: target_color_str,
+    'fill-opacity': 0.6
+  });
+  */
 
 };
 

@@ -4,7 +4,7 @@
 }
 
 #desktop-header {
-  background: #827773;
+  background: @dark-brown;
   height: 70px;
 }
 
@@ -36,7 +36,9 @@
       letter-spacing: 0em;
 
       text-align: center;
-      color: @off-white;
+      // color: @off-white;
+      color: @white;
+
       // width: 55%;
       width: 80%;
       margin: 0 auto;
@@ -78,8 +80,12 @@
         padding-bottom: 30px;
       }      
       .tea-layering-table-text {
-        padding: 0px 40px;  
+
+        // padding: 0px 40px;
+        padding: 0px 0px 0px 40px;
+
         h3 {
+          .header-font-02;
           text-transform: uppercase;
           font-size: 15px;
         }           
@@ -130,6 +136,9 @@
 
         //   }
         // }
+        
+
+        
         .tea-layering-text {
           position: relative;
           margin-left: 7px;

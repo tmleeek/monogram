@@ -95,7 +95,7 @@ monogram.page.Default.EVENT_02 = '';
 monogram.page.Default.prototype.init = function() {
   monogram.page.Default.superClass_.init.call(this);
 
-  window.onbeforeunload = function(){ window.scrollTo(0,0); }     // from zaw's main.js
+  // window.onbeforeunload = function(){ window.scrollTo(0,0); }     // from zaw's main.js
 
   this.create_desktop_header();
 
@@ -130,6 +130,30 @@ monogram.page.Default.prototype.init = function() {
 
 
 
+
+  // CREATE PINNING SIDEBAR FOR FAQ
+  
+  if (manic.IS_MOBILE == false && $j('#monogram-page-faq-sidebar').length != 0) {
+
+    this.faq_sidebar_scene = new ScrollMagic.Scene({
+      'triggerHook': 0.0,
+      'offset': -1 * 70,                                                       // 70 = desktop header height
+      'triggerElement': '#monogram-page-faq-content-section',
+      // 'duration': target_duration,
+      reverse: true
+    });
+
+    this.faq_sidebar_scene.setPin('#monogram-page-faq-sidebar');
+    this.faq_sidebar_scene.addTo(this.controller);
+      
+  }
+  
+
+
+
+
+
+
   // only if it's mobile
 
   if (manic.IS_MOBILE == true) {
@@ -144,11 +168,38 @@ monogram.page.Default.prototype.init = function() {
   }
 
 
+  if($j('#tea-matrix-section-1').length != 0){
+
+    this.tea_matrix_mouse = new manic.ui.Mouse({}, $j('#tea-matrix-section-1'));
+    goog.events.listen(this.tea_matrix_mouse, manic.ui.Mouse.SWIPE_UP, function(){
+      this.body.trigger('tea-matrix-mouse-down');
+    }.bind(this));
+    goog.events.listen(this.tea_matrix_mouse, manic.ui.Mouse.SCROLL_DOWN, function(){
+      this.body.trigger('tea-matrix-mouse-down');
+    }.bind(this));
+    
+    goog.events.listen(this.tea_matrix_mouse, manic.ui.Mouse.SWIPE_DOWN, function(){
+      this.body.trigger('tea-matrix-mouse-up');
+    }.bind(this));
+    goog.events.listen(this.tea_matrix_mouse, manic.ui.Mouse.SCROLL_UP, function(){
+      this.body.trigger('tea-matrix-mouse-up');
+    }.bind(this));
+
+
+  }
+  
 
 
   if (manic.IS_MOBILE == true && this.is_tea_matrix == true) {
     this.create_tea_matrix_mobile_page();
   }
+
+
+  if (manic.IS_MOBILE == false && this.is_tea_matrix == true) {
+    $j('html').removeClass('overflow-visible-version');
+  }
+
+  
 
 
   console.log('monogram.page.Default: init');
@@ -489,17 +540,35 @@ monogram.page.Default.prototype.update_page_layout = function() {
   if(manic.IS_MOBILE == false && this.is_tea_matrix == true) {
 
     var target_height = $j(window).height() - 123 + 100;        // 100 is the extra height of the top and bottom of the graph that is removed?
+
+
+    if (manic.IS_ACTUAL_TABLET == true && manic.IS_TABLET_LANDSCAPE == true) {
+      target_height *= 0.8;
+    }
+      
     var target_zoom = target_height / 600;
+    var target_inverted_zoom = 600 /  target_height;
+
     var target_margin_top = -1 * 80 * target_zoom;        // 103 = top space of the 600x600 graph
 
     var target_margin_left = -1 * 103 * target_zoom;
 
+    /*
     $j('#tea-matrix-section-1 #tea-matrix-content #tea-matrix-combination-graph').css({
       'zoom': target_zoom,
       // 'margin-left': target_margin_left + 'px'
       // 'margin-top': target_margin_top + 'px'
       // 'margin-bottom': target_margin_top + 'px'
     });
+    */
+    TweenMax.to($j('#tea-matrix-section-1 #tea-matrix-content #tea-matrix-combination-graph'), 0, {scaleX: target_zoom, scaleY: target_zoom});
+
+
+    $j('#graph-zooming-style').empty();
+    // $j('#graph-zooming-style').html('.graph-svg-circle .graph-svg-circle-text { zoom: ' + target_inverted_zoom + ' }');
+    $j('#graph-zooming-style').html('.graph-svg-circle .graph-svg-circle-text { transform: scaleX(' + target_inverted_zoom + ') scaleY(' + target_inverted_zoom + ') translate(-50%, -50%)}');
+
+
 
     // #tea-matrix-combination-graph-container-another-one
 

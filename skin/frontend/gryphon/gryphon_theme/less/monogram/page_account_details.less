@@ -51,9 +51,11 @@ body.monogram-page-account-details{
 
     margin-left: 80px;
 
-    background: #827773;
-    // 
-    // 
+    // background: #827773;
+    background: @background-color;
+
+    
+    
     padding-left: 10px + 70px;
     padding-right: 10px + 40px;
 
@@ -178,13 +180,15 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar{
 
 
 #monogram-page-account-details-dashboard-header{
-  background: @account-green;
+  // background: @account-green;
+  background: rgba(204, 213, 97, 0.4);
 
   padding-top: 38px;
   padding-bottom: 41px;
 
   .body-font;
-  font-size: 13px;
+  //font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   color: @white;
 
@@ -194,7 +198,8 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar{
   padding-left: 10px + 70px;
   padding-right: 10px + 40px;
 
-  margin-bottom: 40px;
+  // margin-bottom: 40px;
+  margin-bottom: 60px;
 
   //padding-left: 70px;
   //padding-right: 40px;
@@ -208,7 +213,8 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar{
   }
 
   h4{
-    .subheader-font;
+    // .subheader-font;
+    .header-font;
     font-size: 10px;
     line-height: 15px;
     letter-spacing: 0.08em;
@@ -230,6 +236,10 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar{
   padding-top: 4px;
   padding-bottom: 12px;
 
+  @media all and (max-width: 991px) {
+    text-align: left;
+  }
+
   a{
     color: @white;
 
@@ -237,6 +247,11 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar{
     &:hover{
       .opacity(0.7);
     }
+  }
+
+  p{
+    font-size: 12.5px;
+    line-height: 20px;
   }
 
 
@@ -270,6 +285,10 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar{
 
     margin: 0 auto;
 
+    @media all and (max-width: 991px) {
+      margin-left: 0px;
+    }
+
     &.store-version{
       .icon-image('../images/icons/account-details-dashboard-store.svg', 40, 40);
     }
@@ -290,6 +309,7 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar{
 
   .value{
     .body-font;
+    font-size: 12.5px;
     font-size: 20px;
     line-height: 24px;
     margin-bottom: 16px;
@@ -340,6 +360,12 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar{
 
 
 body.monogram-page-account-details #content-wrapper .col-main{
+
+
+  p{
+    font-size: 12.5px;
+    line-height: 20px;
+  }
 
   .pager{
     padding-top: 19px;
@@ -602,7 +628,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
 body.monogram-page-account-details #content-wrapper .col-main{
 
   .body-font;
-  font-size: 13px;
+  // font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   color: @off-white;
   padding-bottom: 100px;
@@ -636,7 +663,9 @@ body.monogram-page-account-details #content-wrapper .col-main{
     }
 
     h2{
-      .subheader-font;
+      // .subheader-font;
+      .header-font;
+      
       font-size: 10px;
       line-height: 20px;
       letter-spacing: 0.08em;
@@ -650,7 +679,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
     p{
       .body-font;
-      font-size: 13px;
+      // font-size: 13px;
+      font-size: 12.5px;
       line-height: 20px;
         
       .display-inline-block;
@@ -658,7 +688,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
       a{
         .body-font;
-        font-size: 13px;
+        // font-size: 13px;
+        font-size: 12.5px;
         line-height: 20px;
         color: @off-white;
 
@@ -694,6 +725,12 @@ body.monogram-page-account-details #content-wrapper .col-main{
       .display-inline-block;
       width: 50%;
       padding-top: 0px !important;
+      &.no-padding {
+        padding-left: 0px;
+        .intl-tel-input {
+          width: 100%;
+        }
+      }
 
       p{
         .body-font;
@@ -721,7 +758,7 @@ body.monogram-page-account-details #content-wrapper .col-main{
       .phone_no_input{
         .display-inline-block;
         // width: 75px;
-        padding-left: 40px;
+        padding-left: 50px;
       }
       #phone_no_2{
         .display-inline-block;
@@ -732,7 +769,7 @@ body.monogram-page-account-details #content-wrapper .col-main{
         left: -17px;
       }
       .input-text {
-        padding-left: 30px;
+        padding-left: 58px;
       }
     }
 
@@ -897,7 +934,7 @@ body.monogram-page-account-details #content-wrapper .col-main{
     text-align: right;
 
     .square-cta{
-      height: auto;
+      // height: auto;
       margin-left: 10px;
     }
   }
@@ -925,13 +962,15 @@ body.monogram-page-account-details #content-wrapper .col-main{
   .page-title{
 
 
-    background: @account-green;
+    // background: @account-green;
+    background: rgba(204, 213, 97, 0.4);
 
     padding-top: 38px + 20px;
     padding-bottom: 41px + 17px;
 
     .body-font;
-    font-size: 13px;
+    // font-size: 13px;
+    font-size: 12.5px;
     line-height: 20px;
     color: @white;
 
@@ -984,13 +1023,15 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
 
 #monogram-page-account-details-address-header{
-  background: @account-green;
+  // background: @account-green;
+  background: rgba(204, 213, 97, 0.4);
 
   padding-top: 38px + 22px;
   padding-bottom: 41px;
 
   .body-font;
-  font-size: 13px;
+  // font-size: 13px;
+  font-size: 12.5px;
   line-height: 20px;
   color: @white;
 
@@ -1061,7 +1102,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
     p{
       .body-font;
       // font-size: 10px;
-      font-size: 12px;
+      /// font-size: 12px;
+      font-size: 12.5px;
       line-height: 20px;
       // color: @off-white;
       color: @white;
@@ -1098,7 +1140,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
 #monogram-page-account-details-other-shipping-address-container{
   .body-font;
-  font-size: 12px;
+  // font-size: 12px;
+  font-size: 12.5px;
   line-height: 20px;
   color: @white;
 
@@ -1115,7 +1158,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
   p{
     .body-font;
-    font-size: 12px;
+    // font-size: 12px;
+    font-size: 12.5px;
     line-height: 20px;
     color: @white;
 
@@ -1241,13 +1285,15 @@ body.monogram-page-account-details #content-wrapper .col-main{
   .page-title{
 
 
-    background: @account-green;
+    // background: @account-green;
+    background: rgba(204, 213, 97, 0.4);
 
     padding-top: 38px + 20px;
     padding-bottom: 41px + 17px;
 
     .body-font;
-    font-size: 13px;
+    // font-size: 13px;
+    font-size: 12.5px;
     line-height: 20px;
     color: @white;
 
@@ -1318,13 +1364,15 @@ body.monogram-page-account-details #content-wrapper .col-main{
   .page-title{
 
 
-    background: @account-green;
+    // background: @account-green;
+    background: rgba(204, 213, 97, 0.4);
 
     padding-top: 38px + 20px;
     padding-bottom: 41px + 17px;
 
     .body-font;
-    font-size: 13px;
+    // font-size: 13px;
+    font-size: 12.5px;
     line-height: 20px;
     color: @white;
 
@@ -1388,6 +1436,11 @@ body.monogram-page-account-details #content-wrapper .col-main{
       &.product-header{
         text-align: left;
       }
+
+      &.product {
+        text-align: left;
+        padding-left: 30px;
+      }
     }
 
 
@@ -1397,16 +1450,24 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
   .each-order,
   .each-product{
-    padding-top: 25px;
-    padding-bottom: 24px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 
-    border-bottom: 1px solid @white;
-    border-bottom: 1px solid fade(@white, 50%);
+    &:last-child, &:first-child {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    // border-bottom: 1px solid @white;
+    // border-bottom: 1px solid fade(@white, 50%);
+    border: none;
 
     p{
       .body-font;
-      font-size: 12px;
+      // font-size: 12px;
+      font-size: 12.5px;
       line-height: 20px;
+      text-align: center;
 
       a{
         color: @off-white;
@@ -1416,9 +1477,20 @@ body.monogram-page-account-details #content-wrapper .col-main{
           .opacity(0.7);
         }
       }
+      &.product {
+        text-align: left;
+        padding-left: 30px;
+      }
+      &.price {
+        padding-left: 50px;
+      }
+      &.qty {
+        padding-left: 30px;
+      }
     }
 
     .order-details{
+      border-bottom: 1px solid fade(@white, 50%);
       .order-no{
         text-align: center;
       }
@@ -1430,6 +1502,12 @@ body.monogram-page-account-details #content-wrapper .col-main{
       }
       .order-subtotal{
         text-align: center;
+      }
+    }
+
+    .single-order-item {
+      .order-details {
+        padding-bottom: 20px;
       }
     }
   }
@@ -1503,13 +1581,15 @@ body.sales-order-view{
 
       .gift-message{
         .body-font;
-        font-size: 13px;
+        // font-size: 13px;
+        font-size: 12.5px;
         line-height: 20px;
         color: @white;
 
         strong{
           .body-font;
-          font-size: 13px;
+          // font-size: 13px;
+          font-size: 12.5px;
           line-height: 20px;
           color: @white;  
         }
@@ -1580,7 +1660,8 @@ body.sales-order-view{
       p{
         .body-font;
         // font-size: 10px;
-        font-size: 12px;
+        /// font-size: 12px;
+        font-size: 12.5px;
         line-height: 20px;
         // color: @off-white;
         color: @white;
@@ -1630,12 +1711,18 @@ body.sales-order-view{
       .body-font;
       font-size: 11px;
       line-height: 15px;
-      color: @white;
+      color: @white;  
+      margin-bottom: 15px;   
+
+      &:last-child {
+        border-top: 1px solid fade(@white, 50%);
+        padding-top: 20px;
+      } 
 
       p{
         .body-font;
-        font-size: 11px;
-        line-height: 15px;
+        font-size: 12.5px;
+        line-height: 20px;
         color: @white;
       }
       h2{
@@ -1648,13 +1735,13 @@ body.sales-order-view{
       }
 
       span{
-        .subheader-font;
-        font-size: 10px;
-        line-height: 15px;
-        letter-spacing: 0.08em;
+        // .subheader-font;
+        // font-size: 10px;
+        // line-height: 15px;
+        // letter-spacing: 0.08em;
         text-transform: uppercase;
 
-        padding-left: 20px;
+        // padding-left: 20px;
       }
 
       .align-to-total{
@@ -1665,6 +1752,7 @@ body.sales-order-view{
 
 
     .row.extra-content{
+      padding-top: 20px;
       .add-clearfix;
 
       .square-cta{
@@ -1721,13 +1809,19 @@ body.sales-order-view{
 
 #monogram-page-account-giftcard-container{
 
+  p{
+    font-size: 12.5px;
+    line-height: 20px;
+  }
+
   .customer-account-giftcard > .page-title{
 
 
     .add-clearfix;
 
 
-    background: @account-green;
+    // background: @account-green;
+    background: rgba(204, 213, 97, 0.4);
 
     padding-top: 38px + 20px;
 
@@ -1735,7 +1829,8 @@ body.sales-order-view{
     padding-bottom: 53px;
 
     .body-font;
-    font-size: 13px;
+    // font-size: 13px;
+    font-size: 12.5px;
     line-height: 20px;
     color: @white;
 
@@ -1791,10 +1886,17 @@ body.sales-order-view{
     }
 
     p{
+      /*
       .subheader-font;
       font-size: 10px;
       line-height: 20px;
       letter-spacing: 0.08em;
+      */
+
+      .body-font;
+      font-size: 12.5px;
+      line-height: 20px;
+
       text-transform: uppercase;
 
       margin-bottom: 5px;
@@ -1852,7 +1954,8 @@ body.sales-order-view{
         tr{
           td{
             .body-font;
-            font-size: 12px;
+            // font-size: 12px;
+            font-size: 12.5px;
             line-height: 20px;
             color: @white;
 
@@ -1866,7 +1969,8 @@ body.sales-order-view{
 
             a{
               .body-font;
-              font-size: 12px;
+              // font-size: 12px;
+              font-size: 12.5px;
               line-height: 20px;
               color: @white;
 
@@ -1945,13 +2049,15 @@ body.sales-order-view{
     .add-clearfix;
 
 
-    background: @account-green;
+    // background: @account-green;
+    background: rgba(204, 213, 97, 0.4);
 
     padding-top: 38px + 20px;
     padding-bottom: 41px + 17px;
 
     .body-font;
-    font-size: 13px;
+    // font-size: 13px;
+    font-size: 12.5px;
     line-height: 20px;
     color: @white;
 
@@ -2024,7 +2130,8 @@ body.sales-order-view{
       .custom-field-right,
       .custom-field-right p{
         .body-font;
-        font-size: 13px;
+        // font-size: 13px;
+        font-size: 12.5px;
         line-height: 20px;
         letter-spacing: 0;
         text-transform: none;
@@ -2075,7 +2182,8 @@ body.sales-order-view{
       tr{
         td{
           .body-font;
-          font-size: 12px;
+          // font-size: 12px;
+          font-size: 12.5px;
           line-height: 20px;
           color: @white;
 
@@ -2089,7 +2197,8 @@ body.sales-order-view{
 
           a{
             .body-font;
-            font-size: 12px;
+            // font-size: 12px;
+            font-size: 12.5px;
             line-height: 20px;
             color: @white;
 
@@ -2160,13 +2269,15 @@ body.sales-order-view{
   .page-title{
 
 
-    background: @account-green;
+    // background: @account-green;
+    background: rgba(204, 213, 97, 0.4);
 
     padding-top: 38px + 20px;
     padding-bottom: 41px + 17px;
 
     .body-font;
-    font-size: 13px;
+    // font-size: 13px;
+    font-size: 12.5px;
     line-height: 20px;
     color: @white;
 
@@ -2271,7 +2382,8 @@ body.sales-order-view{
         tr{
           td{
             .body-font;
-            font-size: 12px;
+            // font-size: 12px;
+            font-size: 12.5px;
             line-height: 20px;
             color: @white;
 
@@ -2287,7 +2399,8 @@ body.sales-order-view{
 
             a{
               .body-font;
-              font-size: 12px;
+              // font-size: 12px;
+              font-size: 12.5px;
               line-height: 20px;
               color: @white;
 
@@ -2377,16 +2490,23 @@ body.sales-order-view{
     }
   }
 
+  p{
+    font-size: 12.5px;
+    line-height: 20px;
+  }
+
   .referral-container .page-title{
 
 
-    background: @account-green;
+    // background: @account-green;
+    background: rgba(204, 213, 97, 0.4);
 
     padding-top: 38px + 20px;
     padding-bottom: 41px + 17px;
 
     .body-font;
-    font-size: 13px;
+    // font-size: 13px;
+    font-size: 12.5px;
     line-height: 20px;
     color: @white;
 
@@ -2453,8 +2573,8 @@ body.sales-order-view{
         .square-cta;
         width: 80px;
 
-        height: auto;
-        line-height: 20px;
+        // height: auto;
+        // line-height: 20px;
         background: transparent;
         // .display-inline-block;
         display: block;
@@ -2563,7 +2683,8 @@ body.sales-order-view{
           tr{
             td{
               .body-font;
-              font-size: 12px;
+              // font-size: 12px;
+              font-size: 12.5px;
               line-height: 20px;
               color: @white;
 

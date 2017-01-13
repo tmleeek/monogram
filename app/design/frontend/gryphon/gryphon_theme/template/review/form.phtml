@@ -66,21 +66,21 @@
                     <script type="text/javascript">decorateTable('product-review-table')</script>
                 </div>
             <?php endif; ?>
-            <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1">
+            <div class="col-md-5 col-md-offset-1">
                 <div class="row">              
                   <div class="col-md-5"><label for="">The Product</label></div>                  
                   <?php $product_id = Mage::registry('current_product')->getId();
                         $product = Mage::getModel('catalog/product')->load($product_id);
                         $_helper = $this->helper('catalog/output');
                   ?>
-                  <div class="col-md-6"><?php if(!empty($product->getData('product_name_in_color'))): ?> <h3><?php echo $product->getData('product_name_in_color'); ?></h3> <?php else: ?> <h3><?php echo $_helper->productAttribute($product, $product->getName() , 'name'); ?></h3> <?php endif; ?></div>
+                  <div class="col-md-7"><?php if(!empty($product->getData('product_name_in_color'))): ?> <h3><?php echo $product->getData('product_name_in_color'); ?></h3> <?php else: ?> <h3><?php echo $_helper->productAttribute($product, $product->getName() , 'name'); ?></h3> <?php endif; ?></div>
                 </div>
                 <?php $selection_product_name_arr = ['black tea selection', 'herbal tea selection', 'green tea & oolong selection', 'tea tasting assortment']; ?>
                 <?php $product_name = strtolower($product->getName()); ?>
                 <?php if( !in_array($product_name, $selection_product_name_arr) ): ?>
                     <div class="row">
                         <div class="col-md-5"><label for="">Layering Tea</label></div>
-                        <div class="col-md-6">
+                        <div class="col-md-7">
                             <div class="dropdown">
                                 <input type="hidden" name="title" id="summary_field" class="input-text required-entry" placeholder="<?php echo $this->__('Summary of Your Review') ?>" value="<?php echo $this->escapeHtml($data->getTitle()) ?>" />
                                 <select name="layering_tea" class="layering-tea">
@@ -121,15 +121,22 @@
                 <?php endif; ?>
                 <div class="row">
                   <div class="col-md-5"><label for="">Nickname</label></div>
-                  <div class="col-md-6">
+                  <div class="col-md-7">
                     <input type="text" name="nickname" id="nickname_field" class="input-text required-entry" placeholder="<?php echo $this->__('Nickname') ?>" value="<?php echo $this->escapeHtml($data->getNickname()) ?>" />
+                    <span class="validation"></span>
+                   </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5"><label for="">Email</label></div>
+                  <div class="col-md-7">
+                    <input type="text" name="email" id="email_field" class="input-text required-entry" placeholder="<?php echo $this->__('Email') ?>" value="<?php echo $this->escapeHtml($data->getEmail()) ?>" />
                     <span class="validation"></span>
                    </div>
                 </div>
             </div>
             <div class="col-lg-5 col-md-5">
                 <div class="row">
-                    <div class="col-md-5"><label for="">layering comments</label></div>
+                    <div class="col-md-4 col-md-offset-1"><label for="">layering comments</label></div>
                     <div class="col-md-7 review-input">
                         <textarea maxlength="150" name="detail" id="review_field" cols="30" rows="10" class="required-entry" placeholder="<?php echo $this->__('Write the comments about this tea here.'); ?>"><?php echo $this->escapeHtml($data->getDetail()) ?></textarea>                        
                         <p><span id="chars">150</span> characters remaining</p>
@@ -192,6 +199,17 @@
             $j('#chars').text(length);
         });
 
+        function isValidEmailAddress(emailAddress) {
+            var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
+            return pattern.test(emailAddress);
+        };
+
+        $j("#review-form").find("input, textarea").on("keyup", function(e){
+            if($j(this).val()!=="") {
+                $j(this).parent().find('.validation').html("");
+            }
+        });
+
         $j(".submit-review").on("click", function(e){
             e.preventDefault();
 
@@ -202,6 +220,16 @@
 
             if($j('input[name="nickname"]').val()=="") {
                 $j('input[name="nickname"]').next('.validation').html("<p>This is a required field.</p>");
+                valid = false;
+            }
+
+            if( !isValidEmailAddress( $j('input[name="email"').val() ) ) {
+                $j('input[name="email"]').next('.validation').html("<p>Invalid email address.</p>");
+                valid = false;   
+            }
+
+            if($j('input[name="email"]').val()=="") {
+                $j('input[name="email"]').next('.validation').html("<p>This is a required field.</p>");
                 valid = false;
             }
 

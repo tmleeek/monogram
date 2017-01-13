@@ -491,7 +491,7 @@
         <div class="page-tea-layering-detail-other-container">
           <a href="#selection" class="page-tea-layering-detail-other-btn">
             <span class="fa fa-th"></span>
-            <h4>Choose Other Tea</h4>
+            <h4>Choose Other Teas</h4>
           </a>
         </div>
 
@@ -530,7 +530,7 @@
         <div class="page-tea-layering-detail-other-container">
           <a href="#selection" class="page-tea-layering-detail-other-btn">
             <span class="fa fa-th"></span>
-            <h4>Choose Other Tea</h4>
+            <h4>Choose Other Teas</h4>
           </a>
         </div>
 
@@ -617,32 +617,32 @@
       $('.home-page-mobile-subscribe-form').find('.subscribe_email').keypress(function(event){
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13') 
-          $('.subscribe_newsletter').trigger('click');
+          $('.home-page-mobile-subscribe-form').find('.subscribe_newsletter').trigger('click');
       });
       $('.home-page-mobile-subscribe-form').find('.subscribe_newsletter').click(function(e){
         e.preventDefault();        
         var subscribe_email = $(this).prev('.subscribe_email').val();
 
-        console.log(subscribe_email);
+        if(subscribe_email!=="" && subscribe_email!=="Enter Your Email Address") {
+          $('.newsletter_ajax_loader').show();
 
-        $('.newsletter_ajax_loader').show();
-
-        var request = $.ajax({
-            url: "<?php echo $this->getUrl('discovertea/index/subscribe', array('_secure'=>true)) ?>",
-            method: "POST",
-            data: { subscribe_email : subscribe_email },
-            dataType: "html"
-        });
-         
-        request.done(function( msg ) {
-          var message = JSON.parse(msg);
-          console.log(message);
-          $('.newsletter_ajax_loader').hide();
-          if(message.error_messages)
-            $('span.ajax_msg').html('<p>'+message.error_messages+'</p>').show().delay(5000).fadeOut();              
-            else
-            $('span.ajax_msg').html('<p>Successfully subscribed to newsletter</p>').show().delay(5000).fadeOut();
-        });
+          var request = $.ajax({
+              url: "<?php echo $this->getUrl('discovertea/index/subscribe', array('_secure'=>true)) ?>",
+              method: "POST",
+              data: { subscribe_email : subscribe_email },
+              dataType: "html"
+          });
+           
+          request.done(function( msg ) {
+            var message = JSON.parse(msg);
+            console.log(message);
+            $('.newsletter_ajax_loader').hide();
+            if(message.error_messages)
+              $('span.ajax_msg').html('<p>'+message.error_messages+'</p>').show().delay(5000).fadeOut();              
+              else
+              $('span.ajax_msg').html('<p>Successfully subscribed to newsletter</p>').show().delay(5000).fadeOut();
+          });
+        }        
       });
 
       $('#home-mobile-save-layering').click(function(e){

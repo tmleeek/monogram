@@ -114,7 +114,8 @@ monogram.graph.RaphaelGraphBG.prototype.create_lines = function() {
 
     line_path = ["M", this.center_x, this.center_y, "L"].concat([target_x, target_y]);
     // line_shape = this.paper.path().attr({stroke: "#f1efee", opacity: 0.6});
-    line_shape = this.paper.path().attr({stroke: "#f1efee", opacity: 0.3});
+    // line_shape = this.paper.path().attr({stroke: "#f1efee", opacity: 0.3});
+    line_shape = this.paper.path().attr({stroke: "#f1efee", opacity: 0.2});
     line_shape.attr({path: line_path});
 
     this.line_point_array[i] = data_obj;
@@ -138,8 +139,13 @@ monogram.graph.RaphaelGraphBG.prototype.create_circles = function() {
     circle_shape = this.paper.circle(this.center_x, this.center_y, target_length);
     circle_shape.attr({
       stroke: "#f1efee", 
+      
       // opacity: 1, 
-      opacity: 0.7, 
+      /// opacity: 0.7, 
+      //// opacity: 0.1,
+      
+      opacity: 0.2,
+
       "stroke-width":1,
       "stroke-dasharray":". ",
     });

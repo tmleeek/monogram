@@ -39,32 +39,38 @@ class Aemtech_Subscriptions_Model_Observer {
                             $sku_type = explode("-", $sku);
                             $sku_type = $sku_type[0];
 
-                            $quote = Mage::getSingleton('checkout/session')->getQuote();
-                            foreach ($quote->getAllVisibleItems() as $item) {
-                                $itemsku = $item->getProduct()->getData('sku');//if you need it
-                                $itemsku_type = explode("-", $itemsku);
-                                $itemsku_type = $itemsku_type[0];
-                                if($itemsku_type != $sku_type)
-                                {
-                                	// :: EDITED
-                                	// echoing here because add to cart changed to ajax 
-                                	echo 'Sorry, you either purchase  Singapore OR International Subscription not both.';
-                                	
-                                    // Mage::getSingleton('core/session')->addError('Sorry, you either purchase  Singapore OR International Subscription not both.');                                    
+                            $itemCount = Mage::helper('checkout/cart')->getItemsCount();
+                            $quote = Mage::getSingleton('checkout/session')->getQuote();                            
+                            if($itemCount > 0) {
+                              foreach ($quote->getAllVisibleItems() as $item) {
+                                  $itemsku = $item->getProduct()->getData('sku');//if you need it
+                                  $itemsku_type = explode("-", $itemsku);
+                                  $itemsku_type = $itemsku_type[0];                                
+                                  if($itemsku_type != $sku_type)
+                                  {
+                                  	// :: EDITED
+                                  	// echoing here because add to cart changed to ajax 
+                                  	echo 'Sorry, you either purchase  Singapore OR International Subscription not both.';
+                                  	
+                                      // Mage::getSingleton('core/session')->addError('Sorry, you either purchase  Singapore OR International Subscription not both.');                                    
 
-                                    //get URL model for cart/index
-                                    // $url = Mage::getModel('core/url')->getUrl('checkout/cart/index');
+                                      //get URL model for cart/index
+                                      // $url = Mage::getModel('core/url')->getUrl('checkout/cart/index');
 
-                                    //set redirect
-                                    // Mage::app()->getResponse()->setRedirect($url);
+                                      //set redirect
+                                      // Mage::app()->getResponse()->setRedirect($url);
 
-                                    //send redirect
-                                    // Mage::app()->getResponse()->sendResponse();
+                                      //send redirect
+                                      // Mage::app()->getResponse()->sendResponse();
 
-                                    //block further action
+                                      //block further action
+                                      exit;
+                                  }else if($itemsku_type==$sku_type) {
+                                    echo 'Sorry, you can purchase one subscription plan at a time.';
                                     exit;
-                                }
-                                    //your magic here.
+                                  }
+                                      //your magic here.
+                              }
                             }
                             //print_r($options);exit;
                             if($options)

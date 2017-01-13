@@ -93,7 +93,7 @@ if(empty($creating_or_editing_address_type)) $creating_or_editing_address_type =
                                     </div> -->
                                     <div class="each-input">
                                         <label for="telephone" class="required"><?php echo $this->__('Telephone') ?><em>*</em></label>
-                                        <div class="input-box">
+                                        <div class="input-box no-padding">
                                             <input type="text" name="telephone" value="<?php echo $this->escapeHtml($this->getAddress()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text  <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?>" id="telephone" />
                                         </div>
                                     </div>
@@ -293,7 +293,7 @@ if(empty($creating_or_editing_address_type)) $creating_or_editing_address_type =
 
 
                                 <div class="edit-button-container">
-                                    <button data-action="save-customer-address" type="submit" title="<?php echo $this->__('Save Address') ?>" class="button cta save-btn square-cta"><?php echo $this->__('Save Address') ?></button>
+                                    <button data-action="save-customer-address" type="submit" title="<?php echo $this->__('Save Address') ?>" class="button cta square-cta"><?php echo $this->__('Save Address') ?></button>
                                 </div>
                             </div>
                         </div>
@@ -310,10 +310,11 @@ if(empty($creating_or_editing_address_type)) $creating_or_editing_address_type =
 
     $telephone_input = $j('#telephone');
     $telephone_input.intlTelInput({
-        defaultCountry: 'sg',
+        initialCountry: 'sg',
         nationalMode: false,
         autoHideDialCode: true,
-        autoPlaceholder: false  
+        autoPlaceholder: false,  
+        preferredCountries: []
     });
     </script>
 

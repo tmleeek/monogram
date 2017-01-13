@@ -3,6 +3,7 @@
 }
 
 #tea-store-section-1 {
+  padding-bottom: 25px;
     
   .container-fluid {
     padding: 0 40px;
@@ -57,6 +58,7 @@
     padding-right: 30px;
     display: block;
     h3 {
+      .header-font-02;
       text-transform: uppercase;
       padding-bottom: 10px;
       color: @box-color-8-2;
@@ -70,14 +72,24 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       display: block;
-      color: @off-white;
+      // color: @off-white;
+      color: @white;
+
     }
     span.price {
       .body-font;
-      font-size: 11px;
-      letter-spacing: 0.02em;
+      // font-size: 11px;
+      font-size: 12.5px;
+      // letter-spacing: 0.02em;
+      letter-spacing: 0.08em;
+
       display: inline-block;
-      color: @off-white;
+      // color: @off-white;
+      color: @white;
+
+      .price-to {
+        display: none;
+      }
     }
   }
 }

@@ -88,7 +88,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                                 <ul class="form-list">
                                 <?php if ($this->customerHasAddresses()): ?>
                                     <li class="wide each-input dropdown-address">
-                                        <label for="billing-address-select"><?php echo $this->__('Select a billing address') ?></label>
+                                        <label for="billing-address-select"><?php echo $this->__('Select your billing address') ?></label>
                                         <div class="input-box dropdown">
                                             <?php //echo $this->getAddressesHtmlSelect('billing') ?>                            
                                             <div id="custAddress">
@@ -294,7 +294,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                         <ul class="form-list">
                         <?php if ($this->customerHasAddresses()): ?>
                            <li class="wide each-input dropdown-address">
-                               <label for="shipping-address-select"><?php echo $this->__('Select a shipping address') ?></label>
+                               <label for="shipping-address-select"><?php echo $this->__('Select your shipping address') ?></label>
                                <div class="input-box dropdown">
                                    <?php //echo $this->getAddressesHtmlSelect('shipping') ?>
                                    <div id="custAddress">
@@ -530,7 +530,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                     <a class="cta back-btn" href="<?php echo $this->getUrl('store.html'); ?>"><i class="fa fa-chevron-left"></i> <?php echo $this->__('go back to continue shopping') ?></a>
                 </div>
                 <div class="col-md-4 col-md-offset-4">
-                    <button type="button" title="<?php echo $this->__('Continue') ?>" class="button continue cta" onclick="billing.save();"><span><span><?php echo $this->__('Continue') ?></span></span></button>
+                    <button type="button" id="continue-to-checkout" title="<?php echo $this->__('Continue') ?>" class="button continue cta"><span><span><?php echo $this->__('Continue') ?></span></span></button>
                     <span class="please-wait" id="billing-please-wait" style="display:none;">
                         <img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/>
                         <!-- <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" alt="<?php echo $this->__('Loading next step...') ?>" title="<?php echo $this->__('Loading next step...') ?>" class="v-middle" /> --> <?php //echo $this->__('Loading next step...') ?>
@@ -563,163 +563,255 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
         jQuery(document).ready(function($){       
 
             <?php if(!$this->isCustomerLoggedIn()): ?>
-                <?php if($isiPad): ?>
-                    $.blockUI({ 
-                        message: $('#question'),             
-                        css: { 
-                            padding:        '10px', 
-                            margin:         0,
-                            width:          '50.02%',
-                            height:         '280px',
-                            top:            '35%',
-                            left:           '26%',                        
-                            textAlign:      'center', 
-                            color:          '#f1efee', 
-                            border:         '10px', 
-                            backgroundColor:'#7b706b',
-                            cursor:         'wait',                        
-                        },
-                    });
-                <?php elseif(isMobile()!==true): ?>
-                    $.blockUI({ 
-                        message: $('#question'),             
-                        css: { 
-                            padding:        '10px', 
-                            margin:         0, 
-                            width:          '28%', 
-                            height:         '280px', 
-                            top:            '35%',
-                            left:           '39%',                
-                            textAlign:      'center', 
-                            color:          '#f1efee', 
-                            border:         '10px', 
-                            backgroundColor:'#7b706b',
-                            cursor:         'wait' 
-                        },
-                    });
-                <?php else: ?>
-                    $.blockUI({ 
-                        message: $('#question'),             
-                        css: { 
-                            padding:        '10px', 
-                            margin:         0, 
-                            width:          '90%', 
-                            height:         '280px', 
-                            top:            '27%',
-                            left:           '5%',                
-                            textAlign:      'center', 
-                            color:          '#f1efee', 
-                            border:         '10px', 
-                            backgroundColor:'#7b706b',
-                            cursor:         'wait' 
-                        },
-                    });    
-                <?php endif; ?>
+
+                if(typeof(Storage) !== "undefined") {                    
+
+                    if(localStorage.getItem("inputValue") === null) {                                
+
+                        <?php if($isiPad): ?>
+                            $.blockUI({ 
+                                message: $('#question'),             
+                                css: { 
+                                    padding:        '10px', 
+                                    margin:         0,
+                                    width:          '50.02%',
+                                    height:         '280px',
+                                    top:            '35%',
+                                    left:           '26%',                        
+                                    textAlign:      'center', 
+                                    color:          '#f1efee', 
+                                    border:         '10px', 
+                                    backgroundColor:'#7b706b',
+                                    cursor:         'wait',                        
+                                },
+                            });
+                        <?php elseif(isMobile()!==true): ?>
+                            $.blockUI({ 
+                                message: $('#question'),             
+                                css: { 
+                                    padding:        '10px', 
+                                    margin:         0, 
+                                    width:          '28%', 
+                                    height:         '280px', 
+                                    top:            '35%',
+                                    left:           '39%',                
+                                    textAlign:      'center', 
+                                    color:          '#f1efee', 
+                                    border:         '10px', 
+                                    backgroundColor:'#7b706b',
+                                    cursor:         'wait' 
+                                },
+                            });
+                        <?php else: ?>
+                            $.blockUI({ 
+                                message: $('#question'),             
+                                css: { 
+                                    padding:        '10px', 
+                                    margin:         0, 
+                                    width:          '90%', 
+                                    height:         '280px', 
+                                    top:            '27%',
+                                    left:           '5%',                
+                                    textAlign:      'center', 
+                                    color:          '#f1efee', 
+                                    border:         '10px', 
+                                    backgroundColor:'#7b706b',
+                                    cursor:         'wait' 
+                                },
+                            });                    
+                        <?php endif; ?>
+
+                    } else {
+
+                        var storedValue = JSON.parse(localStorage.getItem( 'inputValue' ));
+
+                        console.log(storedValue);
+
+                        $.each(storedValue, function(key, value){
+
+                            if(key=="billing[country_id]" || key=="shipping[country_id]")
+                                $("select[name='"+key+"']").val(value);     
+                            else if(key=="shipping[same_as_billing]") {
+                                $("input[name='"+key+"']").val(1);
+                                if(value==1) {                   
+                                    console.log(value);               
+                                    console.log('heererer');               
+                                    $(".same-as-billing-checkbox").attr('checked', true);
+                                }                                
+                            }
+                            else 
+                                $("input[name='"+key+"']").val(value);
+                        });
+                    }
+
+                } else {
+
+                    <?php if($isiPad): ?>
+                        $.blockUI({ 
+                            message: $('#question'),             
+                            css: { 
+                                padding:        '10px', 
+                                margin:         0,
+                                width:          '50.02%',
+                                height:         '280px',
+                                top:            '35%',
+                                left:           '26%',                        
+                                textAlign:      'center', 
+                                color:          '#f1efee', 
+                                border:         '10px', 
+                                backgroundColor:'#7b706b',
+                                cursor:         'wait',                        
+                            },
+                        });
+                    <?php elseif(isMobile()!==true): ?>
+                        $.blockUI({ 
+                            message: $('#question'),             
+                            css: { 
+                                padding:        '10px', 
+                                margin:         0, 
+                                width:          '28%', 
+                                height:         '280px', 
+                                top:            '35%',
+                                left:           '39%',                
+                                textAlign:      'center', 
+                                color:          '#f1efee', 
+                                border:         '10px', 
+                                backgroundColor:'#7b706b',
+                                cursor:         'wait' 
+                            },
+                        });
+                    <?php else: ?>
+                        $.blockUI({ 
+                            message: $('#question'),             
+                            css: { 
+                                padding:        '10px', 
+                                margin:         0, 
+                                width:          '90%', 
+                                height:         '280px', 
+                                top:            '27%',
+                                left:           '5%',                
+                                textAlign:      'center', 
+                                color:          '#f1efee', 
+                                border:         '10px', 
+                                backgroundColor:'#7b706b',
+                                cursor:         'wait' 
+                            },
+                        });                    
+                    <?php endif; ?>
+
+                }
+
                 $('#no').click(function(e) {
                     e.preventDefault();
                     $.unblockUI(); 
                     return false; 
-                }); 
+                });
+
             <?php endif; ?>        
 
-            function setAllPhoneFaxInputs($telephone, $phone_no, $phone_no_2, type) {
-                $phone_no.intlTelInput({
-                    defaultCountry: 'sg',
-                    nationalMode: false,
-                    autoHideDialCode: false,
-                    autoPlaceholder: false                
-                  });
-                $telephone.intlTelInput();
-
-                $phone_no.on('change', function() {
-                    var finalNo = $(this).val() + $phone_no_2.val();
-                    $telephone.val(finalNo);
-                });
-
-                $phone_no_2.keyup(function() {
-                    var finalNo = $phone_no.val() + $(this).val();
-                    $telephone.val(finalNo);
-                });
-
-                $phone_no_2.on('change', function() {
-                    var finalNo = $phone_no.val() + $(this).val();
-                    $telephone.val(finalNo);
-                });
-
-                // setting up value to inputs
-                var countryCode = $telephone.intlTelInput("getSelectedCountryData").dialCode;
-                $phone_no.intlTelInput("setNumber", countryCode);
-
-                var current_number = $telephone.intlTelInput("getNumber");
-                var current_number_without_country_code = current_number.replace('+'+countryCode, '');        
-                $phone_no_2.val(current_number_without_country_code);
-
-                <?php if(!$this->getAddress()->getTelephone()): ?>
-                    jQuery("#billing_phone_no").intlTelInput("selectCountry", 'sg');           
-                    jQuery("#shipping_phone_no").intlTelInput("selectCountry", 'sg');           
-                <?php endif; ?>
-
-                <?php if(!$this->getAddress()->getFax()): ?>
-                    jQuery("#billing_fax_no").intlTelInput("selectCountry", 'sg');           
-                    jQuery("#shipping_fax_no").intlTelInput("selectCountry", 'sg');           
-                <?php endif; ?>
-            }
-
-            var $billing_phone_no = $("#billing_phone_no");
-            var $billing_phone_no_2 = $("#billing_phone_no_2");
+            
             var $billing_telephone = $('input[name="billing[telephone]"]');
-
-            // setAllPhoneFaxInputs($billing_telephone, $billing_phone_no, $billing_phone_no_2, 'billing_phone');
-
             $billing_telephone.intlTelInput({
-                defaultCountry: 'sg',
+                initialCountry: 'sg',
                 nationalMode: false,
-                autoHideDialCode: true,
-                autoPlaceholder: false  
+                autoHideDialCode: false,
+                autoPlaceholder: false,
+                preferredCountries: []  
             });
-
-
-            var $shipping_phone_no = $("#shipping_phone_no");
-            var $shipping_phone_no_2 = $("#shipping_phone_no_2");
+            
             var $shipping_telephone = $('input[name="shipping[telephone]"]');
-
             $shipping_telephone.intlTelInput({
-                defaultCountry: 'sg',
+                initialCountry: 'sg',
                 nationalMode: false,
-                autoHideDialCode: true,
-                autoPlaceholder: false  
+                autoHideDialCode: false,
+                autoPlaceholder: false,
+                preferredCountries: []  
             });
 
-            // setAllPhoneFaxInputs($shipping_telephone, $shipping_phone_no, $shipping_phone_no_2, 'shipping_phone');
-
-            var $billing_fax_no = $("#billing_fax_no");
-            var $billing_fax_no_2 = $("#billing_fax_no_2");
             var $billing_fax = $('input[name="billing[fax]"]');
-
             $billing_fax.intlTelInput({
-                defaultCountry: 'sg',
+                initialCountry: 'sg',
                 nationalMode: false,
-                autoHideDialCode: true,
-                autoPlaceholder: false  
+                autoHideDialCode: false,
+                autoPlaceholder: false,
+                preferredCountries: []  
             });
-            // setAllPhoneFaxInputs($billing_fax, $billing_fax_no, $billing_fax_no_2, 'billing_fax');
 
-            var $shipping_fax_no = $("#shipping_fax_no");
-            var $shipping_fax_no_2 = $("#shipping_fax_no_2");
             var $shipping_fax = $('input[name="shipping[fax]"]');
-
             $shipping_fax.intlTelInput({
-                defaultCountry: 'sg',
+                initialCountry: 'sg',
                 nationalMode: false,
-                autoHideDialCode: true,
-                autoPlaceholder: false  
-            });
-            // setAllPhoneFaxInputs($shipping_fax, $shipping_fax_no, $shipping_fax_no_2, 'shipping_fax');
+                autoHideDialCode: false,
+                autoPlaceholder: false,
+                preferredCountries: []  
+            });            
 
             $('select[name="billing[country_id]"]').on('change', function(e){
                 e.preventDefault();
+
                 if(document.getElementById('shipping:same_as_billing').checked)
                     shipping.setSameAsBilling(true);
+
+                var country = $(this).val();
+
+                $billing_telephone.intlTelInput("setCountry", country);
+                $billing_fax.intlTelInput("setCountry", country);
+
+            });
+
+            $('select[name="shipping[country_id]"]').on('change', function(e){
+                e.preventDefault();
+
+                var country = $(this).val();
+
+                $shipping_telephone.intlTelInput("setCountry", country);
+                $shipping_fax.intlTelInput("setCountry", country);
+
+            });
+
+            $("#continue-to-checkout").on("click", function(e){
+                e.preventDefault();
+
+                if (typeof(Storage) !== "undefined") {
+                    var $inputs = $("#billing-new-address-form").find("input, select");
+                    var $shipping_inputs = $("#shipping-new-address-form").find("input, select");
+                    var inputValue = {};
+
+                    $inputs.each(function(){
+                        var value = $(this).val();
+                        var name = $(this).attr('name');
+
+                        if(name=="shipping[same_as_billing]") {
+                            console.log($(this).is(':checked'))
+                            if($(this).is(':checked')===false) {
+                                value = 'no';
+                            }else value = 1;
+                        }
+                        
+                        if(value!="") {
+                            inputValue[name] = value;
+                        }                                            
+                    });
+
+                    $shipping_inputs.each(function(){
+                        var value = $(this).val();
+                        var name = $(this).attr('name');
+                        
+                        if(value!="") {
+                            inputValue[name] = value;
+                        }                                            
+                    });
+
+                    console.log( inputValue );
+
+                    localStorage.removeItem('inputValue');
+                    localStorage.setItem( 'inputValue', JSON.stringify(inputValue) );
+                    var storedValue = JSON.parse(localStorage.getItem( 'inputValue' ));
+
+                    console.log(storedValue);
+                }
+
+                billing.save();                
             });
             
         });

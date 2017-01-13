@@ -28,20 +28,16 @@
 
 
 <div class="row order-headers">
-    <!-- 
-    <div class="col-md-1 order-status hidden-sm hidden-xs"><h2><?php echo $this->__('STATUS'); ?></h2></div>
-    <div class="col-md-1 order-no hidden-sm hidden-xs"><h2><?php echo $this->__('ORDER NO.'); ?></h2></div>
-    <div class="col-md-1 order-date hidden-sm hidden-xs"><h2><?php echo $this->__('DATE'); ?></h2></div>
-    <div class="col-md-9 col-sm-12 col-xs-12">
-        <div class="row">
-            <div class="col-md-2 col-sm-0 col-xs-0"></div>
-        </div>
-    </div>
-    -->
-    <div class="col-md-3 col-sm-3 col-xs-3"><h2><?php echo $this->__('PRODUCT'); ?></h2></div>
-    <div class="col-md-3 col-sm-3 col-xs-3"><h2 class="align-center"><?php echo $this->__('UNIT PRICE'); ?></h2></div>
-    <div class="col-md-3 col-sm-3 col-xs-3 order-qty"><h2 class="align-center"><?php echo $this->__('QTY'); ?></h2></div>
-    <div class="col-md-3 col-sm-3 col-xs-3 order-total"><h2 class="align-center"><?php echo $this->__('TOTAL'); ?></h2></div>
+    
+    <!-- <div class="col-md-1 order-status hidden-sm hidden-xs"><h2><?php echo $this->__('STATUS'); ?></h2></div> -->
+    <div class="col-md-2 order-no hidden-sm hidden-xs"><h2><?php echo $this->__('ORDER NO.'); ?></h2></div>
+    <div class="col-md-2 order-date hidden-sm hidden-xs"><h2><?php echo $this->__('DATE'); ?></h2></div>
+    
+   
+    <div class="col-md-3 col-sm-4 col-xs-4"><h2 class="product"><?php echo $this->__('PRODUCT'); ?></h2></div>
+    <div class="col-md-2 col-sm-3 col-xs-3"><h2 class="align-center"><?php echo $this->__('UNIT PRICE'); ?></h2></div>
+    <div class="col-md-1 col-sm-2 col-xs-2 order-qty"><h2 class="align-center"><?php echo $this->__('QTY'); ?></h2></div>
+    <div class="col-md-2 col-sm-3 col-xs-3 order-total"><h2 class="align-center"><?php echo $this->__('TOTAL'); ?></h2></div>
 </div>
 
 
@@ -53,85 +49,88 @@
 
                 <div class="row order-details">
 
-                    <!-- 
-                    <div class="col-md-1 hidden-sm hidden-xs order-status"><span><?php echo $_order->getStatusLabel() ?></span></div>
-                    <div class="col-md-1 hidden-sm hidden-xs order-no"><p class="order_no"><?php echo $_order->getRealOrderId() ?></p></div>
-                    <div class="col-md-1 hidden-sm hidden-xs order-date"><p class="date"><?php echo $this->formatDate($_order->getCreatedAtStoreDate()) ?></p></div>
-                     -->
-                    <div class="col-md-12 col-sm-12 col-xs-12">
+                    
+                    <!-- <div class="col-md-1 hidden-sm hidden-xs order-status"><span><?php echo $_order->getStatusLabel() ?></span></div> -->
+                    <div class="col-md-2 hidden-sm hidden-xs order-no">
+                        <div class="row each-product">
+                            <div class="col-md-12">
+                                <p class="order_no"><?php echo $_order->getRealOrderId() ?></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 hidden-sm hidden-xs order-date">
+                        <div class="row each-product">
+                            <div class="col-md-12">
+                                <p class="date"><?php echo $this->formatDate($_order->getCreatedAtStoreDate()) ?></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-8 col-sm-12 col-xs-12">
                         <?php $_items = $_order->getItemsCollection(); ?>
                         <?php foreach ($_items as $_item): ?>
                             <?php if ($_item->getParentItem()) continue; ?>
                             <?php //echo "<pre>";print_r($_item->getData());die(); ?>
                             <div class="row each-product">
-                                <div class="col-md-3 col-sm-3 col-xs-3"><p class="product"><?php echo $this->escapeHtml($_item->getName()) ?></p></div>
+                                <div class="col-md-4 col-sm-4 col-xs-4"><p class="product"><?php echo $this->escapeHtml($_item->getName()) ?></p></div>
                                 <div class="col-md-3 col-sm-3 col-xs-3"><p class="price"><?php echo $_order->formatPrice($_item->getPrice()*1) ?></p></div>
-                                <div class="col-md-3 col-sm-3 col-xs-3 order-qty"><p class="qty"><?php echo $_item->getQtyOrdered()*1 ?></p></div>
-                                <div class="col-md-3 col-sm-3 col-xs-3"><p class="price"><?php echo $_order->formatPrice($_item->getRowTotal()*1) ?></p></div>
-                                <div class="col-md-3 col-sm-0 col-xs-0"></div>
+                                <div class="col-md-2 col-sm-2 col-xs-2 order-qty"><p class="qty"><?php echo $_item->getQtyOrdered()*1 ?></p></div>
+                                <div class="col-md-3 col-sm-3 col-xs-3"><p class="total"><?php echo $_order->formatPrice($_item->getRowTotal()*1) ?></p></div>
                             </div>
                         <?php endforeach; ?>
                     </div>
                 </div>
 
 
-                <div class="row extra-content-headers">
+                <!-- <div class="row extra-content-headers">
                     <div class="col-md-12 col-sm-12 col-xs-12 view-detail-mobile-container">
                         <a href="#" class="view-detail"><i class="fa fa-chevron-down"></i><span><?php echo $this->__('VIEW GRAND TOTAL'); ?></span></a>
                     </div>
 
                     <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-6"></div>
-                            <div class="col-md-6">
-                                <div class="row each-details view-order-details">
-                                    <div class="col-md-4 col-sm-6 col-xs-6"><h2><?php echo $this->__('Sub total'); ?></h2></div>
-                                    <div class="col-md-4 col-sm-6 col-xs-6 align-to-total"><p class="sub_total price"><?php echo $_order->formatPrice($_order->getSubtotal()) ?></p></div>
-                                    <div class="col-md-4"></div>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                     
-                </div>
+                </div> -->
 
 
                 <div class="row extra-content">
-                    <div class="col-md-6 col-md-offset-6 expanded open" style="display: none;">
+                    <div class="col-md-5 col-md-offset-7">
+                        <div class="row each-details view-order-details">
+                            <div class="col-md-6 col-sm-6 col-xs-6"><h2><?php echo $this->__('Sub total'); ?></h2></div>
+                            <div class="col-md-6 col-sm-6 col-xs-6 align-to-total"><p class="sub_total price"><?php echo $_order->formatPrice($_order->getSubtotal()) ?></p></div>                                    
+                        </div>
                         <?php if ($_order->getShippingAmount()) :?>
                             <div class="row each-details">
-                                <div class="col-md-5 col-sm-6 col-xs-6"><h2><?php echo $this->__('shipping &amp; handling'); ?></h2><span>— <?php echo $_order->getShippingDescription(); ?></span></div>
-                                <div class="col-md-7 col-sm-6 col-xs-6 align-to-total"><p class="shipping price"><?php echo $_order->formatPrice($_order->getShippingAmount()); ?></p></div>
+                                <div class="col-md-6 col-sm-6 col-xs-6"><h2><?php echo $this->__('shipping &amp; handling'); ?></h2><span>— <?php echo $_order->getShippingDescription(); ?></span></div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 align-to-total"><p class="shipping price"><?php echo $_order->formatPrice($_order->getShippingAmount()); ?></p></div>
                             </div>
                         <?php endif; ?>
                         <?php if ($_order->getCouponCode()) : ?>
                             <div class="row each-details">
-                                <div class="col-md-5 col-sm-6 col-xs-6"><h2><?php echo $this->__('Applied Discount Code'); ?></h2><span>— <?php echo $_order->getCouponCode(); ?></span></div>
-                                <div class="col-md-7 col-sm-6 col-xs-6 align-to-total"><p class="minus applied_discount_code price">- <?php echo $_order->formatPrice($_order->getDiscountAmount()); ?></p></div>
+                                <div class="col-md-6 col-sm-6 col-xs-6"><h2><?php echo $this->__('Applied Discount Code'); ?></h2><span>— <?php echo $_order->getCouponCode(); ?></span></div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 align-to-total"><p class="minus applied_discount_code price">- <?php echo $_order->formatPrice($_order->getDiscountAmount()); ?></p></div>
                             </div>
                         <?php endif; ?>
                         <div class="row each-details">
-                            <div class="col-md-5 col-sm-6 col-xs-6"><h2>gift certificate</h2><span>— G6D7S6234L</span></div>
-                            <div class="col-md-4 col-sm-6 col-xs-6 align-to-total"><p class="minus gift_certificate price">- S$ 50.00</p></div>
+                            <div class="col-md-6 col-sm-6 col-xs-6"><h2>gift certificate</h2><span>— G6D7S6234L</span></div>
+                            <div class="col-md-6 col-sm-6 col-xs-6 align-to-total"><p class="minus gift_certificate price">- S$ 50.00</p></div>
                         </div>
                         <div class="row each-details">
-                            <div class="col-md-5 col-sm-6 col-xs-6"><h2>redeemed points</h2></div>
-                            <div class="col-md-7 col-sm-6 col-xs-6 align-to-total"><p class="minus redeemed_points price">- S$ 2.00</p></div>
+                            <div class="col-md-6 col-sm-6 col-xs-6"><h2>redeemed points</h2></div>
+                            <div class="col-md-6 col-sm-6 col-xs-6 align-to-total"><p class="minus redeemed_points price">- S$ 2.00</p></div>
                         </div>
                         <?php if ($_order->getTaxAmount()): ?>
                             <div class="row each-details">
-                                <div class="col-md-5 col-sm-6 col-xs-6"><h2><?php echo $this->__('Tax'); ?></h2></div>
-                                <div class="col-md-7 col-sm-6 col-xs-6 align-to-total"><p class="tax price"><?php echo $_order->formatPrice($_order->getTaxAmount()); ?></p></div>
+                                <div class="col-md-6 col-sm-6 col-xs-6"><h2><?php echo $this->__('Tax'); ?></h2></div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 align-to-total"><p class="tax price"><?php echo $_order->formatPrice($_order->getTaxAmount()); ?></p></div>
                             </div>
                         <?php endif; ?>
 
                         
                         <div class="row each-details">
-                            <div class="col-md-4 col-sm-6 col-xs-6"><h2 class="grand_total"><?php echo $this->__('grand total'); ?></h2></div>
-                            <div class="col-md-4 col-sm-6 col-xs-6 align-to-total"><p class="grand_total price"><?php echo $_order->formatPrice($_order->getGrandTotal()) ?></p></div>
-                            <div class="col-md-4 col-sm-12 col-xs-12 align-to-button">
-                                <a href="<?php echo $this->helper('checkoutcustomiser')->getReorderUrl($_order) ?>" class="square-cta reorder"><?php echo $this->__('Reorder'); ?></a>
-                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6"><h2 class="grand_total"><?php echo $this->__('grand total'); ?></h2></div>
+                            <div class="col-md-6 col-sm-6 col-xs-6 align-to-total"><p class="grand_total price"><?php echo $_order->formatPrice($_order->getGrandTotal()) ?></p></div>                            
                         </div>
                     </div>
                 </div>

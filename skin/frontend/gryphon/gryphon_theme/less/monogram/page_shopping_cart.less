@@ -106,6 +106,7 @@ body.billing-shipping-page{
 
 #page-shopping-cart-sidebar-address, #copy-page-shopping-cart-sidebar-address{
   padding-top: 34px;
+  padding-bottom: 64px;
 
   .billing-info{
     margin-bottom: 24px;
@@ -144,7 +145,8 @@ body.billing-shipping-page{
 
       p{
         .body-font;
-        font-size: 12px;
+        // font-size: 12px;
+        font-size: 12.5px;
         line-height: 20px;
       }
       p.title{
@@ -228,7 +230,7 @@ body.billing-shipping-page{
     .input-box{
       .add-input-class-styling;
       .display-inline-block;
-      width: 160px;
+      width: 170px;
 
 
       @media only screen and (max-width: 480px) {
@@ -273,7 +275,7 @@ body.billing-shipping-page{
     .dropdown{
       .add-input-class-styling;
       .display-inline-block;
-      width: 160px;
+      width: 170px;
       position: relative;
 
       @media only screen and (max-width: 480px) {
@@ -330,7 +332,7 @@ body.billing-shipping-page{
       background: transparent;
       .display-inline-block;
 
-      margin-left: 20px;
+      margin-left: 12px;
       float: right;
     }
 
@@ -444,12 +446,14 @@ body.billing-shipping-page{
     }
     p{
       .body-font;
-      font-size: 12px;
+      // font-size: 12px;
+      font-size: 12.5px;
       line-height: 20px;
       color: @off-white;
       a {
         .body-font;
-        font-size: 12px;
+        // font-size: 12px;
+        font-size: 12.5px;
         line-height: 20px;
         color: @off-white;
         &:hover {
@@ -598,13 +602,15 @@ body.billing-shipping-page{
           border-top: none;
           
           .body-font;
-          font-size: 11px;
+          // font-size: 11px;
+          font-size: 12.5px;
           line-height: 20px;
           color: @off-white !important; 
           letter-spacing: 0.04em;
           p{
             .body-font;
-            font-size: 11px;
+            // font-size: 11px;
+            font-size: 12.5px;
             line-height: 20px;
             color: @off-white !important; 
             letter-spacing: 0.04em;
@@ -695,7 +701,8 @@ body.billing-shipping-page{
           }
 
           p{
-            font-size: 12px;
+            // font-size: 12px;
+            font-size: 12.5px;
             line-height: 20px;
           }
           
@@ -704,6 +711,12 @@ body.billing-shipping-page{
               .display-inline-block;
               vertical-align: middle;
               width: 50%;
+            }
+
+            @media only screen and (max-width: 320px) {
+              .display-inline-block;
+              vertical-align: middle;
+              width: 45%;
             }
   
 
@@ -745,8 +758,16 @@ body.billing-shipping-page{
 
           border: 1px solid @off-white;
 
+          &.INT, &.SGP {
+            border: none;
+          }
+
           @media only screen and (max-width: 480px) {
             margin-top: 22px;
+          }
+
+          @media only screen and (max-width: 320px) {
+            margin-top: 11px;
           }
 
           a.minus{
@@ -866,11 +887,12 @@ body.billing-shipping-page{
 
 #page-shopping-cart-in-between-container{
   border-bottom: 1px solid fade(#cccccc, 20%);
-  padding-top: 10px;
+  padding-top: 5px;
   padding-bottom: 5px;
 
   @media only screen and (max-width: 480px) {
-    border: none;
+    border-bottom: 0px;
+    border-top: 1px solid fade(#cccccc, 20%);
   }
 
   .row {
@@ -878,7 +900,7 @@ body.billing-shipping-page{
       margin: 0px;
       .col-md-6 {
         &:nth-of-type(1) {
-          border-top: 1px solid fade(#cccccc, 20%);
+          // border-top: 1px solid fade(#cccccc, 20%);
           padding: 10px 0px 10px;
         }
         &:nth-of-type(2) {
@@ -904,7 +926,8 @@ body.billing-shipping-page{
     }
     p{
       .body-font;
-      font-size: 12px;
+      // font-size: 12px;
+      font-size: 12.5px;
       line-height: 20px;
       color: @off-white;
       letter-spacing: 0.08em;
@@ -954,7 +977,8 @@ body.billing-shipping-page{
 
       p{
         .body-font;
-        font-size: 12px;
+        // font-size: 12px;
+        font-size: 12.5px;
         line-height: 20px;
         
       }
@@ -1133,7 +1157,8 @@ body.billing-shipping-page{
 
       p{
         .body-font;
-        font-size: 12px;
+        // font-size: 12px;
+        font-size: 12.5px;
         line-height: 20px;
         
       }
@@ -1163,7 +1188,14 @@ body.billing-shipping-page{
 
 
 #page-shopping-cart-billing-shipping-container{
-          
+  .each-input {
+    .input-box {
+      width: 200px;
+    }
+    .dropdown {
+      width: 200px;
+    }
+  }
 }
 
 #page-shopping-cart-billing-container{
@@ -1231,7 +1263,8 @@ body.billing-shipping-page{
       overflow: hidden;
       white-space: nowrap;
       .body-font;
-      font-size: 13px;
+      // font-size: 13px;
+      font-size: 12.5px;
       line-height: 20px;
       letter-spacing: 0em;
       text-transform: none;
@@ -1346,7 +1379,8 @@ body.billing-shipping-page{
 
   @media only screen and (max-width: 991px) {
     padding-top: 43px;
-    padding-bottom: 200px;
+    // padding-bottom: 200px;
+    padding-bottom: 50px;
   }
 
   @media only screen and (max-width: 480px) {
@@ -1475,7 +1509,8 @@ body.billing-shipping-page{
   padding-right: 24px;
 
   p{
-    font-size: 13px;
+    // font-size: 13px;
+    font-size: 12.5px;
     line-height: 20px;
 
 
@@ -1489,7 +1524,7 @@ body.billing-shipping-page{
 @media only screen and (max-width: 480px) {
   #checkout-step-review {
     #page-shopping-cart-in-between-container {
-      border: 0px;
+      border-bottom: 0px;
       .col-md-6 {
         border: none;
         &:nth-of-type(2) {

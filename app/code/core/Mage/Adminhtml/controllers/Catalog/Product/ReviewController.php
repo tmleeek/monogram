@@ -118,6 +118,31 @@ class Mage_Adminhtml_Catalog_Product_ReviewController extends Mage_Adminhtml_Con
         $this->renderLayout();
     }
 
+    protected function _sendApprovalEmail($data) {
+        $customer = Mage::getSingleton('customer/session')->getCustomer();
+
+        $templateId = 11; // Approval Transaction Email ID
+        $senderName = Mage::getStoreConfig('trans_email/ident_support/name');  //Get Sender Name from Store Email Addresses
+        $senderEmail = Mage::getStoreConfig('trans_email/ident_support/email');  //Get Sender Email Id from Store Email Addresses
+        $sender = array('name' => $senderName,
+                    'email' => $senderEmail);
+
+        // Set recepient information
+        $recepientEmail = $data['email'];
+        $recepientName = $data['nickname'];      
+
+        // Get Store ID     
+        $store = Mage::app()->getStore()->getId();
+
+        // Set variables that can be used in email template
+        $vars = array('customerName' => $data['nickname']);  
+
+
+        // Send Transactional Email
+        Mage::getModel('core/email_template')
+            ->sendTransactional($templateId, $sender, $recepientEmail, $recepientName, $vars, $storeId);
+    }
+
     public function saveAction()
     {
         if (($data = $this->getRequest()->getPost()) && ($reviewId = $this->getRequest()->getParam('id'))) {
@@ -128,6 +153,11 @@ class Mage_Adminhtml_Catalog_Product_ReviewController extends Mage_Adminhtml_Con
             } else {
                 try {
                     $review->addData($data)->save();
+
+                    // send email on approval
+                    if($data['status_id']==1) {
+                        $this->_sendApprovalEmail($data);
+                    }
 
                     $arrRatingId = $this->getRequest()->getParam('ratings', array());
                     $votes = Mage::getModel('rating/rating_option_vote')
@@ -227,12 +257,17 @@ class Mage_Adminhtml_Catalog_Product_ReviewController extends Mage_Adminhtml_Con
         } else {
             /* @var $session Mage_Adminhtml_Model_Session */
             try {
-                $status = $this->getRequest()->getParam('status');
+                $status = $this->getRequest()->getParam('status');                
                 foreach ($reviewsIds as $reviewId) {
                     $model = Mage::getModel('review/review')->load($reviewId);
                     $model->setStatusId($status)
                         ->save()
-                        ->aggregate();
+                        ->aggregate();                             
+
+                    if($status==1) {
+                        $data = $model->getData();           
+                        $this->_sendApprovalEmail($data);    
+                    }                    
                 }
                 $session->addSuccess(
                     Mage::helper('adminhtml')->__('Total of %d record(s) have been updated.', count($reviewsIds))

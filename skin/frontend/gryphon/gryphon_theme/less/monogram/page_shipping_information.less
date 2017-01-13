@@ -21,7 +21,8 @@ body.monogram-page-shipping-information{
 //
 
 #monogram-page-shipping-info-title-section{
-  background: #6d615d;
+  // background: #6d615d;
+  background: @background-color;
   padding-top: 73px;
   padding-bottom: 73px;
 }
@@ -123,14 +124,16 @@ body.monogram-page-shipping-information{
 
   .default-copy{
     .body-font;
-    font-size: 13px;
+    // font-size: 13px;
+    font-size: 12.5px;
     line-height: 20px;
     letter-spacing: 0em;
     color: @white;
 
     p{
       .body-font;
-      font-size: 13px;
+      // font-size: 13px;
+      font-size: 12.5px;
       line-height: 20px;
       letter-spacing: 0em;
       a {
@@ -142,10 +145,14 @@ body.monogram-page-shipping-information{
     ul{
       padding-top: 18px;
       padding-bottom: 18px;
+      @media all and (max-width: 991px) {
+        padding-bottom: 0px;
+      }
 
       li{
         .body-font;
-        font-size: 13px;
+        // font-size: 13px;
+        font-size: 12.5px;
         // line-height: 20px;
         line-height: 18px;
         letter-spacing: 0em;
@@ -426,14 +433,7 @@ body.monogram-page-shipping-information{
             }
             &:last-child{
               padding-right: 6px;
-            }
-
-            @media only screen and (max-width: 991px) {
-              // white-space: normal;
-              &:first-child {
-                padding-left: 0px;
-              }
-            }
+            }            
 
           }
         }
@@ -442,7 +442,8 @@ body.monogram-page-shipping-information{
         tr{
           td{
             .body-font;
-            font-size: 12px;
+            // font-size: 12px;
+            font-size: 12.5px;
             line-height: 20px;
             color: @dark-brown;
 
@@ -466,9 +467,15 @@ body.monogram-page-shipping-information{
               top: -6px;
             }
 
+            p{
+              font-size: 12.5px;
+              line-height: 20px;
+            }
+
             a{
               .body-font;
-              font-size: 12px;
+              // font-size: 12px;
+              font-size: 12.5px;
               line-height: 20px;
               color: @white;
 
@@ -484,14 +491,7 @@ body.monogram-page-shipping-information{
             }
             &:last-child{
               padding-right: 21px;
-            }
-
-            @media only screen and (max-width: 991px) {
-              // white-space: normal;
-              &:first-child{
-                padding-left: 0px;
-              }
-            }
+            }            
 
           }
           &.color {
@@ -537,7 +537,9 @@ body.monogram-page-shipping-information{
 
 #monogram-page-shipping-info-content-04{
 
-  background: #827773;
+  // background: #827773;
+  background: @background-color;
+
   padding-top: 47px;
   padding-bottom: 68px;
 
@@ -643,6 +645,7 @@ body.monogram-page-shipping-information{
             border-bottom: 1px solid @white !important;
             border-bottom: 1px solid fade(@white, 50%) !important;      // this gets removed because of '.balance'
 
+
             &:nth-of-type(2) {
               white-space: nowrap;
               @media only screen and (max-width: 991px) {
@@ -673,6 +676,11 @@ body.monogram-page-shipping-information{
               &:hover{
                 .opacity(0.7);
               }
+            }
+
+            p{
+              font-size: 12.5px;
+              line-height: 20px;
             }
 
             &:first-child{

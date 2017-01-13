@@ -25,7 +25,9 @@ $quoteData= $quote->getData();
 
         <div id="mobile-header-cart-btn-container">
         	<a href="<?php echo $this->getUrl('checkout/cart'); ?>">
-          	<div id="mobile-header-cart-btn" class="fa fa-shopping-cart"></div>
+          	<div id="mobile-header-cart-btn" class="fa fa-shopping-cart">
+              <div class="counter"><span class="count"><?php echo (!empty($count)) ? $count : 0; ?></span></div>
+            </div>            
           </a>
         </div>
 
@@ -77,11 +79,24 @@ $quoteData= $quote->getData();
 				<?php endif; ?>				
 			</div>
 
+      <div id="mobile-currency">
+
+        <div id="mobile-currency-header">
+          <?php $currency_code_02 = Mage::app()->getStore()->getCurrentCurrencyCode(); ?>
+          <p>Currency: <?php echo $currency_code_02; ?></p> 
+          <div id="mobile-currency-expand-button"></div>
+        </div>              
+
+        <div id="mobile-currency-expand-container">
+        </div>
+        
+      </div> <!-- mobile-currency -->
+
 			<div class="mobile-submenu">
 				<div class="mobile-submenu-header">About Monogram</div>
 				<ul>					
 					<li><a href="<?php echo $this->getUrl('experience'); ?>">Experience Monogram</a></li>
-          <li><a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais">Layering Suggestion</a></li>
+          <li><a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais">Layering Suggestions</a></li>
           <li><a href="<?php echo $this->getUrl('tea-layering'); ?>">Tea Layering</a></li>	            
           <li><a href="<?php echo $this->getUrl('tea-matrix'); ?>">Tea Matrix</a></li>
           <!-- <li><a href="<?php echo $this->getUrl('monolog'); ?>">Monolog</a></li>					 -->
@@ -92,21 +107,27 @@ $quoteData= $quote->getData();
 				<div class="mobile-submenu-header">Shop</div>
 				<?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
 				<ul>
-          <li><a href="<?php echo $store_category->getUrl(); ?>">Tea Store</a></li>
+          <li><a href="<?php echo $store_category->getUrl(); ?>">Tea Bar</a></li>
           <li><a href="<?php echo $this->getUrl('subscription'); ?>">Subscription</a></li>
           <li><a href="<?php echo $this->getUrl('monogram-service'); ?>">Monogram Services</a></li>	
         </ul>
 			</div>
 
 			<div class="mobile-submenu">
-				<div class="mobile-submenu-header">Order Information</div>
-				<ul>
-          <li><a href="<?php echo $this->getUrl('customer/account/create/') ?>">Account Registration</a></li>
+				<div class="mobile-submenu-header">Support</div>
+				<ul>          
           <li><a href="<?php echo $this->getUrl('faq'); ?>">Frequently Asked Questions</a></li>
           <li><a href="<?php echo $this->getUrl('shipping-info'); ?>">Shipping Information</a></li>
           <li><a href="http://www.trackntrace.com.sg/">Track Order</a></li>
         </ul>
 			</div>
+
+      <div class="mobile-submenu">
+        <div class="mobile-submenu-header">Contact</div>
+        <ul>          
+          <li><a href="<?php echo $this->getUrl('contact'); ?>">Contact</a></li>          
+        </ul>
+      </div>
 
 			<div class="mobile-submenu">
 				<div class="mobile-submenu-header">
@@ -181,7 +202,7 @@ $quoteData= $quote->getData();
       $('.header-mobile-subscribe-form').find('.subscribe_email').keypress(function(event){
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13') 
-          $('.subscribe_newsletter').trigger('click');
+          $('.header-mobile-subscribe-form').find('.subscribe_newsletter').trigger('click');
       });
       $('.header-mobile-subscribe-form').find('.subscribe_newsletter').click(function(e){
         e.preventDefault();        
@@ -189,24 +210,28 @@ $quoteData= $quote->getData();
 
         console.log(subscribe_email);
 
-        $('.newsletter_ajax_loader').show();
+        if(subscribe_email!=="" && subscribe_email!=="Enter Your Email Address") {
 
-        var request = $.ajax({
-            url: "<?php echo $this->getUrl('discovertea/index/subscribe', array('_secure'=>true)) ?>",
-            method: "POST",
-            data: { subscribe_email : subscribe_email },
-            dataType: "html"
-        });
-         
-        request.done(function( msg ) {
-          var message = JSON.parse(msg);
-          console.log(message);
-          $('.newsletter_ajax_loader').hide();
-          if(message.error_messages)
-            $('span.ajax_msg').html('<p>'+message.error_messages+'</p>').show().delay(5000).fadeOut();              
-            else
-            $('span.ajax_msg').html('<p>Successfully subscribed to newsletter</p>').show().delay(5000).fadeOut();
-        });
+          $('.newsletter_ajax_loader').show();
+
+          var request = $.ajax({
+              url: "<?php echo $this->getUrl('discovertea/index/subscribe', array('_secure'=>true)) ?>",
+              method: "POST",
+              data: { subscribe_email : subscribe_email },
+              dataType: "html"
+          });
+           
+          request.done(function( msg ) {
+            var message = JSON.parse(msg);
+            console.log(message);
+            $('.newsletter_ajax_loader').hide();
+            if(message.error_messages)
+              $('span.ajax_msg').html('<p>'+message.error_messages+'</p>').show().delay(5000).fadeOut();              
+              else
+              $('span.ajax_msg').html('<p>Successfully subscribed to newsletter</p>').show().delay(5000).fadeOut();
+          });
+
+        }
       });      
     });
   </script>
@@ -275,14 +300,18 @@ $quoteData= $quote->getData();
 								<?php else: ?>
 								<li><a href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>" class="text">Join/Log in</a></li>
 								<?php endif; ?>            
-		            <li><a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="text">Cart <span class="count">(<?php echo (!empty($count)) ? $count : 0; ?>)</span></a></li>
-		            <li><a href="#" class="menu-opener fa fa-bars" id="desktop-header-menu-btn"></a></li>
+		            <li><a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="animated cart-count-update text">Cart <span class="count">(<?php echo (!empty($count)) ? $count : 0; ?>)</span></a></li>
+
+                <!-- removed jan 06 -->
+		            <!-- <li><a href="#" class="menu-opener fa fa-bars" id="desktop-header-menu-btn"></a></li> -->
 		          </ul>
 		        <?php else: ?>
 		        	<ul>
 		        		<li><a href="<?php echo $this->getUrl('shipping-info') ?>" class="text">Shipping Information</a></li>
 		        		<li><a href="<?php echo $this->getUrl('faq') ?>" class="text">FAQ</a></li>
-		        		<li><a href="#" class="menu-opener fa fa-bars" id="desktop-header-menu-btn"></a></li>
+                
+		        		<!-- removed jan 06 -->
+                <!-- <li><a href="#" class="menu-opener fa fa-bars" id="desktop-header-menu-btn"></a></li> -->
 		        	</ul>
 						<?php endif; ?>
 					?>
@@ -304,6 +333,47 @@ $quoteData= $quote->getData();
       }, 600);
 			$('html').toggleClass("mobile-menu-open");
 		});
+
+    var currency_open_state = "close";
+    var $currency_expand_container = $('#mobile-currency-expand-container');
+    var $currency_expand_button = $('#mobile-currency-expand-button');
+    var $currency_expand_header = $('#mobile-currency-header');
+
+    function open_currency() {
+      if(currency_open_state != "open"){
+        currency_open_state = "open";        
+        $currency_expand_container.stop(0).slideDown(500);
+        $currency_expand_button.addClass('expanded');
+      }
+    }
+
+    function close_currency() {
+      if(currency_open_state != "close"){
+        currency_open_state = "close";
+        $currency_expand_container.stop(0).slideUp(500);
+        $currency_expand_button.removeClass('expanded');
+      }
+    }
+
+    var new_currency_dropdown = $('#desktop-header .currency-switcher .currency-select.all-dropdown').clone();
+    $currency_expand_container.append(new_currency_dropdown);    
+
+    $currency_expand_header.on('click', function(e){
+      e.preventDefault();      
+
+      if(currency_open_state == "close"){
+        open_currency();
+      } else {
+        close_currency();
+      }
+    });
+
+    $currency_expand_container.find('.currency-select li a').on('click', function(e){
+        e.preventDefault();            
+        var currencyCode = $(this).attr('id');
+        console.log(currencyCode);
+        $("#select-currency option:contains(" + currencyCode + ")").attr('selected', 'selected').trigger("change");           
+    });
 
 	});
 </script>

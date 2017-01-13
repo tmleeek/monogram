@@ -34,7 +34,7 @@ $product_type = $_item->getProductType();
     <td colspan="2">
         <div class="image-text-container">
             <div class="img-container">
-                <?php if ($this->hasProductUrl()):?><a href="<?php echo $this->getProductUrl() ?>" title="<?php echo $this->escapeHtml($this->getProductName()) ?>" class="product-image"><?php endif;?><img src="<?php echo $this->getProductThumbnail()->resize(90); ?>" width="90s" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" /><?php if ($this->hasProductUrl()):?></a><?php endif;?>
+                <?php if ($this->hasProductUrl()):?><a href="<?php echo $this->getProductUrl() ?>" title="<?php echo $this->escapeHtml($this->getProductName()) ?>" class="product-image"><?php endif;?><img src="<?php echo $this->helper('catalog/image')->init($_item->getProduct(), 'thumbnail')->backgroundColor(array(0, 0, 0))->constrainOnly(false)->keepAspectRatio(true)->keepFrame(false)->resize(120, 100) ?>" width="120" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" /><?php if ($this->hasProductUrl()):?></a><?php endif;?>
             </div>
             <div class="product-title-container">
                 <p class="product-title">
@@ -46,6 +46,10 @@ $product_type = $_item->getProductType();
                     <?php else: ?>
                         <?php echo $this->escapeHtml($this->getProductName()) ?>
                     <?php endif; ?>
+                </p>
+                <p>
+                    <span><?php if($_item->getProduct()->getData('weight') > 0) echo (int)$_item->getProduct()->getData('weight') . 'g per Sachet'; ?></span>
+                    <span><?php echo $_item->getProduct()->getData('number_of_sachet'); ?></span>
                 </p>
                 <p class="product-price visible-xs">
                     <?php $_incl = $this->helper('checkout')->getPriceInclTax($_item); ?>
@@ -224,13 +228,17 @@ $product_type = $_item->getProductType();
 
     <td class="a-center">
         <div class="image-text-container">
-            <p class="product-qty">                
-                <!--<a href="javascript:void(0)" class="minus"></a>-->
+            <?php $itemsku = $_item->getProduct()->getData('sku');//if you need it
+                  $itemsku_type = explode("-", $itemsku);
+                  $itemsku_type = $itemsku_type[0]; ?>
+            <p class="product-qty <?php echo $itemsku_type; ?>">                
+                <?php if($itemsku_type=="SGP" || $itemsku_type=="INT"): ?>
+                <span class="qty"><?php echo $this->getQty() ?></span>
+                <?php else: ?>
                 <a href="javascript:void(0)" class="minus"><i class="fa fa-minus"></i></a>
                 <input type="text" name="cart[<?php echo $_item->getId() ?>][qty]" value="<?php echo $this->getQty() ?>" size="4" title="<?php echo $this->__('Qty') ?>" class="input-text qty" maxlength="12" />
-                <a href="javascript:void(0)" class="plus"><i class="fa fa-plus"></i></a>  
-                <!--<span class="qty"><?php echo $this->getQty() ?></span>-->
-                <!--<a href="javascript:void(0)" class="add"></a>-->    
+                <a href="javascript:void(0)" class="plus"><i class="fa fa-plus"></i></a>              
+                <?php endif; ?>
             </p>
             <a href="<?php echo $this->getDeleteUrl()?>" title="<?php echo $this->__('Remove item')?>" class="visible-xs btn-remove btn-remove2 delete">Delete</a>
         </div>

@@ -167,6 +167,13 @@ monogram.component.GraphSection.ON_GRAPH_SECTION_READY = 'on_graph_section_ready
  * @const
  * @type {string}
  */
+monogram.component.GraphSection.ON_ITEM_SELECTED = 'on_item_selected';
+
+/**
+ * GraphSection Event Constant
+ * @const
+ * @type {string}
+ */
 monogram.component.GraphSection.EVENT_02 = '';
 
 
@@ -453,6 +460,11 @@ monogram.component.GraphSection.prototype.display_combination_index = function(m
 
       
 
+
+
+      // not needed anymore
+      
+      /*
       var a_num = '' + (this.main_index + 1);
       var b_num = '' + (this.sub_index + 1);
       var a_total = '' + (this.main_array.length);
@@ -465,6 +477,14 @@ monogram.component.GraphSection.prototype.display_combination_index = function(m
 
       $j('#graph-selction-a .graph-selection-title .number').html(a_num + ' / ' + a_total);
       $j('#graph-selction-b .graph-selection-title .number').html(b_num + ' / ' + b_total);
+      */
+
+
+
+
+
+
+
 
       var target_bg = this.hexToRgb('#766c67');
       console.log(target_bg);
@@ -552,7 +572,8 @@ monogram.component.GraphSection.prototype.delayed_display_combination_index = fu
 
 
     var target_bg = this.hexToRgb(this.main_data_item.data_color);
-    var target_bg_str = 'rgba(' + target_bg.r + ', ' + target_bg.g + ', ' + target_bg.b + ', 0.7)'
+    // var target_bg_str = 'rgba(' + target_bg.r + ', ' + target_bg.g + ', ' + target_bg.b + ', 0.7)'
+    var target_bg_str = 'rgba(' + target_bg.r + ', ' + target_bg.g + ', ' + target_bg.b + ', 0.5)'
 
     TweenMax.to($j('#graph-selction-a .graph-selection-content'), 0.5, {
       backgroundColor: target_bg_str,
@@ -581,7 +602,8 @@ monogram.component.GraphSection.prototype.delayed_display_combination_index = fu
     $j('#graph-selction-b .graph-selection-tea').addClass('animate-in');
 
     target_bg = this.hexToRgb(this.sub_data_item.data_color);
-    target_bg_str = 'rgba(' + target_bg.r + ', ' + target_bg.g + ', ' + target_bg.b + ', 0.7)'
+    // target_bg_str = 'rgba(' + target_bg.r + ', ' + target_bg.g + ', ' + target_bg.b + ', 0.7)'
+    target_bg_str = 'rgba(' + target_bg.r + ', ' + target_bg.g + ', ' + target_bg.b + ', 0.5)'
 
     TweenMax.to($j('#graph-selction-b .graph-selection-content'), 0.5, {
       backgroundColor: target_bg_str,
@@ -622,6 +644,8 @@ monogram.component.GraphSection.prototype.delayed_display_combination_index = fu
   
 
 
+  this.dispatchEvent(new goog.events.Event(monogram.component.GraphSection.ON_ITEM_SELECTED));
+  
 };
 
 

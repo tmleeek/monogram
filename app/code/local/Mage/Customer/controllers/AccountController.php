@@ -191,7 +191,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
             // Set default URL to redirect customer to
             $session->setBeforeAuthUrl($this->_getHelper('customer')->getAccountUrl());
             // Redirect customer to the last page visited after logging in
-            if ($session->isLoggedIn()) {
+            if ($session->isLoggedIn()) {                
                 if (!Mage::getStoreConfigFlag(
                     Mage_Customer_Helper_Data::XML_PATH_CUSTOMER_STARTUP_REDIRECT_TO_DASHBOARD
                 )) {
@@ -207,19 +207,22 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
                 } else if ($session->getAfterAuthUrl()) {
                     $session->setBeforeAuthUrl($session->getAfterAuthUrl(true));
                 }
-            } else {
+            } else {                
                 $session->setBeforeAuthUrl( $this->_getHelper('customer')->getLoginUrl());
             }
         } else if ($session->getBeforeAuthUrl() ==  $this->_getHelper('customer')->getLogoutUrl()) {
             $session->setBeforeAuthUrl( $this->_getHelper('customer')->getDashboardUrl());
-        } else {
+        } else {            
             if (!$session->getAfterAuthUrl()) {
                 $session->setAfterAuthUrl($session->getBeforeAuthUrl());
             }
             if ($session->isLoggedIn()) {
                 $session->setBeforeAuthUrl($session->getAfterAuthUrl(true));
+            }else {
+                $session->setBeforeAuthUrl( $this->_getHelper('customer')->getLoginUrl());   
             }
         }
+        // echo $session->getBeforeAuthUrl(true); exit();
         $this->_redirectUrl($session->getBeforeAuthUrl(true));
     }
 
@@ -294,7 +297,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
             $session->setCustomerFormData($this->getRequest()->getPost());
             if ($e->getCode() === Mage_Customer_Model_Customer::EXCEPTION_EMAIL_EXISTS) {
                 $url = $this->_getUrl('customer/account/forgotpassword');
-                $message = $this->__('There is already an account with this email address. If you are sure that it is your email address, <a href="%s">click here</a> to get your password and access your account.', $url);
+                $message = $this->__('There is already an account with this email address. If you have forgotten your password, please <a href="%s">click here</a> and reset your password.', $url);
                 $session->setEscapeMessages(false);
             } else {
                 $message = $e->getMessage();
@@ -375,7 +378,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
                 $session->addError($errorMessage);
             }
         } else {
-            $session->addError($this->__('Invalid customer data'));
+            // $session->addError($this->__('Invalid customer data'));
         }
     }
 

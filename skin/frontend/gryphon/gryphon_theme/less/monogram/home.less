@@ -18,7 +18,7 @@
 
   background: #7b706b;
   color: @off-white;
-  // color: fade(@off-white, 90%);  
+  // color: fade(@off-white, 90%); 
 
 
   // #home-logo {
@@ -146,7 +146,7 @@
   visibility: hidden;
   .opacity(0);
 
-  background: #7b706b;
+  // background: #7b706b;
 }
 
 
@@ -213,7 +213,7 @@
     bottom: 5.5%;
     left: 3.3%;
     right: 3.3%;
-    padding: 8% 8%;
+    padding: 8% 8% 4%;
 	} 
 
 	h2 {
@@ -356,6 +356,25 @@
 
 
 
+body.is-tablet.is-tablet-landscape{
+  .home-tea-item{
+    .cta-container{
+
+      
+      .opacity_important(1);
+      left: 15px;
+      right: 15px;
+
+      .arrow-cta{
+        font-size: 9px;
+        line-height: 12px;
+
+      }
+    }
+  }
+}
+
+
 
 
 
@@ -369,7 +388,7 @@
   visibility: hidden;
   .opacity(0);
 
-  background: #7b706b;
+  // background: #7b706b;
   color: @off-white;
   // color: fade(@off-white, 90%);  
 
@@ -873,6 +892,11 @@
       letter-spacing: 0.12em;
 
       .display-inline-block;
+
+      sup{
+        font-size: 9px;
+        top: -1em;
+      }
     }
     .plus-sign{
       .header-font-02;
@@ -991,6 +1015,14 @@
     position: relative;
     margin: 0 auto;
 
+    @media all and (max-width: 991px) {
+      height: 250px;
+    }
+
+    @media all and (max-width: 480px) {
+      height: 140px;
+    }
+
     img{
       position: absolute;
       top: 0;
@@ -998,6 +1030,14 @@
       // width: 160px;
       width: 100%;
       height: 140px;
+
+      @media all and (max-width: 991px) {
+        height: 250px;
+      }
+
+      @media all and (max-width: 991px) {
+        height: 100%;
+      }
 
       @media all and (max-width: 375px) {
         height: 120px;

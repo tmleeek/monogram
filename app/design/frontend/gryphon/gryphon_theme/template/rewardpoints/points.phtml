@@ -17,7 +17,10 @@
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
  ?>
-
+<div id="monogram-page-account-mobile-header" class="visible-sm visible-xs">
+  <h4>membership service</h4>
+  <h2>Rebate History</h2>
+</div>
 
 <div id="monogram-page-account-reward-points-container">
 
@@ -61,9 +64,9 @@
                                   <td data-theme-label="<?php echo $this->__('Type of point') ?>">
                                       <?php echo $this->getTypeOfPoint($_point);?>
                                   </td>
-                                  <td data-theme-label="<?php echo $this->__('Points added') ?>"><?php echo $_point->getPoints_current() ?></td>
+                                  <td data-theme-label="<?php echo $this->__('Rebate added') ?>"><?php echo $_point->getPoints_current() ?></td>
                                   <?php /*?><?php echo $_point->getPoints_spent() ? $this->__('yes') : $this->__('no') ?><?php */?>
-                                  <td data-theme-label="<?php echo $this->__('Points used') ?>"><?php echo $_point->getPoints_spent() ?></td>
+                                  <td data-theme-label="<?php echo $this->__('Rebate used') ?>"><?php echo $_point->getPoints_spent() ?></td>
                                   <?php /*?><td><?php if ($_point->getDate_start() != ""): echo $this->formatDate($_point->getDate_start(), 'short'); endif; ?></td>
                                   <td><?php if ($_point->getDate_end() != ""): echo $this->formatDate($_point->getDate_end(), 'short'); endif; ?></td>
                                   <?php */?>
@@ -83,7 +86,7 @@
                       <thead>
                           <tr>
                               <?php ?><th><?php echo $this->__('Description') ?></th><?php ?>
-                              <th><?php echo $this->__('Points added') ?></th>
+                              <th><?php echo $this->__('Rebate added') ?></th>
                               <th><?php echo $this->__('Valid Until') ?></th>
                           </tr>
                       </thead>
@@ -95,7 +98,7 @@
                                   <td data-theme-label="<?php echo $this->__('Type of point') ?>">
                                       <?php echo $this->getTypeOfPoint($_point);?>
                                   </td>
-                                  <td data-theme-label="<?php echo $this->__('Points added') ?>"><?php echo $_point->getPoints_current() ?></td>
+                                  <td data-theme-label="<?php echo $this->__('Rebate added') ?>"><?php echo $_point->getPoints_current() ?></td>
                                   <td data-theme-label="<?php echo $this->__('Valid until') ?>"><?php if ($_point->getDate_end() != ""): echo $this->formatDate($_point->getDate_end(), 'short'); endif; ?></td>
                               </tr>
                           <?php endforeach; ?>

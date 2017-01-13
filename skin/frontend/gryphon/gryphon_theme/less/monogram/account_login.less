@@ -10,15 +10,28 @@
   }
 
   h1 {
+    .header-font-02;
+    font-size: 26px;
+    line-height: 30px;
+
     text-align: left;
     text-transform: uppercase;
     color: @off-white;
-    margin-bottom: 35px;
+    // margin-bottom: 35px;
+    margin-bottom: 15px;
   }
+
   p {
     text-align: left;
-    color: @off-white;
-    margin-bottom: 60px;
+    color: @white;
+    
+    
+    font-size: 12.5px;
+    line-height: 20px;
+    
+    // margin-bottom: 60px;
+    margin-bottom: 30px;
+
     @media only screen and (max-width: 480px) {
       margin-bottom: 30px;
     }
@@ -32,6 +45,22 @@
     li.success-msg {
       padding: 0px;
     }
+  }
+
+  input.input-class{
+    height: 30px;
+    font-size: 12px;
+    color: @white;
+  }
+  .dropdown select{
+    height: 30px;
+    font-size: 11.5px;
+    padding-left: 15px;
+    color: @white;
+  }
+  .sign-in-btn.square-cta{
+    height: 30px;
+    line-height: 30px;
   }
 
   .container-fluid {
@@ -91,7 +120,8 @@
       color: @off-white;
 
       text-transform: uppercase;
-      .brandon-grotesque-regular;
+      // .brandon-grotesque-regular;
+      .header-font;
       font-size: 10px;
       line-height: 10px;
       letter-spacing: 0.05em;          
@@ -140,8 +170,10 @@
     label.remember_me {      
       display: inline-block;
       vertical-align: top;      
-      margin-top: 8px;
-      padding-left: 10px;
+      // margin-top: 8px;
+      margin-top: 6px;
+      // padding-left: 10px;
+      padding-left: 6px;
     }
 
     @media only screen and (max-width: 480px) {
@@ -158,7 +190,7 @@
     display: inline-block;
     vertical-align: middle;
     &:nth-of-type(1) {
-      width: 37%;
+      // width: 37.5%;
       @media only screen and (max-width: 1024px) {
         width: 42%;
       }

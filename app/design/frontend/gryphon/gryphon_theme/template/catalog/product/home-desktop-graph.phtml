@@ -1,0 +1,221 @@
+<!-- 
+<div id="under-construction-disclaimer">
+  <p>Home page is under-construction</p>
+</div>
+-->
+
+
+<!--
+  ____  _____ ____  _  _______ ___  ____
+ |  _ \| ____/ ___|| |/ /_   _/ _ \|  _ \
+ | | | |  _| \___ \| ' /  | || | | | |_) |
+ | |_| | |___ ___) | . \  | || |_| |  __/
+ |____/|_____|____/|_|\_\ |_| \___/|_|
+
+-->
+
+
+<style id="graph-zooming-style"></style>
+
+<article id="graph-section" class="visible-md visible-lg">
+
+  <div id="monograph-combined-graph-data" data-graph-data-url="http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/json/graph-data.json" data-combined-graph-data-url="http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/json/combined-graph-data.json"></div>
+
+
+
+  <div id="graph-section-combination-graph-container">
+    <div id="graph-section-combination-graph-margin">
+      <div id="graph-section-combination-graph" class="monogram-combination-graph">
+        <div class="graph-svg"></div>
+        <div class="graph-name-overlay">
+          <div class="graph-name-item floral-version"></div>
+          <div class="graph-name-item creamy-version"></div>
+          <div class="graph-name-item marine-version"></div>
+          <div class="graph-name-item mineral-version"></div>
+          <div class="graph-name-item citrus-version"></div>
+          <div class="graph-name-item fruity-version"></div>
+          <div class="graph-name-item sweet-version"></div>
+          <div class="graph-name-item wood-version"></div>
+          <div class="graph-name-item herbaceous-version"></div>
+        </div>
+        <div class="graph-overlay"></div>
+      </div>
+    </div>
+  </div> <!-- graph-section-combination-graph-container -->
+  
+
+
+  <div id="graph-section-center-copy-container">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+
+
+          <div id="graph-section-center-copy">
+
+            <!-- 
+            <div id="graph-social-icons-v2-container">
+              <div id="graph-social-icons-v2">
+                <ul>
+                  <li><a href="http://www.twitter.com" class="fa fa-twitter"></a></li>
+                  <li><a href="http://www.facebook.com" class="fa fa-facebook"></a></li>
+                </ul>
+              </div>
+            </div>
+            -->
+
+            <h2>Testing <span style="color: #f1efee;">+</span> Testing</h2>
+            <p>Suspendisse in enim nisl. Duis nec lacus magna. Curabitur tempus metus in libero lacinia posuere. Duis accumsan bibendum dapibus.</p>
+
+            
+            <!--
+                ____ _____  _
+               / ___|_   _|/ \
+              | |     | | / _ \
+              | |___  | |/ ___ \
+               \____| |_/_/   \_\
+
+            -->
+            <div id="successmsg" style="color:greenyellow;margin-top:10px;"></div>
+            <div id="ajax_loadermsg" style="color:greenyellow;margin-top:10px;display:none">Processing...Please wait.</div>
+            <div class="cta-container">
+
+              <?php if(Mage::getSingleton('customer/session')->isLoggedIn()): ?>
+                <a href="javascript:void(0);" id="savedlayering" class="square-cta square-cta-01">Save tea layering</a>
+                
+                <?php
+                $customer = Mage::getSingleton('customer/session')->getCustomer();    
+                  $cemail = $customer->getEmail();
+                $cid = $customer->getId();  
+                ?>  
+              <?php else: ?>
+                <?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
+                <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta square-cta-01">Visit tea store</a>
+              <?php endif; ?>
+
+              <a href="javascript:void(0);" class="add-both-to-cart square-cta square-cta-02">add both to cart</a>
+              <a href="#selection" class="square-cta square-cta-03">choose another layering</a>
+
+              <div class="home-customized-share-button">
+                <span>Share Layering</span>
+                <ul>
+                  <li><a href="http://www.pinterest.com" target="_blank" class="fa fa-pinterest"></a></li>
+                  <li><a href="http://www.twitter.com" target="_blank" class="fa fa-twitter"></a></li>
+                  <li><a href="http://www.facebook.com" class="fa fa-facebook"></a></li>
+                </ul>
+              </div>
+
+              <a href="#selection" >choose another layering</a>
+            </div>
+            <?php
+
+            //$_Pdetails = Mage::getModel('catalog/product')->loadByAttribute('sku','earl-grey-neroli');
+            ?>
+            <div style="display:none">
+            <?php 
+            //echo $_Pdetails->getName();echo '<br>';
+            //echo $_Pdetails->getDescription();echo '<br>';
+            //echo $_Pdetails->getPrice();echo '<br>';
+            //echo $_Pdetails->getProductUrl();echo '<br>';
+            //echo $_Pdetails->getId();
+            //echo '<br>';
+            ?>
+            </div>
+            <script type="text/javascript">
+                jQuery(function () {
+                    jQuery("#savedlayering").click(function(){
+                  var pidvalue1 = jQuery("#graph-column-01 .layerteaclass").attr('id');
+                  var pidvalue2 = jQuery("#graph-column-02 .layerteaclass").attr('id');
+                  //alert(pidvalue1);alert(pidvalue2);
+                  // jQuery("#successmsg").hide();
+                  // jQuery("#ajax_loadermsg").show();    
+                  var cid = '<?php echo $cid ?>';
+                  var pid = pidvalue1+'|||'+pidvalue2;
+                  var dataString = 'cid='+ cid + '&pid='+ pid;
+                        jQuery.ajax({
+                    type: "POST",
+                    data: dataString,
+                            url: "<?php echo Mage::getUrl('savelayering/index/ajax'); ?>"
+                        }).done(function(result) { 
+                    jQuery("#ajax_loadermsg").hide();
+                    // jQuery("#successmsg").show();
+                    // jQuery("#successmsg").html(''+result+'');        
+                    alert(result);
+                        });
+                    });
+                });
+
+            </script>
+            <!--
+                ____ _____  _      _____ _   _ ____
+               / ___|_   _|/ \    | ____| \ | |  _ \
+              | |     | | / _ \   |  _| |  \| | | | |
+              | |___  | |/ ___ \  | |___| |\  | |_| |
+               \____| |_/_/   \_\ |_____|_| \_|____/
+
+            -->
+
+
+
+          </div> <!-- graph-section-center-copy -->
+          
+        </div>
+      </div>
+    </div>
+  </div> <!-- #graph-section-center-copy-container -->
+
+
+
+
+
+  <div id="graph-selction-a" class="graph-selection">
+    <div class="graph-selection-content"></div>
+    <div class="graph-selection-instructions">
+      <div class="graph-selection-instructions-btn" id="graph-selection-next-tea-btn">
+        <div class="fa fa-arrows-h"></div>
+        <h4>Next Tea</h4>
+      </div>
+    </div>
+  </div> <!-- graph-selction-a -->
+
+
+  <div id="graph-selction-b" class="graph-selection">
+    <div class="graph-selection-content"></div>
+    <div class="graph-selection-instructions">
+      <div class="graph-selection-instructions-btn" id="graph-selection-next-layering-btn">
+        <div class="fa fa-arrows-v"></div>
+        <h4>Next Suggestion</h4>
+      </div>
+    </div>
+  </div> <!-- graph-selction-b -->
+
+  
+
+
+
+  
+
+  <div id="graph-desktop-guide-container">
+    <div id="graph-desktop-guide">
+
+      <div id="graph-guide-item-01" class="graph-guide-item">
+        <div class="graph-guide-item-icon">
+        <div class="guide-arrow-icon guide-arrow-icon-01"></div>
+        <div class="guide-arrow-icon guide-arrow-icon-02"></div>
+        <div class="guide-mouse-icon"></div>
+        </div>
+        <h4>swipe / drag left or right <br />to see next tea recommendations</h4>
+      </div> <!-- #graph-guide-item-01 -->
+
+      <div id="graph-guide-02" class="graph-guide-item">
+        <div class="graph-guide-item-icon">
+        <div class="guide-arrow-icon guide-arrow-icon-03"></div>
+        <div class="guide-arrow-icon guide-arrow-icon-04"></div>
+        <div class="guide-mouse-icon"></div>
+        </div>
+        <h4>scroll up and down <br />to see next layering suggestion</h4>
+      </div> <!-- #graph-guide-02 -->
+    </div>
+  </div>
+</article>

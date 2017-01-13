@@ -34,6 +34,9 @@ monogram.page.Home = function(options, element) {
   this.tea_selection_section =  $j("#home-tea-selection-section");
   this.graph_section_element =          $j("#home-graph-section");
 
+  this.desktop_header = $j('#desktop-header .container-fluid');
+  TweenMax.to(this.desktop_header, 0.0, {autoAlpha:0});
+
   /**
    * @type {manic.ui.Mouse}
    */
@@ -129,7 +132,12 @@ monogram.page.Home.prototype.init = function() {
     $j('#graph-desktop-guide-container').click(function(event){
       TweenMax.killTweensOf($('#graph-desktop-guide-container'));
       TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:0});
-    });
+
+      TweenMax.killDelayedCallsTo(this.display_graph_section_delayed_a_little_before);
+      this.display_graph_section_delayed_a_little_before();
+
+
+    }.bind(this));
 
   }
 
@@ -152,6 +160,8 @@ monogram.page.Home.prototype.init = function() {
 monogram.page.Home.prototype.display_intro_section = function(){
   console.log('display_intro_section');
 
+  TweenMax.to(this.desktop_header, 0.5, {autoAlpha:0});   // this is new
+
   this.intro_section.addClass('slide-animate-in');
   this.tea_selection_section.removeClass('slide-animate-in');
   this.graph_section_element.removeClass('slide-animate-in');
@@ -164,6 +174,7 @@ monogram.page.Home.prototype.display_intro_section = function(){
   TweenMax.delayedCall(1, this.display_intro_section_delayed, [], this);
   TweenMax.killDelayedCallsTo(this.display_selection_section_delayed);
   TweenMax.killDelayedCallsTo(this.display_graph_section_delayed);
+  TweenMax.killDelayedCallsTo(this.display_graph_section_delayed_a_little_before);
 
   TweenMax.to(this.intro_section,0.5,           {autoAlpha:1});
   TweenMax.to(this.tea_selection_section,0.5,   {autoAlpha:0});
@@ -183,6 +194,9 @@ monogram.page.Home.prototype.display_intro_section_delayed = function(){
 monogram.page.Home.prototype.display_selection_section = function(){
   console.log('display_selection_section');
 
+  TweenMax.to(this.desktop_header, 0.5, {autoAlpha:1});   // this is new
+  
+
   this.intro_section.removeClass('slide-animate-in');
   this.tea_selection_section.addClass('slide-animate-in');
   this.graph_section_element.removeClass('slide-animate-in');
@@ -196,6 +210,7 @@ monogram.page.Home.prototype.display_selection_section = function(){
   TweenMax.delayedCall(1, this.display_selection_section_delayed, [], this);
   TweenMax.killDelayedCallsTo(this.display_intro_section_delayed);
   TweenMax.killDelayedCallsTo(this.display_graph_section_delayed);
+  TweenMax.killDelayedCallsTo(this.display_graph_section_delayed_a_little_before);
 
   TweenMax.to(this.intro_section,0.5,           {autoAlpha:0});
   TweenMax.to(this.tea_selection_section,0.5,   {autoAlpha:1});
@@ -211,21 +226,20 @@ monogram.page.Home.prototype.display_selection_section_delayed = function(){
 
 
 
+
+
 monogram.page.Home.prototype.display_graph_section = function(){
   console.log('display_graph_section');
 
+  TweenMax.to(this.desktop_header, 0.5, {autoAlpha:1});   // this is new
+
   this.intro_section.removeClass('slide-animate-in');
   this.tea_selection_section.removeClass('slide-animate-in');
-  this.graph_section_element.addClass('slide-animate-in');
+  
+  // this.graph_section_element.addClass('slide-animate-in');   // moved
 
 
-  if (this.has_displayed_guide == false) {
-    this.has_displayed_guide = true;
-    TweenMax.killTweensOf($('#graph-desktop-guide-container'));
-
-    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:1, delay: 2});
-    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:0, delay: 3.5});
-  }
+  
   
   
 
@@ -234,15 +248,49 @@ monogram.page.Home.prototype.display_graph_section = function(){
   //this.graph_section_element.removeClass('animate-in');  
   
   // 0.5 waiting time & 0.5 half of slide transition
-  TweenMax.delayedCall(1, this.display_graph_section_delayed, [], this);
+  /////  TweenMax.delayedCall(1, this.display_graph_section_delayed, [], this);       // this is new
   TweenMax.killDelayedCallsTo(this.display_selection_section_delayed);
   TweenMax.killDelayedCallsTo(this.display_intro_section_delayed);
+  TweenMax.killDelayedCallsTo(this.display_graph_section_delayed_a_little_before);
+
 
 
   TweenMax.to(this.intro_section,0.5,           {autoAlpha:0});
   TweenMax.to(this.tea_selection_section,0.5,   {autoAlpha:0});
   TweenMax.to(this.graph_section_element,0.5,           {autoAlpha:1});
 
+
+
+  // display guide or display actual content
+
+  if (this.has_displayed_guide == false) {
+    this.has_displayed_guide = true;
+    TweenMax.killTweensOf($('#graph-desktop-guide-container'));
+
+    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:1, delay: 0});
+    TweenMax.to($j('#graph-desktop-guide-container'), 0.5, {autoAlpha:0, delay: 1.5 + 4});
+
+    // TweenMax.delayedCall(2, this.display_graph_section_delayed_a_little_before, [], this);    // IMPORTANT
+    TweenMax.delayedCall(2 + 4, this.display_graph_section_delayed_a_little_before, [], this);    // IMPORTANT
+
+  } else {
+
+
+    this.display_graph_section_delayed_a_little_before(); // IMPORTANT
+  }
+  
+
+
+  
+
+};
+
+
+// for that additional delay they wanted..
+monogram.page.Home.prototype.display_graph_section_delayed_a_little_before = function(){
+  TweenMax.delayedCall(1, this.display_graph_section_delayed, [], this);
+
+  this.graph_section_element.addClass('slide-animate-in');    // this was moved.
 
   if(this.graph_section != null){
     this.graph_section.enable_graph();
@@ -263,7 +311,7 @@ monogram.page.Home.prototype.display_graph_section = function(){
       if(target_main_index != -1){
         this.graph_section.display_combination_index(target_main_index,0);
 
-
+        /*
         var current_url           = window.location.href;
         var twitter_share_url     = 'https://twitter.com/share?url=' + encodeURIComponent(current_url) + 
                                     '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + this.page_hash_02);
@@ -271,11 +319,14 @@ monogram.page.Home.prototype.display_graph_section = function(){
 
         var main_product_name = this.graph_section.main_data_item.data_name;
         var sub_product_name = this.graph_section.sub_data_item.data_name;        
-                
-        $j('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
-        $j('#graph-social-icons ul li a.fa-facebook').attr('href', facebook_share_url);
-        $j('#graph-social-icons ul li a.fa-facebook').data('main_product_name', main_product_name);
-        $j('#graph-social-icons ul li a.fa-facebook').data('sub_product_name', sub_product_name);
+
+        $j('.home-customized-share-button a.fa-twitter').attr('href', twitter_share_url);
+        $j('.home-customized-share-button a.fa-facebook').attr('href', facebook_share_url);
+        $j('.home-customized-share-button a.fa-facebook').data('main_product_name', main_product_name);
+        $j('.home-customized-share-button a.fa-facebook').data('sub_product_name', sub_product_name);
+        */
+
+        
 
       } else {
         this.graph_section.display_combination_index(0,0);
@@ -287,20 +338,28 @@ monogram.page.Home.prototype.display_graph_section = function(){
       this.graph_section.display_combination(this.page_hash_02, this.page_hash_03);
 
 
+      /*
       var current_url           = window.location.href;
       var twitter_share_url     = 'https://twitter.com/share?url=' + encodeURIComponent(current_url) + 
                                   '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + this.page_hash_02);
       var facebook_share_url    = encodeURIComponent(current_url);
-              
-      $j('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
-      $j('#graph-social-icons ul li a.fa-facebook').attr('href', facebook_share_url);
+
+      var main_product_name = this.graph_section.main_data_item.data_name;
+      var sub_product_name = this.graph_section.sub_data_item.data_name;        
+      
+      $j('.home-customized-share-button a.fa-twitter').attr('href', twitter_share_url);
+      $j('.home-customized-share-button a.fa-facebook').attr('href', facebook_share_url);
+      $j('.home-customized-share-button a.fa-facebook').data('main_product_name', main_product_name);
+      $j('.home-customized-share-button a.fa-facebook').data('sub_product_name', sub_product_name);
+      */
 
     }
     
 
   }
-
 };
+
+
 monogram.page.Home.prototype.display_graph_section_delayed = function(){
   this.graph_section_element.addClass('animate-in');
 
@@ -393,6 +452,10 @@ monogram.page.Home.prototype.create_graph = function() {
 
   if ($j('#graph-section').length != 0) {
     this.graph_section = new monogram.component.GraphSection({}, $j('#graph-section'));
+
+    goog.events.listen(this.graph_section, monogram.component.GraphSection.ON_ITEM_SELECTED, this.on_graph_section_item_selected.bind(this));
+    
+    
   }
 
   
@@ -456,17 +519,39 @@ monogram.page.Home.prototype.create_graph_mobile = function(){
 
     console.log('monogram.graph.CombinationDataLoader.ON_COMBINED_GRAPH_DATA_LOAD_COMPLETE');
 
+    var random_main_sub_desc = this.combination_data_loader.get_randomized_ids();
+
+
+
+
+    
+    
+    
+    
+
+
+
+
     // this.combination_graph.set_data
     
     /**
      * @type {monogram.graph.Data}
      */
-    var graph_data_01 = this.combination_data_loader.get_data_by_id('earl-grey-neroli');
+    var graph_data_01 = this.combination_data_loader.get_data_by_id(random_main_sub_desc.main_id);   //var graph_data_01 = this.combination_data_loader.get_data_by_id('earl-grey-neroli');
 
     /**
      * @type {monogram.graph.Data}
      */
-    var graph_data_02 = this.combination_data_loader.get_data_by_id('shiso-mint');
+    var graph_data_02 = this.combination_data_loader.get_data_by_id(random_main_sub_desc.sub_id);  //var graph_data_02 = this.combination_data_loader.get_data_by_id('shiso-mint');
+
+
+
+    $j('#home-mobile-landing-graph-bottom #graph-selection-name-01').html('<h2>' + graph_data_01.data_html_name + '</h2>');
+    $j('#home-mobile-landing-graph-bottom #graph-selection-name-02').html('<div class="plus-sign">+</div><h2>' + graph_data_02.data_html_name + '</h2>');
+    $j('#home-mobile-landing-graph-bottom p').html(random_main_sub_desc.desc);
+    
+    
+
     
     this.combination_graph.set_data_01(graph_data_01);
     this.combination_graph.set_data_02(graph_data_02);
@@ -629,7 +714,8 @@ monogram.page.Home.prototype.update_page_layout = function() {
 
 
   // TEMP GRAPH UPDATE START
-  
+    
+  /*
   var target_height = $j(window).height() - 90;
   console.log('target_height: ' + target_height);
 
@@ -643,28 +729,66 @@ monogram.page.Home.prototype.update_page_layout = function() {
   $j('#graph-center-column-container').css({
     'height': target_height + 'px'
   });
+  */
 
 
 
   var space_extra = 600 - 768;
-  var target_height = $j(window).height() - space_extra - 351 - 31;
+  // var target_height = $j(window).height() - space_extra - 351 - 31;
+  /// var target_height = $j(window).height() - space_extra - 211 - 31;
+  var target_height = $j(window).height() - space_extra - 191 - 31;
 
+  /*
+  if ($j(window).width() <=  1200) {
+    target_height -= 110;
+    target_height -= 30;
+  }
+  */
+ 
+
+  if (manic.IS_ACTUAL_TABLET == true && manic.IS_TABLET_LANDSCAPE == true) {
+    target_height *= 0.8;
+  }
+
+
+
+  var offset = -1 * (target_height - 600)/2;
   
 
   // var target_zoom = target_height / 600;
   var target_zoom = target_height / 600;
+  var target_inverse_zoom = 600 / target_height;
 
+  // replaced zoom with css transform
+  /*
   $j('#graph-section-combination-graph').css({
-    'zoom': target_zoom
+    'zoom': target_zoom,
+  });
+  */
+  TweenMax.to($j('#graph-section-combination-graph'), 0, {scaleX: target_zoom, scaleY: target_zoom});
+
+
+
+  $j('#graph-zooming-style').empty();
+  // $j('#graph-zooming-style').html('.graph-svg-circle .graph-svg-circle-text { zoom: ' + target_inverse_zoom + ' }');
+  $j('#graph-zooming-style').html('.graph-svg-circle .graph-svg-circle-text { transform: scaleX(' + target_inverse_zoom + ') scaleY(' + target_inverse_zoom + ') translate(-50%, -50%)}');
+  
+
+  $j('#graph-section-combination-graph-margin').css({
+    'height': target_height + 'px',
+    'width': target_height + 'px',
+    'margin-left': offset + 'px',
+    'margin-top': offset + 'px'
   });
 
-
-
-
-
   
+
+
+
+  /*
   var mobile_target_zoom = 0.6333;
   var mobile_target_height = (mobile_target_zoom * 600);
+  */
   
 
   // moved to css
@@ -717,7 +841,7 @@ monogram.page.Home.prototype.update_page_layout = function() {
  */
 monogram.page.Home.prototype.scroll_to_target = function(str_param, str_param_2, str_param_3) {
   monogram.page.Home.superClass_.scroll_to_target.call(this, str_param, str_param_2, str_param_3);
-
+  
 
   if (manic.IS_MOBILE == true) {
 
@@ -800,6 +924,46 @@ monogram.page.Home.prototype.on_scroll_to_no_target = function(){
 //
 
 
+
+/**
+ * @param  {object} event
+ */
+monogram.page.Home.prototype.on_graph_section_item_selected = function(event) {
+
+  console.log('on_graph_section_item_selected');
+  console.log('main item: ' + this.graph_section.main_data_item.data_id);
+  console.log('sub item: ' + this.graph_section.sub_data_item.data_id);
+
+  var main_name = this.graph_section.main_data_item.data_name;
+  var sub_name = this.graph_section.sub_data_item.data_name;
+
+  var main_id = this.graph_section.main_data_item.data_id;
+  var sub_id = this.graph_section.sub_data_item.data_id;
+
+  var image = 'http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/images/layered_images/'+main_id+'-with-'+sub_id+'.jpg';
+  var combine_desc = $j('#graph-section-center-copy p').html();
+
+  var current_url = 'http://www.monogramtea.com/#graph/' + main_id + '/' + sub_id;
+  // var current_url           = window.location.href;
+  
+  var twitter_share_url     = 'https://twitter.com/share?url=' + encodeURIComponent(current_url) + 
+                              '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + main_id + ',' + sub_id);
+
+  var facebook_share_url    = current_url      // current url = facebook share url (sharing functionality in main.js)
+
+
+  var pinterest_share_url = '//pinterest.com/pin/create%2Fbutton/?url=' + encodeURIComponent(current_url) + '&media=' + encodeURIComponent(image) + '&description=' + encodeURIComponent(combine_desc);
+
+    
+  $j('.home-customized-share-button a.fa-pinterest').attr('href', pinterest_share_url);
+  
+  $j('.home-customized-share-button a.fa-twitter').attr('href', twitter_share_url);
+  $j('.home-customized-share-button a.fa-facebook').attr('href', facebook_share_url);
+  $j('.home-customized-share-button a.fa-facebook').data('main_product_name', main_name);
+  $j('.home-customized-share-button a.fa-facebook').data('sub_product_name', sub_name);
+  
+
+};
 
 //    _   _ _____ ___ _
 //   | | | |_   _|_ _| |

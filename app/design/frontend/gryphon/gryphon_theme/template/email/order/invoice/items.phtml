@@ -28,14 +28,14 @@
 <?php $_order   = $this->getOrder() ?>
 <?php if ($_invoice && $_order): ?>
 <tr>
-  <td align="center" style="padding: 40px 0; font-size: 12px; line-height: 19px; font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy">
+  <td align="center" style="padding: 40px 0; font-size: 12px;line-height: 21px; font-family: Domine,'Times New Roman',Times,serif;font-style: normal; font-weight: 400;" class="padding-copy">
     <table width="100%"  border="0" cellspacing="0" cellpadding="0">
-      <thead style="border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;text-transform:uppercase;font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif;font-size: 10px; line-height: 20px; letter-spacing: 0.03em; color: #777; padding-top: 25px;padding-bottom: 25px;">
+      <thead style="border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;text-transform:uppercase;font-size: 12px;line-height: 21px; font-family: Domine,'Times New Roman',Times,serif;font-style: normal; font-weight: 400; padding-top: 25px;padding-bottom: 25px;">
         <tr>
-          <th style="padding:10px;text-align:left;background:none;"><?php echo $this->__('ITEM') ?></th>                                                      
-          <th style="padding:10px;text-align:left;background:none;"><?php echo $this->__('SKU') ?></th>
-          <th style="padding:10px;text-align:center;background:none;"><?php echo $this->__('QTY') ?></th>
-          <th style="padding:10px;text-align:right;background:none;"><?php echo $this->__('SUBTOTAL') ?></th>
+          <th style="color: #efeeed;padding:10px;text-align:left;background:none;"><?php echo $this->__('ITEM') ?></th>                                                      
+          <th style="color: #efeeed;padding:10px;text-align:left;background:none;"><?php echo $this->__('SKU') ?></th>
+          <th style="color: #efeeed;padding:10px;text-align:center;background:none;"><?php echo $this->__('QTY') ?></th>
+          <th style="color: #efeeed;padding:10px;text-align:right;background:none;"><?php echo $this->__('SUBTOTAL') ?></th>
         </tr>
       </thead>
       <?php $i=0; foreach ($_invoice->getAllItems() as $_item): ?>
@@ -44,7 +44,7 @@
             <?php echo $this->getItemHtml($_item) ?>
         </tbody>
       <?php endforeach; ?>
-      <tfoot style="border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;text-transform:uppercase;font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif;font-size: 10px; line-height: 20px; letter-spacing: 0.03em; color: #777; padding-top: 25px;padding-bottom: 25px;">
+      <tfoot style="border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;text-transform:uppercase;font-size: 12px;line-height: 21px; font-family: Domine,'Times New Roman',Times,serif;font-style: normal; font-weight: 400; color: #efeeed!important; padding-top: 25px;padding-bottom: 25px;">
         <?php echo $this->getChildHtml('invoice_totals')?>
       </tfoot>
     </table>
