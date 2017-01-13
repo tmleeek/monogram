@@ -25,11 +25,15 @@
     margin-bottom: 15px;
 
     padding-left: 68px;
+
+    @media all and (max-width: 991px) {
+      padding-left: 0px;  
+    }
   }
   p {
     // text-align: center;
     text-align: left;
-
+  
     color: @off-white;
     // margin-bottom: 60px;
     margin-bottom: 30px;
@@ -38,6 +42,10 @@
     line-height: 20px;
 
     padding-left: 68px;
+
+    @media all and (max-width: 991px) {
+      padding-left: 0px;  
+    }
 
     @media only screen and (max-width: 480px) {
       margin-bottom: 30px;
@@ -82,6 +90,11 @@
       @media only screen and (max-width: 991px) {
         display: block;
         padding: 0px;
+
+
+        .contact-title-container {
+          padding: 30px 20px 0px;
+        }
       }
     }
 
@@ -92,13 +105,17 @@
         padding-left: 50px; 
       }
       @media only screen and (max-width: 991px) {
-        padding: 50px 20px;
+        padding: 0px 20px;
       }
     }
   }
 
   .inputs {
     margin-bottom: 80px;  
+
+    @media all and (max-width: 991px) {
+      margin-bottom: 40px;
+    }
 
     .validation-advice {
       margin: 0px;
@@ -126,6 +143,10 @@
 
     input.input-class {
       width: 236px;
+
+      @media all and (max-width: 991px) {
+        width: 100%;
+      }
       @media all and (max-width: 480px) {
         width: 100%;
       }
@@ -133,6 +154,9 @@
     }
 
     .intl-tel-input {
+      @media all and (max-width: 991px) {
+        width: 100%;
+      }
       @media all and (max-width: 480px) {
         width: 100%;
       }      
@@ -142,7 +166,11 @@
       display: inline-block;
       width: 236px;
       position: relative;
+      
 
+      @media all and (max-width: 991px) {
+        width: 100%;
+      }
       @media all and (max-width: 480px) {
         width: 100%;
       }
@@ -190,6 +218,10 @@
       max-height: 200px;
       padding-top: 8px;
 
+      @media all and (max-width: 991px) {
+        width: 100%;
+      }
+
       @media all and (max-width: 480px) {
         width: 100%;
       }
@@ -219,12 +251,18 @@
     .contact-label-container {
       label {        
         padding-left: 68px;
-        @media all and (max-width: 480px) {
+        @media all and (max-width: 991px) {
           padding-left: 0px;
         }
       }
     }
     
+  }
+
+  #contact-us-send-btn {
+    @media only screen and (max-width: 480px) {
+      width: 100%;
+    }
   }
      
 }

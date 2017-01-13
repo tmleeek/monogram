@@ -28,11 +28,18 @@
   <div class="container-fluid">
     <div class="row contact-content-container">
       <div id="contact-col-1" class="col-md-6 v-align">
+          <div class="contact-title-container visible-xs visible-sm">
+            <h1>contact us</h1>
+            <p>For any feedback or enquiries, please feel free to drop us an email with the contact form below. We will be in touch as soon as we can to assist you.</p>
+          </div>
           <div id="contact-img-content"></div>
       </div><!--
       --><div id="contact-col-2" class="col-md-6 v-align">  
-        <h1>contact us</h1>
-        <p>For any feedback or enquiries, please feel free to drop us an email with the contact form below. We will be in touch as soon as we can to assist you.</p>
+
+        <div class="contact-title-container hidden-xs hidden-sm">
+          <h1>contact us</h1>
+          <p>For any feedback or enquiries, please feel free to drop us an email with the contact form below. We will be in touch as soon as we can to assist you.</p>
+        </div>
 
         <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
 
@@ -41,7 +48,7 @@
             <div class="col-md-12">
               <div class="inputs">
                 <div class="row">
-                  <div class="col-md-5 col-sm-4 contact-label-container v-align">
+                  <div class="col-md-5 col-sm-3 contact-label-container v-align">
                     <label for="first_name" class="for-input">*<?php echo Mage::helper('contacts')->__('First Name') ?></label>
                   </div><!--
                   --><div class="col-md-6 col-sm-6 v-align">
@@ -50,7 +57,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-5 col-sm-4 contact-label-container v-align">
+                  <div class="col-md-5 col-sm-3 contact-label-container v-align">
                     <label for="last_name" class="for-input">*<?php echo Mage::helper('contacts')->__('Last Name') ?></label>
                   </div><!--
                   --><div class="col-md-6 col-sm-6 v-align">
@@ -58,7 +65,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-5 col-sm-4 contact-label-container v-align">
+                  <div class="col-md-5 col-sm-3 contact-label-container v-align">
                     <label for="email" class="for-input">*<?php echo Mage::helper('contacts')->__('Email Address') ?></label>
                   </div><!--
                   --><div class="col-md-6 col-sm-6 v-align">
@@ -66,7 +73,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-5 col-sm-4 contact-label-container v-align">
+                  <div class="col-md-5 col-sm-3 contact-label-container v-align">
                     <label for="phone_no" class="for-input">*<?php echo Mage::helper('contacts')->__('Phone Number') ?></label>
                   </div><!--
                   --><div class="col-md-6 col-sm-6 v-align">                
@@ -74,7 +81,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-5 col-sm-4 contact-label-container v-align">
+                  <div class="col-md-5 col-sm-3 contact-label-container v-align">
                     <label for="type_of_enquiry" class="for-input">*<?php echo Mage::helper('contacts')->__('Type of Enquiry') ?></label>
                   </div><!--
                   --><div class="col-md-6 col-sm-6 v-align">
@@ -90,7 +97,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-5 col-sm-4 contact-label-container">
+                  <div class="col-md-5 col-sm-3 contact-label-container">
                     <label for="message" class="for-input">*<?php echo Mage::helper('contacts')->__('Message') ?></label>
                   </div><!--
                   --><div class="col-md-6 col-sm-6">
@@ -102,7 +109,7 @@
           </div>
 
           <div class="row">
-            <div class="col-md-6 col-md-offset-5 col-md-6 col-sm-offset-4">
+            <div class="col-md-6 col-md-offset-5 col-md-6 col-sm-offset-3">
               <input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
               <button type="submit" class="cta square-cta" id="contact-us-send-btn" title="<?php echo Mage::helper('contacts')->__('Submit') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Send Message To Monogram') ?></span></span></button>
             </div>
