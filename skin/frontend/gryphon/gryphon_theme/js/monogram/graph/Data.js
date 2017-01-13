@@ -138,9 +138,9 @@ monogram.graph.Data.STEEPING_TIME_STRING = ' minutes';
  * @type {Array}
  */
 monogram.graph.Data.STEEPING_TEMPERATURE_NAME_ARRAY = [];
-monogram.graph.Data.STEEPING_TEMPERATURE_NAME_ARRAY['lesstb']   = '< 80&deg; Celcius';
-monogram.graph.Data.STEEPING_TEMPERATURE_NAME_ARRAY['80cel']    = '< 90&deg; Celcius';
-monogram.graph.Data.STEEPING_TEMPERATURE_NAME_ARRAY['90cel']    = 'Less than boiling';
+monogram.graph.Data.STEEPING_TEMPERATURE_NAME_ARRAY['80cel']   = '< 80&deg; Celcius';
+monogram.graph.Data.STEEPING_TEMPERATURE_NAME_ARRAY['90cel']    = '< 90&deg; Celcius';
+monogram.graph.Data.STEEPING_TEMPERATURE_NAME_ARRAY['lesstb']    = 'Less than boiling';
 
 
 
