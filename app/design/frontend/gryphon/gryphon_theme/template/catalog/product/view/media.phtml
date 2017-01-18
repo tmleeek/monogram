@@ -88,7 +88,7 @@
             foreach ($this->getGalleryImages() as $_image): 
         ?>
             <div class="custom-product-carousel-item">
-                <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->keepFrame(false)->resize(748, 713); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>" class="img-responsive"/>
+                <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->constrainOnly(false)->keepAspectRatio(true)->keepFrame(false)->resize(600, null); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>" class=""/>
             </div>
         <?php
             $i++;

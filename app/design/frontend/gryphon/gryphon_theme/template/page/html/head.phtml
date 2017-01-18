@@ -145,3 +145,15 @@ function getSkinUrl() { return '<?php echo $skinUrl; ?>'; }
   ga('send', 'pageview');
 
 </script>
+
+<?php 
+$currentUrl = Mage::helper('core/url')->getCurrentUrl();
+$url = Mage::getSingleton('core/url')->parseUrl($currentUrl);
+$path = $url->getPath();
+?>
+
+<?php if($path=="/"): ?>
+  <script src="<?php echo $this->getSkinUrl('js/page-home.min.js'); ?>"></script>
+<?php else: ?>
+  <script src="<?php echo $this->getSkinUrl('js/page-default.min.js'); ?>"></script>
+<?php endif; ?>

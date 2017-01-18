@@ -467,12 +467,18 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
 			Mage::log($query['tsc']['tsc'], null, 'kkkkk.log');
 			?>
 			<?php if(($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium')&&($countryId=='SG' || $countryId=='sg')): ?>
-				<div class="row selfcollect">
-					<div class="col-md-6">
-						<label for="billing:traderselfcollect"><?php echo $this->__('Self Collect:') ?></label>
-							<input type="radio" onclick="traderselfcollectyesno('traderselfcollectyes','traderselfcollectno');" id="traderselfcollectno" name="traderselfcollect" value="0" <?php if($tradselfcollect != 1 && $tradselfcollect != '1'){echo 'checked';} ?> />No
-							<input type="radio" onclick="traderselfcollectyesno('traderselfcollectno','traderselfcollectyes');" id="traderselfcollectyes" name="traderselfcollect" value="1" <?php if($tradselfcollect ==1 || $tradselfcollect == '1'){echo 'checked';} ?> />Yes					 
-					</div>
+				<div class="selfcollect">
+                    <div class="row">
+    					<div class="col-md-6">
+                            <label for="billing:traderselfcollect"><?php echo $this->__('Self Collect:') ?></label>
+                            <div class="selfcollect-option">        						
+    							<input type="radio" onclick="traderselfcollectyesno('traderselfcollectyes','traderselfcollectno');" id="traderselfcollectno" name="traderselfcollect" value="0" <?php if($tradselfcollect != 1 && $tradselfcollect != '1'){echo 'checked';} ?> /><label for="traderselfcollectno"><span></span>No</label>
+                            </div>
+                            <div class="selfcollect-option">
+							     <input type="radio" onclick="traderselfcollectyesno('traderselfcollectno','traderselfcollectyes');" id="traderselfcollectyes" name="traderselfcollect" value="1" <?php if($tradselfcollect ==1 || $tradselfcollect == '1'){echo 'checked';} ?> /><label for="traderselfcollectyes"><span></span>Yes</label>
+                            </div>			 
+    					</div>
+                    </div>
 				</div></br>
 			 <?php endif; ?>
         </form>        

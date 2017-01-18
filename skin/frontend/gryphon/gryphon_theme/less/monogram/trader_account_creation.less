@@ -3,12 +3,35 @@
   overflow-x: hidden;
 }
 
-.trader-account-creation-section-1 {
+#monogram-page-trade-account-creation-title-section{    
+  background: #9c986d;
+  padding-top: 73px;
+  padding-bottom: 73px;
+}
+#monogram-page-trade-account-creation-title{
+  text-align: center;
+  color: @off-white;   
 
-  padding-top: 70px;
-  @media only screen and (max-width: 991px) {
-    padding-top: 0px;
+  h1 {
+    .header-font-02;
+    font-size: 26px;
+    line-height: 30px;    
+    text-transform: uppercase;
+    color: @off-white;  
+    margin-bottom: 15px;
+  } 
+  p {      
+    color: @white;
   }
+}
+
+#trader-account-creation-section-1 {
+
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @media only screen and (max-width: 991px) {
+    padding-top: 30px;
+  }  
 
   h1 {
     .header-font-02;
@@ -22,16 +45,20 @@
     // margin-bottom: 35px;
     margin-bottom: 15px;
   }
-  p {
-    text-align: left;
-    // color: @off-white;
-    color: @white;
-    // margin-bottom: 60px;
-    margin-bottom: 30px;
+  h4{
+    .subheader-font;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: @off-white;
 
-    @media only screen and (max-width: 480px) {
-      margin-bottom: 30px;
-    }
+    // margin-bottom: 1px;
+    margin-bottom: 8px;          // new
+  }
+  p {
+    text-align: left;    
+    color: @white;
   }
 
   .trade-signup {
@@ -43,13 +70,68 @@
 
     .main-content {
       .first-content {
-
+        padding-bottom: 50px;
+        @media all and (max-width: 991px) {
+          padding-bottom: 30px;
+        }
       }
       .last-content {
         #trader_register {
-          textarea {
-            width: 100%;
+          textarea, input[type=text], input[type=email], .dropdown, .intl-tel-input {
+            width: 100%; 
           }
+
+          input[type=file] {
+            background: none;
+            -webkit-text-fill-color: inherit !important;
+            padding-left: 0px;
+          }
+
+          label {
+            // color: @off-white;
+            color: @white;
+
+            text-transform: uppercase;
+            // .brandon-grotesque-regular;
+            .header-font;
+
+            font-size: 10px;
+            line-height: 10px;
+            letter-spacing: 0.05em;    
+
+            // padding-left: 10px;      
+            padding-left: 0px;
+
+            @media only screen and (max-width: 991px) {
+              padding-left: 0px;
+            }
+          }
+
+
+          label[for=gender],
+          label[for=is_subscribed]{
+            padding-left: 6px;
+            color: @off-white !important;
+          }
+          .each-input {
+            padding-bottom: 25px;
+          }
+          .validation-advice {
+            display: block;
+            margin: 0px;
+          }
+          .vertical-line {
+            border-right: 1px solid #fff;
+            width: 1px;
+            height: 770px;
+            display: block;
+            margin: 0 auto;
+          }
+          .sign-up-btn {
+            display: block;
+            margin-left: auto;
+          }
+
         }
       }
     }

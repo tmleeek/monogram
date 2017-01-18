@@ -8,12 +8,16 @@
 	$customer = Mage::getSingleton('customer/session')->getCustomer();    
     $cemail = $customer->getEmail();
 	$cid = $customer->getId();	
+  $customerGroupId = $customer->getGroupId();
+  $groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();  
   ?>  
 <?php else: ?>
   <?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
   <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta square-cta-01">Visit tea bar</a>
 <?php endif; ?>
+<?php if($groupname!=='Trader-Temp' && $groupname!=='Trader-Regular' && $groupname!=='Trader-Priority' && $groupname!=='Trader-Premium'): ?>
   <a href="javascript:void(0);" class="add-both-to-cart square-cta square-cta-02">add both to cart</a>
+<?php endif; ?>
   <a href="#selection" class="square-cta square-cta-03">choose another layering</a>
 </div>
 <?php

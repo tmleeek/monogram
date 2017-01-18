@@ -480,7 +480,7 @@ $_specialPriceStoreLabel = $this->getProductAttribute('special_price')->getStore
     }
     ?>
     <?php if ($price): ?>
-        <p<?php if ($showMinPrice): ?> class="minimal-price price"<?php endif ?>>
+        <span<?php if ($showMinPrice): ?> class="minimal-price price"<?php endif ?>>
             <?php if ($showMinPrice): ?>
                 <span class="price-label"><?php echo $this->__('From:') ?></span>
             <?php endif ?>
@@ -508,7 +508,7 @@ $_specialPriceStoreLabel = $this->getProductAttribute('special_price')->getStore
                 <?php echo $_coreHelper->formatPrice($_showPrice, false) ?>
             </span>
             <?php endif; ?>
-        </p>
+        </span>
     <?php endif; /* if ($this->getDisplayMinimalPrice() && $_minimalPrice): */ ?>
 <?php endif; /* if (!$_product->isGrouped()): */ ?>
  

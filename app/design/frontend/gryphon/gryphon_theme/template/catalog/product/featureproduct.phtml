@@ -34,13 +34,24 @@
 ?>
 <?php
     // $_productCollection=$this->getLoadedProductCollection()->addAttributeToSort('pos‌​ition');
-    $_productCollection = Mage::getModel('catalog/category')->load(92)
-                         ->getProductCollection()
-                         ->addAttributeToSelect('*')
-                         ->addAttributeToFilter('status', 1) // enabled
-                         ->addAttributeToFilter('visibility', 4) //visibility in catalog,search
-                         ->addAttributeToSort('position', Varien_Data_Collection::SORT_ORDER_ASC);
-    $_helper = $this->helper('catalog/output');    
+
+    
+    $groupname = '';
+    if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+        $customerData = Mage::getSingleton('customer/session')->getCustomer();
+        $customerGroupId = $customerData->getGroupId();
+        $groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();  
+    }
+    if($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium') $categoryId = 118;        
+    else $categoryId = 92;
+
+    $_productCollection = Mage::getModel('catalog/category')->load($categoryId)
+                             ->getProductCollection()
+                             ->addAttributeToSelect('*')
+                             ->addAttributeToFilter('status', 1) // enabled
+                             ->addAttributeToFilter('visibility', 4) //visibility in catalog,search
+                             ->addAttributeToSort('position', Varien_Data_Collection::SORT_ORDER_ASC);
+        $_helper = $this->helper('catalog/output');    
 
     function isMobile()  
     {  
@@ -118,7 +129,9 @@
             
             <p><?php echo $_product->getShortDescription(); ?></p>
             <div class="cta-container">
+                <?php if($groupname!=='Trader-Temp' && $groupname!=='Trader-Regular' && $groupname!=='Trader-Priority' && $groupname!=='Trader-Premium'): ?>
                 <a id="add-to-cart-<?php echo $product_name; ?>" href="<?php echo $this->getAddToCartUrl($_product) ?>" class="home-page-add-to-cart arrow-cta">add to cart</a>
+                <?php endif; ?>
                 <a href="#graph/<?php echo $product_name; ?>" class="arrow-cta">see tea layering</a>
             </div>
         </div>

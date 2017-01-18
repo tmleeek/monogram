@@ -226,11 +226,7 @@ endif;
         //]]>
     </script>
 </p>
-<div class="giftvoucher-receiver" id="giftvoucher-receiver" style="<?php if (!$_formData->getSendFriend()) echo 'display:none;' ?>">
-    <div class="each-input">
-        <label for="customer_name"><?php echo $this->__('Sender name') ?>*</label>
-        <input type="text" class="input-text required-entry" name="customer_name" id="customer_name" value="<?php echo $_formData->getCustomerName() ?>" onchange="changeSenderName(this);" onkeyup="changeSenderName(this);" maxlength="30"/>
-    </div>
+<div class="giftvoucher-receiver" id="giftvoucher-receiver" style="<?php if (!$_formData->getSendFriend()) echo 'display:none;' ?>">    
     <div class="each-input">
         <label for="recipient_name"><?php echo $this->__('Recipient name') ?>*</label>
         <input type="text" class="input-text required-entry" name="recipient_name" id="recipient_name" value="<?php echo $_formData->getRecipientName() ?>"  onchange="changeReceiverName(this);" onkeyup="changeReceiverName(this);" maxlength="30"/>
@@ -238,6 +234,10 @@ endif;
     <div class="each-input">
         <label class = "recipient_email" for="recipient_email"><?php echo $this->__('Recipient email') ?>*</label>
         <input type="text" class="input-text required-entry validate-email validate-same-email" name="recipient_email" id="recipient_email" value="<?php echo $_formData->getRecipientEmail() ?>" />
+    </div>
+    <div class="each-input">
+        <label for="customer_name"><?php echo $this->__('Sender name') ?>*</label>
+        <input type="text" class="input-text required-entry" name="customer_name" id="customer_name" value="<?php echo $_formData->getCustomerName() ?>" onchange="changeSenderName(this);" onkeyup="changeSenderName(this);" maxlength="30"/>
     </div>
     <?php //if ($this->enableCustomMessage()):   ?>
     <p id="recipient_ship_desc" style = "display: none; margin-top: 5px; float: left;clear: both;">
@@ -428,7 +428,7 @@ endif;
                 }
             });
             //Hai.Tran
-            day_to_send_error = '<?php echo $this->__('We cannot send this giftcard in the past.') ?>';
+            day_to_send_error = '<?php echo $this->__('Please choose a date in the future.') ?>';
             Validation.add('validate-date-giftcard', day_to_send_error, function(v) {
                 if (Validation.get('validate-date').test(v)) {
                     var test = new Date(v);
@@ -493,6 +493,9 @@ endif;
                 </a>
             </li>    
         </ul>
+        <?php         
+        $_productImageUrl_Raw = $this->helper('catalog/image')->init($_product, 'image');
+        ?>
         <script>
             jQuery('.fa-facebook').on('click', function(e){
                 e.preventDefault();
@@ -501,6 +504,7 @@ endif;
                     display: 'popup',
                     method: 'share',
                     href: share_url,
+                    picture: '<?php echo $_productImageUrl_Raw; ?>'
                 }, function(response){});
             });
 

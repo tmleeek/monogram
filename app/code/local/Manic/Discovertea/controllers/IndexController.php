@@ -175,9 +175,9 @@ class Manic_Discovertea_IndexController extends Mage_Core_Controller_Front_Actio
 
             $subscriberData = $subscriber->getData();
 
-            // print_r($subscriberData);
+            // print_r($subscriberData['subscriber_status']); exit();
 
-			if($subscriberData['subscriber_status']!==1)
+			if((int)$subscriberData['subscriber_status']!==1)
 			{
 			    Mage::getModel('newsletter/subscriber')->subscribe($subscribe_email);
 			    $result['success']  = true;

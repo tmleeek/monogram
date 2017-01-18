@@ -55,9 +55,8 @@
                 <action method="addItem"><type>skin_js</type><name>libs/raphael/raphael.min.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>libs/slick-carousel/slick/slick.min.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>libs/hammer/hammer.min.js</name></action>
-                <action method="addItem"><type>skin_js</type><name>libs/google-closure/closure-library/closure/goog/base.js</name></action>
-                <action method="addItem"><type>skin_js</type><name>js/google-closure-dependency-list.js</name></action>
-
+                <!-- <action method="addItem"><type>skin_js</type><name>libs/google-closure/closure-library/closure/goog/base.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/google-closure-dependency-list.js</name></action> -->                
                 <!-- <action method="addItem"><type>skin_js</type><name>js/vendors/bootstrap/bootstrap.min.js</name></action> -->
                 <!-- <action method="addItem"><type>skin_js</type><name>js/vendors/gsap/TweenMax.min.js</name></action> -->
                 <!-- <action method="addItem"><type>skin_js</type><name>js/vendors/gsap/easing/EasePack.min.js</name></action>                 -->

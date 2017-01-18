@@ -47,7 +47,7 @@
     padding-top: 90px;
     padding-bottom: 90px;
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 30px;
 }
 .grouped-items .row{
 	padding: 0 !important;
@@ -95,7 +95,8 @@ endif;
 ?>
 <div id="content-wrapper" class="product">
     <article id="tea-product-detail-section-1">
-        <div class="desktop-header-spacer" style="height: 70px;"></div>
+        
+        <div class="desktop-header-spacer" class="<?php if(!$isGiftcardType) : ?>hidden-xs hidden-sm<?php endif; ?>" style="height: 70px;"></div>        
 
         <div class="container-fluid">
             <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
@@ -115,7 +116,7 @@ endif;
                             <?php echo $this->getChildHtml('media') ?>
                         </div>
                     </div><!--
-                    --><div class="test <?php if ($isGiftcardType) : ?>col-lg-5 col-lg-offset-1 col-md-6 <?php else: ?>col-md-4<?php endif; ?> col-sm-12 col-xs-12 v-align">
+                    --><div class="test <?php if ($isGiftcardType) : ?>col-lg-5 col-lg-offset-1 col-md-6 <?php else: ?>col-lg-5 col-md-4<?php endif; ?> col-sm-12 col-xs-12 v-align">
                         <?php if ($isGiftcardType || $_product->getTypeId() == 'tin') : ?>
                         <div class="gift-card-content">                        
                         <?php else: ?>
@@ -196,8 +197,7 @@ endif;
                                                     <li><i class="time steeping-suggestion-icon-2"></i><span><?php echo $_product->getTime(); ?></span></li>
                                                 </ul>                                            
                                             </div>
-                                            <?php endif; ?>
-                                          
+                                            <?php else: ?>
                                             <div class="social-media-share">
                                                 <h5><?php echo $this->__('Share'); ?></h5>
                                                 <?php echo $this->getChildHtml('sharing') ?>
@@ -207,6 +207,7 @@ endif;
                                                   <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                                                 </ul> -->
                                             </div>
+                                            <?php endif; ?>
                                         </div>
                                         <?php if( !empty($_product->getIngredients()) ): ?>
                                         <div class="col-md-6 col-sm-6 col-xs-6 product-info-col-2">
@@ -217,6 +218,22 @@ endif;
                                         </div>
                                         <?php endif; ?>
                                     </div>
+                                    
+                                    <?php if( !empty($_product->getTemperature()) && !empty($_product->getTime()) ):  ?>
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-6 product-info-col-1">
+                                            <div class="social-media-share">
+                                                <h5><?php echo $this->__('Share'); ?></h5>
+                                                <?php echo $this->getChildHtml('sharing') ?>
+                                                <!-- <ul>
+                                                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                                </ul> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php endif; ?>
                                 <?php else: ?>                            
                                     <p><?php echo $shortDescription; ?></p>
                                 <?php endif; ?>
@@ -389,13 +406,16 @@ endif;
                         var cart_count = <?php echo Mage::helper('checkout/cart')->getItemsCount(); ?>                     
 
                         if(subscription_in_the_cart==1) {                                
-                            jQuery('span.ajax_msg_product').html('This product cannot be purchased with other items in the cart. Please check out first before making this purchase.').show();
+                            alert('This product cannot be purchased with other items in the cart. Please check out first before making this purchase.');
+                            //jQuery('span.ajax_msg_product').html('This product cannot be purchased with other items in the cart. Please check out first before making this purchase.').show();
                             jQuery('#ajax_loader_product').hide();
                         } else if(gift_in_the_cart==1 && product_id != 907) {
-                            jQuery('span.ajax_msg_product').html('This product cannot be purchased with other items in the cart. Please check out first before making this purchase.').show();
+                            alert('This product cannot be purchased with other items in the cart. Please check out first before making this purchase.');
+                            //jQuery('span.ajax_msg_product').html('This product cannot be purchased with other items in the cart. Please check out first before making this purchase.').show();
                             jQuery('#ajax_loader_product').hide();                        
                         } else if(product_id == 907 && gift_in_the_cart==0 && cart_count > 0) {
-                            jQuery('span.ajax_msg_product').html('This product cannot be purchased with other items in the cart. Please check out first before making this purchase.').show();
+                            alert('This product cannot be purchased with other items in the cart. Please check out first before making this purchase.');
+                            //jQuery('span.ajax_msg_product').html('This product cannot be purchased with other items in the cart. Please check out first before making this purchase.').show();
                             jQuery('#ajax_loader_product').hide();                        
                         }else {
                             try {
