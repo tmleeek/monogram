@@ -30,6 +30,21 @@
         }
     });
     function getShippingFee(type, id) {
+	
+		if(window.location.href.indexOf("tsc") > -1) {
+		var uurlStringkk = window.location.href.split('?')[1];
+		if (typeof uurlStringkk !== "undefined") {
+			var resQyertkk = uurlStringkk.split("=");
+			var curCId = resQyertkk[1];
+			if(curCId == '1'){
+				id = 'SG';
+			}
+			//alert(curCId);
+		}			
+		}
+		
+	
+	
         showOverlay();
         var data = null;
         if ('new' == type) {
