@@ -282,7 +282,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                                 <?php if (!$this->canShip()): ?>
                                     <input type="hidden" name="billing[use_for_shipping]" value="1" />
                                 <?php endif; ?>
-
+                                <input type="hidden" name="billcurrentcountry" id="billcurrentcountry" value="" />
                             </div>
                     </div>
                 </div>
@@ -439,46 +439,49 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                 </div>
             </div>
             <input type="hidden" name="md_shipping_method" id="md_shipping_method" value="" />
-			<?php 
-			$checkout = Mage::getSingleton('checkout/session')->getQuote();
-			$billAddress = $checkout->getShippingAddress();
-			$countryId = $billAddress->getData('country_id');
-			$groupname = '';
-			if(Mage::getSingleton('customer/session')->isLoggedIn()) {
-				$customerData = Mage::getSingleton('customer/session')->getCustomer();
-				$customerGroupId = $customerData->getGroupId();
-				$groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();  
-			} 
-			$tradselfcollect = 0;
-			//$sessiontemp = Mage::getSingleton('checkout/session');
-			//$tradselfcollect = $sessiontemp->getData('traderselfcollect');
-			
-			/*$oCheckoutnew = Mage::getSingleton( 'checkout/session' );
-			$oQuotenew = $oCheckoutnew->getQuote();
-			$tradselfcollect = $oQuotenew->getTraderselfcollect();*/
-			
-			//$tradselfcollect = Mage::app()->getRequest()->getParam('tsc');
-			
-			$curlpath = basename($_SERVER['REQUEST_URI']);			
-			$parts = parse_url($curlpath);
-			parse_str($parts['query'], $query);	
-			$tradselfcollect = $query['tsc']['tsc'];			
-			?>
-			<?php if(($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium')&&($countryId=='SG' || $countryId=='sg')): ?>
-				<div class="selfcollect">
+            <?php 
+            $checkout = Mage::getSingleton('checkout/session')->getQuote();
+            $billAddress = $checkout->getShippingAddress();
+            $countryId = $billAddress->getData('country_id');
+            $groupname = '';
+            if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+                $customerData = Mage::getSingleton('customer/session')->getCustomer();
+                $customerGroupId = $customerData->getGroupId();
+                $groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();  
+            } 
+            
+            $tradselfcollect = 0;
+            //$sessiontemp = Mage::getSingleton('checkout/session');
+            //$tradselfcollect = $sessiontemp->getData('traderselfcollect');
+            
+            /*$oCheckoutnew = Mage::getSingleton( 'checkout/session' );
+            $oQuotenew = $oCheckoutnew->getQuote();
+            $tradselfcollect = $oQuotenew->getTraderselfcollect();*/
+            
+            //$tradselfcollect = Mage::app()->getRequest()->getParam('tsc');
+            
+            $curlpath = basename($_SERVER['REQUEST_URI']);          
+            $parts = parse_url($curlpath);
+            parse_str($parts['query'], $query); 
+            $tradselfcollect = $query['tsc']['tsc'];            
+            ?>
+            <?php //if(($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium')&&($countryId=='SG' || $countryId=='sg')): 
+            if($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium'):
+            ?>
+                <div class="selfcollect">
                     <div class="row">
-    					<div class="col-md-6">
+                        <div class="col-md-6">
                             <label for="billing:traderselfcollect"><?php echo $this->__('Self Collection:') ?></label>
-                            <div class="selfcollect-option">        						
-    							<input type="radio" onclick="traderselfcollectyesno('traderselfcollectyes','traderselfcollectno');" id="traderselfcollectno" name="traderselfcollect" value="0" <?php if($tradselfcollect != 1 && $tradselfcollect != '1'){echo 'checked';} ?> /><label for="traderselfcollectno"><span></span>No</label>
+                            <div class="selfcollect-option">                                
+                                <input type="radio" onclick="traderselfcollectyesno('traderselfcollectyes','traderselfcollectno');" id="traderselfcollectno" name="traderselfcollect" value="0" <?php if($tradselfcollect != 1 && $tradselfcollect != '1'){echo 'checked';} ?> /><label for="traderselfcollectno"><span></span>No</label>
                             </div>
                             <div class="selfcollect-option">
-							     <input type="radio" onclick="traderselfcollectyesno('traderselfcollectno','traderselfcollectyes');" id="traderselfcollectyes" name="traderselfcollect" value="1" <?php if($tradselfcollect ==1 || $tradselfcollect == '1'){echo 'checked';} ?> /><label for="traderselfcollectyes"><span></span>Yes</label>
-                            </div>			 
-    					</div>
+                                 <input type="radio" onclick="traderselfcollectyesno('traderselfcollectno','traderselfcollectyes');" id="traderselfcollectyes" name="traderselfcollect" value="1" <?php if($tradselfcollect ==1 || $tradselfcollect == '1'){echo 'checked';} ?> /><label for="traderselfcollectyes"><span></span>Yes</label>
+                            </div>           
+                        </div>
                     </div>
-				</div></br>
-			 <?php endif; ?>
+                </div></br>
+             <?php endif; ?>
         </form>        
     </div><!-- #page-shopping-cart-billing-shipping-container -->
     <div id="page-shopping-cart-billing-shipping-delivery-information">
@@ -888,8 +891,8 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
             }else {
                 $j('#page-shopping-cart-billing-container').find('.save-in-address-book').hide();
             }
-			var countryIDdd = '<?= Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress()->getData('country_id') ?>';
-			jQuery('.selfcollect')[countryIDdd == 'SG' ? 'show' : 'hide']();
+            var countryIDdd = '<?= Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress()->getData('country_id') ?>';
+            jQuery('.selfcollect')[countryIDdd == 'SG' ? 'show' : 'hide']();
         });
 
         $j('#shipping-address-select').on("change", function(){
@@ -898,32 +901,94 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
             }else {
                 $j('#page-shopping-cart-shipping-container').find('.save-in-address-book').hide();
             }
-			var countryIDdd = '<?= Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress()->getData('country_id') ?>';
-			jQuery('.selfcollect')[countryIDdd == 'SG' ? 'show' : 'hide']();
-        });                
+            var countryIDdd = '<?= Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress()->getData('country_id') ?>';
+            jQuery('.selfcollect')[countryIDdd == 'SG' ? 'show' : 'hide']();
+        });
+        
+        /*var currentCountryIdload = $j('#billing:country_id').val();    
+        jQuery('.selfcollect')[currentCountryIdload == 'SG' ? 'show' : 'hide']();*/
+            
+        $j('.validate-select').on("change", function(){//alert('k');
+            var currentCountryId = $j(this).val();   //alert(currentCountryId); 
+            jQuery('.selfcollect')[currentCountryId == 'SG' ? 'show' : 'hide']();
+        });
+        
+        $j( document ).ready(function() {
+            //alert( "ready!" );
+            var currentCountryIdLoad = $j('.validate-select').val();   //alert(currentCountryIdLoad); 
+            jQuery('.selfcollect')[currentCountryIdLoad == 'SG' ? 'show' : 'hide']();
+        });
+        
+        
+        
+        
+        $j( document ).ready(function() {
+            
+        if(window.location.href.indexOf("tsc") > -1) {
+        var uurlStringkk = window.location.href.split('?')[1];//alert(uurlStringkk);
+        if (typeof uurlStringkk !== "undefined") {
+            var resQyertkk = uurlStringkk.split("=");
+            var curCId = resQyertkk[1];
+            if(curCId == '1'){
+                jQuery("#s_method_freeshipping_freeshipping").attr('checked', true);                
+                jQuery('.selfcollect').show();
+                //$j(".validate-select").val('SG');
+            }
+            //alert(curCId);
+        }           
+        }
+        
+        /*var uurlString = window.location.href.split('?')[1];
+        
+        var resQyert = uurlString.split("&c=");
+        var curContryId = resQyert[1];
+        
+        var resQyertzero = resQyert[0];
+        var resQyerttsc = resQyertzero.split("tsc=");
+        var tscflag = resQyerttsc[1];
+        //alert(tscflag);
+        /*  $j(".validate-select > option").each(function() {
+                alert($j(this).val());
+                return ($j(this).value == curContryId);
+            }).prop('selected', true);*/
+            
+        //$j(".validate-select").val(curContryId);
+        /*if(tscflag == 1){
+            jQuery("#s_method_freeshipping_freeshipping").attr('checked', true);
+        }
+        jQuery('.selfcollect')[curContryId == 'SG' ? 'show' : 'hide']();*/
+        });
+        //$j('.myclass option:selected').filter("[value=audi]")
+
+        /*$j('[class=validate-select] option').filter(function() { 
+            return ($(this).text() == 'Blue'); //To select Blue
+        }).prop('selected', true); */
+        
                 
     //]]>
 	
 	function traderselfcollectyesno(idd,iddd){
-		//alert(idd);
-		jQuery("#"+idd).removeAttr('checked');
-		
-		var tsr = jQuery("#"+iddd).val();
-		//alert(tsr);alert(iddd);
-		if(tsr == 1){
-			jQuery("#s_method_freeshipping_freeshipping").attr('checked', true);
-		}else{
-		
-		}
-		jQuery("#"+iddd).attr('checked', true);
-		
-		//window.location.href = window.location.href + "?tsc="+tsr;
-		//billing.save();		
-		//location.reload();
-		$uurl = window.location.href.split('?')[0];
-		window.location.href = $uurl + "?tsc="+tsr;
-	
-	}  	
+        //alert(idd);
+        jQuery("#"+idd).removeAttr('checked');
+        
+        var tsr = jQuery("#"+iddd).val();
+        //alert(tsr);alert(iddd);
+        if(tsr == 1){
+            jQuery("#s_method_freeshipping_freeshipping").attr('checked', true);
+        }else{
+        
+        }
+        jQuery("#"+iddd).attr('checked', true);
+        
+        //window.location.href = window.location.href + "?tsc="+tsr;
+        //billing.save();       
+        //location.reload();
+        $uurl = window.location.href.split('?')[0];
+        //window.location.href = $uurl + "?tsc="+tsr+"&c="+$j('.validate-select').val();
+        window.location.href = $uurl + "?tsc="+tsr;
+        $j('#billcurrentcountry').val($j('.validate-select').val());
+    
+    }   
     </script>
     </div>
 </div>

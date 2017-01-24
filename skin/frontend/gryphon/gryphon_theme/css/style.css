@@ -10801,7 +10801,7 @@ body.is-tablet.is-tablet-landscape .home-tea-item .cta-container .arrow-cta {
 @media only screen and (max-width: 991px) {
   body.cms-index-index.cms-home {
     width: auto;
-    height: auto;
+    height: 100%;
   }
   .sumome-scrollbox-popup {
     display: none !important;
