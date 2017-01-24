@@ -533,10 +533,29 @@ margin-bottom:0;
             $("#telephone, #mobile").intlTelInput({
                 initialCountry: 'sg',
                 nationalMode: false,
-                autoHideDialCode: true,
+                autoHideDialCode: false,
                 autoPlaceholder: false,  
                 preferredCountries: []
             });            
+
+            var currentCountryCode  = "";
+            $(document).keydown(function(e) {
+                var aEl = $(document.activeElement);
+
+                if(aEl.attr('name') == "telephone" || aEl.attr('name') == "mobile_no") {
+                    var currentInputLength = aEl.val().length;       
+                    var dialCode = aEl.intlTelInput("getSelectedCountryData").dialCode;         
+                    
+                    if(typeof dialCode !== "undefined") {
+                        currentCountryCode = aEl.intlTelInput("getSelectedCountryData").dialCode;
+                    }                      
+
+                    var currentCountryCodeCount = currentCountryCode.toString().length + 3;
+
+                    if ((e.keyCode === 8 || e.keyCode ===46) && currentInputLength < currentCountryCodeCount) 
+                        return false;
+                }                
+            });
 
         });
     </script>

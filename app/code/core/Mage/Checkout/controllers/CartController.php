@@ -697,8 +697,11 @@ class Mage_Checkout_CartController extends Mage_Core_Controller_Front_Action
 
             if ($codeLength) {
                 if ($isCodeLengthValid && $couponCode == $this->_getQuote()->getCouponCode()) {
+                    // $this->_getSession()->addSuccess(
+                    //     $this->__('Coupon code "%s" was applied.', Mage::helper('core')->escapeHtml($couponCode))
+                    // );
                     $this->_getSession()->addSuccess(
-                        $this->__('Coupon code "%s" was applied.', Mage::helper('core')->escapeHtml($couponCode))
+                        $this->__('', Mage::helper('core')->escapeHtml($couponCode))
                     );
                 } else {
                     $this->_getSession()->addError(
@@ -706,7 +709,8 @@ class Mage_Checkout_CartController extends Mage_Core_Controller_Front_Action
                     );
                 }
             } else {
-                $this->_getSession()->addSuccess($this->__('Coupon code was canceled.'));
+                // $this->_getSession()->addSuccess($this->__('Coupon code was canceled.'));
+                $this->_getSession()->addSuccess($this->__(''));
             }
 
         } catch (Mage_Core_Exception $e) {

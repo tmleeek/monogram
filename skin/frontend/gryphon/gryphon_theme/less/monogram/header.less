@@ -490,6 +490,18 @@
 #mobile-header-cart-btn-container{
   text-align: right;
   padding-top: 5px;
+
+  .counter {      
+    display: inline-block;
+    vertical-align: middle;  
+    span {
+      color: @off-white;
+      font-size: 13px;
+      line-height: 15px;
+      vertical-align: middle;
+      padding-left: 4px;
+    }
+  }
 }
 
 #mobile-header-menu-btn,
@@ -500,6 +512,7 @@
   text-align: center;
 
   .display-inline-block;
+  vertical-align: middle;
   // width: 40px;
   height: 40px;
 
@@ -509,24 +522,6 @@
   &:focus,
   &:hover{
     .opacity(0.6);
-  }
-
-  .counter {    
-    background-color: @off-white;
-    .round(15px);
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    top: 10px;
-    right: -3px;
-    span {
-      color: @dark-brown;
-      font-size: 10px;
-      display: table-cell;
-      text-align: center;
-      line-height: 15px;
-      width: 15px;
-    }
   }
 }
 

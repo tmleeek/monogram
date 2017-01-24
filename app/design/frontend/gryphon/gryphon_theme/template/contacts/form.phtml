@@ -38,10 +38,9 @@
 
         <div class="contact-title-container hidden-xs hidden-sm">
           <h1>contact us</h1>
+          <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
           <p>For any feedback or enquiries, please feel free to drop us an email with the contact form below. We will be in touch as soon as we can to assist you.</p>
-        </div>
-
-        <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
+        </div>        
 
         <form action="<?php echo $this->getUrl('contacts/index/post') ?>" id="contact-us-form" method="post">
           <div class="row">
@@ -125,9 +124,28 @@
               $(".phone_no_input, .mobile_no_input").intlTelInput({
                 initialCountry: 'sg',
                 nationalMode: false,
-                autoHideDialCode: true,
+                autoHideDialCode: false,
                 autoPlaceholder: false,
                 preferredCountries: []
+              });
+
+              var currentCountryCode  = "";
+              $(document).keydown(function(e) {
+                  var aEl = $(document.activeElement);
+
+                  if(aEl.attr('name') == "telephone") {
+                      var currentInputLength = aEl.val().length;       
+                      var dialCode = aEl.intlTelInput("getSelectedCountryData").dialCode;         
+                      
+                      if(typeof dialCode !== "undefined") {
+                          currentCountryCode = aEl.intlTelInput("getSelectedCountryData").dialCode;
+                      }                      
+
+                      var currentCountryCodeCount = currentCountryCode.toString().length + 3;
+
+                      if ((e.keyCode === 8 || e.keyCode ===46) && currentInputLength < currentCountryCodeCount) 
+                          return false;
+                  }                
               });
 
               $('#first_name').on('change', function(e){

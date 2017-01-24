@@ -52,8 +52,20 @@
 
                 									echo $_product1->getData('product_name_in_color') .' + '. $_product2->getData('product_name_in_color'); ?></p></td>
                 									<td data-theme-label="<?php echo $this->__('Action') ?>">
-                									<a class="savelayering-cta" href="/#graph/<?php echo $pname1_to_file_name; ?>/<?php echo $pname2_to_file_name; ?>">SEE LAYERING</a><span class="savelayering-cta-divider"> | </span> 
-                									<a class="savelayering-cta" href="javascript:;" id="addbothincart" onclick="savebothproducts('<?php echo $pointData['products_id']; ?>', this)">ADD TO CART</a>
+                									<a class="savelayering-cta" href="/#graph/<?php echo $pname1_to_file_name; ?>/<?php echo $pname2_to_file_name; ?>">SEE LAYERING</a> 
+                									
+                                  <?php $session = Mage::getSingleton('customer/session');
+                                        $groupname = '';                            
+                                        if($session->isLoggedIn()) {
+                                            $customer = $session->getCustomer();
+                                            $customerGroupId = $customer->getGroupId();
+                                            $groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();
+                                        }    
+                                  ?>
+                                  <?php if(($groupname!=='Trader-Temp' && $groupname!=='Trader-Regular' && $groupname!=='Trader-Priority' && $groupname!=='Trader-Premium')): ?>
+                                  <span class="savelayering-cta-divider"> | </span>
+                                  <a class="savelayering-cta" href="javascript:;" id="addbothincart" onclick="savebothproducts('<?php echo $pointData['products_id']; ?>', this)">ADD TO CART</a>
+                                  <?php endif; ?>
                                   <div class="successmsg"></div>
                                   <div class="ajax_loadermsg"><img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/></div>
                 									</td>
@@ -94,6 +106,24 @@
     }
 ?>
 <script type="text/javascript">
+  function do_update() {
+
+    $j("#desktop-header-cart").find(".cart-count-update").removeClass('animated fadeIn').addClass('animated flipOutX');
+
+    $j.ajax({
+        url: '/discovertea/index/cartpreview',
+        dataType: 'json',
+        type : 'get',
+        success: function(data){
+          // update product count in cart
+          $j("#desktop-header-cart").find(".count").text("("+data.cart_qty+")");    
+          $j("#mobile-header-cart-btn-container").find(".count").text("("+data.cart_qty+")");    
+
+          $j("#desktop-header-cart").find(".cart-count-update").removeClass('animated flipOutX').addClass('animated fadeIn'); 
+        }
+    });                     
+  }
+
 	function savebothproducts(pids, that){					
 
 			var dataString = 'productids='+ pids;
@@ -107,8 +137,8 @@
           alert("This product cannot be purchased with other items in the cart. Please check out first before making this purchase.")
       } else {
 
-        jQuery(that).parent().find(".successmsg").hide();
-        jQuery(that).parent().find(".ajax_loadermsg").show();         
+        // jQuery(that).parent().find(".successmsg").hide();
+        // jQuery(that).parent().find(".ajax_loadermsg").show();         
             
             jQuery.ajax({
 				type: "POST",
@@ -117,10 +147,11 @@
             }).done(function(result) { 
 
               console.log(jQuery(that).parent());
+              do_update();
 
-				jQuery(that).parent().find(".ajax_loadermsg").hide();
-				jQuery(that).parent().find(".successmsg").show();
-				jQuery(that).parent().find(".successmsg").html("Added to cart").delay(5000).fadeOut();	
+				// jQuery(that).parent().find(".ajax_loadermsg").hide();
+				// jQuery(that).parent().find(".successmsg").show();
+				// jQuery(that).parent().find(".successmsg").html("Added to cart").delay(5000).fadeOut();	
 				// location.reload();
 				//alert(result);
             });

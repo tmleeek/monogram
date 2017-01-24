@@ -19,6 +19,9 @@ body.product-gift-card {
       padding: 0px;
     }
   }  
+  #product-detail-img-info-container {
+    padding-top: 0px!important;
+  }
 }
 
 .catalog-product-view {
@@ -43,9 +46,16 @@ body.product-gift-card {
     }
   }  
   #product-detail-img-info-container {
+    padding-top: 60px;
+    @media all and (max-width: 991px) {
+      padding-top: 0px;
+    }
     .v-align {
       display: inline-block;
-      vertical-align: middle;
+      vertical-align: top;
+      @media all and (max-width: 991px) {
+        vertical-align: middle;
+      }
       float: none;      
     }
     .gift-card-img{
@@ -258,7 +268,7 @@ body.product-gift-card {
 
                 @media all and (max-width: 480px) {
                   font-size: 10px;
-                  display: none;
+                  width: 80%;
                 }
                 @media all and (max-width: 380px) {
                   font-size: 10px;
@@ -737,6 +747,9 @@ body.product-gift-card {
       .product-info-col-2 {
         width: 100%;
         margin-left: 137px;
+        @media all and (max-width: 991px) {
+          margin-left: 0px;
+        }
         .add-to-cart-buttons {
           text-align: left!important;
           position: relative;
@@ -764,7 +777,7 @@ body.product-gift-card {
           }
           img {
             position: absolute;
-            left: -110px;
+            left: -85px;
             top: 0;
             // width: auto!important;
             @media only screen and (max-width: 1024px) {
@@ -805,7 +818,7 @@ body.product-gift-card {
       }
     }
     .product-info {
-      padding-top: 90px;
+      padding-top: 0px!important;
       padding-bottom: 90px;
       padding-left: 45px;
       padding-right: 45px;
@@ -984,6 +997,7 @@ body.product-gift-card {
         background: none;
         // line-height: 27px;
         line-height: 25px;
+        outline: none;
 
         span{
           font-size: 10px;
@@ -1013,6 +1027,7 @@ body.product-gift-card {
       width: 30%;
       padding: 0px;
       right: 0px;
+      top: 70px;
       background-color: rgba(236, 205, 206, 0.3);
       @media only screen and (max-width: 991px) {
         position: static;
@@ -1079,7 +1094,7 @@ body.product-gift-card {
     }
 
     .suggestion {
-      padding-top: 80px;
+      padding-top: 60px;
       padding-bottom: 10px;
       @media only screen and (max-width: 991px) {
         padding: 40px 15px;
@@ -1515,6 +1530,10 @@ body.product-gift-card {
     // padding-top: 7px;
     padding-top: 10px;
     resize: vertical;
+
+    @media all and (max-width: 991px) {
+      max-height: 113px;
+    }
   }
   p {
     color: @white;

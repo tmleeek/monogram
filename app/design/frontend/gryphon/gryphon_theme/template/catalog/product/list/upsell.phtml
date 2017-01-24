@@ -44,7 +44,7 @@
     ?>
       <h5><?php echo $this->__('you may also like'); ?></h5>
     <?php else: ?>
-      <h5><?php echo $this->__('tea layering suggestion'); ?></h5>
+      <h5><?php echo $this->__('tea layering suggestions'); ?></h5>
     <?php endif; ?>
 
     <ul class="suggestion-list all-products <?php if($count > 3): ?>two-column <?php echo $count; ?><?php endif; ?>">
@@ -146,7 +146,7 @@ $j(document).ready(function(){
 
     function do_update() {
 
-      $j("#desktop-header-cart").find(".cart-count-update").removeClass('fadeInUp').addClass('fadeOutDown');
+      $j("#desktop-header-cart").find(".cart-count-update").removeClass('animated fadeIn').addClass('animated flipOutX');
 
       $j.ajax({
           url: '/discovertea/index/cartpreview',
@@ -155,9 +155,9 @@ $j(document).ready(function(){
           success: function(data){
             // update product count in cart
             $j("#desktop-header-cart").find(".count").text("("+data.cart_qty+")");    
-            $j("#mobile-header-cart-btn-container").find(".count").text(data.cart_qty);    
+            $j("#mobile-header-cart-btn-container").find(".count").text("("+data.cart_qty+")");    
 
-            $j("#desktop-header-cart").find(".cart-count-update").removeClass('fadeOutDown').addClass('fadeInUp');    
+            $j("#desktop-header-cart").find(".cart-count-update").removeClass('animated flipOutX').addClass('animated fadeIn'); 
           }
       });                     
     }

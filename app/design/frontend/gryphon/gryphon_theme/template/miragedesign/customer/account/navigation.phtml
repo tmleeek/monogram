@@ -37,9 +37,32 @@
     <div class="block-content">
 
         <h4>basic information</h4>
+        <?php $_links = $this->getLinks(); $i = 0; ?>
         <ul>
-          <li><a href="<?php echo $this->getUrl('customer/account') ?>">My Account</a></li>
-          <li><a href="<?php echo $this->getUrl('customer/address') ?>">Address Book</a></li>
+            <?php foreach ($_links as $_link): ?>
+                <?php if($i<2): ?>
+                    <?php if($_link->getLabel()=='Account Dashboard'): ?>
+
+                        <?php if ($this->isActive($_link)): ?>
+                            <li data-name="<?php echo $lbl; ?>" class="current<?php echo ($_last ? ' last' : '') ?>"><strong>My Account</strong></li>
+                        <?php else: ?>
+                            <li data-name="<?php echo $lbl; ?>" <?php echo ($_last ? ' class="last"' : '') ?>><a href="<?php echo $_link->getUrl() ?>">My Account</a></li>
+                        <?php endif; ?>
+                    <?php else: ?>
+
+                        <?php if ($this->isActive($_link)): ?>
+                            <li data-name="<?php echo $lbl; ?>" data-print="<?php print_r($_link); ?>"  class="current<?php echo ($_last ? ' last' : '') ?>"><strong><?php echo $_link->getLabel() ?></strong></li>
+                        <?php else: ?>
+                            <li data-name="<?php echo $lbl; ?>" data-print="<?php print_r($_link); ?>" <?php echo ($_last ? ' class="last"' : '') ?>><a href="<?php echo $_link->getUrl() ?>"><?php echo $_link->getLabel() ?></a></li>
+                        <?php endif; ?>
+
+                    <?php endif; ?>
+                                        
+                    <?php $i++; ?>
+                <?php else: ?>
+                    <?php break; ?>
+                <?php endif; ?>
+            <?php endforeach ?>
         </ul>
 
 
@@ -51,7 +74,7 @@
         <hr class="small">
         <h4>membership service</h4>
 
-        <ul>
+        <ul class="membership-service">
             <?php $_links = $this->getLinks(); ?>
             <?php $_index = 1; ?>
             <?php $_count = count($_links); ?>
@@ -110,6 +133,10 @@
 
     });
     $(window).trigger('resize');
+
+    $("#change_password").on("click", function(e){
+        $(window).trigger('resize');        
+    });
 
   });
 </script>

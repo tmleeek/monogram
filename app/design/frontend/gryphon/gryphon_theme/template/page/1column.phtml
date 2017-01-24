@@ -75,14 +75,16 @@ $path = $url->getPath();
             <?php echo $this->getChildHtml('header') ?>
             
             <?php //echo $this->getChildHtml('breadcrumbs') ?>
-            <?php echo $this->getChildHtml('global_messages') ?>
+            <?php if($path!=="/"): ?>
+              <?php echo $this->getChildHtml('global_messages') ?>
+            <?php endif; ?>
             
             <?php echo $this->getChildHtml('content') ?>
             
             <?php if($path!=="/"): ?>
-                <!-- <script type="text/javascript">
+                <script type="text/javascript">
                     goog.require('monogram.page.Default');
-                </script> -->
+                </script>
                 <script type="text/javascript">
                     window.monogram_page = new monogram.page.Default({});
                 </script>                

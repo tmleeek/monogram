@@ -27,7 +27,7 @@
 
 
 <article id="home-mobile-landing-section">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
         <div id="home-mobile-landing-copy">
@@ -39,8 +39,8 @@
             </a>
 
             <h1>The art of <br>tea layering</h1>
-            <p>Excite the palate and discover a world of simplexity tea flavours with Monogram. Exuding class and sophistication, yet playful and dynamic, explore the art of tea layering with every cup. With no two brews tasting the same, curate a personal unique identity with the world’s finest handpicked tea leaves and herbs. </p>
-            <p>Get hands on and experimental with Monogram, layering the silken sachets to harmonious perfection. With each sachet carefully selected to complement each other, half the fun is to discover your very own brew. More importantly, the special bond that comes with each tea layering experience.</p>
+            <p>Excite the palate and discover a world of simplexity tea flavours with Monogram. Exuding class and sophistication, playful and dynamic, explore the art of tea layering with every cup. With no two brews tasting the same, curate a personal identity with the world’s finest handpicked tea leaves and herbs.</p>
+            <!-- <p>Get hands on and experimental with Monogram, layering the silken sachets to harmonious perfection. With each sachet carefully selected to complement each other, half the fun is to discover your very own brew. More importantly, the special bond that comes with each tea layering experience.</p> -->
 
           </div> <!-- default-copy -->
         </div> <!-- #home-mobile-landing-copy -->
@@ -199,7 +199,7 @@
     <div class="row">
       <div class="col-xs-12">
         <div id="home-mobile-tea-layering-title">
-          <h4>Tea Layering Suggestion</h4>
+          <h4>Tea Layering Suggestions</h4>
           <p>Choose a tea to see its layering suggestion.</p>
         </div>
       </div>
@@ -269,7 +269,7 @@
         $('#add-to-cart-shiso-mint').trigger('click');
         $('#add-to-cart-earl-grey-neroli').trigger('click');
 
-        alert('Added to cart');
+        // alert('Added to cart');
       });
 
       $('.home-mobile-buy-both-teas-cta-2').on('click', function(e){
@@ -280,7 +280,7 @@
         $('#add-to-cart-'+main_tea).trigger('click');
         $('#add-to-cart-'+sub_tea).trigger('click');
 
-        alert('Added to cart');
+        // alert('Added to cart');
       });
     });
   </script>
@@ -438,7 +438,7 @@
           <a href="javascript:void(0);" id="home-mobile-save-layering" class="square-cta square-cta-01">save layering</a>
           <?php else: ?>
           <?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
-          <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta square-cta-01">visit tea store</a>
+          <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta square-cta-01">visit tea bar</a>
           <?php endif; ?>
           <a href="javascript:void(0);" class="home-mobile-buy-both-teas-cta-2 square-cta square-cta-02">buy both tea</a>
         </div>

@@ -109,18 +109,22 @@ body.monogram-page-account-details #content-wrapper .col-right.sidebar{
 
       //override custom.css
       background: transparent;
-      padding: 0;
-
-      &[data-name=account],
-      &[data-name=address_book]{
-        display: none;
-      }
+      padding: 0;      
       
       
 
       &:last-child {
         margin-bottom: 0px;
-      }
+      }      
+    }
+
+    &.membership-service {
+      li {
+        &[data-name=account],
+        &[data-name=address_book]{
+          display: none;
+        }  
+      }      
     }
   }
 
@@ -1226,7 +1230,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
 @media only screen and (max-width: 991px) {
   #monogram-page-account-details-other-shipping-address-container{
-    padding-top: 36px;
+    // padding-top: 36px;
+    padding: 36px 10px;
 
     h2{
       .header-font;
@@ -1735,13 +1740,18 @@ body.sales-order-view{
       }
 
       span{
-        // .subheader-font;
-        // font-size: 10px;
-        // line-height: 15px;
-        // letter-spacing: 0.08em;
+        .subheader-font;
+        font-size: 9px;
+        line-height: 12px;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
 
         // padding-left: 20px;
+        &.price {
+          .body-font;
+          font-size: 12.5px;
+          line-height: 20px;
+        }
       }
 
       .align-to-total{
@@ -2619,6 +2629,9 @@ body.sales-order-view{
 
     .validation-advice {
       margin: 0px;
+      position: absolute;
+      left: 180px;
+      width: auto;
     }
 
     #ajax_loader_referral {

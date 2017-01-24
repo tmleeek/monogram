@@ -229,7 +229,7 @@ endif;
 <div class="giftvoucher-receiver" id="giftvoucher-receiver" style="<?php if (!$_formData->getSendFriend()) echo 'display:none;' ?>">    
     <div class="each-input">
         <label for="recipient_name"><?php echo $this->__('Recipient name') ?>*</label>
-        <input type="text" class="input-text required-entry" name="recipient_name" id="recipient_name" value="<?php echo $_formData->getRecipientName() ?>"  onchange="changeReceiverName(this);" onkeyup="changeReceiverName(this);" maxlength="30"/>
+        <input type="text" class="input-text required-entry" name="recipient_name" value="<?php echo $_formData->getRecipientName() ?>"  onchange="changeReceiverName(this);" onkeyup="changeReceiverName(this);" maxlength="30"/>
     </div>
     <div class="each-input">
         <label class = "recipient_email" for="recipient_email"><?php echo $this->__('Recipient email') ?>*</label>
@@ -237,7 +237,7 @@ endif;
     </div>
     <div class="each-input">
         <label for="customer_name"><?php echo $this->__('Sender name') ?>*</label>
-        <input type="text" class="input-text required-entry" name="customer_name" id="customer_name" value="<?php echo $_formData->getCustomerName() ?>" onchange="changeSenderName(this);" onkeyup="changeSenderName(this);" maxlength="30"/>
+        <input type="text" class="input-text required-entry" name="customer_name" value="<?php echo $_formData->getCustomerName() ?>" onchange="changeSenderName(this);" onkeyup="changeSenderName(this);" maxlength="30"/>
     </div>
     <?php //if ($this->enableCustomMessage()):   ?>
     <p id="recipient_ship_desc" style = "display: none; margin-top: 5px; float: left;clear: both;">
@@ -469,7 +469,7 @@ endif;
     <?php $_productUrl = urlencode(trim($_product->getProductUrl()))?>
 
     <div class="each-input social-media-share">
-        <label>Share With</label>   
+        <label>Share</label>   
         <ul class="social-sharing">
             <?php //if ($this->canEmailToFriend()): ?>
                 <!-- <li><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>" class="link-email-friend" title="<?php echo $this->__('Email to a Friend') ?>"><?php echo $this->__('Email to a Friend') ?></a></li> -->

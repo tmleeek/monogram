@@ -143,7 +143,7 @@ monogram.page.Default.prototype.init = function() {
       reverse: true
     });
 
-    this.faq_sidebar_scene.setPin('#monogram-page-faq-sidebar');
+    // this.faq_sidebar_scene.setPin('#monogram-page-faq-sidebar');
     this.faq_sidebar_scene.addTo(this.controller);
       
   }

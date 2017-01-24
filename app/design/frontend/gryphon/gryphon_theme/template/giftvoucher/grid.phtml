@@ -160,15 +160,23 @@
 
                     <?php 
                         $column_counter = 0; 
-                        $column_counter_max = count($columns);
+                        $column_counter_max = count($columns);                        
                     ?>
                     <?php foreach ($columns as $id => $column): ?>
 
                         <?php $column_counter++; ?>
-                        <?php if($column_counter != $column_counter_max): ?>
-                            <th><?php echo (strtolower($column['header'])=='balance') ? 'amount' : $column['header']; ?></th>
+                        
+                        <?php if($column_counter == 4): ?>
+                            <th>Order No.</th>
+                            <?php if($column_counter != $column_counter_max): ?>
+                                <th><?php echo (strtolower($column['header'])=='balance') ? 'amount' : $column['header']; ?></th>                            
+                            <?php endif; ?>
                         <?php else: ?>
-                            <!-- <th colspan="2"><?php echo $column['header'] ?></th> -->
+                            <?php if($column_counter != $column_counter_max): ?>
+                                <th><?php echo (strtolower($column['header'])=='balance') ? 'amount' : $column['header']; ?></th>
+                            <?php else: ?>
+                                <!-- <th colspan="2"><?php echo $column['header'] ?></th> -->
+                            <?php endif; ?>
                         <?php endif; ?>
                         
                     <?php endforeach ?>                    
@@ -252,7 +260,31 @@
                         $customer = Mage::getModel('customer/customer')->load(Mage::getSingleton('customer/session')->getCustomerId());
                         ?>
                         <tr <?php if (($row->getCustomerCheckId() == $customer->getId() || $row->getCustomerEmail() == $customer->getEmail() ) && $row->getRecipientName()) { ?> class="gift-voucher-sent-friend" <?php } ?>>
+                            <?php                                 
+                                $column_counter = 0;                                 
+                            ?>
                             <?php foreach ($columns as $id => $column): ?>
+                                <?php $column_counter++; ?>
+                                <?php if($column_counter == 4): ?>
+                                    <td>
+                                        <?php 
+                                        $voucher_id = $row->getCustomerVoucherId();
+                                        $giftCard = Mage::getBlockSingleton('giftvoucher/view')->getGiftVoucher($voucher_id);
+                                        $_history = Mage::getBlockSingleton('giftvoucher/view')->getGiftCardHistory($giftCard);
+                                        ?>
+                                        <?php if(count($_history) > 0): ?>
+                                        <p class="giftvoucher-grid-detail">
+                                            <?php foreach ($_history as $_item): ?>         
+                                                <?php if ($_item->getOrderIncrementId()): ?>                                
+                                                    <?php echo $_item->getOrderIncrementId() ?>
+                                                <?php else: ?>
+                                                    <?php echo $this->__('N/A') ?>
+                                                <?php endif ?>
+                                            <?php endforeach; ?>
+                                        </p>
+                                        <?php endif; ?>
+                                    </td>
+                                <?php endif; ?>
 
                                 <?php if($id !== 'action'): ?>
                                     <td class="<?php echo $id; ?>">
@@ -269,7 +301,8 @@
                                             <?php echo $this->fetchRender($column['render'], $row) ?>
                                         <?php else: ?>
                                             <?php $type = isset($column['type']) ? $column['type'] : '' ?>
-                                            <?php switch ($type): case 'action': ?>
+                                            <?php switch ($type): 
+                                                case 'action': ?>
                                                     <?php $action = $column['action'] ?>
                                                     <a href="<?php echo $this->getUrl($action['url'], array($action['name'] => $row->getData($action['field']))) ?>" title="<?php echo $action['label'] ?>"><?php echo $action['label'] ?></a>
                                                     <?php

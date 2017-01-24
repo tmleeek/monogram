@@ -381,7 +381,7 @@
                     </td>
                     <td style="text-align: right;"><a href="<?php echo $this->getAddressEditUrl($_address) ?>?address=shipping" class="set_as_default_billing"><?php echo $this->__('Edit'); ?></a>
                     </td>
-                    <td style="width: 10%;"><a href="<?php echo $this->getDeleteUrl() ?>id/<?php echo $_address->getId() ?>" class="set_as_default_billing"><?php echo $this->__('Remove'); ?></a></td>
+                    <td style="width: 10%;"><a href="<?php echo $this->getDeleteUrl() ?>id/<?php echo $_address->getId() ?>" class="set_as_default_billing remove-address"><?php echo $this->__('Remove'); ?></a></td>
                 </tr>
                 <?php $i++; endforeach; ?>
             </tbody>
@@ -391,4 +391,12 @@
 
 
   </div>
+  <script>
+    $j(".remove-address").on('click', function(e){
+      e.preventDefault();
+      if (window.confirm("Do you wish to delete your shipping address?")) {
+        location.href = this.href;
+      }
+    });
+  </script>
 <?php endif ?>

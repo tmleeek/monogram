@@ -25,6 +25,46 @@
  */
 ?>
 <?php
+function isMobile()  
+{  
+    $regex_match = "/(nokia|iphone|android|motorola|^mot\-|softbank|foma|docomo|kddi|up\.browser|up\.link|"  
+                 . "htc|dopod|blazer|netfront|helio|hosin|huawei|novarra|CoolPad|webos|techfaith|palmsource|"  
+                 . "blackberry|alcatel|amoi|ktouch|nexian|samsung|^sam\-|s[cg]h|^lge|ericsson|philips|sagem|wellcom|bunjalloo|maui|"  
+                 . "symbian|smartphone|mmp|midp|wap|phone|windows ce|iemobile|^spice|^bird|^zte\-|longcos|pantech|gionee|^sie\-|portalmmm|"  
+                 . "jig\s browser|hiptop|^ucweb|^benq|haier|^lct|opera\s*mobi|opera\*mini|320x320|240x320|176x220"  
+                 . ")/i";  
+
+    if (preg_match($regex_match, strtolower($_SERVER['HTTP_USER_AGENT']))) {  
+        return TRUE;  
+    }  
+
+    if ((strpos(strtolower($_SERVER['HTTP_ACCEPT']),'application/vnd.wap.xhtml+xml') > 0) or ((isset($_SERVER['HTTP_X_WAP_PROFILE']) or isset($_SERVER['HTTP_PROFILE'])))) {  
+        return TRUE;  
+    }      
+
+    $mobile_ua = strtolower(substr($_SERVER['HTTP_USER_AGENT'], 0, 4));  
+    $mobile_agents = array(  
+        'w3c ','acs-','alav','alca','amoi','audi','avan','benq','bird','blac',  
+        'blaz','brew','cell','cldc','cmd-','dang','doco','eric','hipt','inno',  
+        'ipaq','java','jigs','kddi','keji','leno','lg-c','lg-d','lg-g','lge-',  
+        'maui','maxo','midp','mits','mmef','mobi','mot-','moto','mwbp','nec-',  
+        'newt','noki','oper','palm','pana','pant','phil','play','port','prox',  
+        'qwap','sage','sams','sany','sch-','sec-','send','seri','sgh-','shar',  
+        'sie-','siem','smal','smar','sony','sph-','symb','t-mo','teli','tim-',  
+        'tosh','tsm-','upg1','upsi','vk-v','voda','wap-','wapa','wapi','wapp',  
+        'wapr','webc','winw','winw','xda ','xda-');  
+
+    if (in_array($mobile_ua,$mobile_agents)) {  
+        return TRUE;  
+    }  
+
+    if (isset($_SERVER['ALL_HTTP']) && strpos(strtolower($_SERVER['ALL_HTTP']),'OperaMini') > 0) {  
+        return TRUE;  
+    }  
+
+    return FALSE;  
+}
+
 $hasAddress = ($this->helper('customercustomiser')->getAddress()) ? true : false;
 $city = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->getCity() : '';
 $postcode = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->getPostcode() : '';
@@ -81,41 +121,41 @@ $telephone = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->
                                     <input type="text" name="email" id="email" value="<?php echo $this->escapeHtml($this->getCustomer()->getEmail()) ?>" title="<?php echo $this->__('Email') ?>" class="input-text required-entry validate-email" />
                                 </div>
                             </div>
-                            <div class="checkbox-input">
-                                <div class="each-input">
-                                    <input type="checkbox" name="change_password" id="change_password" value="1" onclick="setPasswordForm(this.checked)" title="<?php echo $this->__('Change Password') ?>"<?php if($this->getCustomer()->getChangePassword()==1): ?> checked="checked"<?php endif; ?> class="checkbox" />
-                                    <label class="checkbox-label" for="change_password">
-                                        <span></span><p class="label-text"><?php echo $this->__('Change Password') ?></p>
-                                    </label>
-                                </div>
-
-
-                                <div style="display: none;">
-                                    <div>
+                            <?php if(isMobile()==false): ?>
+                                <div class="checkbox-input">
+                                    <div class="each-input">
+                                        <input type="checkbox" name="change_password" id="change_password" value="1" onclick="setPasswordForm(this.checked)" title="<?php echo $this->__('Change Password') ?>"<?php if($this->getCustomer()->getChangePassword()==1): ?> checked="checked"<?php endif; ?> class="checkbox" />
+                                        <label class="checkbox-label" for="change_password">
+                                            <span></span><p class="label-text"><?php echo $this->__('Change Password') ?></p>
+                                        </label>
+                                    </div>
+                                    <div style="display: none;">
                                         <div>
-                                            <div class="each-input">
-                                                <label for="current_password" class="required"><?php echo $this->__('Current Password') ?><em>*</em></label>
-                                                <div class="input-box">
-                                                    <input type="text" class="input-text no-display" name="dummy" id="dummy" />
-                                                    <input type="password" title="<?php echo $this->__('Current Password') ?>" class="input-text" name="current_password" id="current_password" />
+                                            <div>
+                                                <div class="each-input">
+                                                    <label for="current_password" class="required"><?php echo $this->__('Current Password') ?><em>*</em></label>
+                                                    <div class="input-box">
+                                                        <input type="text" class="input-text no-display" name="dummy" id="dummy" />
+                                                        <input type="password" title="<?php echo $this->__('Current Password') ?>" class="input-text" name="current_password" id="current_password" />
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="each-input">
-                                                <label for="password" class="required"><?php echo $this->__('Change Password') ?><em>*</em></label>
-                                                <div class="input-box">
-                                                    <input type="password" title="<?php echo $this->__('Change Password') ?>" class="input-text validate-password" name="password" id="password" />
+                                                <div class="each-input">
+                                                    <label for="password" class="required"><?php echo $this->__('Change Password') ?><em>*</em></label>
+                                                    <div class="input-box">
+                                                        <input type="password" title="<?php echo $this->__('Change Password') ?>" class="input-text validate-password" name="password" id="password" />
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="each-input">
-                                                <label for="confirmation" class="required"><?php echo $this->__('Confirm Password') ?><em>*</em></label>
-                                                <div class="input-box">
-                                                    <input type="password" title="<?php echo $this->__('Confirm New Password') ?>" class="input-text validate-cpassword" name="confirmation" id="confirmation" />
+                                                <div class="each-input">
+                                                    <label for="confirmation" class="required"><?php echo $this->__('Confirm Password') ?><em>*</em></label>
+                                                    <div class="input-box">
+                                                        <input type="password" title="<?php echo $this->__('Confirm New Password') ?>" class="input-text validate-cpassword" name="confirmation" id="confirmation" />
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            <?php endif; ?>
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <?php $_gender = $this->getLayout()->createBlock('customer/widget_gender') ?>
@@ -170,6 +210,42 @@ $telephone = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->
                             <div class="dropdown" style="display: none;">
                                 <?php echo $this->helper('customercustomiser')->getCountryHtmlSelect() ?>
                             </div>
+
+                            <?php if(isMobile()!==false): ?>
+                                <div class="checkbox-input">
+                                    <div class="each-input">
+                                        <input type="checkbox" name="change_password" id="change_password" value="1" onclick="setPasswordForm(this.checked)" title="<?php echo $this->__('Change Password') ?>"<?php if($this->getCustomer()->getChangePassword()==1): ?> checked="checked"<?php endif; ?> class="checkbox" />
+                                        <label class="checkbox-label" for="change_password">
+                                            <span></span><p class="label-text"><?php echo $this->__('Change Password') ?></p>
+                                        </label>
+                                    </div>
+                                    <div style="display: none;">
+                                        <div>
+                                            <div>
+                                                <div class="each-input">
+                                                    <label for="current_password" class="required"><?php echo $this->__('Current Password') ?><em>*</em></label>
+                                                    <div class="input-box">
+                                                        <input type="text" class="input-text no-display" name="dummy" id="dummy" />
+                                                        <input type="password" title="<?php echo $this->__('Current Password') ?>" class="input-text" name="current_password" id="current_password" />
+                                                    </div>
+                                                </div>
+                                                <div class="each-input">
+                                                    <label for="password" class="required"><?php echo $this->__('Change Password') ?><em>*</em></label>
+                                                    <div class="input-box">
+                                                        <input type="password" title="<?php echo $this->__('Change Password') ?>" class="input-text validate-password" name="password" id="password" />
+                                                    </div>
+                                                </div>
+                                                <div class="each-input">
+                                                    <label for="confirmation" class="required"><?php echo $this->__('Confirm Password') ?><em>*</em></label>
+                                                    <div class="input-box">
+                                                        <input type="password" title="<?php echo $this->__('Confirm New Password') ?>" class="input-text validate-cpassword" name="confirmation" id="confirmation" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
 
                             <!-- <div class="each-input">
                                 <?php $_streetValidationClass = $this->helper('customer/address')->getAttributeValidationClass('street'); ?>                            
@@ -278,33 +354,34 @@ $telephone = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->
 
     <script>
         jQuery(document).ready(function($){
-            // var $phone_no = $("#phone_no");
-            // var $phone_no_2 = $("#phone_no_2");
-            var $telephone = $("#telephone");
-            // $phone_no.on('change', function() {
-            //     var finalNo = $(this).val() + $phone_no_2.val();
-            //     $telephone.val(finalNo);
-            // });
 
-            // $phone_no_2.keyup(function() {
-            //     var finalNo = $phone_no.val() + $(this).val();
-            //     $telephone.val(finalNo);
-            // });
+            $("#telephone").intlTelInput({
+                initialCountry: 'sg',
+                nationalMode: false,
+                autoHideDialCode: false,
+                autoPlaceholder: false,
+                preferredCountries: []
+            });
 
-            // setting up value to inputs
-            // var countryCode = jQuery("#telephone").intlTelInput("getSelectedCountryData").dialCode;
-            // $phone_no.intlTelInput("setNumber", countryCode);
+            var currentCountryCode  = "";
+            $(document).keydown(function(e) {
+                var aEl = $(document.activeElement);
 
-            // var current_number = jQuery("#telephone").intlTelInput("getNumber");
-            // var current_number_without_country_code = current_number.replace('+'+countryCode, '');        
-            // $phone_no_2.val(current_number_without_country_code);
+                if(aEl.attr('name') == "telephone") {
+                    var currentInputLength = aEl.val().length;       
+                    var dialCode = aEl.intlTelInput("getSelectedCountryData").dialCode;         
+                    
+                    if(typeof dialCode !== "undefined") {
+                        currentCountryCode = aEl.intlTelInput("getSelectedCountryData").dialCode;
+                    }                      
 
-            // $telephone.intlTelInput({
-            //     defaultCountry: 'sg',
-            //     nationalMode: false,
-            //     autoHideDialCode: true,
-            //     autoPlaceholder: false  
-            // });
+                    var currentCountryCodeCount = currentCountryCode.toString().length + 3;
+
+                    if ((e.keyCode === 8 || e.keyCode ===46) && currentInputLength < currentCountryCodeCount) 
+                        return false;
+                }                
+            });
+
         });
     </script>
     <script type="text/javascript">

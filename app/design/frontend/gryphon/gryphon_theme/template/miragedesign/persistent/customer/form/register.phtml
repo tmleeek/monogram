@@ -41,10 +41,12 @@
             </div><!--
             --><div id="account-creation-col-2" class="col-md-6 v-align">
                 <h1>Create an Account</h1>
+                
+                <?php echo $this->getMessagesBlock()->toHtml() ?>
+
                 <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple addresses, view and track your orders in your account and more.</p>
 
-                <?php echo $this->getChildHtml('form_fields_before')?>
-                <?php echo $this->getMessagesBlock()->toHtml() ?>
+                <?php echo $this->getChildHtml('form_fields_before')?>                
 
                 <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="form-validate" class="scaffold-form sign-up-form" enctype="multipart/form-data">
                     <div class="row">

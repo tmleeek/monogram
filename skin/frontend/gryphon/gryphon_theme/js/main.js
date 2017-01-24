@@ -815,7 +815,7 @@ var initialLoad = true;
                 billing.setAddress($(this).val());
             }else {
                 // billing.fillForm(false);
-                $('#billing-new-address-form').find('input[type=text], select').val('');
+                $('#billing-new-address-form').find('input[type=text]').val('');
             }
         });
 
@@ -823,7 +823,28 @@ var initialLoad = true;
             if($(this).val()!=""){
                 shipping.setAddress($(this).val());
             }else {
-                $('#shipping-new-address-form').find('input[type=text], select').val('');
+                $('#shipping-new-address-form').find('input[type=text]').val('');
+            }
+        });
+
+        $('#page-shopping-cart-shipping-container').find("input, select[name='shipping[country_id]'], select[name='billing[country_id]']").on("change", function(e){
+            $('#shipping-address-select').val("");
+            if($('input[name="shipping[telephone]"').val()=="") {
+                $('input[name="shipping[telephone]"').intlTelInput("setNumber", "+65 "); // just to fix weird fax error msg             
+            }
+            if($('input[name="shipping[fax]"').val()=="") {
+                $('input[name="shipping[fax]"').intlTelInput("setNumber", "+65 "); // just to fix weird fax error msg 
+            }
+        });
+
+        $("#page-shopping-cart-billing-container").find("input, select").on("change", function(e){
+            $('#billing-address-select').val("");
+            if($('input[name="billing[telephone]"').val()=="")
+                $('input[name="billing[telephone]"').intlTelInput("setNumber", "+65 "); // just to fix weird fax error msg
+            console.log($('input[name="billing[fax]"').val())
+            if($('input[name="billing[fax]"').val()=="") {
+                $('input[name="billing[fax]"').intlTelInput("setNumber", "+65 "); // just to fix weird fax error msg
+                console.log('herererereere!!')
             }
         });
 

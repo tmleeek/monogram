@@ -185,7 +185,7 @@ class Manic_Discovertea_IndexController extends Mage_Core_Controller_Front_Actio
 			}else {
 				$result['success']  = false;
             	$result['error']    = true;
-            	$result['error_messages']    = $this->__('This email is already being subscribed.');
+            	$result['error_messages']    = $this->__('This email address is already a subscriber');
 			}
 
 			$this->getResponse()->setBody(Mage::helper('core')->jsonEncode($result));

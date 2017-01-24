@@ -25,7 +25,7 @@ class Magestore_Giftvoucher_CheckoutController extends Mage_Core_Controller_Fron
         if ($success) {
             $codes = implode(',', $codesArray);
             $session->setGiftCodes($codes);
-            $session->addSuccess($this->__('Gift Card "%s" has been removed successfully!', Mage::helper('giftvoucher')->getHiddenCode($code)));
+            // $session->addSuccess($this->__('Gift Card "%s" has been removed successfully!', Mage::helper('giftvoucher')->getHiddenCode($code)));
         } else {
             $session->addError($this->__('Gift card "%s" not found!', $code));
         }
@@ -37,9 +37,9 @@ class Magestore_Giftvoucher_CheckoutController extends Mage_Core_Controller_Fron
         $points_currently_used = Mage::helper('rewardpoints/event')->getCreditPoints();
 
         if ($session->getQuote()->getCouponCode() && !Mage::helper('giftvoucher')->getGeneralConfig('use_with_coupon')) {
-            $session->addNotice(Mage::helper('giftvoucher')->__('A coupon code has been used. You cannot apply gift codes or Gift Card credit with the coupon to get discount.'));
+            $session->addNotice(Mage::helper('giftvoucher')->__('You cannot redeem your gift card together with the discount code.'));
         } else if(!empty($points_currently_used) && $points_currently_used > 0) {
-            $session->addNotice(Mage::helper('giftvoucher')->__('You cannot apply gift codes or Gift Card credit with the rebate.'));
+            $session->addNotice(Mage::helper('giftvoucher')->__('You cannot redeem your gift card together with your rebates.'));
         } else {
             $request = $this->getRequest();
             if ($request->isPost()) {
@@ -103,8 +103,9 @@ class Magestore_Giftvoucher_CheckoutController extends Mage_Core_Controller_Fron
                                                     break;
                                                 }
                                             }
-                                            if (!$isGiftVoucher)
-                                                $session->addSuccess($this->__('Gift code "%s" has been applied successfully.', Mage::helper('giftvoucher')->getHiddenCode($code)));
+                                            if (!$isGiftVoucher) {
+                                                // $session->addSuccess($this->__('Gift code "%s" has been applied successfully.', Mage::helper('giftvoucher')->getHiddenCode($code)));
+                                            }
                                             else
                                                 $session->addNotice($this->__('Please remove your Gift Card information since you cannot use either gift codes or Gift Card credit balance to purchase other Gift Card products.'));
                                         } else {

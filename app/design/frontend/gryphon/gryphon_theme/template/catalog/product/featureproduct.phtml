@@ -176,7 +176,7 @@ if ($this->getChild('after')) {
 $j(document).ready(function($){
     function do_update() {
 
-        $j("#desktop-header-cart").find(".cart-count-update").removeClass('fadeInUp').addClass('fadeOutDown');
+        jQuery("#desktop-header-cart").find(".cart-count-update").removeClass('animated fadeIn').addClass('animated flipOutX');
 
         $.ajax({
             url: '/discovertea/index/cartpreview',
@@ -186,9 +186,9 @@ $j(document).ready(function($){
 
                 // update product count in cart
                 $j("#desktop-header-cart").find(".count").text("("+data.cart_qty+")");
-                $j("#mobile-header-cart-btn-container").find(".count").text(data.cart_qty);
+                $j("#mobile-header-cart-btn-container").find(".count").text("("+data.cart_qty+")");
 
-                $j("#desktop-header-cart").find(".cart-count-update").removeClass('fadeOutDown').addClass('fadeInUp');
+                jQuery("#desktop-header-cart").find(".cart-count-update").removeClass('animated flipOutX').addClass('animated fadeIn');
           
             }
         });                     

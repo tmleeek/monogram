@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>Wyomind_OrdersEraser</name>
+    <version>4.0.7</version>
+    <stability>stable</stability>
+    <license>Commercial</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Wyomind Ordereraser extension</summary>
+    <description>Wyomind Ordereraser extension</description>
+    <notes></notes>
+    <authors><author><name>Wyomind</name><user>Ordereraser</user><email>contact@wyomind.com</email></author></authors>
+    <date>2016-09-03</date>
+    <time>10:09:06</time>
+    <contents><target name="magecommunity"><dir name="Wyomind"><dir name="Orderseraser"><dir name="Model"><file name="Observer.php" hash="3502ba12ec9db93bcf2edab9d157569d"/><file name="Orderseraser.php" hash="5086b04113bcf87e8f94aff5ea066455"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="OrderseraserController.php" hash="98a8eb52d70299022078e10eee28d66a"/></dir></dir><dir name="etc"><file name="config.xml" hash="3f25b6b7370da48e1fedf7be48c9f0d9"/><file name="system.xml" hash="8d37d12b5d8c5673eff53db06569ae8d"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Wyomind_Orderseraser.xml" hash="21f24202ef69e71be030f0ebd62ab7f2"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.0.0</min><max>8.0.0</max></php></required></dependencies>
+</package>

@@ -116,7 +116,7 @@ One page checkout main layout
             <action method="unsetChildren"></action>
             <block type="customer/account_navigation" name="customer_account_navigation" before="-" template="miragedesign/customer/account/navigation.phtml">
                 <action method="addLink" translate="label" module="customer"><name>account</name><path>customer/account/</path><label>Account Dashboard</label></action>
-                <action method="addLink" translate="label" module="customer"><name>account_edit</name><path>customer/account/edit/</path><label>Account Information</label></action>
+                <!-- <action method="addLink" translate="label" module="customer"><name>account_edit</name><path>customer/account/edit/</path><label>Account Information</label></action> -->
                 <action method="addLink" translate="label" module="customer"><name>address_book</name><path>customer/address/</path><label>Address Book</label></action>
                 <action method="addLink" translate="label" module="sales"><name>orders</name><path>sales/order/history/</path><label>Order History</label></action>
                 <action method="addLink" ifconfig="giftvoucher/general/active" translate="label" module="giftvoucher">
@@ -228,10 +228,9 @@ One page checkout main layout
             <action method="addItem"><type>skin_css</type><name>css/intlTelInput.css</name></action>
             <action method="addItem"><type>skin_js</type><name>js/plugins/intlTelInput.min.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/plugins/lib/libphonenumber/build/utils.js</name></action>
-            <action method="addItem"><type>skin_js</type><name>js/miragedesign/regionupdater.js</name></action>
-            <action method="addItem"><type>skin_js</type><name>js/miragedesign/telephone.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/miragedesign/regionupdater.js</name></action>            
             <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
-            <action method="setForcedTitle"><title>Account Information - Monogram Tea</title></action>            
+            <action method="setForcedTitle"><title>My Account - Monogram Tea</title></action>            
         </reference>
         <reference name="my.account.wrapper">
             <action method="unsetChildren"></action>

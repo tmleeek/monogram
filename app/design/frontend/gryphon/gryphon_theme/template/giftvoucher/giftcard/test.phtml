@@ -1,0 +1,16 @@
+<?php $_customerGift = $this->getCustomerGift() ?>
+<?php $_giftCard = $this->getGiftVoucher() ?>
+<?php $_history = $this->getGiftCardHistory($_giftCard) ?>
+<p style="display: none;">
+<?php if(count($_history) > 0): ?>
+
+    <?php foreach ($_history as $_item): ?>
+        <?php if ($_item->getOrderIncrementId()): ?>                                
+            <?php echo $_item->getOrderIncrementId() ?>
+        <?php else: ?>
+            <?php echo $this->__('N/A') ?>
+        <?php endif ?>
+    <?php endforeach; ?>
+
+<?php endif; ?>
+</p>

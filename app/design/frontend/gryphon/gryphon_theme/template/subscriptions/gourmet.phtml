@@ -146,9 +146,8 @@
 
 
             <div class="cta-container">
-              <a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais" class="square-cta">layering recommendation</a>
-              <?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
-              <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta">visit tea bar</a>
+              <a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais" class="square-cta">Layering Suggestions</a>              
+              <a href="<?php echo $this->getUrl('tea-matrix'); ?>" class="square-cta">Tea Matrix</a>
             </div>
           </div>
 
@@ -263,9 +262,9 @@
 
 
             <div class="cta-container">
-              <a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais" class="square-cta">layering recommendation</a>
+              <a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais" class="square-cta">Layering Suggestions</a>
               <?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
-              <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta">visit tea bar</a>
+              <!-- <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta">visit tea bar</a> -->
             </div>
 
           </div> <!-- #monogram-subscription-content-copy-02 -->
@@ -393,9 +392,9 @@
 
 
             <div class="cta-container">
-              <a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais" class="square-cta">layering recommendation</a>
+              <a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais" class="square-cta">Layering Suggestions</a>
               <?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
-              <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta">visit tea bar</a>
+              <!-- <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta">visit tea bar</a> -->
             </div>
           </div>
 
@@ -510,9 +509,8 @@
 
 
             <div class="cta-container">
-              <a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais" class="square-cta">layering recommendation</a>
-              <?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
-              <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta">visit tea bar</a>
+              <a href="<?php echo $this->getUrl('/'); ?>#graph/cherry-japonais" class="square-cta">Layering Suggestions</a>              
+              <a href="<?php echo $this->getUrl('tea-matrix'); ?>" class="square-cta">Tea Matrix</a>
             </div>
 
           </div> <!-- #monogram-subscription-content-copy-02 -->
@@ -569,7 +567,7 @@
 
     function do_update() {
 
-        jQuery("#desktop-header-cart").find(".cart-count-update").removeClass('fadeInUp').addClass('fadeOutDown');
+        jQuery("#desktop-header-cart").find(".cart-count-update").removeClass('animated fadeIn').addClass('animated flipOutX');
 
         jQuery.ajax({
             url: '<?php echo $this->getUrl("discovertea/index/cartpreview"); ?>',
@@ -578,9 +576,9 @@
             success: function(data){
 
                 jQuery("#desktop-header-cart").find(".count").text("("+data.cart_qty+")");
-                jQuery("#mobile-header-cart-btn-container").find(".count").text(data.cart_qty);
+                jQuery("#mobile-header-cart-btn-container").find(".count").text("("+data.cart_qty+")");
 
-                jQuery("#desktop-header-cart").find(".cart-count-update").removeClass('fadeOutDown').addClass('fadeInUp');    
+                jQuery("#desktop-header-cart").find(".cart-count-update").removeClass('animated flipOutX').addClass('animated fadeIn');   
 
                 // jQuery('.cart-preview-content').html('');
                 // jQuery.each(data.cart_items, function(key,value){
@@ -630,7 +628,7 @@
 						alert('Sorry, you can only purchase the Singapore or International Subscription at one time, not both.');
 						jQuery(el).find('.ajax_loader_product').hide();
 					}else if(data=='Sorry, you can purchase one subscription plan at a time.') {
-            alert('Sorry, you can purchase one subscription plan at a time.');
+            alert('Sorry, you can only purchase one subscription plan at a time.');
             jQuery(el).find('.ajax_loader_product').hide();
           }else {
 						do_update();

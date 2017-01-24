@@ -94,13 +94,13 @@ if(empty($creating_or_editing_address_type)) $creating_or_editing_address_type =
                                     <div class="each-input">
                                         <label for="telephone" class="required"><?php echo $this->__('Telephone') ?><em>*</em></label>
                                         <div class="input-box no-padding">
-                                            <input type="text" name="telephone" value="<?php echo $this->escapeHtml($this->getAddress()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text  <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?>" id="telephone" />
+                                            <input type="text" name="telephone" value="<?php echo $this->escapeHtml($this->getAddress()->getTelephone()) . " " ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text  <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?>" id="telephone" />
                                         </div>
                                     </div>
                                     <div class="each-input">
                                         <label for="fax"><?php echo $this->__('Fax') ?></label>
-                                        <div class="input-box">
-                                            <input type="text" name="fax" id="fax" title="<?php echo $this->__('Fax') ?>" value="<?php echo $this->escapeHtml($this->getAddress()->getFax()) ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('fax') ?>" />
+                                        <div class="input-box no-padding">
+                                            <input type="text" name="fax" id="fax" title="<?php echo $this->__('Fax') ?>" value="<?php echo $this->escapeHtml($this->getAddress()->getFax()) . " " ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('fax') ?>" />
                                         </div>
                                     </div>
                                     <!-- <input type="hidden" name="telephone" value="<?php echo $this->escapeHtml($this->getAddress()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text  <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?>" id="telephone" />
@@ -276,15 +276,14 @@ if(empty($creating_or_editing_address_type)) $creating_or_editing_address_type =
 
 
                         <div class="space60 visible-md visible-lg"></div>
-                        <hr class="visible-sm visible-xs">
-                        <div class="space30 visible-sm visible-xs"></div>
+                        <!-- <hr class="visible-sm visible-xs"> -->                        
 
                         <p class="required visible-sm visible-xs"><?php echo $this->__('* Required Fields') ?></p>
                         <!-- <hr class="dotted"/> -->
                         <div class="buttons-set row">
                             <div class="col-md-6 col-sm-6 col-xs-6">
                                 <p class="required visible-md visible-lg"><?php echo $this->__('* Required Fields') ?></p>
-                                <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
+                                <p class="back-link t2"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
 
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-6">
@@ -297,6 +296,8 @@ if(empty($creating_or_editing_address_type)) $creating_or_editing_address_type =
                                 </div>
                             </div>
                         </div>
+                        
+                        <div class="space30 visible-sm visible-xs"></div>
                     </form>
                 </div>
             </div>
@@ -312,9 +313,41 @@ if(empty($creating_or_editing_address_type)) $creating_or_editing_address_type =
     $telephone_input.intlTelInput({
         initialCountry: 'sg',
         nationalMode: false,
-        autoHideDialCode: true,
+        autoHideDialCode: false,
         autoPlaceholder: false,  
         preferredCountries: []
+    });
+
+    $fax_input = $j('#fax');
+    $fax_input.intlTelInput({
+        initialCountry: 'sg',
+        nationalMode: false,
+        autoHideDialCode: false,
+        autoPlaceholder: false,  
+        preferredCountries: []
+    });
+
+    var currentCountryCode  = "";
+    $j(document).keydown(function(e) {
+        var aEl = $j(document.activeElement);
+
+        if(aEl.attr('name') == "telephone" || aEl.attr('name') == "fax") {
+            var currentInputLength = aEl.val().length;       
+            var dialCode = aEl.intlTelInput("getSelectedCountryData").dialCode;         
+            
+            if(typeof dialCode !== "undefined") {
+                currentCountryCode = aEl.intlTelInput("getSelectedCountryData").dialCode;
+            }                      
+
+            var currentCountryCodeCount = currentCountryCode.toString().length + 3;
+
+            if ((e.keyCode === 8 || e.keyCode ===46) && currentInputLength < currentCountryCodeCount) 
+                return false;
+        }                
+    });
+
+    $j('#country').on("change", function(e){
+        $j('#telephone, #fax').intlTelInput("setCountry", $j(this).val())
     });
     </script>
 

@@ -21,6 +21,9 @@
 <script type="text/javascript">
  $j(document).ready(function($) {
      function do_update() {
+
+                jQuery("#desktop-header-cart").find(".cart-count-update").removeClass('animated fadeIn').addClass('animated flipOutX');
+
                   $.ajax({
                       url: '/discovertea/index/cartpreview',
                       dataType: 'json',
@@ -29,8 +32,9 @@
 
                           // update product count in cart
                           $("#desktop-header-cart").find(".count").text("("+data.cart_qty+")");
-                          $("#mobile-header-cart-btn-container").find(".count").text(data.cart_qty);
+                          $("#mobile-header-cart-btn-container").find(".count").text("("+data.cart_qty+")");
 
+                          jQuery("#desktop-header-cart").find(".cart-count-update").removeClass('animated flipOutX').addClass('animated fadeIn');
                     
                       }
                   });                     

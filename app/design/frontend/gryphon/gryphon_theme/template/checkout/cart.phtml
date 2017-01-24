@@ -209,7 +209,7 @@ if($session->isLoggedIn()) {
                                 <div class="each-details-container">
                                     <div class="each-details">
                                         <!--  -->
-                                        <a href="javascript:void(0);" id="update-shopping-cart" class="button btn-update arrow-cta"><span><i class="fa fa-refresh"></i> <?php echo $this->__('Update Shopping Cart'); ?></span></a>
+                                        <a href="javascript:void(0);" id="update-shopping-cart" class="update-shopping-cart button btn-update arrow-cta"><span><i class="fa fa-refresh"></i> <?php echo $this->__('Update Shopping Cart'); ?></span></a>
                                     </div>
                                 </div>
                             </div>                            
@@ -219,7 +219,7 @@ if($session->isLoggedIn()) {
                                 <div class="each-details-container">
                                     <div class="each-details">
                                         <!--  -->
-                                        <a href="javascript:void(0);" id="update-shopping-cart" class="button btn-update arrow-cta"><span><i class="fa fa-refresh"></i> <?php echo $this->__('Update Shopping Cart'); ?></span></a>
+                                        <a href="javascript:void(0);" id="update-shopping-cart" class="update-shopping-cart button btn-update arrow-cta"><span><i class="fa fa-refresh"></i> <?php echo $this->__('Update Shopping Cart'); ?></span></a>
                                     </div>
                                 </div>
                             </div>                                                        
@@ -313,7 +313,7 @@ if($session->isLoggedIn()) {
             $("#page-shopping-cart-in-between-container").find(".in-between-reward-points").html('<p>'+$("#rewardFormArea").find(".rewards_point_cart").html()+'</p>');
         }
 
-        $("#update-shopping-cart").on("click", function(e){
+        $(".update-shopping-cart").on("click", function(e){
             e.preventDefault();
             $(".btn-update").trigger("click");
         });

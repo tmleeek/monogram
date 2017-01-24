@@ -190,7 +190,7 @@ endif;
                                         <div class="col-md-6 col-sm-6 col-xs-6 product-info-col-1">
                                             <?php if( !empty($_product->getTemperature()) && !empty($_product->getTime()) ): //!empty($_product->getAmountOfWater()) &&  ?>
                                             <div class="steeping-suggestion">
-                                                <h5><?php echo $this->__('Steeping Suggestion'); ?></h5>
+                                                <h5><?php echo $this->__('Steeping Suggestions'); ?></h5>
                                                 <ul class="steeping-suggestion">
                                                     <!-- <li><i class="spoon steeping-suggestion-icon-1"></i><span><?php echo $_product->getAmountOfWater(); ?></span></li> -->
                                                     <li><i class="temperature steeping-suggestion-icon-1"></i><span><?php echo $_product->getTemperature(); ?></span></li>
@@ -317,7 +317,7 @@ endif;
                     jQuery('#messages_product_view').html('<ul class="messages">'+jQuery('.messages').html()+'</ul>');                
                 }
                 var suggestionHeight = $j(".suggestion-container").height();
-                var productdetailHeight = $j("#product-detail-img-info-container").height();
+                var productdetailHeight = $j("#product-detail-img-info-container").height() + 60;
 
                 if(suggestionHeight > productdetailHeight)
                     $j("#product-detail-img-info-container").css("height", suggestionHeight);
@@ -330,7 +330,7 @@ endif;
 
                 function do_update() {
 
-                    jQuery("#desktop-header-cart").find(".cart-count-update").removeClass('fadeInUp').addClass('fadeOutDown');
+                    jQuery("#desktop-header-cart").find(".cart-count-update").removeClass('animated fadeIn').addClass('animated flipOutX');
 
                     jQuery.ajax({
                         url: '<?php echo $this->getUrl("discovertea/index/cartpreview"); ?>',
@@ -340,9 +340,9 @@ endif;
 
                             // update product count in cart
                             jQuery("#desktop-header-cart").find(".count").text("("+data.cart_qty+")");
-                            jQuery("#mobile-header-cart-btn-container").find(".count").text(data.cart_qty);
+                            jQuery("#mobile-header-cart-btn-container").find(".count").text("("+data.cart_qty+")");
 
-                            jQuery("#desktop-header-cart").find(".cart-count-update").removeClass('fadeOutDown').addClass('fadeInUp');
+                            jQuery("#desktop-header-cart").find(".cart-count-update").removeClass('animated flipOutX').addClass('animated fadeIn');
 
                             jQuery('.cart-preview-content').html('');
                             jQuery.each(data.cart_items, function(key,value){
@@ -368,9 +368,7 @@ endif;
                             // jQuery('.mobile-cart-button').find('span').html(data.cart_qty);
                             jQuery('.cart-summary-data').find('.price').html(data.cart_total);
                             jQuery('.cart-summary-data').find('.count').html(data.cart_qty);
-                            jQuery('.cart-summary-data span').html('<span class="price">'+data.cart_total+'</span> (<span class="count">'+data.cart_qty+'</span>)');
-
-                            jQuery('.')
+                            jQuery('.cart-summary-data span').html('<span class="price">'+data.cart_total+'</span> (<span class="count">'+data.cart_qty+'</span>)');                            
                         }
                     });                     
                 }
@@ -432,7 +430,7 @@ endif;
                                             jQuery('span.ajax_msg_product').html(data.message).show().delay(5000).fadeOut();
                                         }else {
                                             do_update();
-                                            jQuery('span.ajax_msg_product').html('Added to cart!').show().delay(5000).fadeOut();
+                                            // jQuery('span.ajax_msg_product').html('Added to cart!').show().delay(5000).fadeOut();
                                         }
                                     },
                                     error: function() {

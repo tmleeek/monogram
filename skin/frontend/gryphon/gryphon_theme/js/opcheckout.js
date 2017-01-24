@@ -316,6 +316,7 @@ Billing.prototype = {
     newAddress: function(isNew){
         if (isNew) {
             this.resetSelectedAddress();
+            console.log('new billing');
             Element.show('billing-new-address-form');
         } else {
             Element.show('billing-new-address-form');
@@ -323,6 +324,7 @@ Billing.prototype = {
     },
 
     resetSelectedAddress: function(){
+        console.log('reset');
         var selectElement = $('billing-address-select')
         if (selectElement) {
             selectElement.value='';
@@ -351,6 +353,11 @@ Billing.prototype = {
                     if (fieldName == 'country_id' && billingForm){
                         billingForm.elementChildLoad(arrElements[elemIndex]);
                     }
+                    console.log(fieldName);
+                    // if (fieldName == 'telephone') {
+                    //     console.log(jQuery(arrElements[elemIndex]));
+                    //     jQuery(arrElements[elemIndex]).intlTelInput("setNumber", elementValues[fieldName]);
+                    // }
                 }
             }
         }
@@ -469,6 +476,7 @@ Shipping.prototype = {
     newAddress: function(isNew){
         if (isNew) {
             this.resetSelectedAddress();
+            console.log('new shipping');
             Element.show('shipping-new-address-form');
         } else {
             Element.show('shipping-new-address-form');
@@ -477,6 +485,7 @@ Shipping.prototype = {
     },
 
     resetSelectedAddress: function(){
+        console.log('reset shipping')
         var selectElement = $('shipping-address-select')
         if (selectElement) {
             selectElement.value='';
@@ -496,8 +505,10 @@ Shipping.prototype = {
         else{
             this.resetSelectedAddress();
         }
-        arrElements = Form.getElements(this.form);
+        arrElements = Form.getElements(this.form);  
+        console.log(arrElements);
         for (var elemIndex in arrElements) {
+            console.log(arrElements[elemIndex]);
             if (arrElements[elemIndex].id) {
                 var fieldName = arrElements[elemIndex].id.replace(/^shipping:/, '');
                 if(fieldName.indexOf("billing") == -1) {                    
@@ -506,6 +517,11 @@ Shipping.prototype = {
                         if (fieldName == 'country_id' && shippingForm){
                             shippingForm.elementChildLoad(arrElements[elemIndex]);
                         }
+                        // console.log(fieldName);
+                        // if (fieldName == 'telephone') {
+                        //     console.log(jQuery(arrElements[elemIndex]));
+                        //     jQuery(arrElements[elemIndex]).intlTelInput("setNumber", elementValues[fieldName]);
+                        // }
                     }
                 }
             }
@@ -577,6 +593,7 @@ Shipping.prototype = {
     },
 
     save: function(){
+        console.log('save 1');
         if (checkout.loadWaiting!=false) return;
         var validator = new Validation(this.form);
         if (validator.validate()) {
@@ -599,6 +616,7 @@ Shipping.prototype = {
     },
 
     nextStep: function(transport){
+        console.log('nextstep');
         if (transport && transport.responseText){
             try{
                 response = eval('(' + transport.responseText + ')');

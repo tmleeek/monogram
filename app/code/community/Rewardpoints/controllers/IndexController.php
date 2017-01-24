@@ -62,7 +62,7 @@ class Rewardpoints_IndexController extends Mage_Core_Controller_Front_Action
 
                         if ($referralModel->isSubscribed($email) || $customer->getEmail() == $email) {
                             //Mage::throwException($this->__('Email %s has been already submitted.', $email));
-                            $session->addError($this->__('Email %s has been already submitted.', $email));
+                            $session->addError($this->__('Email %s has already been referred.', $email));
                         } else {
                             if ($referralModel->subscribe($customerSession->getCustomer(), $email, $name)) {
                                 $session->addSuccess($this->__('Email %s was successfully invited.', $email));
@@ -172,7 +172,7 @@ class Rewardpoints_IndexController extends Mage_Core_Controller_Front_Action
         $points_value = number_format($points_value, 2, '.', '');
 
         if (!Mage::helper('giftvoucher')->getGeneralConfig('use_with_coupon') && ($checkout_session->getUseGiftCreditAmount() > 0 || $checkout_session->getGiftVoucherDiscount() > 0)) {
-            $checkout_session->addNotice(Mage::helper('giftvoucher')->__('You cannot apply gift codes with the rebate.'));
+            $checkout_session->addNotice(Mage::helper('giftvoucher')->__('You cannot redeem your gift card together with your rebates.'));
         } else {
             if (Mage::getStoreConfig('rewardpoints/default/max_point_used_order', Mage::app()->getStore()->getId())){
                 if ((int)Mage::getStoreConfig('rewardpoints/default/max_point_used_order', Mage::app()->getStore()->getId()) < $points_value){

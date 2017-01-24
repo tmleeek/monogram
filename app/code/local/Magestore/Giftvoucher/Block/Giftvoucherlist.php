@@ -103,7 +103,8 @@ class Magestore_Giftvoucher_Block_Giftvoucherlist extends Mage_Core_Block_Templa
 
     public function getCodeTxt($row) {
         $input = '<input id="input-gift-code' . $row->getId() . '" readonly type="text" class="input-text" value="' . $row->getGiftCode() . '" onblur="hiddencode' . $row->getId() . '(this);">';
-        $aelement = '<a href="javascript:void(0);" onclick="viewgiftcode' . $row->getId() . '()">' . Mage::helper('giftvoucher')->getHiddenCode($row->getGiftCode()) . '</a>';
+        // $aelement = '<a href="javascript:void(0);" onclick="viewgiftcode' . $row->getId() . '()">' . Mage::helper('giftvoucher')->getHiddenCode($row->getGiftCode()) . '</a>';
+        $aelement = '<p>' . $row->getGiftCode() . '</p>';
         $html = '<div id="inputboxgiftvoucher' . $row->getId() . '" >' . $aelement . '</div>
                 <script type="text/javascript">
                     //<![CDATA[

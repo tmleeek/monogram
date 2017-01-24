@@ -68,7 +68,7 @@
                     <p><?php echo $this->__('Added Date') ?></p>
                 </div>
                 <div class="field custom-field-right">
-                    <?php echo $this->formatDate($_customerGift->getData('added_date'), 'medium') ?>
+                    <?php echo $this->formatDate($_customerGift->getData('added_date')) ?>
                 </div>
             </li>
     <!--        Hai.Tran-->
@@ -81,7 +81,7 @@
                         //Hai.Tran
                         $expired_date = $_giftCard->getData('expired_at');
                         if(!$expired_date) echo $this->__('Permanent');
-                        else echo $this->formatDate($expired_date, 'medium');
+                        else echo $this->formatDate($expired_date);
                     ?>
                     <?php //echo $this->formatDate($_giftCard->getData('expired_at'), 'medium') ?>
                 </div>
@@ -156,13 +156,13 @@
                                     <?php endif ?>
                                 <?php endforeach; ?>
                             </td>
-                            <td><p><?php echo $this->formatDate($_customerGift->getData('added_date'), 'medium') ?></p></td>
+                            <td><p><?php echo $this->formatDate($_customerGift->getData('added_date')) ?></p></td>
                             <td>
                                 <?php 
                                     //Hai.Tran
                                     $expired_date = $_giftCard->getData('expired_at');
                                     if(!$expired_date) echo $this->__('Permanent');
-                                    else echo $this->formatDate($expired_date, 'medium');
+                                    else echo $this->formatDate($expired_date);
                                 ?>
                             </td>
                             <?php else: ?>

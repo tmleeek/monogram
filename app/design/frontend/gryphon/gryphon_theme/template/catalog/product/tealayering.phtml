@@ -10,7 +10,7 @@
 
           <div id="monogram-tea-layering-title">
             <h1>monogram tea layering</h1>
-            <p>Each Monogram tea is carefully selected to complement each other, layering the silken sachets to harmonious perfection.</p>
+            <p>Each Monogram Tea is carefully curated to complement one another. Discover the simplexity of layered tea flavours in each blend.</p>
           </div>
           
         </div>
@@ -39,7 +39,16 @@
         </div>
       </div>
       <?php
-      $_productCollection = Mage::getModel('catalog/category')->load(92)
+      $groupname = '';
+      if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+          $customerData = Mage::getSingleton('customer/session')->getCustomer();
+          $customerGroupId = $customerData->getGroupId();
+          $groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();  
+      }
+      if($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium') $categoryId = 118;        
+      else $categoryId = 92;
+
+      $_productCollection = Mage::getModel('catalog/category')->load($categoryId)
                            ->getProductCollection()
                            ->addAttributeToSelect('*')
                            ->addAttributeToFilter('status', 1) // enabled

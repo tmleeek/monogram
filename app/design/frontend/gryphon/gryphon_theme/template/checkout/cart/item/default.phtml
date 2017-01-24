@@ -48,8 +48,20 @@ $product_type = $_item->getProductType();
                     <?php endif; ?>
                 </p>
                 <p>
-                    <span><?php if($_item->getProduct()->getData('weight') > 0) echo (int)$_item->getProduct()->getData('weight') . 'g per Sachet'; ?></span>
-                    <span><?php echo $_item->getProduct()->getData('number_of_sachet'); ?></span>
+                    <!-- <span><?php if($_item->getProduct()->getData('weight') > 0) echo (int)$_item->getProduct()->getData('weight') . 'g per Sachet'; ?></span> -->
+
+                    <?php 
+                    $product_id = $_item->getProduct()->getId();
+                    $_product = Mage::getModel('catalog/product')->load($product_id); 
+                    ?>
+                    <?php if(!empty($_product->getData('number_of_sachet'))): ?>
+
+                        <?php if($_product->getAttributeText('package')=="Carton"): ?>
+                        <span><?php echo $_product->getData('number_of_sachet') . ' boxes per carton'; ?></span>                        
+                        <?php else: ?>
+                        <span><?php echo $_product->getData('number_of_sachet') . ' sachets per box'; ?></span>
+                        <?php endif; ?>
+                    <?php endif; ?>
                 </p>
                 <p class="product-price visible-xs">
                     <?php $_incl = $this->helper('checkout')->getPriceInclTax($_item); ?>

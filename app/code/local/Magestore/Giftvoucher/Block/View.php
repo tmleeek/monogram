@@ -2,19 +2,21 @@
 
 class Magestore_Giftvoucher_Block_View extends Mage_Core_Block_Template {
 
-    public function getCustomerGift() {
+    public function getCustomerGift($gift_id) {
         if (!$this->hasData('customer_gift')) {
+            if(empty($this->getRequest()->getParam('id'))) $id = $gift_id;
+            else $id = $this->getRequest()->getParam('id');
             $this->setData('customer_gift', Mage::getModel('giftvoucher/customervoucher')->load(
-                            $this->getRequest()->getParam('id')
+                            $id
                     )
             );
         }
         return $this->getData('customer_gift');
     }
 
-    public function getGiftVoucher() {
+    public function getGiftVoucher($gift_id = null) {
         if (!$this->hasData('gift_voucher')) {
-            $customerGift = $this->getCustomerGift();
+            $customerGift = $this->getCustomerGift($gift_id);
             $this->setData('gift_voucher', Mage::getModel('giftvoucher/giftvoucher')->load($customerGift->getVoucherId())
             );
         }

@@ -25,9 +25,10 @@ $quoteData= $quote->getData();
 
         <div id="mobile-header-cart-btn-container">
         	<a href="<?php echo $this->getUrl('checkout/cart'); ?>">
-          	<div id="mobile-header-cart-btn" class="fa fa-shopping-cart">
-              <div class="counter"><span class="count"><?php echo (!empty($count)) ? $count : 0; ?></span></div>
-            </div>            
+          	<div id="mobile-header-cart-btn" class="fa fa-shopping-cart"></div>            
+            <div class="counter">
+              <span class="count">(<?php echo (!empty($count)) ? $count : 0; ?>)</span>
+            </div>
           </a>
         </div>
 
@@ -300,7 +301,7 @@ $quoteData= $quote->getData();
 								<?php else: ?>
 								<li><a href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>" class="text">Join/Log in</a></li>
 								<?php endif; ?>            
-		            <li><a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="animated cart-count-update text">Cart <span class="count">(<?php echo (!empty($count)) ? $count : 0; ?>)</span></a></li>
+		            <li class="cart-count-update"><a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="text">Cart <span class="count">(<?php echo (!empty($count)) ? $count : 0; ?>)</span></a></li>
 
                 <!-- removed jan 06 -->
 		            <!-- <li><a href="#" class="menu-opener fa fa-bars" id="desktop-header-menu-btn"></a></li> -->

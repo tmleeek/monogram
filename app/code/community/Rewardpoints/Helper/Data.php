@@ -995,7 +995,7 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
         }
         
         if ($current < $points_to_be_used) {
-            Mage::getSingleton('checkout/session')->addError(Mage::helper('rewardpoints')->__('Not enough points available.'));
+            Mage::getSingleton('checkout/session')->addError(Mage::helper('rewardpoints')->__('Not enough rebates available.'));
             Mage::helper('rewardpoints/event')->setCreditPoints(0);
             $quote
                 ->setRewardpointsQuantity(NULL)
@@ -1040,7 +1040,7 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
         
         $discount_amount = $this->processMathValueCart(($points_to_be_used/$points_to_get_money), null, !$apply_math);
 
-        Mage::getSingleton('checkout/session')->addSuccess($this->__('Rebate was applied.'));
+        // Mage::getSingleton('checkout/session')->addSuccess($this->__('Rebate was applied.'));
 
         return $discount_amount;
     }

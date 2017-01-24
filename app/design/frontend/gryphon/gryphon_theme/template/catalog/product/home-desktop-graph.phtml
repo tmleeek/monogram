@@ -93,7 +93,7 @@
                 ?>  
               <?php else: ?>
                 <?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
-                <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta square-cta-01">Visit tea store</a>
+                <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta square-cta-01">Visit tea bar</a>
               <?php endif; ?>
               <?php if($groupname!=='Trader-Temp' && $groupname!=='Trader-Regular' && $groupname!=='Trader-Priority' && $groupname!=='Trader-Premium'): ?>
               <a href="javascript:void(0);" class="add-both-to-cart square-cta square-cta-02">add both to cart</a>
@@ -128,8 +128,8 @@
             <script type="text/javascript">
                 jQuery(function () {
                     jQuery("#savedlayering").click(function(){
-                  var pidvalue1 = jQuery("#graph-column-01 .layerteaclass").attr('id');
-                  var pidvalue2 = jQuery("#graph-column-02 .layerteaclass").attr('id');
+                  var pidvalue1 = jQuery("#graph-selction-a .layerteaclass").attr('id');
+                  var pidvalue2 = jQuery("#graph-selction-b .layerteaclass").attr('id');
                   //alert(pidvalue1);alert(pidvalue2);
                   // jQuery("#successmsg").hide();
                   // jQuery("#ajax_loadermsg").show();    
@@ -172,7 +172,7 @@
 
 
 
-  <div id="graph-selction-a" class="graph-selection">
+  <div id="graph-selction-a" class="graph-selection <?php if($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium'): ?>trade-graph<?php endif; ?>">
     <div class="graph-selection-content"></div>
     <div class="graph-selection-instructions">
       <div class="graph-selection-instructions-btn" id="graph-selection-next-tea-btn">
@@ -183,7 +183,7 @@
   </div> <!-- graph-selction-a -->
 
 
-  <div id="graph-selction-b" class="graph-selection">
+  <div id="graph-selction-b" class="graph-selection <?php if($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium'): ?>trade-graph<?php endif; ?>">
     <div class="graph-selection-content"></div>
     <div class="graph-selection-instructions">
       <div class="graph-selection-instructions-btn" id="graph-selection-next-layering-btn">
