@@ -302,17 +302,21 @@ class Aemtech_Trader_Model_Observer {
 		$event = $observer->getEvent();
 		$quote = $event->getQuote();
 		$request = $event->getRequest();
-
-		$traderselfcollect = $request->getPost('traderselfcollect', false);
-		if($traderselfcollect == 1 || $traderselfcollect == '1'){
-			$address = $quote->getShippingAddress();  
-			// Apply the Free Shipping		
-			$address->setFreeShipping(true);
-			$address->setShippingMethod('freeshipping_freeshipping');		
-		}
 		
-		$session = Mage::getSingleton('checkout/session');
-		$session->setData('traderselfcollect', $traderselfcollect);
+		$address = $quote->getShippingAddress();	
+		$countryId = $address->getData('country_id');
+		
+		if(($countryId=='SG' || $countryId=='sg')){
+			$traderselfcollect = $request->getPost('traderselfcollect', false);
+			if($traderselfcollect == 1 || $traderselfcollect == '1'){				
+				// Apply the Free Shipping		
+				$address->setFreeShipping(true);
+				$address->setShippingMethod('freeshipping_freeshipping');		
+			}
+			
+			$session = Mage::getSingleton('checkout/session');
+			$session->setData('traderselfcollect', $traderselfcollect);
+		}		
 		
 	}
 	
