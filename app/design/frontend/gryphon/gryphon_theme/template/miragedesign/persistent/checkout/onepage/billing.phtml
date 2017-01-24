@@ -88,7 +88,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                                 <ul class="form-list">
                                 <?php if ($this->customerHasAddresses()): ?>
                                     <li class="wide each-input dropdown-address">
-                                        <label for="billing-address-select"><?php echo $this->__('Select a billing address') ?></label>
+                                        <label for="billing-address-select"><?php echo $this->__('Select your billing address') ?></label>
                                         <div class="input-box dropdown">
                                             <?php //echo $this->getAddressesHtmlSelect('billing') ?>                            
                                             <div id="custAddress">
@@ -201,7 +201,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                                                     <!-- <input type="text" id="billing_phone_no_2" onchange="if(document.getElementById('shipping:same_as_billing').checked) shipping.setSameAsBilling(true);">                                 -->
 
                                                     <!-- <div class="hide-input"> -->
-                                                        <input type="text" name="billing[telephone]" value="<?php echo $this->escapeHtml($this->getAddress()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?>" id="billing:telephone" onkeyup="if(document.getElementById('shipping:same_as_billing').checked) shipping.setSameAsBilling(true);" />                                    
+                                                        <input type="text" name="billing[telephone]" value="<?php echo $this->escapeHtml($this->getAddress()->getTelephone()) . " " ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?>" id="billing:telephone" onkeyup="if(document.getElementById('shipping:same_as_billing').checked) shipping.setSameAsBilling(true);" />                                    
                                                     <!-- </div> -->
                                                     
                                                 </div>
@@ -213,7 +213,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                                                     <!-- <input type="text" id="billing_fax_no_2" onchange="if(document.getElementById('shipping:same_as_billing').checked) shipping.setSameAsBilling(true);">    -->
                                                     
                                                     <!-- <div class="hide-input"> -->
-                                                        <input type="text" name="billing[fax]" value="<?php echo $this->escapeHtml($this->getAddress()->getFax()) ?>" title="<?php echo $this->__('Fax') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('fax') ?>" id="billing:fax" onkeyup="if(document.getElementById('shipping:same_as_billing').checked) shipping.setSameAsBilling(true);" />
+                                                        <input type="text" name="billing[fax]" value="<?php echo $this->escapeHtml($this->getAddress()->getFax()) . " " ?>" title="<?php echo $this->__('Fax') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('fax') ?>" id="billing:fax" onkeyup="if(document.getElementById('shipping:same_as_billing').checked) shipping.setSameAsBilling(true);" />
                                                     <!-- </div> -->
                                                 </div>
                                             </div>
@@ -271,7 +271,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                                             <li class="same-as-billing">
                                                 <input type="checkbox" name="shipping[same_as_billing]" id="shipping:same_as_billing" value="1"<?php if($this->getAddress()->getSameAsBilling()): ?> checked="checked"<?php endif; ?> title="<?php echo $this->__('Use Billing Address') ?>" onclick="shipping.setSameAsBilling(this.checked)" class="checkbox same-as-billing-checkbox" />
                                                 <label class="checkbox-label" for="shipping:same_as_billing">
-                                                    <span></span><p class="label-text"><?php echo $this->__('If shipping address is same as billing address, tick here.') ?></p>
+                                                    <span></span><p class="label-text"><?php echo $this->__('If the billing address is the same as the shipping address, tick here') ?></p>
                                                 </label>   
                                             </li>
                                         <?php echo $this->getChildHtml('form.additional.info'); ?>
@@ -282,7 +282,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                                 <?php if (!$this->canShip()): ?>
                                     <input type="hidden" name="billing[use_for_shipping]" value="1" />
                                 <?php endif; ?>
-
+							<input type="hidden" name="billcurrentcountry" id="billcurrentcountry" value="" />
                             </div>
                     </div>
                 </div>
@@ -294,7 +294,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                         <ul class="form-list">
                         <?php if ($this->customerHasAddresses()): ?>
                            <li class="wide each-input dropdown-address">
-                               <label for="shipping-address-select"><?php echo $this->__('Select a shipping address') ?></label>
+                               <label for="shipping-address-select"><?php echo $this->__('Select your shipping address') ?></label>
                                <div class="input-box dropdown">
                                    <?php //echo $this->getAddressesHtmlSelect('shipping') ?>
                                    <div id="custAddress">
@@ -405,7 +405,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                                                 <!-- <input type="text" id="shipping_phone_no" class="phone_no_input">                                 -->
                                                 <!-- <input type="text" id="shipping_phone_no_2"> -->
                                                 <!-- <div class="hide-input"> -->
-                                                    <input type="text" name="shipping[telephone]" value="<?php echo $this->escapeHtml($this->getAddress()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?>" id="shipping:telephone" onchange="shipping.setSameAsBilling(false);" />
+                                                    <input type="text" name="shipping[telephone]" value="<?php echo $this->escapeHtml($this->getAddress()->getTelephone()) . " " ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?>" id="shipping:telephone" onchange="shipping.setSameAsBilling(false);" />
                                                 <!-- </div> -->
                                             </div>
                                         </div>
@@ -416,7 +416,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                                                 <!-- <input type="text" id="shipping_fax_no_2">    -->
                                                 
                                                 <!-- <div class="hide-input"> -->
-                                                    <input type="text" name="shipping[fax]" value="<?php echo $this->escapeHtml($this->getAddress()->getFax()) ?>" title="<?php echo $this->__('Fax') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('fax') ?>" id="shipping:fax" onchange="shipping.setSameAsBilling(false);" />
+                                                    <input type="text" name="shipping[fax]" value="<?php echo $this->escapeHtml($this->getAddress()->getFax()) . " " ?>" title="<?php echo $this->__('Fax') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('fax') ?>" id="shipping:fax" onchange="shipping.setSameAsBilling(false);" />
                                                 <!-- </div>                                     -->
                                             </div>
                                         </div>
@@ -449,6 +449,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
 				$customerGroupId = $customerData->getGroupId();
 				$groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();  
 			} 
+			
 			$tradselfcollect = 0;
 			//$sessiontemp = Mage::getSingleton('checkout/session');
 			//$tradselfcollect = $sessiontemp->getData('traderselfcollect');
@@ -462,17 +463,23 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
 			$curlpath = basename($_SERVER['REQUEST_URI']);			
 			$parts = parse_url($curlpath);
 			parse_str($parts['query'], $query);	
-			$tradselfcollect = $query['tsc']['tsc'];
-			Mage::log($curlpath, null, 'kkkkk.log');
-			Mage::log($query['tsc']['tsc'], null, 'kkkkk.log');
+			$tradselfcollect = $query['tsc']['tsc'];			
 			?>
-			<?php if(($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium')&&($countryId=='SG' || $countryId=='sg')): ?>
-				<div class="row selfcollect">
-					<div class="col-md-6">
-						<label for="billing:traderselfcollect"><?php echo $this->__('Self Collect:') ?></label>
-							<input type="radio" onclick="traderselfcollectyesno('traderselfcollectyes','traderselfcollectno');" id="traderselfcollectno" name="traderselfcollect" value="0" <?php if($tradselfcollect != 1 && $tradselfcollect != '1'){echo 'checked';} ?> />No
-							<input type="radio" onclick="traderselfcollectyesno('traderselfcollectno','traderselfcollectyes');" id="traderselfcollectyes" name="traderselfcollect" value="1" <?php if($tradselfcollect ==1 || $tradselfcollect == '1'){echo 'checked';} ?> />Yes					 
-					</div>
+			<?php //if(($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium')&&($countryId=='SG' || $countryId=='sg')): 
+			if($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium'):
+			?>
+				<div class="selfcollect">
+                    <div class="row">
+    					<div class="col-md-6">
+                            <label for="billing:traderselfcollect"><?php echo $this->__('Self Collection:') ?></label>
+                            <div class="selfcollect-option">        						
+    							<input type="radio" onclick="traderselfcollectyesno('traderselfcollectyes','traderselfcollectno');" id="traderselfcollectno" name="traderselfcollect" value="0" <?php if($tradselfcollect != 1 && $tradselfcollect != '1'){echo 'checked';} ?> /><label for="traderselfcollectno"><span></span>No</label>
+                            </div>
+                            <div class="selfcollect-option">
+							     <input type="radio" onclick="traderselfcollectyesno('traderselfcollectno','traderselfcollectyes');" id="traderselfcollectyes" name="traderselfcollect" value="1" <?php if($tradselfcollect ==1 || $tradselfcollect == '1'){echo 'checked';} ?> /><label for="traderselfcollectyes"><span></span>Yes</label>
+                            </div>			 
+    					</div>
+                    </div>
 				</div></br>
 			 <?php endif; ?>
         </form>        
@@ -530,7 +537,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                     <a class="cta back-btn" href="<?php echo $this->getUrl('store.html'); ?>"><i class="fa fa-chevron-left"></i> <?php echo $this->__('go back to continue shopping') ?></a>
                 </div>
                 <div class="col-md-4 col-md-offset-4">
-                    <button type="button" title="<?php echo $this->__('Continue') ?>" class="button continue cta" onclick="billing.save();"><span><span><?php echo $this->__('Continue') ?></span></span></button>
+                    <button type="button" id="continue-to-checkout" title="<?php echo $this->__('Continue') ?>" class="button continue cta"><span><span><?php echo $this->__('Continue') ?></span></span></button>
                     <span class="please-wait" id="billing-please-wait" style="display:none;">
                         <img src='<?php echo $this->getSkinUrl('images/icons/spin.svg')?>'/>
                         <!-- <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" alt="<?php echo $this->__('Loading next step...') ?>" title="<?php echo $this->__('Loading next step...') ?>" class="v-middle" /> --> <?php //echo $this->__('Loading next step...') ?>
@@ -563,163 +570,274 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
         jQuery(document).ready(function($){       
 
             <?php if(!$this->isCustomerLoggedIn()): ?>
-                <?php if($isiPad): ?>
-                    $.blockUI({ 
-                        message: $('#question'),             
-                        css: { 
-                            padding:        '10px', 
-                            margin:         0,
-                            width:          '50.02%',
-                            height:         '280px',
-                            top:            '35%',
-                            left:           '26%',                        
-                            textAlign:      'center', 
-                            color:          '#f1efee', 
-                            border:         '10px', 
-                            backgroundColor:'#7b706b',
-                            cursor:         'wait',                        
-                        },
-                    });
-                <?php elseif(isMobile()!==true): ?>
-                    $.blockUI({ 
-                        message: $('#question'),             
-                        css: { 
-                            padding:        '10px', 
-                            margin:         0, 
-                            width:          '28%', 
-                            height:         '280px', 
-                            top:            '35%',
-                            left:           '39%',                
-                            textAlign:      'center', 
-                            color:          '#f1efee', 
-                            border:         '10px', 
-                            backgroundColor:'#7b706b',
-                            cursor:         'wait' 
-                        },
-                    });
-                <?php else: ?>
-                    $.blockUI({ 
-                        message: $('#question'),             
-                        css: { 
-                            padding:        '10px', 
-                            margin:         0, 
-                            width:          '90%', 
-                            height:         '280px', 
-                            top:            '27%',
-                            left:           '5%',                
-                            textAlign:      'center', 
-                            color:          '#f1efee', 
-                            border:         '10px', 
-                            backgroundColor:'#7b706b',
-                            cursor:         'wait' 
-                        },
-                    });    
-                <?php endif; ?>
+
+                if(typeof(Storage) !== "undefined") {                    
+
+                    if(localStorage.getItem("inputValue") === null) {                                
+
+                        <?php if($isiPad): ?>
+                            $.blockUI({ 
+                                message: $('#question'),             
+                                css: { 
+                                    padding:        '10px', 
+                                    margin:         0,
+                                    width:          '50.02%',
+                                    height:         '280px',
+                                    top:            '35%',
+                                    left:           '26%',                        
+                                    textAlign:      'center', 
+                                    color:          '#f1efee', 
+                                    border:         '10px', 
+                                    backgroundColor:'#7b706b',
+                                    cursor:         'wait',                        
+                                },
+                            });
+                        <?php elseif(isMobile()!==true): ?>
+                            $.blockUI({ 
+                                message: $('#question'),             
+                                css: { 
+                                    padding:        '10px', 
+                                    margin:         0, 
+                                    width:          '28%', 
+                                    height:         '280px', 
+                                    top:            '35%',
+                                    left:           '39%',                
+                                    textAlign:      'center', 
+                                    color:          '#f1efee', 
+                                    border:         '10px', 
+                                    backgroundColor:'#7b706b',
+                                    cursor:         'wait' 
+                                },
+                            });
+                        <?php else: ?>
+                            $.blockUI({ 
+                                message: $('#question'),             
+                                css: { 
+                                    padding:        '10px', 
+                                    margin:         0, 
+                                    width:          '90%', 
+                                    height:         '280px', 
+                                    top:            '27%',
+                                    left:           '5%',                
+                                    textAlign:      'center', 
+                                    color:          '#f1efee', 
+                                    border:         '10px', 
+                                    backgroundColor:'#7b706b',
+                                    cursor:         'wait' 
+                                },
+                            });                    
+                        <?php endif; ?>
+
+                    } else {
+
+                        var storedValue = JSON.parse(localStorage.getItem( 'inputValue' ));
+
+                        console.log(storedValue);
+
+                        $.each(storedValue, function(key, value){
+
+                            if(key=="billing[country_id]" || key=="shipping[country_id]")
+                                $("select[name='"+key+"']").val(value);     
+                            else if(key=="shipping[same_as_billing]") {
+                                $("input[name='"+key+"']").val(1);
+                                if(value==1) {                   
+                                    console.log(value);               
+                                    console.log('heererer');               
+                                    $(".same-as-billing-checkbox").attr('checked', true);
+                                }                                
+                            }
+                            else 
+                                $("input[name='"+key+"']").val(value);
+                        });
+                    }
+
+                } else {
+
+                    <?php if($isiPad): ?>
+                        $.blockUI({ 
+                            message: $('#question'),             
+                            css: { 
+                                padding:        '10px', 
+                                margin:         0,
+                                width:          '50.02%',
+                                height:         '280px',
+                                top:            '35%',
+                                left:           '26%',                        
+                                textAlign:      'center', 
+                                color:          '#f1efee', 
+                                border:         '10px', 
+                                backgroundColor:'#7b706b',
+                                cursor:         'wait',                        
+                            },
+                        });
+                    <?php elseif(isMobile()!==true): ?>
+                        $.blockUI({ 
+                            message: $('#question'),             
+                            css: { 
+                                padding:        '10px', 
+                                margin:         0, 
+                                width:          '28%', 
+                                height:         '280px', 
+                                top:            '35%',
+                                left:           '39%',                
+                                textAlign:      'center', 
+                                color:          '#f1efee', 
+                                border:         '10px', 
+                                backgroundColor:'#7b706b',
+                                cursor:         'wait' 
+                            },
+                        });
+                    <?php else: ?>
+                        $.blockUI({ 
+                            message: $('#question'),             
+                            css: { 
+                                padding:        '10px', 
+                                margin:         0, 
+                                width:          '90%', 
+                                height:         '280px', 
+                                top:            '27%',
+                                left:           '5%',                
+                                textAlign:      'center', 
+                                color:          '#f1efee', 
+                                border:         '10px', 
+                                backgroundColor:'#7b706b',
+                                cursor:         'wait' 
+                            },
+                        });                    
+                    <?php endif; ?>
+
+                }
+
                 $('#no').click(function(e) {
                     e.preventDefault();
                     $.unblockUI(); 
                     return false; 
-                }); 
+                });
+
             <?php endif; ?>        
 
-            function setAllPhoneFaxInputs($telephone, $phone_no, $phone_no_2, type) {
-                $phone_no.intlTelInput({
-                    defaultCountry: 'sg',
-                    nationalMode: false,
-                    autoHideDialCode: false,
-                    autoPlaceholder: false                
-                  });
-                $telephone.intlTelInput();
-
-                $phone_no.on('change', function() {
-                    var finalNo = $(this).val() + $phone_no_2.val();
-                    $telephone.val(finalNo);
-                });
-
-                $phone_no_2.keyup(function() {
-                    var finalNo = $phone_no.val() + $(this).val();
-                    $telephone.val(finalNo);
-                });
-
-                $phone_no_2.on('change', function() {
-                    var finalNo = $phone_no.val() + $(this).val();
-                    $telephone.val(finalNo);
-                });
-
-                // setting up value to inputs
-                var countryCode = $telephone.intlTelInput("getSelectedCountryData").dialCode;
-                $phone_no.intlTelInput("setNumber", countryCode);
-
-                var current_number = $telephone.intlTelInput("getNumber");
-                var current_number_without_country_code = current_number.replace('+'+countryCode, '');        
-                $phone_no_2.val(current_number_without_country_code);
-
-                <?php if(!$this->getAddress()->getTelephone()): ?>
-                    jQuery("#billing_phone_no").intlTelInput("selectCountry", 'sg');           
-                    jQuery("#shipping_phone_no").intlTelInput("selectCountry", 'sg');           
-                <?php endif; ?>
-
-                <?php if(!$this->getAddress()->getFax()): ?>
-                    jQuery("#billing_fax_no").intlTelInput("selectCountry", 'sg');           
-                    jQuery("#shipping_fax_no").intlTelInput("selectCountry", 'sg');           
-                <?php endif; ?>
-            }
-
-            var $billing_phone_no = $("#billing_phone_no");
-            var $billing_phone_no_2 = $("#billing_phone_no_2");
+            
             var $billing_telephone = $('input[name="billing[telephone]"]');
-
-            // setAllPhoneFaxInputs($billing_telephone, $billing_phone_no, $billing_phone_no_2, 'billing_phone');
-
-            $billing_telephone.intlTelInput({
-                defaultCountry: 'sg',
+            $billing_telephone.intlTelInput({                
+                initialCountry: 'sg',
                 nationalMode: false,
-                autoHideDialCode: true,
-                autoPlaceholder: false  
+                autoHideDialCode: false,
+                autoPlaceholder: false,
+                preferredCountries: []                
             });
 
+            var currentCountryCode  = "";
+            $(document).keydown(function(e) {
+                var aEl = $(document.activeElement);
 
-            var $shipping_phone_no = $("#shipping_phone_no");
-            var $shipping_phone_no_2 = $("#shipping_phone_no_2");
+                if(aEl.attr('name') == "billing[telephone]" || aEl.attr('name') == "billing[fax]" || aEl.attr('name') == "shipping[telephone]" || aEl.attr('name') == "shipping[fax]") {
+                    var currentInputLength = aEl.val().length;       
+                    var dialCode = aEl.intlTelInput("getSelectedCountryData").dialCode;         
+                    
+                    if(typeof dialCode !== "undefined") {
+                        currentCountryCode = aEl.intlTelInput("getSelectedCountryData").dialCode;
+                    }                      
+
+                    var currentCountryCodeCount = currentCountryCode.toString().length + 3;
+
+                    if ((e.keyCode === 8 || e.keyCode ===46) && currentInputLength < currentCountryCodeCount) 
+                        return false;
+                }                
+            });
+            
             var $shipping_telephone = $('input[name="shipping[telephone]"]');
-
-            $shipping_telephone.intlTelInput({
-                defaultCountry: 'sg',
+            $shipping_telephone.intlTelInput({                
+                initialCountry: 'sg',
                 nationalMode: false,
-                autoHideDialCode: true,
-                autoPlaceholder: false  
+                autoHideDialCode: false,
+                autoPlaceholder: false,
+                preferredCountries: []                
             });
 
-            // setAllPhoneFaxInputs($shipping_telephone, $shipping_phone_no, $shipping_phone_no_2, 'shipping_phone');
-
-            var $billing_fax_no = $("#billing_fax_no");
-            var $billing_fax_no_2 = $("#billing_fax_no_2");
             var $billing_fax = $('input[name="billing[fax]"]');
-
-            $billing_fax.intlTelInput({
-                defaultCountry: 'sg',
+            $billing_fax.intlTelInput({                
+                initialCountry: 'sg',
                 nationalMode: false,
-                autoHideDialCode: true,
-                autoPlaceholder: false  
+                autoHideDialCode: false,
+                autoPlaceholder: false,
+                preferredCountries: []                
             });
-            // setAllPhoneFaxInputs($billing_fax, $billing_fax_no, $billing_fax_no_2, 'billing_fax');
 
-            var $shipping_fax_no = $("#shipping_fax_no");
-            var $shipping_fax_no_2 = $("#shipping_fax_no_2");
             var $shipping_fax = $('input[name="shipping[fax]"]');
-
-            $shipping_fax.intlTelInput({
-                defaultCountry: 'sg',
+            $shipping_fax.intlTelInput({                
+                initialCountry: 'sg',
                 nationalMode: false,
-                autoHideDialCode: true,
-                autoPlaceholder: false  
-            });
-            // setAllPhoneFaxInputs($shipping_fax, $shipping_fax_no, $shipping_fax_no_2, 'shipping_fax');
+                autoHideDialCode: false,
+                autoPlaceholder: false,
+                preferredCountries: []                
+            });            
 
             $('select[name="billing[country_id]"]').on('change', function(e){
                 e.preventDefault();
+
                 if(document.getElementById('shipping:same_as_billing').checked)
                     shipping.setSameAsBilling(true);
+
+                var country = $(this).val();
+
+                $billing_telephone.intlTelInput("setCountry", country);
+                $billing_fax.intlTelInput("setCountry", country);
+
+            });
+
+            $('select[name="shipping[country_id]"]').on('change', function(e){
+                e.preventDefault();
+
+                var country = $(this).val();
+
+                $shipping_telephone.intlTelInput("setCountry", country);
+                $shipping_fax.intlTelInput("setCountry", country);
+
+            });
+
+            $("#continue-to-checkout").on("click", function(e){
+                e.preventDefault();
+
+                if (typeof(Storage) !== "undefined") {
+                    var $inputs = $("#billing-new-address-form").find("input, select");
+                    var $shipping_inputs = $("#shipping-new-address-form").find("input, select");
+                    var inputValue = {};
+
+                    $inputs.each(function(){
+                        var value = $(this).val();
+                        var name = $(this).attr('name');
+
+                        if(name=="shipping[same_as_billing]") {
+                            console.log($(this).is(':checked'))
+                            if($(this).is(':checked')===false) {
+                                value = 'no';
+                            }else value = 1;
+                        }
+                        
+                        if(value!="") {
+                            inputValue[name] = value;
+                        }                                            
+                    });
+
+                    $shipping_inputs.each(function(){
+                        var value = $(this).val();
+                        var name = $(this).attr('name');
+                        
+                        if(value!="") {
+                            inputValue[name] = value;
+                        }                                            
+                    });
+
+                    console.log( inputValue );
+
+                    localStorage.removeItem('inputValue');
+                    localStorage.setItem( 'inputValue', JSON.stringify(inputValue) );
+                    var storedValue = JSON.parse(localStorage.getItem( 'inputValue' ));
+
+                    console.log(storedValue);
+                }
+
+                billing.save();                
             });
             
         });
@@ -780,6 +898,66 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
 			var countryIDdd = '<?= Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress()->getData('country_id') ?>';
 			jQuery('.selfcollect')[countryIDdd == 'SG' ? 'show' : 'hide']();
         });
+		
+		/*var currentCountryIdload = $j('#billing:country_id').val();    
+		jQuery('.selfcollect')[currentCountryIdload == 'SG' ? 'show' : 'hide']();*/
+			
+		$j('.validate-select').on("change", function(){//alert('k');
+			var currentCountryId = $j(this).val();   //alert(currentCountryId); 
+			jQuery('.selfcollect')[currentCountryId == 'SG' ? 'show' : 'hide']();
+        });
+		
+		$j( document ).ready(function() {
+			//alert( "ready!" );
+			var currentCountryIdLoad = $j('.validate-select').val();   //alert(currentCountryIdLoad); 
+			jQuery('.selfcollect')[currentCountryIdLoad == 'SG' ? 'show' : 'hide']();
+		});
+		
+		
+		
+		
+		$j( document ).ready(function() {
+			
+		if(window.location.href.indexOf("tsc") > -1) {
+		var uurlStringkk = window.location.href.split('?')[1];//alert(uurlStringkk);
+		if (typeof uurlStringkk !== "undefined") {
+			var resQyertkk = uurlStringkk.split("=");
+			var curCId = resQyertkk[1];
+			if(curCId == '1'){
+				jQuery("#s_method_freeshipping_freeshipping").attr('checked', true);				
+				jQuery('.selfcollect').show();
+				//$j(".validate-select").val('SG');
+			}
+			//alert(curCId);
+		}			
+		}
+		
+		/*var uurlString = window.location.href.split('?')[1];
+		
+		var resQyert = uurlString.split("&c=");
+		var curContryId = resQyert[1];
+		
+		var resQyertzero = resQyert[0];
+		var resQyerttsc = resQyertzero.split("tsc=");
+		var tscflag = resQyerttsc[1];
+		//alert(tscflag);
+		/*	$j(".validate-select > option").each(function() {
+				alert($j(this).val());
+				return ($j(this).value == curContryId);
+			}).prop('selected', true);*/
+			
+		//$j(".validate-select").val(curContryId);
+		/*if(tscflag == 1){
+			jQuery("#s_method_freeshipping_freeshipping").attr('checked', true);
+		}
+		jQuery('.selfcollect')[curContryId == 'SG' ? 'show' : 'hide']();*/
+		});
+		//$j('.myclass option:selected').filter("[value=audi]")
+
+		/*$j('[class=validate-select] option').filter(function() { 
+			return ($(this).text() == 'Blue'); //To select Blue
+		}).prop('selected', true); */
+		
                 
     //]]>
 	
@@ -800,7 +978,9 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
 		//billing.save();		
 		//location.reload();
 		$uurl = window.location.href.split('?')[0];
+		//window.location.href = $uurl + "?tsc="+tsr+"&c="+$j('.validate-select').val();
 		window.location.href = $uurl + "?tsc="+tsr;
+		$j('#billcurrentcountry').val($j('.validate-select').val());
 	
 	}  	
     </script>
