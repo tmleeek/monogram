@@ -1,5 +1,15 @@
 (function($){
     $(function() {
+		if(window.location.href.indexOf("tsc") > -1) {
+			var sscountry_id = getCookie("scountry_id");//alert(sscountry_id);
+			var saddressId = getCookie("saddressId");//alert(saddressId);
+			if(sscountry_id == 'SG'){
+				//getShippingFee('new', sscountry_id);
+				//getShippingFee('existed', 2706);
+			}
+				
+		}
+		
         if ($("#shipping\\:country_id").size()) {
             if ($("#shipping\\:country_id").is(':visible')) {
                 if ($("#shipping\\:country_id").val()) {
@@ -21,7 +31,8 @@
 
             $("#shipping-address-select").on('change', function () {
                 if ($(this).val()) {
-                    var addressId = $(this).val();
+                    var addressId = $(this).val();//alert(addressId);
+					setCookie("saddressId", addressId, 365);
                     getShippingFee('existed', addressId);
                 } else {
                     $("#shipping\\:country_id").trigger('change');
@@ -77,3 +88,7 @@
         $('.delivery-rates').removeClass('loading');
     }
 })(jQuery);
+
+jQuery( document ).ready(function() {
+	
+});

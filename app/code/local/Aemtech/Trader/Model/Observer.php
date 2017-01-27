@@ -274,11 +274,45 @@ class Aemtech_Trader_Model_Observer {
         //Mage::log(print_r("Post Save Customer Is Activated::" . $postsaveIsActive, true));
     }
 	
+	public function saveQuoteBefore($evt){
+        $quote = $evt->getQuote();
+        $post = Mage::app()->getFrontController()->getRequest()->getPost();
+        if(isset($post['custom']['selfcollecthidden'])){
+            $var = $post['custom']['selfcollecthidden'];
+            $quote->setSelfcollecthidden($var);
+        }
+    }
+	
+	public function saveQuoteAfter($evt){
+        $quote = $evt->getQuote();
+        if($quote->getSelfcollecthidden()){
+            $var = $quote->getSelfcollecthidden();
+            if(!empty($var)){
+                $model = Mage::getModel('trader/quote');
+                $model->deteleByQuote($quote->getId(),'selfcollecthidden');
+                $model->setQuoteId($quote->getId());
+                $model->setKey('selfcollecthidden');
+                $model->setValue($var);
+                $model->save();
+            }
+        }
+    }
+	
+	public function loadQuoteAfter($evt){
+        $quote = $evt->getQuote();
+        $model = Mage::getModel('trader/quote');
+        $data = $model->getByQuote($quote->getId());
+        foreach($data as $key => $value){
+            $quote->setData($key,$value);
+        }
+    }
+	
 	public function saveTraderSelfCollect($observer) 
 	{
-		$event = $observer->getEvent();
+		$traderselfcollect = 0;
+        $event = $observer->getEvent();
 		$order = $event->getOrder();
-		
+
 		$fieldVal = Mage::app()->getFrontController()->getRequest()->getParams();
 		$traderselfcollect = 0;
 		$session = Mage::getSingleton('checkout/session');
@@ -286,7 +320,7 @@ class Aemtech_Trader_Model_Observer {
 		
 		if($traderselfcollect == ''){
 			$traderselfcollect = isset($fieldVal['traderselfcollect'])?$fieldVal['traderselfcollect']:0;
-		}
+		}		
 		
 		if($traderselfcollect != ""){
             $order->setTraderselfcollect($traderselfcollect);
@@ -298,16 +332,17 @@ class Aemtech_Trader_Model_Observer {
 		
 	}
 	public function saveTraderSelfCollectToQuote($observer) 
-	{
+	{	
+		$traderselfcollect = 0;
+        	
 		$event = $observer->getEvent();
 		$quote = $event->getQuote();
 		$request = $event->getRequest();
-		
+		$traderselfcollect = $request->getPost('traderselfcollect', false);
 		$address = $quote->getShippingAddress();	
 		$countryId = $address->getData('country_id');
 		
-		if(($countryId=='SG' || $countryId=='sg')){
-			$traderselfcollect = $request->getPost('traderselfcollect', false);
+		if(($countryId=='SG' || $countryId=='sg')){			
 			if($traderselfcollect == 1 || $traderselfcollect == '1'){				
 				// Apply the Free Shipping		
 				$address->setFreeShipping(true);
@@ -318,14 +353,6 @@ class Aemtech_Trader_Model_Observer {
 			$session->setData('traderselfcollect', $traderselfcollect);
 		}		
 		
-	}
-	
-	public function setTraderFreeShipping($observer) 
-	{
-		/*$event = $observer->getEvent();
-		$quote = $event->getQuote();
-		$address = $quote->getShippingAddress();
-		$address->setFreeShipping(true);*/
 	}
 	
 	 public function setRedirectOnLogin(){

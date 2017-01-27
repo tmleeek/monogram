@@ -78,10 +78,14 @@ if($isSubscriptionProduct == false)
                                   <p><?php echo $shippingCountryName; ?></p>
                                 </div>
                             </div>
-                            <div class="each-input">
+                            <div class="each-input estimated">
                                 <label>ESTIMATED DELIVERY TIME</label>
                                 <div class="input-text">
-                                  <p><?php echo $_rate->getMethodDescription(); ?></p>
+                                    <?php if($traderselfcollect ==1 || $traderselfcollect == '1'): ?>
+                                      <p>0 working days</p>
+                                    <?php else: ?>
+                                      <p><?php echo $_rate->getMethodDescription(); ?></p>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                             <div class="each-input">
@@ -169,8 +173,19 @@ if($isSubscriptionProduct == false)
             </div>
         </div>
     </div>
-    <div class="col-md-6">
-        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('shipping-fee-info')->toHtml(); ?>  
+    <?php 
+    $curlpath = basename($_SERVER['HTTP_REFERER']);         
+    $parts = parse_url($curlpath);
+    parse_str($parts['query'], $query); 
+    $traderselfcollect = $query['tsc']['tsc'];                          
+    ?>
+    <div class="col-md-6 <?php echo $traderselfcollect; ?>">        
+        <?php if($traderselfcollect ==1 || $traderselfcollect == '1'): ?>
+            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('trade-shipping-fee-info')->toHtml(); ?>            
+        <?php else: ?>
+            <span style="display:none;">this</span>
+            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('shipping-fee-info')->toHtml(); ?>
+        <?php endif; ?>
     </div>
 </div>
 <script type="text/javascript">

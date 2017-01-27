@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Aemtech_Trader>
-            <version>0.1.3</version>
+            <version>0.1.4</version>
         </Aemtech_Trader>
     </modules>
     <frontend>
@@ -149,7 +149,7 @@
                 <class>Aemtech_Trader_Helper</class>
             </trader>
         </helpers>		
-        <events>
+        <events>		  
             <adminhtml_customer_prepare_save>
                 <observers> 
                     <trader>
@@ -186,15 +186,33 @@
 					</traderselfcollect_observer>
 				</observers>
 			</checkout_type_onepage_save_order>
+			<sales_quote_save_before> 
+				<observers>
+				   <save_before>
+						<type>singleton</type>
+						<class>trader/observer</class> 
+						<method>saveQuoteBefore</method> 
+				  </save_before>
+				</observers>
+			</sales_quote_save_before>
 			<sales_quote_save_after>
 				<observers>
 					<trader_observer>
 						<type>singleton</type>
 						<class>trader/observer</class>
-						<method>setTraderFreeShipping</method>
+						<method>saveQuoteAfter</method>
 					</trader_observer>
 				</observers>
 			</sales_quote_save_after>
+			<sales_quote_load_after> 
+                <observers>
+                    <load_after>
+                            <type>singleton</type>
+                            <class>trader/observer</class> 
+                            <method>loadQuoteAfter</method> 
+                     </load_after>
+                 </observers>
+			</sales_quote_load_after>
 			<checkout_controller_onepage_save_shipping_method>
 				<observers>
 					<trader_shipping_method>
