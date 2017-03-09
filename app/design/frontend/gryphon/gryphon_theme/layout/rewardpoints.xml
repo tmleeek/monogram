@@ -150,7 +150,7 @@
     <rewardpoints_index_points>
         <update handle="customer_account"/>
         <reference name="head">
-            <action method="setForcedTitle"><title>Monogram Tea - Reward Points</title></action>                        
+            <action method="setForcedTitle"><title>Rebate History - Monogram Tea</title></action>                        
         </reference>
         <reference name="content">
             <block type="rewardpoints/points" name="rewardpoints" template="rewardpoints/points.phtml">
@@ -172,7 +172,7 @@
 
         <update handle="customer_account"/>
         <reference name="head">
-            <action method="setForcedTitle"><title>Monogram Tea - Refer Friends</title></action>                        
+            <action method="setForcedTitle"><title>Friend Referral - Monogram Tea</title></action>                        
         </reference>
         <reference name="content">
             <block type="rewardpoints/referral" name="referral" template="rewardpoints/referral.phtml" />

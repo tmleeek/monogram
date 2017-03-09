@@ -21,7 +21,7 @@
 
 
 <div id="monogram-page-account-mobile-header" class="visible-sm visible-xs">
-  <h4>membership service</h4>
+  <h4>membership services</h4>
   <h2>Friend Referral</h2>
 </div>
 
@@ -172,11 +172,11 @@
                         <li class="fields">
                             <div class="j2t-rewardpoints-referral">
                                 <div class="field j2t-rewardpoints-name">
-                                    <label for="name" class="required" id="label-name"><em>*</em><?php echo $this->__('Friend\'s name') ?></label>
+                                    <label for="name" class="required" id="label-name"><?php echo $this->__('Friend\'s name') ?><em>*</em></label>
                                     <input type="text" name="name[]" value="" title="<?php echo $this->__('Friend\' name') ?>" class="required-entry input-text" id="name" />
                                 </div>
                                 <div class="field j2t-rewardpoints-email">
-                                    <label for="email" class="required validate-email" id="label-email"><em>*</em><?php echo $this->__('Friend\'s email address') ?></label>
+                                    <label for="email" class="required validate-email" id="label-email"><?php echo $this->__('Friend\'s email address') ?><em>*</em></label>
                                     <input type="text" name="email[]" value="" title="<?php echo $this->__('Friend\'s email address') ?>" class="required-entry input-text" id="email" />
                                 </div>
                             </div>
@@ -293,7 +293,7 @@
           <?php echo $this->getPagerHtml() ?>
       </div>
       <?php else: ?>
-          <p><?php echo $this->__('You haven\'t invited any friend.'); ?></p>
+          <p><?php echo $this->__('You have not invited any friends.'); ?></p>
       <?php endif ?>
   </div>
 

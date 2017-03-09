@@ -409,7 +409,7 @@ $count = 1;
           dataType: 'json',
           type : 'get',
           success: function(data){
-            $el.parent().find('span.ajax_msg_product').html('Added to cart!').show().delay(5000).fadeOut();
+            // $el.parent().find('span.ajax_msg_product').html('Added to cart!').show().delay(5000).fadeOut();
             $("#desktop-header-cart").find(".count").text("("+data.cart_qty+")");
             $el.parent().find('#ajax_loader_product').hide();
 
@@ -568,7 +568,7 @@ $count = 1;
               </div> <!-- .tea-custom-matrix-content-mobile -->
 
               <div class="tea-custom-suggestion-content-mobile">
-                <h4>layering suggestion</h4>
+                <h4>layering suggestions</h4>
 
                 <?php 
                 $object = Mage::getModel('catalog/product');
@@ -670,7 +670,7 @@ $count = 1;
         <div class="page-tea-layering-detail-select-hidden-container">
           
           <div class="select-display">
-            <span class="fa fa-th"></span><h4>Choose Other Tea</h4>
+            <span class="fa fa-th"></span><h4>Choose Other Teas</h4>
           </div>
 
           <select id="page-tea-layering-detail-select-hidden-01">
@@ -715,7 +715,7 @@ $count = 1;
         <div class="page-tea-layering-detail-select-hidden-container">
           
           <div class="select-display">
-            <span class="fa fa-th"></span><h4>Choose Other Tea</h4>
+            <span class="fa fa-th"></span><h4>Choose Other Teas</h4>
           </div>
           <select id="page-tea-layering-detail-select-hidden-02">
             <option value="0">Cherry Japonais</option>

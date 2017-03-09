@@ -200,7 +200,7 @@ if(Mage::getSingleton('customer/session')->isLoggedIn()) {
         <?php if( $this->helper('customercustomiser')->getIsSubscribed() ): ?>
             <p class="subscribe-msg"><?php echo $this->__("You are currently subscribed to our newsletter.") ?></p>
         <?php else: ?>
-            <p class="subscribe-msg"><?php echo $this->__('Join our Monogram Tea Family and be the first to learn about our latest news, and enjoy exclusive deals and invites to events.'); ?></p>                
+            <p class="subscribe-msg"><?php echo $this->__('Join our Monogram family and be the first to learn about our latest news, enjoy exclusive deals and receive invites to our events.'); ?></p>                
         <?php endif; ?>
     </div>
     <?php echo $this->getChildHtml('customer.account.dashboard.info.extra')?>

@@ -265,7 +265,7 @@ One page checkout main layout
 
     <sales_order_history>
         <reference name="head">
-            <action method="setForcedTitle"><title>My Orders - Monogram Tea</title></action>            
+            <action method="setForcedTitle"><title>Order History - Monogram Tea</title></action>            
             <action method="addItem"><type>skin_js</type><name>js/plugins/gryphon/jquery.gryphon-mobile-account-order-history.js</name></action>            
         </reference>
         <reference name="customer.account.link.back">
@@ -362,8 +362,11 @@ One page checkout main layout
         </reference>
     </catalog_product_view>
 
-    <giftvoucher_index_check>
+    <giftvoucher_index_check>        
         <update handle="page_two_columns_right" />
+        <reference name="head">
+            <action method="setForcedTitle"><title>Shopping Cart - Monogram Tea</title></action>
+        </reference>
         <reference name="right">
             <action method="unsetChildren"></action>
         </reference>

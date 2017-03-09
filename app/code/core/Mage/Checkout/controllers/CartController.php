@@ -697,9 +697,9 @@ class Mage_Checkout_CartController extends Mage_Core_Controller_Front_Action
 
             if ($codeLength) {
                 if ($isCodeLengthValid && $couponCode == $this->_getQuote()->getCouponCode()) {
-                    // $this->_getSession()->addSuccess(
-                    //     $this->__('Coupon code "%s" was applied.', Mage::helper('core')->escapeHtml($couponCode))
-                    // );
+                    $this->_getSession()->addSuccess(
+                        $this->__('Coupon code "%s" was applied.', Mage::helper('core')->escapeHtml($couponCode))
+                    );
                     $this->_getSession()->addSuccess(
                         $this->__('', Mage::helper('core')->escapeHtml($couponCode))
                     );

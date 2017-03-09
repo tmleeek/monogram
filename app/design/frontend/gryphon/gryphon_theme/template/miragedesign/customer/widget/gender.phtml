@@ -26,17 +26,17 @@
 ?>
 <div class="each-input">
 	<?php $value = $this->getGender(); ?> 
-	<label for="<?php echo $this->getFieldId('gender')?>"<?php if ($this->isRequired()) echo ' class="required"' ?>><?php if ($this->isRequired()) echo '<em>*</em>' ?><?php echo $this->__('Gender') ?></label>	
+	<label <?php if ($this->isRequired()) echo ' class="required"' ?>><?php if ($this->isRequired()) echo '<em>*</em>' ?><?php echo $this->__('Gender') ?></label>	
 	<div class="gender-input">
 		<div class="gender-input-01">
 			<input class="gender" type="checkbox" name="gender" <?php if ($value==2) echo ' checked="checked"'; ?> value="Female">
-			<label class="checkbox-label" for="gender">
+			<label class="checkbox-label gender" for="gender">
 				<span></span><p class="label-text">Female</p>
 			</label>
 		</div>
 		<div class="gender-input-02">
 			<input class="gender" type="checkbox" name="gender" <?php if ($value==1) echo ' checked="checked"'; ?> value="Male">
-			<label class="checkbox-label" for="gender">
+			<label class="checkbox-label gender" for="gender">
 				<span></span><p class="label-text">Male</p>
 			</label>
 		</div>

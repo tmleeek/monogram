@@ -167,7 +167,7 @@ class Aemtech_Trader_Customer_AccountController extends Mage_Customer_AccountCon
             $session->setCustomerFormData($this->getRequest()->getPost());
             if ($e->getCode() === Mage_Customer_Model_Customer::EXCEPTION_EMAIL_EXISTS) {
                 $url = $this->_getUrl('customer/account/forgotpassword');
-                $message = $this->__('There is already an account with this email address. If you have forgotten your password, please <a href="%s">click here</a> and reset your password.', $url);
+                $message = $this->__('Invalid account creation. There is already an account with this email address. If you have forgotten your password, please <a href="%s">click here</a>.', $url);
                 $session->setEscapeMessages(false);
             } else {
                 $message = $e->getMessage();

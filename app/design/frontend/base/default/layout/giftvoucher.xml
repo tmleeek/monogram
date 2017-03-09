@@ -303,7 +303,7 @@
     <giftvoucher_index_index>
         <update handle="customer_account" />
         <reference name="head">
-            <action method="setForcedTitle"><title>Monogram Tea - Gift Card</title></action>                        
+            <action method="setForcedTitle"><title>Gift Card - Monogram Tea</title></action>                        
         </reference>
         <reference name="content">
             <block type="giftvoucher/giftvoucherlist" name="giftvoucherlist" template="giftvoucher/giftvoucher.phtml" />

@@ -25,7 +25,7 @@ class Magestore_Giftvoucher_CheckoutController extends Mage_Core_Controller_Fron
         if ($success) {
             $codes = implode(',', $codesArray);
             $session->setGiftCodes($codes);
-            // $session->addSuccess($this->__('Gift Card "%s" has been removed successfully!', Mage::helper('giftvoucher')->getHiddenCode($code)));
+            $session->addSuccess($this->__('Gift Card "%s" has been removed successfully!', Mage::helper('giftvoucher')->getHiddenCode($code)));
         } else {
             $session->addError($this->__('Gift card "%s" not found!', $code));
         }
@@ -104,7 +104,7 @@ class Magestore_Giftvoucher_CheckoutController extends Mage_Core_Controller_Fron
                                                 }
                                             }
                                             if (!$isGiftVoucher) {
-                                                // $session->addSuccess($this->__('Gift code "%s" has been applied successfully.', Mage::helper('giftvoucher')->getHiddenCode($code)));
+                                                $session->addSuccess($this->__('Gift code "%s" has been applied successfully.', Mage::helper('giftvoucher')->getHiddenCode($code)));
                                             }
                                             else
                                                 $session->addNotice($this->__('Please remove your Gift Card information since you cannot use either gift codes or Gift Card credit balance to purchase other Gift Card products.'));

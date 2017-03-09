@@ -199,15 +199,15 @@ var initialLoad = true;
             console.log(baseurl);
 
             // rating
-            $('.stars').raty({
-                path : getBaseUrl()+"skin/frontend/gryphon/gryphon_theme/js/plugins/raty/images/",
-                click: function(score, evt){
-                    console.log(score);
-                    $('#product-review-table').find('#Price_'+score).trigger('click')
-                    $('#product-review-table').find('#Value_'+score).trigger('click')
-                    $('#product-review-table').find('#Quality_'+score).trigger('click')
-                }
-            });
+            // $('.stars').raty({
+            //     path : getBaseUrl()+"skin/frontend/gryphon/gryphon_theme/js/plugins/raty/images/",
+            //     click: function(score, evt){
+            //         console.log(score);
+            //         $('#product-review-table').find('#Price_'+score).trigger('click')
+            //         $('#product-review-table').find('#Value_'+score).trigger('click')
+            //         $('#product-review-table').find('#Quality_'+score).trigger('click')
+            //     }
+            // });
 
         } catch(e){
             console.log('custom error with function getBaseUrl');

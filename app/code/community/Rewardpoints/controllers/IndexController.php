@@ -152,6 +152,9 @@ class Rewardpoints_IndexController extends Mage_Core_Controller_Front_Action
         if (empty($refererUrl)) {
             $refererUrl = empty($defaultUrl) ? Mage::getBaseUrl() : $defaultUrl;
         }
+        $session = Mage::getSingleton('checkout/session');
+        $session->addSuccess($this->__('Rebate redemption was cancelled', $email));
+
         $this->getResponse()->setRedirect($refererUrl);
     }
 
@@ -191,6 +194,8 @@ class Rewardpoints_IndexController extends Mage_Core_Controller_Front_Action
             Mage::helper('checkout/cart')->getCart()->getQuote()
                     ->setRewardpointsQuantity($points_value)
                     ->save();
+            
+            Mage::getSingleton('checkout/session')->addSuccess($this->__('You have redeeemed your rebates', $email));
         }        
 
         $refererUrl = $this->_getRefererUrl();

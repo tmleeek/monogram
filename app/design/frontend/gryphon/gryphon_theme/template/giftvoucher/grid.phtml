@@ -171,6 +171,8 @@
                             <?php if($column_counter != $column_counter_max): ?>
                                 <th><?php echo (strtolower($column['header'])=='balance') ? 'amount' : $column['header']; ?></th>                            
                             <?php endif; ?>
+                        <?php elseif($column_counter == 5): ?>
+                            <th>Expiry Date</th>
                         <?php else: ?>
                             <?php if($column_counter != $column_counter_max): ?>
                                 <th><?php echo (strtolower($column['header'])=='balance') ? 'amount' : $column['header']; ?></th>

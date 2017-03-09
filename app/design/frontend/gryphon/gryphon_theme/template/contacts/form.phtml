@@ -29,6 +29,7 @@
     <div class="row contact-content-container">
       <div id="contact-col-1" class="col-md-6 v-align">
           <div class="contact-title-container visible-xs visible-sm">
+            <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
             <h1>contact us</h1>
             <p>For any feedback or enquiries, please feel free to drop us an email with the contact form below. We will be in touch as soon as we can to assist you.</p>
           </div>
@@ -37,8 +38,8 @@
       --><div id="contact-col-2" class="col-md-6 v-align">  
 
         <div class="contact-title-container hidden-xs hidden-sm">
-          <h1>contact us</h1>
           <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
+          <h1>contact us</h1>          
           <p>For any feedback or enquiries, please feel free to drop us an email with the contact form below. We will be in touch as soon as we can to assist you.</p>
         </div>        
 
@@ -47,46 +48,46 @@
             <div class="col-md-12">
               <div class="inputs">
                 <div class="row">
-                  <div class="col-md-5 col-sm-3 contact-label-container v-align">
-                    <label for="first_name" class="for-input">*<?php echo Mage::helper('contacts')->__('First Name') ?></label>
+                  <div class="col-md-5 col-sm-12 contact-label-container v-align">
+                    <label for="first_name" class="for-input"><?php echo Mage::helper('contacts')->__('First Name') ?>*</label>
                   </div><!--
-                  --><div class="col-md-6 col-sm-6 v-align">
+                  --><div class="col-md-6 col-sm-12 v-align">
                     <input name="first_name" id="first_name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="" class="input-class required-entry" type="text" />
                     <input name="name" id="name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserName()) ?>" class="input-text required-entry" type="hidden" />
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-5 col-sm-3 contact-label-container v-align">
-                    <label for="last_name" class="for-input">*<?php echo Mage::helper('contacts')->__('Last Name') ?></label>
+                  <div class="col-md-5 col-sm-12 contact-label-container v-align">
+                    <label for="last_name" class="for-input"><?php echo Mage::helper('contacts')->__('Last Name') ?>*</label>
                   </div><!--
-                  --><div class="col-md-6 col-sm-6 v-align">
+                  --><div class="col-md-6 col-sm-12 v-align">
                     <input name="last_name" id="last_name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="" class="input-text input-class required-entry" type="text" />        
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-5 col-sm-3 contact-label-container v-align">
-                    <label for="email" class="for-input">*<?php echo Mage::helper('contacts')->__('Email Address') ?></label>
+                  <div class="col-md-5 col-sm-12 contact-label-container v-align">
+                    <label for="email" class="for-input"><?php echo Mage::helper('contacts')->__('Email Address') ?>*</label>
                   </div><!--
-                  --><div class="col-md-6 col-sm-6 v-align">
+                  --><div class="col-md-6 col-sm-12 v-align">
                     <input name="email" id="email" title="<?php echo Mage::helper('contacts')->__('Email') ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserEmail()) ?>" class="input-text input-class required-entry validate-email" type="text" />
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-5 col-sm-3 contact-label-container v-align">
-                    <label for="phone_no" class="for-input">*<?php echo Mage::helper('contacts')->__('Phone Number') ?></label>
+                  <div class="col-md-5 col-sm-12 contact-label-container v-align">
+                    <label for="phone_no" class="for-input"><?php echo Mage::helper('contacts')->__('Telephone') ?>*</label>
                   </div><!--
-                  --><div class="col-md-6 col-sm-6 v-align">                
+                  --><div class="col-md-6 col-sm-12 v-align">                
                     <input name="telephone" id="telephone" title="<?php echo Mage::helper('contacts')->__('Telephone') ?>" value="" class="required-entry input-text input-class phone_no_input" type="text" />
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-5 col-sm-3 contact-label-container v-align">
-                    <label for="type_of_enquiry" class="for-input">*<?php echo Mage::helper('contacts')->__('Type of Enquiry') ?></label>
+                  <div class="col-md-5 col-sm-12 contact-label-container v-align">
+                    <label for="type_of_enquiry" class="for-input"><?php echo Mage::helper('contacts')->__('Type of Enquiry') ?>*</label>
                   </div><!--
-                  --><div class="col-md-6 col-sm-6 v-align">
+                  --><div class="col-md-6 col-sm-12 v-align">
                     <div class="dropdown">
                       <select name="role_within_organization" id="role_within_organization" class="required-entry">
-                          <option value="">Choose the type</option>
+                          <option value="">Please choose one</option>
                           <option value="General Enquiry">General Enquiry</option>
                           <option value="Online Order Enquiry">Online Order Enquiry</option>
                           <option value="Business Enquiry">Business Enquiry</option>
@@ -96,10 +97,10 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-5 col-sm-3 contact-label-container">
-                    <label for="message" class="for-input">*<?php echo Mage::helper('contacts')->__('Message') ?></label>
+                  <div class="col-md-5 col-sm-12 contact-label-container">
+                    <label for="message" class="for-input"><?php echo Mage::helper('contacts')->__('Message') ?>*</label>
                   </div><!--
-                  --><div class="col-md-6 col-sm-6">
+                  --><div class="col-md-6 col-sm-12">
                     <textarea style="resize: vertical;" name="comment" id="comment" cols="30" rows="10" placeholder="Write your message here." title="<?php echo Mage::helper('contacts')->__('Message') ?>" class="required-entry input-text"></textarea>
                   </div>
                 </div>
@@ -108,7 +109,7 @@
           </div>
 
           <div class="row">
-            <div class="col-md-6 col-md-offset-5 col-md-6 col-sm-offset-3">
+            <div class="col-md-6 col-md-offset-5 col-md-6 col-sm-12">
               <input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
               <button type="submit" class="cta square-cta" id="contact-us-send-btn" title="<?php echo Mage::helper('contacts')->__('Submit') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Send Message To Monogram') ?></span></span></button>
             </div>

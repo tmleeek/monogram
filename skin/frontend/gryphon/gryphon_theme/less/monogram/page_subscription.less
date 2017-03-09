@@ -116,10 +116,10 @@ body.monogram-subscription-page{
 
 #monogram-subscription-content-image-02{
   //height: 600px;
-  height: 216px;
+  height: 221px;
   .manic-image-container{
     //height: 600px;
-    height: 216px;
+    height: 221px;
   }
   @media all and (max-width: 991px) {
     height: 210px;
@@ -137,6 +137,10 @@ body.monogram-subscription-page{
   color: @off-white;
 
   padding-top: 79px;
+
+  @media all and (max-width: 1024px) {
+    height: 770px;
+  }
 
   @media all and (max-width: 991px) {
     height: 790px;
@@ -375,5 +379,12 @@ body.monogram-subscription-page{
   img {
     width: 100%!important;
     height: auto!important;
+  }
+
+  @media all and (min-width: 1024px) and (max-width: 1024px) {
+    img {
+      position: static!important;
+      height: 221px!important;
+    }
   }
 }

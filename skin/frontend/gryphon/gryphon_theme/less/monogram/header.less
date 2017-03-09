@@ -219,6 +219,12 @@
     // height: 90px !important;
     height: 35px!important;
   }
+  .product-gift-card {
+    .desktop-header-spacer{
+      // height: 90px !important;
+      height: 0px!important;
+    } 
+  }
 }  
 
 
@@ -271,7 +277,7 @@
     font-size: 0;
 
     > li {
-      padding-bottom: 20px;
+      padding-bottom: 18px;
       position: relative;
       display: inline-block;
       //padding-right: 40px;
@@ -289,6 +295,9 @@
         text-transform: uppercase;
         &.has-submenu {
           cursor: default;
+        }
+        &:hover {
+          .opacity(0.6);
         }
       }
 
@@ -312,6 +321,11 @@
         width: 245px;
         li {
           display: block;
+          a {
+            &:hover {
+              .opacity(0.6);
+            }
+          }
         }
       }
 
@@ -382,6 +396,10 @@
 
         position: relative;
         top: 2px;
+
+        &:hover {
+          .opacity(0.6);
+        }
       }
     }
   }

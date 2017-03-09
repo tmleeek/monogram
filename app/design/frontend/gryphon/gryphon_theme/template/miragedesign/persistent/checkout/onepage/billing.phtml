@@ -181,7 +181,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                                                 <label for="billing:region_id" class="required"><em>*</em><?php echo $this->__('State/Province') ?></label>
                                                 <div class="input-box dropdown">
                                                     <select id="billing:region_id" name="billing[region_id]" onkeyup="if(document.getElementById('shipping:same_as_billing').checked) shipping.setSameAsBilling(true);" title="<?php echo $this->__('State/Province') ?>" class="validate-select" style="display:none;">
-                                                        <option value=""><?php echo $this->__('Please select region, state or province') ?></option>
+                                                        <option value=""><?php echo $this->__('Please select') ?></option>
                                                     </select>
                                                     <script type="text/javascript">
                                                     //<![CDATA[
@@ -271,7 +271,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                                             <li class="same-as-billing">
                                                 <input type="checkbox" name="shipping[same_as_billing]" id="shipping:same_as_billing" value="1"<?php if($this->getAddress()->getSameAsBilling()): ?> checked="checked"<?php endif; ?> title="<?php echo $this->__('Use Billing Address') ?>" onclick="shipping.setSameAsBilling(this.checked)" class="checkbox same-as-billing-checkbox" />
                                                 <label class="checkbox-label" for="shipping:same_as_billing">
-                                                    <span></span><p class="label-text"><?php echo $this->__('If the billing address is the same as the shipping address, tick here') ?></p>
+                                                    <span></span><p class="label-text"><?php echo $this->__('If billing and shipping addresses are the same, tick here') ?></p>
                                                 </label>   
                                             </li>
                                         <?php echo $this->getChildHtml('form.additional.info'); ?>
@@ -387,7 +387,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                                             <label for="shipping:region" class="required"><em>*</em><?php echo $this->__('State/Province') ?></label>
                                             <div class="input-box dropdown">
                                                 <select id="shipping:region_id" name="shipping[region_id]" title="<?php echo $this->__('State/Province') ?>" class="validate-select" style="display:none;">
-                                                    <option value=""><?php echo $this->__('Please select region, state or province') ?></option>
+                                                    <option value=""><?php echo $this->__('Please select') ?></option>
                                                 </select>
                                                 <script type="text/javascript">
                                                 //<![CDATA[

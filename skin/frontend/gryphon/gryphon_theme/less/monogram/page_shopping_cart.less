@@ -63,10 +63,12 @@ body.billing-shipping-page{
     color: @off-white !important;
 
     display: block;
+    .opacity(0.7);
     
     &:focus,
-    &:hover{
-      .opacity(0.7);
+    &:hover,
+    &.active{
+      .opacity(1);
     }
 
 
@@ -80,7 +82,7 @@ body.billing-shipping-page{
   padding-left: 45px;
   padding-right: 45px;
   @media only screen and (max-width: 991px) {
-    padding: 0px;
+    padding: 0px 10px;
   }
   @media only screen and (max-width: 480px) {
     padding: 0 10px;
@@ -96,6 +98,14 @@ body.billing-shipping-page{
       width: 100%;
       margin-bottom: 20px;
       margin-top: -10px;
+    }
+    .notice-msg {
+      padding: 0 26px;
+      ul {
+        li {
+          font-weight: normal;    
+        }
+      }
     }
 
   }
@@ -305,6 +315,7 @@ body.billing-shipping-page{
         outline: none;
         border: none;
         height: 24px;
+        padding-left: 0px;
 
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -532,7 +543,7 @@ body.billing-shipping-page{
       .input-box,
       .input-text,
       .dropdown{
-        width: 130px;
+        width: 150px;
       }
     }
 
@@ -1189,7 +1200,13 @@ body.billing-shipping-page{
     .a-right{
       text-align: right;
     }
-
+      
+    .discount_desc {
+      font-size: 10px;
+      text-align: left;
+      display: block;
+      .body-font;
+    }
 
     .label{
       padding-left: 10px;

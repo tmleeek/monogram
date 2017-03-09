@@ -723,12 +723,18 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
       .display-inline-block;
       width: 40%;
+      @media all and (min-width: 1023px) and (max-width: 1024px) {
+        width: 30%;
+      }
     }
     .input-box{
       .add-input-class-styling;
       .display-inline-block;
       width: 50%;
       padding-top: 0px !important;
+      @media all and (min-width: 1023px) and (max-width: 1024px) {
+        width: 65%;
+      }
       &.no-padding {
         padding-left: 0px;
         .intl-tel-input {
@@ -792,6 +798,13 @@ body.monogram-page-account-details #content-wrapper .col-main{
         width: -webkit-calc(~"16.6% - 7px");
         width: -o-calc(~"16.6% - 7px");
         width: calc(~"16.6% - 7px");
+
+        @media all and (min-width: 1023px) and (max-width: 1024px) {
+          width: -moz-calc(~"21.6% - 7px");
+          width: -webkit-calc(~"21.6% - 7px");
+          width: -o-calc(~"21.6% - 7px");
+          width: calc(~"21.6% - 7px");        
+        }
 
 
         // width: 10%;
@@ -1007,6 +1020,7 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
 @media only screen and (max-width: 991px) {
   #monogram-page-account-dashboard-edit-container{
+    min-height: 580px;
     .page-title{
       display: none !important;
     }
@@ -1189,7 +1203,7 @@ body.monogram-page-account-details #content-wrapper .col-main{
     table{
       width: 100%;
 
-      @media all and (max-width: 991px) {
+      @media all and (max-width: 1024px) {
         table-layout: fixed;
       }    
 
@@ -1249,6 +1263,7 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
         &:first-child{
           padding-left: 10px;
+          width: 35%;
         }
         &:last-child{
           padding-right: 10px;
@@ -1336,7 +1351,8 @@ body.monogram-page-account-details #content-wrapper .col-main{
 
 @media only screen and (max-width: 991px) {
   #monogram-page-account-details-address-edit-container{
-
+    min-height: 580px;
+    padding: 0 10px;
     .page-title{
       display: none !important;
     }
@@ -2317,6 +2333,13 @@ body.sales-order-view{
   }
 
 
+  #reward-points-table {
+    .j2t-in-txt {
+      display: none;
+    }
+  }
+
+
   #my-rewardpoints-table{
     padding-bottom: 3px;
 
@@ -2344,7 +2367,7 @@ body.sales-order-view{
         display: block;
         width: 100%;
       }
-    }
+    }    
   }
 
 
@@ -2630,7 +2653,7 @@ body.sales-order-view{
     .validation-advice {
       margin: 0px;
       position: absolute;
-      left: 180px;
+      left: auto;
       width: auto;
     }
 

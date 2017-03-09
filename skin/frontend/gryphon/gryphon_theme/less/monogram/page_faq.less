@@ -89,6 +89,7 @@ body.monogram-page-faq{
 
     // background: @dark-brown;
     background: @background-color;
+    min-height: 680px;
 
     .container-fluid{
       padding-left: 20px;
@@ -461,7 +462,7 @@ body.monogram-page-faq{
       margin-bottom: 14px;
 
       .default-copy{
-        padding-right: 20px;
+        padding-right: 20px;        
 
         p{
           .subheader-font;
@@ -482,5 +483,15 @@ body.monogram-page-faq{
     }
 
 
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .monogram-page-faq-content-item{    
+    .monogram-page-faq-content-item-answer, .monogram-page-faq-content-item-question{
+      .default-copy{
+        padding-right: 0px!important;                
+      }
+    }
   }
 }

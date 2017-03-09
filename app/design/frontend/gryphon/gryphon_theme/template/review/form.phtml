@@ -84,7 +84,7 @@
                             <div class="dropdown">
                                 <input type="hidden" name="title" id="summary_field" class="input-text required-entry" placeholder="<?php echo $this->__('Summary of Your Review') ?>" value="<?php echo $this->escapeHtml($data->getTitle()) ?>" />
                                 <select name="layering_tea" class="layering-tea">
-                                    <option value="">Choose layering tea</option>
+                                    <option value="">Choose tea layering</option>
                                     <?php // Step 1
                                     $category = Mage::getModel('catalog/category')->load(5);
 
@@ -138,7 +138,7 @@
                 <div class="row">
                     <div class="col-md-4 col-md-offset-1"><label for="">comments*</label></div>
                     <div class="col-md-7 review-input">
-                        <textarea maxlength="150" name="detail" id="review_field" cols="30" rows="10" class="required-entry" placeholder="<?php echo $this->__('Write the comments about this tea here.'); ?>"><?php echo $this->escapeHtml($data->getDetail()) ?></textarea>                        
+                        <textarea maxlength="150" name="detail" id="review_field" cols="30" rows="10" class="required-entry" placeholder="<?php echo $this->__('Share your comments here'); ?>"><?php echo $this->escapeHtml($data->getDetail()) ?></textarea>                        
                         <p><span id="chars">150</span> characters remaining</p>
                         <span class="validation"></span>
                         <!-- <textarea name="layering_comments" id="" cols="30" rows="10"></textarea> -->

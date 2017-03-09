@@ -2,15 +2,18 @@
 <layout version="0.1.0">
     <customer_account>        
         <reference name="customer_account_navigation">           
-        <action method="addLink" translate="label" module="savelayering">
-            <name>viewsavelayering</name>
-        <path>savelayering/customer/view</path>
-        <label>Saved Layering</label>
-        </action>
-    </reference>
+            <action method="addLink" translate="label" module="savelayering">
+                <name>viewsavelayering</name>
+            <path>savelayering/customer/view</path>
+            <label>Saved Layering</label>
+            </action>
+        </reference>
     </customer_account> 
     <savelayering_customer_view>
 		<update handle="customer_account"/>
+        <reference name="head">
+            <action method="setForcedTitle"><title>Saved Layering - Monogram Tea</title></action>
+        </reference>
 		<reference name="content">
 			<block type="savelayering/customer" name="view.savelayering" template="savelayering/customer/view.phtml"/>
 		</reference>
