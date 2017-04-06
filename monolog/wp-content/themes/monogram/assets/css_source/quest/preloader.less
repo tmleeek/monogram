@@ -1,0 +1,176 @@
+//    ____  ____  _____ _     ___    _    ____  _____ ____
+//   |  _ \|  _ \| ____| |   / _ \  / \  |  _ \| ____|  _ \
+//   | |_) | |_) |  _| | |  | | | |/ _ \ | | | |  _| | |_) |
+//   |  __/|  _ <| |___| |__| |_| / ___ \| |_| | |___|  _ <
+//   |_|   |_| \_\_____|_____\___/_/   \_\____/|_____|_| \_\
+//
+
+@preloader-image-width: 250px;
+@preloader-image-height: 50px;
+
+
+
+#page-preloader{
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: 200000;
+
+  -webkit-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+  overflow: hidden;
+
+  .hourglass{
+    position: absolute;
+    margin-left: -1 * @preloader_hr_width / 2;
+    margin-top: (-1 * @preloader_hr_height / 2) - 55px;
+
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+  }
+  
+  // white box
+  
+  &:before{
+    content: "";
+    display: block;
+    
+    position: absolute;
+    background: @white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  &:after{
+    content: "";
+    display: block;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: @preloader-image-width;
+    height: @preloader-image-height;
+    margin-left: -1 * @preloader-image-width / 2;
+    margin-top: -1 * @preloader-image-height / 2;
+    
+    
+    // if optimized & critical css is embeded...
+    background: transparent url('wp-content/themes/quest/assets/images/logos/preloader-logo.svg') center center no-repeat;
+    
+    // else 
+    // background: transparent url('../images/logos/preloader.svg') center center no-repeat;
+    // background: transparent url('../images/logos/preloader-logo.svg') center center no-repeat;
+
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+
+
+
+  }
+  
+} // #page-preloader
+
+
+//    __  __  ___  ____ ___ _     _____ 
+//   |  \/  |/ _ \| __ )_ _| |   | ____|
+//   | |\/| | | | |  _ \| || |   |  _|  
+//   | |  | | |_| | |_) | || |___| |___ 
+//   |_|  |_|\___/|____/___|_____|_____|
+//                                      
+
+@media only screen and (max-width: 991px) {
+  #page-preloader{
+    &:after{
+      
+      // if optimized & critical css is embeded...
+      background: transparent url('wp-content/themes/quest/assets/images/logos/preloader-logo.svg') center center no-repeat;
+
+      // 
+      // else
+      // background: transparent url('../images/logos/preloader.svg') center center no-repeat;
+      // background: transparent url('../images/logos/preloader-logo.svg') center center no-repeat;
+      
+      width: @preloader-image-width;
+      height: @preloader-image-height;
+      margin-left: -1 * @preloader-image-width / 2;
+      margin-top: -1 * @preloader-image-height / 2;
+    }
+  }
+}
+
+
+
+
+
+// https://codepen.io/tomhazledine/pen/BKrXwJ
+
+@preloader_color: #ef4929;
+@preloader_bg: #ffffff;
+@preloader_hr_width: 15px;
+@preloader_hr_height: 30px;
+
+.hourglass{
+    display:block;
+    background: @preloader_bg;
+
+    width: @preloader_hr_width;
+    height: @preloader_hr_height;
+
+    /*
+    margin:3em auto;
+    width:@preloader_hr_width;
+    height:@preloader_hr_height;
+    */
+    box-shadow:
+        inset @preloader_color 0 0 0 0,
+        inset @preloader_color 0 @preloader_hr_width 0 0,
+        inset @preloader_color 0 0 @preloader_hr_height 0;
+    animation:hourglass 1s linear infinite;
+}
+
+
+.outer{
+    fill: @preloader_color;
+}
+
+.middle{
+    fill: @preloader_bg;
+}
+
+@keyframes hourglass{
+    0%{
+        transform:rotate(0deg);
+        box-shadow:
+            inset @preloader_bg 0 0 0 0,
+            inset @preloader_color 0 @preloader_hr_width 0 0,
+            inset @preloader_bg 0 @preloader_hr_height 0 0,
+            inset @preloader_color 0 @preloader_hr_height 0 0;
+    }
+    80%{
+        transform:rotate(0deg);
+        box-shadow:
+            inset @preloader_bg 0 @preloader_hr_width 0 0,
+            inset @preloader_color 0 @preloader_hr_width 0 0,
+            inset @preloader_bg 0 @preloader_hr_width 0 0,
+            inset @preloader_color 0 @preloader_hr_height 0 0;
+    }
+    100%{
+        transform:rotate(180deg);
+        box-shadow:
+            inset @preloader_bg 0 @preloader_hr_width 0 0,
+            inset @preloader_color 0 @preloader_hr_width 0 0,
+            inset @preloader_bg 0 @preloader_hr_width 0 0,
+            inset @preloader_color 0 @preloader_hr_height 0 0;
+    }
+}

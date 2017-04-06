@@ -500,9 +500,9 @@ monogram.page.Home.prototype.create_graph_mobile = function(){
 
   // home-mobile-landing-combination-graph
   if ($j('#tea-layering-detail-graph-section').length != 0) {
-    // this.mobile_graph_section = new monogram.component.MobileGraphSection({}, $j('#tea-layering-detail-graph-section'));
+    // this.mobile_graph_section = new monogram.component.GraphSectionMobile({}, $j('#tea-layering-detail-graph-section'));
+    // goog.events.listen(this.mobile_graph_section, monogram.component.GraphSectionMobile.ON_ITEM_SELECTED, this.on_graph_section_item_selected.bind(this));
   }
-
 
   /**
    * @type {monogram.graph.CombinationGraph}
@@ -574,6 +574,7 @@ monogram.page.Home.prototype.create_graph_mobile = function(){
 
   if ($j('#tea-layering-detail-graph-section').length != 0) {
     this.mobile_graph = new monogram.component.GraphSectionMobile({}, $j('#tea-layering-detail-graph-section'));
+    goog.events.listen(this.mobile_graph, monogram.component.GraphSectionMobile.ON_ITEM_SELECTED, this.on_graph_section_item_selected_mobile.bind(this));
   }
 
   
@@ -658,15 +659,19 @@ monogram.page.Home.prototype.display_mobile_graph_section = function() {
       if(target_main_index != -1){
         this.mobile_graph.display_combination_index(target_main_index,0);
 
-        /*
-        var current_url           = window.location.href;
-        var twitter_share_url     = 'https://twitter.com/share?url=' + encodeURIComponent(current_url) + 
-                                    '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + this.page_hash_02);
-        var facebook_share_url    = 'http://www.facebook.com/sharer.php?u=' + encodeURIComponent(current_url);
+        
+        // var current_url           = window.location.href;
+        // var twitter_share_url     = 'https://twitter.com/share?url=' + encodeURIComponent(current_url) + 
+        //                             '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + this.page_hash_02);
+        // var facebook_share_url    = 'http://www.facebook.com/sharer.php?u=' + encodeURIComponent(current_url);
+        // var pinterest_share_url = '//pinterest.com/pin/create%2Fbutton/?url=' + encodeURIComponent(current_url) + '&media=' + encodeURIComponent(image) + '&description=' + encodeURIComponent(combine_desc);
                 
-        $j('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
-        $j('#graph-social-icons ul li a.fa-facebook').attr('href', facebook_share_url);
-        */
+        // $j('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
+        // $j('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
+
+        // $j('.home-customized-share-button ul li a.fa-facebook').attr('href', facebook_share_url);
+        // $j('.home-customized-share-button ul li a.fa-twitter').attr('href', twitter_share_url);
+        
 
 
       } else {
@@ -678,15 +683,18 @@ monogram.page.Home.prototype.display_mobile_graph_section = function() {
 
       this.mobile_graph.display_combination(this.page_hash_02, this.page_hash_03);
 
-      /*
-      var current_url           = window.location.href;
-      var twitter_share_url     = 'https://twitter.com/share?url=' + encodeURIComponent(current_url) + 
-                                  '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + this.page_hash_02);
-      var facebook_share_url    = 'http://www.facebook.com/sharer.php?u=' + encodeURIComponent(current_url);
+      
+      // var current_url           = window.location.href;
+      // var twitter_share_url     = 'https://twitter.com/share?url=' + encodeURIComponent(current_url) + 
+      //                             '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + this.page_hash_02);
+      // var facebook_share_url    = 'http://www.facebook.com/sharer.php?u=' + encodeURIComponent(current_url);
               
-      $j('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
-      $j('#graph-social-icons ul li a.fa-facebook').attr('href', facebook_share_url);
-      */
+      // $j('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
+      // $j('#graph-social-icons ul li a.fa-twitter').attr('href', twitter_share_url);
+
+      // $j('.home-customized-share-button ul li a.fa-facebook').attr('href', facebook_share_url);
+      // $j('.home-customized-share-button ul li a.fa-twitter').attr('href', twitter_share_url);
+      
 
     }
 
@@ -968,7 +976,45 @@ monogram.page.Home.prototype.on_graph_section_item_selected = function(event) {
   $j('.home-customized-share-button a.fa-facebook').attr('href', facebook_share_url);
   $j('.home-customized-share-button a.fa-facebook').data('main_product_name', main_name);
   $j('.home-customized-share-button a.fa-facebook').data('sub_product_name', sub_name);
+
+};
+
+/**
+ * @param  {object} event
+ */
+monogram.page.Home.prototype.on_graph_section_item_selected_mobile = function(event) {
+
+  console.log('on_graph_section_item_selected');
+  console.log('main item: ' + this.mobile_graph.main_data_item.data_id);
+  console.log('sub item: ' + this.mobile_graph.sub_data_item.data_id);
+
+  var main_name = this.mobile_graph.main_data_item.data_name;
+  var sub_name = this.mobile_graph.sub_data_item.data_name;
+
+  var main_id = this.mobile_graph.main_data_item.data_id;
+  var sub_id = this.mobile_graph.sub_data_item.data_id;
+
+  var image = 'http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/images/layered_images/'+main_id+'-with-'+sub_id+'.jpg';
+  var combine_desc = $j('.tea-copy-content p').html();
+
+  var current_url = 'http://www.monogramtea.com/#graph/' + main_id + '/' + sub_id;
+  // var current_url           = window.location.href;
   
+  var twitter_share_url     = 'https://twitter.com/share?url=' + encodeURIComponent(current_url) + 
+                              '&amp;text=' + encodeURIComponent('Check this out!') + '&amp;hashtags=' + encodeURIComponent('monogram,tealayering,' + main_id + ',' + sub_id);
+
+  var facebook_share_url    = current_url      // current url = facebook share url (sharing functionality in main.js)
+
+
+  var pinterest_share_url = '//pinterest.com/pin/create%2Fbutton/?url=' + encodeURIComponent(current_url) + '&media=' + encodeURIComponent(image) + '&description=' + encodeURIComponent(combine_desc);
+
+    
+  $j('.home-customized-share-button a.fa-pinterest').attr('href', pinterest_share_url);
+  
+  $j('.home-customized-share-button a.fa-twitter').attr('href', twitter_share_url);
+  $j('.home-customized-share-button a.fa-facebook').attr('href', facebook_share_url);
+  $j('.home-customized-share-button a.fa-facebook').data('main_product_name', main_name);
+  $j('.home-customized-share-button a.fa-facebook').data('sub_product_name', sub_name);
 
 };
 

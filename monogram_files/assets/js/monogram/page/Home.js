@@ -21,7 +21,7 @@ monogram.page.Home = function(options, element) {
 
   this.intro_section =          $("#home-intro-section");
   this.tea_selection_section =  $("#home-tea-selection-section");
-  this.graph_section_element =          $("#home-graph-section");
+  this.graph_section_element =  $("#home-graph-section");
 
   /**
    * @type {manic.ui.Mouse}

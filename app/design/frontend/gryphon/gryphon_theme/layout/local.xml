@@ -296,6 +296,7 @@ One page checkout main layout
             <action method="addItem"><type>skin_js</type><name>js/miragedesign/navigation.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/plugins/gryphon/jquery.gryphon-mobile-store-sidebar.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/plugins/jquery.blockUI.js</name></action>
         </reference>
         <reference name="category.products">
             <block type="catalogcustomiser/sidebar" name="category.sidebar" template="miragedesign/catalog/category/sidebar.phtml" />
@@ -362,11 +363,8 @@ One page checkout main layout
         </reference>
     </catalog_product_view>
 
-    <giftvoucher_index_check>        
+    <giftvoucher_index_check>
         <update handle="page_two_columns_right" />
-        <reference name="head">
-            <action method="setForcedTitle"><title>Shopping Cart - Monogram Tea</title></action>
-        </reference>
         <reference name="right">
             <action method="unsetChildren"></action>
         </reference>

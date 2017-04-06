@@ -196,6 +196,13 @@ monogram.component.GraphSectionMobile.ON_GRAPH_SECTION_READY = 'on_graph_section
  * @const
  * @type {string}
  */
+monogram.component.GraphSectionMobile.ON_ITEM_SELECTED = 'on_item_selected';
+
+/**
+ * GraphSection Event Constant
+ * @const
+ * @type {string}
+ */
 monogram.component.GraphSectionMobile.EVENT_02 = '';
 
 
@@ -686,6 +693,7 @@ monogram.component.GraphSectionMobile.prototype.delayed_display_combination_inde
   $j('#tea-layering-detail-copy-section .graph-selection-tea-mobile #graph-selection-name-01').attr('data-id', this.main_data_item.data_id);
   $j('#tea-layering-detail-copy-section .graph-selection-tea-mobile #graph-selection-name-02').attr('data-id', this.sub_data_item.data_id);
 
+  this.dispatchEvent(new goog.events.Event(monogram.component.GraphSectionMobile.ON_ITEM_SELECTED));
 };
 
 

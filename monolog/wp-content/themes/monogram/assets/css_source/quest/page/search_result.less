@@ -1,0 +1,309 @@
+//    ___ _   _ _     ___ _   _ _____
+//   |_ _| \ | | |   |_ _| \ | | ____|
+//    | ||  \| | |    | ||  \| |  _|
+//    | || |\  | |___ | || |\  | |___
+//   |___|_| \_|_____|___|_| \_|_____|
+//
+
+#inline-search-form{
+
+  position: relative;
+  display: block;
+
+
+  border-bottom: 1px solid @border-grey;
+
+  width: 380px;
+  height: 42px;
+
+  input[type=text],
+  input[type=search]{
+
+    .proxima-nova-regular;
+    font-size: 26px;
+    line-height: 26px;
+
+    width: 100%;
+    padding-top: 4px;
+    padding-right: 45px;
+
+    outline: none;
+    border: none;
+    background: transparent;
+
+
+  }
+
+
+  input[type=submit],
+  button[type=submit]{
+
+    display: block;
+    .large-search-icon;
+
+    position: absolute;
+    top: 0px;
+    right: 11px;
+
+    outline: none;
+    border: none;
+
+    cursor: pointer;
+    .transition-in(0.3s);
+
+    &:focus,
+    &:hover{
+
+      .large-search-icon-hover;
+
+    }
+
+  }
+}
+
+// MOBILE
+@media only screen and (max-width: 767px) {
+  #inline-search-form{
+    width: 100%;
+    height: 36px;
+
+
+
+    input[type=text],
+    input[type=search]{
+      font-size: 17px;
+      line-height: 24px;
+
+      padding-top: 4px + 1px;
+      padding-right: 20px;
+    }
+
+    input[type=submit],
+    button[type=submit]{
+      .header-search-icon;
+
+      top: 4px;
+      right: 3px;
+
+      &:focus,
+      &:hover{
+        .header-search-icon-hover;
+      }
+    }
+
+  }
+}
+
+
+
+
+
+
+
+
+//    _____ ___ _____ _     _____
+//   |_   _|_ _|_   _| |   | ____|
+//     | |  | |  | | | |   |  _|
+//     | |  | |  | | | |___| |___
+//     |_| |___| |_| |_____|_____|
+//
+
+
+
+
+#page-search-title-section{
+  background: @light-grey;
+  padding-top: 63px;
+  padding-bottom: 72px;
+
+}
+
+#page-search-title{
+
+  h4{
+    letter-spacing: 0.1em;
+
+    margin-bottom: 2px;
+  }
+  h1{
+    color: @orange;
+
+    margin-bottom: 9px;
+  }
+  h3{
+    margin-bottom: 19px;
+  }
+
+
+
+}
+
+
+// MOBILE
+@media only screen and (max-width: 767px) {
+  #page-search-title-section{
+    padding-top: 63px - 38px;
+    padding-bottom: 72px - 35px;
+  }
+  #page-search-title{
+    h4{
+      margin-bottom: 2px + 2px;
+    }
+    h3{
+      margin-bottom: 19px- 10px;
+    }
+    
+  }
+}
+
+
+
+//     ____ ___  _   _ _____ _____ _   _ _____
+//    / ___/ _ \| \ | |_   _| ____| \ | |_   _|
+//   | |  | | | |  \| | | | |  _| |  \| | | |
+//   | |__| |_| | |\  | | | | |___| |\  | | |
+//    \____\___/|_| \_| |_| |_____|_| \_| |_|
+//
+
+
+#page-search-content-section{
+  background: @lightest-grey;
+
+  padding-top: 45px;
+  padding-bottom: 44px;
+
+}
+
+
+#search-content-title{
+  margin-bottom: 37px;
+
+  h2{
+    font-size: 26px;
+    line-height: 30px;
+  }
+  h3{
+    padding-top: 7px;
+  }
+}
+
+
+
+// MOBILE
+@media only screen and (max-width: 767px) {
+  #page-search-content-section{
+    padding-top: 26px;
+    padding-bottom: 35px;
+  }
+
+  #search-content-title{
+    margin-bottom: 18px;
+
+    h2{
+      .playfair-display-regular;
+      font-size: 14px;
+      line-height: 18px;
+    }
+    
+    h3{
+      padding-top: 6px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+#search-content-item-container{
+
+  .search-content-item{
+    margin-bottom: 37px;
+
+    &:last-child{
+      margin-bottom: 0px;
+    }
+  }
+}
+
+
+.search-content-item{
+  background: @light-grey;
+
+  padding-top: 24px;
+  padding-bottom: 26px;
+  padding-left: 25px;
+  padding-right: 25px;
+
+  h4{
+    margin-bottom: 5px;
+    letter-spacing: 0.1em;
+  }
+  h6{
+    color: @orange;
+    letter-spacing: 0.075em;
+    word-wrap: break-word;
+  }
+  .default-copy{
+    padding-top: 7px;
+    padding-bottom: 11px;
+  }
+  .square-cta{
+
+  }
+
+} // .search-content-item
+
+
+
+
+// MOBILE
+@media only screen and (max-width: 767px) {
+
+  #search-content-item-container{
+    .search-content-item{
+      margin-bottom: 17px;
+
+      &:last-child{
+        margin-bottom: 0px;
+      }
+    }
+  } // #search-content-item-container
+
+  .search-content-item{
+    padding-top: 24px - 8px;
+    padding-bottom: 26px - 3px;
+    padding-left: 25px - 8px;
+    padding-right: 25px - 8px;
+
+
+    h4{
+      margin-bottom: 5px - 2px;
+    }
+    h6{
+
+    }
+    .default-copy{
+      padding-top: 7px;
+      padding-bottom: 11px;
+    }
+
+  } // .search-content-item
+
+}
+
+
+
+
+
+//    ____   _    ____ ___ _   _    _  _____ ___ ___  _   _
+//   |  _ \ / \  / ___|_ _| \ | |  / \|_   _|_ _/ _ \| \ | |
+//   | |_) / _ \| |  _ | ||  \| | / _ \ | |  | | | | |  \| |
+//   |  __/ ___ \ |_| || || |\  |/ ___ \| |  | | |_| | |\  |
+//   |_| /_/   \_\____|___|_| \_/_/   \_\_| |___\___/|_| \_|
+//
+
+

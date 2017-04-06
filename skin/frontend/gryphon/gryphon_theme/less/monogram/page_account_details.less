@@ -2505,6 +2505,7 @@ body.sales-order-view{
 #monogram-page-account-details-refer-friends-container{
 
   .page-title{
+    display: block!important;
 
     h1{
       .header-font;
@@ -2553,7 +2554,7 @@ body.sales-order-view{
     width: auto !important;
     float: none !important;
 
-    margin-bottom: 40px;
+    
 
     h1{
       .header-font;
@@ -2575,6 +2576,45 @@ body.sales-order-view{
   .referral-container{
     .points{
       display: none;
+    }
+    .referral-steps {
+      padding-left: 80px;
+      margin-left: -80px;
+      padding-right: 50px;
+      margin-right: -50px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+
+      background: rgba(184, 199, 131, 0.4);
+      color: @white;
+      margin-bottom: 40px;
+
+      @media all and (max-width: 991px) {
+        margin-right: -20px;
+      }
+      h6 {
+        .body-font;
+        text-transform: uppercase;
+        padding-bottom: 5px;
+      }
+      h3 {
+        text-transform: uppercase;
+        padding-bottom: 10px;
+      }
+      p {
+        width: 70%;
+      }
+      @media all and (max-width: 991px) {
+        p {
+          width: 100%;
+        }
+        .col-md-4 {
+          padding-bottom: 30px;
+          &:nth-of-type(3) {
+            padding-bottom: 0px;
+          }
+        }
+      }
     }
   }
 

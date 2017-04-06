@@ -1,0 +1,264 @@
+//    ____  _____ ____  _  _______ ___  ____    _____ ___   ___ _____ _____ ____
+//   |  _ \| ____/ ___|| |/ /_   _/ _ \|  _ \  |  ___/ _ \ / _ \_   _| ____|  _ \
+//   | | | |  _| \___ \| ' /  | || | | | |_) | | |_ | | | | | | || | |  _| | |_) |
+//   | |_| | |___ ___) | . \  | || |_| |  __/  |  _|| |_| | |_| || | | |___|  _ <
+//   |____/|_____|____/|_|\_\ |_| \___/|_|     |_|   \___/ \___/ |_| |_____|_| \_\
+//
+
+
+#desktop-footer{
+  background: @light-grey;
+}
+
+
+#desktop-footer-bar{
+  background: @brown;
+  padding-top: 18px;
+  padding-bottom: 15px;
+
+  p, a{
+    .proxima-nova-bold;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 0.075em;
+    text-transform: uppercase;
+
+    color: @white;
+  }
+
+  a:focus,
+  a:hover{
+    color: @orange;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    __  __    _    ___ _     ___ _   _  ____   _     ___ ____ _____
+//   |  \/  |  / \  |_ _| |   |_ _| \ | |/ ___| | |   |_ _/ ___|_   _|
+//   | |\/| | / _ \  | || |    | ||  \| | |  _  | |    | |\___ \ | |
+//   | |  | |/ ___ \ | || |___ | || |\  | |_| | | |___ | | ___) || |
+//   |_|  |_/_/   \_\___|_____|___|_| \_|\____| |_____|___|____/ |_|
+//
+
+#desktop-footer-mailing-list-form-container{
+  text-align: center;
+  padding-top: 21px;
+  padding-bottom: 13px;
+
+  h5{
+    margin-bottom: 16px;
+  }
+
+  
+
+
+}
+
+
+#desktop-footer-mailing-list-form{
+  font-size: 0px;
+
+  .form-group,
+  .form-group input[type=text],
+  input[type=submit]{
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+
+  .form-group{
+    line-height: 36px;
+    border: 1px solid #c2c8c6;
+    border-left: none;
+
+    .display-inline-block;
+    background: @lightest-grey;
+    position: relative;
+
+    .form-control{
+      border: none;
+      box-shadow: none;
+      &:focus{
+        border: none;
+        outline: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+    }
+
+
+    input[type=text]{
+      .proxima-nova-regular;
+      font-size: 12px;
+      line-height: 36px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+
+      color: @brown;
+
+      &::-webkit-input-placeholder{
+        .opacity(1);
+        color: @brown;
+      }
+      &:-moz-placeholder{
+        .opacity(1);
+        color: @brown;
+      }
+      &::-moz-placeholder{
+        .opacity(1);
+        color: @brown;
+      }
+      &:-ms-input-placeholder{
+        .opacity(1);
+        color: @brown;
+      }
+
+    }
+
+    &:first-child{
+      border-left: 1px solid #c2c8c6;
+      .round(5px 0px 0px 5px);
+    }
+
+    //   __     ___    _     ___ ____    _  _____ ___ ___  _   _
+    //   \ \   / / \  | |   |_ _|  _ \  / \|_   _|_ _/ _ \| \ | |
+    //    \ \ / / _ \ | |    | || | | |/ _ \ | |  | | | | |  \| |
+    //     \ V / ___ \| |___ | || |_| / ___ \| |  | | |_| | |\  |
+    //      \_/_/   \_\_____|___|____/_/   \_\_| |___\___/|_| \_|
+    //
+    
+    // for error
+    /*
+    &:before{
+      .fa;
+      content: "\f06a";
+      font-size: 16px;
+      line-height: 20px;
+      color: @orange;
+      
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 8px;
+      right: 5px;
+
+      display: none;
+      .opacity(0);
+
+      pointer-events: none;
+    }
+    */
+
+    &.has-error{
+      /*
+      &:before{
+        display: block;
+        .scale-in;
+      }
+      */
+
+      input[type=text]{
+        color: @orange;
+      }
+    } // has-error
+
+  } // .form-group
+
+
+  input[type=submit] {
+    .display-inline-block;
+    height: 36px;
+
+    .proxima-nova-bold;
+    font-size: 12px;
+    line-height: 36px;
+    text-transform: uppercase;
+    letter-spacing: 0.075em;
+    color: @white;
+
+    .transition-in(0.3s);
+    .round(0px 5px 5px 0px);
+    background: @orange;
+    padding: 0 40px;
+
+    &:focus,
+    &:hover{
+      background: @brown;
+    }
+  }
+
+} // #desktop-footer-mailing-list-form
+
+
+// #desktop-footer-mailing-list-form
+
+
+
+
+//    __  __  ___  ____ ___ _     _____   _____ ___   ___ _____ _____ ____
+//   |  \/  |/ _ \| __ )_ _| |   | ____| |  ___/ _ \ / _ \_   _| ____|  _ \
+//   | |\/| | | | |  _ \| || |   |  _|   | |_ | | | | | | || | |  _| | |_) |
+//   | |  | | |_| | |_) | || |___| |___  |  _|| |_| | |_| || | | |___|  _ <
+//   |_|  |_|\___/|____/___|_____|_____| |_|   \___/ \___/ |_| |_____|_| \_\
+//
+
+#mobile-footer{
+
+}
+
+
+#mobile-footer-contact-us-btn,
+#mobile-footer-mailing-list-btn{
+
+  .proxima-nova-bold;
+  font-size: 13px;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: @brown;
+
+  display: block;
+  width: 100%;
+  background: #dbdbcc;
+
+  padding-top: 12px;
+  padding-bottom: 8px;
+
+
+}
+
+#mobile-footer-contact-us-btn{
+  border-bottom: 1px solid @border-grey;
+}
+
+#mobile-footer-copywrite{
+  background: @brown;
+  padding-top: 6px;
+  padding-bottom: 5px;
+
+  text-align: center;
+  
+  p, a{
+    .proxima-nova-bold;
+    font-size: 7px;
+    line-height: 10px;
+    letter-spacing: 0.075em;
+    color:  @lightest-grey !important;
+    text-transform: uppercase;
+  }
+
+}

@@ -1,0 +1,2555 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"margn",
+				"margin-bottom"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"get_hea",
+				"get_header"
+			],
+			[
+				"bor",
+				"border-bottom"
+			],
+			[
+				"get_the_autho",
+				"get_the_author_link"
+			],
+			[
+				"chec",
+				"checkbox-label"
+			],
+			[
+				"pd",
+				"padding"
+			],
+			[
+				"PAD",
+				"padding-bottom"
+			],
+			[
+				"a",
+				"background-attachment"
+			],
+			[
+				"page",
+				"page-title"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"input-",
+				"input-text"
+			],
+			[
+				"FON",
+				"font-size"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"no",
+				"nowrap"
+			],
+			[
+				"displa",
+				"display-inline-block"
+			],
+			[
+				"dis",
+				"display-inline-block"
+			],
+			[
+				"combination",
+				"combination_data_loader"
+			],
+			[
+				"data_s",
+				"data_steeping_time"
+			],
+			[
+				"data_ste",
+				"data_steeping_temperature"
+			],
+			[
+				"CREATE",
+				"create_graph_section"
+			],
+			[
+				"graph_item",
+				"graph_item_01"
+			],
+			[
+				"graph_data",
+				"graph_data_01"
+			],
+			[
+				"TWe",
+				"TweenMax"
+			],
+			[
+				"graph",
+				"graph_data"
+			],
+			[
+				"draw",
+				"draw_empty_graph"
+			],
+			[
+				"center",
+				"center_x"
+			],
+			[
+				"data_",
+				"data_x"
+			],
+			[
+				"target",
+				"target_angle"
+			],
+			[
+				"str",
+				"str_param"
+			],
+			[
+				"circle_",
+				"circle_shape_array"
+			],
+			[
+				"line_sa",
+				"line_shape"
+			],
+			[
+				"create",
+				"create_circles"
+			],
+			[
+				"combined",
+				"combined_json_parser"
+			],
+			[
+				"home-tea-",
+				"home-tea-item-bg"
+			],
+			[
+				"display",
+				"display_graph_section"
+			],
+			[
+				"over",
+				"overflow"
+			],
+			[
+				"name_",
+				"name_01"
+			],
+			[
+				"on_sw",
+				"on_swipe_right"
+			],
+			[
+				"ON_",
+				"on_swipe_left"
+			],
+			[
+				"ove",
+				"overflow"
+			],
+			[
+				"o",
+				"outline"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"reanim",
+				"reanimate_circles"
+			],
+			[
+				"m",
+				"margin"
+			],
+			[
+				"sub",
+				"sub_data_item"
+			],
+			[
+				"data",
+				"data_item"
+			],
+			[
+				"goto_nex",
+				"goto_next_main"
+			],
+			[
+				"targe",
+				"target_sub_index"
+			],
+			[
+				"combination_gra",
+				"combination_graph_04"
+			],
+			[
+				"main_in",
+				"main_index"
+			],
+			[
+				"main_ind",
+				"main_index_param"
+			],
+			[
+				"get_ind",
+				"get_index_of_child_str"
+			],
+			[
+				"mouseup_",
+				"mouseup_y"
+			],
+			[
+				"mouse",
+				"mouseup	.mouseup()"
+			],
+			[
+				"DIS",
+				"display-inline-block"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"origina",
+				"original_center_y"
+			],
+			[
+				"targ",
+				"target_x"
+			],
+			[
+				"score",
+				"score_array"
+			],
+			[
+				"graph_angl",
+				"graph_angle_array"
+			],
+			[
+				"graph_ang",
+				"graph_angle_array"
+			],
+			[
+				"origin",
+				"original_center_y"
+			],
+			[
+				"fake_",
+				"fake_preload_percent"
+			],
+			[
+				"load",
+				"load_array"
+			],
+			[
+				"cur",
+				"current_image"
+			],
+			[
+				"preloader_",
+				"preloader_txt_element"
+			],
+			[
+				"is_",
+				"is_404_page"
+			],
+			[
+				"content",
+				"content_container"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"avenir",
+				"avenir-black"
+			],
+			[
+				"aven",
+				"avenir-black"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"param",
+				"param_num"
+			],
+			[
+				"word",
+				"wordpress_data_array"
+			],
+			[
+				"insg",
+				"instagram_data_array"
+			],
+			[
+				"parse",
+				"parse_data"
+			],
+			[
+				"marin",
+				"margin-right"
+			],
+			[
+				"aver",
+				"avenir-medium"
+			],
+			[
+				"MAX",
+				"max-width"
+			],
+			[
+				"for",
+				"for	JS - For loop"
+			],
+			[
+				"padding",
+				"padding-bottom"
+			],
+			[
+				"prev",
+				"previous_post_index"
+			],
+			[
+				"Twe",
+				"TweenMax"
+			],
+			[
+				"on_mouse",
+				"on_logo_mouse_over"
+			],
+			[
+				"window",
+				"window_width"
+			],
+			[
+				"update",
+				"update_left_margin"
+			],
+			[
+				"banner_ca",
+				"banner_has_caption_array"
+			],
+			[
+				"taret",
+				"target_height"
+			],
+			[
+				"image_",
+				"image_item"
+			],
+			[
+				"scroll",
+				"scroll	.scroll()"
+			],
+			[
+				"banner_",
+				"banner_container"
+			],
+			[
+				"banner",
+				"banner_index"
+			],
+			[
+				"bann",
+				"banner_index"
+			],
+			[
+				"del",
+				"delta_y"
+			],
+			[
+				"ban",
+				"banner_array"
+			],
+			[
+				"table",
+				"table-cell"
+			],
+			[
+				"tab",
+				"table"
+			],
+			[
+				"bord",
+				"border-top"
+			],
+			[
+				"Tw",
+				"TweenMax"
+			],
+			[
+				"image",
+				"image_height"
+			],
+			[
+				"project",
+				"project_item_container"
+			],
+			[
+				"home_fea",
+				"home_featured_grid_02"
+			],
+			[
+				"create_des",
+				"create_desktop_menu"
+			],
+			[
+				"paddin",
+				"padding-right"
+			],
+			[
+				"mobile",
+				"mobile-padding"
+			],
+			[
+				"padin",
+				"padding-left"
+			],
+			[
+				"create_mobil",
+				"create_mobile_case_study"
+			],
+			[
+				"create_moi",
+				"create_mobile_home"
+			],
+			[
+				"create_de",
+				"create_desktop_case_study"
+			],
+			[
+				"pdin",
+				"padding-right"
+			],
+			[
+				"hid",
+				"hidden-xs"
+			],
+			[
+				"getpos",
+				"get_post"
+			],
+			[
+				"padi",
+				"padding-right"
+			],
+			[
+				"item",
+				"item2"
+			],
+			[
+				"ite",
+				"item"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"container",
+				"container_height"
+			],
+			[
+				"offset",
+				"offset_height"
+			],
+			[
+				"has_",
+				"has_window_width"
+			],
+			[
+				"has_win",
+				"has_window_height"
+			],
+			[
+				"fixe",
+				"fixed_height"
+			],
+			[
+				"PADIN",
+				"padding-top"
+			],
+			[
+				"trans",
+				"transition-out"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "(04) Jan 12.md",
+			"settings":
+			{
+				"buffer_size": 57,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "(00) Links.md",
+			"settings":
+			{
+				"buffer_size": 94,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/monogram/general.less",
+			"settings":
+			{
+				"buffer_size": 2456,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/monogram/page_default.less",
+			"settings":
+			{
+				"buffer_size": 5401,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/monogram/page_index.less",
+			"settings":
+			{
+				"buffer_size": 12281,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 23 files for \".post-index-carousel-item\"\n\nD:\\Localhost\\monogram-wp\\wp-content\\themes\\monogram\\assets\\css_source\\monogram\\page_index.less:\n   53    font-size: 0;\n   54  \n   55:   .post-index-carousel-item{\n   56      width: 20%;\n   57      height: 245px;\n   ..\n   59  }\n   60  \n   61: .post-index-carousel-item{\n   62  \n   63    .display-inline-block;\n   ..\n   96      margin-right: -15px;\n   97      height: 215px;\n   98:     .post-index-carousel-item{\n   99        height: 215px;\n  100      }\n  101    }\n  102:   .post-index-carousel-item{\n  103      padding-left: 15px;\n  104      padding-right: 15px;\n\n4 matches in 1 file\n\n\nSearching 23 files for \"off-white\"\n\nD:\\Localhost\\monogram-wp\\wp-content\\themes\\monogram\\assets\\css_source\\monogram\\account_creation.less:\n    8      text-align: center;\n    9      text-transform: uppercase;\n   10:     color: @off-white;\n   11      margin-bottom: 35px;\n   12    }\n   13    p {\n   14      text-align: center;\n   15:     color: @off-white;\n   16      margin-bottom: 60px;\n   17    }\n   ..\n   23  \n   24    label {\n   25:       color: @off-white;\n   26  \n   27        text-transform: uppercase;\n\nD:\\Localhost\\monogram-wp\\wp-content\\themes\\monogram\\assets\\css_source\\monogram\\account_login.less:\n    8      text-align: left;\n    9      text-transform: uppercase;\n   10:     color: @off-white;\n   11      margin-bottom: 35px;\n   12    }\n   13    p {\n   14      text-align: left;\n   15:     color: @off-white;\n   16      margin-bottom: 60px;\n   17    }\n   ..\n   43  \n   44      .for-input {\n   45:       color: @off-white;\n   46  \n   47        text-transform: uppercase;\n   ..\n  107      vertical-align: middle;\n  108      width: 5%;\n  109:     color: @off-white;\n  110      font-size: 8px;\n  111      .body-font;\n\nD:\\Localhost\\monogram-wp\\wp-content\\themes\\monogram\\assets\\css_source\\monogram\\button.less:\n   12    height: 25px;\n   13  \n   14:   color: @off-white;\n   15:   border: 1px solid @off-white;\n   16  \n   17:   color: fade(@off-white, 90%);\n   18:   border: 1px solid fade(@off-white, 90%) !important;\n   19  \n   20    padding-left: 9px;\n   ..\n   29    &:hover{\n   30      // .opacity_important(0.5);\n   31:     color: fade(@off-white, 50%);\n   32:     border: 1px solid fade(@off-white, 50%) !important;\n   33      \n   34    }\n   ..\n   49    height: 25px;\n   50  \n   51:   color: @off-white;\n   52:   color: fade(@off-white, 90%);\n   53  \n   54    .opacity(0.9);\n   ..\n   60      display: block;\n   61      content: '';\n   62:     border-bottom: 1px solid @off-white;\n   63:     border-bottom: 1px solid fade(@off-white, 30%);\n   64  \n   65      bottom: 7px;\n   ..\n   84    &:hover{\n   85      // .opacity_important(0.5);\n   86:     color: fade(@off-white, 50%);\n   87  \n   88      /*\n   89      &:before{\n   90:       border-bottom: 1px solid fade(@off-white, 10%);\n   91      }\n   92      */\n   ..\n  116    height: 25px;\n  117  \n  118:   color: @off-white;\n  119:   color: fade(@off-white, 90%);\n  120  \n  121    .opacity(0.9);\n  ...\n  127      display: block;\n  128      content: '';\n  129:     border-bottom: 1px solid @off-white;\n  130:     border-bottom: 1px solid fade(@off-white, 30%);\n  131  \n  132      bottom: 7px;\n  ...\n  151    &:hover{\n  152      // .opacity_important(0.5);\n  153:     color: fade(@off-white, 50%);\n  154  \n  155      /*\n  156      &:before{\n  157:       border-bottom: 1px solid fade(@off-white, 10%);\n  158      }\n  159      */\n\nD:\\Localhost\\monogram-wp\\wp-content\\themes\\monogram\\assets\\css_source\\monogram\\contact.less:\n    8      text-align: center;\n    9      text-transform: uppercase;\n   10:     color: @off-white;\n   11      margin-bottom: 35px;\n   12    }\n   13    p {\n   14      text-align: center;\n   15:     color: @off-white;\n   16      margin-bottom: 60px;\n   17    }\n   ..\n   25  \n   26      label.for-input {\n   27:       color: @off-white;\n   28  \n   29        text-transform: uppercase;\n   ..\n   63          pointer-events: none;\n   64          font-size: 10px;\n   65:         color: @off-white;\n   66        }\n   67        select {\n   ..\n   74          .round(0px);  \n   75          font-size: 10px;    \n   76:         color: @off-white;\n   77          .body-font;\n   78  \n\nD:\\Localhost\\monogram-wp\\wp-content\\themes\\monogram\\assets\\css_source\\monogram\\footer.less:\n   10  \n   11      h5 {      \n   12:       //color: @off-white;\n   13        color: @white;\n   14        text-transform: uppercase;\n   ..\n   18      a, p {\n   19        .body-font;\n   20:       color: @off-white;\n   21        // font-size: 10px;\n   22        font-size: 12.5px;\n   ..\n   54          background: none;\n   55          border: none;\n   56:         border-bottom: 1px solid @off-white;\n   57          .subheader-font-2;\n   58          font-size: 10px;\n   59:         background-color: @off-white;\n   60          color: @light-grey;\n   61          text-transform: uppercase;\n   ..\n   72            .subheader-font-2;\n   73            font-size: 10px;\n   74:           color: @off-white;\n   75            text-transform: uppercase;\n   76          }\n   ..\n   78            .subheader-font-2;\n   79            font-size: 10px;\n   80:           color: @off-white;\n   81            text-transform: uppercase;\n   82          }\n   ..\n   84            .subheader-font-2;\n   85            font-size: 10px;\n   86:           color: @off-white;\n   87            text-transform: uppercase;\n   88          }\n   ..\n   90            .subheader-font-2;\n   91            font-size: 10px;\n   92:           color: @off-white;\n   93            text-transform: uppercase;\n   94          } \n   ..\n  136        display: inline-block;\n  137        vertical-align: middle;\n  138:       color: @off-white;\n  139        text-transform: uppercase;\n  140        // .subheader-font-2;\n  ...\n  155          a {\n  156            .body-font;\n  157:           color: @off-white;\n  158            font-size: 12px;\n  159          }\n  ...\n  175  #mobile-footer-copy-section{\n  176    background: #6b615b;\n  177:   color: @off-white;\n  178  \n  179  \n  ...\n  196      text-transform: uppercase;\n  197      letter-spacing: 0.05em;\n  198:     color: @off-white;\n  199  \n  200      margin-bottom: 4px;\n  ...\n  230          width: 0;\n  231          height: 10px;\n  232:         border-left: 1px solid @off-white;\n  233  \n  234        }\n  ...\n  246          letter-spacing: 0.03em;\n  247  \n  248:         color: @off-white;\n  249        }\n  250      }\n  ...\n  276      text-transform: uppercase;\n  277      letter-spacing: 0.14em;\n  278:     color: @off-white;\n  279  \n  280      .display-inline-block;\n\nD:\\Localhost\\monogram-wp\\wp-content\\themes\\monogram\\assets\\css_source\\monogram\\general.less:\n  112    display: inline-block;\n  113    vertical-align: middle;\n  114:   border: 1px solid @off-white;\n  115    // background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);\n  116    border-radius: 50px;\n  ...\n  131        top: -1px;\n  132        left: -1px;\n  133:       background: @off-white;\n  134        opacity: 0;\n  135        border-radius: 50px;\n\nD:\\Localhost\\monogram-wp\\wp-content\\themes\\monogram\\assets\\css_source\\monogram\\header.less:\n   44            font-size: 12px;\n   45            line-height: 20px;\n   46:           color: @off-white;\n   47            letter-spacing: 0.1em;\n   48            text-transform: uppercase;\n   ..\n  113  \n  114  \n  115:         color: @off-white;\n  116          .opacity(0.9);\n  117  \n  ...\n  147      font-size: 10px;\n  148      line-height: 20px;\n  149:     color: @off-white;\n  150      letter-spacing: 0.1em;\n  151      text-transform: uppercase;\n  ...\n  178    .fa{\n  179      font-size: 17px;\n  180:     color: @off-white;\n  181      .opacity(0.9);\n  182  \n  ...\n  299  \n  300  \n  301:         color: @off-white;\n  302          .opacity(0.9);\n  303  \n  ...\n  347    .fa{\n  348      font-size: 21px;\n  349:     color: @off-white;\n  350      .opacity(0.9);\n  351  \n  ...\n  416    height: 40px;\n  417  \n  418:   color: @off-white;\n  419    .opacity(0.9);\n  420  \n\nD:\\Localhost\\monogram-wp\\wp-content\\themes\\monogram\\assets\\css_source\\monogram\\home.less:\n   18  \n   19    background: #7b706b;\n   20:   color: @off-white;\n   21:   // color: fade(@off-white, 90%);  \n   22  \n   23  \n   ..\n  321  \n  322    background: #7b706b;\n  323:   color: @off-white;\n  324:   // color: fade(@off-white, 90%);  \n  325  \n  326    .container-fluid {\n\nD:\\Localhost\\monogram-wp\\wp-content\\themes\\monogram\\assets\\css_source\\monogram\\input.less:\n    5    font-size: 10px;\n    6    line-height: 20px;\n    7:   color: @off-white;\n    8    padding-left: 18px;\n    9    height: 24px;  \n   ..\n   16    font-size: 10px;\n   17    line-height: 20px;\n   18:   color: @off-white;\n   19    padding-left: 18px;\n   20  }\n   ..\n   32    font-size: 10px;\n   33    line-height: 20px;\n   34:   color: @off-white;\n   35    padding-left: 18px;\n   36    height: 24px;\n   ..\n   52    font-size: 10px;\n   53    line-height: 24px;\n   54:   color: @off-white;\n   55  }\n\nD:\\Localhost\\monogram-wp\\wp-content\\themes\\monogram\\assets\\css_source\\monogram\\monogram-experience.less:\n    7      margin-bottom: 77px;\n    8      h1 {      \n    9:       color: @off-white;\n   10        text-transform: uppercase;\n   11        text-align: center;\n   ..\n   14      p {\n   15        text-align: center;\n   16:       color: @off-white;\n   17      }\n   18    }\n   ..\n   58  \n   59        p {\n   60:         color: @off-white;\n   61          &:nth-of-type(1) {\n   62            padding-bottom: 20px;  \n\nD:\\Localhost\\monogram-wp\\wp-content\\themes\\monogram\\assets\\css_source\\monogram\\monogram-service.less:\n   13    .monogram-service-text-container {\n   14      h1 {      \n   15:       color: @off-white;\n   16        text-transform: uppercase;\n   17        text-align: left;\n   ..\n   23      }\n   24      h4 {\n   25:       color: @off-white;\n   26        text-transform: uppercase;      \n   27      }\n   28      p {\n   29        text-align: left;\n   30:       color: @off-white;\n   31      }\n   32    }\n   ..\n   69      }\n   70      #monogram-service-text-container-3 {\n   71:       background-color: @off-white;\n   72        padding-top: 40px;\n   73        padding-bottom: 80px;\n\nD:\\Localhost\\monogram-wp\\wp-content\\themes\\monogram\\assets\\css_source\\monogram\\page_default.less:\n  121    line-height: 20px;\n  122    letter-spacing: 0em;\n  123:   color: @off-white;\n  124  \n  125    p{\n  ...\n  140        line-height: 20px;\n  141        letter-spacing: 0em;\n  142:       color: @off-white;\n  143  \n  144        position: relative;\n  ...\n  149          font-size: 4px;\n  150          line-height: 20px;\n  151:         color: @off-white;\n  152          content: \"\\f111\";\n  153  \n  ...\n  244  \n  245        margin-bottom: 11px;\n  246:       color: @off-white;\n  247  \n  248        &:focus,\n  249        &:hover{\n  250:         color: @off-white;\n  251          .opacity(0.7);\n  252        }\n  ...\n  332      padding-right: 12px;\n  333  \n  334:     background: @off-white;\n  335:     background: fade(@off-white, 90%);\n  336  \n  337      display: none;\n\nD:\\Localhost\\monogram-wp\\wp-content\\themes\\monogram\\assets\\css_source\\monogram\\page_index.less:\n   83      letter-spacing: 0.08em;\n   84      text-align: center;\n   85:     // color: @off-white;\n   86      color: @white;\n   87  \n   ..\n  143          \n  144      letter-spacing: 0em;\n  145:     // color: @off-white;\n  146      color: @white;\n  147  \n  ...\n  197  \n  198        a{\n  199:         // color: @off-white;\n  200          color: @white;\n  201          \n  ...\n  212          &:focus,\n  213          &:hover{\n  214:           color: @off-white;\n  215            .opacity(0.7);\n  216          }\n  ...\n  334  \n  335      .article-date{\n  336:       color: @off-white;\n  337        padding-top: 25px;\n  338        margin-bottom: 8px;\n  ...\n  421      .article-date{\n  422        text-align: right;\n  423:       color: @off-white;\n  424        padding-top: 10px;\n  425  \n  ...\n  576  \n  577    footer.article-footer{\n  578:     color: @off-white;\n  579  \n  580      .article-social{\n  ...\n  603          font-size: 14px;\n  604          line-height: 20px;\n  605:         color: @off-white;\n  606  \n  607          &:focus,\n  608          &:hover{\n  609:           color: @off-white;\n  610            .opacity(0.7);\n  611          }\n\n85 matches across 13 files\n",
+			"settings":
+			{
+				"buffer_size": 12250,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/monogram/button.less",
+			"settings":
+			{
+				"buffer_size": 2416,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"HTML",
+				"Set Syntax: HTML"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"PHP",
+				"Set Syntax: PHP"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"htm",
+				"Set Syntax: HTML"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"ht",
+				"Set Syntax: HTML"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Package"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"hmtl",
+				"Set Syntax: HTML (Tcl)"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"JS",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"less",
+				"Set Syntax: LESS"
+			],
+			[
+				"h",
+				"Set Syntax: HTML"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"READ",
+				"ReadmePlease"
+			],
+			[
+				"",
+				"ASCII Decorator: Default Font"
+			],
+			[
+				"read",
+				"ReadmePlease"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"snip",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"plain",
+				"Set Syntax: Plain Text"
+			]
+		],
+		"width": 498.0
+	},
+	"console":
+	{
+		"height": 113.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/monogram/fonts.less",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/monogram/form.less",
+		"/D/Localhost/monogram-wp/_notes/(00) Links.md",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/inc/fonts.php",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/header.php",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/style.less",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/monogram/footer.less",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/footer.php",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/inc/header_desktop.php",
+		"/D/Localhost/monogram-wp/_notes/(00) Database.md",
+		"/D/Localhost/monogram-wp/_notes/(03) Nov 2.md",
+		"/D/Localhost/monogram-wp/_notes/(02) Oct 28 copy.md",
+		"/C/Users/jairu_000/Desktop/MONOGRAM/DATABASE/02_localhost_wp_monogram_modified.sql",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/monogram/page_default_mobile.less",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/quest/fonts.less",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/functions.php",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/_image_text_shortcode.php",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/monogram/page_index.less",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/monogram/page_default.less",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/custom_fields/all.php",
+		"/D/Localhost/monogram-wp/_live_monogramtea/.htaccess",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/admin.less",
+		"/D/Localhost/monogram-wp/_live_monogramtea/wp-config.php",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/single.php",
+		"/D/Localhost/monogram-wp/_notes/faq copy.md",
+		"/D/Localhost/monogram-wp/wp-content/themes/brew/footer.php",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/wysiwyg.less",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/index.php",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/monogram/button.less",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/_theme_options_cmb.php",
+		"/D/Localhost/monogram-wp/wp-content/plugins/ajax-load-more/core/repeater/default.php",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/js_source/manic/page/Page.js",
+		"/D/Localhost/monogram-wp/wp-content/plugins/ajax-load-more/ajax-load-more.php",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/monogram/general.less",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/inc/js_default.php",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/js_source/monogram/page/Default.js",
+		"/C/Users/jairu_000/Desktop/MONOGRAM/DATABASE/01_localhost_wp_monogram_modified.sql",
+		"/D/Localhost/monogram-wp/_notes/(01) Oct 28.md",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/manic/mixin-collection.less",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/manic/customized-bootstrap-plain-grid.less",
+		"/D/Localhost/monogram-wp/wp-content/plugins/ajax-load-more/core/functions.php",
+		"/D/Localhost/git/monogram/monogram_files/assets/less/style.less",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/quest/page/default.less",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/sidebar.php",
+		"/D/Localhost/monogram-wp/_notes/(99) Go Live.md",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/inc/header_mobile.php",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/js_source/google-closure-dependency-list.js",
+		"/D/Campaigns/35 Jan/Offshore/Latest Assets/300x250 ad/300x250_Offshore.html",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/monogram/page_index.php",
+		"/D/Localhost/git/monogram/monogram_files/assets/less/critical_style.less",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/critical_style.less",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/libs/google-closure/fart.exe",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/libs/google-closure/compile_page_libraries.bat",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/libs/google-closure/compile_page_default.bat",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/libs/google-closure/compile_all.bat",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/libs/google-closure/build_dependencies.py",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/js_source/quest/page/Default.js",
+		"/D/Localhost/monogram-wp/wp-content/themes/brew/index.php",
+		"/D/Localhost/monogram-wp/wp-content/themes/twentysixteen/sidebar.php",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/style.css",
+		"/D/Localhost/monogram-wp/wp-content/themes/monogram/page-home.php",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/template/giftvoucher/addorredeem.phtml",
+		"/D/Localhost/git/monogram/monogram_files/assets/less/monogram/page_account_details.less",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/template/miragedesign/customer/account/navigation.phtml",
+		"/D/Localhost/git/monogram/monogram_files/account-detail-giftcard-detail-content.php",
+		"/D/Localhost/monogram/_notes/_Blog Notes.md",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/template/giftvoucher/giftcard/view.phtml",
+		"/D/Localhost/monogram_non_git/app/design/frontend/base/default/template/giftvoucher/giftcard/view.phtml",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/template/sales/order/history.phtml",
+		"/D/Localhost/git/monogram/monogram_files/account-detail-order-history-content.php",
+		"/D/Localhost/git/monogram/monogram_files/account-detail-giftcard-detail.php",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/template/miragedesign/customer/account/dashboard.phtml",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/template/miragedesign/customer/widget/gender.phtml",
+		"/D/Localhost/git/monogram/monogram_files/assets/less/lib/mixins.less",
+		"/D/Localhost/git/monogram/monogram_files/account-detail-content.php",
+		"/D/Localhost/git/monogram/monogram_files/account-detail-address-edit-content.php",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/template/customer/widget/name.phtml",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/template/miragedesign/customer/widget/name.phtml",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/template/miragedesign/customer/address/edit.phtml",
+		"/D/Localhost/monogram_non_git/app/design/frontend/base/default/template/customer/widget/name.phtml",
+		"/D/Localhost/git/monogram/monogram_files/account-detail-address.php",
+		"/D/Localhost/git/monogram/monogram_files/account-detail-address-edit.php",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/template/miragedesign/customer/account/dashboard/info.phtml",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/template/miragedesign/customer/form/edit.phtml",
+		"/D/Localhost/git/monogram/monogram_files/account-detail-dashboad-edit-content.php",
+		"/D/Localhost/git/monogram/monogram_files/assets/less/monogram/page_shopping_cart.less",
+		"/D/Localhost/git/monogram/monogram_files/assets/less/manic/customized-bootstrap.less",
+		"/D/Localhost/git/monogram/monogram_files/account-detail-dashboard-edit.php",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/template/rewardpoints/dashboard_points.phtml",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/template/miragedesign/customer/account/dashboard/hello.phtml",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/template/miragedesign/customer/account/dashboard/newsletter.phtml",
+		"/D/Localhost/git/monogram/monogram_files/account-detail.php",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/template/rewardpoints/points.phtml",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/template/rewardpoints/referral.phtml",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/template/miragedesign/customer/address/book.phtml",
+		"/D/Localhost/git/monogram/monogram_files/account-detail-address-content.php",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/template/giftvoucher/giftvoucher.phtml",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/template/giftvoucher/grid.phtml",
+		"/D/Localhost/git/monogram/monogram_files/account-detail-refer-friends-content.php",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/template/miragedesign/customer/account/dashboard/address.phtml",
+		"/D/Localhost/monogram/_notes/Oct 24.md",
+		"/D/Localhost/git/monogram/monogram_files/account-detail-giftcard-content.php",
+		"/D/Localhost/git/monogram/monogram_files/account-detail-reward-points-content.php",
+		"/D/Localhost/git/monogram/monogram_files/account-detail-refer-friends.php",
+		"/D/Localhost/git/monogram/monogram_files/account-login-content.php",
+		"/D/Localhost/git/monogram/monogram_files/assets/less/monogram/fonts.less",
+		"/D/Localhost/git/monogram/monogram_files/assets/less/lib/font-awesome.less",
+		"/D/Localhost/git/monogram/monogram_files/assets/less/monogram/button.less",
+		"/D/Localhost/git/monogram/monogram_files/assets/less/monogram/page_billing_shipping.less",
+		"/D/Localhost/git/monogram/monogram_files/account-detail-reward-points.php",
+		"/D/Localhost/git/monogram/monogram_files/account-detail-giftcard.php",
+		"/D/Localhost/git/monogram/monogram_files/account-detail-__.php",
+		"/D/Localhost/git/monogram/monogram_files/assets/less/monogram/input.less",
+		"/D/Localhost/git/monogram/monogram_files/account-detail-order-history.php",
+		"/D/Localhost/git/monogram/monogram_files/billing-shipping-content.php",
+		"/D/Localhost/git/monogram/monogram_files/shopping-cart-content.php",
+		"/D/Localhost/git/monogram/monogram_files/billing-shipping.php",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/layout/local.xml",
+		"/D/Localhost/monogram_non_git/app/design/frontend/gryphon/gryphon_theme/template/page/2columns-right.phtml",
+		"/D/Localhost/monogram/_notes/Oct 20.md",
+		"/D/Localhost/monogram/_notes/(00) Manual Git.md",
+		"/D/Localhost/git/monogram/monogram_files/assets/less/manic/mixin-collection.less",
+		"/D/Localhost/git/monogram/monogram_files/assets/libs/font-awesome/less/font-awesome.less",
+		"/D/Localhost/monogram/_notes/(00) Manual Git",
+		"/D/Localhost/git/monogram/monogram_files/assets/less/monogram/account_details.less",
+		"/D/Localhost/monogram_non_git/app/design/frontend/base/default/template/customer/account/navigation.phtml",
+		"/D/Localhost/git/monogram/monogram_files/order-confirmation-content.php",
+		"/D/Localhost/git/monogram/monogram_files/order-confirmation.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 92.0,
+		"where_history":
+		[
+			"D:\\Localhost\\monogram-wp\\wp-content\\themes\\monogram\\assets\\css_source\\monogram",
+			"D:\\Localhost\\monogram_non_git\\app\\design\\frontend",
+			"D:\\Localhost\\monogram_non_git\\app\\design\\frontend\\gryphon\\gryphon_theme",
+			"D:\\Localhost\\monogram_non_git\\app\\design\\frontend",
+			"D:\\Localhost\\monogram_non_git\\app\\design\\frontend\\gryphon",
+			"D:\\Localhost\\monogram_non_git\\app\\design\\frontend\\gryphon\\gryphon_theme",
+			"D:\\Localhost\\monogram_non_git\\app\\design\\frontend\\gryphon\\gryphon_theme\\template",
+			"D:\\Localhost\\monogram_non_git\\app\\design\\frontend\\gryphon\\gryphon_theme",
+			"D:\\Localhost\\monogram_non_git\\app",
+			"D:\\Localhost\\monogram_non_git\\app\\design",
+			"D:\\Localhost\\monogram_non_git\\app",
+			"D:\\Localhost\\monogram_non_git\\app\\design",
+			"D:\\Localhost\\monogram_non_git\\skin",
+			"D:\\Localhost\\monogram_non_git\\app",
+			"D:\\Localhost\\git\\monogram\\monogram_files\\assets\\less",
+			"D:\\Localhost\\git\\monogram\\monogram_files\\assets\\js",
+			"D:\\Localhost\\git\\monogram\\monogram_files\\assets\\less",
+			"D:\\Localhost\\monogram\\01\\source\\less",
+			"D:\\Localhost\\wearemanic_2015\\wp-content\\themes\\wearemanic_2015\\library\\css\\wearemanic",
+			"D:\\Localhost\\wearemanic_2015\\wp-content\\themes\\wearemanic_2015\\library\\css",
+			"D:\\Localhost\\wearemanic_2015\\wp-content\\themes\\wearemanic_2015",
+			"D:\\Localhost\\wearemanic_2015\\wp-content\\themes\\wearemanic_2015\\library\\css",
+			"D:\\Localhost\\wearemanic_2015\\wp-content\\themes\\wearemanic_2015\\library\\css\\wearemanic",
+			"D:\\Localhost\\wearemanic_2015\\wp-content\\themes\\wearemanic_2015\\library\\js\\wearemanic",
+			"D:\\Localhost\\wearemanic_2015\\wp-content\\themes\\wearemanic_2015\\library\\css",
+			"D:\\Localhost\\wearemanic_2015\\wp-content\\themes\\wearemanic_2015\\library\\css\\wearemanic",
+			"D:\\Localhost\\wearemanic_2015\\wp-content\\themes\\wearemanic_2015\\library\\css",
+			"D:\\Localhost\\wearemanic_2015\\wp-content\\themes\\wearemanic_2015\\library\\css\\wearemanic",
+			"D:\\Localhost\\wearemanic_2015\\wp-content\\themes\\wearemanic_2015\\library\\css",
+			"D:\\Localhost\\wearemanic_2015\\wp-content\\themes\\wearemanic_2015\\library\\css\\wearemanic",
+			"D:\\Localhost\\wearemanic_2015\\wp-content\\themes\\wearemanic_2015\\library\\js\\wearemanic",
+			"D:\\Localhost\\wearemanic_2015\\wp-content\\themes\\wearemanic_2015",
+			"D:\\Localhost\\wearemanic_2015\\wp-content\\themes\\wearemanic_2015\\library\\css",
+			"D:\\Localhost\\montigo_wp\\wp-includes",
+			"D:\\Localhost\\montigo_wp",
+			"D:\\Localhost\\wearemanic_2015\\wp-content\\plugins\\cmb2",
+			"D:\\Localhost\\gspa\\wp\\wp-content\\themes\\gspa",
+			"D:\\Localhost\\gspa\\02",
+			"D:\\Localhost\\montigo_wp\\wp-content\\themes\\montigo\\library\\js",
+			"D:\\Localhost\\montigo_wp\\wp-content\\themes\\montigo\\library\\js\\montigo",
+			"D:\\Localhost\\montigo_wp\\wp-content\\themes\\montigo\\library\\css\\montigo",
+			"D:\\Localhost\\montigo_wp\\wp-content\\themes\\montigo\\library\\css",
+			"D:\\Localhost\\montigo_wp\\wp-content\\themes\\montigo\\library\\css\\montigo",
+			"D:\\Localhost\\montigo_wp\\wp-content\\themes\\montigo\\library\\css",
+			"D:\\Localhost\\montigo_wp\\wp-content\\themes\\montigo\\library\\css\\montigo",
+			"D:\\Localhost\\montigo_wp\\wp-content\\themes\\montigo\\library\\css",
+			"D:\\Localhost\\montigo_wp\\wp-content\\themes\\montigo\\library\\css\\montigo",
+			"D:\\Localhost\\montigo_wp\\wp-content\\themes\\montigo",
+			"D:\\Localhost\\git\\montigo\\_notes",
+			"D:\\Localhost\\montigo_wp\\wp-content\\themes\\montigo",
+			"D:\\Localhost\\git\\montigo\\js",
+			"D:\\Localhost\\git\\montigo\\_notes",
+			"D:\\Localhost\\git\\montigo\\css",
+			"D:\\Localhost\\git\\montigo",
+			"D:\\Localhost\\git\\montigo\\css",
+			"D:\\Localhost\\git\\montigo",
+			"D:\\Localhost\\git\\montigo\\css\\montigo",
+			"D:\\Localhost\\git\\montigo\\css",
+			"D:\\Localhost\\git\\montigo",
+			"D:\\Localhost\\git\\montigo\\js",
+			"D:\\Localhost\\git\\montigo",
+			"info@montigoresorts.com",
+			"D:\\Localhost\\git\\montigo",
+			"D:\\Localhost\\git\\montigo\\js",
+			"D:\\Localhost\\git\\montigo",
+			"D:\\Localhost\\git\\montigo\\css",
+			"D:\\Localhost\\git\\montigo\\library",
+			"D:\\Localhost\\git\\montigo\\js",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\css",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\css\\sga",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\css",
+			"D:\\Localhost\\git\\sga\\wp_01",
+			"D:\\Localhost\\git\\sga\\wp_blog\\wp-content\\themes\\sga_blog",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\css",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\css",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\css",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\sga",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\plugins\\mailchimp-for-wp",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\css",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\sga",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\manic",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\css",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\css",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\sga",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\manic",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\sga\\component",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\manic",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\sga\\section",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\manic",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\sga",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\manic",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\manic\\ui",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\manic\\google",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\manic\\framework",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\manic\\canvas",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\sga",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\manic",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\sga",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\manic",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\sga",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\manic",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\sga",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\manic",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\css",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\sga\\component",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\sga\\slide",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\sga\\section",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\sga\\page",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\sga\\component",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\manic",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\sga",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\manic",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js\\sga",
+			"D:\\Localhost\\git\\02\\sga\\js",
+			"D:\\Localhost\\git\\sga\\wp_01\\wp-content\\themes\\sga_2014\\library\\js"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"off-white",
+			".post-index-carousel-item",
+			"13px",
+			"<div class=\"container\">",
+			"http://www.monogramtea.com/media/favicon/default/favicon",
+			"blog",
+			"caffeine",
+			"how much",
+			"<a href=\"\">",
+			"click",
+			"?",
+			"?</",
+			".article-content",
+			"banner_image",
+			"image_text_group_item",
+			"cta_shortcode",
+			"https://www.instagram.com/",
+			"banner_image",
+			".cmb2-id--monogram-banner-",
+			"$field5",
+			"key_strengths_group",
+			"240",
+			"</div>",
+			"create_image_container",
+			"manic-image",
+			"alm_render_shortcode",
+			"alm_shortcode",
+			"ajax_load_more",
+			"manic-mobile",
+			"monogram-wp",
+			"quest-wp",
+			"TYPE=InnoDB",
+			"http://localhost/monogram-wp",
+			"http://localhost/monogram-wp/",
+			"http://localhost/monogram-wp",
+			"http://localhost/monogram-wp/",
+			"localhost/",
+			"tag",
+			"25",
+			"padding",
+			"10",
+			"category-image-tag",
+			"6b615b",
+			"category-tag",
+			"footer_copyright",
+			"site_language",
+			" ",
+			"<br>",
+			"01",
+			"490",
+			"</div>",
+			"\">",
+			"<li><a href=\"",
+			"quest.page.Default",
+			"top",
+			"bottom",
+			"quest",
+			"quest.component.DesktopHeader",
+			"default-banner",
+			"banner_",
+			"banner",
+			"banner_",
+			"$banner_",
+			"'id'      => PREFIX . 'banner_",
+			"cmb2-id--monogram-banner-image",
+			"social",
+			"</div>",
+			"sidebar1",
+			"sidebar",
+			"add_th",
+			"sidebar",
+			"</div>",
+			"-",
+			"custom_fie",
+			"edit-button-container",
+			"intl-tel-input",
+			"tel",
+			"input-box",
+			"monogram-page-account-giftcard-container",
+			"each-input",
+			"addredeem-giftvoucher-code",
+			"monogram-page-account-details-address-header",
+			"Add/Redeem a Gift Card",
+			"log",
+			"logout",
+			"monogram-page-account-details-order-history",
+			"giftcard_history_table",
+			"monogram-page-account-giftcard-detail-container",
+			".page",
+			"order-qty",
+			"sub_total price",
+			"monogram-page-account-details-order-history",
+			"sidebar",
+			"firstname",
+			"form-list",
+			"input-box",
+			"input",
+			"<li",
+			"li",
+			"each-input",
+			"fields each-input",
+			"getNameBlockHtml",
+			"col-md-6",
+			" each-input",
+			"Street Address 2",
+			"addition",
+			"<li class=\"wide field",
+			"each",
+			"<span><span>",
+			"<div class=\"col-md-3",
+			"monogram-page-account-details-address-edit-container",
+			"10px + ",
+			"-10px ",
+			"monogram-page-account-details-address-header",
+			"label",
+			"h4",
+			"histo",
+			"#monogram-page-account-giftcard-detail-container",
+			"monogram-page-account-giftcard-detail-container",
+			"current_password",
+			"password",
+			"input-text no-display",
+			"email",
+			"square-cta",
+			"news",
+			"city",
+			"postcode",
+			"checkbox-input"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"http://monogramtea.com/blog",
+			"http://monogramtea.com/blog/",
+			"http://monogramtea.com/blog",
+			"http://monogramtea.com/blog/",
+			"\"",
+			"  ",
+			"http://localhost/wearemanic_2015/",
+			"http://www.wearemanic.com",
+			"http://www.wearemanic.com/",
+			"http://www.wearemanic.com",
+			"http://wearemanic.com/old",
+			"http://localhost/wearemanic_2015",
+			"http://www.wearemanic.com/staging",
+			"http://www.wearemanic.com/staging/",
+			"http://www.gspa.com.sg",
+			"http://www.gspa.com.sg/",
+			"_",
+			"http://www.montigoresorts.com/seminyak",
+			"http://www.montigoresorts.com/seminyak/",
+			"http://www.montigoresorts.com/seminyak",
+			"http://www.montigoresorts.com/seminyak/",
+			"http://www.montigoresorts.com/nongsa/cn",
+			"http://www.montigoresorts.com/nongsa/cn/",
+			"http://www.montigoresorts.com/nongsa",
+			"http://www.montigoresorts.com/nongsa/",
+			"http://extraordinarymanicmachine.com/montigo/nongsa/cn",
+			"http://extraordinarymanicmachine.com/montigo/nongsa/cn/",
+			"http://extraordinarymanicmachine.com/montigo/nongsa",
+			"http://extraordinarymanicmachine.com/montigo/nongsa/",
+			"http://extraordinarymanicmachine.com/montigo/nongsa",
+			"http://extraordinarymanicmachine.com/montigo/nongsa/",
+			"http://192.169.1.118",
+			"http://shootinggalleryasia.com.cn",
+			"http://www.shootinggalleryasia.com.cn",
+			"http://www.shootinggalleryasia.com.cn/",
+			"\"library/scrollmagic/ScrollMagic.js\"",
+			"-",
+			"info@montigoresorts.com",
+			"-",
+			"_",
+			"http://192.168.1.118",
+			"http://192.168.1.118/",
+			"http://192.168.1.18/git/sga/wp_01",
+			"http://192.168.1.18/git/sga/wp_01/",
+			"<p>1<span>%</span></p>",
+			"http://www.shootinggalleryasia.com",
+			".jpg",
+			"{string}",
+			"FullpageEvent",
+			"-",
+			"",
+			"&amp;",
+			"_",
+			"//LOG && console",
+			"\\",
+			"",
+			"_",
+			"\\",
+			"_",
+			"harriet-text-medium-italic",
+			"index.shtml",
+			"<p>cooler solutions</p>",
+			"<img src=\"images/banner/thumbnail/trax_solutions_banner_05.jpg\" alt=\"\">",
+			"<img src=\"images/banner/thumbnail/trax_solutions_banner_04.jpg\" alt=\"\">",
+			"<img src=\"images/banner/thumbnail/trax_solutions_banner_03.jpg\" alt=\"\">",
+			"<img src=\"images/banner/thumbnail/trax_solutions_banner_02.jpg\" alt=\"\">",
+			"<img src=\"images/banner/thumbnail/trax_solutions_banner_01.jpg\" alt=\"\">",
+			"<p>For a consultation, please email us or fill out our contact form ",
+			"<p>For a consultation, please email us or fill out our contact form",
+			"<p>Find out more - ",
+			"<a href=\"about_us.html#contact_us\" class=\"slanted-purple-button\">here</a>",
+			"<meta name=\"description\" content=\"Trax Image Recognition. We Capture Retail.\">",
+			"",
+			"page-about",
+			"about_us.html",
+			"/",
+			"/surbana/07",
+			"http://localhost/surbana/07",
+			"/"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "(04) Jan 12.md",
+					"settings":
+					{
+						"buffer_size": 57,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								57,
+								57
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "(00) Links.md",
+					"settings":
+					{
+						"buffer_size": 94,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								94,
+								94
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/monogram/general.less",
+					"settings":
+					{
+						"buffer_size": 2456,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								969,
+								969
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/monogram/page_default.less",
+					"settings":
+					{
+						"buffer_size": 5401,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4745,
+								4745
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3700.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/monogram/page_index.less",
+					"settings":
+					{
+						"buffer_size": 12281,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3059,
+								3059
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2069.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"settings":
+					{
+						"buffer_size": 12250,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										188,
+										213
+									],
+									[
+										294,
+										319
+									],
+									[
+										436,
+										461
+									],
+									[
+										524,
+										549
+									],
+									[
+										863,
+										872
+									],
+									[
+										980,
+										989
+									],
+									[
+										1086,
+										1095
+									],
+									[
+										1331,
+										1340
+									],
+									[
+										1446,
+										1455
+									],
+									[
+										1559,
+										1568
+									],
+									[
+										1700,
+										1709
+									],
+									[
+										1902,
+										1911
+									],
+									[
+										1941,
+										1950
+									],
+									[
+										1982,
+										1991
+									],
+									[
+										2032,
+										2041
+									],
+									[
+										2183,
+										2192
+									],
+									[
+										2235,
+										2244
+									],
+									[
+										2340,
+										2349
+									],
+									[
+										2373,
+										2382
+									],
+									[
+										2516,
+										2525
+									],
+									[
+										2569,
+										2578
+									],
+									[
+										2705,
+										2714
+									],
+									[
+										2809,
+										2818
+									],
+									[
+										2907,
+										2916
+									],
+									[
+										2940,
+										2949
+									],
+									[
+										3083,
+										3092
+									],
+									[
+										3136,
+										3145
+									],
+									[
+										3272,
+										3281
+									],
+									[
+										3376,
+										3385
+									],
+									[
+										3602,
+										3611
+									],
+									[
+										3719,
+										3728
+									],
+									[
+										3837,
+										3846
+									],
+									[
+										3994,
+										4003
+									],
+									[
+										4137,
+										4146
+									],
+									[
+										4329,
+										4338
+									],
+									[
+										4478,
+										4487
+									],
+									[
+										4663,
+										4672
+									],
+									[
+										4774,
+										4783
+									],
+									[
+										4963,
+										4972
+									],
+									[
+										5136,
+										5145
+									],
+									[
+										5309,
+										5318
+									],
+									[
+										5482,
+										5491
+									],
+									[
+										5655,
+										5664
+									],
+									[
+										5820,
+										5829
+									],
+									[
+										5971,
+										5980
+									],
+									[
+										6096,
+										6105
+									],
+									[
+										6245,
+										6254
+									],
+									[
+										6355,
+										6364
+									],
+									[
+										6492,
+										6501
+									],
+									[
+										6732,
+										6741
+									],
+									[
+										6939,
+										6948
+									],
+									[
+										7197,
+										7206
+									],
+									[
+										7337,
+										7346
+									],
+									[
+										7469,
+										7478
+									],
+									[
+										7619,
+										7628
+									],
+									[
+										7709,
+										7718
+									],
+									[
+										7825,
+										7834
+									],
+									[
+										7924,
+										7933
+									],
+									[
+										8113,
+										8122
+									],
+									[
+										8149,
+										8158
+									],
+									[
+										8245,
+										8254
+									],
+									[
+										8281,
+										8290
+									],
+									[
+										8499,
+										8508
+									],
+									[
+										8641,
+										8650
+									],
+									[
+										8767,
+										8776
+									],
+									[
+										8907,
+										8916
+									],
+									[
+										9108,
+										9117
+									],
+									[
+										9267,
+										9276
+									],
+									[
+										9356,
+										9365
+									],
+									[
+										9632,
+										9641
+									],
+									[
+										9770,
+										9779
+									],
+									[
+										9907,
+										9916
+									],
+									[
+										10041,
+										10050
+									],
+									[
+										10293,
+										10302
+									],
+									[
+										10417,
+										10426
+									],
+									[
+										10563,
+										10572
+									],
+									[
+										10684,
+										10693
+									],
+									[
+										10770,
+										10779
+									],
+									[
+										10896,
+										10905
+									],
+									[
+										10936,
+										10945
+									],
+									[
+										11172,
+										11181
+									],
+									[
+										11293,
+										11302
+									],
+									[
+										11394,
+										11403
+									],
+									[
+										11530,
+										11539
+									],
+									[
+										11651,
+										11660
+									],
+									[
+										11812,
+										11821
+									],
+									[
+										11928,
+										11937
+									],
+									[
+										12070,
+										12079
+									],
+									[
+										12162,
+										12171
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								1905,
+								1905
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"output_tag": 2,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 702.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/D/Localhost/monogram-wp/wp-content/themes/monogram/assets/css_source/monogram/button.less",
+					"settings":
+					{
+						"buffer_size": 2416,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								243,
+								252
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.301514898366,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 100.0
+	},
+	"output.gjslint_result_view":
+	{
+		"height": 60.0
+	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"font-aw",
+				"monogram_files/assets/less/lib/font-awesome.less"
+			],
+			[
+				"font",
+				"monogram_files/assets/less/lib/font-awesome.less"
+			],
+			[
+				"font-",
+				"monogram_files/assets/less/lib/font-awesome.less"
+			],
+			[
+				"font-waw",
+				"monogram_files/assets/libs/font-awesome/less/font-awesome.less"
+			],
+			[
+				"fontawe",
+				"source/less/lib/font-awesome.less"
+			],
+			[
+				"fontaw",
+				"source/less/lib/font-awesome.less"
+			],
+			[
+				"data",
+				"notes/database.md"
+			],
+			[
+				"manicim",
+				"wearemanic_2015/library/js/manic/ui/ImageContainer.js"
+			],
+			[
+				"medi",
+				"02/media.php"
+			],
+			[
+				"even",
+				"02/events.php"
+			],
+			[
+				"event",
+				"02/events-golf-tournament.php"
+			],
+			[
+				"care",
+				"02/careers.php"
+			],
+			[
+				"memb",
+				"02/membership.php"
+			],
+			[
+				"faq",
+				"02/faq.php"
+			],
+			[
+				"contact",
+				"02/contact-us.php"
+			],
+			[
+				"page-trea",
+				"gspa/page-treatments.php"
+			],
+			[
+				"pro",
+				"02/promotions.php"
+			],
+			[
+				"prmotions",
+				"02/promotions.php"
+			],
+			[
+				"ge",
+				"02/css/gspa/general.less"
+			],
+			[
+				"pagede",
+				"02/css/gspa/page_default.less"
+			],
+			[
+				"ima",
+				"02/css/gspa/images.less"
+			],
+			[
+				"fa",
+				"02/css/lib/font-awesome.less"
+			],
+			[
+				"inde",
+				"02/index.php"
+			],
+			[
+				"trea",
+				"02/treatments.php"
+			],
+			[
+				"image",
+				"01/css/gspa/images.less"
+			],
+			[
+				"gen",
+				"01/css/gspa/general.less"
+			],
+			[
+				"page_defa",
+				"01/css/gspa/page_default.less"
+			],
+			[
+				"da",
+				"montigo/_notes/DATABASE.md"
+			],
+			[
+				"aug",
+				"montigo/_notes/Aug 20.md"
+			],
+			[
+				"databa",
+				"montigo/_notes/DATABASE.md"
+			],
+			[
+				"mix",
+				"montigo/css/lib/mixins.less"
+			],
+			[
+				"hea",
+				"montigo/header.php"
+			],
+			[
+				"chin",
+				"montigo/library/css/montigo/chinese_font.less"
+			],
+			[
+				"jun",
+				"montigo/_notes/june 15 monday.md"
+			],
+			[
+				"page_hom",
+				"montigo/css/montigo/page_home.less"
+			],
+			[
+				"page-ho",
+				"montigo/page-home.php"
+			],
+			[
+				"func",
+				"montigo/functions.php"
+			],
+			[
+				"dini",
+				"montigo/dining.php"
+			],
+			[
+				"funct",
+				"montigo/functions.php"
+			],
+			[
+				"page.js",
+				"montigo/js/manic/page/Page.js"
+			],
+			[
+				"footer",
+				"montigo/css/montigo/footer.less"
+			],
+			[
+				"clas",
+				"montigo/js/class_template.js"
+			],
+			[
+				"head",
+				"montigo/css/montigo/header.less"
+			],
+			[
+				"mobile_",
+				"montigo/css/montigo/mobile_header.less"
+			],
+			[
+				"page_a",
+				"css/montigo/page_all.less"
+			],
+			[
+				"booking",
+				"css/montigo/booking_form.less"
+			],
+			[
+				"bok",
+				"events_booking_form.php"
+			],
+			[
+				"images.les",
+				"css/montigo/images.less"
+			],
+			[
+				"parall",
+				"js/montigo/component/ParallaxImage.js"
+			],
+			[
+				"book",
+				"css/montigo/booking_form.less"
+			],
+			[
+				"page_eve",
+				"css/montigo/page_events.less"
+			],
+			[
+				"offer",
+				"css/montigo/page_offers.less"
+			],
+			[
+				"home",
+				"css/montigo/page_home.less"
+			],
+			[
+				"bookin",
+				"css/montigo/booking_form.less"
+			],
+			[
+				"priva",
+				"privacy.php"
+			],
+			[
+				"page_ter",
+				"css/montigo/page_privacy_terms.less"
+			],
+			[
+				"term",
+				"terms.php"
+			],
+			[
+				"page_ca",
+				"css/montigo/page_careers.less"
+			],
+			[
+				"page_din",
+				"css/montigo/page_dining.less"
+			],
+			[
+				"ind",
+				"index.php"
+			],
+			[
+				"page_al",
+				"css/montigo/page_all.less"
+			],
+			[
+				"activ",
+				"activities.php"
+			],
+			[
+				"priv",
+				"privacy.php"
+			],
+			[
+				"pa",
+				"css/montigo/page_all.less"
+			],
+			[
+				"page_term",
+				"css/montigo/page_privacy_terms.less"
+			],
+			[
+				"page_sp",
+				"css/montigo/page_spa.less"
+			],
+			[
+				"page_fa",
+				"css/montigo/page_faq.less"
+			],
+			[
+				"room",
+				"js/montigo/page/Rooms.js"
+			],
+			[
+				"faq.j",
+				"js/montigo/page/Faq.js"
+			],
+			[
+				"page_ro",
+				"css/montigo/page_rooms.less"
+			],
+			[
+				"page_con",
+				"css/montigo/page_contact.less"
+			],
+			[
+				"conta",
+				"contact.php"
+			],
+			[
+				"page_even",
+				"css/montigo/page_events.less"
+			],
+			[
+				"eve",
+				"events.php"
+			],
+			[
+				"events.j",
+				"js/montigo/page/Events.js"
+			],
+			[
+				"page_home",
+				"css/montigo/page_home.less"
+			],
+			[
+				"ac",
+				"accommodation.php"
+			],
+			[
+				"spa",
+				"spa.php"
+			],
+			[
+				"mixin",
+				"css/lib/mixins.less"
+			],
+			[
+				"styl",
+				"css/style.less"
+			],
+			[
+				"foot",
+				"css/montigo/footer.less"
+			],
+			[
+				"page_spa",
+				"css/montigo/page_spa.less"
+			],
+			[
+				"page_ac",
+				"css/montigo/page_activities.less"
+			],
+			[
+				"page",
+				"css/montigo/page_all.less"
+			],
+			[
+				"para",
+				"js/montigo/component/ParallaxImage.js"
+			],
+			[
+				"panel_",
+				"css/manic/panel_container.less"
+			],
+			[
+				"acti",
+				"activities.php"
+			],
+			[
+				"actii",
+				"js/montigo/page/Activities.js"
+			],
+			[
+				"defa",
+				"js/montigo/page/Default.js"
+			],
+			[
+				"accomodat",
+				"js/montigo/component/AccomodationsMap.js"
+			],
+			[
+				"page_care",
+				"css/montigo/page_careers.less"
+			],
+			[
+				"foote",
+				"css/montigo/footer.less"
+			],
+			[
+				"page_of",
+				"css/montigo/page_offers.less"
+			],
+			[
+				"boot",
+				"library/bootstrap/css/bootstrap.css"
+			],
+			[
+				"page_car",
+				"css/montigo/page_careers.less"
+			],
+			[
+				"main",
+				"js/montigo/component/MainImage.js"
+			],
+			[
+				"defau",
+				"js/montigo/page/Default.js"
+			],
+			[
+				"accom",
+				"accommodation.php"
+			],
+			[
+				"off",
+				"offers.php"
+			],
+			[
+				"cont",
+				"contact.php"
+			],
+			[
+				"din",
+				"dining.php"
+			],
+			[
+				"of",
+				"offers.php"
+			],
+			[
+				"pagefa",
+				"css/montigo/page_faq.less"
+			],
+			[
+				"faq.",
+				"js/montigo/page/Faq.js"
+			],
+			[
+				"text",
+				"js/manic/ui/TextContainer.js"
+			],
+			[
+				"heade",
+				"css/montigo/header.less"
+			],
+			[
+				"dinin",
+				"dining.php"
+			],
+			[
+				"acco",
+				"accommodation.php"
+			],
+			[
+				"footer.les",
+				"css/montigo/footer.less"
+			],
+			[
+				"about",
+				"about.php"
+			],
+			[
+				"acc",
+				"accommodation.php"
+			],
+			[
+				"header",
+				"css/montigo/header.less"
+			],
+			[
+				"foo",
+				"footer.php"
+			],
+			[
+				"page_grou",
+				"css/montigo/page_group_landing.less"
+			],
+			[
+				"images",
+				"css/montigo/images.less"
+			],
+			[
+				"page_cona",
+				"css/montigo/page_contact.less"
+			],
+			[
+				"car",
+				"careers.php"
+			],
+			[
+				"page_rom",
+				"css/montigo/page_rooms.less"
+			],
+			[
+				"grou",
+				"group_landing.php"
+			],
+			[
+				"page_land",
+				"css/montigo/page_group_landing.less"
+			],
+			[
+				"ters",
+				"terms.php"
+			],
+			[
+				"fo",
+				"footer.php"
+			],
+			[
+				"paral",
+				"js/montigo/component/ParallaxImage.js"
+			],
+			[
+				"rooms",
+				"js/montigo/page/Rooms.js"
+			],
+			[
+				"footer.le",
+				"css/montigo/footer.less"
+			],
+			[
+				"preloader.",
+				"css/montigo/preloader.less"
+			],
+			[
+				"abou",
+				"about.php"
+			],
+			[
+				"may",
+				"_notes/may 19.md"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/D/Localhost/monogram/_notes/Monogram.sublime-project"
+			],
+			[
+				"visoin",
+				"/D/Localhost/visionbody-wp/_notes/Vision Body.sublime-project"
+			],
+			[
+				"mono",
+				"/D/Localhost/monogram/_notes/Monogram.sublime-project"
+			],
+			[
+				"quest",
+				"/D/Localhost/quest-wp/_notes/Quest.sublime-project"
+			],
+			[
+				"savour",
+				"/D/Localhost/savourworld/_notes/SavourWorld.sublime-project"
+			],
+			[
+				"osim",
+				"/D/Localhost/git/Osim Project.sublime-project"
+			],
+			[
+				"osi",
+				"/D/Localhost/git/Osim Project.sublime-project"
+			],
+			[
+				"manic mov",
+				"/D/Localhost/git/Manic Website Move.sublime-project"
+			],
+			[
+				"mon",
+				"/D/Localhost/git/Montigo Git.sublime-project"
+			],
+			[
+				"sav",
+				"/D/Localhost/savourworld/_notes/SavourWorld.sublime-project"
+			],
+			[
+				"slider",
+				"/D/Localhost/prototype/animation_slider/Animation Slider.sublime-project"
+			],
+			[
+				"monti",
+				"/D/Localhost/git/Montigo Git.sublime-project"
+			],
+			[
+				"aspire",
+				"/D/Localhost/aspire/Aspire Website.sublime-project"
+			],
+			[
+				"manic mo",
+				"/D/Localhost/git/Manic Website Move.sublime-project"
+			],
+			[
+				"off",
+				"/D/Localhost/offshore/Offshore.sublime-project"
+			],
+			[
+				"gry",
+				"/D/Localhost/git/Gryphon September 2015.sublime-project"
+			],
+			[
+				"sga",
+				"/D/Localhost/git/sga/SGA WORDPRESS juno.sublime-project"
+			],
+			[
+				"g",
+				"/D/Localhost/git/Gryphon September 2015.sublime-project"
+			],
+			[
+				"tra",
+				"/D/Localhost/trax/wp_01/wp-content/themes/trax/Trax WP Theme.sublime-project"
+			],
+			[
+				"a",
+				"/D/Localhost/aspire/Aspire.sublime-project"
+			],
+			[
+				"gr",
+				"/D/Localhost/git/Gryphon Html.sublime-project"
+			],
+			[
+				"the s",
+				"/D/Localhost/thesultan/THE SULTAN.sublime-project"
+			],
+			[
+				"trax",
+				"/D/Localhost/trax/wp_01/wp-content/themes/trax/Trax WP Theme.sublime-project"
+			],
+			[
+				"t",
+				"/D/Localhost/trax/wp_01/wp-content/themes/trax/Trax WP Theme.sublime-project"
+			],
+			[
+				"dis",
+				"/D/Localhost/distillery/w/Distillery W.sublime-project"
+			],
+			[
+				"syc",
+				"/D/Localhost/syc/18/SYC 18.sublime-project"
+			],
+			[
+				"dpi",
+				"/D/Localhost/dp/DPI Phase 01.sublime-project"
+			],
+			[
+				"sga leave",
+				"/D/Localhost/sga/prototype/leaves_02/SGA Prototype Leaves 02.sublime-project"
+			],
+			[
+				"trax w",
+				"/D/Localhost/trax/wp_01/wp-content/themes/trax/Trax WP Theme.sublime-project"
+			],
+			[
+				"dp",
+				"/D/Localhost/dp/DPI Phase 01.sublime-project"
+			],
+			[
+				"reign",
+				"/D/Localhost/git/Reignwood GIT.sublime-project"
+			],
+			[
+				"rie",
+				"/D/Localhost/git/Reignwood GIT.sublime-project"
+			],
+			[
+				"DP",
+				"/D/Localhost/dp/DPI Phase 01.sublime-project"
+			],
+			[
+				"git",
+				"/D/Localhost/git/Reignwood GIT.sublime-project"
+			],
+			[
+				"TRAX",
+				"/D/Localhost/trax/wp_01/wp-content/themes/trax/Trax WP Theme.sublime-project"
+			],
+			[
+				"re",
+				"/D/Localhost/git/Reignwood GIT.sublime-project"
+			],
+			[
+				"ri",
+				"/D/Localhost/git/Reignwood GIT.sublime-project"
+			],
+			[
+				"TRA",
+				"/D/Localhost/trax/wp_01/wp-content/themes/trax/Trax WP Theme.sublime-project"
+			],
+			[
+				"conta",
+				"/D/Localhost/_contact_form/01/Contact Form Template.sublime-project"
+			],
+			[
+				"sura",
+				"/D/Localhost/surbana/07/wp-content/themes/surbana/Surbana 07 Wordpress.sublime-project"
+			],
+			[
+				"sur",
+				"/D/Localhost/surbana/07/wp-content/themes/surbana/Surbana 07 Wordpress.sublime-project"
+			],
+			[
+				"lyke",
+				"/D/Localhost/lyke_02/Lyke 02.sublime-project"
+			],
+			[
+				"su",
+				"/D/Localhost/surbana/07/wp-content/themes/surbana/Surbana 07 Wordpress.sublime-project"
+			],
+			[
+				"surba",
+				"/D/Localhost/surbana/07/wp-content/themes/surbana/Surbana 07 Wordpress.sublime-project"
+			],
+			[
+				"motor",
+				"/D/Localhost/bmw/04/BMW Motorad 04.sublime-project"
+			],
+			[
+				"movi",
+				"/D/Localhost/sga/prototype/02/SGA Movie Component 02.sublime-project"
+			],
+			[
+				"l",
+				"/D/Localhost/lyke_02/Lyke 02.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 212.0,
+	"status_bar_visible": true
+}

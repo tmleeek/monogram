@@ -1,0 +1,263 @@
+//       _    ____  ____   _____        __
+//      / \  |  _ \|  _ \ / _ \ \      / /
+//     / _ \ | |_) | |_) | | | \ \ /\ / /
+//    / ___ \|  _ <|  _ <| |_| |\ V  V /
+//   /_/   \_\_| \_\_| \_\\___/  \_/\_/
+//
+
+.arrow-cta{
+  .proxima-nova-bold;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
+  color: @brown;
+
+  .display-inline-block;
+  position: relative;
+  padding-right: 26px;
+
+  //.transition-in(0.3s, cubic-bezier(0.645, 0.045, 0.355, 1), 0.1s);
+  
+  .transition-in(0.3s);
+
+
+  &:after{
+    .fa;
+    font-size: 16px;
+    line-height: 20px;
+    color: @brown;
+
+    content: "\f061";
+
+
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 16px;
+    height: 20px;
+
+    .transition-in(0.3s);
+
+    //.transition-in(0.3s, cubic-bezier(0.645, 0.045, 0.355, 1), 0.1s);
+  }
+  
+  &:focus,
+  &:hover{
+    color: @orange;
+
+    //.transition-in(0.4s);
+
+    &:after{
+      right: -5px;
+      color: @orange;
+      //.transition-in(0.4s);
+    }
+  }
+
+}
+
+
+// MOBILE
+@media only screen and (max-width: 767px) {
+  .arrow-cta{
+    font-size: 14px;
+    .proxima-nova-semibold;
+    padding-right: 18px;
+
+    &:after{
+      font-size: 14px;
+    }
+  }
+}
+
+
+
+
+
+
+//    ____   ___  _   _   _    ____  _____
+//   / ___| / _ \| | | | / \  |  _ \| ____|
+//   \___ \| | | | | | |/ _ \ | |_) |  _|
+//    ___) | |_| | |_| / ___ \|  _ <| |___
+//   |____/ \__\_\\___/_/   \_\_| \_\_____|
+//
+
+.square-cta{
+
+  .proxima-nova-bold;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  color: @lightest-grey;
+  
+  .display-inline-block;
+  
+  padding-top: 9px;
+  padding-bottom: 8px;
+  padding-left: 18px;
+  padding-right: 18px;
+  
+
+  outline: none;
+  border: none;
+  background: @orange;
+  .round(5px);
+
+  .transition-in(0.3s);
+
+  &:focus,
+  &:hover{
+    color: @lightest-grey;
+    background: @brown;
+  }
+
+
+  &.large-version{
+    font-size: 18px;
+    line-height: 20px;
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+  &.small-version{
+
+    .proxima-nova-semibold;
+
+    font-size: 12px;
+    line-height: 14px;
+
+    padding-top: 9px - 3px;
+    padding-bottom: 8px - 3px;
+    padding-left: 18px - 5px;
+    padding-right: 18px - 5px;
+  }
+
+  &.full-width-version{
+    display: block;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    
+  }
+
+} // .square-cta
+
+
+
+
+//    ____    _    ____ _  __  _____ ___    _____ ___  ____
+//   | __ )  / \  / ___| |/ / |_   _/ _ \  |_   _/ _ \|  _ \
+//   |  _ \ / _ \| |   | ' /    | || | | |   | || | | | |_) |
+//   | |_) / ___ \ |___| . \    | || |_| |   | || |_| |  __/
+//   |____/_/   \_\____|_|\_\   |_| \___/    |_| \___/|_|
+//
+
+
+#back-to-top-btn-container-container{
+  position: fixed;
+  z-index: 10000;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+  height: 0px;
+}
+#back-to-top-btn-container{
+  position: relative;
+  width: 100%;
+  height: 0px;
+}
+
+#back-to-top-btn{
+
+  width: 50px;
+  height: 70px;
+
+  position: absolute;
+  bottom: 20px;
+
+
+  // right: -7px;     // to account for the image itself not being cropped tightly
+  // right: -11px;       // changed the icon 25% reduction
+  right: -17px;
+
+  /*
+  position: fixed;
+  z-index: 10000;
+  bottom: 20px;
+  right: 0px;
+  */
+
+  cursor: pointer;
+
+
+  .opacity(0);
+  visibility: hidden;
+
+
+  &:before,
+  &:after{
+    content: '';
+    display: block;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .transition-in(0.3s);
+
+  }
+
+
+  // regular
+  &:before{
+    .back-to-top;
+    .opacity(1);
+  }
+
+  // hover state
+  &:after{
+    .back-to-top-hover;
+    .opacity(0);
+  }
+
+
+
+  &:focus,
+  &:hover{
+
+    // regular
+    &:before{
+      .opacity(0);
+    }
+
+    // hover state
+    &:after{
+      .opacity(1);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+body.is-mobile-header{
+  #back-to-top-btn{
+    display: none !important;       // this button should not be visible on 'mobile'
+  }
+}
+
+

@@ -1,0 +1,405 @@
+.default-contact-form{
+  background: @lightest-grey;
+  padding-top: 57px;
+  padding-bottom: 132px;
+
+  .form-group{
+    position: relative;
+    margin-bottom: 26px;
+
+    .form-control{
+      background: transparent;
+      border: 1px solid @border-grey;
+      box-shadow: none;
+
+      &:focus{
+        border: 1px solid @border-grey;
+        outline: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+    }
+
+
+    label{
+      .header-h5-style;
+      color: @brown;
+      margin-bottom: 11px;
+      padding-left: 3px;
+    }
+
+    input[type=text],
+    input[type=email],
+    select,
+    textarea{
+
+      // override
+      height: auto;
+
+      .proxima-nova-semibold;
+      font-size: 16px;
+      letter-spacing: 0.075em;
+      line-height: 1.42857143;
+      text-transform: uppercase;
+      // height: 28px ;
+      
+
+      color: @brown;
+      padding-left: 26px;
+      padding-right: 26px;
+
+      padding-top: 9px;
+      padding-bottom: 7px;
+
+      
+      .opacity(1);
+
+      &::-webkit-input-placeholder{
+        .opacity(1);
+        color: #b8ae9d;
+      }
+      &:-moz-placeholder{
+        .opacity(1);
+        color: #b8ae9d;
+      }
+      &::-moz-placeholder{
+        .opacity(1);
+        color: #b8ae9d;
+      }
+      &:-ms-input-placeholder{
+        .opacity(1);
+        color: #b8ae9d;
+      }
+
+      &.has-placeholder{
+        .opacity(1);
+        color: #b8ae9d;
+      }
+    }
+
+    textarea{
+      height: 265px;
+      resize: none;
+    }
+
+
+
+    // DROPDOWN
+    .manic-dropdown .goog-menu-button-caption,
+    .manic-dropdown .goog-menuitem .goog-menuitem-content{
+      .proxima-nova-semibold;
+      font-size: 16px;
+      letter-spacing: 0.075em;
+      line-height: 1.42857143;
+      text-transform: uppercase;
+    }
+
+    // placeholder
+    .manic-dropdown.has-placeholder .goog-menu-button-caption{
+      color: #b8ae9d;
+    }
+
+    // highlight
+    .manic-dropdown .goog-menuitem.goog-menuitem-highlight,
+    .manic-dropdown .goog-menuitem:hover{
+      background: @orange;
+      color: @lightest-grey;
+    }
+
+
+    // box
+    .manic-dropdown{
+      // from form-control
+      .round(4px);
+
+      background: transparent;
+      border: 1px solid @border-grey;
+
+      padding-left: 26px;
+      padding-right: 26px;
+
+      padding-top: 9px;
+      padding-bottom: 7px;
+    }
+
+    // arrow
+    .manic-dropdown .goog-menu-button-dropdown{
+      top: 11px;
+      right: 8px;
+      &:after{
+        font-size: 22px;
+      }
+    }
+
+
+    // list item container
+    .goog-menu {
+      background: @light-grey;
+      border: 1px solid @border-grey;
+      .round(4px);
+
+      position: absolute;
+      //width: 100%;
+      top: 38px !important;
+      left: -1px !important;
+      right: -1px !important;
+
+    }
+
+    // list item
+    .goog-menuitem {
+      padding-left: 26px;
+      padding-right: 26px;
+
+      padding-top: 9px;
+      padding-bottom: 7px;
+
+      border-bottom: 1px solid @border-grey;
+
+      &:last-child{
+        border-bottom: none;
+      }
+    }
+
+    
+
+    // extra
+    .intl-tel-input{
+      width: 100%;
+    }
+
+    
+
+
+    //   __     ___    _     ___ ____    _  _____ ___ ___  _   _ 
+    //   \ \   / / \  | |   |_ _|  _ \  / \|_   _|_ _/ _ \| \ | |
+    //    \ \ / / _ \ | |    | || | | |/ _ \ | |  | | | | |  \| |
+    //     \ V / ___ \| |___ | || |_| / ___ \| |  | | |_| | |\  |
+    //      \_/_/   \_\_____|___|____/_/   \_\_| |___\___/|_| \_|
+    //                                                           
+    
+
+    // for error
+    &:before{
+      .fa;
+      content: "\f06a";
+      font-size: 20px;
+      color: @orange;
+      
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      bottom: 11px;
+      right: -36px;
+
+      display: none;
+      .opacity(0);
+    }
+    &.textarea-version{
+      &:before{
+        top: 49px;
+        bottom: 0px;
+      }
+    }
+
+    &[data-has-error=true],
+    &.has-custom-error,
+    &.has-error{
+
+      &:before{
+        display: block;
+        .scale-in;
+      }
+
+      .form-control{
+        border: 1px solid @orange;
+
+        &:focus{
+          border: 1px solid @orange;
+        }
+      }
+
+      
+
+      input[type=text],
+      input[type=email],
+      select{
+        color: @orange;
+      }
+
+      textarea{
+        color: @orange;
+      }
+
+      
+
+      // DROPDOWN
+      
+      .manic-dropdown{
+        border: 1px solid @orange;
+      }
+
+      .manic-dropdown .goog-menu-button-caption{
+      //.manic-dropdown .goog-menuitem .goog-menuitem-content{
+        color: @orange !important;
+      }
+      .manic-dropdown .goog-menu-button-dropdown{
+        &:after{
+          color: @orange !important;
+        }
+      }
+
+
+    } // .has-error
+
+
+  } // .form-group
+
+
+
+
+  // SUBMIT BUTTON
+
+  .cta-container{
+    padding-top: 11px;
+    text-align: right;
+
+    .square-cta{
+    }
+  }
+
+
+
+
+} // .default-contact-form
+
+
+
+
+//    __  __  ___  ____ ___ _     _____   _____ ___  ____  __  __
+//   |  \/  |/ _ \| __ )_ _| |   | ____| |  ___/ _ \|  _ \|  \/  |
+//   | |\/| | | | |  _ \| || |   |  _|   | |_ | | | | |_) | |\/| |
+//   | |  | | |_| | |_) | || |___| |___  |  _|| |_| |  _ <| |  | |
+//   |_|  |_|\___/|____/___|_____|_____| |_|   \___/|_| \_\_|  |_|
+//
+
+
+
+
+// MOBILE
+@media only screen and (max-width: 767px) {
+  .manic-dropdown:after{
+    
+  }
+}
+
+
+
+// MOBILE
+@media only screen and (max-width: 767px) {
+  .default-contact-form{
+    padding-top: 19px;
+    padding-bottom: 18px;
+
+    .form-group{
+      margin-bottom: 15px;
+
+      label{
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 9px;
+        padding-left: 0px;
+      }
+
+      input[type=text],
+      input[type=email],
+      select,
+      textarea{
+        font-size: 11px;
+
+        padding-left: 11px;
+        padding-right: 11px;
+        padding-top: 8px;
+        padding-bottom: 5px;
+
+
+      }
+
+      textarea{
+        height: 100px;
+      }
+
+      // DROPDOWN
+      
+      .manic-dropdown{
+        // height: 31px;       // needs to be fixed because
+        padding-left: 11px;
+        padding-right: 11px;
+        padding-top: 8px;
+        padding-bottom: 5px;
+
+        select{
+          padding: 0;
+        }
+      }
+
+      // Dropdown Text
+      .manic-dropdown:after{
+        .proxima-nova-semibold;
+        font-size: 11px;
+        letter-spacing: 0.075em;
+        line-height: 1.42857143;
+        text-transform: uppercase;
+
+        color: @brown;
+      }
+      .manic-dropdown.has-placeholder:after{
+        color: #b8ae9d;               // placeholder color
+      }
+      
+      // arrow
+      .manic-dropdown:before{
+        top: 4px;
+        right: 6px;
+        font-size: 20px;
+      }
+
+
+      //    __  __  ___  ____ ___ _     _____  __     ___    _     ___ ____    _  _____ ___ ___  _   _
+      //   |  \/  |/ _ \| __ )_ _| |   | ____| \ \   / / \  | |   |_ _|  _ \  / \|_   _|_ _/ _ \| \ | |
+      //   | |\/| | | | |  _ \| || |   |  _|    \ \ / / _ \ | |    | || | | |/ _ \ | |  | | | | |  \| |
+      //   | |  | | |_| | |_) | || |___| |___    \ V / ___ \| |___ | || |_| / ___ \| |  | | |_| | |\  |
+      //   |_|  |_|\___/|____/___|_____|_____|    \_/_/   \_\_____|___|____/_/   \_\_| |___\___/|_| \_|
+      //
+
+      &:before{
+        display: none !important;
+      }
+
+      &.has-error{
+
+        // Dropdown Text
+        .manic-dropdown:after{
+          color: @orange !important;
+        }
+
+        // arrow
+        .manic-dropdown:before{
+          color: @orange !important;
+        }
+
+      }
+
+
+    } // .form-group
+
+
+    // SUBMIT BUTTON
+
+    .cta-container{
+      padding-top: 11px - 5px;
+      text-align: center;
+    }
+
+  } // .default-contact-form
+}

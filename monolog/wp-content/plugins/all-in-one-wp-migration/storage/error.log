@@ -1,0 +1,30 @@
+Sep 30 2016 10:23:08
+{"Number":2,"Message":"unlink(D:\\Localhost\\quest-wp\\wp-content\\plugins\\all-in-one-wp-migration\\storage\\shqddxqi6x2h\\filemap.list): Permission denied","File":"D:\\Localhost\\quest-wp\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\model\\export\\class-ai1wm-export-clean.php","Line":44}
+
+Sep 30 2016 10:23:08
+{"Number":2,"Message":"unlink(D:\\Localhost\\quest-wp\\wp-content\\plugins\\all-in-one-wp-migration\\storage\\shqddxqi6x2h\\localhost-quest-wp-20160930-102302-245.wpress): Permission denied","File":"D:\\Localhost\\quest-wp\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\model\\export\\class-ai1wm-export-clean.php","Line":44}
+
+Sep 30 2016 10:23:08
+{"Number":2,"Message":"rmdir(D:\\Localhost\\quest-wp\\wp-content\\plugins\\all-in-one-wp-migration\\storage\\shqddxqi6x2h): Directory not empty","File":"D:\\Localhost\\quest-wp\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\model\\export\\class-ai1wm-export-clean.php","Line":49}
+
+Sep 30 2016 10:23:27
+{"Number":2,"Message":"Division by zero","File":"D:\\Localhost\\quest-wp\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\model\\export\\class-ai1wm-export-content.php","Line":73}
+
+Sep 30 2016 13:02:45
+{"Number":2,"Message":"unlink(D:\\Localhost\\quest-wp\\wp-content\\plugins\\all-in-one-wp-migration\\storage\\ky84h2pm0250\\export.log): No such file or directory","File":"D:\\Localhost\\quest-wp\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\model\\export\\class-ai1wm-export-clean.php","Line":31}
+
+Sep 30 2016 13:02:57
+{"Number":2,"Message":"Division by zero","File":"D:\\Localhost\\quest-wp\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\model\\export\\class-ai1wm-export-content.php","Line":73}
+
+Oct 03 2016 04:13:05
+{"Number":2,"Message":"Division by zero","File":"D:\\Localhost\\quest-wp\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\model\\export\\class-ai1wm-export-content.php","Line":73}
+
+Oct 03 2016 04:13:21
+{"Number":2,"Message":"Division by zero","File":"D:\\Localhost\\quest-wp\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\model\\export\\class-ai1wm-export-content.php","Line":73}
+
+Oct 03 2016 04:13:36
+{"Number":2,"Message":"Division by zero","File":"D:\\Localhost\\quest-wp\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\model\\export\\class-ai1wm-export-content.php","Line":73}
+
+Oct 05 2016 07:30:20
+{"Number":2,"Message":"Division by zero","File":"D:\\Localhost\\quest-wp\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\model\\export\\class-ai1wm-export-content.php","Line":73}
+

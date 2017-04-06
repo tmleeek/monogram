@@ -91,6 +91,9 @@ class Mage_Contacts_IndexController extends Mage_Core_Controller_Front_Action
                 if ($error) {
                     throw new Exception();
                 }
+
+                // echo Mage::getStoreConfig(self::XML_PATH_EMAIL_RECIPIENT); exit();
+
                 $mailTemplate = Mage::getModel('core/email_template');
                 /* @var $mailTemplate Mage_Core_Model_Email_Template */
                 $mailTemplate->setDesignConfig(array('area' => 'frontend'))
@@ -98,7 +101,7 @@ class Mage_Contacts_IndexController extends Mage_Core_Controller_Front_Action
                     ->sendTransactional(
                         Mage::getStoreConfig(self::XML_PATH_EMAIL_TEMPLATE),
                         Mage::getStoreConfig(self::XML_PATH_EMAIL_SENDER),
-                        Mage::getStoreConfig(self::XML_PATH_EMAIL_RECIPIENT),
+                        'teabits@gryphontea.com',
                         null,
                         array('data' => $postObject)
                     );

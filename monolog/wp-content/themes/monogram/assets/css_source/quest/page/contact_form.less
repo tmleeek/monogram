@@ -1,0 +1,697 @@
+
+//     ____ ___  _   _ _____  _    ____ _____
+//    / ___/ _ \| \ | |_   _|/ \  / ___|_   _|
+//   | |  | | | |  \| | | | / _ \| |     | |
+//   | |__| |_| | |\  | | |/ ___ \ |___  | |
+//    \____\___/|_| \_| |_/_/   \_\____| |_|
+//
+
+.default-contact-form-section{
+
+
+  .default-contact-form-title-container{
+
+    padding-top: 42px;
+    padding-bottom: 47px;
+
+    background: @brown;
+
+    h1, h2, h3, h4, h5, h6, p{
+      color: @white;
+    }
+
+    h4{
+      letter-spacing: 0.1em;
+      // margin-bottom: 13px;
+      margin-bottom: 7px;
+    }
+    h2{
+      // margin-bottom: 20px;
+      margin-bottom: 10px;
+    }
+
+
+    a{
+      color: @white;
+
+      &:focus,
+      &:hover{
+        color: @orange;
+      }
+    }
+
+  }
+
+} // .default-contact-form-section
+
+
+
+
+#default-contact-form-column-01{
+  padding-right: 45px;
+}
+#default-contact-form-column-02{
+  padding-left: 96px;
+  position: relative;
+  &:after{
+    content: "";
+    display: block;
+
+    width: 0px;
+    height: 480px;
+    border-left: 1px solid @border-grey;
+
+    position: absolute;
+    top: 6px;
+    left: 8px;
+  }
+}
+
+
+#default-contact-form-text-01{
+
+}
+
+#default-contact-form-text-02-container{
+  text-align: right;
+  padding-top: 12px;
+}
+#default-contact-form-text-02{
+  text-align: left;
+  .display-inline-block;
+
+}
+
+
+
+//    __  __  ___  ____ ___ _     _____
+//   |  \/  |/ _ \| __ )_ _| |   | ____|
+//   | |\/| | | | |  _ \| || |   |  _|
+//   | |  | | |_| | |_) | || |___| |___
+//   |_|  |_|\___/|____/___|_____|_____|
+//
+
+#page-home-contact-section-mobile{
+  display: none;
+}
+
+
+#default-contact-form-title-mobile-container{
+  background: @light-grey;
+  padding-top: 25px + 4px;
+  padding-bottom: 22px + 7px;
+}
+#default-contact-form-title-mobile{
+  
+
+  h4{
+    margin-bottom: 4px;
+    letter-spacing: 0.1em;
+  }
+  h2{
+    margin-bottom: 5px;
+  }
+
+  a{
+    color: @brown;
+  }
+
+}
+
+
+
+
+
+
+
+//    __  __  ___  ____ ___ _     _____    ____ ___  _   _ _____  _    ____ _____   _   _ ____    ____   _    ____ _____
+//   |  \/  |/ _ \| __ )_ _| |   | ____|  / ___/ _ \| \ | |_   _|/ \  / ___|_   _| | | | / ___|  |  _ \ / \  / ___| ____|
+//   | |\/| | | | |  _ \| || |   |  _|   | |  | | | |  \| | | | / _ \| |     | |   | | | \___ \  | |_) / _ \| |  _|  _|
+//   | |  | | |_| | |_) | || |___| |___  | |__| |_| | |\  | | |/ ___ \ |___  | |   | |_| |___) | |  __/ ___ \ |_| | |___
+//   |_|  |_|\___/|____/___|_____|_____|  \____\___/|_| \_| |_/_/   \_\____| |_|    \___/|____/  |_| /_/   \_\____|_____|
+//
+
+
+
+// MOBILE
+// @media only screen and (max-width: 767px) {
+
+// TABLET PORTRAIT & SMALL DESKTOP
+@media only screen and (max-width: 991px) {
+  body.page-template-page-contact{
+    #page-wrapper{
+      display: none !important;
+    }
+    #page-home-contact-section-mobile{
+      display: block !important;
+    }
+  }
+}
+
+
+
+
+
+
+
+//    _____ ___  ____  __  __      _       _   _    __  __
+//   |  ___/ _ \|  _ \|  \/  |    / \     | | / \   \ \/ /
+//   | |_ | | | | |_) | |\/| |   / _ \ _  | |/ _ \   \  /
+//   |  _|| |_| |  _ <| |  | |  / ___ \ |_| / ___ \  /  \
+//   |_|   \___/|_| \_\_|  |_| /_/   \_\___/_/   \_\/_/\_\
+//
+
+.default-contact-form{
+
+  .default-contact-form-group-container{
+    position: relative;
+    max-height: 800px;
+    overflow: hidden;
+    .transition-in(1.3s);
+  }
+  .default-contact-sending-container{
+    display: none;
+
+    .default-copy{
+      text-align: right;
+      padding-top: 15px;
+      h3{
+        margin-bottom: 0px;
+      }
+    }
+  }
+  .default-contact-error-container,
+  .default-contact-thankyou-container{
+    position: relative;
+    max-height: 0px;
+    overflow: hidden;
+    .transition-in(1.3s);
+
+    .default-copy{
+      text-align: center;
+    }
+  }
+
+
+  
+
+} // .default-contact-form
+
+
+// TABLET PORTRAIT & SMALL DESKTOP
+@media only screen and (max-width: 991px) {
+  .default-contact-form{
+    .default-contact-form-group-container{
+      max-height: 2000px;
+    }
+  }
+}
+
+
+
+.default-contact-form{
+  &.sending-version{
+    .default-contact-sending-container{
+      display: block;
+      .text-fade-in;
+    }
+  }
+  &.sent-version{
+    .default-contact-form-group-container{
+      max-height: 0px;
+    }
+    .default-contact-thankyou-container{
+      max-height: 500px;
+      .transition-in(1.3s, cubic-bezier(0.645, 0.045, 0.355, 1), 0.8s);
+    }
+  }
+  &.server-error-version{
+    .default-contact-form-group-container{
+      max-height: 0px;
+    }
+    .default-contact-error-container{
+      max-height: 500px;
+      .transition-in(1.3s, cubic-bezier(0.645, 0.045, 0.355, 1), 0.8s);
+    }
+  }
+}
+
+
+// TABLET PORTRAIT & SMALL DESKTOP
+@media only screen and (max-width: 991px) {
+  .default-contact-form{
+    &.sent-version{
+      .default-contact-thankyou-container{
+        max-height: 1000px;
+      }
+    }
+    &.server-error-version{
+      .default-contact-error-container{
+        max-height: 1000px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    _____ ___  ____  __  __
+//   |  ___/ _ \|  _ \|  \/  |
+//   | |_ | | | | |_) | |\/| |
+//   |  _|| |_| |  _ <| |  | |
+//   |_|   \___/|_| \_\_|  |_|
+//
+
+
+.default-contact-form{
+  background: @lightest-grey;
+  padding-top: 57px;
+  padding-bottom: 132px;
+
+  .add-clearfix();
+
+  .form-group{
+    position: relative;
+    margin-bottom: 26px;
+
+    .form-control{
+      background: transparent;
+      border: 1px solid @border-grey;
+      box-shadow: none;
+
+      &:focus{
+        border: 1px solid @border-grey;
+        outline: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+    }
+
+
+    label{
+      .header-h5-style;
+      color: @brown;
+      margin-bottom: 11px;
+      padding-left: 3px;
+    }
+
+    input[type=text],
+    input[type=email],
+    select,
+    textarea{
+
+      // override
+      height: auto;
+
+      .proxima-nova-semibold;
+      font-size: 16px;
+      letter-spacing: 0.075em;
+      line-height: 1.42857143;
+      text-transform: uppercase;
+      // height: 28px ;
+      
+
+      color: @brown;
+      padding-left: 26px;
+      padding-right: 26px;
+
+      padding-top: 9px;
+      padding-bottom: 7px;
+
+      
+      .opacity(1);
+
+      &::-webkit-input-placeholder{
+        .opacity(1);
+        color: #b8ae9d;
+      }
+      &:-moz-placeholder{
+        .opacity(1);
+        color: #b8ae9d;
+      }
+      &::-moz-placeholder{
+        .opacity(1);
+        color: #b8ae9d;
+      }
+      &:-ms-input-placeholder{
+        .opacity(1);
+        color: #b8ae9d;
+      }
+
+      &.has-placeholder{
+        .opacity(1);
+        color: #b8ae9d;
+      }
+    }
+
+    textarea{
+      height: 265px;
+      resize: none;
+    }
+
+
+
+    // DROPDOWN
+    .manic-dropdown .goog-menu-button-caption,
+    .manic-dropdown .goog-menuitem .goog-menuitem-content{
+      .proxima-nova-semibold;
+      font-size: 16px;
+      letter-spacing: 0.075em;
+      line-height: 1.42857143;
+      text-transform: uppercase;
+    }
+
+    // placeholder
+    .manic-dropdown.has-placeholder .goog-menu-button-caption{
+      color: #b8ae9d;
+    }
+
+    // highlight
+    .manic-dropdown .goog-menuitem.goog-menuitem-highlight,
+    .manic-dropdown .goog-menuitem:hover{
+      background: @orange;
+      color: @lightest-grey;
+    }
+
+
+    // box
+    .manic-dropdown{
+      // from form-control
+      .round(4px);
+
+      background: transparent;
+      border: 1px solid @border-grey;
+
+      padding-left: 26px;
+      padding-right: 26px;
+
+      padding-top: 9px;
+      padding-bottom: 7px;
+    }
+
+    // arrow
+    .manic-dropdown .goog-menu-button-dropdown{
+      top: 11px;
+      right: 8px;
+      &:after{
+        font-size: 22px;
+      }
+    }
+
+
+    // list item container
+    .goog-menu {
+      background: @light-grey;
+      border: 1px solid @border-grey;
+      .round(4px);
+
+      position: absolute;
+      //width: 100%;
+      top: 38px !important;
+      left: -1px !important;
+      right: -1px !important;
+
+    }
+
+    // list item
+    .goog-menuitem {
+      padding-left: 26px;
+      padding-right: 26px;
+
+      padding-top: 9px;
+      padding-bottom: 7px;
+
+      border-bottom: 1px solid @border-grey;
+
+      &:last-child{
+        border-bottom: none;
+      }
+    }
+
+    
+
+    // extra
+    .intl-tel-input{
+      width: 100%;
+    }
+
+    
+
+
+    //   __     ___    _     ___ ____    _  _____ ___ ___  _   _ 
+    //   \ \   / / \  | |   |_ _|  _ \  / \|_   _|_ _/ _ \| \ | |
+    //    \ \ / / _ \ | |    | || | | |/ _ \ | |  | | | | |  \| |
+    //     \ V / ___ \| |___ | || |_| / ___ \| |  | | |_| | |\  |
+    //      \_/_/   \_\_____|___|____/_/   \_\_| |___\___/|_| \_|
+    //                                                           
+    
+
+    // for error
+    &:before{
+      .fa;
+      content: "\f06a";
+      font-size: 20px;
+      color: @orange;
+      
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      bottom: 11px;
+      right: -36px;
+
+      display: none;
+      .opacity(0);
+    }
+    &.textarea-version{
+      &:before{
+        top: 49px;
+        bottom: 0px;
+      }
+    }
+
+    &[data-has-error=true],
+    &.has-custom-error,
+    &.has-error{
+
+      &:before{
+        display: block;
+        .scale-in;
+      }
+
+      .form-control{
+        border: 1px solid @orange;
+
+        &:focus{
+          border: 1px solid @orange;
+        }
+      }
+
+      
+
+      input[type=text],
+      input[type=email],
+      select{
+        color: @orange;
+      }
+
+      textarea{
+        color: @orange;
+      }
+
+      
+
+      // DROPDOWN
+      
+      .manic-dropdown{
+        border: 1px solid @orange;
+      }
+
+      .manic-dropdown .goog-menu-button-caption{
+      //.manic-dropdown .goog-menuitem .goog-menuitem-content{
+        color: @orange !important;
+      }
+      .manic-dropdown .goog-menu-button-dropdown{
+        &:after{
+          color: @orange !important;
+        }
+      }
+
+
+    } // .has-error
+
+
+  } // .form-group
+
+
+
+
+  // SUBMIT BUTTON
+
+  .cta-container{
+    padding-top: 11px;
+    text-align: right;
+
+    .square-cta{
+    }
+  }
+
+
+
+
+} // .default-contact-form
+
+
+
+
+//    __  __  ___  ____ ___ _     _____   _____ ___  ____  __  __
+//   |  \/  |/ _ \| __ )_ _| |   | ____| |  ___/ _ \|  _ \|  \/  |
+//   | |\/| | | | |  _ \| || |   |  _|   | |_ | | | | |_) | |\/| |
+//   | |  | | |_| | |_) | || |___| |___  |  _|| |_| |  _ <| |  | |
+//   |_|  |_|\___/|____/___|_____|_____| |_|   \___/|_| \_\_|  |_|
+//
+
+
+
+
+// MOBILE
+@media only screen and (max-width: 767px) {
+  .manic-dropdown:after{
+    
+  }
+}
+
+
+
+// MOBILE
+@media only screen and (max-width: 767px) {
+  .default-contact-form{
+    padding-top: 19px;
+    padding-bottom: 18px;
+
+    .form-group{
+      margin-bottom: 15px;
+
+      label{
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 9px;
+        padding-left: 0px;
+      }
+
+      input[type=text],
+      input[type=email],
+      select,
+      textarea{
+        font-size: 11px;
+
+        padding-left: 11px;
+        padding-right: 11px;
+        padding-top: 8px;
+        padding-bottom: 5px;
+
+
+      }
+
+      textarea{
+        height: 100px;
+      }
+
+      // DROPDOWN
+      
+      .manic-dropdown{
+        // height: 31px;       // needs to be fixed because
+        padding-left: 11px;
+        padding-right: 11px;
+        padding-top: 8px;
+        padding-bottom: 5px;
+
+        select{
+          padding: 0;
+        }
+      }
+
+      // Dropdown Text
+      .manic-dropdown:after{
+        .proxima-nova-semibold;
+        font-size: 11px;
+        letter-spacing: 0.075em;
+        line-height: 1.42857143;
+        text-transform: uppercase;
+
+        color: @brown;
+      }
+      .manic-dropdown.has-placeholder:after{
+        color: #b8ae9d;               // placeholder color
+      }
+      
+      // arrow
+      .manic-dropdown:before{
+        top: 4px;
+        right: 6px;
+        font-size: 20px;
+      }
+
+
+      //    __  __  ___  ____ ___ _     _____  __     ___    _     ___ ____    _  _____ ___ ___  _   _
+      //   |  \/  |/ _ \| __ )_ _| |   | ____| \ \   / / \  | |   |_ _|  _ \  / \|_   _|_ _/ _ \| \ | |
+      //   | |\/| | | | |  _ \| || |   |  _|    \ \ / / _ \ | |    | || | | |/ _ \ | |  | | | | |  \| |
+      //   | |  | | |_| | |_) | || |___| |___    \ V / ___ \| |___ | || |_| / ___ \| |  | | |_| | |\  |
+      //   |_|  |_|\___/|____/___|_____|_____|    \_/_/   \_\_____|___|____/_/   \_\_| |___\___/|_| \_|
+      //
+
+      &:before{
+        display: none !important;
+      }
+
+      &.has-error{
+
+        // Dropdown Text
+        .manic-dropdown:after{
+          color: @orange !important;
+        }
+
+        // arrow
+        .manic-dropdown:before{
+          color: @orange !important;
+        }
+
+      }
+
+
+    } // .form-group
+
+
+    // SUBMIT BUTTON
+
+    .cta-container{
+      padding-top: 11px - 5px;
+      text-align: center;
+    }
+
+  } // .default-contact-form
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

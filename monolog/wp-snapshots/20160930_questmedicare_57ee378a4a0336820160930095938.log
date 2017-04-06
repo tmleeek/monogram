@@ -1,0 +1,78 @@
+********************************************************************************
+PACKAGE-LOG: 2016-09-30 09:59:49
+NOTICE: Do NOT post to public sites or forums 
+********************************************************************************
+VERSION:	0.5.4
+WORDPRESS:	4.6.1
+PHP INFO:	5.5.6 | SAPI: apache2handler
+SERVER:		Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.6 
+PHP TIME LIMIT: (0) no time limit imposed 
+PHP MAX MEMORY: 5000M (128M default) 
+
+********************************************************************************
+DATABASE:
+********************************************************************************
+BUILD MODE:   PHP
+MYSQLDUMP:    Is Supported
+MYSQLTIMEOUT: 5000 
+TABLES: total:13 | filtered:0 | create:13 
+FILTERED: [] 
+wp_commentmeta (0) 
+wp_comments (1) 
+wp_duplicator_packages (1) 
+wp_links (0) 
+wp_options (137) 
+wp_postmeta (67) 
+wp_posts (52) 
+wp_term_relationships (1) 
+wp_term_taxonomy (1) 
+wp_termmeta (0) 
+wp_terms (1) 
+wp_usermeta (18) 
+wp_users (1) 
+SQL CREATED: 20160930_questmedicare_57ee378a4a0336820160930095938_database.sql 
+SQL FILE SIZE: 685.53KB 
+SQL RUNTIME: 0.09 sec. 
+
+******************************************************************************** 
+ARCHIVE (ZIP): 
+******************************************************************************** 
+ARCHIVE DIR:  D:/Localhost/quest-wp 
+ARCHIVE FILE: 20160930_questmedicare_57ee378a4a0336820160930095938_archive.zip 
+FILTERS: *OFF* 
+DIRS:  not set 
+EXTS:  not set 
+---------------------------------------- 
+COMPRESSING 
+SIZE:	126.04MB 
+STATS:	Dirs 589 | Files 6,050 | Links 0 
+SQL ADDED: 20160930_questmedicare_57ee378a4a0336820160930095938_database.sql 
+ZipArchive Object
+(
+    [status] => 0
+    [statusSys] => 0
+    [numFiles] => 6639
+    [filename] => D:\Localhost\quest-wp\wp-snapshots\tmp\20160930_questmedicare_57ee378a4a0336820160930095938_archive.zip
+    [comment] => 
+)
+ 
+COMPRESSION RESULT: '1' 
+COMPRESSED SIZE: 70.28MB 
+ARCHIVE RUNTIME: 16.32 sec. 
+
+******************************************************************************** 
+INSTALLER: 
+******************************************************************************** 
+INSTALLER FILE: Build Start 
+INSTALLER FILE: Build Finished 
+INSTALLER FILE: Preping for use 
+INSTALLER FILE: Template parsed with new data 
+INSTALLER FILE: Complete [D:/Localhost/quest-wp/wp-snapshots/tmp/20160930_questmedicare_57ee378a4a0336820160930095938_installer.php] 
+
+********************************************************************************
+RECORD ID:[1]
+FILE SIZE: Archive:70.28MB | SQL:685.53KB | Installer:409.52KB
+TOTAL PROCESS RUNTIME: 17.58 sec.
+DONE PROCESSING => 20160930_questmedicare 2016-09-30 10:00:07
+********************************************************************************
+ 

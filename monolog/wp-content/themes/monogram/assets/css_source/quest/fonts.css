@@ -1,0 +1,63 @@
+.proxima-nova-light {
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+.proxima-nova-regular {
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.proxima-nova-regular-italic {
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-weight: 400;
+}
+.proxima-nova-semibold {
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+.proxima-nova-bold {
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+.playfair-display-regular {
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.playfair-display-regular-italic {
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-weight: 400;
+}
+.playfair-display-bold {
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+.playfair-display-bold-italic {
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-weight: 700;
+}
+.playfair-display-black {
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+}
+/*
+@font-face {
+  font-family: 'fs_albertregular';
+  src: url('../fonts/fs_albert-webfont.eot');
+  src: url('../fonts/fs_albert-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/fs_albert-webfont.woff2') format('woff2'),
+       url('../fonts/fs_albert-webfont.woff') format('woff'),
+       url('../fonts/fs_albert-webfont.ttf') format('truetype'),
+       url('../fonts/fs_albert-webfont.svg#fs_albertregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+*/

@@ -40,6 +40,9 @@ var initialLoad = true;
             $('body').addClass('is-tablet');
             window.is_tablet = true;
         }
+        if( window.mobile_detect.mobile() !=null ){
+            window.is_mobile = true;
+        }
         
 
         // http://stackoverflow.com/questions/11486527/reload-browser-does-not-reset-page-to-top
@@ -705,17 +708,39 @@ var initialLoad = true;
             var main_product_img_name = main_product_name.replace(/\s+/g, '-').toLowerCase();
             var sub_product_img_name = sub_product_name.replace(/\s+/g, '-').toLowerCase();
 
-            FB.ui({
-                // display: 'popup',
-                method: 'share',
-                href: share_url,
-                title: main_product_name + ' + ' + sub_product_name,  // The same than name in feed method
-                picture: 'http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/images/layered_images/'+main_product_img_name+'-with-'+sub_product_img_name+'.jpg',
-                caption: 'Monogram Tea',
-                description: combine_desc,
-            }, function(response){});
+            if(window.is_mobile) {
+                if($(this).parent().parent().parent().hasClass("hover")) {
+                    FB.ui({
+                        // display: 'popup',
+                        method: 'share',
+                        href: share_url,
+                        title: main_product_name + ' + ' + sub_product_name,  // The same than name in feed method
+                        picture: 'http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/images/layered_images/'+main_product_img_name+'-with-'+sub_product_img_name+'.jpg',
+                        caption: 'Monogram Tea',
+                        description: combine_desc,
+                    }, function(response){});
+                }
+            }else {                
+                FB.ui({
+                    // display: 'popup',
+                    method: 'share',
+                    href: share_url,
+                    title: main_product_name + ' + ' + sub_product_name,  // The same than name in feed method
+                    picture: 'http://www.monogramtea.com/skin/frontend/gryphon/gryphon_theme/images/layered_images/'+main_product_img_name+'-with-'+sub_product_img_name+'.jpg',
+                    caption: 'Monogram Tea',
+                    description: combine_desc,
+                }, function(response){});
+            }
+        });
 
+        $('.home-customized-share-button').on("click", function(e){
+          e.preventDefault();
+          $(this).toggleClass("hover");
+        });
 
+        $('.home-customized-share-button').on("hover", function(e){
+          e.preventDefault();
+          $(this).addClass("hover");
         });
 
         function PopupCenter(pageURL, title,w,h) {
@@ -725,10 +750,32 @@ var initialLoad = true;
             return targetWin;
         } 
 
-        $('#graph-social-icons').on("click", "a.fa-twitter", function(e){
+        $('#graph-social-icons, .home-customized-share-button').on("click", "a.fa-twitter", function(e){
             e.preventDefault();
-            var share_url = $(this).attr("href");
-            PopupCenter(share_url, '', 500, 500);
+            console.log(window.is_mobile)
+            if(window.is_mobile) {
+                if($(this).parent().parent().parent().hasClass("hover")) {
+                    var share_url = $(this).attr("href");
+                    PopupCenter(share_url, '', 500, 500);
+                }    
+            }else {
+                var share_url = $(this).attr("href");
+                PopupCenter(share_url, '', 500, 500);
+            }
+            
+        });
+
+        $('#graph-social-icons, .home-customized-share-button').on("click", "a.fa-pinterest", function(e){
+            e.preventDefault();
+            if(window.is_mobile) {
+                if($(this).parent().parent().parent().hasClass("hover")) {
+                    var share_url = $(this).attr("href");
+                    PopupCenter(share_url, '', 500, 500);
+                }
+            }else {
+                var share_url = $(this).attr("href");
+                PopupCenter(share_url, '', 500, 500);
+            }
         });   
 
         try{

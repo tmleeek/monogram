@@ -102,7 +102,18 @@
               <p>Fresh approach to a unique blend of mint and bergamot. An alluring experience that promises more adventure to come.</p>
 
               <div class="cta-container">
-                <a href="javascript:void(0);" id="home-mobile-buy-both-teas-cta" class="home-mobile-buy-both-teas-cta square-cta">add both to cart</a>
+                <?php 
+                $groupname = '';
+                if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+                    $customerData = Mage::getSingleton('customer/session')->getCustomer();
+                    $customerGroupId = $customerData->getGroupId();
+                    $groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();  
+                }
+                if($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium') $trade = true;        
+                else $trade = false; ?>
+                <?php if(!$trade): ?>
+                  <a href="javascript:void(0);" id="home-mobile-buy-both-teas-cta" class="home-mobile-buy-both-teas-cta square-cta">add both to cart</a>
+                <?php endif; ?>
                 <a href="#selection" class="square-cta">see more layering suggestions</a>
               </div>
             </div>
@@ -136,7 +147,7 @@
 
               <a href="<?php echo $_product->getProductUrl() ?>" class="home-mobile-landing-popular-item">
                 <div class="home-mobile-landing-popular-item-image">
-                  <img id="product-collection-image-<?php echo $_product->getId(); ?>" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize($_imgSize, 120); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="img"/>
+                  <img id="product-collection-image-<?php echo $_product->getId(); ?>" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize($_imgSize2x, 400); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="img"/>                  
                 </div>
                 <div class="home-mobile-landing-popular-item-copy">
 
@@ -218,15 +229,22 @@
 
 
   <?php 
-    $_productCollection = Mage::getModel('catalog/category')->load(92)
+    $groupname = '';
+    if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+        $customerData = Mage::getSingleton('customer/session')->getCustomer();
+        $customerGroupId = $customerData->getGroupId();
+        $groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();  
+    }
+    if($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium') $categoryId = 118;        
+    else $categoryId = 92;
+
+    $_productCollection = Mage::getModel('catalog/category')->load($categoryId)
                          ->getProductCollection()
                          ->addAttributeToSelect('*')
                          ->addAttributeToFilter('status', 1) // enabled
                          ->addAttributeToFilter('visibility', 4) //visibility in catalog,search
                          ->addAttributeToSort('position', Varien_Data_Collection::SORT_ORDER_ASC);
     $_helper = $this->helper('catalog/output');
-
-
   ?>
 
 
@@ -434,27 +452,30 @@
 
 
         <div class="button-container button-container-01">
-          <?php if(Mage::getSingleton('customer/session')->isLoggedIn()): ?>
+          <?php if(Mage::getSingleton('customer/session')->isLoggedIn() && !$trade): ?>
           <a href="javascript:void(0);" id="home-mobile-save-layering" class="square-cta square-cta-01">save layering</a>
           <?php else: ?>
           <?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
           <a href="<?php echo $store_category->getUrl(); ?>" class="square-cta square-cta-01">visit tea bar</a>
           <?php endif; ?>
+          <?php if(!$trade): ?>
           <a href="javascript:void(0);" class="home-mobile-buy-both-teas-cta-2 square-cta square-cta-02">add both to cart</a>
-          <!-- <div class="home-customized-share-button">
+          <?php endif; ?>
+          <div class="home-customized-share-button square-cta square-cta-02">
             <span>Share Layering</span>
             <ul>
               <li><a href="http://www.pinterest.com" target="_blank" class="fa fa-pinterest"></a></li>
               <li><a href="http://www.twitter.com" target="_blank" class="fa fa-twitter"></a></li>
               <li><a href="http://www.facebook.com" class="fa fa-facebook"></a></li>
             </ul>
-          </div> -->
+          </div>
         </div>
-
+        <?php if(!$trade): ?>
         <div class="button-container button-container-02">
           <a href="" class="square-cta square-cta-03" id="tea-layering-detail-copy-tea-detail-01-cta">see earl grey neroli</a>
           <a href="" class="square-cta square-cta-04"  id="tea-layering-detail-copy-tea-detail-02-cta">see shiso mint</a>
         </div>
+        <?php endif; ?>
 
         
         

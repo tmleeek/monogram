@@ -109,6 +109,11 @@ class Manic_Discovertea_IndexController extends Mage_Core_Controller_Front_Actio
 	}
 
 	public function cartpreviewAction() {
+
+    header('Access-Control-Allow-Origin: '.$_SERVER['HTTP_ORIGIN']);
+    header('Access-Control-Allow-Methods: GET');
+    header('Access-Control-Max-Age: 1000');
+    header('Access-Control-Allow-Headers: Content-Type');
    		
 		$cart = Mage::getModel('checkout/cart')->getQuote();
 		$cartQty =  Mage::helper('checkout/cart')->getSummaryCount();
@@ -136,7 +141,18 @@ class Manic_Discovertea_IndexController extends Mage_Core_Controller_Front_Actio
 
 			endforeach;  											
 		endif;
+
+    // $sessionCustomer = Mage::getSingleton("customer/session");
+
+    if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+      $login_status = true;
+    } else {
+      $login_status = false;
+    }
+
+    if(empty($cartQty)) $cartQty = 0;
 		
+    $all_cart_data['login_status'] = $login_status;
 		$all_cart_data['cart_qty'] = $cartQty;
 		$all_cart_data['cart_total'] = Mage::helper('core')->formatPrice($cartTotal, true);
 		$all_cart_data['cart_items'] = $all_items;

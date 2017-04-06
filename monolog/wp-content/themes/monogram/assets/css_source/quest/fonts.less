@@ -1,0 +1,223 @@
+//    ____  ____   _____  _____ __  __    _      _   _  _____     ___
+//   |  _ \|  _ \ / _ \ \/ /_ _|  \/  |  / \    | \ | |/ _ \ \   / / \
+//   | |_) | |_) | | | \  / | || |\/| | / _ \   |  \| | | | \ \ / / _ \
+//   |  __/|  _ <| |_| /  \ | || |  | |/ ___ \  | |\  | |_| |\ V / ___ \
+//   |_|   |_| \_\\___/_/\_\___|_|  |_/_/   \_\ |_| \_|\___/  \_/_/   \_\
+//
+
+// fallback "Trebuchet MS", Helvetica, 
+
+.proxima-nova-light{
+  // font-family: "proxima-nova", Arial, Helvetica, sans-serif;
+  
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+.proxima-nova-regular{
+  // font-family: "proxima-nova", Arial, Helvetica, sans-serif;
+  
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.proxima-nova-regular-italic{
+  // font-family: "proxima-nova", Arial, Helvetica, sans-serif;
+  
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-weight: 400;
+}
+.proxima-nova-semibold{
+  // font-family: "proxima-nova", Arial, Helvetica, sans-serif;
+  
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+.proxima-nova-bold{
+  // font-family: "proxima-nova", Arial, Helvetica, sans-serif;
+  
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+
+//    ____  _        _ __   _______ _    ___ ____    ____ ___ ____  ____  _        _ __   __
+//   |  _ \| |      / \\ \ / /  ___/ \  |_ _|  _ \  |  _ \_ _/ ___||  _ \| |      / \\ \ / /
+//   | |_) | |     / _ \\ V /| |_ / _ \  | || |_) | | | | | |\___ \| |_) | |     / _ \\ V /
+//   |  __/| |___ / ___ \| | |  _/ ___ \ | ||  _ <  | |_| | | ___) |  __/| |___ / ___ \| |
+//   |_|   |_____/_/   \_\_| |_|/_/   \_\___|_| \_\ |____/___|____/|_|   |_____/_/   \_\_|
+//
+
+// fallback "Palatino Linotype", "Book Antiqua", Palatino,
+// replaced with Merriweather
+
+.playfair-display-regular{
+  // font-family: 'Playfair Display', "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  
+  // font-family: 'Merriweather', "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  
+  // font-family: "proxima-nova", Arial, Helvetica, sans-serif;
+  
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.playfair-display-regular-italic{
+  // font-family: 'Playfair Display', "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  
+  // font-family: 'Merriweather', "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  
+  // font-family: "proxima-nova", Arial, Helvetica, sans-serif;
+  
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-weight: 400;
+}
+.playfair-display-bold{
+  // font-family: 'Playfair Display', "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  
+  // font-family: 'Merriweather', "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  
+  // font-family: "proxima-nova", Arial, Helvetica, sans-serif;
+  
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+.playfair-display-bold-italic{
+  // font-family: 'Playfair Display', "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  
+  // font-family: 'Merriweather', "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  
+  // font-family: "proxima-nova", Arial, Helvetica, sans-serif;
+  
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-weight: 700;
+}
+.playfair-display-black{
+  // font-family: 'Playfair Display', "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  
+  // font-family: 'Merriweather', "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  
+  // font-family: "proxima-nova", Arial, Helvetica, sans-serif;
+  
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+}
+
+
+
+
+
+
+
+//    ____ _______   ___     _____ ____  
+//   / ___|_   _\ \ / / |   | ____/ ___| 
+//   \___ \ | |  \ V /| |   |  _| \___ \ 
+//    ___) || |   | | | |___| |___ ___) |
+//   |____/ |_|   |_| |_____|_____|____/ 
+//                                       
+
+
+
+.body-font(@multiplier: 1){
+  .proxima-nova-regular;
+  font-size: 15px * @multiplier;
+  line-height: 24px * @multiplier;
+}
+.body-font-bold(@multiplier: 1){
+  .proxima-nova-semibold;
+  font-size: 15px * @multiplier;
+  line-height: 24px * @multiplier;
+}
+.body-font-italic(@multiplier: 1){
+  .proxima-nova-regular-italic;
+  font-size: 15px * @multiplier;
+  line-height: 24px * @multiplier;
+}
+
+
+
+
+.header-h1-style(@multiplier: 1){
+  .playfair-display-bold;
+  // font-size: 43px * @multiplier;
+  
+  font-size: 38px * @multiplier;
+  line-height: 44px * @multiplier;
+}
+
+.header-h2-style(@multiplier: 1){
+  .playfair-display-bold;
+  // font-size: 41px * @multiplier;
+  // font-size: 38px * @multiplier;
+  font-size: 35px * @multiplier;
+  // line-height: 44px * @multiplier;
+  line-height: 40px * @multiplier;
+}
+
+.header-h3-style(@multiplier: 1){
+  .playfair-display-regular-italic;
+  // font-size: 19px * @multiplier;
+  // font-size: 18px * @multiplier;
+  font-size: 17px * @multiplier;
+  line-height: 28px * @multiplier;    // new
+}
+
+.header-h4-style(@multiplier: 1){
+  .proxima-nova-bold;
+  font-size: 16px * @multiplier;
+  line-height: 20px * @multiplier;
+
+  text-transform: uppercase;
+}
+
+.header-h5-style(@multiplier: 1){
+  .playfair-display-regular;
+  // font-size: 24px * @multiplier;
+  font-size: 22px * @multiplier;
+  line-height: 28px * @multiplier;
+}
+
+.header-h6-style(@multiplier: 1){
+  .proxima-nova-semibold;
+  font-size: 12px * @multiplier;
+  line-height: 18px * @multiplier;
+
+  text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+
+//    ___ __  __ ____   ___  ____ _____   _____ ___  _   _ _____
+//   |_ _|  \/  |  _ \ / _ \|  _ \_   _| |  ___/ _ \| \ | |_   _|
+//    | || |\/| | |_) | | | | |_) || |   | |_ | | | |  \| | | |
+//    | || |  | |  __/| |_| |  _ < | |   |  _|| |_| | |\  | | |
+//   |___|_|  |_|_|    \___/|_| \_\|_|   |_|   \___/|_| \_| |_|
+//
+
+/*
+@font-face {
+  font-family: 'fs_albertregular';
+  src: url('../fonts/fs_albert-webfont.eot');
+  src: url('../fonts/fs_albert-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/fs_albert-webfont.woff2') format('woff2'),
+       url('../fonts/fs_albert-webfont.woff') format('woff'),
+       url('../fonts/fs_albert-webfont.ttf') format('truetype'),
+       url('../fonts/fs_albert-webfont.svg#fs_albertregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+*/

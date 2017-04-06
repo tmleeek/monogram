@@ -41,6 +41,25 @@
               <h1><?php echo $this->__('FRIEND REFERRAL') ?></h1>
               <hr class="small">
           </div>
+          <div class="referral-steps">
+            <div class="row">
+              <div class="col-md-4">
+                <h6>Step 1</h6>
+                <h3>refer a friend</h3>
+                <p>Get your friends to enjoy Monogram Tea with you at www.monogramtea.com</p>
+              </div>
+              <div class="col-md-4">
+                <h6>Step 2</h6>
+                <h3>earn $5 rebates together</h3>
+                <p>When your friends make their first purchase, you and your friends will earn $5 in rebates</p>
+              </div>
+              <div class="col-md-4">
+                <h6>Step 3</h6>
+                <h3>redeem your rebates</h3>
+                <p>Make your next purchase within 30 days to reward yourself</p>
+              </div>
+            </div>
+          </div>
           <?php if($this->getReferrerRegistrationPoints()):?>
               <div class="points">
                   <div class="left">
@@ -67,7 +86,7 @@
               <?php 
               $rewardPoints = $this->getReferrerPoints();
               ?>              
-              <p><?php echo $this->__('For every valid first order by a referred friend, you earn a <strong>%s</strong> rebate.', Mage::helper('core')->currency($rewardPoints, true, false));?></p>
+              <!-- <p><?php echo $this->__('For every valid first order by a referred friend, you earn a <strong>%s</strong> rebate.', Mage::helper('core')->currency($rewardPoints, true, false));?></p> -->
               <?php elseif ($this->getReferrerPoints() && $this->getReferrerCalculationType() == Rewardpoints_Model_Calculationtype::RATIO_POINTS):?>
               <p><?php echo $this->__('For any first valid order placed by referred friend, you earn: <strong>%s points x product price values</strong>', $this->getReferrerPoints());?></p>
               <?php elseif ($this->getReferrerPoints() && $this->getReferrerCalculationType() == Rewardpoints_Model_Calculationtype::CART_SUMMARY):?>
@@ -257,7 +276,7 @@
       </script>
       
       <div class="page-title invite-friends">
-          <h1><?php echo $this->__('Invited friends') ?></h1>
+          <h1><?php echo $this->__('friend referral history') ?></h1>
           <hr class="small">
       </div>
       <?php $_referred = $this->getReferred();?>
