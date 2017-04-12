@@ -30,6 +30,76 @@ body.tea-layering-detail-page{
 //
 
 
+
+// APRIL 11 FIXES... 
+
+body.is-tablet.is-tablet-portrait{
+
+  &.cms-index-index.cms-home{
+    #content-wrapper{
+      overflow-x: hidden;
+    }
+  }
+  &.cms-page-view.cms-tea-matrix{
+    #content-wrapper{
+      overflow-x: hidden;
+    }
+  }
+
+  #tea-layering-detail-graph-section{
+    .scale(2);
+    margin-top: 100px;
+    margin-bottom: 150px;
+  }
+  #home-mobile-landing-graph-container{
+    .scale(2);
+    margin-top: 160px;
+    margin-bottom: 140px;
+  }
+
+  #tea-layering-detail-footer-mobile-fixed{
+    display: none;
+  }
+}
+
+body.is-tablet.is-tablet-landscape{
+
+  &.cms-page-view.cms-tea-matrix{
+    #tea-matrix-section-1 #tea-matrix-content #tea-matrix-combination-graph-container-another-one{
+      // .scale(0.9);
+      // .transform(scale(.9), translate(-50%,-50%));
+      .transform(scale(1.2), translate(-50%,-50%));
+      .transform-origin(50%, 50%);
+      margin-left: -15px;
+      margin-top: 80px;
+    }
+
+    #page-indicator{
+      li{
+        margin-bottom: 11px;
+        a{
+          font-size: 10px;
+          letter-spacing: 0.12em;
+
+        }
+      }
+    }
+    #tea-matrix-content-section-1{
+      // .scale(0.9);
+      
+      .transform(scale(.85), translate(0,-50%));
+      .transform-origin(100%, 0%);
+      padding-top: 20px;
+    }
+    
+  }
+}
+
+
+// APRIL 11 FIXES END ... 
+
+
+
 #tea-layering-detail-graph-section{
   width: 100%;
   height: 400px;
