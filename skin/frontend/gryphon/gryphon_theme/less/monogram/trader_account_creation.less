@@ -77,8 +77,16 @@
       }
       .last-content {
         #trader_register {
+          textarea {
+            resize: vertical;
+          }
           textarea, input[type=text], input[type=email], .dropdown, .intl-tel-input {
             width: 100%; 
+          }
+          .dropdown {
+            .validation-advice {
+              margin-left: -10px!important;
+            }
           }
 
           input[type=file] {
@@ -119,6 +127,14 @@
           .validation-advice {
             display: block;
             margin: 0px;
+            position: absolute;
+            left: 0;
+            margin-left: 0px!important;
+            padding-left: 10px;
+            &#advice-required-entry-uploadacrapdf {
+              top: 3px;
+              left: 170px;
+            }
           }
           .vertical-line {
             border-right: 1px solid #fff;

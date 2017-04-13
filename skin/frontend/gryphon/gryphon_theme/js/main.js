@@ -735,7 +735,8 @@ var initialLoad = true;
 
         $('.home-customized-share-button').on("click", function(e){
           e.preventDefault();
-          $(this).toggleClass("hover");
+          if(!$(this).hasClass("hover"))
+            $(this).addClass("hover");
         });
 
         $('.home-customized-share-button').on("hover", function(e){
@@ -991,8 +992,18 @@ var initialLoad = true;
             return false;
         }); 
         
-        
-        
+        if($(".remove-input-selection").length > 0) {
+            $(".remove-input-selection").each(function(i, obj){
+                remove_input_text_selection($(obj));
+            });
+            
+        }
+
+        function remove_input_text_selection($input_el) {
+            $input_el[0].addEventListener('select', function() {
+                this.selectionStart = this.selectionEnd;
+            }, false);
+        }
         
 
 

@@ -138,7 +138,7 @@ body.product-gift-card {
               top: 110px;
               left: 30px;
               height: 620px;
-              width: 100%;
+              width: 90%;
               text-align: left;
               color: @dark-brown!important;
 
@@ -452,7 +452,7 @@ body.product-gift-card {
             // color: @new-grey;
             // background: @skin;
             border: none;
-            padding: 5px 0 5px 15px;
+            padding: 5px 15px 5px 15px;
             width: 281px!important;
             vertical-align: top;     
             background-color: #756b66;   
@@ -775,8 +775,21 @@ body.product-gift-card {
             position: absolute;
             left: -10px;
             top: 0;
+            @media all and (max-width: 1920px) {
+              width: 100%;
+              left: 0px;
+            }
+            @media all and (max-width: 1680px) {
+              max-width: 550px;
+              width: auto;
+              left: 0px;
+            }
             @media all and (max-width: 1366px) {
-              left: -85px;
+              left: -70px;
+              max-width: 550px;
+            }            
+            @media all and (max-width: 1280px) {
+              left: -82px!important;
             }
             // width: auto!important;
             @media only screen and (max-width: 1024px) {

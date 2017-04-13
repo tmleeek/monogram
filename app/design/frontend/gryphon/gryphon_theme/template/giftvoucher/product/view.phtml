@@ -494,7 +494,7 @@ endif;
             </li>    
         </ul>
         <?php         
-        $_productImageUrl_Raw = $this->helper('catalog/image')->init($_product, 'image');
+        $_productImageUrl_Raw = $this->helper('catalog/image')->init($_product, 'image')->resize(158);
         ?>
         <script>
             jQuery('.fa-facebook').on('click', function(e){
@@ -503,6 +503,7 @@ endif;
                 FB.ui({
                     display: 'popup',
                     method: 'share',
+                    title: 'Monogram E-Gift Card - Monogram Tea',
                     href: share_url,
                     picture: '<?php echo $_productImageUrl_Raw; ?>'
                 }, function(response){});

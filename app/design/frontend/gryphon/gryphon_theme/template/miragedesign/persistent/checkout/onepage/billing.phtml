@@ -77,7 +77,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
 ?>
 <div id="page-shopping-cart-content">
     <div id="page-shopping-cart-billing-shipping-container">
-        <form id="co-billing-form" action="">
+        <form id="co-billing-form" action="" autocomplete="off">
             <div class="row">
                 <div class="col-md-6">
                     <div id="page-shopping-cart-billing-container">
@@ -201,7 +201,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                                                     <!-- <input type="text" id="billing_phone_no_2" onchange="if(document.getElementById('shipping:same_as_billing').checked) shipping.setSameAsBilling(true);">                                 -->
 
                                                     <!-- <div class="hide-input"> -->
-                                                        <input type="text" name="billing[telephone]" value="<?php echo $this->escapeHtml($this->getAddress()->getTelephone()) . " " ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?>" id="billing:telephone" onkeyup="if(document.getElementById('shipping:same_as_billing').checked) shipping.setSameAsBilling(true);" />                                    
+                                                        <input type="text" name="billing[telephone]" value="<?php echo $this->escapeHtml($this->getAddress()->getTelephone()) . " " ?>" title="<?php echo $this->__('Telephone') ?>" class="remove-input-selection input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?>" id="billing:telephone" onkeyup="if(document.getElementById('shipping:same_as_billing').checked) shipping.setSameAsBilling(true);" />                                    
                                                     <!-- </div> -->
                                                     
                                                 </div>
@@ -213,7 +213,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                                                     <!-- <input type="text" id="billing_fax_no_2" onchange="if(document.getElementById('shipping:same_as_billing').checked) shipping.setSameAsBilling(true);">    -->
                                                     
                                                     <!-- <div class="hide-input"> -->
-                                                        <input type="text" name="billing[fax]" value="<?php echo $this->escapeHtml($this->getAddress()->getFax()) . " " ?>" title="<?php echo $this->__('Fax') ?>" class="input-text <?php //echo $this->helper('customer/address')->getAttributeValidationClass('fax') ?>" id="billing:fax" onkeyup="if(document.getElementById('shipping:same_as_billing').checked) shipping.setSameAsBilling(true);" />
+                                                        <input type="text" name="billing[fax]" value="<?php echo $this->escapeHtml($this->getAddress()->getFax()) . " " ?>" title="<?php echo $this->__('Fax') ?>" class="remove-input-selection input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('fax') ?>" id="billing:fax" onkeyup="if(document.getElementById('shipping:same_as_billing').checked) shipping.setSameAsBilling(true);" />
                                                     <!-- </div> -->
                                                 </div>
                                             </div>
@@ -257,8 +257,8 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                                         </li>
                                         <?php //echo $this->getChildHtml('persistent.remember.me'); ?>
                                         <?php endif; ?>
+                                        <hr class="billing-shipping-checkbox-separator">
                                         <?php if ($this->isCustomerLoggedIn() && $this->customerHasAddresses()):?>
-                                            <hr class="billing-shipping-checkbox-separator">
                                             <li class="control same-as-billing save-in-address-book">
                                                 <input type="checkbox" name="billing[save_in_address_book]" value="1" title="<?php echo $this->__('Save in address book') ?>" id="billing:save_in_address_book" onkeyup="if(window.shipping) shipping.setSameAsBilling(false);"<?php if ($this->getAddress()->getSaveInAddressBook()):?> checked="checked"<?php endif;?> class="checkbox" />
                                                 <label for="billing:save_in_address_book" class="checkbox-label">
@@ -282,7 +282,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                                 <?php if (!$this->canShip()): ?>
                                     <input type="hidden" name="billing[use_for_shipping]" value="1" />
                                 <?php endif; ?>
-                                <input type="hidden" name="billcurrentcountry" id="billcurrentcountry" value="" />
+							<input type="hidden" name="billcurrentcountry" id="billcurrentcountry" value="" />
                             </div>
                     </div>
                 </div>
@@ -405,7 +405,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                                                 <!-- <input type="text" id="shipping_phone_no" class="phone_no_input">                                 -->
                                                 <!-- <input type="text" id="shipping_phone_no_2"> -->
                                                 <!-- <div class="hide-input"> -->
-                                                    <input type="text" name="shipping[telephone]" value="<?php echo $this->escapeHtml($this->getAddress()->getTelephone()) . " " ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?>" id="shipping:telephone" onchange="shipping.setSameAsBilling(false);" />
+                                                    <input type="text" name="shipping[telephone]" value="<?php echo $this->escapeHtml($this->getAddress()->getTelephone()) . " " ?>" title="<?php echo $this->__('Telephone') ?>" class="remove-input-selection input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?>" id="shipping:telephone" onchange="shipping.setSameAsBilling(false);" />
                                                 <!-- </div> -->
                                             </div>
                                         </div>
@@ -416,13 +416,13 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                                                 <!-- <input type="text" id="shipping_fax_no_2">    -->
                                                 
                                                 <!-- <div class="hide-input"> -->
-                                                    <input type="text" name="shipping[fax]" value="<?php echo $this->escapeHtml($this->getAddress()->getFax()) . " " ?>" title="<?php echo $this->__('Fax') ?>" class="input-text <?php //echo $this->helper('customer/address')->getAttributeValidationClass('fax') ?>" id="shipping:fax" onchange="shipping.setSameAsBilling(false);" />
+                                                    <input type="text" name="shipping[fax]" value="<?php echo $this->escapeHtml($this->getAddress()->getFax()) . " " ?>" title="<?php echo $this->__('Fax') ?>" class="remove-input-selection input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('fax') ?>" id="shipping:fax" onchange="shipping.setSameAsBilling(false);" />
                                                 <!-- </div>                                     -->
                                             </div>
                                         </div>
                                     </li>
-                                <?php if ($this->isCustomerLoggedIn() && $this->customerHasAddresses()):?>
                                     <hr class="billing-shipping-checkbox-separator">
+                                <?php if ($this->isCustomerLoggedIn() && $this->customerHasAddresses()):?>
                                     <li class="control same-as-billing save-in-address-book">
                                         <input type="checkbox" name="shipping[save_in_address_book]" value="1" title="<?php echo $this->__('Save in address book') ?>" id="shipping:save_in_address_book" onchange="shipping.setSameAsBilling(false);"<?php if ($this->getAddress()->getSaveInAddressBook()):?> checked="checked"<?php endif;?> class="checkbox" />
                                         <label for="shipping:save_in_address_book" class="checkbox-label">
@@ -439,49 +439,50 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                 </div>
             </div>
             <input type="hidden" name="md_shipping_method" id="md_shipping_method" value="" />
-            <?php 
-            $checkout = Mage::getSingleton('checkout/session')->getQuote();
-            $billAddress = $checkout->getShippingAddress();
-            $countryId = $billAddress->getData('country_id');
-            $groupname = '';
-            if(Mage::getSingleton('customer/session')->isLoggedIn()) {
-                $customerData = Mage::getSingleton('customer/session')->getCustomer();
-                $customerGroupId = $customerData->getGroupId();
-                $groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();  
-            } 
-            
-            $tradselfcollect = 0;
-            //$sessiontemp = Mage::getSingleton('checkout/session');
-            //$tradselfcollect = $sessiontemp->getData('traderselfcollect');
-            
-            /*$oCheckoutnew = Mage::getSingleton( 'checkout/session' );
-            $oQuotenew = $oCheckoutnew->getQuote();
-            $tradselfcollect = $oQuotenew->getTraderselfcollect();*/
-            
-            //$tradselfcollect = Mage::app()->getRequest()->getParam('tsc');
-            
-            $curlpath = basename($_SERVER['REQUEST_URI']);          
-            $parts = parse_url($curlpath);
-            parse_str($parts['query'], $query); 
-            $tradselfcollect = $query['tsc']['tsc'];            
-            ?>
-            <?php //if(($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium')&&($countryId=='SG' || $countryId=='sg')): 
-            if($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium'):
-            ?>
-                <div class="selfcollect">
+			<?php 
+			$checkout = Mage::getSingleton('checkout/session')->getQuote();
+			$billAddress = $checkout->getShippingAddress();
+			$countryId = $billAddress->getData('country_id');
+			$groupname = '';
+			if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+				$customerData = Mage::getSingleton('customer/session')->getCustomer();
+				$customerGroupId = $customerData->getGroupId();
+				$groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();  
+			} 
+			
+			$tradselfcollect = 0;
+			//$sessiontemp = Mage::getSingleton('checkout/session');
+			//$tradselfcollect = $sessiontemp->getData('traderselfcollect');
+			
+			/*$oCheckoutnew = Mage::getSingleton( 'checkout/session' );
+			$oQuotenew = $oCheckoutnew->getQuote();
+			$tradselfcollect = $oQuotenew->getTraderselfcollect();*/
+			
+			//$tradselfcollect = Mage::app()->getRequest()->getParam('tsc');
+			
+			$curlpath = basename($_SERVER['REQUEST_URI']);			
+			$parts = parse_url($curlpath);
+			parse_str($parts['query'], $query);	
+			$tradselfcollect = $query['tsc']['tsc'];			
+			?>
+			<?php //if(($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium')&&($countryId=='SG' || $countryId=='sg')): 
+			if($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium'):
+			?>
+				<div class="selfcollect">
                     <div class="row">
-                        <div class="col-md-6">
+    					<div class="col-md-6">
                             <label for="billing:traderselfcollect"><?php echo $this->__('Self Collection:') ?></label>
-                            <div class="selfcollect-option">                                
-                                <input type="radio" onclick="traderselfcollectyesno('traderselfcollectyes','traderselfcollectno');" id="traderselfcollectno" name="traderselfcollect" value="0" <?php if($tradselfcollect != 1 && $tradselfcollect != '1'){echo 'checked';} ?> /><label for="traderselfcollectno"><span></span>No</label>
+                            <div class="selfcollect-option">        						
+    							<input type="radio" onclick="traderselfcollectyesno('traderselfcollectyes','traderselfcollectno');" id="traderselfcollectno" name="traderselfcollect" value="0" <?php if($tradselfcollect != 1 && $tradselfcollect != '1'){echo 'checked';} ?> /><label for="traderselfcollectno"><span></span>No</label>
                             </div>
                             <div class="selfcollect-option">
-                                 <input type="radio" onclick="traderselfcollectyesno('traderselfcollectno','traderselfcollectyes');" id="traderselfcollectyes" name="traderselfcollect" value="1" <?php if($tradselfcollect ==1 || $tradselfcollect == '1'){echo 'checked';} ?> /><label for="traderselfcollectyes"><span></span>Yes</label>
-                            </div>           
-                        </div>
+							     <input type="radio" onclick="traderselfcollectyesno('traderselfcollectno','traderselfcollectyes');" id="traderselfcollectyes" name="traderselfcollect" value="1" <?php if($tradselfcollect ==1 || $tradselfcollect == '1'){echo 'checked';} ?> /><label for="traderselfcollectyes"><span></span>Yes</label>
+                            </div>
+							<input type="hidden" id="billing:selfcollecthidden" name="custom[selfcollecthidden]" value="0" />
+    					</div>
                     </div>
-                </div></br>
-             <?php endif; ?>
+				</div></br>
+			 <?php endif; ?>
         </form>        
     </div><!-- #page-shopping-cart-billing-shipping-container -->
     <div id="page-shopping-cart-billing-shipping-delivery-information">
@@ -566,7 +567,27 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
         </div> 
 		
     <script>
+	function setCookie(cname, cvalue, exdays) {
+		var d = new Date();
+		d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+		var expires = "expires="+d.toUTCString();
+		document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}
 
+	function getCookie(cname) {
+		var name = cname + "=";
+		var ca = document.cookie.split(';');
+		for(var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	}
         jQuery(document).ready(function($){       
 
             <?php if(!$this->isCustomerLoggedIn()): ?>
@@ -762,9 +783,6 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                 autoPlaceholder: false,
                 preferredCountries: []                
             });
-            if($billing_fax.val()==" ") {
-                $billing_fax.intlTelInput("setNumber", "+65 ");         
-            }            
 
             var $shipping_fax = $('input[name="shipping[fax]"]');
             $shipping_fax.intlTelInput({                
@@ -773,10 +791,7 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
                 autoHideDialCode: false,
                 autoPlaceholder: false,
                 preferredCountries: []                
-            });           
-            if($shipping_fax.val()==" ") {
-                $shipping_fax.intlTelInput("setNumber", "+65 ");         
-            }            
+            });            
 
             $('select[name="billing[country_id]"]').on('change', function(e){
                 e.preventDefault();
@@ -891,104 +906,185 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
             }else {
                 $j('#page-shopping-cart-billing-container').find('.save-in-address-book').hide();
             }
-            var countryIDdd = '<?= Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress()->getData('country_id') ?>';
-            jQuery('.selfcollect')[countryIDdd == 'SG' ? 'show' : 'hide']();
+			//var countryIDdd = '<?= Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress()->getData('country_id') ?>';
+			//jQuery('.selfcollect')[countryIDdd == 'SG' ? 'show' : 'hide']();
         });
 
-        $j('#shipping-address-select').on("change", function(){
+        $j('#shipping-address-select').on("change", function(){//alert('k');
             if($j(this).val()=="") {
                 $j('#page-shopping-cart-shipping-container').find('.save-in-address-book').show();
             }else {
                 $j('#page-shopping-cart-shipping-container').find('.save-in-address-book').hide();
+                $j(".same-as-billing-checkbox").attr('checked', false);
             }
-            var countryIDdd = '<?= Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress()->getData('country_id') ?>';
-            jQuery('.selfcollect')[countryIDdd == 'SG' ? 'show' : 'hide']();
+			var countryIDdd = $j('#shipping\\:country_id').val();//alert(countryIDdd);
+			jQuery('.selfcollect')[countryIDdd == 'SG' ? 'show' : 'hide']();
         });
-        
-        /*var currentCountryIdload = $j('#billing:country_id').val();    
-        jQuery('.selfcollect')[currentCountryIdload == 'SG' ? 'show' : 'hide']();*/
-            
-        $j('.validate-select').on("change", function(){//alert('k');
-            var currentCountryId = $j(this).val();   //alert(currentCountryId); 
-            jQuery('.selfcollect')[currentCountryId == 'SG' ? 'show' : 'hide']();
+		
+		/*var currentCountryIdload = $j('#billing:country_id').val();    
+		jQuery('.selfcollect')[currentCountryIdload == 'SG' ? 'show' : 'hide']();*/
+			
+		$j('#shipping\\:country_id').on("change", function(){//alert('k');
+			var currentCountryId = $j(this).val();   //alert(currentCountryId); 
+			jQuery('.selfcollect')[currentCountryId == 'SG' ? 'show' : 'hide']();
         });
-        
-        $j( document ).ready(function() {
-            //alert( "ready!" );
-            var currentCountryIdLoad = $j('.validate-select').val();   //alert(currentCountryIdLoad); 
-            jQuery('.selfcollect')[currentCountryIdLoad == 'SG' ? 'show' : 'hide']();
-        });
-        
-        
-        
-        
-        $j( document ).ready(function() {
-            
-        if(window.location.href.indexOf("tsc") > -1) {
-        var uurlStringkk = window.location.href.split('?')[1];//alert(uurlStringkk);
-        if (typeof uurlStringkk !== "undefined") {
-            var resQyertkk = uurlStringkk.split("=");
-            var curCId = resQyertkk[1];
-            if(curCId == '1'){
-                jQuery("#s_method_freeshipping_freeshipping").attr('checked', true);                
-                jQuery('.selfcollect').show();
-                //$j(".validate-select").val('SG');
-            }
-            //alert(curCId);
-        }           
-        }
-        
-        /*var uurlString = window.location.href.split('?')[1];
-        
-        var resQyert = uurlString.split("&c=");
-        var curContryId = resQyert[1];
-        
-        var resQyertzero = resQyert[0];
-        var resQyerttsc = resQyertzero.split("tsc=");
-        var tscflag = resQyerttsc[1];
-        //alert(tscflag);
-        /*  $j(".validate-select > option").each(function() {
-                alert($j(this).val());
-                return ($j(this).value == curContryId);
-            }).prop('selected', true);*/
-            
-        //$j(".validate-select").val(curContryId);
-        /*if(tscflag == 1){
-            jQuery("#s_method_freeshipping_freeshipping").attr('checked', true);
-        }
-        jQuery('.selfcollect')[curContryId == 'SG' ? 'show' : 'hide']();*/
-        });
-        //$j('.myclass option:selected').filter("[value=audi]")
+		
+		$j( document ).ready(function() {
+			//alert( "ready!" );
+			var currentCountryIdLoad = $j('#shipping\\:country_id').val();   //alert(currentCountryIdLoad); 
+			jQuery('.selfcollect')[currentCountryIdLoad == 'SG' ? 'show' : 'hide']();
+		});
+		
+		
+		
+		
+		$j( document ).ready(function() {
+			
+		if(window.location.href.indexOf("tsc") > -1) {
+		var uurlStringkk = window.location.href.split('?')[1];//alert(uurlStringkk);
+		if (typeof uurlStringkk !== "undefined") {
+			var resQyertkk = uurlStringkk.split("=");
+			var curCId = resQyertkk[1];
+			if(curCId == '1'){
+				jQuery("#s_method_freeshipping_freeshipping").attr('checked', true);				
+				jQuery('.selfcollect').show();
+				//$j(".validate-select").val('SG');
+			}
+			//alert(curCId);
+		}
 
-        /*$j('[class=validate-select] option').filter(function() { 
-            return ($(this).text() == 'Blue'); //To select Blue
-        }).prop('selected', true); */
-        
+		var bfirstname = getCookie("bfirstname");
+		var bmiddlename = getCookie("bmiddlename");
+		var blastname = getCookie("blastname");
+		var bstreet1 = getCookie("bstreet1");
+		var bstreet2 = getCookie("bstreet2");
+		var bcity = getCookie("bcity");
+		var bpostcode = getCookie("bpostcode");
+		var bcountry_id = getCookie("bcountry_id");
+		var bregion = getCookie("bregion");
+		var btelephone = getCookie("btelephone");
+		var bfax = getCookie("bfax");
+		
+		jQuery("#billing\\:firstname").val(bfirstname);
+		jQuery("#billing\\:middlename").val(bmiddlename);
+		jQuery("#billing\\:lastname").val(blastname);
+		jQuery("#billing\\:street1").val(bstreet1);
+		jQuery("#billing\\:street2").val(bstreet2);
+		jQuery("#billing\\:city").val(bcity);
+		jQuery("#billing\\:postcode").val(bpostcode);
+		jQuery("#billing\\:country_id").val(bcountry_id);
+		jQuery("#billing\\:region").val(bregion);
+		jQuery("#billing\\:telephone").val(btelephone);
+		jQuery("#billing\\:fax").val(bfax);	
+		
+		var sfirstname = getCookie("sfirstname");
+		var smiddlename = getCookie("smiddlename");
+		var slastname = getCookie("slastname");
+		var sstreet1 = getCookie("sstreet1");
+		var sstreet2 = getCookie("sstreet2");
+		var scity = getCookie("scity");
+		var spostcode = getCookie("spostcode");
+		var scountry_id = getCookie("scountry_id");
+		var sregion = getCookie("sregion");
+		var stelephone = getCookie("stelephone");
+		var sfax = getCookie("sfax");
+		
+		jQuery("#shipping\\:firstname").val(sfirstname);
+		jQuery("#shipping\\:middlename").val(smiddlename);
+		jQuery("#shipping\\:lastname").val(slastname);
+		jQuery("#shipping\\:street1").val(sstreet1);
+		jQuery("#shipping\\:street2").val(sstreet2);
+		jQuery("#shipping\\:city").val(scity);
+		jQuery("#shipping\\:postcode").val(spostcode);
+		jQuery("#shipping\\:country_id").val(scountry_id);
+		jQuery("#shipping\\:region").val(sregion);
+		jQuery("#shipping\\:telephone").val(stelephone);
+		jQuery("#shipping\\:fax").val(sfax);
+
+		
+		}
+		
+		/*var uurlString = window.location.href.split('?')[1];
+		
+		var resQyert = uurlString.split("&c=");
+		var curContryId = resQyert[1];
+		
+		var resQyertzero = resQyert[0];
+		var resQyerttsc = resQyertzero.split("tsc=");
+		var tscflag = resQyerttsc[1];
+		//alert(tscflag);
+		/*	$j(".validate-select > option").each(function() {
+				alert($j(this).val());
+				return ($j(this).value == curContryId);
+			}).prop('selected', true);*/
+			
+		//$j(".validate-select").val(curContryId);
+		/*if(tscflag == 1){
+			jQuery("#s_method_freeshipping_freeshipping").attr('checked', true);
+		}
+		jQuery('.selfcollect')[curContryId == 'SG' ? 'show' : 'hide']();*/
+		});
+		//$j('.myclass option:selected').filter("[value=audi]")
+
+		/*$j('[class=validate-select] option').filter(function() { 
+			return ($(this).text() == 'Blue'); //To select Blue
+		}).prop('selected', true); */
+		
                 
     //]]>
 	
 	function traderselfcollectyesno(idd,iddd){
-        //alert(idd);
-        jQuery("#"+idd).removeAttr('checked');
-        
-        var tsr = jQuery("#"+iddd).val();
-        //alert(tsr);alert(iddd);
-        if(tsr == 1){
-            jQuery("#s_method_freeshipping_freeshipping").attr('checked', true);
-        }else{
-        
-        }
-        jQuery("#"+iddd).attr('checked', true);
-        
-        //window.location.href = window.location.href + "?tsc="+tsr;
-        //billing.save();       
-        //location.reload();
-        $uurl = window.location.href.split('?')[0];
-        //window.location.href = $uurl + "?tsc="+tsr+"&c="+$j('.validate-select').val();
-        window.location.href = $uurl + "?tsc="+tsr;
-        $j('#billcurrentcountry').val($j('.validate-select').val());
-    
-    }   
+		//alert(idd);
+		jQuery("#"+idd).removeAttr('checked');
+		
+		var tsr = jQuery("#"+iddd).val();
+		//alert(tsr);alert(iddd);
+		if(tsr == 1){
+			jQuery("#billing\\:selfcollecthidden").val(1);
+			jQuery("#s_method_freeshipping_freeshipping").attr('checked', true);
+		}else{
+		
+		}
+		jQuery("#"+iddd).attr('checked', true);
+		
+		//window.location.href = window.location.href + "?tsc="+tsr;
+		//billing.save();		
+		//location.reload();
+		
+		// save billing and shipping address in cookie
+		
+		setCookie("bfirstname", jQuery("#billing\\:firstname").val(), 365);
+		setCookie("bmiddlename", jQuery("#billing\\:middlename").val(), 365);
+		setCookie("blastname", jQuery("#billing\\:lastname").val(), 365);
+		setCookie("bstreet1", jQuery("#billing\\:street1").val(), 365);
+		setCookie("bstreet2", jQuery("#billing\\:street2").val(), 365);
+		setCookie("bcity", jQuery("#billing\\:city").val(), 365);
+		setCookie("bpostcode", jQuery("#billing\\:postcode").val(), 365);
+		setCookie("bcountry_id", jQuery("#billing\\:country_id").val(), 365);
+		setCookie("bregion", jQuery("#billing\\:region").val(), 365);
+		setCookie("btelephone", jQuery("#billing\\:telephone").val(), 365);
+		setCookie("bfax", jQuery("#billing\\:fax").val(), 365);	
+		
+		setCookie("sfirstname", jQuery("#shipping\\:firstname").val(), 365);
+		setCookie("smiddlename", jQuery("#shipping\\:middlename").val(), 365);
+		setCookie("slastname", jQuery("#shipping\\:lastname").val(), 365);
+		setCookie("sstreet1", jQuery("#shipping\\:street1").val(), 365);
+		setCookie("sstreet2", jQuery("#shipping\\:street2").val(), 365);
+		setCookie("scity", jQuery("#shipping\\:city").val(), 365);
+		setCookie("spostcode", jQuery("#shipping\\:postcode").val(), 365);
+		setCookie("scountry_id", jQuery("#shipping\\:country_id").val(), 365);
+		setCookie("sregion", jQuery("#shipping\\:region").val(), 365);
+		setCookie("stelephone", jQuery("#shipping\\:telephone").val(), 365);
+		setCookie("sfax", jQuery("#shipping\\:fax").val(), 365);
+		
+		
+		$uurl = window.location.href.split('?')[0];
+		//window.location.href = $uurl + "?tsc="+tsr+"&c="+$j('.validate-select').val();
+		window.location.href = $uurl + "?tsc="+tsr;
+		$j('#billcurrentcountry').val($j('.validate-select').val());
+	
+	}
+		
     </script>
     </div>
 </div>

@@ -91,10 +91,13 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12">                              
+                            <div class="col-md-5">                              
                               <div class="login-button-container">
-                                <a title="<?php echo $this->__('Create A Monogram Account') ?>" class=" sign-up-btn square-cta" href="<?php echo $this->getUrl("trader"); ?>"><span><span><?php echo $this->__('Create a Trader Account') ?></span></span></a>
+                                <a title="<?php echo $this->__('Create A Monogram Account') ?>" class=" sign-up-btn square-cta" href="<?php echo $this->getUrl("trader/create"); ?>"><span><span><?php echo $this->__('Create a Trader Account') ?></span></span></a>
                               </div>                              
+                            </div>
+                            <div class="col-md-7">
+                                <a href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>" class="for-input">Sign In as Monogram Member</a>
                             </div>
                         </div>
             <!-- <div class="row">

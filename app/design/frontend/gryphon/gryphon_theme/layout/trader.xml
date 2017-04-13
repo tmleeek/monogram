@@ -6,7 +6,7 @@
         </reference>
     </customer_account_login> 
      
-    <trader_index_index>
+    <trader_create_index>
         <label>Customer Account Creation Form</label>
         <!-- Mage_Customer -->
         <remove name="right"/>
@@ -31,5 +31,5 @@
                 </block>
             </block>
         </reference>
-    </trader_index_index>
+    </trader_create_index>
 </layout> 

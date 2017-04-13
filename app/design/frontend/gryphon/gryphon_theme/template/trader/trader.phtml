@@ -132,7 +132,7 @@ margin-bottom:0;
                                         </div>                                   
                                         <div class="col-md-7">
                                             <input style=" display: inline; font-size: 12px;" type="file" accept=".pdf" name="uploadacrapdf" class="input-class input-text required-entry custom-file-input" value=""/>
-                                            <span class="upload-restriction validation-advice">File must be in .pdf format and no more than 5MB</span>
+                                            <span class="upload-restriction">File must be in .pdf format and no more than 5MB</span>
                                         </div>
                                     </div>
                                     <div class="row each-input">
@@ -263,10 +263,10 @@ margin-bottom:0;
 
                                     <div class="row each-input">
                                         <div class="col-md-5">
-                                            <label for="address">address</label>
+                                            <label for="address*">address*</label>
                                         </div>
                                         <div class="col-md-7">
-                                            <input type="text" name="street[]" class="input-class input-text" value="<?php echo $this->escapeHtml($this->getFormData()->getStreet(1)) ?>" />
+                                            <input type="text" name="street[]" class="required-entry input-class input-text" value="<?php echo $this->escapeHtml($this->getFormData()->getStreet(1)) ?>" />
                                         </div>
                                     </div>
 
@@ -282,7 +282,7 @@ margin-bottom:0;
 
                                     <div class="row each-input">
                                         <div class="col-md-5">
-                                            <label for="country">country</label>
+                                            <label for="country*">country*</label>
                                         </div>
                                         <div class="col-md-7">
                                             <div class="dropdown">
@@ -316,10 +316,10 @@ margin-bottom:0;
                                     </div>
                                     <div class="row each-input">
                                         <div class="col-md-5">
-                                            <label for="postal_code">Postal code</label>
+                                            <label for="postal_code">Postal code*</label>
                                         </div>
                                         <div class="col-md-7">
-                                            <input type="text" name="postal_code" class="input-class input-text" value="<?php echo $this->escapeHtml($this->getFormData()->getPostalCode()) ?>" />
+                                            <input type="text" name="postal_code" class="required-entry input-class input-text" value="<?php echo $this->escapeHtml($this->getFormData()->getPostalCode()) ?>" />
                                         </div>
                                     </div>
 
@@ -411,27 +411,27 @@ margin-bottom:0;
                                     </div> 
                                     <div class="row each-input">
                                         <div class="col-md-12">
-                                            <h5 class="validation-advice">IMPORTANT</h5> 
+                                            <h5 class="trader-important-message-title">IMPORTANT</h5> 
                                             <p>This email address will be used for access to the site and for call communications. Please ensure you enter the address correctly.</p>
                                         </div>
                                     </div>                                 
                                     <div class="row each-input">
                                         <div class="col-md-5">
-                                            <label for="phone_no"><?php echo $this->__('PHONE NUMBER*'); ?></label> 
+                                            <label for="phone_no"><?php echo $this->__('Office Number*'); ?></label> 
                                         </div>
                                         <div class="col-md-7">
                                             <div class="intl-tel-input">                
-                                                <input id="telephone" type="text" name="telephone" class="input-class phone_no_input" value="<?php echo $this->escapeHtml($this->getFormData()->getTelephone()) ?>" />
+                                                <input id="telephone" type="text" name="telephone" class="remove-input-selection input-class phone_no_input" value="<?php echo $this->escapeHtml($this->getFormData()->getTelephone()) ?>" />
                                             </div>                
                                         </div>                    
                                     </div> 
                                     <div class="row each-input">
                                         <div class="col-md-5">
-                                            <label for="mobile_no">mobile number</label> 
+                                            <label for="mobile_no">mobile number*</label> 
                                         </div>
                                         <div class="col-md-7">                      
                                             <div class="hide-input">
-                                                <input id="mobile" type="text" class="input-class phone_no_input" name="mobile_no" value="<?php echo $this->escapeHtml($this->getFormData()->getMobileNo()) ?>" />
+                                                <input id="mobile" type="text" class="remove-input-selection required-entry input-class phone_no_input" name="mobile_no" value="<?php echo $this->escapeHtml($this->getFormData()->getMobileNo()) ?>" />
                                             </div>                
                                         </div>                    
                                     </div> 
@@ -508,7 +508,7 @@ margin-bottom:0;
 
                                     <div class="row each-input">
                                         <div class="col-md-5">
-                                            <label for="message">message/inquiry</label>	
+                                            <label for="message">Message</label>	
                                         </div>
                                         <div class="col-md-7">
                                             <textarea rows="8" cols="100" id="" name="message" class="input-class input-text"><?php echo $this->escapeHtml($this->getFormData()->getMessage()) ?></textarea>

@@ -21,7 +21,7 @@ if(Mage::getSingleton('customer/session')->isLoggedIn()) {
 <?php $_code = 'giftvoucher' ?>
 <?php $_giftCards = $this->getExistedGiftCard() ?>
 
-<form id="discount-giftcard-form" action="<?php echo $this->getUrl('giftvoucher/checkout/giftcardPost') ?>" method="post">
+<form id="discount-giftcard-form" action="<?php echo $this->getUrl('giftvoucher/checkout/giftcardPost') ?>" method="post" autocomplete="off">
     <div class="discount">
         <!-- <h2><?php echo $this->__('Gift Card') ?></h2> -->
         <div class="discount-form">
