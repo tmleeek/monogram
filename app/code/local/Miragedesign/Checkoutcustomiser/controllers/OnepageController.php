@@ -52,6 +52,8 @@ class Miragedesign_Checkoutcustomiser_OnepageController extends Mage_Checkout_On
 				}
 			}
 			//PG: end			
+
+            // echo 'here'; exit();
 			
 			$result = $this->getOnepage()->saveBilling($billingData, $customerBillingAddressId);        
 
